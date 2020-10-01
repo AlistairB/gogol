@@ -25,11 +25,20 @@ module Network.Google.DoubleClickBids.Types
     -- * ListReportsResponse
     , ListReportsResponse
     , listReportsResponse
+    , lrrNextPageToken
     , lrrReports
     , lrrKind
 
+    -- * DisjunctiveMatchStatement
+    , DisjunctiveMatchStatement
+    , disjunctiveMatchStatement
+    , dmsEventFilters
+
     -- * QueryMetadataFormat
     , QueryMetadataFormat (..)
+
+    -- * PathQueryOptionsFilterFilter
+    , PathQueryOptionsFilterFilter (..)
 
     -- * QueryMetadata
     , QueryMetadata
@@ -45,6 +54,12 @@ module Network.Google.DoubleClickBids.Types
     , qmReportCount
     , qmTitle
     , qmSendNotification
+
+    -- * PathQueryOptions
+    , PathQueryOptions
+    , pathQueryOptions
+    , pqoPathFilters
+    , pqoChannelGrouping
 
     -- * RunQueryRequest
     , RunQueryRequest
@@ -99,6 +114,7 @@ module Network.Google.DoubleClickBids.Types
     , ListQueriesResponse
     , listQueriesResponse
     , lqrQueries
+    , lqrNextPageToken
     , lqrKind
 
     -- * UploadLineItemsResponse
@@ -140,6 +156,12 @@ module Network.Google.DoubleClickBids.Types
     , rsErrors
     , rsEntityId
 
+    -- * Rule
+    , Rule
+    , rule
+    , rName
+    , rDisjunctiveMatchStatements
+
     -- * DownloadLineItemsRequestFileSpec
     , DownloadLineItemsRequestFileSpec (..)
 
@@ -152,16 +174,39 @@ module Network.Google.DoubleClickBids.Types
     -- * UploadLineItemsRequestFormat
     , UploadLineItemsRequestFormat (..)
 
+    -- * EventFilter
+    , EventFilter
+    , eventFilter
+    , efDimensionFilter
+
+    -- * ChannelGrouping
+    , ChannelGrouping
+    , channelGrouping
+    , cgRules
+    , cgFallbackName
+    , cgName
+
+    -- * PathQueryOptionsFilterMatch
+    , PathQueryOptionsFilterMatch (..)
+
     -- * UploadStatus
     , UploadStatus
     , uploadStatus
     , usRowStatus
     , usErrors
 
+    -- * PathQueryOptionsFilter
+    , PathQueryOptionsFilter
+    , pathQueryOptionsFilter
+    , pqofValues
+    , pqofFilter
+    , pqofMatch
+
     -- * QuerySchedule
     , QuerySchedule
     , querySchedule
     , qsFrequency
+    , qsStartTimeMs
     , qsEndTimeMs
     , qsNextRunMinuteOfDay
     , qsNextRunTimezoneCode
@@ -208,7 +253,14 @@ module Network.Google.DoubleClickBids.Types
     , pIncludeInviteData
     , pFilters
     , pGroupBys
+    , pOptions
     , pType
+
+    -- * Xgafv
+    , Xgafv (..)
+
+    -- * PathFilterPathMatchPosition
+    , PathFilterPathMatchPosition (..)
 
     -- * FilterPairType
     , FilterPairType (..)
@@ -218,6 +270,18 @@ module Network.Google.DoubleClickBids.Types
 
     -- * ReportStatusState
     , ReportStatusState (..)
+
+    -- * PathFilter
+    , PathFilter
+    , pathFilter
+    , pfEventFilters
+    , pfPathMatchPosition
+
+    -- * Options
+    , Options
+    , options
+    , oPathQueryOptions
+    , oIncludeOnlyTargetedUserLists
 
     -- * ParametersGroupBysItem
     , ParametersGroupBysItem (..)
@@ -241,12 +305,12 @@ import           Network.Google.DoubleClickBids.Types.Product
 import           Network.Google.DoubleClickBids.Types.Sum
 import           Network.Google.Prelude
 
--- | Default request referring to version 'v1' of the DoubleClick Bid Manager API. This contains the host and root path used as a starting point for constructing service requests.
+-- | Default request referring to version 'v1.1' of the DoubleClick Bid Manager API. This contains the host and root path used as a starting point for constructing service requests.
 doubleClickBidsService :: ServiceConfig
 doubleClickBidsService
   = defaultService
-      (ServiceId "doubleclickbidmanager:v1")
-      "www.googleapis.com"
+      (ServiceId "doubleclickbidmanager:v1.1")
+      "doubleclickbidmanager.googleapis.com"
 
 -- | View and manage your reports in DoubleClick Bid Manager
 doubleClickBidManagerScope :: Proxy '["https://www.googleapis.com/auth/doubleclickbidmanager"]

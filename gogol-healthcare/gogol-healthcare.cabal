@@ -19,7 +19,7 @@ description:
     /Warning:/ This is an experimental prototype/preview release which is still
     under exploratory development and not intended for public use, caveat emptor!
     .
-    This library is compatible with version @v1beta1@
+    This library is compatible with version @v1@
     of the API.
 
 source-repository head
@@ -39,6 +39,7 @@ library
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Deidentify
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Delete
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStores.Create
+        , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStores.Deidentify
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStores.Delete
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStores.Export
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStores.Get
@@ -69,17 +70,14 @@ library
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStores.Studies.StoreInstances
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStores.TestIAMPermissions
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores.Create
+        , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores.Deidentify
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores.Delete
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores.Export
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores.Fhir.Capabilities
-        , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores.Fhir.ConditionalDelete
-        , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores.Fhir.ConditionalPatch
-        , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores.Fhir.ConditionalUpdate
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores.Fhir.Create
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores.Fhir.Delete
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores.Fhir.ExecuteBundle
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores.Fhir.History
-        , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores.Fhir.ObservationLastn
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores.Fhir.Patch
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores.Fhir.PatientEverything
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores.Fhir.Read
@@ -111,6 +109,7 @@ library
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Hl7V2Stores.SetIAMPolicy
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Hl7V2Stores.TestIAMPermissions
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.List
+        , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Operations.Cancel
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Operations.Get
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Operations.List
         , Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Patch

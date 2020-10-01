@@ -20,7 +20,7 @@ description:
     /Warning:/ This is an experimental prototype/preview release which is still
     under exploratory development and not intended for public use, caveat emptor!
     .
-    This library is compatible with version @v1@
+    This library is compatible with version @v1p5beta1@
     of the API.
 
 source-repository head
@@ -36,9 +36,7 @@ library
     exposed-modules:
           Network.Google.CloudAsset
         , Network.Google.CloudAsset.Types
-        , Network.Google.Resource.CloudAsset.BatchGetAssetsHistory
-        , Network.Google.Resource.CloudAsset.ExportAssets
-        , Network.Google.Resource.CloudAsset.Operations.Get
+        , Network.Google.Resource.CloudAsset.Assets.List
 
     other-modules:
           Network.Google.CloudAsset.Types.Product

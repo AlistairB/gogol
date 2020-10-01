@@ -21,7 +21,9 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Lists all the messages in the given HL7v2 store with support for
--- filtering.
+-- filtering. Note: HL7v2 messages are indexed asynchronously, so there
+-- might be a slight delay between the time a message is created and when
+-- it can be found through a filter.
 --
 -- /See:/ <https://cloud.google.com/healthcare Cloud Healthcare API Reference> for @healthcare.projects.locations.datasets.hl7V2Stores.messages.list@.
 module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Hl7V2Stores.Messages.List
@@ -40,6 +42,7 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Hl7V2Store
     , pldshvsmlOrderBy
     , pldshvsmlAccessToken
     , pldshvsmlUploadType
+    , pldshvsmlView
     , pldshvsmlFilter
     , pldshvsmlPageToken
     , pldshvsmlPageSize
@@ -53,7 +56,7 @@ import           Network.Google.Prelude
 -- 'ProjectsLocationsDataSetsHl7V2StoresMessagesList' request conforms to.
 type ProjectsLocationsDataSetsHl7V2StoresMessagesListResource
      =
-     "v1beta1" :>
+     "v1" :>
        Capture "parent" Text :>
          "messages" :>
            QueryParam "$.xgafv" Xgafv :>
@@ -61,15 +64,20 @@ type ProjectsLocationsDataSetsHl7V2StoresMessagesListResource
                QueryParam "orderBy" Text :>
                  QueryParam "access_token" Text :>
                    QueryParam "uploadType" Text :>
-                     QueryParam "filter" Text :>
-                       QueryParam "pageToken" Text :>
-                         QueryParam "pageSize" (Textual Int32) :>
-                           QueryParam "callback" Text :>
-                             QueryParam "alt" AltJSON :>
-                               Get '[JSON] ListMessagesResponse
+                     QueryParam "view"
+                       ProjectsLocationsDataSetsHl7V2StoresMessagesListView
+                       :>
+                       QueryParam "filter" Text :>
+                         QueryParam "pageToken" Text :>
+                           QueryParam "pageSize" (Textual Int32) :>
+                             QueryParam "callback" Text :>
+                               QueryParam "alt" AltJSON :>
+                                 Get '[JSON] ListMessagesResponse
 
 -- | Lists all the messages in the given HL7v2 store with support for
--- filtering.
+-- filtering. Note: HL7v2 messages are indexed asynchronously, so there
+-- might be a slight delay between the time a message is created and when
+-- it can be found through a filter.
 --
 -- /See:/ 'projectsLocationsDataSetsHl7V2StoresMessagesList' smart constructor.
 data ProjectsLocationsDataSetsHl7V2StoresMessagesList =
@@ -80,6 +88,7 @@ data ProjectsLocationsDataSetsHl7V2StoresMessagesList =
     , _pldshvsmlOrderBy        :: !(Maybe Text)
     , _pldshvsmlAccessToken    :: !(Maybe Text)
     , _pldshvsmlUploadType     :: !(Maybe Text)
+    , _pldshvsmlView           :: !(Maybe ProjectsLocationsDataSetsHl7V2StoresMessagesListView)
     , _pldshvsmlFilter         :: !(Maybe Text)
     , _pldshvsmlPageToken      :: !(Maybe Text)
     , _pldshvsmlPageSize       :: !(Maybe (Textual Int32))
@@ -104,6 +113,8 @@ data ProjectsLocationsDataSetsHl7V2StoresMessagesList =
 --
 -- * 'pldshvsmlUploadType'
 --
+-- * 'pldshvsmlView'
+--
 -- * 'pldshvsmlFilter'
 --
 -- * 'pldshvsmlPageToken'
@@ -122,6 +133,7 @@ projectsLocationsDataSetsHl7V2StoresMessagesList pPldshvsmlParent_ =
     , _pldshvsmlOrderBy = Nothing
     , _pldshvsmlAccessToken = Nothing
     , _pldshvsmlUploadType = Nothing
+    , _pldshvsmlView = Nothing
     , _pldshvsmlFilter = Nothing
     , _pldshvsmlPageToken = Nothing
     , _pldshvsmlPageSize = Nothing
@@ -167,39 +179,34 @@ pldshvsmlUploadType
   = lens _pldshvsmlUploadType
       (\ s a -> s{_pldshvsmlUploadType = a})
 
+-- | Specifies the parts of the Message to return in the response. When
+-- unspecified, equivalent to BASIC. Setting this to anything other than
+-- BASIC with a \`page_size\` larger than the default can generate a large
+-- response, which impacts the performance of this method.
+pldshvsmlView :: Lens' ProjectsLocationsDataSetsHl7V2StoresMessagesList (Maybe ProjectsLocationsDataSetsHl7V2StoresMessagesListView)
+pldshvsmlView
+  = lens _pldshvsmlView
+      (\ s a -> s{_pldshvsmlView = a})
+
 -- | Restricts messages returned to those matching a filter. Syntax:
 -- https:\/\/cloud.google.com\/appengine\/docs\/standard\/python\/search\/query_strings
 -- Fields\/functions available for filtering are: * \`message_type\`, from
--- the MSH-9 segment; for example \`NOT message_type = \"ADT\"\` *
+-- the MSH-9.1 field. For example, \`NOT message_type = \"ADT\"\`. *
 -- \`send_date\` or \`sendDate\`, the YYYY-MM-DD date the message was sent
--- in the dataset\'s time_zone, from the MSH-7 segment; for example
--- \`send_date \< \"2017-01-02\"\` * \`send_time\`, the timestamp of when
--- the message was sent, using the RFC3339 time format for comparisons,
--- from the MSH-7 segment; for example \`send_time \<
--- \"2017-01-02T00:00:00-05:00\"\` * \`send_facility\`, the care center
--- that the message came from, from the MSH-4 segment; for example
--- \`send_facility = \"ABC\"\` * \`HL7RegExp(expr)\`, which does regular
--- expression matching of \`expr\` against the message payload using re2
--- (http:\/\/code.google.com\/p\/re2\/) syntax; for example
--- \`HL7RegExp(\"^.*\\|.*\\|EMERG\")\` * \`PatientId(value, type)\`, which
--- matches if the message lists a patient having an ID of the given value
--- and type in the PID-2, PID-3, or PID-4 segments; for example
--- \`PatientId(\"123456\", \"MRN\")\` * \`labels.x\`, a string value of the
--- label with key \`x\` as set using the Message.labels map, for example
--- \`labels.\"priority\"=\"high\"\`. The operator \`:*\` can be used to
--- assert the existence of a label, for example \`labels.\"priority\":*\`.
--- Limitations on conjunctions: * Negation on the patient ID function or
--- the labels field is not supported, for example these queries are
--- invalid: \`NOT PatientId(\"123456\", \"MRN\")\`, \`NOT
--- labels.\"tag1\":*\`, \`NOT labels.\"tag2\"=\"val2\"\`. * Conjunction of
--- multiple patient ID functions is not supported, for example this query
--- is invalid: \`PatientId(\"123456\", \"MRN\") AND PatientId(\"456789\",
--- \"MRN\")\`. * Conjunction of multiple labels fields is also not
--- supported, for example this query is invalid: \`labels.\"tag1\":* AND
--- labels.\"tag2\"=\"val2\"\`. * Conjunction of one patient ID function,
--- one labels field and conditions on other fields is supported, for
--- example this query is valid: \`PatientId(\"123456\", \"MRN\") AND
--- labels.\"tag1\":* AND message_type = \"ADT\"\`.
+-- in the dataset\'s time_zone, from the MSH-7 segment. For example,
+-- \`send_date \< \"2017-01-02\"\`. * \`send_time\`, the timestamp when the
+-- message was sent, using the RFC3339 time format for comparisons, from
+-- the MSH-7 segment. For example, \`send_time \<
+-- \"2017-01-02T00:00:00-05:00\"\`. * \`send_facility\`, the care center
+-- that the message came from, from the MSH-4 segment. For example,
+-- \`send_facility = \"ABC\"\`. * \`PatientId(value, type)\`, which matches
+-- if the message lists a patient having an ID of the given value and type
+-- in the PID-2, PID-3, or PID-4 segments. For example,
+-- \`PatientId(\"123456\", \"MRN\")\`. * \`labels.x\`, a string value of
+-- the label with key \`x\` as set using the Message.labels map. For
+-- example, \`labels.\"priority\"=\"high\"\`. The operator \`:*\` can be
+-- used to assert the existence of a label. For example,
+-- \`labels.\"priority\":*\`.
 pldshvsmlFilter :: Lens' ProjectsLocationsDataSetsHl7V2StoresMessagesList (Maybe Text)
 pldshvsmlFilter
   = lens _pldshvsmlFilter
@@ -242,6 +249,7 @@ instance GoogleRequest
               _pldshvsmlOrderBy
               _pldshvsmlAccessToken
               _pldshvsmlUploadType
+              _pldshvsmlView
               _pldshvsmlFilter
               _pldshvsmlPageToken
               _pldshvsmlPageSize

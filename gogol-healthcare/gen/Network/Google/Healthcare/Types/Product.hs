@@ -22,39 +22,11 @@ import           Network.Google.Prelude
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
--- is used by [gRPC](https:\/\/github.com\/grpc). The error model is
--- designed to be: - Simple to use and understand for most users - Flexible
--- enough to meet unexpected needs # Overview The \`Status\` message
+-- is used by [gRPC](https:\/\/github.com\/grpc). Each \`Status\` message
 -- contains three pieces of data: error code, error message, and error
--- details. The error code should be an enum value of google.rpc.Code, but
--- it may accept additional error codes if needed. The error message should
--- be a developer-facing English message that helps developers *understand*
--- and *resolve* the error. If a localized user-facing error message is
--- needed, put the localized message in the error details or localize it in
--- the client. The optional error details may contain arbitrary information
--- about the error. There is a predefined set of error detail types in the
--- package \`google.rpc\` that can be used for common error conditions. #
--- Language mapping The \`Status\` message is the logical representation of
--- the error model, but it is not necessarily the actual wire format. When
--- the \`Status\` message is exposed in different client libraries and
--- different wire protocols, it can be mapped differently. For example, it
--- will likely be mapped to some exceptions in Java, but more likely mapped
--- to some error codes in C. # Other uses The error model and the
--- \`Status\` message can be used in a variety of environments, either with
--- or without APIs, to provide a consistent developer experience across
--- different environments. Example uses of this error model include: -
--- Partial errors. If a service needs to return partial errors to the
--- client, it may embed the \`Status\` in the normal response to indicate
--- the partial errors. - Workflow errors. A typical workflow has multiple
--- steps. Each step may have a \`Status\` message for error reporting. -
--- Batch operations. If a client uses batch request and batch response, the
--- \`Status\` message should be used directly inside batch response, one
--- for each error sub-response. - Asynchronous operations. If an API call
--- embeds asynchronous operation results in its response, the status of
--- those operations should be represented directly using the \`Status\`
--- message. - Logging. If some API errors are stored in logs, the message
--- \`Status\` could be used directly after any stripping needed for
--- security\/privacy reasons.
+-- details. You can find out more about this error model and how to work
+-- with it in the [API Design
+-- Guide](https:\/\/cloud.google.com\/apis\/design\/errors).
 --
 -- /See:/ 'status' smart constructor.
 data Status =
@@ -160,8 +132,8 @@ instance ToJSON OperationSchema where
 -- /See:/ 'exportResourcesRequest' smart constructor.
 data ExportResourcesRequest =
   ExportResourcesRequest'
-    { _errBigQueryDestination :: !(Maybe GoogleCloudHealthcareV1beta1FhirBigQueryDestination)
-    , _errGcsDestination      :: !(Maybe GoogleCloudHealthcareV1beta1FhirRestGcsDestination)
+    { _errBigQueryDestination :: !(Maybe GoogleCloudHealthcareV1FhirBigQueryDestination)
+    , _errGcsDestination      :: !(Maybe GoogleCloudHealthcareV1FhirGcsDestination)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -182,18 +154,18 @@ exportResourcesRequest =
 
 -- | The BigQuery output destination. The BigQuery location requires two IAM
 -- roles: \`roles\/bigquery.dataEditor\` and \`roles\/bigquery.jobUser\`.
--- The output will be one BigQuery table per resource type.
-errBigQueryDestination :: Lens' ExportResourcesRequest (Maybe GoogleCloudHealthcareV1beta1FhirBigQueryDestination)
+-- The output is one BigQuery table per resource type.
+errBigQueryDestination :: Lens' ExportResourcesRequest (Maybe GoogleCloudHealthcareV1FhirBigQueryDestination)
 errBigQueryDestination
   = lens _errBigQueryDestination
       (\ s a -> s{_errBigQueryDestination = a})
 
--- | The Cloud Storage output destination. The Cloud Storage location
--- requires the \`roles\/storage.objectAdmin\` Cloud IAM role. The exported
--- outputs are organized by FHIR resource types. The server will create one
--- object per resource type. Each object contains newline delimited JSON,
--- and each line is a FHIR resource.
-errGcsDestination :: Lens' ExportResourcesRequest (Maybe GoogleCloudHealthcareV1beta1FhirRestGcsDestination)
+-- | The Cloud Storage output destination. The Healthcare Service Agent
+-- account requires the \`roles\/storage.objectAdmin\` role on the Cloud
+-- Storage location. The exported outputs are organized by FHIR resource
+-- types. The server creates one object per resource type. Each object
+-- contains newline delimited JSON, and each line is a FHIR resource.
+errGcsDestination :: Lens' ExportResourcesRequest (Maybe GoogleCloudHealthcareV1FhirGcsDestination)
 errGcsDestination
   = lens _errGcsDestination
       (\ s a -> s{_errGcsDestination = a})
@@ -368,15 +340,15 @@ instance ToJSON InfoTypeTransformation where
 -- service: the log_types specified in each AuditConfig are enabled, and
 -- the exempted_members in each AuditLogConfig are exempted. Example Policy
 -- with multiple AuditConfigs: { \"audit_configs\": [ { \"service\":
--- \"allServices\" \"audit_log_configs\": [ { \"log_type\": \"DATA_READ\",
--- \"exempted_members\": [ \"user:foo\'gmail.com\" ] }, { \"log_type\":
--- \"DATA_WRITE\", }, { \"log_type\": \"ADMIN_READ\", } ] }, { \"service\":
--- \"fooservice.googleapis.com\" \"audit_log_configs\": [ { \"log_type\":
--- \"DATA_READ\", }, { \"log_type\": \"DATA_WRITE\", \"exempted_members\":
--- [ \"user:bar\'gmail.com\" ] } ] } ] } For fooservice, this policy
--- enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts
--- foo\'gmail.com from DATA_READ logging, and bar\'gmail.com from
--- DATA_WRITE logging.
+-- \"allServices\", \"audit_log_configs\": [ { \"log_type\": \"DATA_READ\",
+-- \"exempted_members\": [ \"user:jose\'example.com\" ] }, { \"log_type\":
+-- \"DATA_WRITE\" }, { \"log_type\": \"ADMIN_READ\" } ] }, { \"service\":
+-- \"sampleservice.googleapis.com\", \"audit_log_configs\": [ {
+-- \"log_type\": \"DATA_READ\" }, { \"log_type\": \"DATA_WRITE\",
+-- \"exempted_members\": [ \"user:aliya\'example.com\" ] } ] } ] } For
+-- sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ
+-- logging. It also exempts jose\'example.com from DATA_READ logging, and
+-- aliya\'example.com from DATA_WRITE logging.
 --
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
@@ -466,8 +438,8 @@ instance FromJSON HTTPBodyExtensionsItem where
 instance ToJSON HTTPBodyExtensionsItem where
         toJSON = toJSON . _httpbeiAddtional
 
--- | Define how to redact sensitive values. Default behaviour is erase, e.g.
--- \"My name is Jake.\" becomes \"My name is .\"
+-- | Define how to redact sensitive values. Default behaviour is erase. For
+-- example, \"My name is Jane.\" becomes \"My name is .\"
 --
 -- /See:/ 'redactConfig' smart constructor.
 data RedactConfig =
@@ -490,92 +462,7 @@ instance FromJSON RedactConfig where
 instance ToJSON RedactConfig where
         toJSON = const emptyObject
 
--- | Contains the status of the Deidentify operation.
---
--- /See:/ 'deidentifyErrorDetails' smart constructor.
-data DeidentifyErrorDetails =
-  DeidentifyErrorDetails'
-    { _dedSuccessStoreCount    :: !(Maybe (Textual Int64))
-    , _dedSuccessResourceCount :: !(Maybe (Textual Int64))
-    , _dedFailureResourceCount :: !(Maybe (Textual Int64))
-    , _dedFailureStoreCount    :: !(Maybe (Textual Int64))
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'DeidentifyErrorDetails' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'dedSuccessStoreCount'
---
--- * 'dedSuccessResourceCount'
---
--- * 'dedFailureResourceCount'
---
--- * 'dedFailureStoreCount'
-deidentifyErrorDetails
-    :: DeidentifyErrorDetails
-deidentifyErrorDetails =
-  DeidentifyErrorDetails'
-    { _dedSuccessStoreCount = Nothing
-    , _dedSuccessResourceCount = Nothing
-    , _dedFailureResourceCount = Nothing
-    , _dedFailureStoreCount = Nothing
-    }
-
-
--- | Number of stores successfully processed.
-dedSuccessStoreCount :: Lens' DeidentifyErrorDetails (Maybe Int64)
-dedSuccessStoreCount
-  = lens _dedSuccessStoreCount
-      (\ s a -> s{_dedSuccessStoreCount = a})
-      . mapping _Coerce
-
--- | Number of resources successfully processed.
-dedSuccessResourceCount :: Lens' DeidentifyErrorDetails (Maybe Int64)
-dedSuccessResourceCount
-  = lens _dedSuccessResourceCount
-      (\ s a -> s{_dedSuccessResourceCount = a})
-      . mapping _Coerce
-
--- | Number of resources failed to process.
-dedFailureResourceCount :: Lens' DeidentifyErrorDetails (Maybe Int64)
-dedFailureResourceCount
-  = lens _dedFailureResourceCount
-      (\ s a -> s{_dedFailureResourceCount = a})
-      . mapping _Coerce
-
--- | Number of stores failed to process.
-dedFailureStoreCount :: Lens' DeidentifyErrorDetails (Maybe Int64)
-dedFailureStoreCount
-  = lens _dedFailureStoreCount
-      (\ s a -> s{_dedFailureStoreCount = a})
-      . mapping _Coerce
-
-instance FromJSON DeidentifyErrorDetails where
-        parseJSON
-          = withObject "DeidentifyErrorDetails"
-              (\ o ->
-                 DeidentifyErrorDetails' <$>
-                   (o .:? "successStoreCount") <*>
-                     (o .:? "successResourceCount")
-                     <*> (o .:? "failureResourceCount")
-                     <*> (o .:? "failureStoreCount"))
-
-instance ToJSON DeidentifyErrorDetails where
-        toJSON DeidentifyErrorDetails'{..}
-          = object
-              (catMaybes
-                 [("successStoreCount" .=) <$> _dedSuccessStoreCount,
-                  ("successResourceCount" .=) <$>
-                    _dedSuccessResourceCount,
-                  ("failureResourceCount" .=) <$>
-                    _dedFailureResourceCount,
-                  ("failureStoreCount" .=) <$> _dedFailureStoreCount])
-
--- | Specifies where notifications should be sent upon changes to a data
--- store.
+-- | Specifies where to send notifications upon changes to a data store.
 --
 -- /See:/ 'notificationConfig' smart constructor.
 newtype NotificationConfig =
@@ -597,16 +484,21 @@ notificationConfig = NotificationConfig' {_ncPubsubTopic = Nothing}
 
 -- | The [Cloud Pub\/Sub](https:\/\/cloud.google.com\/pubsub\/docs\/) topic
 -- that notifications of changes are published on. Supplied by the client.
--- PubsubMessage.Data will contain the resource name.
--- PubsubMessage.MessageId is the ID of this message. It is guaranteed to
--- be unique within the topic. PubsubMessage.PublishTime is the time at
--- which the message was published. Notifications are only sent if the
--- topic is non-empty. [Topic
+-- PubsubMessage.Data contains the resource name. PubsubMessage.MessageId
+-- is the ID of this message. It is guaranteed to be unique within the
+-- topic. PubsubMessage.PublishTime is the time at which the message was
+-- published. Notifications are only sent if the topic is non-empty. [Topic
 -- names](https:\/\/cloud.google.com\/pubsub\/docs\/overview#names) must be
--- scoped to a project. cloud-healthcare\'system.gserviceaccount.com must
--- have publisher permissions on the given Cloud Pub\/Sub topic. Not having
--- adequate permissions will cause the calls that send notifications to
--- fail.
+-- scoped to a project. Cloud Healthcare API service account must have
+-- publisher permissions on the given Cloud Pub\/Sub topic. Not having
+-- adequate permissions causes the calls that send notifications to fail.
+-- If a notification can\'t be published to Cloud Pub\/Sub, errors are
+-- logged to Cloud Logging (see [Viewing
+-- logs](\/healthcare\/docs\/how-tos\/logging)). If the number of errors
+-- exceeds a certain rate, some aren\'t submitted. Note that not all
+-- operations trigger notifications, see [Configuring Pub\/Sub
+-- notifications](https:\/\/cloud.google.com\/healthcare\/docs\/how-tos\/pubsub)
+-- for specific details.
 ncPubsubTopic :: Lens' NotificationConfig (Maybe Text)
 ncPubsubTopic
   = lens _ncPubsubTopic
@@ -623,69 +515,32 @@ instance ToJSON NotificationConfig where
           = object
               (catMaybes [("pubsubTopic" .=) <$> _ncPubsubTopic])
 
--- | Final response of importing resources. This structure will be included
--- in the response to describe the detailed outcome. It will only be
--- included when the operation finishes successfully.
+-- | Final response of importing resources. This structure is included in the
+-- response to describe the detailed outcome after the operation finishes
+-- successfully.
 --
--- /See:/ 'googleCloudHealthcareV1beta1FhirRestImportResourcesResponse' smart constructor.
-data GoogleCloudHealthcareV1beta1FhirRestImportResourcesResponse =
-  GoogleCloudHealthcareV1beta1FhirRestImportResourcesResponse'
-    { _gchvfrirrFhirStore :: !(Maybe Text)
-    , _gchvfrirrInputSize :: !(Maybe (Textual Int64))
-    }
+-- /See:/ 'importResourcesResponse' smart constructor.
+data ImportResourcesResponse =
+  ImportResourcesResponse'
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'GoogleCloudHealthcareV1beta1FhirRestImportResourcesResponse' with the minimum fields required to make a request.
+-- | Creates a value of 'ImportResourcesResponse' with the minimum fields required to make a request.
 --
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'gchvfrirrFhirStore'
---
--- * 'gchvfrirrInputSize'
-googleCloudHealthcareV1beta1FhirRestImportResourcesResponse
-    :: GoogleCloudHealthcareV1beta1FhirRestImportResourcesResponse
-googleCloudHealthcareV1beta1FhirRestImportResourcesResponse =
-  GoogleCloudHealthcareV1beta1FhirRestImportResourcesResponse'
-    {_gchvfrirrFhirStore = Nothing, _gchvfrirrInputSize = Nothing}
+importResourcesResponse
+    :: ImportResourcesResponse
+importResourcesResponse = ImportResourcesResponse'
 
 
--- | The name of the FHIR store where the resources have been imported, in
--- the format
--- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\/fhirStores\/{fhir_store_id}\`.
-gchvfrirrFhirStore :: Lens' GoogleCloudHealthcareV1beta1FhirRestImportResourcesResponse (Maybe Text)
-gchvfrirrFhirStore
-  = lens _gchvfrirrFhirStore
-      (\ s a -> s{_gchvfrirrFhirStore = a})
-
--- | The total number of resources included in the source data.
-gchvfrirrInputSize :: Lens' GoogleCloudHealthcareV1beta1FhirRestImportResourcesResponse (Maybe Int64)
-gchvfrirrInputSize
-  = lens _gchvfrirrInputSize
-      (\ s a -> s{_gchvfrirrInputSize = a})
-      . mapping _Coerce
-
-instance FromJSON
-           GoogleCloudHealthcareV1beta1FhirRestImportResourcesResponse
-         where
+instance FromJSON ImportResourcesResponse where
         parseJSON
-          = withObject
-              "GoogleCloudHealthcareV1beta1FhirRestImportResourcesResponse"
-              (\ o ->
-                 GoogleCloudHealthcareV1beta1FhirRestImportResourcesResponse'
-                   <$> (o .:? "fhirStore") <*> (o .:? "inputSize"))
+          = withObject "ImportResourcesResponse"
+              (\ o -> pure ImportResourcesResponse')
 
-instance ToJSON
-           GoogleCloudHealthcareV1beta1FhirRestImportResourcesResponse
-         where
-        toJSON
-          GoogleCloudHealthcareV1beta1FhirRestImportResourcesResponse'{..}
-          = object
-              (catMaybes
-                 [("fhirStore" .=) <$> _gchvfrirrFhirStore,
-                  ("inputSize" .=) <$> _gchvfrirrInputSize])
+instance ToJSON ImportResourcesResponse where
+        toJSON = const emptyObject
 
--- | Specifies how de-identification of a FHIR store should be handled.
+-- | Specifies how to handle de-identification of a FHIR store.
 --
 -- /See:/ 'fhirConfig' smart constructor.
 newtype FhirConfig =
@@ -706,7 +561,7 @@ fhirConfig = FhirConfig' {_fcFieldMetadataList = Nothing}
 
 
 -- | Specifies FHIR paths to match and how to transform them. Any field that
--- is not matched by a FieldMetadata will be passed through to the output
+-- is not matched by a FieldMetadata is passed through to the output
 -- dataset unmodified. All extensions are removed in the output.
 fcFieldMetadataList :: Lens' FhirConfig [FieldMetadata]
 fcFieldMetadataList
@@ -728,9 +583,23 @@ instance ToJSON FhirConfig where
               (catMaybes
                  [("fieldMetadataList" .=) <$> _fcFieldMetadataList])
 
--- | Represents an expression text. Example: title: \"User account presence\"
--- description: \"Determines whether the request has a user account\"
--- expression: \"size(request.user) > 0\"
+-- | Represents a textual expression in the Common Expression Language (CEL)
+-- syntax. CEL is a C-like expression language. The syntax and semantics of
+-- CEL are documented at https:\/\/github.com\/google\/cel-spec. Example
+-- (Comparison): title: \"Summary size limit\" description: \"Determines if
+-- a summary is less than 100 chars\" expression: \"document.summary.size()
+-- \< 100\" Example (Equality): title: \"Requestor is owner\" description:
+-- \"Determines if requestor is the document owner\" expression:
+-- \"document.owner == request.auth.claims.email\" Example (Logic): title:
+-- \"Public documents\" description: \"Determine whether the document
+-- should be publicly visible\" expression: \"document.type != \'private\'
+-- && document.type != \'internal\'\" Example (Data Manipulation): title:
+-- \"Notification string\" description: \"Create a notification string with
+-- a timestamp.\" expression: \"\'New message received at \' +
+-- string(document.create_time)\" The exact variables and functions that
+-- may be referenced within an expression are determined by the service
+-- that evaluates it. See the service documentation for additional
+-- information.
 --
 -- /See:/ 'expr' smart constructor.
 data Expr =
@@ -765,26 +634,25 @@ expr =
     }
 
 
--- | An optional string indicating the location of the expression for error
+-- | Optional. String indicating the location of the expression for error
 -- reporting, e.g. a file name and a position in the file.
 eLocation :: Lens' Expr (Maybe Text)
 eLocation
   = lens _eLocation (\ s a -> s{_eLocation = a})
 
 -- | Textual representation of an expression in Common Expression Language
--- syntax. The application context of the containing message determines
--- which well-known feature set of CEL is supported.
+-- syntax.
 eExpression :: Lens' Expr (Maybe Text)
 eExpression
   = lens _eExpression (\ s a -> s{_eExpression = a})
 
--- | An optional title for the expression, i.e. a short string describing its
+-- | Optional. Title for the expression, i.e. a short string describing its
 -- purpose. This can be used e.g. in UIs which allow to enter the
 -- expression.
 eTitle :: Lens' Expr (Maybe Text)
 eTitle = lens _eTitle (\ s a -> s{_eTitle = a})
 
--- | An optional description of the expression. This is a longer text which
+-- | Optional. Description of the expression. This is a longer text which
 -- describes the expression, e.g. when hovered over it in a UI.
 eDescription :: Lens' Expr (Maybe Text)
 eDescription
@@ -953,76 +821,28 @@ instance ToJSON ListOperationsResponse where
                  [("nextPageToken" .=) <$> _lorNextPageToken,
                   ("operations" .=) <$> _lorOperations])
 
--- | The Cloud Storage location where the output should be written, and the
--- export configuration.
+-- | The request message for Operations.CancelOperation.
 --
--- /See:/ 'googleCloudHealthcareV1beta1DicomGcsDestination' smart constructor.
-data GoogleCloudHealthcareV1beta1DicomGcsDestination =
-  GoogleCloudHealthcareV1beta1DicomGcsDestination'
-    { _gchvdgdURIPrefix :: !(Maybe Text)
-    , _gchvdgdMimeType  :: !(Maybe Text)
-    }
+-- /See:/ 'cancelOperationRequest' smart constructor.
+data CancelOperationRequest =
+  CancelOperationRequest'
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'GoogleCloudHealthcareV1beta1DicomGcsDestination' with the minimum fields required to make a request.
+-- | Creates a value of 'CancelOperationRequest' with the minimum fields required to make a request.
 --
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'gchvdgdURIPrefix'
---
--- * 'gchvdgdMimeType'
-googleCloudHealthcareV1beta1DicomGcsDestination
-    :: GoogleCloudHealthcareV1beta1DicomGcsDestination
-googleCloudHealthcareV1beta1DicomGcsDestination =
-  GoogleCloudHealthcareV1beta1DicomGcsDestination'
-    {_gchvdgdURIPrefix = Nothing, _gchvdgdMimeType = Nothing}
+cancelOperationRequest
+    :: CancelOperationRequest
+cancelOperationRequest = CancelOperationRequest'
 
 
--- | The Cloud Storage destination to export to. URI for a Cloud Storage
--- directory where result files should be written (in the format
--- \`gs:\/\/{bucket-id}\/{path\/to\/destination\/dir}\`). If there is no
--- trailing slash, the service will append one when composing the object
--- path. The user is responsible for creating the Cloud Storage bucket
--- referenced in \`uri_prefix\`.
-gchvdgdURIPrefix :: Lens' GoogleCloudHealthcareV1beta1DicomGcsDestination (Maybe Text)
-gchvdgdURIPrefix
-  = lens _gchvdgdURIPrefix
-      (\ s a -> s{_gchvdgdURIPrefix = a})
-
--- | MIME types supported by DICOM spec. Each file will be written in the
--- following format:
--- \`...\/{study_id}\/{series_id}\/{instance_id}[\/{frame_number}].{extension}\`
--- The frame_number component will exist only for multi-frame instances.
--- Refer to the DICOM conformance statement for permissible MIME types:
--- https:\/\/cloud.google.com\/healthcare\/docs\/dicom#wado-rs The
--- following extensions will be used for output files: application\/dicom
--- -> .dcm image\/jpeg -> .jpg image\/png -> .png If unspecified, the
--- instances will be exported in their original DICOM format.
-gchvdgdMimeType :: Lens' GoogleCloudHealthcareV1beta1DicomGcsDestination (Maybe Text)
-gchvdgdMimeType
-  = lens _gchvdgdMimeType
-      (\ s a -> s{_gchvdgdMimeType = a})
-
-instance FromJSON
-           GoogleCloudHealthcareV1beta1DicomGcsDestination
-         where
+instance FromJSON CancelOperationRequest where
         parseJSON
-          = withObject
-              "GoogleCloudHealthcareV1beta1DicomGcsDestination"
-              (\ o ->
-                 GoogleCloudHealthcareV1beta1DicomGcsDestination' <$>
-                   (o .:? "uriPrefix") <*> (o .:? "mimeType"))
+          = withObject "CancelOperationRequest"
+              (\ o -> pure CancelOperationRequest')
 
-instance ToJSON
-           GoogleCloudHealthcareV1beta1DicomGcsDestination
-         where
-        toJSON
-          GoogleCloudHealthcareV1beta1DicomGcsDestination'{..}
-          = object
-              (catMaybes
-                 [("uriPrefix" .=) <$> _gchvdgdURIPrefix,
-                  ("mimeType" .=) <$> _gchvdgdMimeType])
+instance ToJSON CancelOperationRequest where
+        toJSON = const emptyObject
 
 -- | Represents a FHIR store.
 --
@@ -1034,8 +854,9 @@ data FhirStore =
     , _fsDisableReferentialIntegrity :: !(Maybe Bool)
     , _fsDisableResourceVersioning   :: !(Maybe Bool)
     , _fsName                        :: !(Maybe Text)
+    , _fsVersion                     :: !(Maybe FhirStoreVersion)
+    , _fsStreamConfigs               :: !(Maybe [StreamConfig])
     , _fsLabels                      :: !(Maybe FhirStoreLabels)
-    , _fsEnableHistoryImport         :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1054,9 +875,11 @@ data FhirStore =
 --
 -- * 'fsName'
 --
--- * 'fsLabels'
+-- * 'fsVersion'
 --
--- * 'fsEnableHistoryImport'
+-- * 'fsStreamConfigs'
+--
+-- * 'fsLabels'
 fhirStore
     :: FhirStore
 fhirStore =
@@ -1066,8 +889,9 @@ fhirStore =
     , _fsDisableReferentialIntegrity = Nothing
     , _fsDisableResourceVersioning = Nothing
     , _fsName = Nothing
+    , _fsVersion = Nothing
+    , _fsStreamConfigs = Nothing
     , _fsLabels = Nothing
-    , _fsEnableHistoryImport = Nothing
     }
 
 
@@ -1075,11 +899,11 @@ fhirStore =
 -- capability](https:\/\/www.hl7.org\/fhir\/capabilitystatement-definitions.html#CapabilityStatement.rest.resource.updateCreate).
 -- This determines if the client can use an Update operation to create a
 -- new resource with a client-specified ID. If false, all IDs are
--- server-assigned through the Create operation and attempts to Update a
--- non-existent resource will return errors. Please treat the audit logs
--- with appropriate levels of care if client-specified resource IDs contain
--- sensitive data such as patient identifiers, those IDs will be part of
--- the FHIR resource path recorded in Cloud audit logs and Cloud Pub\/Sub
+-- server-assigned through the Create operation and attempts to update a
+-- non-existent resource return errors. Please treat the audit logs with
+-- appropriate levels of care if client-specified resource IDs contain
+-- sensitive data such as patient identifiers, those IDs are part of the
+-- FHIR resource path recorded in Cloud audit logs and Cloud Pub\/Sub
 -- notifications.
 fsEnableUpdateCreate :: Lens' FhirStore (Maybe Bool)
 fsEnableUpdateCreate
@@ -1087,9 +911,9 @@ fsEnableUpdateCreate
       (\ s a -> s{_fsEnableUpdateCreate = a})
 
 -- | If non-empty, publish all resource modifications of this FHIR store to
--- this destination. The Cloud Pub\/Sub message attributes will contain a
--- map with a string describing the action that has triggered the
--- notification, e.g. \"action\":\"CreateResource\".
+-- this destination. The Cloud Pub\/Sub message attributes contain a map
+-- with a string describing the action that has triggered the notification.
+-- For example, \"action\":\"CreateResource\".
 fsNotificationConfig :: Lens' FhirStore (Maybe NotificationConfig)
 fsNotificationConfig
   = lens _fsNotificationConfig
@@ -1097,12 +921,12 @@ fsNotificationConfig
 
 -- | Whether to disable referential integrity in this FHIR store. This field
 -- is immutable after FHIR store creation. The default value is false,
--- meaning that the API will enforce referential integrity and fail the
--- requests that will result in inconsistent state in the FHIR store. When
--- this field is set to true, the API will skip referential integrity
--- check. Consequently, operations that rely on references, such as
--- GetPatientEverything, will not return all the results if broken
--- references exist.
+-- meaning that the API enforces referential integrity and fails the
+-- requests that result in inconsistent state in the FHIR store. When this
+-- field is set to true, the API skips referential integrity checks.
+-- Consequently, operations that rely on references, such as
+-- GetPatientEverything, do not return all the results if broken references
+-- exist.
 fsDisableReferentialIntegrity :: Lens' FhirStore (Maybe Bool)
 fsDisableReferentialIntegrity
   = lens _fsDisableReferentialIntegrity
@@ -1110,11 +934,11 @@ fsDisableReferentialIntegrity
 
 -- | Whether to disable resource versioning for this FHIR store. This field
 -- can not be changed after the creation of FHIR store. If set to false,
--- which is the default behavior, all write operations will cause
--- historical versions to be recorded automatically. The historical
--- versions can be fetched through the history APIs, but cannot be updated.
--- If set to true, no historical versions will be kept. The server will
--- send back errors for attempts to read the historical versions.
+-- which is the default behavior, all write operations cause historical
+-- versions to be recorded automatically. The historical versions can be
+-- fetched through the history APIs, but cannot be updated. If set to true,
+-- no historical versions are kept. The server sends errors for attempts to
+-- read the historical versions.
 fsDisableResourceVersioning :: Lens' FhirStore (Maybe Bool)
 fsDisableResourceVersioning
   = lens _fsDisableResourceVersioning
@@ -1124,6 +948,33 @@ fsDisableResourceVersioning
 -- \`projects\/{project_id}\/datasets\/{dataset_id}\/fhirStores\/{fhir_store_id}\`.
 fsName :: Lens' FhirStore (Maybe Text)
 fsName = lens _fsName (\ s a -> s{_fsName = a})
+
+-- | The FHIR specification version that this FHIR store supports natively.
+-- This field is immutable after store creation. Requests are rejected if
+-- they contain FHIR resources of a different version. Version is required
+-- for every FHIR store.
+fsVersion :: Lens' FhirStore (Maybe FhirStoreVersion)
+fsVersion
+  = lens _fsVersion (\ s a -> s{_fsVersion = a})
+
+-- | A list of streaming configs that configure the destinations of streaming
+-- export for every resource mutation in this FHIR store. Each store is
+-- allowed to have up to 10 streaming configs. After a new config is added,
+-- the next resource mutation is streamed to the new location in addition
+-- to the existing ones. When a location is removed from the list, the
+-- server stops streaming to that location. Before adding a new config, you
+-- must add the required
+-- [\`bigquery.dataEditor\`](https:\/\/cloud.google.com\/bigquery\/docs\/access-control#bigquery.dataEditor)
+-- role to your project\'s **Cloud Healthcare Service Agent** [service
+-- account](https:\/\/cloud.google.com\/iam\/docs\/service-accounts). Some
+-- lag (typically on the order of dozens of seconds) is expected before the
+-- results show up in the streaming destination.
+fsStreamConfigs :: Lens' FhirStore [StreamConfig]
+fsStreamConfigs
+  = lens _fsStreamConfigs
+      (\ s a -> s{_fsStreamConfigs = a})
+      . _Default
+      . _Coerce
 
 -- | User-supplied key-value pairs used to organize FHIR stores. Label keys
 -- must be between 1 and 63 characters long, have a UTF-8 encoding of
@@ -1136,16 +987,6 @@ fsName = lens _fsName (\ s a -> s{_fsName = a})
 fsLabels :: Lens' FhirStore (Maybe FhirStoreLabels)
 fsLabels = lens _fsLabels (\ s a -> s{_fsLabels = a})
 
--- | Whether to allow the bulk import API to accept history bundles and
--- directly insert historical resource versions into the FHIR store.
--- Importing resource histories creates resource interactions that appear
--- to have occurred in the past, which clients may not want to allow. If
--- set to false, history bundles within an import will fail with an error.
-fsEnableHistoryImport :: Lens' FhirStore (Maybe Bool)
-fsEnableHistoryImport
-  = lens _fsEnableHistoryImport
-      (\ s a -> s{_fsEnableHistoryImport = a})
-
 instance FromJSON FhirStore where
         parseJSON
           = withObject "FhirStore"
@@ -1156,8 +997,9 @@ instance FromJSON FhirStore where
                      <*> (o .:? "disableReferentialIntegrity")
                      <*> (o .:? "disableResourceVersioning")
                      <*> (o .:? "name")
-                     <*> (o .:? "labels")
-                     <*> (o .:? "enableHistoryImport"))
+                     <*> (o .:? "version")
+                     <*> (o .:? "streamConfigs" .!= mempty)
+                     <*> (o .:? "labels"))
 
 instance ToJSON FhirStore where
         toJSON FhirStore'{..}
@@ -1169,19 +1011,21 @@ instance ToJSON FhirStore where
                     _fsDisableReferentialIntegrity,
                   ("disableResourceVersioning" .=) <$>
                     _fsDisableResourceVersioning,
-                  ("name" .=) <$> _fsName, ("labels" .=) <$> _fsLabels,
-                  ("enableHistoryImport" .=) <$>
-                    _fsEnableHistoryImport])
+                  ("name" .=) <$> _fsName,
+                  ("version" .=) <$> _fsVersion,
+                  ("streamConfigs" .=) <$> _fsStreamConfigs,
+                  ("labels" .=) <$> _fsLabels])
 
 -- | A mapping from the positional location to the value. The key string uses
 -- zero-based indexes separated by dots to identify Fields, components and
 -- sub-components. A bracket notation is also used to identify different
 -- instances of a repeated field. Regex for key:
--- (\\d+)(\\[\\d+\\])?(.\\d+)?(.\\d+)? Examples of (key, value) pairs: -
--- (0.1, \"foo\"): Component 1 of Field 0 has the value \"foo\". - (1.1.2,
--- \"bar\"): Sub-component 2 of Component 1 of field 1 has the value
--- \"bar\". - (1[2].1, \"baz\"): Component 1 of Instance 2 of Field 1,
--- which is repeated, has the value \"baz\".
+-- (\\d+)(\\[\\d+\\])?(.\\d+)?(.\\d+)? Examples of (key, value) pairs: *
+-- (0.1, \"hemoglobin\") denotes that the first component of Field 0 has
+-- the value \"hemoglobin\". * (1.1.2, \"CBC\") denotes that the second
+-- sub-component of the first component of Field 1 has the value \"CBC\". *
+-- (1[0].1, \"HbA1c\") denotes that the first component of the first
+-- Instance of Field 1, which is repeated, has the value \"HbA1c\".
 --
 -- /See:/ 'segmentFields' smart constructor.
 newtype SegmentFields =
@@ -1242,14 +1086,14 @@ dataSet
 dataSet = DataSet' {_dsName = Nothing, _dsTimeZone = Nothing}
 
 
--- | Output only. Resource name of the dataset, of the form
+-- | Resource name of the dataset, of the form
 -- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\`.
 dsName :: Lens' DataSet (Maybe Text)
 dsName = lens _dsName (\ s a -> s{_dsName = a})
 
 -- | The default timezone used by this dataset. Must be a either a valid IANA
 -- time zone name such as \"America\/New_York\" or empty, which defaults to
--- UTC. This is used for parsing times in resources (e.g., HL7 messages)
+-- UTC. This is used for parsing times in resources, such as HL7 messages,
 -- where no explicit timezone is specified.
 dsTimeZone :: Lens' DataSet (Maybe Text)
 dsTimeZone
@@ -1268,60 +1112,29 @@ instance ToJSON DataSet where
                  [("name" .=) <$> _dsName,
                   ("timeZone" .=) <$> _dsTimeZone])
 
--- | Specifies the configuration for importing data from Cloud Storage.
+-- | Returns additional information in regards to a completed DICOM store
+-- import.
 --
--- /See:/ 'googleCloudHealthcareV1beta1FhirRestGcsSource' smart constructor.
-newtype GoogleCloudHealthcareV1beta1FhirRestGcsSource =
-  GoogleCloudHealthcareV1beta1FhirRestGcsSource'
-    { _gchvfrgsURI :: Maybe Text
-    }
+-- /See:/ 'importDicomDataResponse' smart constructor.
+data ImportDicomDataResponse =
+  ImportDicomDataResponse'
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'GoogleCloudHealthcareV1beta1FhirRestGcsSource' with the minimum fields required to make a request.
+-- | Creates a value of 'ImportDicomDataResponse' with the minimum fields required to make a request.
 --
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'gchvfrgsURI'
-googleCloudHealthcareV1beta1FhirRestGcsSource
-    :: GoogleCloudHealthcareV1beta1FhirRestGcsSource
-googleCloudHealthcareV1beta1FhirRestGcsSource =
-  GoogleCloudHealthcareV1beta1FhirRestGcsSource' {_gchvfrgsURI = Nothing}
+importDicomDataResponse
+    :: ImportDicomDataResponse
+importDicomDataResponse = ImportDicomDataResponse'
 
 
--- | Points to a Cloud Storage URI containing file(s) to import. The URI must
--- be in the following format: \`gs:\/\/{bucket_id}\/{object_id}\`. The URI
--- can include wildcards in \`object_id\` and thus identify multiple files.
--- Supported wildcards: * \`*\` to match 0 or more non-separator characters
--- * \`**\` to match 0 or more characters (including separators). Must be
--- used at the end of a path and with no other wildcards in the path. Can
--- also be used with a file extension (such as .ndjson), which imports all
--- files with the extension in the specified directory and its
--- sub-directories. For example,
--- \`gs:\/\/my-bucket\/my-directory\/**.ndjson\` imports all files with
--- \`.ndjson\` extensions in \`my-directory\/\` and its sub-directories. *
--- \`?\` to match 1 character Files matching the wildcard are expected to
--- contain content only, no metadata.
-gchvfrgsURI :: Lens' GoogleCloudHealthcareV1beta1FhirRestGcsSource (Maybe Text)
-gchvfrgsURI
-  = lens _gchvfrgsURI (\ s a -> s{_gchvfrgsURI = a})
-
-instance FromJSON
-           GoogleCloudHealthcareV1beta1FhirRestGcsSource
-         where
+instance FromJSON ImportDicomDataResponse where
         parseJSON
-          = withObject
-              "GoogleCloudHealthcareV1beta1FhirRestGcsSource"
-              (\ o ->
-                 GoogleCloudHealthcareV1beta1FhirRestGcsSource' <$>
-                   (o .:? "uri"))
+          = withObject "ImportDicomDataResponse"
+              (\ o -> pure ImportDicomDataResponse')
 
-instance ToJSON
-           GoogleCloudHealthcareV1beta1FhirRestGcsSource
-         where
-        toJSON
-          GoogleCloudHealthcareV1beta1FhirRestGcsSource'{..}
-          = object (catMaybes [("uri" .=) <$> _gchvfrgsURI])
+instance ToJSON ImportDicomDataResponse where
+        toJSON = const emptyObject
 
 -- | A resource that represents Google Cloud Platform location.
 --
@@ -1473,7 +1286,8 @@ oResponse
 
 -- | The server-assigned name, which is only unique within the same service
 -- that originally returns it. If you use the default HTTP mapping, the
--- \`name\` should have the format of \`operations\/some\/unique\/name\`.
+-- \`name\` should be a resource name ending with
+-- \`operations\/{unique_id}\`.
 oName :: Lens' Operation (Maybe Text)
 oName = lens _oName (\ s a -> s{_oName = a})
 
@@ -1504,7 +1318,7 @@ instance ToJSON Operation where
                   ("name" .=) <$> _oName,
                   ("metadata" .=) <$> _oMetadata])
 
--- | Specifies how de-identification of image pixel should be handled.
+-- | Specifies how to handle de-identification of image pixels.
 --
 -- /See:/ 'imageConfig' smart constructor.
 newtype ImageConfig =
@@ -1567,14 +1381,14 @@ instance ToJSON Empty where
         toJSON = const emptyObject
 
 -- | Imports data into the specified DICOM store. Returns an error if any of
--- the files to import are not DICOM files. This API will accept duplicate
--- DICOM instances, by simply ignoring the newly pushed instance (it will
--- not overwrite).
+-- the files to import are not DICOM files. This API accepts duplicate
+-- DICOM instances by ignoring the newly-pushed instance. It does not
+-- overwrite.
 --
 -- /See:/ 'importDicomDataRequest' smart constructor.
 newtype ImportDicomDataRequest =
   ImportDicomDataRequest'
-    { _iddrGcsSource :: Maybe GoogleCloudHealthcareV1beta1DicomGcsSource
+    { _iddrGcsSource :: Maybe GoogleCloudHealthcareV1DicomGcsSource
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1592,7 +1406,7 @@ importDicomDataRequest = ImportDicomDataRequest' {_iddrGcsSource = Nothing}
 -- | Cloud Storage source data location and import configuration. The Cloud
 -- Storage location requires the \`roles\/storage.objectViewer\` Cloud IAM
 -- role.
-iddrGcsSource :: Lens' ImportDicomDataRequest (Maybe GoogleCloudHealthcareV1beta1DicomGcsSource)
+iddrGcsSource :: Lens' ImportDicomDataRequest (Maybe GoogleCloudHealthcareV1DicomGcsSource)
 iddrGcsSource
   = lens _iddrGcsSource
       (\ s a -> s{_iddrGcsSource = a})
@@ -1608,15 +1422,77 @@ instance ToJSON ImportDicomDataRequest where
           = object
               (catMaybes [("gcsSource" .=) <$> _iddrGcsSource])
 
+-- | The BigQuery table where the server writes the output.
+--
+-- /See:/ 'googleCloudHealthcareV1DicomBigQueryDestination' smart constructor.
+data GoogleCloudHealthcareV1DicomBigQueryDestination =
+  GoogleCloudHealthcareV1DicomBigQueryDestination'
+    { _gchvdbqdForce    :: !(Maybe Bool)
+    , _gchvdbqdTableURI :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleCloudHealthcareV1DicomBigQueryDestination' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gchvdbqdForce'
+--
+-- * 'gchvdbqdTableURI'
+googleCloudHealthcareV1DicomBigQueryDestination
+    :: GoogleCloudHealthcareV1DicomBigQueryDestination
+googleCloudHealthcareV1DicomBigQueryDestination =
+  GoogleCloudHealthcareV1DicomBigQueryDestination'
+    {_gchvdbqdForce = Nothing, _gchvdbqdTableURI = Nothing}
+
+
+-- | If the destination table already exists and this flag is \`TRUE\`, the
+-- table is overwritten by the contents of the DICOM store. If the flag is
+-- not set and the destination table already exists, the export call
+-- returns an error.
+gchvdbqdForce :: Lens' GoogleCloudHealthcareV1DicomBigQueryDestination (Maybe Bool)
+gchvdbqdForce
+  = lens _gchvdbqdForce
+      (\ s a -> s{_gchvdbqdForce = a})
+
+-- | BigQuery URI to a table, up to 2000 characters long, in the format
+-- \`bq:\/\/projectId.bqDatasetId.tableId\`
+gchvdbqdTableURI :: Lens' GoogleCloudHealthcareV1DicomBigQueryDestination (Maybe Text)
+gchvdbqdTableURI
+  = lens _gchvdbqdTableURI
+      (\ s a -> s{_gchvdbqdTableURI = a})
+
+instance FromJSON
+           GoogleCloudHealthcareV1DicomBigQueryDestination
+         where
+        parseJSON
+          = withObject
+              "GoogleCloudHealthcareV1DicomBigQueryDestination"
+              (\ o ->
+                 GoogleCloudHealthcareV1DicomBigQueryDestination' <$>
+                   (o .:? "force") <*> (o .:? "tableUri"))
+
+instance ToJSON
+           GoogleCloudHealthcareV1DicomBigQueryDestination
+         where
+        toJSON
+          GoogleCloudHealthcareV1DicomBigQueryDestination'{..}
+          = object
+              (catMaybes
+                 [("force" .=) <$> _gchvdbqdForce,
+                  ("tableUri" .=) <$> _gchvdbqdTableURI])
+
 -- | Represents an HL7v2 store.
 --
 -- /See:/ 'hl7V2Store' smart constructor.
 data Hl7V2Store =
   Hl7V2Store'
-    { _hvsNotificationConfig :: !(Maybe NotificationConfig)
-    , _hvsName               :: !(Maybe Text)
-    , _hvsParserConfig       :: !(Maybe ParserConfig)
-    , _hvsLabels             :: !(Maybe Hl7V2StoreLabels)
+    { _hvsNotificationConfigs    :: !(Maybe [Hl7V2NotificationConfig])
+    , _hvsRejectDuplicateMessage :: !(Maybe Bool)
+    , _hvsName                   :: !(Maybe Text)
+    , _hvsParserConfig           :: !(Maybe ParserConfig)
+    , _hvsLabels                 :: !(Maybe Hl7V2StoreLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1625,7 +1501,9 @@ data Hl7V2Store =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'hvsNotificationConfig'
+-- * 'hvsNotificationConfigs'
+--
+-- * 'hvsRejectDuplicateMessage'
 --
 -- * 'hvsName'
 --
@@ -1636,22 +1514,40 @@ hl7V2Store
     :: Hl7V2Store
 hl7V2Store =
   Hl7V2Store'
-    { _hvsNotificationConfig = Nothing
+    { _hvsNotificationConfigs = Nothing
+    , _hvsRejectDuplicateMessage = Nothing
     , _hvsName = Nothing
     , _hvsParserConfig = Nothing
     , _hvsLabels = Nothing
     }
 
 
--- | The notification destination all messages (both Ingest & Create) are
--- published on. Only the message name is sent as part of the notification.
--- If this is unset, no notifications will be sent. Supplied by the client.
-hvsNotificationConfig :: Lens' Hl7V2Store (Maybe NotificationConfig)
-hvsNotificationConfig
-  = lens _hvsNotificationConfig
-      (\ s a -> s{_hvsNotificationConfig = a})
+-- | A list of notification configs. Each configuration uses a filter to
+-- determine whether to publish a message (both Ingest & Create) on the
+-- corresponding notification destination. Only the message name is sent as
+-- part of the notification. Supplied by the client.
+hvsNotificationConfigs :: Lens' Hl7V2Store [Hl7V2NotificationConfig]
+hvsNotificationConfigs
+  = lens _hvsNotificationConfigs
+      (\ s a -> s{_hvsNotificationConfigs = a})
+      . _Default
+      . _Coerce
 
--- | Output only. Resource name of the HL7v2 store, of the form
+-- | Determines whether to reject duplicate messages. A duplicate message is
+-- a message with the same raw bytes as a message that has already been
+-- ingested\/created in this HL7v2 store. The default value is false,
+-- meaning that the store accepts the duplicate messages and it also
+-- returns the same ACK message in the IngestMessageResponse as has been
+-- returned previously. Note that only one resource is created in the
+-- store. When this field is set to true, CreateMessage\/IngestMessage
+-- requests with a duplicate message will be rejected by the store, and
+-- IngestMessageErrorDetail returns a NACK message upon rejection.
+hvsRejectDuplicateMessage :: Lens' Hl7V2Store (Maybe Bool)
+hvsRejectDuplicateMessage
+  = lens _hvsRejectDuplicateMessage
+      (\ s a -> s{_hvsRejectDuplicateMessage = a})
+
+-- | Resource name of the HL7v2 store, of the form
 -- \`projects\/{project_id}\/datasets\/{dataset_id}\/hl7V2Stores\/{hl7v2_store_id}\`.
 hvsName :: Lens' Hl7V2Store (Maybe Text)
 hvsName = lens _hvsName (\ s a -> s{_hvsName = a})
@@ -1680,69 +1576,263 @@ instance FromJSON Hl7V2Store where
           = withObject "Hl7V2Store"
               (\ o ->
                  Hl7V2Store' <$>
-                   (o .:? "notificationConfig") <*> (o .:? "name") <*>
-                     (o .:? "parserConfig")
+                   (o .:? "notificationConfigs" .!= mempty) <*>
+                     (o .:? "rejectDuplicateMessage")
+                     <*> (o .:? "name")
+                     <*> (o .:? "parserConfig")
                      <*> (o .:? "labels"))
 
 instance ToJSON Hl7V2Store where
         toJSON Hl7V2Store'{..}
           = object
               (catMaybes
-                 [("notificationConfig" .=) <$>
-                    _hvsNotificationConfig,
+                 [("notificationConfigs" .=) <$>
+                    _hvsNotificationConfigs,
+                  ("rejectDuplicateMessage" .=) <$>
+                    _hvsRejectDuplicateMessage,
                   ("name" .=) <$> _hvsName,
                   ("parserConfig" .=) <$> _hvsParserConfig,
                   ("labels" .=) <$> _hvsLabels])
 
--- | The configuration for exporting to Cloud Storage.
+-- | Specifies the configuration for importing data from Cloud Storage.
 --
--- /See:/ 'googleCloudHealthcareV1beta1FhirRestGcsDestination' smart constructor.
-newtype GoogleCloudHealthcareV1beta1FhirRestGcsDestination =
-  GoogleCloudHealthcareV1beta1FhirRestGcsDestination'
-    { _gchvfrgdURIPrefix :: Maybe Text
+-- /See:/ 'googleCloudHealthcareV1DicomGcsSource' smart constructor.
+newtype GoogleCloudHealthcareV1DicomGcsSource =
+  GoogleCloudHealthcareV1DicomGcsSource'
+    { _gchvdgsURI :: Maybe Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'GoogleCloudHealthcareV1beta1FhirRestGcsDestination' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleCloudHealthcareV1DicomGcsSource' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'gchvfrgdURIPrefix'
-googleCloudHealthcareV1beta1FhirRestGcsDestination
-    :: GoogleCloudHealthcareV1beta1FhirRestGcsDestination
-googleCloudHealthcareV1beta1FhirRestGcsDestination =
-  GoogleCloudHealthcareV1beta1FhirRestGcsDestination'
-    {_gchvfrgdURIPrefix = Nothing}
+-- * 'gchvdgsURI'
+googleCloudHealthcareV1DicomGcsSource
+    :: GoogleCloudHealthcareV1DicomGcsSource
+googleCloudHealthcareV1DicomGcsSource =
+  GoogleCloudHealthcareV1DicomGcsSource' {_gchvdgsURI = Nothing}
 
 
--- | URI for a Cloud Storage directory where result files should be written
--- (in the format \`gs:\/\/{bucket-id}\/{path\/to\/destination\/dir}\`). If
--- there is no trailing slash, the service will append one when composing
--- the object path. The user is responsible for creating the Cloud Storage
--- bucket referenced in \`uri_prefix\`.
-gchvfrgdURIPrefix :: Lens' GoogleCloudHealthcareV1beta1FhirRestGcsDestination (Maybe Text)
-gchvfrgdURIPrefix
-  = lens _gchvfrgdURIPrefix
-      (\ s a -> s{_gchvfrgdURIPrefix = a})
+-- | Points to a Cloud Storage URI containing file(s) with content only. The
+-- URI must be in the following format:
+-- \`gs:\/\/{bucket_id}\/{object_id}\`. The URI can include wildcards in
+-- \`object_id\` and thus identify multiple files. Supported wildcards:
+-- \'*\' to match 0 or more non-separator characters \'**\' to match 0 or
+-- more characters (including separators). Must be used at the end of a
+-- path and with no other wildcards in the path. Can also be used with a
+-- file extension (such as .dcm), which imports all files with the
+-- extension in the specified directory and its sub-directories. For
+-- example, \`gs:\/\/my-bucket\/my-directory\/**.dcm\` imports all files
+-- with .dcm extensions in \`my-directory\/\` and its sub-directories.
+-- \'?\' to match 1 character All other URI formats are invalid. Files
+-- matching the wildcard are expected to contain content only, no metadata.
+gchvdgsURI :: Lens' GoogleCloudHealthcareV1DicomGcsSource (Maybe Text)
+gchvdgsURI
+  = lens _gchvdgsURI (\ s a -> s{_gchvdgsURI = a})
 
 instance FromJSON
-           GoogleCloudHealthcareV1beta1FhirRestGcsDestination
+           GoogleCloudHealthcareV1DicomGcsSource
+         where
+        parseJSON
+          = withObject "GoogleCloudHealthcareV1DicomGcsSource"
+              (\ o ->
+                 GoogleCloudHealthcareV1DicomGcsSource' <$>
+                   (o .:? "uri"))
+
+instance ToJSON GoogleCloudHealthcareV1DicomGcsSource
+         where
+        toJSON GoogleCloudHealthcareV1DicomGcsSource'{..}
+          = object (catMaybes [("uri" .=) <$> _gchvdgsURI])
+
+-- | Specifies where and whether to send notifications upon changes to a data
+-- store.
+--
+-- /See:/ 'hl7V2NotificationConfig' smart constructor.
+data Hl7V2NotificationConfig =
+  Hl7V2NotificationConfig'
+    { _hvncPubsubTopic :: !(Maybe Text)
+    , _hvncFilter      :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'Hl7V2NotificationConfig' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'hvncPubsubTopic'
+--
+-- * 'hvncFilter'
+hl7V2NotificationConfig
+    :: Hl7V2NotificationConfig
+hl7V2NotificationConfig =
+  Hl7V2NotificationConfig' {_hvncPubsubTopic = Nothing, _hvncFilter = Nothing}
+
+
+-- | The [Cloud Pub\/Sub](https:\/\/cloud.google.com\/pubsub\/docs\/) topic
+-- that notifications of changes are published on. Supplied by the client.
+-- The notification is a \`PubsubMessage\` with the following fields: *
+-- \`PubsubMessage.Data\` contains the resource name. *
+-- \`PubsubMessage.MessageId\` is the ID of this notification. It\'s
+-- guaranteed to be unique within the topic. *
+-- \`PubsubMessage.PublishTime\` is the time when the message was
+-- published. Note that notifications are only sent if the topic is
+-- non-empty. [Topic
+-- names](https:\/\/cloud.google.com\/pubsub\/docs\/overview#names) must be
+-- scoped to a project. The Cloud Healthcare API service account,
+-- service-PROJECT_NUMBER\'gcp-sa-healthcare.iam.gserviceaccount.com, must
+-- have publisher permissions on the given Pub\/Sub topic. Not having
+-- adequate permissions causes the calls that send notifications to fail.
+-- If a notification cannot be published to Cloud Pub\/Sub, errors are
+-- logged to Cloud Logging. For more information, see [Viewing error logs
+-- in Cloud Logging](\/healthcare\/docs\/how-tos\/logging)).
+hvncPubsubTopic :: Lens' Hl7V2NotificationConfig (Maybe Text)
+hvncPubsubTopic
+  = lens _hvncPubsubTopic
+      (\ s a -> s{_hvncPubsubTopic = a})
+
+-- | Restricts notifications sent for messages matching a filter. If this is
+-- empty, all messages are matched. Syntax:
+-- https:\/\/cloud.google.com\/appengine\/docs\/standard\/python\/search\/query_strings
+-- The following fields and functions are available for filtering: *
+-- \`message_type\`, from the MSH-9.1 field. For example, \`NOT
+-- message_type = \"ADT\"\`. * \`send_date\` or \`sendDate\`, the
+-- YYYY-MM-DD date the message was sent in the dataset\'s time_zone, from
+-- the MSH-7 segment. For example, \`send_date \< \"2017-01-02\"\`. *
+-- \`send_time\`, the timestamp when the message was sent, using the
+-- RFC3339 time format for comparisons, from the MSH-7 segment. For
+-- example, \`send_time \< \"2017-01-02T00:00:00-05:00\"\`. *
+-- \`send_facility\`, the care center that the message came from, from the
+-- MSH-4 segment. For example, \`send_facility = \"ABC\"\`. *
+-- \`PatientId(value, type)\`, which matches if the message lists a patient
+-- having an ID of the given value and type in the PID-2, PID-3, or PID-4
+-- segments. For example, \`PatientId(\"123456\", \"MRN\")\`. *
+-- \`labels.x\`, a string value of the label with key \`x\` as set using
+-- the Message.labels map. For example, \`labels.\"priority\"=\"high\"\`.
+-- The operator \`:*\` can be used to assert the existence of a label. For
+-- example, \`labels.\"priority\":*\`.
+hvncFilter :: Lens' Hl7V2NotificationConfig (Maybe Text)
+hvncFilter
+  = lens _hvncFilter (\ s a -> s{_hvncFilter = a})
+
+instance FromJSON Hl7V2NotificationConfig where
+        parseJSON
+          = withObject "Hl7V2NotificationConfig"
+              (\ o ->
+                 Hl7V2NotificationConfig' <$>
+                   (o .:? "pubsubTopic") <*> (o .:? "filter"))
+
+instance ToJSON Hl7V2NotificationConfig where
+        toJSON Hl7V2NotificationConfig'{..}
+          = object
+              (catMaybes
+                 [("pubsubTopic" .=) <$> _hvncPubsubTopic,
+                  ("filter" .=) <$> _hvncFilter])
+
+-- | Contains a summary of the DeidentifyFhirStore operation.
+--
+-- /See:/ 'googleCloudHealthcareV1DeidentifyDeidentifyFhirStoreSummary' smart constructor.
+data GoogleCloudHealthcareV1DeidentifyDeidentifyFhirStoreSummary =
+  GoogleCloudHealthcareV1DeidentifyDeidentifyFhirStoreSummary'
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleCloudHealthcareV1DeidentifyDeidentifyFhirStoreSummary' with the minimum fields required to make a request.
+--
+googleCloudHealthcareV1DeidentifyDeidentifyFhirStoreSummary
+    :: GoogleCloudHealthcareV1DeidentifyDeidentifyFhirStoreSummary
+googleCloudHealthcareV1DeidentifyDeidentifyFhirStoreSummary =
+  GoogleCloudHealthcareV1DeidentifyDeidentifyFhirStoreSummary'
+
+
+instance FromJSON
+           GoogleCloudHealthcareV1DeidentifyDeidentifyFhirStoreSummary
          where
         parseJSON
           = withObject
-              "GoogleCloudHealthcareV1beta1FhirRestGcsDestination"
+              "GoogleCloudHealthcareV1DeidentifyDeidentifyFhirStoreSummary"
               (\ o ->
-                 GoogleCloudHealthcareV1beta1FhirRestGcsDestination'
-                   <$> (o .:? "uriPrefix"))
+                 pure
+                   GoogleCloudHealthcareV1DeidentifyDeidentifyFhirStoreSummary')
 
 instance ToJSON
-           GoogleCloudHealthcareV1beta1FhirRestGcsDestination
+           GoogleCloudHealthcareV1DeidentifyDeidentifyFhirStoreSummary
          where
-        toJSON
-          GoogleCloudHealthcareV1beta1FhirRestGcsDestination'{..}
+        toJSON = const emptyObject
+
+-- | The configuration for exporting to Cloud Storage.
+--
+-- /See:/ 'googleCloudHealthcareV1FhirGcsDestination' smart constructor.
+newtype GoogleCloudHealthcareV1FhirGcsDestination =
+  GoogleCloudHealthcareV1FhirGcsDestination'
+    { _gchvfgdURIPrefix :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleCloudHealthcareV1FhirGcsDestination' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gchvfgdURIPrefix'
+googleCloudHealthcareV1FhirGcsDestination
+    :: GoogleCloudHealthcareV1FhirGcsDestination
+googleCloudHealthcareV1FhirGcsDestination =
+  GoogleCloudHealthcareV1FhirGcsDestination' {_gchvfgdURIPrefix = Nothing}
+
+
+-- | URI for a Cloud Storage directory where result files should be written,
+-- in the format of \`gs:\/\/{bucket-id}\/{path\/to\/destination\/dir}\`.
+-- If there is no trailing slash, the service appends one when composing
+-- the object path. The user is responsible for creating the Cloud Storage
+-- bucket referenced in \`uri_prefix\`.
+gchvfgdURIPrefix :: Lens' GoogleCloudHealthcareV1FhirGcsDestination (Maybe Text)
+gchvfgdURIPrefix
+  = lens _gchvfgdURIPrefix
+      (\ s a -> s{_gchvfgdURIPrefix = a})
+
+instance FromJSON
+           GoogleCloudHealthcareV1FhirGcsDestination
+         where
+        parseJSON
+          = withObject
+              "GoogleCloudHealthcareV1FhirGcsDestination"
+              (\ o ->
+                 GoogleCloudHealthcareV1FhirGcsDestination' <$>
+                   (o .:? "uriPrefix"))
+
+instance ToJSON
+           GoogleCloudHealthcareV1FhirGcsDestination
+         where
+        toJSON GoogleCloudHealthcareV1FhirGcsDestination'{..}
           = object
-              (catMaybes [("uriPrefix" .=) <$> _gchvfrgdURIPrefix])
+              (catMaybes [("uriPrefix" .=) <$> _gchvfgdURIPrefix])
+
+-- | Returns additional information in regards to a completed DICOM store
+-- export.
+--
+-- /See:/ 'exportDicomDataResponse' smart constructor.
+data ExportDicomDataResponse =
+  ExportDicomDataResponse'
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ExportDicomDataResponse' with the minimum fields required to make a request.
+--
+exportDicomDataResponse
+    :: ExportDicomDataResponse
+exportDicomDataResponse = ExportDicomDataResponse'
+
+
+instance FromJSON ExportDicomDataResponse where
+        parseJSON
+          = withObject "ExportDicomDataResponse"
+              (\ o -> pure ExportDicomDataResponse')
+
+instance ToJSON ExportDicomDataResponse where
+        toJSON = const emptyObject
 
 --
 -- /See:/ 'statusDetailsItem' smart constructor.
@@ -1808,15 +1898,15 @@ schemaConfig =
 -- For example, \`concept\` in the CodeSystem resource is a recursive
 -- structure; when the depth is 2, the CodeSystem table will have a column
 -- called \`concept.concept\` but not \`concept.concept.concept\`. If not
--- specified or set to 0, the server will use the default value 2.
+-- specified or set to 0, the server will use the default value 2. The
+-- maximum depth allowed is 5.
 scRecursiveStructureDepth :: Lens' SchemaConfig (Maybe Int64)
 scRecursiveStructureDepth
   = lens _scRecursiveStructureDepth
       (\ s a -> s{_scRecursiveStructureDepth = a})
       . mapping _Coerce
 
--- | Specifies the output schema type. If unspecified, the default is
--- \`LOSSLESS\`.
+-- | Specifies the output schema type. Schema type is required.
 scSchemaType :: Lens' SchemaConfig (Maybe SchemaConfigSchemaType)
 scSchemaType
   = lens _scSchemaType (\ s a -> s{_scSchemaType = a})
@@ -1836,98 +1926,6 @@ instance ToJSON SchemaConfig where
                  [("recursiveStructureDepth" .=) <$>
                     _scRecursiveStructureDepth,
                   ("schemaType" .=) <$> _scSchemaType])
-
--- | Error response of importing resources. This structure will be included
--- in the error details to describe the detailed error. It will only be
--- included when the operation finishes with some failure.
---
--- /See:/ 'googleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails' smart constructor.
-data GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails =
-  GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails'
-    { _gchvfriredFhirStore    :: !(Maybe Text)
-    , _gchvfriredErrorCount   :: !(Maybe (Textual Int64))
-    , _gchvfriredSuccessCount :: !(Maybe (Textual Int64))
-    , _gchvfriredInputSize    :: !(Maybe (Textual Int64))
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'gchvfriredFhirStore'
---
--- * 'gchvfriredErrorCount'
---
--- * 'gchvfriredSuccessCount'
---
--- * 'gchvfriredInputSize'
-googleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails
-    :: GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails
-googleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails =
-  GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails'
-    { _gchvfriredFhirStore = Nothing
-    , _gchvfriredErrorCount = Nothing
-    , _gchvfriredSuccessCount = Nothing
-    , _gchvfriredInputSize = Nothing
-    }
-
-
--- | The name of the FHIR store where resources have been imported, in the
--- format
--- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\/fhirStores\/{fhir_store_id}\`.
-gchvfriredFhirStore :: Lens' GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails (Maybe Text)
-gchvfriredFhirStore
-  = lens _gchvfriredFhirStore
-      (\ s a -> s{_gchvfriredFhirStore = a})
-
--- | The number of resources that had errors.
-gchvfriredErrorCount :: Lens' GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails (Maybe Int64)
-gchvfriredErrorCount
-  = lens _gchvfriredErrorCount
-      (\ s a -> s{_gchvfriredErrorCount = a})
-      . mapping _Coerce
-
--- | The number of resources that have been imported.
-gchvfriredSuccessCount :: Lens' GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails (Maybe Int64)
-gchvfriredSuccessCount
-  = lens _gchvfriredSuccessCount
-      (\ s a -> s{_gchvfriredSuccessCount = a})
-      . mapping _Coerce
-
--- | The total number of resources included in the source data. This is the
--- sum of the success and error counts.
-gchvfriredInputSize :: Lens' GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails (Maybe Int64)
-gchvfriredInputSize
-  = lens _gchvfriredInputSize
-      (\ s a -> s{_gchvfriredInputSize = a})
-      . mapping _Coerce
-
-instance FromJSON
-           GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails
-         where
-        parseJSON
-          = withObject
-              "GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails"
-              (\ o ->
-                 GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails'
-                   <$>
-                   (o .:? "fhirStore") <*> (o .:? "errorCount") <*>
-                     (o .:? "successCount")
-                     <*> (o .:? "inputSize"))
-
-instance ToJSON
-           GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails
-         where
-        toJSON
-          GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails'{..}
-          = object
-              (catMaybes
-                 [("fhirStore" .=) <$> _gchvfriredFhirStore,
-                  ("errorCount" .=) <$> _gchvfriredErrorCount,
-                  ("successCount" .=) <$> _gchvfriredSuccessCount,
-                  ("inputSize" .=) <$> _gchvfriredInputSize])
 
 -- | Shift a date forward or backward in time by a random amount which is
 -- consistent for a given patient and crypto key combination.
@@ -1952,8 +1950,7 @@ dateShiftConfig = DateShiftConfig' {_dscCryptoKey = Nothing}
 
 -- | An AES 128\/192\/256 bit key. Causes the shift to be computed based on
 -- this key and the patient ID. A default key is generated for each
--- DeidentifyDataset operation and is used wherever crypto_key is not
--- specified.
+-- Deidentify operation and is used wherever crypto_key is not specified.
 dscCryptoKey :: Lens' DateShiftConfig (Maybe ByteString)
 dscCryptoKey
   = lens _dscCryptoKey (\ s a -> s{_dscCryptoKey = a})
@@ -1995,8 +1992,7 @@ setIAMPolicyRequest =
 
 -- | OPTIONAL: A FieldMask specifying which fields of the policy to modify.
 -- Only the fields in the mask will be modified. If no mask is provided,
--- the following default mask is used: paths: \"bindings, etag\" This field
--- is only used by Cloud IAM.
+-- the following default mask is used: \`paths: \"bindings, etag\"\`
 siprUpdateMask :: Lens' SetIAMPolicyRequest (Maybe GFieldMask)
 siprUpdateMask
   = lens _siprUpdateMask
@@ -2024,60 +2020,197 @@ instance ToJSON SetIAMPolicyRequest where
                  [("updateMask" .=) <$> _siprUpdateMask,
                   ("policy" .=) <$> _siprPolicy])
 
--- | Contains a detailed summary of the Deidentify operation.
+-- | Specifies the filter configuration for DICOM resources.
+--
+-- /See:/ 'dicomFilterConfig' smart constructor.
+newtype DicomFilterConfig =
+  DicomFilterConfig'
+    { _dfcResourcePathsGcsURI :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'DicomFilterConfig' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'dfcResourcePathsGcsURI'
+dicomFilterConfig
+    :: DicomFilterConfig
+dicomFilterConfig = DicomFilterConfig' {_dfcResourcePathsGcsURI = Nothing}
+
+
+-- | The Cloud Storage location of the filter configuration file. The
+-- \`gcs_uri\` must be in the format \`gs:\/\/bucket\/path\/to\/object\`.
+-- The filter configuration file must contain a list of resource paths
+-- separated by newline characters (\\n or \\r\\n). Each resource path must
+-- be in the format
+-- \"\/studies\/{studyUID}[\/series\/{seriesUID}[\/instances\/{instanceUID}]]\"
+-- The Cloud Healthcare API service account must have the
+-- \`roles\/storage.objectViewer\` Cloud IAM role for this Cloud Storage
+-- location.
+dfcResourcePathsGcsURI :: Lens' DicomFilterConfig (Maybe Text)
+dfcResourcePathsGcsURI
+  = lens _dfcResourcePathsGcsURI
+      (\ s a -> s{_dfcResourcePathsGcsURI = a})
+
+instance FromJSON DicomFilterConfig where
+        parseJSON
+          = withObject "DicomFilterConfig"
+              (\ o ->
+                 DicomFilterConfig' <$> (o .:? "resourcePathsGcsUri"))
+
+instance ToJSON DicomFilterConfig where
+        toJSON DicomFilterConfig'{..}
+          = object
+              (catMaybes
+                 [("resourcePathsGcsUri" .=) <$>
+                    _dfcResourcePathsGcsURI])
+
+-- | Contains a summary of the Deidentify operation.
 --
 -- /See:/ 'deidentifySummary' smart constructor.
 data DeidentifySummary =
   DeidentifySummary'
-    { _dsSuccessStoreCount    :: !(Maybe (Textual Int64))
-    , _dsSuccessResourceCount :: !(Maybe (Textual Int64))
-    }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
 -- | Creates a value of 'DeidentifySummary' with the minimum fields required to make a request.
 --
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'dsSuccessStoreCount'
---
--- * 'dsSuccessResourceCount'
 deidentifySummary
     :: DeidentifySummary
-deidentifySummary =
-  DeidentifySummary'
-    {_dsSuccessStoreCount = Nothing, _dsSuccessResourceCount = Nothing}
+deidentifySummary = DeidentifySummary'
 
-
--- | Number of stores successfully processed.
-dsSuccessStoreCount :: Lens' DeidentifySummary (Maybe Int64)
-dsSuccessStoreCount
-  = lens _dsSuccessStoreCount
-      (\ s a -> s{_dsSuccessStoreCount = a})
-      . mapping _Coerce
-
--- | Number of resources successfully processed.
-dsSuccessResourceCount :: Lens' DeidentifySummary (Maybe Int64)
-dsSuccessResourceCount
-  = lens _dsSuccessResourceCount
-      (\ s a -> s{_dsSuccessResourceCount = a})
-      . mapping _Coerce
 
 instance FromJSON DeidentifySummary where
         parseJSON
           = withObject "DeidentifySummary"
-              (\ o ->
-                 DeidentifySummary' <$>
-                   (o .:? "successStoreCount") <*>
-                     (o .:? "successResourceCount"))
+              (\ o -> pure DeidentifySummary')
 
 instance ToJSON DeidentifySummary where
-        toJSON DeidentifySummary'{..}
+        toJSON = const emptyObject
+
+-- | The Cloud Storage location where the server writes the output and the
+-- export configuration.
+--
+-- /See:/ 'googleCloudHealthcareV1DicomGcsDestination' smart constructor.
+data GoogleCloudHealthcareV1DicomGcsDestination =
+  GoogleCloudHealthcareV1DicomGcsDestination'
+    { _gchvdgdURIPrefix :: !(Maybe Text)
+    , _gchvdgdMimeType  :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleCloudHealthcareV1DicomGcsDestination' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gchvdgdURIPrefix'
+--
+-- * 'gchvdgdMimeType'
+googleCloudHealthcareV1DicomGcsDestination
+    :: GoogleCloudHealthcareV1DicomGcsDestination
+googleCloudHealthcareV1DicomGcsDestination =
+  GoogleCloudHealthcareV1DicomGcsDestination'
+    {_gchvdgdURIPrefix = Nothing, _gchvdgdMimeType = Nothing}
+
+
+-- | The Cloud Storage destination to export to. URI for a Cloud Storage
+-- directory where the server writes the result files, in the format
+-- \`gs:\/\/{bucket-id}\/{path\/to\/destination\/dir}\`). If there is no
+-- trailing slash, the service appends one when composing the object path.
+-- The user is responsible for creating the Cloud Storage bucket referenced
+-- in \`uri_prefix\`.
+gchvdgdURIPrefix :: Lens' GoogleCloudHealthcareV1DicomGcsDestination (Maybe Text)
+gchvdgdURIPrefix
+  = lens _gchvdgdURIPrefix
+      (\ s a -> s{_gchvdgdURIPrefix = a})
+
+-- | MIME types supported by DICOM spec. Each file is written in the
+-- following format:
+-- \`...\/{study_id}\/{series_id}\/{instance_id}[\/{frame_number}].{extension}\`
+-- The frame_number component exists only for multi-frame instances.
+-- Supported MIME types are consistent with supported formats in DICOMweb:
+-- https:\/\/cloud.google.com\/healthcare\/docs\/dicom#retrieve_transaction.
+-- Specifically, the following are supported: - application\/dicom;
+-- transfer-syntax=1.2.840.10008.1.2.1 (uncompressed DICOM) -
+-- application\/dicom; transfer-syntax=1.2.840.10008.1.2.4.50 (DICOM with
+-- embedded JPEG Baseline) - application\/dicom;
+-- transfer-syntax=1.2.840.10008.1.2.4.90 (DICOM with embedded JPEG 2000
+-- Lossless Only) - application\/dicom;
+-- transfer-syntax=1.2.840.10008.1.2.4.91 (DICOM with embedded JPEG 2000) -
+-- application\/dicom; transfer-syntax=* (DICOM with no transcoding) -
+-- application\/octet-stream; transfer-syntax=1.2.840.10008.1.2.1 (raw
+-- uncompressed PixelData) - application\/octet-stream; transfer-syntax=*
+-- (raw PixelData in whatever format it was uploaded in) - image\/jpeg;
+-- transfer-syntax=1.2.840.10008.1.2.4.50 (Consumer JPEG) - image\/png The
+-- following extensions are used for output files: - application\/dicom ->
+-- .dcm - image\/jpeg -> .jpg - image\/png -> .png -
+-- application\/octet-stream -> no extension If unspecified, the instances
+-- are exported in the original DICOM format they were uploaded in.
+gchvdgdMimeType :: Lens' GoogleCloudHealthcareV1DicomGcsDestination (Maybe Text)
+gchvdgdMimeType
+  = lens _gchvdgdMimeType
+      (\ s a -> s{_gchvdgdMimeType = a})
+
+instance FromJSON
+           GoogleCloudHealthcareV1DicomGcsDestination
+         where
+        parseJSON
+          = withObject
+              "GoogleCloudHealthcareV1DicomGcsDestination"
+              (\ o ->
+                 GoogleCloudHealthcareV1DicomGcsDestination' <$>
+                   (o .:? "uriPrefix") <*> (o .:? "mimeType"))
+
+instance ToJSON
+           GoogleCloudHealthcareV1DicomGcsDestination
+         where
+        toJSON
+          GoogleCloudHealthcareV1DicomGcsDestination'{..}
           = object
               (catMaybes
-                 [("successStoreCount" .=) <$> _dsSuccessStoreCount,
-                  ("successResourceCount" .=) <$>
-                    _dsSuccessResourceCount])
+                 [("uriPrefix" .=) <$> _gchvdgdURIPrefix,
+                  ("mimeType" .=) <$> _gchvdgdMimeType])
+
+-- | A list of FHIR resources.
+--
+-- /See:/ 'resources' smart constructor.
+newtype Resources =
+  Resources'
+    { _rResources :: Maybe [Text]
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'Resources' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'rResources'
+resources
+    :: Resources
+resources = Resources' {_rResources = Nothing}
+
+
+-- | List of resources IDs. For example, \"Patient\/1234\".
+rResources :: Lens' Resources [Text]
+rResources
+  = lens _rResources (\ s a -> s{_rResources = a}) .
+      _Default
+      . _Coerce
+
+instance FromJSON Resources where
+        parseJSON
+          = withObject "Resources"
+              (\ o ->
+                 Resources' <$> (o .:? "resources" .!= mempty))
+
+instance ToJSON Resources where
+        toJSON Resources'{..}
+          = object
+              (catMaybes [("resources" .=) <$> _rResources])
 
 -- | ProgressCounter provides counters to describe an operation\'s progress.
 --
@@ -2141,6 +2274,37 @@ instance ToJSON ProgressCounter where
                   ("success" .=) <$> _pcSuccess,
                   ("failure" .=) <$> _pcFailure])
 
+-- | Contains a summary of the DeidentifyDicomStore operation.
+--
+-- /See:/ 'googleCloudHealthcareV1DeidentifyDeidentifyDicomStoreSummary' smart constructor.
+data GoogleCloudHealthcareV1DeidentifyDeidentifyDicomStoreSummary =
+  GoogleCloudHealthcareV1DeidentifyDeidentifyDicomStoreSummary'
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleCloudHealthcareV1DeidentifyDeidentifyDicomStoreSummary' with the minimum fields required to make a request.
+--
+googleCloudHealthcareV1DeidentifyDeidentifyDicomStoreSummary
+    :: GoogleCloudHealthcareV1DeidentifyDeidentifyDicomStoreSummary
+googleCloudHealthcareV1DeidentifyDeidentifyDicomStoreSummary =
+  GoogleCloudHealthcareV1DeidentifyDeidentifyDicomStoreSummary'
+
+
+instance FromJSON
+           GoogleCloudHealthcareV1DeidentifyDeidentifyDicomStoreSummary
+         where
+        parseJSON
+          = withObject
+              "GoogleCloudHealthcareV1DeidentifyDeidentifyDicomStoreSummary"
+              (\ o ->
+                 pure
+                   GoogleCloudHealthcareV1DeidentifyDeidentifyDicomStoreSummary')
+
+instance ToJSON
+           GoogleCloudHealthcareV1DeidentifyDeidentifyDicomStoreSummary
+         where
+        toJSON = const emptyObject
+
 -- | Specifies FHIR paths to match, and how to handle de-identification of
 -- matching fields.
 --
@@ -2173,10 +2337,11 @@ fmAction = lens _fmAction (\ s a -> s{_fmAction = a})
 -- period-separated list where each component is either a field name or
 -- FHIR type name, for example: Patient, HumanName. For \"choice\" types
 -- (those defined in the FHIR spec with the form: field[x]) we use two
--- separate components. e.g. \"deceasedAge.unit\" is matched by
+-- separate components. For example, \"deceasedAge.unit\" is matched by
 -- \"Deceased.Age.unit\". Supported types are: AdministrativeGenderCode,
 -- Code, Date, DateTime, Decimal, HumanName, Id, LanguageCode, Markdown,
--- MimeTypeCode, Oid, String, Uri, Uuid, Xhtml.
+-- Oid, String, Uri, Uuid, Xhtml. Base64Binary is also supported, but may
+-- only be kept as-is or have all the content removed.
 fmPaths :: Lens' FieldMetadata [Text]
 fmPaths
   = lens _fmPaths (\ s a -> s{_fmPaths = a}) . _Default
@@ -2311,66 +2476,79 @@ instance FromJSON FhirStoreLabels where
 instance ToJSON FhirStoreLabels where
         toJSON = toJSON . _fslAddtional
 
--- | The configuration for exporting to BigQuery.
+-- | Creates a new DICOM store with sensitive information de-identified.
 --
--- /See:/ 'googleCloudHealthcareV1beta1FhirBigQueryDestination' smart constructor.
-data GoogleCloudHealthcareV1beta1FhirBigQueryDestination =
-  GoogleCloudHealthcareV1beta1FhirBigQueryDestination'
-    { _gchvfbqdSchemaConfig :: !(Maybe SchemaConfig)
-    , _gchvfbqdDataSetURI   :: !(Maybe Text)
+-- /See:/ 'deidentifyDicomStoreRequest' smart constructor.
+data DeidentifyDicomStoreRequest =
+  DeidentifyDicomStoreRequest'
+    { _ddsrConfig           :: !(Maybe DeidentifyConfig)
+    , _ddsrFilterConfig     :: !(Maybe DicomFilterConfig)
+    , _ddsrDestinationStore :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'GoogleCloudHealthcareV1beta1FhirBigQueryDestination' with the minimum fields required to make a request.
+-- | Creates a value of 'DeidentifyDicomStoreRequest' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'gchvfbqdSchemaConfig'
+-- * 'ddsrConfig'
 --
--- * 'gchvfbqdDataSetURI'
-googleCloudHealthcareV1beta1FhirBigQueryDestination
-    :: GoogleCloudHealthcareV1beta1FhirBigQueryDestination
-googleCloudHealthcareV1beta1FhirBigQueryDestination =
-  GoogleCloudHealthcareV1beta1FhirBigQueryDestination'
-    {_gchvfbqdSchemaConfig = Nothing, _gchvfbqdDataSetURI = Nothing}
+-- * 'ddsrFilterConfig'
+--
+-- * 'ddsrDestinationStore'
+deidentifyDicomStoreRequest
+    :: DeidentifyDicomStoreRequest
+deidentifyDicomStoreRequest =
+  DeidentifyDicomStoreRequest'
+    { _ddsrConfig = Nothing
+    , _ddsrFilterConfig = Nothing
+    , _ddsrDestinationStore = Nothing
+    }
 
 
--- | The configuration for the exported BigQuery schema.
-gchvfbqdSchemaConfig :: Lens' GoogleCloudHealthcareV1beta1FhirBigQueryDestination (Maybe SchemaConfig)
-gchvfbqdSchemaConfig
-  = lens _gchvfbqdSchemaConfig
-      (\ s a -> s{_gchvfbqdSchemaConfig = a})
+-- | De-identify configuration.
+ddsrConfig :: Lens' DeidentifyDicomStoreRequest (Maybe DeidentifyConfig)
+ddsrConfig
+  = lens _ddsrConfig (\ s a -> s{_ddsrConfig = a})
 
--- | BigQuery URI to a dataset, up to 2000 characters long, in the format
--- \`bq:\/\/projectId.bqDatasetId\`
-gchvfbqdDataSetURI :: Lens' GoogleCloudHealthcareV1beta1FhirBigQueryDestination (Maybe Text)
-gchvfbqdDataSetURI
-  = lens _gchvfbqdDataSetURI
-      (\ s a -> s{_gchvfbqdDataSetURI = a})
+-- | Filter configuration.
+ddsrFilterConfig :: Lens' DeidentifyDicomStoreRequest (Maybe DicomFilterConfig)
+ddsrFilterConfig
+  = lens _ddsrFilterConfig
+      (\ s a -> s{_ddsrFilterConfig = a})
 
-instance FromJSON
-           GoogleCloudHealthcareV1beta1FhirBigQueryDestination
-         where
+-- | The name of the DICOM store to create and write the redacted data to.
+-- For example,
+-- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\/dicomStores\/{dicom_store_id}\`.
+-- * The destination dataset must exist. * The source dataset and
+-- destination dataset must both reside in the same project. De-identifying
+-- data across multiple projects is not supported. * The destination DICOM
+-- store must not exist. * The caller must have the necessary permissions
+-- to create the destination DICOM store.
+ddsrDestinationStore :: Lens' DeidentifyDicomStoreRequest (Maybe Text)
+ddsrDestinationStore
+  = lens _ddsrDestinationStore
+      (\ s a -> s{_ddsrDestinationStore = a})
+
+instance FromJSON DeidentifyDicomStoreRequest where
         parseJSON
-          = withObject
-              "GoogleCloudHealthcareV1beta1FhirBigQueryDestination"
+          = withObject "DeidentifyDicomStoreRequest"
               (\ o ->
-                 GoogleCloudHealthcareV1beta1FhirBigQueryDestination'
-                   <$> (o .:? "schemaConfig") <*> (o .:? "datasetUri"))
+                 DeidentifyDicomStoreRequest' <$>
+                   (o .:? "config") <*> (o .:? "filterConfig") <*>
+                     (o .:? "destinationStore"))
 
-instance ToJSON
-           GoogleCloudHealthcareV1beta1FhirBigQueryDestination
-         where
-        toJSON
-          GoogleCloudHealthcareV1beta1FhirBigQueryDestination'{..}
+instance ToJSON DeidentifyDicomStoreRequest where
+        toJSON DeidentifyDicomStoreRequest'{..}
           = object
               (catMaybes
-                 [("schemaConfig" .=) <$> _gchvfbqdSchemaConfig,
-                  ("datasetUri" .=) <$> _gchvfbqdDataSetURI])
+                 [("config" .=) <$> _ddsrConfig,
+                  ("filterConfig" .=) <$> _ddsrFilterConfig,
+                  ("destinationStore" .=) <$> _ddsrDestinationStore])
 
 -- | When using the INSPECT_AND_TRANSFORM action, each match is replaced with
--- the name of the info_type. For example, \"My name is Jake\" becomes \"My
+-- the name of the info_type. For example, \"My name is Jane\" becomes \"My
 -- name is [PERSON_NAME].\" The TRANSFORM action is equivalent to
 -- redacting.
 --
@@ -2550,7 +2728,7 @@ instance ToJSON ListHl7V2StoresResponse where
 -- /See:/ 'importResourcesRequest' smart constructor.
 data ImportResourcesRequest =
   ImportResourcesRequest'
-    { _irrGcsSource        :: !(Maybe GoogleCloudHealthcareV1beta1FhirRestGcsSource)
+    { _irrGcsSource        :: !(Maybe GoogleCloudHealthcareV1FhirGcsSource)
     , _irrContentStructure :: !(Maybe ImportResourcesRequestContentStructure)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2570,19 +2748,17 @@ importResourcesRequest =
     {_irrGcsSource = Nothing, _irrContentStructure = Nothing}
 
 
--- | Cloud Storage source data location and import configuration. The Cloud
--- Storage location requires the \`roles\/storage.objectViewer\` Cloud IAM
--- role. Each Cloud Storage object should be a text file that contains
--- newline delimited JSON structures conforming to FHIR standard. To
--- improve performance, use multiple Cloud Storage objects where each
--- object contains a subset of all of the newline-delimited JSON
--- structures. You can select all of the objects using the uri as the
--- prefix. The maximum number of objects is 1,000.
-irrGcsSource :: Lens' ImportResourcesRequest (Maybe GoogleCloudHealthcareV1beta1FhirRestGcsSource)
+-- | Cloud Storage source data location and import configuration. The
+-- Healthcare Service Agent account requires the
+-- \`roles\/storage.objectAdmin\` role on the Cloud Storage location. Each
+-- Cloud Storage object should be a text file that contains the format
+-- specified in ContentStructure.
+irrGcsSource :: Lens' ImportResourcesRequest (Maybe GoogleCloudHealthcareV1FhirGcsSource)
 irrGcsSource
   = lens _irrGcsSource (\ s a -> s{_irrGcsSource = a})
 
--- | The content structure in the source location. The default is BUNDLE.
+-- | The content structure in the source location. If not specified, the
+-- server treats the input source files as BUNDLE.
 irrContentStructure :: Lens' ImportResourcesRequest (Maybe ImportResourcesRequestContentStructure)
 irrContentStructure
   = lens _irrContentStructure
@@ -2645,6 +2821,42 @@ instance FromJSON Hl7V2StoreLabels where
 instance ToJSON Hl7V2StoreLabels where
         toJSON = toJSON . _hvslAddtional
 
+-- | Filter configuration.
+--
+-- /See:/ 'fhirFilter' smart constructor.
+newtype FhirFilter =
+  FhirFilter'
+    { _ffResources :: Maybe Resources
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'FhirFilter' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'ffResources'
+fhirFilter
+    :: FhirFilter
+fhirFilter = FhirFilter' {_ffResources = Nothing}
+
+
+-- | List of resources to include in the output. If this list is empty or not
+-- specified, all resources are included in the output.
+ffResources :: Lens' FhirFilter (Maybe Resources)
+ffResources
+  = lens _ffResources (\ s a -> s{_ffResources = a})
+
+instance FromJSON FhirFilter where
+        parseJSON
+          = withObject "FhirFilter"
+              (\ o -> FhirFilter' <$> (o .:? "resources"))
+
+instance ToJSON FhirFilter where
+        toJSON FhirFilter'{..}
+          = object
+              (catMaybes [("resources" .=) <$> _ffResources])
+
 -- | The configuration for the parser. It determines how the server parses
 -- the messages.
 --
@@ -2670,8 +2882,8 @@ parserConfig =
   ParserConfig' {_pcSegmentTerminator = Nothing, _pcAllowNullHeader = Nothing}
 
 
--- | Byte(s) to be used as the segment terminator. If this is unset, \'\\r\'
--- will be used as segment terminator.
+-- | Byte(s) to use as the segment terminator. If this is unset, \'\\r\' is
+-- used as segment terminator.
 pcSegmentTerminator :: Lens' ParserConfig (Maybe ByteString)
 pcSegmentTerminator
   = lens _pcSegmentTerminator
@@ -2920,23 +3132,40 @@ instance ToJSON ListDataSetsResponse where
                  [("nextPageToken" .=) <$> _ldsrNextPageToken,
                   ("datasets" .=) <$> _ldsrDataSets])
 
--- | Defines an Identity and Access Management (IAM) policy. It is used to
--- specify access control policies for Cloud Platform resources. A
--- \`Policy\` consists of a list of \`bindings\`. A \`binding\` binds a
--- list of \`members\` to a \`role\`, where the members can be user
--- accounts, Google groups, Google domains, and service accounts. A
--- \`role\` is a named list of permissions defined by IAM. **JSON Example**
--- { \"bindings\": [ { \"role\": \"roles\/owner\", \"members\": [
+-- | An Identity and Access Management (IAM) policy, which specifies access
+-- controls for Google Cloud resources. A \`Policy\` is a collection of
+-- \`bindings\`. A \`binding\` binds one or more \`members\` to a single
+-- \`role\`. Members can be user accounts, service accounts, Google groups,
+-- and domains (such as G Suite). A \`role\` is a named list of
+-- permissions; each \`role\` can be an IAM predefined role or a
+-- user-created custom role. For some types of Google Cloud resources, a
+-- \`binding\` can also specify a \`condition\`, which is a logical
+-- expression that allows access to a resource only if the expression
+-- evaluates to \`true\`. A condition can add constraints based on
+-- attributes of the request, the resource, or both. To learn which
+-- resources support conditions in their IAM policies, see the [IAM
+-- documentation](https:\/\/cloud.google.com\/iam\/help\/conditions\/resource-policies).
+-- **JSON example:** { \"bindings\": [ { \"role\":
+-- \"roles\/resourcemanager.organizationAdmin\", \"members\": [
 -- \"user:mike\'example.com\", \"group:admins\'example.com\",
 -- \"domain:google.com\",
--- \"serviceAccount:my-other-app\'appspot.gserviceaccount.com\" ] }, {
--- \"role\": \"roles\/viewer\", \"members\": [\"user:sean\'example.com\"] }
--- ] } **YAML Example** bindings: - members: - user:mike\'example.com -
--- group:admins\'example.com - domain:google.com -
--- serviceAccount:my-other-app\'appspot.gserviceaccount.com role:
--- roles\/owner - members: - user:sean\'example.com role: roles\/viewer For
--- a description of IAM and its features, see the [IAM developer\'s
--- guide](https:\/\/cloud.google.com\/iam\/docs).
+-- \"serviceAccount:my-project-id\'appspot.gserviceaccount.com\" ] }, {
+-- \"role\": \"roles\/resourcemanager.organizationViewer\", \"members\": [
+-- \"user:eve\'example.com\" ], \"condition\": { \"title\": \"expirable
+-- access\", \"description\": \"Does not grant access after Sep 2020\",
+-- \"expression\": \"request.time \<
+-- timestamp(\'2020-10-01T00:00:00.000Z\')\", } } ], \"etag\":
+-- \"BwWWja0YfJA=\", \"version\": 3 } **YAML example:** bindings: -
+-- members: - user:mike\'example.com - group:admins\'example.com -
+-- domain:google.com -
+-- serviceAccount:my-project-id\'appspot.gserviceaccount.com role:
+-- roles\/resourcemanager.organizationAdmin - members: -
+-- user:eve\'example.com role: roles\/resourcemanager.organizationViewer
+-- condition: title: expirable access description: Does not grant access
+-- after Sep 2020 expression: request.time \<
+-- timestamp(\'2020-10-01T00:00:00.000Z\') - etag: BwWWja0YfJA= - version:
+-- 3 For a description of IAM and its features, see the [IAM
+-- documentation](https:\/\/cloud.google.com\/iam\/docs\/).
 --
 -- /See:/ 'policy' smart constructor.
 data Policy =
@@ -2986,21 +3215,40 @@ pAuditConfigs
 -- conditions: An \`etag\` is returned in the response to \`getIamPolicy\`,
 -- and systems are expected to put that etag in the request to
 -- \`setIamPolicy\` to ensure that their change will be applied to the same
--- version of the policy. If no \`etag\` is provided in the call to
--- \`setIamPolicy\`, then the existing policy is overwritten blindly.
+-- version of the policy. **Important:** If you use IAM Conditions, you
+-- must include the \`etag\` field whenever you call \`setIamPolicy\`. If
+-- you omit this field, then IAM allows you to overwrite a version \`3\`
+-- policy with a version \`1\` policy, and all of the conditions in the
+-- version \`3\` policy are lost.
 pEtag :: Lens' Policy (Maybe ByteString)
 pEtag
   = lens _pEtag (\ s a -> s{_pEtag = a}) .
       mapping _Bytes
 
--- | Deprecated.
+-- | Specifies the format of the policy. Valid values are \`0\`, \`1\`, and
+-- \`3\`. Requests that specify an invalid value are rejected. Any
+-- operation that affects conditional role bindings must specify version
+-- \`3\`. This requirement applies to the following operations: * Getting a
+-- policy that includes a conditional role binding * Adding a conditional
+-- role binding to a policy * Changing a conditional role binding in a
+-- policy * Removing any role binding, with or without a condition, from a
+-- policy that includes conditions **Important:** If you use IAM
+-- Conditions, you must include the \`etag\` field whenever you call
+-- \`setIamPolicy\`. If you omit this field, then IAM allows you to
+-- overwrite a version \`3\` policy with a version \`1\` policy, and all of
+-- the conditions in the version \`3\` policy are lost. If a policy does
+-- not include any conditions, operations on that policy may specify any
+-- valid version or leave the field unset. To learn which resources support
+-- conditions in their IAM policies, see the [IAM
+-- documentation](https:\/\/cloud.google.com\/iam\/help\/conditions\/resource-policies).
 pVersion :: Lens' Policy (Maybe Int32)
 pVersion
   = lens _pVersion (\ s a -> s{_pVersion = a}) .
       mapping _Coerce
 
--- | Associates a list of \`members\` to a \`role\`. \`bindings\` with no
--- members will result in an error.
+-- | Associates a list of \`members\` to a \`role\`. Optionally, may specify
+-- a \`condition\` that determines how and when the \`bindings\` are
+-- applied. Each of the \`bindings\` must contain at least one member.
 pBindings :: Lens' Policy [Binding]
 pBindings
   = lens _pBindings (\ s a -> s{_pBindings = a}) .
@@ -3192,10 +3440,12 @@ instance ToJSON LocationMetadata where
 -- /See:/ 'operationMetadata' smart constructor.
 data OperationMetadata =
   OperationMetadata'
-    { _omCounter       :: !(Maybe ProgressCounter)
-    , _omEndTime       :: !(Maybe DateTime')
-    , _omAPIMethodName :: !(Maybe Text)
-    , _omCreateTime    :: !(Maybe DateTime')
+    { _omLogsURL         :: !(Maybe Text)
+    , _omCounter         :: !(Maybe ProgressCounter)
+    , _omEndTime         :: !(Maybe DateTime')
+    , _omAPIMethodName   :: !(Maybe Text)
+    , _omCancelRequested :: !(Maybe Bool)
+    , _omCreateTime      :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3204,23 +3454,36 @@ data OperationMetadata =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'omLogsURL'
+--
 -- * 'omCounter'
 --
 -- * 'omEndTime'
 --
 -- * 'omAPIMethodName'
 --
+-- * 'omCancelRequested'
+--
 -- * 'omCreateTime'
 operationMetadata
     :: OperationMetadata
 operationMetadata =
   OperationMetadata'
-    { _omCounter = Nothing
+    { _omLogsURL = Nothing
+    , _omCounter = Nothing
     , _omEndTime = Nothing
     , _omAPIMethodName = Nothing
+    , _omCancelRequested = Nothing
     , _omCreateTime = Nothing
     }
 
+
+-- | A link to audit and error logs in the log viewer. Error logs are
+-- generated only by some operations, listed at [Viewing
+-- logs](\/healthcare\/docs\/how-tos\/logging).
+omLogsURL :: Lens' OperationMetadata (Maybe Text)
+omLogsURL
+  = lens _omLogsURL (\ s a -> s{_omLogsURL = a})
 
 omCounter :: Lens' OperationMetadata (Maybe ProgressCounter)
 omCounter
@@ -3238,6 +3501,12 @@ omAPIMethodName
   = lens _omAPIMethodName
       (\ s a -> s{_omAPIMethodName = a})
 
+-- | Specifies if cancellation was requested for the operation.
+omCancelRequested :: Lens' OperationMetadata (Maybe Bool)
+omCancelRequested
+  = lens _omCancelRequested
+      (\ s a -> s{_omCancelRequested = a})
+
 -- | The time at which the operation was created by the API.
 omCreateTime :: Lens' OperationMetadata (Maybe UTCTime)
 omCreateTime
@@ -3249,21 +3518,25 @@ instance FromJSON OperationMetadata where
           = withObject "OperationMetadata"
               (\ o ->
                  OperationMetadata' <$>
-                   (o .:? "counter") <*> (o .:? "endTime") <*>
-                     (o .:? "apiMethodName")
+                   (o .:? "logsUrl") <*> (o .:? "counter") <*>
+                     (o .:? "endTime")
+                     <*> (o .:? "apiMethodName")
+                     <*> (o .:? "cancelRequested")
                      <*> (o .:? "createTime"))
 
 instance ToJSON OperationMetadata where
         toJSON OperationMetadata'{..}
           = object
               (catMaybes
-                 [("counter" .=) <$> _omCounter,
+                 [("logsUrl" .=) <$> _omLogsURL,
+                  ("counter" .=) <$> _omCounter,
                   ("endTime" .=) <$> _omEndTime,
                   ("apiMethodName" .=) <$> _omAPIMethodName,
+                  ("cancelRequested" .=) <$> _omCancelRequested,
                   ("createTime" .=) <$> _omCreateTime])
 
--- | A complete HL7v2 message. See
--- http:\/\/www.hl7.org\/implement\/standards\/index.cfm?ref=common for
+-- | A complete HL7v2 message. See [Introduction to HL7 Standards]
+-- (https:\/\/www.hl7.org\/implement\/standards\/index.cfm?ref=common) for
 -- details on the standard.
 --
 -- /See:/ 'message' smart constructor.
@@ -3325,7 +3598,7 @@ mData
   = lens _mData (\ s a -> s{_mData = a}) .
       mapping _Bytes
 
--- | The message type and trigger event for this message. MSH-9.
+-- | The message type for this message. MSH-9.1.
 mMessageType :: Lens' Message (Maybe Text)
 mMessageType
   = lens _mMessageType (\ s a -> s{_mMessageType = a})
@@ -3367,13 +3640,14 @@ mSendFacility
   = lens _mSendFacility
       (\ s a -> s{_mSendFacility = a})
 
--- | The datetime when the message was created. Set by the server.
+-- | Output only. The datetime when the message was created. Set by the
+-- server.
 mCreateTime :: Lens' Message (Maybe UTCTime)
 mCreateTime
   = lens _mCreateTime (\ s a -> s{_mCreateTime = a}) .
       mapping _DateTime
 
--- | The parsed version of the raw message data.
+-- | Output only. The parsed version of the raw message data.
 mParsedData :: Lens' Message (Maybe ParsedData)
 mParsedData
   = lens _mParsedData (\ s a -> s{_mParsedData = a})
@@ -3406,61 +3680,6 @@ instance ToJSON Message where
                   ("createTime" .=) <$> _mCreateTime,
                   ("parsedData" .=) <$> _mParsedData])
 
--- | Specifies the configuration for importing data from Cloud Storage.
---
--- /See:/ 'googleCloudHealthcareV1beta1DicomGcsSource' smart constructor.
-newtype GoogleCloudHealthcareV1beta1DicomGcsSource =
-  GoogleCloudHealthcareV1beta1DicomGcsSource'
-    { _gchvdgsURI :: Maybe Text
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'GoogleCloudHealthcareV1beta1DicomGcsSource' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'gchvdgsURI'
-googleCloudHealthcareV1beta1DicomGcsSource
-    :: GoogleCloudHealthcareV1beta1DicomGcsSource
-googleCloudHealthcareV1beta1DicomGcsSource =
-  GoogleCloudHealthcareV1beta1DicomGcsSource' {_gchvdgsURI = Nothing}
-
-
--- | Points to a Cloud Storage URI containing file(s) with content only. The
--- URI must be in the following format:
--- \`gs:\/\/{bucket_id}\/{object_id}\`. The URI can include wildcards in
--- \`object_id\` and thus identify multiple files. Supported wildcards:
--- \'*\' to match 0 or more non-separator characters \'**\' to match 0 or
--- more characters (including separators). Must be used at the end of a
--- path and with no other wildcards in the path. Can also be used with a
--- file extension (such as .dcm), which imports all files with the
--- extension in the specified directory and its sub-directories. For
--- example, \`gs:\/\/my-bucket\/my-directory\/**.dcm\` imports all files
--- with .dcm extensions in \`my-directory\/\` and its sub-directories.
--- \'?\' to match 1 character All other URI formats are invalid. Files
--- matching the wildcard are expected to contain content only, no metadata.
-gchvdgsURI :: Lens' GoogleCloudHealthcareV1beta1DicomGcsSource (Maybe Text)
-gchvdgsURI
-  = lens _gchvdgsURI (\ s a -> s{_gchvdgsURI = a})
-
-instance FromJSON
-           GoogleCloudHealthcareV1beta1DicomGcsSource
-         where
-        parseJSON
-          = withObject
-              "GoogleCloudHealthcareV1beta1DicomGcsSource"
-              (\ o ->
-                 GoogleCloudHealthcareV1beta1DicomGcsSource' <$>
-                   (o .:? "uri"))
-
-instance ToJSON
-           GoogleCloudHealthcareV1beta1DicomGcsSource
-         where
-        toJSON
-          GoogleCloudHealthcareV1beta1DicomGcsSource'{..}
-          = object (catMaybes [("uri" .=) <$> _gchvdgsURI])
-
 -- | Pseudonymization method that generates surrogates via cryptographic
 -- hashing. Uses SHA-256. Outputs a base64-encoded representation of the
 -- hashed output (for example,
@@ -3485,8 +3704,8 @@ cryptoHashConfig = CryptoHashConfig' {_chcCryptoKey = Nothing}
 
 
 -- | An AES 128\/192\/256 bit key. Causes the hash to be computed based on
--- this key. A default key is generated for each DeidentifyDataset
--- operation and is used wherever crypto_key is not specified.
+-- this key. A default key is generated for each Deidentify operation and
+-- is used wherever crypto_key is not specified.
 chcCryptoKey :: Lens' CryptoHashConfig (Maybe ByteString)
 chcCryptoKey
   = lens _chcCryptoKey (\ s a -> s{_chcCryptoKey = a})
@@ -3537,7 +3756,7 @@ dNotificationConfig
   = lens _dNotificationConfig
       (\ s a -> s{_dNotificationConfig = a})
 
--- | Output only. Resource name of the DICOM store, of the form
+-- | Resource name of the DICOM store, of the form
 -- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\/dicomStores\/{dicom_store_id}\`.
 dName :: Lens' DicomStore (Maybe Text)
 dName = lens _dName (\ s a -> s{_dName = a})
@@ -3568,55 +3787,11 @@ instance ToJSON DicomStore where
                  [("notificationConfig" .=) <$> _dNotificationConfig,
                   ("name" .=) <$> _dName, ("labels" .=) <$> _dLabels])
 
--- | Returns the errors encountered during DICOM store import.
---
--- /See:/ 'importDicomDataErrorDetails' smart constructor.
-newtype ImportDicomDataErrorDetails =
-  ImportDicomDataErrorDetails'
-    { _iddedSampleErrors :: Maybe [ErrorDetail]
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'ImportDicomDataErrorDetails' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'iddedSampleErrors'
-importDicomDataErrorDetails
-    :: ImportDicomDataErrorDetails
-importDicomDataErrorDetails =
-  ImportDicomDataErrorDetails' {_iddedSampleErrors = Nothing}
-
-
--- | Deprecated. Use only for debugging purposes. Contains sample errors
--- encountered in imports of individual resources (for example, a Cloud
--- Storage object).
-iddedSampleErrors :: Lens' ImportDicomDataErrorDetails [ErrorDetail]
-iddedSampleErrors
-  = lens _iddedSampleErrors
-      (\ s a -> s{_iddedSampleErrors = a})
-      . _Default
-      . _Coerce
-
-instance FromJSON ImportDicomDataErrorDetails where
-        parseJSON
-          = withObject "ImportDicomDataErrorDetails"
-              (\ o ->
-                 ImportDicomDataErrorDetails' <$>
-                   (o .:? "sampleErrors" .!= mempty))
-
-instance ToJSON ImportDicomDataErrorDetails where
-        toJSON ImportDicomDataErrorDetails'{..}
-          = object
-              (catMaybes
-                 [("sampleErrors" .=) <$> _iddedSampleErrors])
-
 -- | Provides the configuration for logging a type of permissions. Example: {
 -- \"audit_log_configs\": [ { \"log_type\": \"DATA_READ\",
--- \"exempted_members\": [ \"user:foo\'gmail.com\" ] }, { \"log_type\":
--- \"DATA_WRITE\", } ] } This enables \'DATA_READ\' and \'DATA_WRITE\'
--- logging, while exempting foo\'gmail.com from DATA_READ logging.
+-- \"exempted_members\": [ \"user:jose\'example.com\" ] }, { \"log_type\":
+-- \"DATA_WRITE\" } ] } This enables \'DATA_READ\' and \'DATA_WRITE\'
+-- logging, while exempting jose\'example.com from DATA_READ logging.
 --
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
@@ -3669,67 +3844,6 @@ instance ToJSON AuditLogConfig where
                  [("logType" .=) <$> _alcLogType,
                   ("exemptedMembers" .=) <$> _alcExemptedMembers])
 
--- | The BigQuery table where the output should be written.
---
--- /See:/ 'googleCloudHealthcareV1beta1DicomBigQueryDestination' smart constructor.
-data GoogleCloudHealthcareV1beta1DicomBigQueryDestination =
-  GoogleCloudHealthcareV1beta1DicomBigQueryDestination'
-    { _gchvdbqdForce    :: !(Maybe Bool)
-    , _gchvdbqdTableURI :: !(Maybe Text)
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'GoogleCloudHealthcareV1beta1DicomBigQueryDestination' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'gchvdbqdForce'
---
--- * 'gchvdbqdTableURI'
-googleCloudHealthcareV1beta1DicomBigQueryDestination
-    :: GoogleCloudHealthcareV1beta1DicomBigQueryDestination
-googleCloudHealthcareV1beta1DicomBigQueryDestination =
-  GoogleCloudHealthcareV1beta1DicomBigQueryDestination'
-    {_gchvdbqdForce = Nothing, _gchvdbqdTableURI = Nothing}
-
-
--- | If the destination table already exists and this flag is \`TRUE\`, the
--- table will be overwritten by the contents of the DICOM store. If the
--- flag is not set and the destination table already exists, the export
--- call returns an error.
-gchvdbqdForce :: Lens' GoogleCloudHealthcareV1beta1DicomBigQueryDestination (Maybe Bool)
-gchvdbqdForce
-  = lens _gchvdbqdForce
-      (\ s a -> s{_gchvdbqdForce = a})
-
--- | BigQuery URI to a table, up to 2000 characters long, in the format
--- \`bq:\/\/projectId.bqDatasetId.tableId\`
-gchvdbqdTableURI :: Lens' GoogleCloudHealthcareV1beta1DicomBigQueryDestination (Maybe Text)
-gchvdbqdTableURI
-  = lens _gchvdbqdTableURI
-      (\ s a -> s{_gchvdbqdTableURI = a})
-
-instance FromJSON
-           GoogleCloudHealthcareV1beta1DicomBigQueryDestination
-         where
-        parseJSON
-          = withObject
-              "GoogleCloudHealthcareV1beta1DicomBigQueryDestination"
-              (\ o ->
-                 GoogleCloudHealthcareV1beta1DicomBigQueryDestination'
-                   <$> (o .:? "force") <*> (o .:? "tableUri"))
-
-instance ToJSON
-           GoogleCloudHealthcareV1beta1DicomBigQueryDestination
-         where
-        toJSON
-          GoogleCloudHealthcareV1beta1DicomBigQueryDestination'{..}
-          = object
-              (catMaybes
-                 [("force" .=) <$> _gchvdbqdForce,
-                  ("tableUri" .=) <$> _gchvdbqdTableURI])
-
 -- | A segment in a structured format.
 --
 -- /See:/ 'segment' smart constructor.
@@ -3757,12 +3871,12 @@ segment =
   Segment' {_sSetId = Nothing, _sSegmentId = Nothing, _sFields = Nothing}
 
 
--- | Set ID for segments that can be in a set. This can be empty if it is
--- missing or it is not applicable.
+-- | Set ID for segments that can be in a set. This can be empty if it\'s
+-- missing or isn\'t applicable.
 sSetId :: Lens' Segment (Maybe Text)
 sSetId = lens _sSetId (\ s a -> s{_sSetId = a})
 
--- | A string that indicates the type of segment, e.g., EVN, PID.
+-- | A string that indicates the type of segment. For example, EVN or PID.
 sSegmentId :: Lens' Segment (Maybe Text)
 sSegmentId
   = lens _sSegmentId (\ s a -> s{_sSegmentId = a})
@@ -3771,11 +3885,12 @@ sSegmentId
 -- zero-based indexes separated by dots to identify Fields, components and
 -- sub-components. A bracket notation is also used to identify different
 -- instances of a repeated field. Regex for key:
--- (\\d+)(\\[\\d+\\])?(.\\d+)?(.\\d+)? Examples of (key, value) pairs: -
--- (0.1, \"foo\"): Component 1 of Field 0 has the value \"foo\". - (1.1.2,
--- \"bar\"): Sub-component 2 of Component 1 of field 1 has the value
--- \"bar\". - (1[2].1, \"baz\"): Component 1 of Instance 2 of Field 1,
--- which is repeated, has the value \"baz\".
+-- (\\d+)(\\[\\d+\\])?(.\\d+)?(.\\d+)? Examples of (key, value) pairs: *
+-- (0.1, \"hemoglobin\") denotes that the first component of Field 0 has
+-- the value \"hemoglobin\". * (1.1.2, \"CBC\") denotes that the second
+-- sub-component of the first component of Field 1 has the value \"CBC\". *
+-- (1[0].1, \"HbA1c\") denotes that the first component of the first
+-- Instance of Field 1, which is repeated, has the value \"HbA1c\".
 sFields :: Lens' Segment (Maybe SegmentFields)
 sFields = lens _sFields (\ s a -> s{_sFields = a})
 
@@ -3857,7 +3972,11 @@ searchResourcesRequest
 searchResourcesRequest = SearchResourcesRequest' {_srrResourceType = Nothing}
 
 
--- | The type of the resource to search.
+-- | The FHIR resource type to search, such as Patient or Observation. For a
+-- complete list, see the FHIR Resource Index
+-- ([DSTU2](http:\/\/hl7.org\/implement\/standards\/fhir\/DSTU2\/resourcelist.html),
+-- [STU3](http:\/\/hl7.org\/implement\/standards\/fhir\/STU3\/resourcelist.html),
+-- [R4](http:\/\/hl7.org\/implement\/standards\/fhir\/R4\/resourcelist.html)).
 srrResourceType :: Lens' SearchResourcesRequest (Maybe Text)
 srrResourceType
   = lens _srrResourceType
@@ -3880,8 +3999,8 @@ instance ToJSON SearchResourcesRequest where
 -- /See:/ 'deidentifyDataSetRequest' smart constructor.
 data DeidentifyDataSetRequest =
   DeidentifyDataSetRequest'
-    { _ddsrConfig             :: !(Maybe DeidentifyConfig)
-    , _ddsrDestinationDataSet :: !(Maybe Text)
+    { _dConfig             :: !(Maybe DeidentifyConfig)
+    , _dDestinationDataSet :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3890,29 +4009,28 @@ data DeidentifyDataSetRequest =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'ddsrConfig'
+-- * 'dConfig'
 --
--- * 'ddsrDestinationDataSet'
+-- * 'dDestinationDataSet'
 deidentifyDataSetRequest
     :: DeidentifyDataSetRequest
 deidentifyDataSetRequest =
-  DeidentifyDataSetRequest'
-    {_ddsrConfig = Nothing, _ddsrDestinationDataSet = Nothing}
+  DeidentifyDataSetRequest' {_dConfig = Nothing, _dDestinationDataSet = Nothing}
 
 
 -- | Deidentify configuration.
-ddsrConfig :: Lens' DeidentifyDataSetRequest (Maybe DeidentifyConfig)
-ddsrConfig
-  = lens _ddsrConfig (\ s a -> s{_ddsrConfig = a})
+dConfig :: Lens' DeidentifyDataSetRequest (Maybe DeidentifyConfig)
+dConfig = lens _dConfig (\ s a -> s{_dConfig = a})
 
 -- | The name of the dataset resource to create and write the redacted data
--- to (e.g., * The destination dataset must not exist. * The destination
--- dataset must be in the same project as the source dataset.
--- De-identifying data across multiple projects is not supported.
-ddsrDestinationDataSet :: Lens' DeidentifyDataSetRequest (Maybe Text)
-ddsrDestinationDataSet
-  = lens _ddsrDestinationDataSet
-      (\ s a -> s{_ddsrDestinationDataSet = a})
+-- to. * The destination dataset must not exist. * The destination dataset
+-- must be in the same project and location as the source dataset.
+-- De-identifying data across multiple projects or locations is not
+-- supported.
+dDestinationDataSet :: Lens' DeidentifyDataSetRequest (Maybe Text)
+dDestinationDataSet
+  = lens _dDestinationDataSet
+      (\ s a -> s{_dDestinationDataSet = a})
 
 instance FromJSON DeidentifyDataSetRequest where
         parseJSON
@@ -3925,9 +4043,33 @@ instance ToJSON DeidentifyDataSetRequest where
         toJSON DeidentifyDataSetRequest'{..}
           = object
               (catMaybes
-                 [("config" .=) <$> _ddsrConfig,
-                  ("destinationDataset" .=) <$>
-                    _ddsrDestinationDataSet])
+                 [("config" .=) <$> _dConfig,
+                  ("destinationDataset" .=) <$> _dDestinationDataSet])
+
+-- | Response when all resources export successfully. This structure is
+-- included in the response to describe the detailed outcome after the
+-- operation finishes successfully.
+--
+-- /See:/ 'exportResourcesResponse' smart constructor.
+data ExportResourcesResponse =
+  ExportResourcesResponse'
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ExportResourcesResponse' with the minimum fields required to make a request.
+--
+exportResourcesResponse
+    :: ExportResourcesResponse
+exportResourcesResponse = ExportResourcesResponse'
+
+
+instance FromJSON ExportResourcesResponse where
+        parseJSON
+          = withObject "ExportResourcesResponse"
+              (\ o -> pure ExportResourcesResponse')
+
+instance ToJSON ExportResourcesResponse where
+        toJSON = const emptyObject
 
 -- | A patient identifier and associated type.
 --
@@ -3956,7 +4098,7 @@ patientId = PatientId' {_piValue = Nothing, _piType = Nothing}
 piValue :: Lens' PatientId (Maybe Text)
 piValue = lens _piValue (\ s a -> s{_piValue = a})
 
--- | ID type, e.g. MRN or NHS.
+-- | ID type. For example, MRN or NHS.
 piType :: Lens' PatientId (Maybe Text)
 piType = lens _piType (\ s a -> s{_piType = a})
 
@@ -3972,76 +4114,15 @@ instance ToJSON PatientId where
               (catMaybes
                  [("value" .=) <$> _piValue, ("type" .=) <$> _piType])
 
--- | Final response of exporting resources. This structure will be included
--- in the response to describe the detailed outcome. It will only be
--- included when the operation finishes.
---
--- /See:/ 'googleCloudHealthcareV1beta1FhirRestExportResourcesResponse' smart constructor.
-data GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse =
-  GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse'
-    { _gchvfrerrFhirStore     :: !(Maybe Text)
-    , _gchvfrerrResourceCount :: !(Maybe (Textual Int64))
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'gchvfrerrFhirStore'
---
--- * 'gchvfrerrResourceCount'
-googleCloudHealthcareV1beta1FhirRestExportResourcesResponse
-    :: GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse
-googleCloudHealthcareV1beta1FhirRestExportResourcesResponse =
-  GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse'
-    {_gchvfrerrFhirStore = Nothing, _gchvfrerrResourceCount = Nothing}
-
-
--- | The name of the FHIR store where resources have been exported, in the
--- format
--- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\/fhirStores\/{fhir_store_id}\`.
-gchvfrerrFhirStore :: Lens' GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse (Maybe Text)
-gchvfrerrFhirStore
-  = lens _gchvfrerrFhirStore
-      (\ s a -> s{_gchvfrerrFhirStore = a})
-
--- | The total number of resources exported from the requested FHIR store.
-gchvfrerrResourceCount :: Lens' GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse (Maybe Int64)
-gchvfrerrResourceCount
-  = lens _gchvfrerrResourceCount
-      (\ s a -> s{_gchvfrerrResourceCount = a})
-      . mapping _Coerce
-
-instance FromJSON
-           GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse
-         where
-        parseJSON
-          = withObject
-              "GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse"
-              (\ o ->
-                 GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse'
-                   <$> (o .:? "fhirStore") <*> (o .:? "resourceCount"))
-
-instance ToJSON
-           GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse
-         where
-        toJSON
-          GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse'{..}
-          = object
-              (catMaybes
-                 [("fhirStore" .=) <$> _gchvfrerrFhirStore,
-                  ("resourceCount" .=) <$> _gchvfrerrResourceCount])
-
 -- | Specifies the parameters needed for de-identification of DICOM stores.
 --
 -- /See:/ 'dicomConfig' smart constructor.
 data DicomConfig =
   DicomConfig'
-    { _dcKeepList      :: !(Maybe TagFilterList)
-    , _dcRemoveList    :: !(Maybe TagFilterList)
-    , _dcFilterProFile :: !(Maybe DicomConfigFilterProFile)
+    { _dcSkipIdRedaction :: !(Maybe Bool)
+    , _dcKeepList        :: !(Maybe TagFilterList)
+    , _dcRemoveList      :: !(Maybe TagFilterList)
+    , _dcFilterProFile   :: !(Maybe DicomConfigFilterProFile)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4049,6 +4130,8 @@ data DicomConfig =
 -- | Creates a value of 'DicomConfig' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'dcSkipIdRedaction'
 --
 -- * 'dcKeepList'
 --
@@ -4059,8 +4142,25 @@ dicomConfig
     :: DicomConfig
 dicomConfig =
   DicomConfig'
-    {_dcKeepList = Nothing, _dcRemoveList = Nothing, _dcFilterProFile = Nothing}
+    { _dcSkipIdRedaction = Nothing
+    , _dcKeepList = Nothing
+    , _dcRemoveList = Nothing
+    , _dcFilterProFile = Nothing
+    }
 
+
+-- | If true, skip replacing StudyInstanceUID, SeriesInstanceUID,
+-- SOPInstanceUID, and MediaStorageSOPInstanceUID and leave them untouched.
+-- The Cloud Healthcare API regenerates these UIDs by default based on the
+-- DICOM Standard\'s reasoning: \"Whilst these UIDs cannot be mapped
+-- directly to an individual out of context, given access to the original
+-- images, or to a database of the original images containing the UIDs, it
+-- would be possible to recover the individual\'s identity.\"
+-- http:\/\/dicom.nema.org\/medical\/dicom\/current\/output\/chtml\/part15\/sect_E.3.9.html
+dcSkipIdRedaction :: Lens' DicomConfig (Maybe Bool)
+dcSkipIdRedaction
+  = lens _dcSkipIdRedaction
+      (\ s a -> s{_dcSkipIdRedaction = a})
 
 -- | List of tags to keep. Remove all other tags.
 dcKeepList :: Lens' DicomConfig (Maybe TagFilterList)
@@ -4083,16 +4183,103 @@ instance FromJSON DicomConfig where
           = withObject "DicomConfig"
               (\ o ->
                  DicomConfig' <$>
-                   (o .:? "keepList") <*> (o .:? "removeList") <*>
-                     (o .:? "filterProfile"))
+                   (o .:? "skipIdRedaction") <*> (o .:? "keepList") <*>
+                     (o .:? "removeList")
+                     <*> (o .:? "filterProfile"))
 
 instance ToJSON DicomConfig where
         toJSON DicomConfig'{..}
           = object
               (catMaybes
-                 [("keepList" .=) <$> _dcKeepList,
+                 [("skipIdRedaction" .=) <$> _dcSkipIdRedaction,
+                  ("keepList" .=) <$> _dcKeepList,
                   ("removeList" .=) <$> _dcRemoveList,
                   ("filterProfile" .=) <$> _dcFilterProFile])
+
+-- | Contains configuration for streaming FHIR export.
+--
+-- /See:/ 'streamConfig' smart constructor.
+data StreamConfig =
+  StreamConfig'
+    { _scBigQueryDestination :: !(Maybe GoogleCloudHealthcareV1FhirBigQueryDestination)
+    , _scResourceTypes       :: !(Maybe [Text])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'StreamConfig' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'scBigQueryDestination'
+--
+-- * 'scResourceTypes'
+streamConfig
+    :: StreamConfig
+streamConfig =
+  StreamConfig' {_scBigQueryDestination = Nothing, _scResourceTypes = Nothing}
+
+
+-- | The destination BigQuery structure that contains both the dataset
+-- location and corresponding schema config. The output is organized in one
+-- table per resource type. The server reuses the existing tables (if any)
+-- that are named after the resource types. For example, \"Patient\",
+-- \"Observation\". When there is no existing table for a given resource
+-- type, the server attempts to create one. When a table schema doesn\'t
+-- align with the schema config, either because of existing incompatible
+-- schema or out of band incompatible modification, the server does not
+-- stream in new data. BigQuery imposes a 1 MB limit on streaming insert
+-- row size, therefore any resource mutation that generates more than 1 MB
+-- of BigQuery data is not streamed. One resolution in this case is to
+-- delete the incompatible table and let the server recreate one, though
+-- the newly created table only contains data after the table recreation.
+-- Results are appended to the corresponding BigQuery tables. Different
+-- versions of the same resource are distinguishable by the meta.versionId
+-- and meta.lastUpdated columns. The operation (CREATE\/UPDATE\/DELETE)
+-- that results in the new version is recorded in the meta.tag. The tables
+-- contain all historical resource versions since streaming was enabled.
+-- For query convenience, the server also creates one view per table of the
+-- same name containing only the current resource version. The streamed
+-- data in the BigQuery dataset is not guaranteed to be completely unique.
+-- The combination of the id and meta.versionId columns should ideally
+-- identify a single unique row. But in rare cases, duplicates may exist.
+-- At query time, users may use the SQL select statement to keep only one
+-- of the duplicate rows given an id and meta.versionId pair.
+-- Alternatively, the server created view mentioned above also filters out
+-- duplicates. If a resource mutation cannot be streamed to BigQuery,
+-- errors are logged to Cloud Logging. For more information, see [Viewing
+-- error logs in Cloud Logging](\/healthcare\/docs\/how-tos\/logging)).
+scBigQueryDestination :: Lens' StreamConfig (Maybe GoogleCloudHealthcareV1FhirBigQueryDestination)
+scBigQueryDestination
+  = lens _scBigQueryDestination
+      (\ s a -> s{_scBigQueryDestination = a})
+
+-- | Supply a FHIR resource type (such as \"Patient\" or \"Observation\").
+-- See https:\/\/www.hl7.org\/fhir\/valueset-resource-types.html for a list
+-- of all FHIR resource types. The server treats an empty list as an intent
+-- to stream all the supported resource types in this FHIR store.
+scResourceTypes :: Lens' StreamConfig [Text]
+scResourceTypes
+  = lens _scResourceTypes
+      (\ s a -> s{_scResourceTypes = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON StreamConfig where
+        parseJSON
+          = withObject "StreamConfig"
+              (\ o ->
+                 StreamConfig' <$>
+                   (o .:? "bigqueryDestination") <*>
+                     (o .:? "resourceTypes" .!= mempty))
+
+instance ToJSON StreamConfig where
+        toJSON StreamConfig'{..}
+          = object
+              (catMaybes
+                 [("bigqueryDestination" .=) <$>
+                    _scBigQueryDestination,
+                  ("resourceTypes" .=) <$> _scResourceTypes])
 
 -- | The normal response of the operation in case of success. If the original
 -- method returns no data on success, such as \`Delete\`, the response is
@@ -4171,6 +4358,79 @@ instance ToJSON CreateMessageRequest where
         toJSON CreateMessageRequest'{..}
           = object (catMaybes [("message" .=) <$> _cmrMessage])
 
+-- | Creates a new FHIR store with sensitive information de-identified.
+--
+-- /See:/ 'deidentifyFhirStoreRequest' smart constructor.
+data DeidentifyFhirStoreRequest =
+  DeidentifyFhirStoreRequest'
+    { _dfsrResourceFilter   :: !(Maybe FhirFilter)
+    , _dfsrConfig           :: !(Maybe DeidentifyConfig)
+    , _dfsrDestinationStore :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'DeidentifyFhirStoreRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'dfsrResourceFilter'
+--
+-- * 'dfsrConfig'
+--
+-- * 'dfsrDestinationStore'
+deidentifyFhirStoreRequest
+    :: DeidentifyFhirStoreRequest
+deidentifyFhirStoreRequest =
+  DeidentifyFhirStoreRequest'
+    { _dfsrResourceFilter = Nothing
+    , _dfsrConfig = Nothing
+    , _dfsrDestinationStore = Nothing
+    }
+
+
+-- | A filter specifying the resources to include in the output. If not
+-- specified, all resources are included in the output.
+dfsrResourceFilter :: Lens' DeidentifyFhirStoreRequest (Maybe FhirFilter)
+dfsrResourceFilter
+  = lens _dfsrResourceFilter
+      (\ s a -> s{_dfsrResourceFilter = a})
+
+-- | Deidentify configuration.
+dfsrConfig :: Lens' DeidentifyFhirStoreRequest (Maybe DeidentifyConfig)
+dfsrConfig
+  = lens _dfsrConfig (\ s a -> s{_dfsrConfig = a})
+
+-- | The name of the FHIR store to create and write the redacted data to. For
+-- example,
+-- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\/fhirStores\/{fhir_store_id}\`.
+-- * The destination dataset must exist. * The source dataset and
+-- destination dataset must both reside in the same project. De-identifying
+-- data across multiple projects is not supported. * The destination FHIR
+-- store must exist. * The caller must have the
+-- healthcare.fhirResources.update permission to write to the destination
+-- FHIR store.
+dfsrDestinationStore :: Lens' DeidentifyFhirStoreRequest (Maybe Text)
+dfsrDestinationStore
+  = lens _dfsrDestinationStore
+      (\ s a -> s{_dfsrDestinationStore = a})
+
+instance FromJSON DeidentifyFhirStoreRequest where
+        parseJSON
+          = withObject "DeidentifyFhirStoreRequest"
+              (\ o ->
+                 DeidentifyFhirStoreRequest' <$>
+                   (o .:? "resourceFilter") <*> (o .:? "config") <*>
+                     (o .:? "destinationStore"))
+
+instance ToJSON DeidentifyFhirStoreRequest where
+        toJSON DeidentifyFhirStoreRequest'{..}
+          = object
+              (catMaybes
+                 [("resourceFilter" .=) <$> _dfsrResourceFilter,
+                  ("config" .=) <$> _dfsrConfig,
+                  ("destinationStore" .=) <$> _dfsrDestinationStore])
+
 -- | User-supplied key-value pairs used to organize DICOM stores. Label keys
 -- must be between 1 and 63 characters long, have a UTF-8 encoding of
 -- maximum 128 bytes, and must conform to the following PCRE regular
@@ -4219,7 +4479,7 @@ instance ToJSON DicomStoreLabels where
 data ListMessagesResponse =
   ListMessagesResponse'
     { _lmrNextPageToken :: !(Maybe Text)
-    , _lmrMessages      :: !(Maybe [Text])
+    , _lmrHl7V2Messages :: !(Maybe [Message])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4230,11 +4490,12 @@ data ListMessagesResponse =
 --
 -- * 'lmrNextPageToken'
 --
--- * 'lmrMessages'
+-- * 'lmrHl7V2Messages'
 listMessagesResponse
     :: ListMessagesResponse
 listMessagesResponse =
-  ListMessagesResponse' {_lmrNextPageToken = Nothing, _lmrMessages = Nothing}
+  ListMessagesResponse'
+    {_lmrNextPageToken = Nothing, _lmrHl7V2Messages = Nothing}
 
 
 -- | Token to retrieve the next page of results or empty if there are no more
@@ -4244,12 +4505,13 @@ lmrNextPageToken
   = lens _lmrNextPageToken
       (\ s a -> s{_lmrNextPageToken = a})
 
--- | The returned message names. Won\'t be more values than the value of
--- page_size in the request.
-lmrMessages :: Lens' ListMessagesResponse [Text]
-lmrMessages
-  = lens _lmrMessages (\ s a -> s{_lmrMessages = a}) .
-      _Default
+-- | The returned Messages. Won\'t be more Messages than the value of
+-- page_size in the request. See view for populated fields.
+lmrHl7V2Messages :: Lens' ListMessagesResponse [Message]
+lmrHl7V2Messages
+  = lens _lmrHl7V2Messages
+      (\ s a -> s{_lmrHl7V2Messages = a})
+      . _Default
       . _Coerce
 
 instance FromJSON ListMessagesResponse where
@@ -4258,14 +4520,140 @@ instance FromJSON ListMessagesResponse where
               (\ o ->
                  ListMessagesResponse' <$>
                    (o .:? "nextPageToken") <*>
-                     (o .:? "messages" .!= mempty))
+                     (o .:? "hl7V2Messages" .!= mempty))
 
 instance ToJSON ListMessagesResponse where
         toJSON ListMessagesResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _lmrNextPageToken,
-                  ("messages" .=) <$> _lmrMessages])
+                  ("hl7V2Messages" .=) <$> _lmrHl7V2Messages])
+
+-- | The configuration for exporting to BigQuery.
+--
+-- /See:/ 'googleCloudHealthcareV1FhirBigQueryDestination' smart constructor.
+data GoogleCloudHealthcareV1FhirBigQueryDestination =
+  GoogleCloudHealthcareV1FhirBigQueryDestination'
+    { _gchvfbqdForce        :: !(Maybe Bool)
+    , _gchvfbqdSchemaConfig :: !(Maybe SchemaConfig)
+    , _gchvfbqdDataSetURI   :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleCloudHealthcareV1FhirBigQueryDestination' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gchvfbqdForce'
+--
+-- * 'gchvfbqdSchemaConfig'
+--
+-- * 'gchvfbqdDataSetURI'
+googleCloudHealthcareV1FhirBigQueryDestination
+    :: GoogleCloudHealthcareV1FhirBigQueryDestination
+googleCloudHealthcareV1FhirBigQueryDestination =
+  GoogleCloudHealthcareV1FhirBigQueryDestination'
+    { _gchvfbqdForce = Nothing
+    , _gchvfbqdSchemaConfig = Nothing
+    , _gchvfbqdDataSetURI = Nothing
+    }
+
+
+-- | If this flag is \`TRUE\`, all tables are deleted from the dataset before
+-- the new exported tables are written. If the flag is not set and the
+-- destination dataset contains tables, the export call returns an error.
+gchvfbqdForce :: Lens' GoogleCloudHealthcareV1FhirBigQueryDestination (Maybe Bool)
+gchvfbqdForce
+  = lens _gchvfbqdForce
+      (\ s a -> s{_gchvfbqdForce = a})
+
+-- | The configuration for the exported BigQuery schema.
+gchvfbqdSchemaConfig :: Lens' GoogleCloudHealthcareV1FhirBigQueryDestination (Maybe SchemaConfig)
+gchvfbqdSchemaConfig
+  = lens _gchvfbqdSchemaConfig
+      (\ s a -> s{_gchvfbqdSchemaConfig = a})
+
+-- | BigQuery URI to an existing dataset, up to 2000 characters long, in the
+-- format \`bq:\/\/projectId.bqDatasetId\`.
+gchvfbqdDataSetURI :: Lens' GoogleCloudHealthcareV1FhirBigQueryDestination (Maybe Text)
+gchvfbqdDataSetURI
+  = lens _gchvfbqdDataSetURI
+      (\ s a -> s{_gchvfbqdDataSetURI = a})
+
+instance FromJSON
+           GoogleCloudHealthcareV1FhirBigQueryDestination
+         where
+        parseJSON
+          = withObject
+              "GoogleCloudHealthcareV1FhirBigQueryDestination"
+              (\ o ->
+                 GoogleCloudHealthcareV1FhirBigQueryDestination' <$>
+                   (o .:? "force") <*> (o .:? "schemaConfig") <*>
+                     (o .:? "datasetUri"))
+
+instance ToJSON
+           GoogleCloudHealthcareV1FhirBigQueryDestination
+         where
+        toJSON
+          GoogleCloudHealthcareV1FhirBigQueryDestination'{..}
+          = object
+              (catMaybes
+                 [("force" .=) <$> _gchvfbqdForce,
+                  ("schemaConfig" .=) <$> _gchvfbqdSchemaConfig,
+                  ("datasetUri" .=) <$> _gchvfbqdDataSetURI])
+
+-- | Specifies the configuration for importing data from Cloud Storage.
+--
+-- /See:/ 'googleCloudHealthcareV1FhirGcsSource' smart constructor.
+newtype GoogleCloudHealthcareV1FhirGcsSource =
+  GoogleCloudHealthcareV1FhirGcsSource'
+    { _gchvfgsURI :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleCloudHealthcareV1FhirGcsSource' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gchvfgsURI'
+googleCloudHealthcareV1FhirGcsSource
+    :: GoogleCloudHealthcareV1FhirGcsSource
+googleCloudHealthcareV1FhirGcsSource =
+  GoogleCloudHealthcareV1FhirGcsSource' {_gchvfgsURI = Nothing}
+
+
+-- | Points to a Cloud Storage URI containing file(s) to import. The URI must
+-- be in the following format: \`gs:\/\/{bucket_id}\/{object_id}\`. The URI
+-- can include wildcards in \`object_id\` and thus identify multiple files.
+-- Supported wildcards: * \`*\` to match 0 or more non-separator characters
+-- * \`**\` to match 0 or more characters (including separators). Must be
+-- used at the end of a path and with no other wildcards in the path. Can
+-- also be used with a file extension (such as .ndjson), which imports all
+-- files with the extension in the specified directory and its
+-- sub-directories. For example,
+-- \`gs:\/\/my-bucket\/my-directory\/**.ndjson\` imports all files with
+-- \`.ndjson\` extensions in \`my-directory\/\` and its sub-directories. *
+-- \`?\` to match 1 character Files matching the wildcard are expected to
+-- contain content only, no metadata.
+gchvfgsURI :: Lens' GoogleCloudHealthcareV1FhirGcsSource (Maybe Text)
+gchvfgsURI
+  = lens _gchvfgsURI (\ s a -> s{_gchvfgsURI = a})
+
+instance FromJSON
+           GoogleCloudHealthcareV1FhirGcsSource
+         where
+        parseJSON
+          = withObject "GoogleCloudHealthcareV1FhirGcsSource"
+              (\ o ->
+                 GoogleCloudHealthcareV1FhirGcsSource' <$>
+                   (o .:? "uri"))
+
+instance ToJSON GoogleCloudHealthcareV1FhirGcsSource
+         where
+        toJSON GoogleCloudHealthcareV1FhirGcsSource'{..}
+          = object (catMaybes [("uri" .=) <$> _gchvfgsURI])
 
 -- | Lists the DICOM stores in the given dataset.
 --
@@ -4355,13 +4743,30 @@ binding =
 -- identifier that represents anyone who is authenticated with a Google
 -- account or a service account. * \`user:{emailid}\`: An email address
 -- that represents a specific Google account. For example,
--- \`alice\'gmail.com\` . * \`serviceAccount:{emailid}\`: An email address
--- that represents a service account. For example,
+-- \`alice\'example.com\` . * \`serviceAccount:{emailid}\`: An email
+-- address that represents a service account. For example,
 -- \`my-other-app\'appspot.gserviceaccount.com\`. * \`group:{emailid}\`: An
 -- email address that represents a Google group. For example,
--- \`admins\'example.com\`. * \`domain:{domain}\`: The G Suite domain
--- (primary) that represents all the users of that domain. For example,
--- \`google.com\` or \`example.com\`.
+-- \`admins\'example.com\`. * \`deleted:user:{emailid}?uid={uniqueid}\`: An
+-- email address (plus unique identifier) representing a user that has been
+-- recently deleted. For example,
+-- \`alice\'example.com?uid=123456789012345678901\`. If the user is
+-- recovered, this value reverts to \`user:{emailid}\` and the recovered
+-- user retains the role in the binding. *
+-- \`deleted:serviceAccount:{emailid}?uid={uniqueid}\`: An email address
+-- (plus unique identifier) representing a service account that has been
+-- recently deleted. For example,
+-- \`my-other-app\'appspot.gserviceaccount.com?uid=123456789012345678901\`.
+-- If the service account is undeleted, this value reverts to
+-- \`serviceAccount:{emailid}\` and the undeleted service account retains
+-- the role in the binding. * \`deleted:group:{emailid}?uid={uniqueid}\`:
+-- An email address (plus unique identifier) representing a Google group
+-- that has been recently deleted. For example,
+-- \`admins\'example.com?uid=123456789012345678901\`. If the group is
+-- recovered, this value reverts to \`group:{emailid}\` and the recovered
+-- group retains the role in the binding. * \`domain:{domain}\`: The G
+-- Suite domain (primary) that represents all the users of that domain. For
+-- example, \`google.com\` or \`example.com\`.
 bMembers :: Lens' Binding [Text]
 bMembers
   = lens _bMembers (\ s a -> s{_bMembers = a}) .
@@ -4373,9 +4778,14 @@ bMembers
 bRole :: Lens' Binding (Maybe Text)
 bRole = lens _bRole (\ s a -> s{_bRole = a})
 
--- | The condition that is associated with this binding. NOTE: An unsatisfied
--- condition will not allow user access via current binding. Different
--- bindings, including their conditions, are examined independently.
+-- | The condition that is associated with this binding. If the condition
+-- evaluates to \`true\`, then this binding applies to the current request.
+-- If the condition evaluates to \`false\`, then this binding does not
+-- apply to the current request. However, a different role binding might
+-- grant the same role to one or more of the members in this binding. To
+-- learn which resources support conditions in their IAM policies, see the
+-- [IAM
+-- documentation](https:\/\/cloud.google.com\/iam\/help\/conditions\/resource-policies).
 bCondition :: Lens' Binding (Maybe Expr)
 bCondition
   = lens _bCondition (\ s a -> s{_bCondition = a})
@@ -4396,17 +4806,17 @@ instance ToJSON Binding where
                   ("role" .=) <$> _bRole,
                   ("condition" .=) <$> _bCondition])
 
--- | Exports data from the specified DICOM store. If a given resource (e.g.,
--- a DICOM object with the same SOPInstance UID) already exists in the
+-- | Exports data from the specified DICOM store. If a given resource, such
+-- as a DICOM object with the same SOPInstance UID, already exists in the
 -- output, it is overwritten with the version in the source dataset.
--- Exported DICOM data will persist when the DICOM store from which it was
+-- Exported DICOM data persists when the DICOM store from which it was
 -- exported is deleted.
 --
 -- /See:/ 'exportDicomDataRequest' smart constructor.
 data ExportDicomDataRequest =
   ExportDicomDataRequest'
-    { _eddrBigQueryDestination :: !(Maybe GoogleCloudHealthcareV1beta1DicomBigQueryDestination)
-    , _eddrGcsDestination      :: !(Maybe GoogleCloudHealthcareV1beta1DicomGcsDestination)
+    { _eddrBigQueryDestination :: !(Maybe GoogleCloudHealthcareV1DicomBigQueryDestination)
+    , _eddrGcsDestination      :: !(Maybe GoogleCloudHealthcareV1DicomGcsDestination)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4425,17 +4835,18 @@ exportDicomDataRequest =
     {_eddrBigQueryDestination = Nothing, _eddrGcsDestination = Nothing}
 
 
--- | The BigQuery output destination. For now, only exporting to a dataset in
--- the current project is supported The BigQuery location requires two IAM
--- roles: \`roles\/bigquery.dataEditor\` and \`roles\/bigquery.jobUser\`.
-eddrBigQueryDestination :: Lens' ExportDicomDataRequest (Maybe GoogleCloudHealthcareV1beta1DicomBigQueryDestination)
+-- | The BigQuery output destination. You can only export to a BigQuery
+-- dataset that\'s in the same project as the DICOM store you\'re exporting
+-- from. The BigQuery location requires two IAM roles:
+-- \`roles\/bigquery.dataEditor\` and \`roles\/bigquery.jobUser\`.
+eddrBigQueryDestination :: Lens' ExportDicomDataRequest (Maybe GoogleCloudHealthcareV1DicomBigQueryDestination)
 eddrBigQueryDestination
   = lens _eddrBigQueryDestination
       (\ s a -> s{_eddrBigQueryDestination = a})
 
 -- | The Cloud Storage output destination. The Cloud Storage location
 -- requires the \`roles\/storage.objectAdmin\` Cloud IAM role.
-eddrGcsDestination :: Lens' ExportDicomDataRequest (Maybe GoogleCloudHealthcareV1beta1DicomGcsDestination)
+eddrGcsDestination :: Lens' ExportDicomDataRequest (Maybe GoogleCloudHealthcareV1DicomGcsDestination)
 eddrGcsDestination
   = lens _eddrGcsDestination
       (\ s a -> s{_eddrGcsDestination = a})
@@ -4492,51 +4903,3 @@ instance ToJSON ParsedData where
         toJSON ParsedData'{..}
           = object
               (catMaybes [("segments" .=) <$> _pdSegments])
-
--- | Structure to describe the error encountered during batch operation on
--- one resource. This is used both for sample errors in operation response,
--- and for format of errors in error reports.
---
--- /See:/ 'errorDetail' smart constructor.
-data ErrorDetail =
-  ErrorDetail'
-    { _edError    :: !(Maybe Status)
-    , _edResource :: !(Maybe Text)
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'ErrorDetail' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'edError'
---
--- * 'edResource'
-errorDetail
-    :: ErrorDetail
-errorDetail = ErrorDetail' {_edError = Nothing, _edResource = Nothing}
-
-
--- | The status of the error.
-edError :: Lens' ErrorDetail (Maybe Status)
-edError = lens _edError (\ s a -> s{_edError = a})
-
--- | The identifier of the resource.
-edResource :: Lens' ErrorDetail (Maybe Text)
-edResource
-  = lens _edResource (\ s a -> s{_edResource = a})
-
-instance FromJSON ErrorDetail where
-        parseJSON
-          = withObject "ErrorDetail"
-              (\ o ->
-                 ErrorDetail' <$>
-                   (o .:? "error") <*> (o .:? "resource"))
-
-instance ToJSON ErrorDetail where
-        toJSON ErrorDetail'{..}
-          = object
-              (catMaybes
-                 [("error" .=) <$> _edError,
-                  ("resource" .=) <$> _edResource])

@@ -21,8 +21,14 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- DeleteStudy deletes all instances within the given study. Delete
--- requests are equivalent to the GET requests specified in the WADO-RS
--- standard.
+-- requests are equivalent to the GET requests specified in the Retrieve
+-- transaction. The method returns an Operation which will be marked
+-- successful when the deletion is complete. Warning: Inserting instances
+-- into a study while a delete operation is running for that study could
+-- result in the new instances not appearing in search results until the
+-- deletion operation finishes. For samples that show how to call
+-- DeleteStudy, see [Deleting a study, series, or
+-- instance](https:\/\/cloud.google.com\/healthcare\/docs\/how-tos\/dicomweb#deleting_a_study_series_or_instance).
 --
 -- /See:/ <https://cloud.google.com/healthcare Cloud Healthcare API Reference> for @healthcare.projects.locations.datasets.dicomStores.studies.delete@.
 module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStores.Studies.Delete
@@ -51,7 +57,7 @@ import           Network.Google.Prelude
 -- 'ProjectsLocationsDataSetsDicomStoresStudiesDelete' request conforms to.
 type ProjectsLocationsDataSetsDicomStoresStudiesDeleteResource
      =
-     "v1beta1" :>
+     "v1" :>
        Capture "parent" Text :>
          "dicomWeb" :>
            Capture "dicomWebPath" Text :>
@@ -60,11 +66,17 @@ type ProjectsLocationsDataSetsDicomStoresStudiesDeleteResource
                  QueryParam "access_token" Text :>
                    QueryParam "uploadType" Text :>
                      QueryParam "callback" Text :>
-                       QueryParam "alt" AltJSON :> Delete '[JSON] Empty
+                       QueryParam "alt" AltJSON :> Delete '[JSON] Operation
 
 -- | DeleteStudy deletes all instances within the given study. Delete
--- requests are equivalent to the GET requests specified in the WADO-RS
--- standard.
+-- requests are equivalent to the GET requests specified in the Retrieve
+-- transaction. The method returns an Operation which will be marked
+-- successful when the deletion is complete. Warning: Inserting instances
+-- into a study while a delete operation is running for that study could
+-- result in the new instances not appearing in search results until the
+-- deletion operation finishes. For samples that show how to call
+-- DeleteStudy, see [Deleting a study, series, or
+-- instance](https:\/\/cloud.google.com\/healthcare\/docs\/how-tos\/dicomweb#deleting_a_study_series_or_instance).
 --
 -- /See:/ 'projectsLocationsDataSetsDicomStoresStudiesDelete' smart constructor.
 data ProjectsLocationsDataSetsDicomStoresStudiesDelete =
@@ -113,8 +125,6 @@ projectsLocationsDataSetsDicomStoresStudiesDelete pPldsdssdParent_ pPldsdssdDico
     }
 
 
--- | The name of the DICOM store that is being accessed (e.g.,
--- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\/dicomStores\/{dicom_store_id}\`).
 pldsdssdParent :: Lens' ProjectsLocationsDataSetsDicomStoresStudiesDelete Text
 pldsdssdParent
   = lens _pldsdssdParent
@@ -150,8 +160,8 @@ pldsdssdCallback
   = lens _pldsdssdCallback
       (\ s a -> s{_pldsdssdCallback = a})
 
--- | The path of the DICOMweb request, as specified in the STOW-RS, WADO-RS,
--- or QIDO-RS standard (e.g., \`studies\/{study_id}\`).
+-- | The path of the DeleteStudy request. For example,
+-- \`studies\/{study_uid}\`.
 pldsdssdDicomWebPath :: Lens' ProjectsLocationsDataSetsDicomStoresStudiesDelete Text
 pldsdssdDicomWebPath
   = lens _pldsdssdDicomWebPath
@@ -162,7 +172,7 @@ instance GoogleRequest
          where
         type Rs
                ProjectsLocationsDataSetsDicomStoresStudiesDelete
-             = Empty
+             = Operation
         type Scopes
                ProjectsLocationsDataSetsDicomStoresStudiesDelete
              = '["https://www.googleapis.com/auth/cloud-platform"]

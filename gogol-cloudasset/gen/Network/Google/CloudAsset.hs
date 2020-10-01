@@ -16,7 +16,7 @@
 -- The cloud asset API manages the history and inventory of cloud
 -- resources.
 --
--- /See:/ <https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/quickstart-cloud-asset-inventory Cloud Asset API Reference>
+-- /See:/ <https://cloud.google.com/asset-inventory/docs/quickstart Cloud Asset API Reference>
 module Network.Google.CloudAsset
     (
     -- * Service Configuration
@@ -30,26 +30,16 @@ module Network.Google.CloudAsset
 
     -- * Resources
 
-    -- ** cloudasset.batchGetAssetsHistory
-    , module Network.Google.Resource.CloudAsset.BatchGetAssetsHistory
-
-    -- ** cloudasset.exportAssets
-    , module Network.Google.Resource.CloudAsset.ExportAssets
-
-    -- ** cloudasset.operations.get
-    , module Network.Google.Resource.CloudAsset.Operations.Get
+    -- ** cloudasset.assets.list
+    , module Network.Google.Resource.CloudAsset.Assets.List
 
     -- * Types
 
-    -- ** Status
-    , Status
-    , status
-    , sDetails
-    , sCode
-    , sMessage
-
-    -- ** ExportAssetsRequestContentType
-    , ExportAssetsRequestContentType (..)
+    -- ** GoogleIdentityAccesscontextManagerV1BasicLevel
+    , GoogleIdentityAccesscontextManagerV1BasicLevel
+    , googleIdentityAccesscontextManagerV1BasicLevel
+    , giamvblConditions
+    , giamvblCombiningFunction
 
     -- ** AuditConfig
     , AuditConfig
@@ -65,54 +55,82 @@ module Network.Google.CloudAsset
     , eTitle
     , eDescription
 
-    -- ** Operation
-    , Operation
-    , operation
-    , oDone
-    , oError
-    , oResponse
-    , oName
-    , oMetadata
+    -- ** GoogleIdentityAccesscontextManagerV1ServicePerimeterConfig
+    , GoogleIdentityAccesscontextManagerV1ServicePerimeterConfig
+    , googleIdentityAccesscontextManagerV1ServicePerimeterConfig
+    , giamvspcResources
+    , giamvspcVPCAccessibleServices
+    , giamvspcRestrictedServices
+    , giamvspcAccessLevels
+
+    -- ** GoogleIdentityAccesscontextManagerV1BasicLevelCombiningFunction
+    , GoogleIdentityAccesscontextManagerV1BasicLevelCombiningFunction (..)
+
+    -- ** GoogleIdentityAccesscontextManagerV1AccessLevel
+    , GoogleIdentityAccesscontextManagerV1AccessLevel
+    , googleIdentityAccesscontextManagerV1AccessLevel
+    , giamvalBasic
+    , giamvalCustom
+    , giamvalName
+    , giamvalTitle
+    , giamvalDescription
+
+    -- ** GoogleIdentityAccesscontextManagerV1ServicePerimeterPerimeterType
+    , GoogleIdentityAccesscontextManagerV1ServicePerimeterPerimeterType (..)
+
+    -- ** GoogleIdentityAccesscontextManagerV1OSConstraintOSType
+    , GoogleIdentityAccesscontextManagerV1OSConstraintOSType (..)
 
     -- ** Asset
     , Asset
     , asset
+    , aAccessLevel
+    , aServicePerimeter
+    , aAccessPolicy
     , aName
     , aResource
+    , aOrgPolicy
     , aIAMPolicy
     , aAssetType
+    , aAncestors
 
-    -- ** GcsDestination
-    , GcsDestination
-    , gcsDestination
-    , gdURIPrefix
-    , gdURI
+    -- ** GoogleIdentityAccesscontextManagerV1ServicePerimeter
+    , GoogleIdentityAccesscontextManagerV1ServicePerimeter
+    , googleIdentityAccesscontextManagerV1ServicePerimeter
+    , giamvspStatus
+    , giamvspPerimeterType
+    , giamvspName
+    , giamvspSpec
+    , giamvspTitle
+    , giamvspUseExplicitDryRunSpec
+    , giamvspDescription
 
-    -- ** StatusDetailsItem
-    , StatusDetailsItem
-    , statusDetailsItem
-    , sdiAddtional
+    -- ** GoogleIdentityAccesscontextManagerV1DevicePolicyAllowedDeviceManagementLevelsItem
+    , GoogleIdentityAccesscontextManagerV1DevicePolicyAllowedDeviceManagementLevelsItem (..)
 
-    -- ** ExportAssetsRequest
-    , ExportAssetsRequest
-    , exportAssetsRequest
-    , earReadTime
-    , earAssetTypes
-    , earOutputConfig
-    , earContentType
+    -- ** GoogleIdentityAccesscontextManagerV1OSConstraint
+    , GoogleIdentityAccesscontextManagerV1OSConstraint
+    , googleIdentityAccesscontextManagerV1OSConstraint
+    , giamvocOSType
+    , giamvocMinimumVersion
+    , giamvocRequireVerifiedChromeOS
 
-    -- ** TimeWindow
-    , TimeWindow
-    , timeWindow
-    , twStartTime
-    , twEndTime
+    -- ** GoogleIdentityAccesscontextManagerV1AccessPolicy
+    , GoogleIdentityAccesscontextManagerV1AccessPolicy
+    , googleIdentityAccesscontextManagerV1AccessPolicy
+    , giamvapParent
+    , giamvapEtag
+    , giamvapName
+    , giamvapTitle
 
-    -- ** TemporalAsset
-    , TemporalAsset
-    , temporalAsset
-    , taWindow
-    , taAsset
-    , taDeleted
+    -- ** GoogleCloudOrgpolicyV1ListPolicy
+    , GoogleCloudOrgpolicyV1ListPolicy
+    , googleCloudOrgpolicyV1ListPolicy
+    , gcovlpInheritFromParent
+    , gcovlpAllValues
+    , gcovlpDeniedValues
+    , gcovlpAllowedValues
+    , gcovlpSuggestedValue
 
     -- ** AuditLogConfigLogType
     , AuditLogConfigLogType (..)
@@ -127,6 +145,13 @@ module Network.Google.CloudAsset
     , rDiscoveryDocumentURI
     , rResourceURL
 
+    -- ** ListAssetsResponse
+    , ListAssetsResponse
+    , listAssetsResponse
+    , larReadTime
+    , larNextPageToken
+    , larAssets
+
     -- ** Xgafv
     , Xgafv (..)
 
@@ -135,10 +160,30 @@ module Network.Google.CloudAsset
     , resourceData
     , rdAddtional
 
-    -- ** OutputConfig
-    , OutputConfig
-    , outputConfig
-    , ocGcsDestination
+    -- ** GoogleIdentityAccesscontextManagerV1CustomLevel
+    , GoogleIdentityAccesscontextManagerV1CustomLevel
+    , googleIdentityAccesscontextManagerV1CustomLevel
+    , giamvclExpr
+
+    -- ** GoogleIdentityAccesscontextManagerV1VPCAccessibleServices
+    , GoogleIdentityAccesscontextManagerV1VPCAccessibleServices
+    , googleIdentityAccesscontextManagerV1VPCAccessibleServices
+    , giamvvasAllowedServices
+    , giamvvasEnableRestriction
+
+    -- ** GoogleCloudOrgpolicyV1Policy
+    , GoogleCloudOrgpolicyV1Policy
+    , googleCloudOrgpolicyV1Policy
+    , gcovpBooleanPolicy
+    , gcovpEtag
+    , gcovpRestoreDefault
+    , gcovpUpdateTime
+    , gcovpVersion
+    , gcovpListPolicy
+    , gcovpConstraint
+
+    -- ** GoogleIdentityAccesscontextManagerV1DevicePolicyAllowedEncryptionStatusesItem
+    , GoogleIdentityAccesscontextManagerV1DevicePolicyAllowedEncryptionStatusesItem (..)
 
     -- ** Policy
     , Policy
@@ -148,15 +193,18 @@ module Network.Google.CloudAsset
     , pVersion
     , pBindings
 
-    -- ** BatchGetAssetsHistoryResponse
-    , BatchGetAssetsHistoryResponse
-    , batchGetAssetsHistoryResponse
-    , bgahrAssets
+    -- ** GoogleIdentityAccesscontextManagerV1DevicePolicy
+    , GoogleIdentityAccesscontextManagerV1DevicePolicy
+    , googleIdentityAccesscontextManagerV1DevicePolicy
+    , giamvdpOSConstraints
+    , giamvdpRequireAdminApproval
+    , giamvdpRequireCorpOwned
+    , giamvdpRequireScreenlock
+    , giamvdpAllowedEncryptionStatuses
+    , giamvdpAllowedDeviceManagementLevels
 
-    -- ** OperationMetadata
-    , OperationMetadata
-    , operationMetadata
-    , omAddtional
+    -- ** AssetsListContentType
+    , AssetsListContentType (..)
 
     -- ** AuditLogConfig
     , AuditLogConfig
@@ -164,10 +212,27 @@ module Network.Google.CloudAsset
     , alcLogType
     , alcExemptedMembers
 
-    -- ** OperationResponse
-    , OperationResponse
-    , operationResponse
-    , orAddtional
+    -- ** GoogleIdentityAccesscontextManagerV1Condition
+    , GoogleIdentityAccesscontextManagerV1Condition
+    , googleIdentityAccesscontextManagerV1Condition
+    , giamvcMembers
+    , giamvcRegions
+    , giamvcNegate
+    , giamvcIPSubnetworks
+    , giamvcDevicePolicy
+    , giamvcRequiredAccessLevels
+
+    -- ** GoogleCloudOrgpolicyV1RestoreDefault
+    , GoogleCloudOrgpolicyV1RestoreDefault
+    , googleCloudOrgpolicyV1RestoreDefault
+
+    -- ** GoogleCloudOrgpolicyV1ListPolicyAllValues
+    , GoogleCloudOrgpolicyV1ListPolicyAllValues (..)
+
+    -- ** GoogleCloudOrgpolicyV1BooleanPolicy
+    , GoogleCloudOrgpolicyV1BooleanPolicy
+    , googleCloudOrgpolicyV1BooleanPolicy
+    , gcovbpEnforced
 
     -- ** Binding
     , Binding
@@ -179,16 +244,11 @@ module Network.Google.CloudAsset
 
 import           Network.Google.CloudAsset.Types
 import           Network.Google.Prelude
-import           Network.Google.Resource.CloudAsset.BatchGetAssetsHistory
-import           Network.Google.Resource.CloudAsset.ExportAssets
-import           Network.Google.Resource.CloudAsset.Operations.Get
+import           Network.Google.Resource.CloudAsset.Assets.List
 
 {- $resources
 TODO
 -}
 
 -- | Represents the entirety of the methods and resources available for the Cloud Asset API service.
-type CloudAssetAPI =
-     ExportAssetsResource :<|>
-       BatchGetAssetsHistoryResource
-       :<|> OperationsGetResource
+type CloudAssetAPI = AssetsListResource

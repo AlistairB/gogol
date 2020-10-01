@@ -39,21 +39,11 @@ module Network.Google.DataFusion.Types
     , operationSchema
     , osAddtional
 
-    -- * CounterOptions
-    , CounterOptions
-    , counterOptions
-    , coField
-    , coMetric
-
     -- * AuditConfig
     , AuditConfig
     , auditConfig
     , acService
     , acAuditLogConfigs
-    , acExemptedMembers
-
-    -- * CloudAuditOptionsLogName
-    , CloudAuditOptionsLogName (..)
 
     -- * Expr
     , Expr
@@ -79,9 +69,6 @@ module Network.Google.DataFusion.Types
     , CancelOperationRequest
     , cancelOperationRequest
 
-    -- * ConditionSys
-    , ConditionSys (..)
-
     -- * Location
     , Location
     , location
@@ -104,24 +91,13 @@ module Network.Google.DataFusion.Types
     , Empty
     , empty
 
-    -- * RuleAction
-    , RuleAction (..)
+    -- * AcceleratorAcceleratorType
+    , AcceleratorAcceleratorType (..)
 
     -- * StatusDetailsItem
     , StatusDetailsItem
     , statusDetailsItem
     , sdiAddtional
-
-    -- * Rule
-    , Rule
-    , rule
-    , rAction
-    , rIn
-    , rNotIn
-    , rConditions
-    , rPermissions
-    , rLogConfig
-    , rDescription
 
     -- * SetIAMPolicyRequest
     , SetIAMPolicyRequest
@@ -138,19 +114,10 @@ module Network.Google.DataFusion.Types
     , ncNetwork
     , ncIPAllocation
 
-    -- * CloudAuditOptions
-    , CloudAuditOptions
-    , cloudAuditOptions
-    , caoAuthorizationLoggingOptions
-    , caoLogName
-
-    -- * ConditionOp
-    , ConditionOp (..)
-
-    -- * DataAccessOptions
-    , DataAccessOptions
-    , dataAccessOptions
-    , daoLogMode
+    -- * Accelerator
+    , Accelerator
+    , accelerator
+    , aAcceleratorType
 
     -- * RestartInstanceRequest
     , RestartInstanceRequest
@@ -158,6 +125,13 @@ module Network.Google.DataFusion.Types
 
     -- * AuditLogConfigLogType
     , AuditLogConfigLogType (..)
+
+    -- * Version
+    , Version
+    , version
+    , vDefaultVersion
+    , vVersionNumber
+    , vAvailableFeatures
 
     -- * Xgafv
     , Xgafv (..)
@@ -172,24 +146,13 @@ module Network.Google.DataFusion.Types
     , testIAMPermissionsResponse
     , tiamprPermissions
 
-    -- * UpgradeInstanceRequest
-    , UpgradeInstanceRequest
-    , upgradeInstanceRequest
-
-    -- * AuthorizationLoggingOptions
-    , AuthorizationLoggingOptions
-    , authorizationLoggingOptions
-    , aloPermissionType
-
     -- * Policy
     , Policy
     , policy
     , pAuditConfigs
     , pEtag
-    , pRules
     , pVersion
     , pBindings
-    , pIAMOwned
 
     -- * LocationLabels
     , LocationLabels
@@ -212,9 +175,6 @@ module Network.Google.DataFusion.Types
     , omTarget
     , omCreateTime
 
-    -- * DataAccessOptionsLogMode
-    , DataAccessOptionsLogMode (..)
-
     -- * AuditLogConfig
     , AuditLogConfig
     , auditLogConfig
@@ -228,35 +188,13 @@ module Network.Google.DataFusion.Types
     , lirUnreachable
     , lirInstances
 
-    -- * AuthorizationLoggingOptionsPermissionType
-    , AuthorizationLoggingOptionsPermissionType (..)
-
-    -- * Condition
-    , Condition
-    , condition
-    , cOp
-    , cIAM
-    , cValues
-    , cSys
-    , cSvc
-
     -- * InstanceState
     , InstanceState (..)
-
-    -- * ConditionIAM
-    , ConditionIAM (..)
 
     -- * OperationResponse
     , OperationResponse
     , operationResponse
     , orAddtional
-
-    -- * LogConfig
-    , LogConfig
-    , logConfig
-    , lcCloudAudit
-    , lcDataAccess
-    , lcCounter
 
     -- * InstanceOptions
     , InstanceOptions
@@ -266,6 +204,7 @@ module Network.Google.DataFusion.Types
     -- * Binding
     , Binding
     , binding
+    , bBindingId
     , bMembers
     , bRole
     , bCondition
@@ -274,33 +213,46 @@ module Network.Google.DataFusion.Types
     , Instance
     , instance'
     , iStateMessage
+    , iTenantProjectId
     , iState
     , iEnableStackdriverLogging
+    , iP4ServiceAccount
+    , iAPIEndpoint
     , iServiceEndpoint
     , iZone
+    , iGcsBucket
     , iServiceAccount
     , iNetworkConfig
     , iUpdateTime
+    , iAccelerators
     , iPrivateInstance
     , iName
     , iVersion
+    , iDataprocServiceAccount
     , iDisplayName
     , iEnableStackdriverMonitoring
     , iLabels
     , iOptions
     , iType
+    , iAvailableVersion
     , iDescription
     , iCreateTime
+
+    -- * ListAvailableVersionsResponse
+    , ListAvailableVersionsResponse
+    , listAvailableVersionsResponse
+    , lavrNextPageToken
+    , lavrAvailableVersions
     ) where
 
 import           Network.Google.DataFusion.Types.Product
 import           Network.Google.DataFusion.Types.Sum
 import           Network.Google.Prelude
 
--- | Default request referring to version 'v1beta1' of the Cloud Data Fusion API. This contains the host and root path used as a starting point for constructing service requests.
+-- | Default request referring to version 'v1' of the Cloud Data Fusion API. This contains the host and root path used as a starting point for constructing service requests.
 dataFusionService :: ServiceConfig
 dataFusionService
-  = defaultService (ServiceId "datafusion:v1beta1")
+  = defaultService (ServiceId "datafusion:v1")
       "datafusion.googleapis.com"
 
 -- | View and manage your data across Google Cloud Platform services

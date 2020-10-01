@@ -156,16 +156,9 @@ accessLocations =
 -- | The \"home office\" location of the principal. A two-letter country code
 -- (ISO 3166-1 alpha-2), such as \"US\", \"DE\" or \"GB\" or a region code.
 -- In some limited situations Google systems may refer refer to a region
--- code instead of a country code. Possible Region Codes:
---
--- 1.  ASI: Asia
--- 2.  EUR: Europe
--- 3.  OCE: Oceania
--- 4.  AFR: Africa
--- 5.  NAM: North America
--- 6.  SAM: South America
--- 7.  ANT: Antarctica
--- 8.  ANY: Any location
+-- code instead of a country code. Possible Region Codes: 1. ASI: Asia 2.
+-- EUR: Europe 3. OCE: Oceania 4. AFR: Africa 5. NAM: North America 6. SAM:
+-- South America 7. ANT: Antarctica 8. ANY: Any location
 alPrincipalOfficeCountry :: Lens' AccessLocations (Maybe Text)
 alPrincipalOfficeCountry
   = lens _alPrincipalOfficeCountry
@@ -175,16 +168,9 @@ alPrincipalOfficeCountry
 -- two-letter country code (ISO 3166-1 alpha-2), such as \"US\", \"DE\" or
 -- \"GB\" or a region code. In some limited situations Google systems may
 -- refer refer to a region code instead of a country code. Possible Region
--- Codes:
---
--- 1.  ASI: Asia
--- 2.  EUR: Europe
--- 3.  OCE: Oceania
--- 4.  AFR: Africa
--- 5.  NAM: North America
--- 6.  SAM: South America
--- 7.  ANT: Antarctica
--- 8.  ANY: Any location
+-- Codes: 1. ASI: Asia 2. EUR: Europe 3. OCE: Oceania 4. AFR: Africa 5.
+-- NAM: North America 6. SAM: South America 7. ANT: Antarctica 8. ANY: Any
+-- location
 alPrincipalPhysicalLocationCountry :: Lens' AccessLocations (Maybe Text)
 alPrincipalPhysicalLocationCountry
   = lens _alPrincipalPhysicalLocationCountry
@@ -210,9 +196,10 @@ instance ToJSON AccessLocations where
 -- | A decision that has been made to dismiss an approval request.
 --
 -- /See:/ 'dismissDecision' smart constructor.
-newtype DismissDecision =
+data DismissDecision =
   DismissDecision'
-    { _ddDismissTime :: Maybe DateTime'
+    { _ddImplicit    :: !(Maybe Bool)
+    , _ddDismissTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -221,11 +208,21 @@ newtype DismissDecision =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'ddImplicit'
+--
 -- * 'ddDismissTime'
 dismissDecision
     :: DismissDecision
-dismissDecision = DismissDecision' {_ddDismissTime = Nothing}
+dismissDecision =
+  DismissDecision' {_ddImplicit = Nothing, _ddDismissTime = Nothing}
 
+
+-- | This field will be true if the ApprovalRequest was implcitly dismissed
+-- due to inaction by the access approval approvers (the request is not
+-- acted on by the approvers before the exiration time).
+ddImplicit :: Lens' DismissDecision (Maybe Bool)
+ddImplicit
+  = lens _ddImplicit (\ s a -> s{_ddImplicit = a})
 
 -- | The time at which the approval request was dismissed.
 ddDismissTime :: Lens' DismissDecision (Maybe UTCTime)
@@ -237,19 +234,91 @@ ddDismissTime
 instance FromJSON DismissDecision where
         parseJSON
           = withObject "DismissDecision"
-              (\ o -> DismissDecision' <$> (o .:? "dismissTime"))
+              (\ o ->
+                 DismissDecision' <$>
+                   (o .:? "implicit") <*> (o .:? "dismissTime"))
 
 instance ToJSON DismissDecision where
         toJSON DismissDecision'{..}
           = object
-              (catMaybes [("dismissTime" .=) <$> _ddDismissTime])
+              (catMaybes
+                 [("implicit" .=) <$> _ddImplicit,
+                  ("dismissTime" .=) <$> _ddDismissTime])
+
+-- | A generic empty message that you can re-use to avoid defining duplicated
+-- empty messages in your APIs. A typical example is to use it as the
+-- request or the response type of an API method. For instance: service Foo
+-- { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The
+-- JSON representation for \`Empty\` is empty JSON object \`{}\`.
+--
+-- /See:/ 'empty' smart constructor.
+data Empty =
+  Empty'
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'Empty' with the minimum fields required to make a request.
+--
+empty
+    :: Empty
+empty = Empty'
+
+
+instance FromJSON Empty where
+        parseJSON = withObject "Empty" (\ o -> pure Empty')
+
+instance ToJSON Empty where
+        toJSON = const emptyObject
+
+-- | The properties associated with the resource of the request.
+--
+-- /See:/ 'resourceProperties' smart constructor.
+newtype ResourceProperties =
+  ResourceProperties'
+    { _rpExcludesDescendants :: Maybe Bool
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ResourceProperties' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'rpExcludesDescendants'
+resourceProperties
+    :: ResourceProperties
+resourceProperties = ResourceProperties' {_rpExcludesDescendants = Nothing}
+
+
+-- | Whether an approval will exclude the descendants of the resource being
+-- requested.
+rpExcludesDescendants :: Lens' ResourceProperties (Maybe Bool)
+rpExcludesDescendants
+  = lens _rpExcludesDescendants
+      (\ s a -> s{_rpExcludesDescendants = a})
+
+instance FromJSON ResourceProperties where
+        parseJSON
+          = withObject "ResourceProperties"
+              (\ o ->
+                 ResourceProperties' <$>
+                   (o .:? "excludesDescendants"))
+
+instance ToJSON ResourceProperties where
+        toJSON ResourceProperties'{..}
+          = object
+              (catMaybes
+                 [("excludesDescendants" .=) <$>
+                    _rpExcludesDescendants])
 
 -- | Settings on a Project\/Folder\/Organization related to Access Approval.
 --
 -- /See:/ 'accessApprovalSettings' smart constructor.
 data AccessApprovalSettings =
   AccessApprovalSettings'
-    { _aasName               :: !(Maybe Text)
+    { _aasEnrolledServices   :: !(Maybe [EnrolledService])
+    , _aasEnrolledAncestor   :: !(Maybe Bool)
+    , _aasName               :: !(Maybe Text)
     , _aasNotificationEmails :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -259,18 +328,55 @@ data AccessApprovalSettings =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'aasEnrolledServices'
+--
+-- * 'aasEnrolledAncestor'
+--
 -- * 'aasName'
 --
 -- * 'aasNotificationEmails'
 accessApprovalSettings
     :: AccessApprovalSettings
 accessApprovalSettings =
-  AccessApprovalSettings' {_aasName = Nothing, _aasNotificationEmails = Nothing}
+  AccessApprovalSettings'
+    { _aasEnrolledServices = Nothing
+    , _aasEnrolledAncestor = Nothing
+    , _aasName = Nothing
+    , _aasNotificationEmails = Nothing
+    }
 
 
--- | The resource name of the settings. Format is one of:
--- \"projects\/{project_id}\/accessApprovalSettings\"
--- \"folders\/{folder_id}\/accessApprovalSettings\"
+-- | A list of Google Cloud Services for which the given resource has Access
+-- Approval enrolled. Access requests for the resource given by name
+-- against any of these services contained here will be required to have
+-- explicit approval. If name refers to an organization, enrollment can be
+-- done for individual services. If name refers to a folder or project,
+-- enrollment can only be done on an all or nothing basis. If a
+-- cloud_product is repeated in this list, the first entry will be honored
+-- and all following entries will be discarded. A maximum of 10 enrolled
+-- services will be enforced, to be expanded as the set of supported
+-- services is expanded.
+aasEnrolledServices :: Lens' AccessApprovalSettings [EnrolledService]
+aasEnrolledServices
+  = lens _aasEnrolledServices
+      (\ s a -> s{_aasEnrolledServices = a})
+      . _Default
+      . _Coerce
+
+-- | Output only. This field is read only (not settable via
+-- UpdateAccessAccessApprovalSettings method). If the field is true, that
+-- indicates that at least one service is enrolled for Access Approval in
+-- one or more ancestors of the Project or Folder (this field will always
+-- be unset for the organization since organizations do not have
+-- ancestors).
+aasEnrolledAncestor :: Lens' AccessApprovalSettings (Maybe Bool)
+aasEnrolledAncestor
+  = lens _aasEnrolledAncestor
+      (\ s a -> s{_aasEnrolledAncestor = a})
+
+-- | The resource name of the settings. Format is one of: 1.
+-- \"projects\/{project_id}\/accessApprovalSettings\" 2.
+-- \"folders\/{folder_id}\/accessApprovalSettings\" 3.
 -- \"organizations\/{organization_id}\/accessApprovalSettings\"
 aasName :: Lens' AccessApprovalSettings (Maybe Text)
 aasName = lens _aasName (\ s a -> s{_aasName = a})
@@ -278,7 +384,7 @@ aasName = lens _aasName (\ s a -> s{_aasName = a})
 -- | A list of email addresses to which notifications relating to approval
 -- requests should be sent. Notifications relating to a resource will be
 -- sent to all emails in the settings of ancestor resources of that
--- resource.
+-- resource. A maximum of 50 email addresses are allowed.
 aasNotificationEmails :: Lens' AccessApprovalSettings [Text]
 aasNotificationEmails
   = lens _aasNotificationEmails
@@ -291,14 +397,18 @@ instance FromJSON AccessApprovalSettings where
           = withObject "AccessApprovalSettings"
               (\ o ->
                  AccessApprovalSettings' <$>
-                   (o .:? "name") <*>
-                     (o .:? "notificationEmails" .!= mempty))
+                   (o .:? "enrolledServices" .!= mempty) <*>
+                     (o .:? "enrolledAncestor")
+                     <*> (o .:? "name")
+                     <*> (o .:? "notificationEmails" .!= mempty))
 
 instance ToJSON AccessApprovalSettings where
         toJSON AccessApprovalSettings'{..}
           = object
               (catMaybes
-                 [("name" .=) <$> _aasName,
+                 [("enrolledServices" .=) <$> _aasEnrolledServices,
+                  ("enrolledAncestor" .=) <$> _aasEnrolledAncestor,
+                  ("name" .=) <$> _aasName,
                   ("notificationEmails" .=) <$>
                     _aasNotificationEmails])
 
@@ -307,14 +417,15 @@ instance ToJSON AccessApprovalSettings where
 -- /See:/ 'approvalRequest' smart constructor.
 data ApprovalRequest =
   ApprovalRequest'
-    { _arRequestedResourceName :: !(Maybe Text)
-    , _arRequestedExpiration   :: !(Maybe DateTime')
-    , _arRequestTime           :: !(Maybe DateTime')
-    , _arRequestedReason       :: !(Maybe AccessReason)
-    , _arName                  :: !(Maybe Text)
-    , _arApprove               :: !(Maybe ApproveDecision)
-    , _arDismiss               :: !(Maybe DismissDecision)
-    , _arRequestedLocations    :: !(Maybe AccessLocations)
+    { _arRequestedResourceName       :: !(Maybe Text)
+    , _arRequestedResourceProperties :: !(Maybe ResourceProperties)
+    , _arRequestedExpiration         :: !(Maybe DateTime')
+    , _arRequestTime                 :: !(Maybe DateTime')
+    , _arRequestedReason             :: !(Maybe AccessReason)
+    , _arName                        :: !(Maybe Text)
+    , _arApprove                     :: !(Maybe ApproveDecision)
+    , _arDismiss                     :: !(Maybe DismissDecision)
+    , _arRequestedLocations          :: !(Maybe AccessLocations)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -324,6 +435,8 @@ data ApprovalRequest =
 -- Use one of the following lenses to modify other fields as desired:
 --
 -- * 'arRequestedResourceName'
+--
+-- * 'arRequestedResourceProperties'
 --
 -- * 'arRequestedExpiration'
 --
@@ -343,6 +456,7 @@ approvalRequest
 approvalRequest =
   ApprovalRequest'
     { _arRequestedResourceName = Nothing
+    , _arRequestedResourceProperties = Nothing
     , _arRequestedExpiration = Nothing
     , _arRequestTime = Nothing
     , _arRequestedReason = Nothing
@@ -364,6 +478,13 @@ arRequestedResourceName :: Lens' ApprovalRequest (Maybe Text)
 arRequestedResourceName
   = lens _arRequestedResourceName
       (\ s a -> s{_arRequestedResourceName = a})
+
+-- | Properties related to the resource represented by
+-- requested_resource_name.
+arRequestedResourceProperties :: Lens' ApprovalRequest (Maybe ResourceProperties)
+arRequestedResourceProperties
+  = lens _arRequestedResourceProperties
+      (\ s a -> s{_arRequestedResourceProperties = a})
 
 -- | The requested expiration for the approval. If the request is approved,
 -- access will be granted from the time of approval until the expiration
@@ -414,7 +535,8 @@ instance FromJSON ApprovalRequest where
               (\ o ->
                  ApprovalRequest' <$>
                    (o .:? "requestedResourceName") <*>
-                     (o .:? "requestedExpiration")
+                     (o .:? "requestedResourceProperties")
+                     <*> (o .:? "requestedExpiration")
                      <*> (o .:? "requestTime")
                      <*> (o .:? "requestedReason")
                      <*> (o .:? "name")
@@ -428,6 +550,8 @@ instance ToJSON ApprovalRequest where
               (catMaybes
                  [("requestedResourceName" .=) <$>
                     _arRequestedResourceName,
+                  ("requestedResourceProperties" .=) <$>
+                    _arRequestedResourceProperties,
                   ("requestedExpiration" .=) <$>
                     _arRequestedExpiration,
                   ("requestTime" .=) <$> _arRequestTime,
@@ -499,6 +623,64 @@ instance ToJSON ApproveApprovalRequestMessage where
         toJSON ApproveApprovalRequestMessage'{..}
           = object
               (catMaybes [("expireTime" .=) <$> _aarmExpireTime])
+
+-- | Represents the enrollment of a cloud resource into a specific service.
+--
+-- /See:/ 'enrolledService' smart constructor.
+data EnrolledService =
+  EnrolledService'
+    { _esCloudProduct    :: !(Maybe Text)
+    , _esEnrollmentLevel :: !(Maybe EnrolledServiceEnrollmentLevel)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'EnrolledService' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'esCloudProduct'
+--
+-- * 'esEnrollmentLevel'
+enrolledService
+    :: EnrolledService
+enrolledService =
+  EnrolledService' {_esCloudProduct = Nothing, _esEnrollmentLevel = Nothing}
+
+
+-- | The product for which Access Approval will be enrolled. Allowed values
+-- are listed below (case-sensitive): 1. all 2. ga-only 3.
+-- appengine.googleapis.com 4. bigquery.googleapis.com 5.
+-- bigtable.googleapis.com 6. cloudkms.googleapis.com 7.
+-- compute.googleapis.com 8. dataflow.googleapis.com 9. iam.googleapis.com
+-- 10. pubsub.googleapis.com 11. storage.googleapis.com Note: \'all\' will
+-- enroll the resource in all products supported at both \'GA\' and
+-- \'Preview\' levels. \'ga-only\' will only enroll the resource in
+-- products supported at \'GA\' level.
+esCloudProduct :: Lens' EnrolledService (Maybe Text)
+esCloudProduct
+  = lens _esCloudProduct
+      (\ s a -> s{_esCloudProduct = a})
+
+-- | The enrollment level of the service.
+esEnrollmentLevel :: Lens' EnrolledService (Maybe EnrolledServiceEnrollmentLevel)
+esEnrollmentLevel
+  = lens _esEnrollmentLevel
+      (\ s a -> s{_esEnrollmentLevel = a})
+
+instance FromJSON EnrolledService where
+        parseJSON
+          = withObject "EnrolledService"
+              (\ o ->
+                 EnrolledService' <$>
+                   (o .:? "cloudProduct") <*> (o .:? "enrollmentLevel"))
+
+instance ToJSON EnrolledService where
+        toJSON EnrolledService'{..}
+          = object
+              (catMaybes
+                 [("cloudProduct" .=) <$> _esCloudProduct,
+                  ("enrollmentLevel" .=) <$> _esEnrollmentLevel])
 
 --
 -- /See:/ 'accessReason' smart constructor.

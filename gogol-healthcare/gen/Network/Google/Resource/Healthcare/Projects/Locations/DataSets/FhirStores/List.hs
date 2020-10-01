@@ -51,7 +51,7 @@ import           Network.Google.Prelude
 -- 'ProjectsLocationsDataSetsFhirStoresList' request conforms to.
 type ProjectsLocationsDataSetsFhirStoresListResource
      =
-     "v1beta1" :>
+     "v1" :>
        Capture "parent" Text :>
          "fhirStores" :>
            QueryParam "$.xgafv" Xgafv :>

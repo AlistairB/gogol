@@ -52,7 +52,7 @@ import           Network.Google.Prelude
 -- | A resource alias for @accessapproval.folders.approvalRequests.list@ method which the
 -- 'FoldersApprovalRequestsList' request conforms to.
 type FoldersApprovalRequestsListResource =
-     "v1beta1" :>
+     "v1" :>
        Capture "parent" Text :>
          "approvalRequests" :>
            QueryParam "$.xgafv" Xgafv :>
@@ -154,13 +154,11 @@ farlUploadType
       (\ s a -> s{_farlUploadType = a})
 
 -- | A filter on the type of approval requests to retrieve. Must be one of
--- the following values:
---
--- 1.  [not set]: Requests that are pending or have active approvals.
--- 2.  ALL: All requests.
--- 3.  PENDING: Only pending requests.
--- 4.  ACTIVE: Only active (i.e. currently approved) requests.
--- 5.  DISMISSED: Only dismissed (including expired) requests.
+-- the following values: 1. [not set]: Requests that are pending or have
+-- active approvals. 2. ALL: All requests. 3. PENDING: Only pending
+-- requests. 4. ACTIVE: Only active (i.e. currently approved) requests. 5.
+-- DISMISSED: Only dismissed (including expired) requests. 6. HISTORY:
+-- Active and dismissed (including expired) requests.
 farlFilter :: Lens' FoldersApprovalRequestsList (Maybe Text)
 farlFilter
   = lens _farlFilter (\ s a -> s{_farlFilter = a})

@@ -49,7 +49,7 @@ import           Network.Google.Prelude
 -- | A resource alias for @healthcare.projects.locations.datasets.list@ method which the
 -- 'ProjectsLocationsDataSetsList' request conforms to.
 type ProjectsLocationsDataSetsListResource =
-     "v1beta1" :>
+     "v1" :>
        Capture "parent" Text :>
          "datasets" :>
            QueryParam "$.xgafv" Xgafv :>
@@ -114,8 +114,8 @@ projectsLocationsDataSetsList pPldslParent_ =
     }
 
 
--- | The name of the project whose datasets should be listed (e.g.,
--- \`projects\/{project_id}\/locations\/{location_id}\`).
+-- | The name of the project whose datasets should be listed. For example,
+-- \`projects\/{project_id}\/locations\/{location_id}\`.
 pldslParent :: Lens' ProjectsLocationsDataSetsList Text
 pldslParent
   = lens _pldslParent (\ s a -> s{_pldslParent = a})

@@ -51,7 +51,7 @@ import           Network.Google.Prelude
 -- 'ProjectsLocationsDataSetsDicomStoresList' request conforms to.
 type ProjectsLocationsDataSetsDicomStoresListResource
      =
-     "v1beta1" :>
+     "v1" :>
        Capture "parent" Text :>
          "dicomStores" :>
            QueryParam "$.xgafv" Xgafv :>
@@ -152,7 +152,8 @@ pldsdslUploadType
 
 -- | Restricts stores returned to those matching a filter. Syntax:
 -- https:\/\/cloud.google.com\/appengine\/docs\/standard\/python\/search\/query_strings
--- Only filtering on labels is supported, for example \`labels.key=value\`.
+-- Only filtering on labels is supported. For example,
+-- \`labels.key=value\`.
 pldsdslFilter :: Lens' ProjectsLocationsDataSetsDicomStoresList (Maybe Text)
 pldsdslFilter
   = lens _pldsdslFilter

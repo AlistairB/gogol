@@ -31,9 +31,6 @@ module Network.Google.ServiceControl
 
     -- * Resources
 
-    -- ** servicecontrol.services.allocateQuota
-    , module Network.Google.Resource.ServiceControl.Services.AllocateQuota
-
     -- ** servicecontrol.services.check
     , module Network.Google.Resource.ServiceControl.Services.Check
 
@@ -84,47 +81,22 @@ module Network.Google.ServiceControl
     , rrServiceConfigId
     , rrOperations
 
+    -- ** ResponseHeaders
+    , ResponseHeaders
+    , responseHeaders
+    , rhAddtional
+
     -- ** CheckRequest
     , CheckRequest
     , checkRequest
-    , crOperation
-    , crRequestProjectSettings
+    , crResources
+    , crAttributes
     , crServiceConfigId
-    , crSkipActivationCheck
-
-    -- ** MetricValueLabels
-    , MetricValueLabels
-    , metricValueLabels
-    , mvlAddtional
-
-    -- ** Distribution
-    , Distribution
-    , distribution
-    , dSumOfSquaredDeviation
-    , dMean
-    , dExponentialBuckets
-    , dMaximum
-    , dLinearBuckets
-    , dCount
-    , dMinimum
-    , dBucketCounts
-    , dExplicitBuckets
-
-    -- ** QuotaPropertiesQuotaMode
-    , QuotaPropertiesQuotaMode (..)
-
-    -- ** ExponentialBuckets
-    , ExponentialBuckets
-    , exponentialBuckets
-    , ebGrowthFactor
-    , ebScale
-    , ebNumFiniteBuckets
 
     -- ** Peer
     , Peer
     , peer
     , pRegionCode
-    , pService
     , pIP
     , pPrincipal
     , pLabels
@@ -137,46 +109,6 @@ module Network.Google.ServiceControl
     , aiResourceAttributes
     , aiResource
     , aiPermission
-
-    -- ** Operation
-    , Operation
-    , operation
-    , oImportance
-    , oResourceContainer
-    , oStartTime
-    , oResources
-    , oUserLabels
-    , oQuotaProperties
-    , oEndTime
-    , oOperationName
-    , oLabels
-    , oOperationId
-    , oConsumerId
-    , oMetricValueSets
-    , oLogEntries
-
-    -- ** MetricValueSet
-    , MetricValueSet
-    , metricValueSet
-    , mvsMetricName
-    , mvsMetricValues
-
-    -- ** LogEntryLabels
-    , LogEntryLabels
-    , logEntryLabels
-    , lelAddtional
-
-    -- ** LogEntryProtoPayload
-    , LogEntryProtoPayload
-    , logEntryProtoPayload
-    , leppAddtional
-
-    -- ** LinearBuckets
-    , LinearBuckets
-    , linearBuckets
-    , lbOffSet
-    , lbWidth
-    , lbNumFiniteBuckets
 
     -- ** ServiceAccountDelegationInfo
     , ServiceAccountDelegationInfo
@@ -193,62 +125,40 @@ module Network.Google.ServiceControl
     , aPrincipal
     , aAccessLevels
 
-    -- ** QuotaInfo
-    , QuotaInfo
-    , quotaInfo
-    , qiLimitExceeded
-    , qiQuotaMetrics
-    , qiQuotaConsumed
-
-    -- ** Money
-    , Money
-    , money
-    , mCurrencyCode
-    , mNanos
-    , mUnits
-
-    -- ** ConsumerInfo
-    , ConsumerInfo
-    , consumerInfo
-    , ciProjectNumber
-    , ciConsumerNumber
-    , ciType
+    -- ** Response
+    , Response
+    , response
+    , rTime
+    , rSize
+    , rHeaders
+    , rCode
 
     -- ** ThirdPartyPrincipalThirdPartyClaims
     , ThirdPartyPrincipalThirdPartyClaims
     , thirdPartyPrincipalThirdPartyClaims
     , tpptpcAddtional
 
-    -- ** AllocateInfo
-    , AllocateInfo
-    , allocateInfo
-    , aiUnusedArguments
+    -- ** AttributeContext
+    , AttributeContext
+    , attributeContext
+    , acDestination
+    , acOrigin
+    , acExtensions
+    , acResponse
+    , acResource
+    , acSource
+    , acAPI
+    , acRequest
 
-    -- ** CheckErrorCode
-    , CheckErrorCode (..)
-
-    -- ** QuotaOperation
-    , QuotaOperation
-    , quotaOperation
-    , qoQuotaMode
-    , qoMethodName
-    , qoQuotaMetrics
-    , qoLabels
-    , qoOperationId
-    , qoConsumerId
+    -- ** SpanContext
+    , SpanContext
+    , spanContext
+    , scSpanName
 
     -- ** StatusDetailsItem
     , StatusDetailsItem
     , statusDetailsItem
     , sdiAddtional
-
-    -- ** CheckError
-    , CheckError
-    , checkError
-    , ceSubject
-    , ceStatus
-    , ceCode
-    , ceDetail
 
     -- ** FirstPartyPrincipal
     , FirstPartyPrincipal
@@ -256,71 +166,27 @@ module Network.Google.ServiceControl
     , fppPrincipalEmail
     , fppServiceMetadata
 
-    -- ** QuotaOperationQuotaMode
-    , QuotaOperationQuotaMode (..)
-
-    -- ** QuotaOperationLabels
-    , QuotaOperationLabels
-    , quotaOperationLabels
-    , qolAddtional
-
-    -- ** ReportError
-    , ReportError
-    , reportError
-    , reStatus
-    , reOperationId
-
-    -- ** OperationImportance
-    , OperationImportance (..)
-
     -- ** AuthClaims
     , AuthClaims
     , authClaims
     , acAddtional
-
-    -- ** HTTPRequest
-    , HTTPRequest
-    , hTTPRequest
-    , httprStatus
-    , httprRequestURL
-    , httprCacheFillBytes
-    , httprRemoteIP
-    , httprLatency
-    , httprProtocol
-    , httprServerIP
-    , httprRequestSize
-    , httprCacheValidatedWithOriginServer
-    , httprUserAgent
-    , httprCacheLookup
-    , httprResponseSize
-    , httprRequestMethod
-    , httprCacheHit
-    , httprReferer
 
     -- ** AuthenticationInfoThirdPartyPrincipal
     , AuthenticationInfoThirdPartyPrincipal
     , authenticationInfoThirdPartyPrincipal
     , aitppAddtional
 
+    -- ** AttributeContextExtensionsItem
+    , AttributeContextExtensionsItem
+    , attributeContextExtensionsItem
+    , aceiAddtional
+
     -- ** ResourceInfo
     , ResourceInfo
     , resourceInfo
-    , riResourceName
-    , riResourceContainer
-    , riResourceLocation
-
-    -- ** MetricValue
-    , MetricValue
-    , metricValue
-    , mvBoolValue
-    , mvStartTime
-    , mvMoneyValue
-    , mvDoubleValue
-    , mvStringValue
-    , mvDistributionValue
-    , mvEndTime
-    , mvInt64Value
-    , mvLabels
+    , riName
+    , riType
+    , riPermission
 
     -- ** ResourceLocation
     , ResourceLocation
@@ -333,11 +199,6 @@ module Network.Google.ServiceControl
     , peerLabels
     , plAddtional
 
-    -- ** QuotaProperties
-    , QuotaProperties
-    , quotaProperties
-    , qpQuotaMode
-
     -- ** Resource
     , Resource
     , resource
@@ -345,12 +206,6 @@ module Network.Google.ServiceControl
     , rName
     , rLabels
     , rType
-
-    -- ** AllocateQuotaRequest
-    , AllocateQuotaRequest
-    , allocateQuotaRequest
-    , aqrServiceConfigId
-    , aqrAllocateOperation
 
     -- ** Xgafv
     , Xgafv (..)
@@ -363,16 +218,13 @@ module Network.Google.ServiceControl
     -- ** RequestHeaders
     , RequestHeaders
     , requestHeaders
-    , rhAddtional
+    , rAddtional
 
     -- ** CheckResponse
     , CheckResponse
     , checkResponse
-    , cCheckErrors
-    , cQuotaInfo
-    , cServiceConfigId
-    , cCheckInfo
-    , cOperationId
+    , crStatus
+    , crHeaders
 
     -- ** AuditLogResourceOriginalState
     , AuditLogResourceOriginalState
@@ -382,89 +234,24 @@ module Network.Google.ServiceControl
     -- ** ReportResponse
     , ReportResponse
     , reportResponse
-    , rReportErrors
-    , rReportInfos
-    , rServiceConfigId
-
-    -- ** LogEntryOperation
-    , LogEntryOperation
-    , logEntryOperation
-    , leoFirst
-    , leoProducer
-    , leoLast
-    , leoId
-
-    -- ** ReportInfo
-    , ReportInfo
-    , reportInfo
-    , riQuotaInfo
-    , riOperationId
-
-    -- ** LogEntry
-    , LogEntry
-    , logEntry
-    , leOperation
-    , leSeverity
-    , leTextPayload
-    , leHTTPRequest
-    , leStructPayload
-    , leName
-    , leInsertId
-    , leLabels
-    , leProtoPayload
-    , leTimestamp
-    , leTrace
 
     -- ** AuditLogRequest
     , AuditLogRequest
     , auditLogRequest
     , aAddtional
 
-    -- ** OperationLabels
-    , OperationLabels
-    , operationLabels
-    , olAddtional
-
-    -- ** CheckInfo
-    , CheckInfo
-    , checkInfo
-    , ciConsumerInfo
-    , ciUnusedArguments
-
-    -- ** ConsumerInfoType
-    , ConsumerInfoType (..)
-
-    -- ** AllocateQuotaResponse
-    , AllocateQuotaResponse
-    , allocateQuotaResponse
-    , aAllocateInfo
-    , aAllocateErrors
-    , aQuotaMetrics
-    , aServiceConfigId
-    , aOperationId
-
-    -- ** LogEntrySeverity
-    , LogEntrySeverity (..)
-
-    -- ** ExplicitBuckets
-    , ExplicitBuckets
-    , explicitBuckets
-    , ebBounds
-
-    -- ** QuotaErrorCode
-    , QuotaErrorCode (..)
+    -- ** API
+    , API
+    , api
+    , aService
+    , aOperation
+    , aProtocol
+    , aVersion
 
     -- ** FirstPartyPrincipalServiceMetadata
     , FirstPartyPrincipalServiceMetadata
     , firstPartyPrincipalServiceMetadata
     , fppsmAddtional
-
-    -- ** QuotaError
-    , QuotaError
-    , quotaError
-    , qeSubject
-    , qeCode
-    , qeDescription
 
     -- ** AuthenticationInfo
     , AuthenticationInfo
@@ -472,13 +259,9 @@ module Network.Google.ServiceControl
     , aiThirdPartyPrincipal
     , aiServiceAccountDelegationInfo
     , aiPrincipalEmail
+    , aiPrincipalSubject
     , aiAuthoritySelector
     , aiServiceAccountKeyName
-
-    -- ** QuotaInfoQuotaConsumed
-    , QuotaInfoQuotaConsumed
-    , quotaInfoQuotaConsumed
-    , qiqcAddtional
 
     -- ** AuditLog
     , AuditLog
@@ -498,36 +281,29 @@ module Network.Google.ServiceControl
     , alAuthenticationInfo
     , alRequest
 
-    -- ** OperationUserLabels
-    , OperationUserLabels
-    , operationUserLabels
-    , oulAddtional
-
-    -- ** LogEntryStructPayload
-    , LogEntryStructPayload
-    , logEntryStructPayload
-    , lespAddtional
+    -- ** CheckResponseHeaders
+    , CheckResponseHeaders
+    , checkResponseHeaders
+    , crhAddtional
 
     -- ** Request'
     , Request'
     , request'
-    , rPath
-    , rTime
-    , rSize
-    , rAuth
-    , rFragment
-    , rProtocol
-    , rReason
-    , rHeaders
-    , rMethod
-    , rQuery
-    , rScheme
-    , rId
-    , rHost
+    , reqPath
+    , reqTime
+    , reqSize
+    , reqAuth
+    , reqProtocol
+    , reqReason
+    , reqHeaders
+    , reqMethod
+    , reqQuery
+    , reqScheme
+    , reqId
+    , reqHost
     ) where
 
 import           Network.Google.Prelude
-import           Network.Google.Resource.ServiceControl.Services.AllocateQuota
 import           Network.Google.Resource.ServiceControl.Services.Check
 import           Network.Google.Resource.ServiceControl.Services.Report
 import           Network.Google.ServiceControl.Types
@@ -539,4 +315,3 @@ TODO
 -- | Represents the entirety of the methods and resources available for the Service Control API service.
 type ServiceControlAPI =
      ServicesReportResource :<|> ServicesCheckResource
-       :<|> ServicesAllocateQuotaResource

@@ -13,7 +13,8 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- API for viewing and managing your reports in DoubleClick Bid Manager.
+-- DoubleClick Bid Manager API allows users to manage and create campaigns
+-- and reports.
 --
 -- /See:/ <https://developers.google.com/bid-manager/ DoubleClick Bid Manager API Reference>
 module Network.Google.DoubleClickBids
@@ -61,11 +62,20 @@ module Network.Google.DoubleClickBids
     -- ** ListReportsResponse
     , ListReportsResponse
     , listReportsResponse
+    , lrrNextPageToken
     , lrrReports
     , lrrKind
 
+    -- ** DisjunctiveMatchStatement
+    , DisjunctiveMatchStatement
+    , disjunctiveMatchStatement
+    , dmsEventFilters
+
     -- ** QueryMetadataFormat
     , QueryMetadataFormat (..)
+
+    -- ** PathQueryOptionsFilterFilter
+    , PathQueryOptionsFilterFilter (..)
 
     -- ** QueryMetadata
     , QueryMetadata
@@ -81,6 +91,12 @@ module Network.Google.DoubleClickBids
     , qmReportCount
     , qmTitle
     , qmSendNotification
+
+    -- ** PathQueryOptions
+    , PathQueryOptions
+    , pathQueryOptions
+    , pqoPathFilters
+    , pqoChannelGrouping
 
     -- ** RunQueryRequest
     , RunQueryRequest
@@ -135,6 +151,7 @@ module Network.Google.DoubleClickBids
     , ListQueriesResponse
     , listQueriesResponse
     , lqrQueries
+    , lqrNextPageToken
     , lqrKind
 
     -- ** UploadLineItemsResponse
@@ -176,6 +193,12 @@ module Network.Google.DoubleClickBids
     , rsErrors
     , rsEntityId
 
+    -- ** Rule
+    , Rule
+    , rule
+    , rName
+    , rDisjunctiveMatchStatements
+
     -- ** DownloadLineItemsRequestFileSpec
     , DownloadLineItemsRequestFileSpec (..)
 
@@ -188,16 +211,39 @@ module Network.Google.DoubleClickBids
     -- ** UploadLineItemsRequestFormat
     , UploadLineItemsRequestFormat (..)
 
+    -- ** EventFilter
+    , EventFilter
+    , eventFilter
+    , efDimensionFilter
+
+    -- ** ChannelGrouping
+    , ChannelGrouping
+    , channelGrouping
+    , cgRules
+    , cgFallbackName
+    , cgName
+
+    -- ** PathQueryOptionsFilterMatch
+    , PathQueryOptionsFilterMatch (..)
+
     -- ** UploadStatus
     , UploadStatus
     , uploadStatus
     , usRowStatus
     , usErrors
 
+    -- ** PathQueryOptionsFilter
+    , PathQueryOptionsFilter
+    , pathQueryOptionsFilter
+    , pqofValues
+    , pqofFilter
+    , pqofMatch
+
     -- ** QuerySchedule
     , QuerySchedule
     , querySchedule
     , qsFrequency
+    , qsStartTimeMs
     , qsEndTimeMs
     , qsNextRunMinuteOfDay
     , qsNextRunTimezoneCode
@@ -244,7 +290,14 @@ module Network.Google.DoubleClickBids
     , pIncludeInviteData
     , pFilters
     , pGroupBys
+    , pOptions
     , pType
+
+    -- ** Xgafv
+    , Xgafv (..)
+
+    -- ** PathFilterPathMatchPosition
+    , PathFilterPathMatchPosition (..)
 
     -- ** FilterPairType
     , FilterPairType (..)
@@ -254,6 +307,18 @@ module Network.Google.DoubleClickBids
 
     -- ** ReportStatusState
     , ReportStatusState (..)
+
+    -- ** PathFilter
+    , PathFilter
+    , pathFilter
+    , pfEventFilters
+    , pfPathMatchPosition
+
+    -- ** Options
+    , Options
+    , options
+    , oPathQueryOptions
+    , oIncludeOnlyTargetedUserLists
 
     -- ** ParametersGroupBysItem
     , ParametersGroupBysItem (..)

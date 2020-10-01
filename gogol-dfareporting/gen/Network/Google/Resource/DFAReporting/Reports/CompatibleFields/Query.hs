@@ -35,8 +35,13 @@ module Network.Google.Resource.DFAReporting.Reports.CompatibleFields.Query
     , ReportsCompatibleFieldsQuery
 
     -- * Request Lenses
+    , rcfqXgafv
+    , rcfqUploadProtocol
+    , rcfqAccessToken
+    , rcfqUploadType
     , rcfqProFileId
     , rcfqPayload
+    , rcfqCallback
     ) where
 
 import           Network.Google.DFAReporting.Types
@@ -46,15 +51,20 @@ import           Network.Google.Prelude
 -- 'ReportsCompatibleFieldsQuery' request conforms to.
 type ReportsCompatibleFieldsQueryResource =
      "dfareporting" :>
-       "v3.3" :>
+       "v3.4" :>
          "userprofiles" :>
            Capture "profileId" (Textual Int64) :>
              "reports" :>
                "compatiblefields" :>
                  "query" :>
-                   QueryParam "alt" AltJSON :>
-                     ReqBody '[JSON] Report :>
-                       Post '[JSON] CompatibleFields
+                   QueryParam "$.xgafv" Xgafv :>
+                     QueryParam "upload_protocol" Text :>
+                       QueryParam "access_token" Text :>
+                         QueryParam "uploadType" Text :>
+                           QueryParam "callback" Text :>
+                             QueryParam "alt" AltJSON :>
+                               ReqBody '[JSON] Report :>
+                                 Post '[JSON] CompatibleFields
 
 -- | Returns the fields that are compatible to be selected in the respective
 -- sections of a report criteria, given the fields already selected in the
@@ -63,8 +73,13 @@ type ReportsCompatibleFieldsQueryResource =
 -- /See:/ 'reportsCompatibleFieldsQuery' smart constructor.
 data ReportsCompatibleFieldsQuery =
   ReportsCompatibleFieldsQuery'
-    { _rcfqProFileId :: !(Textual Int64)
-    , _rcfqPayload   :: !Report
+    { _rcfqXgafv          :: !(Maybe Xgafv)
+    , _rcfqUploadProtocol :: !(Maybe Text)
+    , _rcfqAccessToken    :: !(Maybe Text)
+    , _rcfqUploadType     :: !(Maybe Text)
+    , _rcfqProFileId      :: !(Textual Int64)
+    , _rcfqPayload        :: !Report
+    , _rcfqCallback       :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -73,17 +88,57 @@ data ReportsCompatibleFieldsQuery =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'rcfqXgafv'
+--
+-- * 'rcfqUploadProtocol'
+--
+-- * 'rcfqAccessToken'
+--
+-- * 'rcfqUploadType'
+--
 -- * 'rcfqProFileId'
 --
 -- * 'rcfqPayload'
+--
+-- * 'rcfqCallback'
 reportsCompatibleFieldsQuery
     :: Int64 -- ^ 'rcfqProFileId'
     -> Report -- ^ 'rcfqPayload'
     -> ReportsCompatibleFieldsQuery
 reportsCompatibleFieldsQuery pRcfqProFileId_ pRcfqPayload_ =
   ReportsCompatibleFieldsQuery'
-    {_rcfqProFileId = _Coerce # pRcfqProFileId_, _rcfqPayload = pRcfqPayload_}
+    { _rcfqXgafv = Nothing
+    , _rcfqUploadProtocol = Nothing
+    , _rcfqAccessToken = Nothing
+    , _rcfqUploadType = Nothing
+    , _rcfqProFileId = _Coerce # pRcfqProFileId_
+    , _rcfqPayload = pRcfqPayload_
+    , _rcfqCallback = Nothing
+    }
 
+
+-- | V1 error format.
+rcfqXgafv :: Lens' ReportsCompatibleFieldsQuery (Maybe Xgafv)
+rcfqXgafv
+  = lens _rcfqXgafv (\ s a -> s{_rcfqXgafv = a})
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+rcfqUploadProtocol :: Lens' ReportsCompatibleFieldsQuery (Maybe Text)
+rcfqUploadProtocol
+  = lens _rcfqUploadProtocol
+      (\ s a -> s{_rcfqUploadProtocol = a})
+
+-- | OAuth access token.
+rcfqAccessToken :: Lens' ReportsCompatibleFieldsQuery (Maybe Text)
+rcfqAccessToken
+  = lens _rcfqAccessToken
+      (\ s a -> s{_rcfqAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+rcfqUploadType :: Lens' ReportsCompatibleFieldsQuery (Maybe Text)
+rcfqUploadType
+  = lens _rcfqUploadType
+      (\ s a -> s{_rcfqUploadType = a})
 
 -- | The DFA user profile ID.
 rcfqProFileId :: Lens' ReportsCompatibleFieldsQuery Int64
@@ -97,6 +152,11 @@ rcfqPayload :: Lens' ReportsCompatibleFieldsQuery Report
 rcfqPayload
   = lens _rcfqPayload (\ s a -> s{_rcfqPayload = a})
 
+-- | JSONP
+rcfqCallback :: Lens' ReportsCompatibleFieldsQuery (Maybe Text)
+rcfqCallback
+  = lens _rcfqCallback (\ s a -> s{_rcfqCallback = a})
+
 instance GoogleRequest ReportsCompatibleFieldsQuery
          where
         type Rs ReportsCompatibleFieldsQuery =
@@ -104,7 +164,12 @@ instance GoogleRequest ReportsCompatibleFieldsQuery
         type Scopes ReportsCompatibleFieldsQuery =
              '["https://www.googleapis.com/auth/dfareporting"]
         requestClient ReportsCompatibleFieldsQuery'{..}
-          = go _rcfqProFileId (Just AltJSON) _rcfqPayload
+          = go _rcfqProFileId _rcfqXgafv _rcfqUploadProtocol
+              _rcfqAccessToken
+              _rcfqUploadType
+              _rcfqCallback
+              (Just AltJSON)
+              _rcfqPayload
               dFAReportingService
           where go
                   = buildClient

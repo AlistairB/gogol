@@ -22,6 +22,12 @@ module Network.Google.BinaryAuthorization.Types
     -- * OAuth Scopes
     , cloudPlatformScope
 
+    -- * Signature
+    , Signature
+    , signature
+    , sSignature
+    , sPublicKeyId
+
     -- * PkixPublicKey
     , PkixPublicKey
     , pkixPublicKey
@@ -35,13 +41,6 @@ module Network.Google.BinaryAuthorization.Types
     , eExpression
     , eTitle
     , eDescription
-
-    -- * UserOwnedDrydockNote
-    , UserOwnedDrydockNote
-    , userOwnedDrydockNote
-    , uodnDelegationServiceAccountEmail
-    , uodnPublicKeys
-    , uodnNoteReference
 
     -- * Empty
     , Empty
@@ -58,11 +57,29 @@ module Network.Google.BinaryAuthorization.Types
     , setIAMPolicyRequest
     , siprPolicy
 
+    -- * ValidateAttestationOccurrenceRequest
+    , ValidateAttestationOccurrenceRequest
+    , validateAttestationOccurrenceRequest
+    , vaorOccurrenceNote
+    , vaorAttestation
+    , vaorOccurrenceResourceURI
+
+    -- * Jwt
+    , Jwt
+    , jwt
+    , jCompactJwt
+
     -- * ListAttestorsResponse
     , ListAttestorsResponse
     , listAttestorsResponse
     , larNextPageToken
     , larAttestors
+
+    -- * ValidateAttestationOccurrenceResponse
+    , ValidateAttestationOccurrenceResponse
+    , validateAttestationOccurrenceResponse
+    , vaorDenialReason
+    , vaorResult
 
     -- * AdmissionWhiteListPattern
     , AdmissionWhiteListPattern
@@ -97,6 +114,9 @@ module Network.Google.BinaryAuthorization.Types
     , ipVersion
     , ipBindings
 
+    -- * ValidateAttestationOccurrenceResponseResult
+    , ValidateAttestationOccurrenceResponseResult (..)
+
     -- * AttestorPublicKey
     , AttestorPublicKey
     , attestorPublicKey
@@ -121,6 +141,13 @@ module Network.Google.BinaryAuthorization.Types
     , pGlobalPolicyEvaluationMode
     , pDescription
 
+    -- * UserOwnedGrafeasNote
+    , UserOwnedGrafeasNote
+    , userOwnedGrafeasNote
+    , uognDelegationServiceAccountEmail
+    , uognPublicKeys
+    , uognNoteReference
+
     -- * PolicyClusterAdmissionRules
     , PolicyClusterAdmissionRules
     , policyClusterAdmissionRules
@@ -129,14 +156,22 @@ module Network.Google.BinaryAuthorization.Types
     -- * Attestor
     , Attestor
     , attestor
-    , aUserOwnedDrydockNote
     , aUpdateTime
     , aName
+    , aUserOwnedGrafeasNote
     , aDescription
+
+    -- * AttestationOccurrence
+    , AttestationOccurrence
+    , attestationOccurrence
+    , aoSerializedPayload
+    , aoJwts
+    , aoSignatures
 
     -- * Binding
     , Binding
     , binding
+    , bBindingId
     , bMembers
     , bRole
     , bCondition
@@ -146,11 +181,10 @@ import           Network.Google.BinaryAuthorization.Types.Product
 import           Network.Google.BinaryAuthorization.Types.Sum
 import           Network.Google.Prelude
 
--- | Default request referring to version 'v1beta1' of the Binary Authorization API. This contains the host and root path used as a starting point for constructing service requests.
+-- | Default request referring to version 'v1' of the Binary Authorization API. This contains the host and root path used as a starting point for constructing service requests.
 binaryAuthorizationService :: ServiceConfig
 binaryAuthorizationService
-  = defaultService
-      (ServiceId "binaryauthorization:v1beta1")
+  = defaultService (ServiceId "binaryauthorization:v1")
       "binaryauthorization.googleapis.com"
 
 -- | View and manage your data across Google Cloud Platform services

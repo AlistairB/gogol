@@ -54,6 +54,9 @@ module Network.Google.BinaryAuthorization
     -- ** binaryauthorization.projects.attestors.update
     , module Network.Google.Resource.BinaryAuthorization.Projects.Attestors.Update
 
+    -- ** binaryauthorization.projects.attestors.validateAttestationOccurrence
+    , module Network.Google.Resource.BinaryAuthorization.Projects.Attestors.ValidateAttestationOccurrence
+
     -- ** binaryauthorization.projects.getPolicy
     , module Network.Google.Resource.BinaryAuthorization.Projects.GetPolicy
 
@@ -71,6 +74,12 @@ module Network.Google.BinaryAuthorization
 
     -- * Types
 
+    -- ** Signature
+    , Signature
+    , signature
+    , sSignature
+    , sPublicKeyId
+
     -- ** PkixPublicKey
     , PkixPublicKey
     , pkixPublicKey
@@ -84,13 +93,6 @@ module Network.Google.BinaryAuthorization
     , eExpression
     , eTitle
     , eDescription
-
-    -- ** UserOwnedDrydockNote
-    , UserOwnedDrydockNote
-    , userOwnedDrydockNote
-    , uodnDelegationServiceAccountEmail
-    , uodnPublicKeys
-    , uodnNoteReference
 
     -- ** Empty
     , Empty
@@ -107,11 +109,29 @@ module Network.Google.BinaryAuthorization
     , setIAMPolicyRequest
     , siprPolicy
 
+    -- ** ValidateAttestationOccurrenceRequest
+    , ValidateAttestationOccurrenceRequest
+    , validateAttestationOccurrenceRequest
+    , vaorOccurrenceNote
+    , vaorAttestation
+    , vaorOccurrenceResourceURI
+
+    -- ** Jwt
+    , Jwt
+    , jwt
+    , jCompactJwt
+
     -- ** ListAttestorsResponse
     , ListAttestorsResponse
     , listAttestorsResponse
     , larNextPageToken
     , larAttestors
+
+    -- ** ValidateAttestationOccurrenceResponse
+    , ValidateAttestationOccurrenceResponse
+    , validateAttestationOccurrenceResponse
+    , vaorDenialReason
+    , vaorResult
 
     -- ** AdmissionWhiteListPattern
     , AdmissionWhiteListPattern
@@ -146,6 +166,9 @@ module Network.Google.BinaryAuthorization
     , ipVersion
     , ipBindings
 
+    -- ** ValidateAttestationOccurrenceResponseResult
+    , ValidateAttestationOccurrenceResponseResult (..)
+
     -- ** AttestorPublicKey
     , AttestorPublicKey
     , attestorPublicKey
@@ -170,6 +193,13 @@ module Network.Google.BinaryAuthorization
     , pGlobalPolicyEvaluationMode
     , pDescription
 
+    -- ** UserOwnedGrafeasNote
+    , UserOwnedGrafeasNote
+    , userOwnedGrafeasNote
+    , uognDelegationServiceAccountEmail
+    , uognPublicKeys
+    , uognNoteReference
+
     -- ** PolicyClusterAdmissionRules
     , PolicyClusterAdmissionRules
     , policyClusterAdmissionRules
@@ -178,14 +208,22 @@ module Network.Google.BinaryAuthorization
     -- ** Attestor
     , Attestor
     , attestor
-    , aUserOwnedDrydockNote
     , aUpdateTime
     , aName
+    , aUserOwnedGrafeasNote
     , aDescription
+
+    -- ** AttestationOccurrence
+    , AttestationOccurrence
+    , attestationOccurrence
+    , aoSerializedPayload
+    , aoJwts
+    , aoSignatures
 
     -- ** Binding
     , Binding
     , binding
+    , bBindingId
     , bMembers
     , bRole
     , bCondition
@@ -201,6 +239,7 @@ import           Network.Google.Resource.BinaryAuthorization.Projects.Attestors.
 import           Network.Google.Resource.BinaryAuthorization.Projects.Attestors.SetIAMPolicy
 import           Network.Google.Resource.BinaryAuthorization.Projects.Attestors.TestIAMPermissions
 import           Network.Google.Resource.BinaryAuthorization.Projects.Attestors.Update
+import           Network.Google.Resource.BinaryAuthorization.Projects.Attestors.ValidateAttestationOccurrence
 import           Network.Google.Resource.BinaryAuthorization.Projects.GetPolicy
 import           Network.Google.Resource.BinaryAuthorization.Projects.Policy.GetIAMPolicy
 import           Network.Google.Resource.BinaryAuthorization.Projects.Policy.SetIAMPolicy
@@ -217,6 +256,8 @@ type BinaryAuthorizationAPI =
        ProjectsAttestorsGetIAMPolicyResource
        :<|> ProjectsAttestorsGetResource
        :<|> ProjectsAttestorsCreateResource
+       :<|>
+       ProjectsAttestorsValidateAttestationOccurrenceResource
        :<|> ProjectsAttestorsSetIAMPolicyResource
        :<|> ProjectsAttestorsTestIAMPermissionsResource
        :<|> ProjectsAttestorsDeleteResource

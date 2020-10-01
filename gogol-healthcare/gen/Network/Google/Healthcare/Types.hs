@@ -70,24 +70,14 @@ module Network.Google.Healthcare.Types
     , RedactConfig
     , redactConfig
 
-    -- * DeidentifyErrorDetails
-    , DeidentifyErrorDetails
-    , deidentifyErrorDetails
-    , dedSuccessStoreCount
-    , dedSuccessResourceCount
-    , dedFailureResourceCount
-    , dedFailureStoreCount
-
     -- * NotificationConfig
     , NotificationConfig
     , notificationConfig
     , ncPubsubTopic
 
-    -- * GoogleCloudHealthcareV1beta1FhirRestImportResourcesResponse
-    , GoogleCloudHealthcareV1beta1FhirRestImportResourcesResponse
-    , googleCloudHealthcareV1beta1FhirRestImportResourcesResponse
-    , gchvfrirrFhirStore
-    , gchvfrirrInputSize
+    -- * ImportResourcesResponse
+    , ImportResourcesResponse
+    , importResourcesResponse
 
     -- * FhirConfig
     , FhirConfig
@@ -119,11 +109,9 @@ module Network.Google.Healthcare.Types
     , lorNextPageToken
     , lorOperations
 
-    -- * GoogleCloudHealthcareV1beta1DicomGcsDestination
-    , GoogleCloudHealthcareV1beta1DicomGcsDestination
-    , googleCloudHealthcareV1beta1DicomGcsDestination
-    , gchvdgdURIPrefix
-    , gchvdgdMimeType
+    -- * CancelOperationRequest
+    , CancelOperationRequest
+    , cancelOperationRequest
 
     -- * FhirStore
     , FhirStore
@@ -133,8 +121,9 @@ module Network.Google.Healthcare.Types
     , fsDisableReferentialIntegrity
     , fsDisableResourceVersioning
     , fsName
+    , fsVersion
+    , fsStreamConfigs
     , fsLabels
-    , fsEnableHistoryImport
 
     -- * SegmentFields
     , SegmentFields
@@ -147,10 +136,9 @@ module Network.Google.Healthcare.Types
     , dsName
     , dsTimeZone
 
-    -- * GoogleCloudHealthcareV1beta1FhirRestGcsSource
-    , GoogleCloudHealthcareV1beta1FhirRestGcsSource
-    , googleCloudHealthcareV1beta1FhirRestGcsSource
-    , gchvfrgsURI
+    -- * ImportDicomDataResponse
+    , ImportDicomDataResponse
+    , importDicomDataResponse
 
     -- * Location
     , Location
@@ -184,18 +172,44 @@ module Network.Google.Healthcare.Types
     , importDicomDataRequest
     , iddrGcsSource
 
+    -- * GoogleCloudHealthcareV1DicomBigQueryDestination
+    , GoogleCloudHealthcareV1DicomBigQueryDestination
+    , googleCloudHealthcareV1DicomBigQueryDestination
+    , gchvdbqdForce
+    , gchvdbqdTableURI
+
     -- * Hl7V2Store
     , Hl7V2Store
     , hl7V2Store
-    , hvsNotificationConfig
+    , hvsNotificationConfigs
+    , hvsRejectDuplicateMessage
     , hvsName
     , hvsParserConfig
     , hvsLabels
 
-    -- * GoogleCloudHealthcareV1beta1FhirRestGcsDestination
-    , GoogleCloudHealthcareV1beta1FhirRestGcsDestination
-    , googleCloudHealthcareV1beta1FhirRestGcsDestination
-    , gchvfrgdURIPrefix
+    -- * GoogleCloudHealthcareV1DicomGcsSource
+    , GoogleCloudHealthcareV1DicomGcsSource
+    , googleCloudHealthcareV1DicomGcsSource
+    , gchvdgsURI
+
+    -- * Hl7V2NotificationConfig
+    , Hl7V2NotificationConfig
+    , hl7V2NotificationConfig
+    , hvncPubsubTopic
+    , hvncFilter
+
+    -- * GoogleCloudHealthcareV1DeidentifyDeidentifyFhirStoreSummary
+    , GoogleCloudHealthcareV1DeidentifyDeidentifyFhirStoreSummary
+    , googleCloudHealthcareV1DeidentifyDeidentifyFhirStoreSummary
+
+    -- * GoogleCloudHealthcareV1FhirGcsDestination
+    , GoogleCloudHealthcareV1FhirGcsDestination
+    , googleCloudHealthcareV1FhirGcsDestination
+    , gchvfgdURIPrefix
+
+    -- * ExportDicomDataResponse
+    , ExportDicomDataResponse
+    , exportDicomDataResponse
 
     -- * StatusDetailsItem
     , StatusDetailsItem
@@ -211,14 +225,6 @@ module Network.Google.Healthcare.Types
     -- * ImageConfigTextRedactionMode
     , ImageConfigTextRedactionMode (..)
 
-    -- * GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails
-    , GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails
-    , googleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails
-    , gchvfriredFhirStore
-    , gchvfriredErrorCount
-    , gchvfriredSuccessCount
-    , gchvfriredInputSize
-
     -- * DateShiftConfig
     , DateShiftConfig
     , dateShiftConfig
@@ -230,11 +236,25 @@ module Network.Google.Healthcare.Types
     , siprUpdateMask
     , siprPolicy
 
+    -- * DicomFilterConfig
+    , DicomFilterConfig
+    , dicomFilterConfig
+    , dfcResourcePathsGcsURI
+
     -- * DeidentifySummary
     , DeidentifySummary
     , deidentifySummary
-    , dsSuccessStoreCount
-    , dsSuccessResourceCount
+
+    -- * GoogleCloudHealthcareV1DicomGcsDestination
+    , GoogleCloudHealthcareV1DicomGcsDestination
+    , googleCloudHealthcareV1DicomGcsDestination
+    , gchvdgdURIPrefix
+    , gchvdgdMimeType
+
+    -- * Resources
+    , Resources
+    , resources
+    , rResources
 
     -- * ProgressCounter
     , ProgressCounter
@@ -243,8 +263,15 @@ module Network.Google.Healthcare.Types
     , pcSuccess
     , pcFailure
 
+    -- * ProjectsLocationsDataSetsHl7V2StoresMessagesGetView
+    , ProjectsLocationsDataSetsHl7V2StoresMessagesGetView (..)
+
     -- * ImportResourcesRequestContentStructure
     , ImportResourcesRequestContentStructure (..)
+
+    -- * GoogleCloudHealthcareV1DeidentifyDeidentifyDicomStoreSummary
+    , GoogleCloudHealthcareV1DeidentifyDeidentifyDicomStoreSummary
+    , googleCloudHealthcareV1DeidentifyDeidentifyDicomStoreSummary
 
     -- * FieldMetadataAction
     , FieldMetadataAction (..)
@@ -268,14 +295,15 @@ module Network.Google.Healthcare.Types
     , fhirStoreLabels
     , fslAddtional
 
+    -- * DeidentifyDicomStoreRequest
+    , DeidentifyDicomStoreRequest
+    , deidentifyDicomStoreRequest
+    , ddsrConfig
+    , ddsrFilterConfig
+    , ddsrDestinationStore
+
     -- * AuditLogConfigLogType
     , AuditLogConfigLogType (..)
-
-    -- * GoogleCloudHealthcareV1beta1FhirBigQueryDestination
-    , GoogleCloudHealthcareV1beta1FhirBigQueryDestination
-    , googleCloudHealthcareV1beta1FhirBigQueryDestination
-    , gchvfbqdSchemaConfig
-    , gchvfbqdDataSetURI
 
     -- * ReplaceWithInfoTypeConfig
     , ReplaceWithInfoTypeConfig
@@ -318,11 +346,19 @@ module Network.Google.Healthcare.Types
     , hl7V2StoreLabels
     , hvslAddtional
 
+    -- * FhirFilter
+    , FhirFilter
+    , fhirFilter
+    , ffResources
+
     -- * ParserConfig
     , ParserConfig
     , parserConfig
     , pcSegmentTerminator
     , pcAllowNullHeader
+
+    -- * ProjectsLocationsDataSetsHl7V2StoresMessagesListView
+    , ProjectsLocationsDataSetsHl7V2StoresMessagesListView (..)
 
     -- * HTTPBody
     , HTTPBody
@@ -346,6 +382,9 @@ module Network.Google.Healthcare.Types
     , listDataSetsResponse
     , ldsrNextPageToken
     , ldsrDataSets
+
+    -- * FhirStoreVersion
+    , FhirStoreVersion (..)
 
     -- * Policy
     , Policy
@@ -379,9 +418,11 @@ module Network.Google.Healthcare.Types
     -- * OperationMetadata
     , OperationMetadata
     , operationMetadata
+    , omLogsURL
     , omCounter
     , omEndTime
     , omAPIMethodName
+    , omCancelRequested
     , omCreateTime
 
     -- * Message
@@ -397,11 +438,6 @@ module Network.Google.Healthcare.Types
     , mCreateTime
     , mParsedData
 
-    -- * GoogleCloudHealthcareV1beta1DicomGcsSource
-    , GoogleCloudHealthcareV1beta1DicomGcsSource
-    , googleCloudHealthcareV1beta1DicomGcsSource
-    , gchvdgsURI
-
     -- * CryptoHashConfig
     , CryptoHashConfig
     , cryptoHashConfig
@@ -414,22 +450,11 @@ module Network.Google.Healthcare.Types
     , dName
     , dLabels
 
-    -- * ImportDicomDataErrorDetails
-    , ImportDicomDataErrorDetails
-    , importDicomDataErrorDetails
-    , iddedSampleErrors
-
     -- * AuditLogConfig
     , AuditLogConfig
     , auditLogConfig
     , alcLogType
     , alcExemptedMembers
-
-    -- * GoogleCloudHealthcareV1beta1DicomBigQueryDestination
-    , GoogleCloudHealthcareV1beta1DicomBigQueryDestination
-    , googleCloudHealthcareV1beta1DicomBigQueryDestination
-    , gchvdbqdForce
-    , gchvdbqdTableURI
 
     -- * Segment
     , Segment
@@ -451,8 +476,12 @@ module Network.Google.Healthcare.Types
     -- * DeidentifyDataSetRequest
     , DeidentifyDataSetRequest
     , deidentifyDataSetRequest
-    , ddsrConfig
-    , ddsrDestinationDataSet
+    , dConfig
+    , dDestinationDataSet
+
+    -- * ExportResourcesResponse
+    , ExportResourcesResponse
+    , exportResourcesResponse
 
     -- * PatientId
     , PatientId
@@ -460,18 +489,19 @@ module Network.Google.Healthcare.Types
     , piValue
     , piType
 
-    -- * GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse
-    , GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse
-    , googleCloudHealthcareV1beta1FhirRestExportResourcesResponse
-    , gchvfrerrFhirStore
-    , gchvfrerrResourceCount
-
     -- * DicomConfig
     , DicomConfig
     , dicomConfig
+    , dcSkipIdRedaction
     , dcKeepList
     , dcRemoveList
     , dcFilterProFile
+
+    -- * StreamConfig
+    , StreamConfig
+    , streamConfig
+    , scBigQueryDestination
+    , scResourceTypes
 
     -- * OperationResponse
     , OperationResponse
@@ -483,6 +513,13 @@ module Network.Google.Healthcare.Types
     , createMessageRequest
     , cmrMessage
 
+    -- * DeidentifyFhirStoreRequest
+    , DeidentifyFhirStoreRequest
+    , deidentifyFhirStoreRequest
+    , dfsrResourceFilter
+    , dfsrConfig
+    , dfsrDestinationStore
+
     -- * DicomStoreLabels
     , DicomStoreLabels
     , dicomStoreLabels
@@ -492,7 +529,19 @@ module Network.Google.Healthcare.Types
     , ListMessagesResponse
     , listMessagesResponse
     , lmrNextPageToken
-    , lmrMessages
+    , lmrHl7V2Messages
+
+    -- * GoogleCloudHealthcareV1FhirBigQueryDestination
+    , GoogleCloudHealthcareV1FhirBigQueryDestination
+    , googleCloudHealthcareV1FhirBigQueryDestination
+    , gchvfbqdForce
+    , gchvfbqdSchemaConfig
+    , gchvfbqdDataSetURI
+
+    -- * GoogleCloudHealthcareV1FhirGcsSource
+    , GoogleCloudHealthcareV1FhirGcsSource
+    , googleCloudHealthcareV1FhirGcsSource
+    , gchvfgsURI
 
     -- * ListDicomStoresResponse
     , ListDicomStoresResponse
@@ -517,22 +566,16 @@ module Network.Google.Healthcare.Types
     , ParsedData
     , parsedData
     , pdSegments
-
-    -- * ErrorDetail
-    , ErrorDetail
-    , errorDetail
-    , edError
-    , edResource
     ) where
 
 import           Network.Google.Healthcare.Types.Product
 import           Network.Google.Healthcare.Types.Sum
 import           Network.Google.Prelude
 
--- | Default request referring to version 'v1beta1' of the Cloud Healthcare API. This contains the host and root path used as a starting point for constructing service requests.
+-- | Default request referring to version 'v1' of the Cloud Healthcare API. This contains the host and root path used as a starting point for constructing service requests.
 healthcareService :: ServiceConfig
 healthcareService
-  = defaultService (ServiceId "healthcare:v1beta1")
+  = defaultService (ServiceId "healthcare:v1")
       "healthcare.googleapis.com"
 
 -- | View and manage your data across Google Cloud Platform services

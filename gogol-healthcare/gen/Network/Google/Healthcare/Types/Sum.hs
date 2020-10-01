@@ -57,17 +57,74 @@ instance FromJSON ImageConfigTextRedactionMode where
 instance ToJSON ImageConfigTextRedactionMode where
     toJSON = toJSONText
 
--- | The content structure in the source location. The default is BUNDLE.
+-- | Specifies which parts of the Message resource to return in the response.
+-- When unspecified, equivalent to FULL.
+data ProjectsLocationsDataSetsHl7V2StoresMessagesGetView
+    = MessageViewUnspecified
+      -- ^ @MESSAGE_VIEW_UNSPECIFIED@
+      -- Not specified, equivalent to FULL.
+    | RawOnly
+      -- ^ @RAW_ONLY@
+      -- Server responses include all the message fields except parsed_data
+      -- field.
+    | ParsedOnly
+      -- ^ @PARSED_ONLY@
+      -- Server responses include all the message fields except data field.
+    | Full
+      -- ^ @FULL@
+      -- Server responses include all the message fields.
+    | Basic
+      -- ^ @BASIC@
+      -- Server responses include only the name field.
+      deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
+
+instance Hashable ProjectsLocationsDataSetsHl7V2StoresMessagesGetView
+
+instance FromHttpApiData ProjectsLocationsDataSetsHl7V2StoresMessagesGetView where
+    parseQueryParam = \case
+        "MESSAGE_VIEW_UNSPECIFIED" -> Right MessageViewUnspecified
+        "RAW_ONLY" -> Right RawOnly
+        "PARSED_ONLY" -> Right ParsedOnly
+        "FULL" -> Right Full
+        "BASIC" -> Right Basic
+        x -> Left ("Unable to parse ProjectsLocationsDataSetsHl7V2StoresMessagesGetView from: " <> x)
+
+instance ToHttpApiData ProjectsLocationsDataSetsHl7V2StoresMessagesGetView where
+    toQueryParam = \case
+        MessageViewUnspecified -> "MESSAGE_VIEW_UNSPECIFIED"
+        RawOnly -> "RAW_ONLY"
+        ParsedOnly -> "PARSED_ONLY"
+        Full -> "FULL"
+        Basic -> "BASIC"
+
+instance FromJSON ProjectsLocationsDataSetsHl7V2StoresMessagesGetView where
+    parseJSON = parseJSONText "ProjectsLocationsDataSetsHl7V2StoresMessagesGetView"
+
+instance ToJSON ProjectsLocationsDataSetsHl7V2StoresMessagesGetView where
+    toJSON = toJSONText
+
+-- | The content structure in the source location. If not specified, the
+-- server treats the input source files as BUNDLE.
 data ImportResourcesRequestContentStructure
     = ContentStructureUnspecified
       -- ^ @CONTENT_STRUCTURE_UNSPECIFIED@
+      -- If the content structure is not specified, the default value \`BUNDLE\`
+      -- is used.
     | Bundle
       -- ^ @BUNDLE@
-      -- Each line is a bundle, which contains one or more resources. Set the
-      -- bundle type to \`history\` to import resource versions.
+      -- The source file contains one or more lines of newline-delimited JSON
+      -- (ndjson). Each line is a bundle that contains one or more resources. Set
+      -- the bundle type to \`history\` to import resource versions.
     | Resource
       -- ^ @RESOURCE@
-      -- Each line is a single resource.
+      -- The source file contains one or more lines of newline-delimited JSON
+      -- (ndjson). Each line is a single resource.
+    | BundlePretty
+      -- ^ @BUNDLE_PRETTY@
+      -- The entire file is one JSON bundle. The JSON can span multiple lines.
+    | ResourcePretty
+      -- ^ @RESOURCE_PRETTY@
+      -- The entire file is one JSON resource. The JSON can span multiple lines.
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
 
 instance Hashable ImportResourcesRequestContentStructure
@@ -77,6 +134,8 @@ instance FromHttpApiData ImportResourcesRequestContentStructure where
         "CONTENT_STRUCTURE_UNSPECIFIED" -> Right ContentStructureUnspecified
         "BUNDLE" -> Right Bundle
         "RESOURCE" -> Right Resource
+        "BUNDLE_PRETTY" -> Right BundlePretty
+        "RESOURCE_PRETTY" -> Right ResourcePretty
         x -> Left ("Unable to parse ImportResourcesRequestContentStructure from: " <> x)
 
 instance ToHttpApiData ImportResourcesRequestContentStructure where
@@ -84,6 +143,8 @@ instance ToHttpApiData ImportResourcesRequestContentStructure where
         ContentStructureUnspecified -> "CONTENT_STRUCTURE_UNSPECIFIED"
         Bundle -> "BUNDLE"
         Resource -> "RESOURCE"
+        BundlePretty -> "BUNDLE_PRETTY"
+        ResourcePretty -> "RESOURCE_PRETTY"
 
 instance FromJSON ImportResourcesRequestContentStructure where
     parseJSON = parseJSONText "ImportResourcesRequestContentStructure"
@@ -198,20 +259,20 @@ instance FromJSON Xgafv where
 instance ToJSON Xgafv where
     toJSON = toJSONText
 
--- | Specifies the output schema type. If unspecified, the default is
--- \`LOSSLESS\`.
+-- | Specifies the output schema type. Schema type is required.
 data SchemaConfigSchemaType
     = SchemaTypeUnspecified
       -- ^ @SCHEMA_TYPE_UNSPECIFIED@
-      -- No schema type specified. Same as \`LOSSLESS\`.
-    | Lossless
-      -- ^ @LOSSLESS@
-      -- A data-driven schema generated from the fields present in the FHIR data
-      -- being exported, with no additional simplification.
+      -- No schema type specified. This type is unsupported.
     | Analytics
       -- ^ @ANALYTICS@
       -- Analytics schema defined by the FHIR community. See
       -- https:\/\/github.com\/FHIR\/sql-on-fhir\/blob\/master\/sql-on-fhir.md.
+      -- BigQuery only allows a maximum of 10,000 columns per table. Due to this
+      -- limitation, the server will not generate schemas for fields of type
+      -- \`Resource\`, which can hold any resource type. The affected fields are
+      -- \`Parameters.parameter.resource\`, \`Bundle.entry.resource\`, and
+      -- \`Bundle.entry.response.outcome\`.
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
 
 instance Hashable SchemaConfigSchemaType
@@ -219,14 +280,12 @@ instance Hashable SchemaConfigSchemaType
 instance FromHttpApiData SchemaConfigSchemaType where
     parseQueryParam = \case
         "SCHEMA_TYPE_UNSPECIFIED" -> Right SchemaTypeUnspecified
-        "LOSSLESS" -> Right Lossless
         "ANALYTICS" -> Right Analytics
         x -> Left ("Unable to parse SchemaConfigSchemaType from: " <> x)
 
 instance ToHttpApiData SchemaConfigSchemaType where
     toQueryParam = \case
         SchemaTypeUnspecified -> "SCHEMA_TYPE_UNSPECIFIED"
-        Lossless -> "LOSSLESS"
         Analytics -> "ANALYTICS"
 
 instance FromJSON SchemaConfigSchemaType where
@@ -246,7 +305,8 @@ data DicomConfigFilterProFile
     | AttributeConfidentialityBasicProFile
       -- ^ @ATTRIBUTE_CONFIDENTIALITY_BASIC_PROFILE@
       -- Remove tags based on DICOM Standard\'s Attribute Confidentiality Basic
-      -- Profile (DICOM Standard Edition 2018e).
+      -- Profile (DICOM Standard Edition 2018e)
+      -- http:\/\/dicom.nema.org\/medical\/dicom\/2018e\/output\/chtml\/part15\/chapter_E.html.
     | KeepAllProFile
       -- ^ @KEEP_ALL_PROFILE@
       -- Keep all tags.
@@ -281,4 +341,95 @@ instance FromJSON DicomConfigFilterProFile where
     parseJSON = parseJSONText "DicomConfigFilterProFile"
 
 instance ToJSON DicomConfigFilterProFile where
+    toJSON = toJSONText
+
+-- | Specifies the parts of the Message to return in the response. When
+-- unspecified, equivalent to BASIC. Setting this to anything other than
+-- BASIC with a \`page_size\` larger than the default can generate a large
+-- response, which impacts the performance of this method.
+data ProjectsLocationsDataSetsHl7V2StoresMessagesListView
+    = PLDSHVSMLVMessageViewUnspecified
+      -- ^ @MESSAGE_VIEW_UNSPECIFIED@
+      -- Not specified, equivalent to FULL.
+    | PLDSHVSMLVRawOnly
+      -- ^ @RAW_ONLY@
+      -- Server responses include all the message fields except parsed_data
+      -- field.
+    | PLDSHVSMLVParsedOnly
+      -- ^ @PARSED_ONLY@
+      -- Server responses include all the message fields except data field.
+    | PLDSHVSMLVFull
+      -- ^ @FULL@
+      -- Server responses include all the message fields.
+    | PLDSHVSMLVBasic
+      -- ^ @BASIC@
+      -- Server responses include only the name field.
+      deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
+
+instance Hashable ProjectsLocationsDataSetsHl7V2StoresMessagesListView
+
+instance FromHttpApiData ProjectsLocationsDataSetsHl7V2StoresMessagesListView where
+    parseQueryParam = \case
+        "MESSAGE_VIEW_UNSPECIFIED" -> Right PLDSHVSMLVMessageViewUnspecified
+        "RAW_ONLY" -> Right PLDSHVSMLVRawOnly
+        "PARSED_ONLY" -> Right PLDSHVSMLVParsedOnly
+        "FULL" -> Right PLDSHVSMLVFull
+        "BASIC" -> Right PLDSHVSMLVBasic
+        x -> Left ("Unable to parse ProjectsLocationsDataSetsHl7V2StoresMessagesListView from: " <> x)
+
+instance ToHttpApiData ProjectsLocationsDataSetsHl7V2StoresMessagesListView where
+    toQueryParam = \case
+        PLDSHVSMLVMessageViewUnspecified -> "MESSAGE_VIEW_UNSPECIFIED"
+        PLDSHVSMLVRawOnly -> "RAW_ONLY"
+        PLDSHVSMLVParsedOnly -> "PARSED_ONLY"
+        PLDSHVSMLVFull -> "FULL"
+        PLDSHVSMLVBasic -> "BASIC"
+
+instance FromJSON ProjectsLocationsDataSetsHl7V2StoresMessagesListView where
+    parseJSON = parseJSONText "ProjectsLocationsDataSetsHl7V2StoresMessagesListView"
+
+instance ToJSON ProjectsLocationsDataSetsHl7V2StoresMessagesListView where
+    toJSON = toJSONText
+
+-- | The FHIR specification version that this FHIR store supports natively.
+-- This field is immutable after store creation. Requests are rejected if
+-- they contain FHIR resources of a different version. Version is required
+-- for every FHIR store.
+data FhirStoreVersion
+    = VersionUnspecified
+      -- ^ @VERSION_UNSPECIFIED@
+      -- Users must specify a version on store creation or an error is returned.
+    | DSTU2
+      -- ^ @DSTU2@
+      -- Draft Standard for Trial Use, [Release
+      -- 2](https:\/\/www.hl7.org\/fhir\/DSTU2)
+    | STU3
+      -- ^ @STU3@
+      -- Standard for Trial Use, [Release 3](https:\/\/www.hl7.org\/fhir\/STU3)
+    | R4
+      -- ^ @R4@
+      -- [Release 4](https:\/\/www.hl7.org\/fhir\/R4)
+      deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
+
+instance Hashable FhirStoreVersion
+
+instance FromHttpApiData FhirStoreVersion where
+    parseQueryParam = \case
+        "VERSION_UNSPECIFIED" -> Right VersionUnspecified
+        "DSTU2" -> Right DSTU2
+        "STU3" -> Right STU3
+        "R4" -> Right R4
+        x -> Left ("Unable to parse FhirStoreVersion from: " <> x)
+
+instance ToHttpApiData FhirStoreVersion where
+    toQueryParam = \case
+        VersionUnspecified -> "VERSION_UNSPECIFIED"
+        DSTU2 -> "DSTU2"
+        STU3 -> "STU3"
+        R4 -> "R4"
+
+instance FromJSON FhirStoreVersion where
+    parseJSON = parseJSONText "FhirStoreVersion"
+
+instance ToJSON FhirStoreVersion where
     toJSON = toJSONText
