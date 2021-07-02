@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.AdvertiserGroups.Get
     , agggCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertiserGroups.get@ method which the
 -- 'AdvertiserGroupsGet' request conforms to.
@@ -67,13 +67,13 @@ type AdvertiserGroupsGetResource =
 -- /See:/ 'advertiserGroupsGet' smart constructor.
 data AdvertiserGroupsGet =
   AdvertiserGroupsGet'
-    { _agggXgafv          :: !(Maybe Xgafv)
+    { _agggXgafv :: !(Maybe Xgafv)
     , _agggUploadProtocol :: !(Maybe Text)
-    , _agggAccessToken    :: !(Maybe Text)
-    , _agggUploadType     :: !(Maybe Text)
-    , _agggProFileId      :: !(Textual Int64)
-    , _agggId             :: !(Textual Int64)
-    , _agggCallback       :: !(Maybe Text)
+    , _agggAccessToken :: !(Maybe Text)
+    , _agggUploadType :: !(Maybe Text)
+    , _agggProFileId :: !(Textual Int64)
+    , _agggId :: !(Textual Int64)
+    , _agggCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

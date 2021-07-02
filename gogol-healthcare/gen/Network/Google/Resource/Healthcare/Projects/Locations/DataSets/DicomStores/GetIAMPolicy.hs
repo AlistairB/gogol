@@ -43,8 +43,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStore
     , pldsdsgipCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.dicomStores.getIamPolicy@ method which the
 -- 'ProjectsLocationsDataSetsDicomStoresGetIAMPolicy' request conforms to.
@@ -69,12 +69,12 @@ type ProjectsLocationsDataSetsDicomStoresGetIAMPolicyResource
 data ProjectsLocationsDataSetsDicomStoresGetIAMPolicy =
   ProjectsLocationsDataSetsDicomStoresGetIAMPolicy'
     { _pldsdsgipOptionsRequestedPolicyVersion :: !(Maybe (Textual Int32))
-    , _pldsdsgipXgafv                         :: !(Maybe Xgafv)
-    , _pldsdsgipUploadProtocol                :: !(Maybe Text)
-    , _pldsdsgipAccessToken                   :: !(Maybe Text)
-    , _pldsdsgipUploadType                    :: !(Maybe Text)
-    , _pldsdsgipResource                      :: !Text
-    , _pldsdsgipCallback                      :: !(Maybe Text)
+    , _pldsdsgipXgafv :: !(Maybe Xgafv)
+    , _pldsdsgipUploadProtocol :: !(Maybe Text)
+    , _pldsdsgipAccessToken :: !(Maybe Text)
+    , _pldsdsgipUploadType :: !(Maybe Text)
+    , _pldsdsgipResource :: !Text
+    , _pldsdsgipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

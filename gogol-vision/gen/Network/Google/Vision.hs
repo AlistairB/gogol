@@ -1732,10 +1732,10 @@ module Network.Google.Vision
     , gcvvgdcURI
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.Vision.Files.AsyncBatchAnnotate
-import           Network.Google.Resource.Vision.Images.Annotate
-import           Network.Google.Vision.Types
+import Network.Google.Prelude
+import Network.Google.Resource.Vision.Files.AsyncBatchAnnotate
+import Network.Google.Resource.Vision.Images.Annotate
+import Network.Google.Vision.Types
 
 {- $resources
 TODO

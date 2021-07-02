@@ -45,8 +45,8 @@ module Network.Google.Resource.DFAReporting.Cities.List
     , citCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.cities.list@ method which the
 -- 'CitiesList' request conforms to.
@@ -73,16 +73,16 @@ type CitiesListResource =
 -- /See:/ 'citiesList' smart constructor.
 data CitiesList =
   CitiesList'
-    { _citXgafv          :: !(Maybe Xgafv)
+    { _citXgafv :: !(Maybe Xgafv)
     , _citUploadProtocol :: !(Maybe Text)
-    , _citRegionDartIds  :: !(Maybe [Textual Int64])
-    , _citAccessToken    :: !(Maybe Text)
-    , _citUploadType     :: !(Maybe Text)
-    , _citProFileId      :: !(Textual Int64)
-    , _citNamePrefix     :: !(Maybe Text)
+    , _citRegionDartIds :: !(Maybe [Textual Int64])
+    , _citAccessToken :: !(Maybe Text)
+    , _citUploadType :: !(Maybe Text)
+    , _citProFileId :: !(Textual Int64)
+    , _citNamePrefix :: !(Maybe Text)
     , _citCountryDartIds :: !(Maybe [Textual Int64])
-    , _citDartIds        :: !(Maybe [Textual Int64])
-    , _citCallback       :: !(Maybe Text)
+    , _citDartIds :: !(Maybe [Textual Int64])
+    , _citCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

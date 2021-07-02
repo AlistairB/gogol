@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.FloodlightActivities.Delete
     , fadCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightActivities.delete@ method which the
 -- 'FloodlightActivitiesDelete' request conforms to.
@@ -66,13 +66,13 @@ type FloodlightActivitiesDeleteResource =
 -- /See:/ 'floodlightActivitiesDelete' smart constructor.
 data FloodlightActivitiesDelete =
   FloodlightActivitiesDelete'
-    { _fadXgafv          :: !(Maybe Xgafv)
+    { _fadXgafv :: !(Maybe Xgafv)
     , _fadUploadProtocol :: !(Maybe Text)
-    , _fadAccessToken    :: !(Maybe Text)
-    , _fadUploadType     :: !(Maybe Text)
-    , _fadProFileId      :: !(Textual Int64)
-    , _fadId             :: !(Textual Int64)
-    , _fadCallback       :: !(Maybe Text)
+    , _fadAccessToken :: !(Maybe Text)
+    , _fadUploadType :: !(Maybe Text)
+    , _fadProFileId :: !(Textual Int64)
+    , _fadId :: !(Textual Int64)
+    , _fadCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

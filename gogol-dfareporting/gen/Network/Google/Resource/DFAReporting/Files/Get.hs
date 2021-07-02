@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.Files.Get
     , fgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.files.get@ method which the
 -- 'FilesGet' request conforms to.
@@ -82,13 +82,13 @@ type FilesGetResource =
 -- /See:/ 'filesGet' smart constructor.
 data FilesGet =
   FilesGet'
-    { _fgXgafv          :: !(Maybe Xgafv)
+    { _fgXgafv :: !(Maybe Xgafv)
     , _fgUploadProtocol :: !(Maybe Text)
-    , _fgAccessToken    :: !(Maybe Text)
-    , _fgReportId       :: !(Textual Int64)
-    , _fgUploadType     :: !(Maybe Text)
-    , _fgFileId         :: !(Textual Int64)
-    , _fgCallback       :: !(Maybe Text)
+    , _fgAccessToken :: !(Maybe Text)
+    , _fgReportId :: !(Textual Int64)
+    , _fgUploadType :: !(Maybe Text)
+    , _fgFileId :: !(Textual Int64)
+    , _fgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -61,8 +61,8 @@ module Network.Google.Resource.DFAReporting.PlacementGroups.List
     , pglCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementGroups.list@ method which the
 -- 'PlacementGroupsList' request conforms to.
@@ -135,30 +135,30 @@ type PlacementGroupsListResource =
 data PlacementGroupsList =
   PlacementGroupsList'
     { _pglPlacementStrategyIds :: !(Maybe [Textual Int64])
-    , _pglXgafv                :: !(Maybe Xgafv)
-    , _pglContentCategoryIds   :: !(Maybe [Textual Int64])
-    , _pglMaxEndDate           :: !(Maybe Text)
-    , _pglUploadProtocol       :: !(Maybe Text)
-    , _pglAccessToken          :: !(Maybe Text)
-    , _pglCampaignIds          :: !(Maybe [Textual Int64])
-    , _pglPricingTypes         :: !(Maybe [PlacementGroupsListPricingTypes])
-    , _pglSearchString         :: !(Maybe Text)
-    , _pglUploadType           :: !(Maybe Text)
-    , _pglIds                  :: !(Maybe [Textual Int64])
-    , _pglProFileId            :: !(Textual Int64)
-    , _pglPlacementGroupType   :: !(Maybe PlacementGroupsListPlacementGroupType)
-    , _pglDirectorySiteIds     :: !(Maybe [Textual Int64])
-    , _pglSortOrder            :: !PlacementGroupsListSortOrder
-    , _pglSiteIds              :: !(Maybe [Textual Int64])
-    , _pglPageToken            :: !(Maybe Text)
-    , _pglSortField            :: !PlacementGroupsListSortField
-    , _pglMaxStartDate         :: !(Maybe Text)
-    , _pglAdvertiserIds        :: !(Maybe [Textual Int64])
-    , _pglMinStartDate         :: !(Maybe Text)
-    , _pglArchived             :: !(Maybe Bool)
-    , _pglMaxResults           :: !(Textual Int32)
-    , _pglMinEndDate           :: !(Maybe Text)
-    , _pglCallback             :: !(Maybe Text)
+    , _pglXgafv :: !(Maybe Xgafv)
+    , _pglContentCategoryIds :: !(Maybe [Textual Int64])
+    , _pglMaxEndDate :: !(Maybe Text)
+    , _pglUploadProtocol :: !(Maybe Text)
+    , _pglAccessToken :: !(Maybe Text)
+    , _pglCampaignIds :: !(Maybe [Textual Int64])
+    , _pglPricingTypes :: !(Maybe [PlacementGroupsListPricingTypes])
+    , _pglSearchString :: !(Maybe Text)
+    , _pglUploadType :: !(Maybe Text)
+    , _pglIds :: !(Maybe [Textual Int64])
+    , _pglProFileId :: !(Textual Int64)
+    , _pglPlacementGroupType :: !(Maybe PlacementGroupsListPlacementGroupType)
+    , _pglDirectorySiteIds :: !(Maybe [Textual Int64])
+    , _pglSortOrder :: !PlacementGroupsListSortOrder
+    , _pglSiteIds :: !(Maybe [Textual Int64])
+    , _pglPageToken :: !(Maybe Text)
+    , _pglSortField :: !PlacementGroupsListSortField
+    , _pglMaxStartDate :: !(Maybe Text)
+    , _pglAdvertiserIds :: !(Maybe [Textual Int64])
+    , _pglMinStartDate :: !(Maybe Text)
+    , _pglArchived :: !(Maybe Bool)
+    , _pglMaxResults :: !(Textual Int32)
+    , _pglMinEndDate :: !(Maybe Text)
+    , _pglCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

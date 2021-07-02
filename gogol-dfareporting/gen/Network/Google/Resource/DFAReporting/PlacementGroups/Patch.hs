@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.PlacementGroups.Patch
     , pgpCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementGroups.patch@ method which the
 -- 'PlacementGroupsPatch' request conforms to.
@@ -71,14 +71,14 @@ type PlacementGroupsPatchResource =
 -- /See:/ 'placementGroupsPatch' smart constructor.
 data PlacementGroupsPatch =
   PlacementGroupsPatch'
-    { _pgpXgafv          :: !(Maybe Xgafv)
+    { _pgpXgafv :: !(Maybe Xgafv)
     , _pgpUploadProtocol :: !(Maybe Text)
-    , _pgpAccessToken    :: !(Maybe Text)
-    , _pgpUploadType     :: !(Maybe Text)
-    , _pgpProFileId      :: !(Textual Int64)
-    , _pgpPayload        :: !PlacementGroup
-    , _pgpId             :: !(Textual Int64)
-    , _pgpCallback       :: !(Maybe Text)
+    , _pgpAccessToken :: !(Maybe Text)
+    , _pgpUploadType :: !(Maybe Text)
+    , _pgpProFileId :: !(Textual Int64)
+    , _pgpPayload :: !PlacementGroup
+    , _pgpId :: !(Textual Int64)
+    , _pgpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

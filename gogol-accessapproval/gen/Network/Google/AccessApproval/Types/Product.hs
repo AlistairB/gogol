@@ -17,15 +17,15 @@
 --
 module Network.Google.AccessApproval.Types.Product where
 
-import           Network.Google.AccessApproval.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.AccessApproval.Types.Sum
+import Network.Google.Prelude
 
 -- | Response to listing of ApprovalRequest objects.
 --
 -- /See:/ 'listApprovalRequestsResponse' smart constructor.
 data ListApprovalRequestsResponse =
   ListApprovalRequestsResponse'
-    { _larrNextPageToken    :: !(Maybe Text)
+    { _larrNextPageToken :: !(Maybe Text)
     , _larrApprovalRequests :: !(Maybe [ApprovalRequest])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -81,7 +81,7 @@ instance ToJSON ListApprovalRequestsResponse where
 data ApproveDecision =
   ApproveDecision'
     { _adApproveTime :: !(Maybe DateTime')
-    , _adExpireTime  :: !(Maybe DateTime')
+    , _adExpireTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -131,7 +131,7 @@ instance ToJSON ApproveDecision where
 -- /See:/ 'accessLocations' smart constructor.
 data AccessLocations =
   AccessLocations'
-    { _alPrincipalOfficeCountry           :: !(Maybe Text)
+    { _alPrincipalOfficeCountry :: !(Maybe Text)
     , _alPrincipalPhysicalLocationCountry :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -198,7 +198,7 @@ instance ToJSON AccessLocations where
 -- /See:/ 'dismissDecision' smart constructor.
 data DismissDecision =
   DismissDecision'
-    { _ddImplicit    :: !(Maybe Bool)
+    { _ddImplicit :: !(Maybe Bool)
     , _ddDismissTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -316,9 +316,9 @@ instance ToJSON ResourceProperties where
 -- /See:/ 'accessApprovalSettings' smart constructor.
 data AccessApprovalSettings =
   AccessApprovalSettings'
-    { _aasEnrolledServices   :: !(Maybe [EnrolledService])
-    , _aasEnrolledAncestor   :: !(Maybe Bool)
-    , _aasName               :: !(Maybe Text)
+    { _aasEnrolledServices :: !(Maybe [EnrolledService])
+    , _aasEnrolledAncestor :: !(Maybe Bool)
+    , _aasName :: !(Maybe Text)
     , _aasNotificationEmails :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -417,15 +417,15 @@ instance ToJSON AccessApprovalSettings where
 -- /See:/ 'approvalRequest' smart constructor.
 data ApprovalRequest =
   ApprovalRequest'
-    { _arRequestedResourceName       :: !(Maybe Text)
+    { _arRequestedResourceName :: !(Maybe Text)
     , _arRequestedResourceProperties :: !(Maybe ResourceProperties)
-    , _arRequestedExpiration         :: !(Maybe DateTime')
-    , _arRequestTime                 :: !(Maybe DateTime')
-    , _arRequestedReason             :: !(Maybe AccessReason)
-    , _arName                        :: !(Maybe Text)
-    , _arApprove                     :: !(Maybe ApproveDecision)
-    , _arDismiss                     :: !(Maybe DismissDecision)
-    , _arRequestedLocations          :: !(Maybe AccessLocations)
+    , _arRequestedExpiration :: !(Maybe DateTime')
+    , _arRequestTime :: !(Maybe DateTime')
+    , _arRequestedReason :: !(Maybe AccessReason)
+    , _arName :: !(Maybe Text)
+    , _arApprove :: !(Maybe ApproveDecision)
+    , _arDismiss :: !(Maybe DismissDecision)
+    , _arRequestedLocations :: !(Maybe AccessLocations)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -629,7 +629,7 @@ instance ToJSON ApproveApprovalRequestMessage where
 -- /See:/ 'enrolledService' smart constructor.
 data EnrolledService =
   EnrolledService'
-    { _esCloudProduct    :: !(Maybe Text)
+    { _esCloudProduct :: !(Maybe Text)
     , _esEnrollmentLevel :: !(Maybe EnrolledServiceEnrollmentLevel)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -686,7 +686,7 @@ instance ToJSON EnrolledService where
 -- /See:/ 'accessReason' smart constructor.
 data AccessReason =
   AccessReason'
-    { _arType   :: !(Maybe AccessReasonType)
+    { _arType :: !(Maybe AccessReasonType)
     , _arDetail :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

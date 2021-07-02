@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.CreativeGroups.Update
     , cguCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeGroups.update@ method which the
 -- 'CreativeGroupsUpdate' request conforms to.
@@ -67,13 +67,13 @@ type CreativeGroupsUpdateResource =
 -- /See:/ 'creativeGroupsUpdate' smart constructor.
 data CreativeGroupsUpdate =
   CreativeGroupsUpdate'
-    { _cguXgafv          :: !(Maybe Xgafv)
+    { _cguXgafv :: !(Maybe Xgafv)
     , _cguUploadProtocol :: !(Maybe Text)
-    , _cguAccessToken    :: !(Maybe Text)
-    , _cguUploadType     :: !(Maybe Text)
-    , _cguProFileId      :: !(Textual Int64)
-    , _cguPayload        :: !CreativeGroup
-    , _cguCallback       :: !(Maybe Text)
+    , _cguAccessToken :: !(Maybe Text)
+    , _cguUploadType :: !(Maybe Text)
+    , _cguProFileId :: !(Textual Int64)
+    , _cguPayload :: !CreativeGroup
+    , _cguCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

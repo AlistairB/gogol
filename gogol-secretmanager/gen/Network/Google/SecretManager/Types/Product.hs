@@ -17,15 +17,15 @@
 --
 module Network.Google.SecretManager.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.SecretManager.Types.Sum
+import Network.Google.Prelude
+import Network.Google.SecretManager.Types.Sum
 
 -- | Describes the status of a user-managed replica for the SecretVersion.
 --
 -- /See:/ 'replicaStatus' smart constructor.
 data ReplicaStatus =
   ReplicaStatus'
-    { _rsLocation                  :: !(Maybe Text)
+    { _rsLocation :: !(Maybe Text)
     , _rsCustomerManagedEncryption :: !(Maybe CustomerManagedEncryptionStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -79,8 +79,8 @@ instance ToJSON ReplicaStatus where
 data ListSecretsResponse =
   ListSecretsResponse'
     { _lsrNextPageToken :: !(Maybe Text)
-    , _lsrSecrets       :: !(Maybe [Secret])
-    , _lsrTotalSize     :: !(Maybe (Textual Int32))
+    , _lsrSecrets :: !(Maybe [Secret])
+    , _lsrTotalSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -146,11 +146,11 @@ instance ToJSON ListSecretsResponse where
 -- /See:/ 'secretVersion' smart constructor.
 data SecretVersion =
   SecretVersion'
-    { _svState             :: !(Maybe SecretVersionState)
-    , _svName              :: !(Maybe Text)
-    , _svDestroyTime       :: !(Maybe DateTime')
+    { _svState :: !(Maybe SecretVersionState)
+    , _svName :: !(Maybe Text)
+    , _svDestroyTime :: !(Maybe DateTime')
     , _svReplicationStatus :: !(Maybe ReplicationStatus)
-    , _svCreateTime        :: !(Maybe DateTime')
+    , _svCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -251,7 +251,7 @@ instance ToJSON SecretVersion where
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
   AuditConfig'
-    { _acService         :: !(Maybe Text)
+    { _acService :: !(Maybe Text)
     , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -343,9 +343,9 @@ instance ToJSON DestroySecretVersionRequest where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -421,7 +421,7 @@ instance ToJSON Expr where
 data ListLocationsResponse =
   ListLocationsResponse'
     { _llrNextPageToken :: !(Maybe Text)
-    , _llrLocations     :: !(Maybe [Location])
+    , _llrLocations :: !(Maybe [Location])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -560,11 +560,11 @@ instance ToJSON Automatic where
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _lName        :: !(Maybe Text)
-    , _lMetadata    :: !(Maybe LocationMetadata)
+    { _lName :: !(Maybe Text)
+    , _lMetadata :: !(Maybe LocationMetadata)
     , _lDisplayName :: !(Maybe Text)
-    , _lLabels      :: !(Maybe LocationLabels)
-    , _lLocationId  :: !(Maybe Text)
+    , _lLabels :: !(Maybe LocationLabels)
+    , _lLocationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -707,7 +707,7 @@ instance ToJSON SecretPayload where
 -- /See:/ 'replica' smart constructor.
 data Replica =
   Replica'
-    { _rLocation                  :: !(Maybe Text)
+    { _rLocation :: !(Maybe Text)
     , _rCustomerManagedEncryption :: !(Maybe CustomerManagedEncryption)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -805,7 +805,7 @@ instance ToJSON SecretLabels where
 data AccessSecretVersionResponse =
   AccessSecretVersionResponse'
     { _asvrPayload :: !(Maybe SecretPayload)
-    , _asvrName    :: !(Maybe Text)
+    , _asvrName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -853,8 +853,8 @@ instance ToJSON AccessSecretVersionResponse where
 data ListSecretVersionsResponse =
   ListSecretVersionsResponse'
     { _lsvrNextPageToken :: !(Maybe Text)
-    , _lsvrVersions      :: !(Maybe [SecretVersion])
-    , _lsvrTotalSize     :: !(Maybe (Textual Int32))
+    , _lsvrVersions :: !(Maybe [SecretVersion])
+    , _lsvrTotalSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -925,9 +925,9 @@ instance ToJSON ListSecretVersionsResponse where
 data Secret =
   Secret'
     { _sReplication :: !(Maybe Replication)
-    , _sName        :: !(Maybe Text)
-    , _sLabels      :: !(Maybe SecretLabels)
-    , _sCreateTime  :: !(Maybe DateTime')
+    , _sName :: !(Maybe Text)
+    , _sLabels :: !(Maybe SecretLabels)
+    , _sCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1006,7 +1006,7 @@ instance ToJSON Secret where
 data SetIAMPolicyRequest =
   SetIAMPolicyRequest'
     { _siprUpdateMask :: !(Maybe GFieldMask)
-    , _siprPolicy     :: !(Maybe Policy)
+    , _siprPolicy :: !(Maybe Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1159,7 +1159,7 @@ instance ToJSON AddSecretVersionRequest where
 -- /See:/ 'replication' smart constructor.
 data Replication =
   Replication'
-    { _rAutomatic   :: !(Maybe Automatic)
+    { _rAutomatic :: !(Maybe Automatic)
     , _rUserManaged :: !(Maybe UserManaged)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1395,7 +1395,7 @@ instance ToJSON TestIAMPermissionsResponse where
 -- /See:/ 'replicationStatus' smart constructor.
 data ReplicationStatus =
   ReplicationStatus'
-    { _rsAutomatic   :: !(Maybe AutomaticStatus)
+    { _rsAutomatic :: !(Maybe AutomaticStatus)
     , _rsUserManaged :: !(Maybe UserManagedStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1482,9 +1482,9 @@ instance ToJSON ReplicationStatus where
 data Policy =
   Policy'
     { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag         :: !(Maybe Bytes)
-    , _pVersion      :: !(Maybe (Textual Int32))
-    , _pBindings     :: !(Maybe [Binding])
+    , _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
+    , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1665,7 +1665,7 @@ instance ToJSON LocationMetadata where
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
   AuditLogConfig'
-    { _alcLogType         :: !(Maybe AuditLogConfigLogType)
+    { _alcLogType :: !(Maybe AuditLogConfigLogType)
     , _alcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1763,8 +1763,8 @@ instance ToJSON CustomerManagedEncryption where
 data Binding =
   Binding'
     { _bBindingId :: !(Maybe Text)
-    , _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    , _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

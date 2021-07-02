@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.FloodlightActivities.Generatetag
     , fagCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightActivities.generatetag@ method which the
 -- 'FloodlightActivitiesGeneratetag' request conforms to.
@@ -69,13 +69,13 @@ type FloodlightActivitiesGeneratetagResource =
 -- /See:/ 'floodlightActivitiesGeneratetag' smart constructor.
 data FloodlightActivitiesGeneratetag =
   FloodlightActivitiesGeneratetag'
-    { _fagXgafv                :: !(Maybe Xgafv)
-    , _fagUploadProtocol       :: !(Maybe Text)
+    { _fagXgafv :: !(Maybe Xgafv)
+    , _fagUploadProtocol :: !(Maybe Text)
     , _fagFloodlightActivityId :: !(Maybe (Textual Int64))
-    , _fagAccessToken          :: !(Maybe Text)
-    , _fagUploadType           :: !(Maybe Text)
-    , _fagProFileId            :: !(Textual Int64)
-    , _fagCallback             :: !(Maybe Text)
+    , _fagAccessToken :: !(Maybe Text)
+    , _fagUploadType :: !(Maybe Text)
+    , _fagProFileId :: !(Textual Int64)
+    , _fagCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

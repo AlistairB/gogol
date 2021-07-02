@@ -44,8 +44,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Sessions.Ful
     , plasfiCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.sessions.fulfillIntent@ method which the
 -- 'ProjectsLocationsAgentsSessionsFulfillIntent' request conforms to.
@@ -72,13 +72,13 @@ type ProjectsLocationsAgentsSessionsFulfillIntentResource
 -- /See:/ 'projectsLocationsAgentsSessionsFulfillIntent' smart constructor.
 data ProjectsLocationsAgentsSessionsFulfillIntent =
   ProjectsLocationsAgentsSessionsFulfillIntent'
-    { _plasfiXgafv          :: !(Maybe Xgafv)
+    { _plasfiXgafv :: !(Maybe Xgafv)
     , _plasfiUploadProtocol :: !(Maybe Text)
-    , _plasfiAccessToken    :: !(Maybe Text)
-    , _plasfiUploadType     :: !(Maybe Text)
-    , _plasfiPayload        :: !GoogleCloudDialogflowCxV3beta1FulfillIntentRequest
-    , _plasfiSession        :: !Text
-    , _plasfiCallback       :: !(Maybe Text)
+    , _plasfiAccessToken :: !(Maybe Text)
+    , _plasfiUploadType :: !(Maybe Text)
+    , _plasfiPayload :: !GoogleCloudDialogflowCxV3beta1FulfillIntentRequest
+    , _plasfiSession :: !Text
+    , _plasfiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

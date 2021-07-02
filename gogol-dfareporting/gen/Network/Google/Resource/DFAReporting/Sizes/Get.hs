@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Sizes.Get
     , sgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.sizes.get@ method which the
 -- 'SizesGet' request conforms to.
@@ -66,13 +66,13 @@ type SizesGetResource =
 -- /See:/ 'sizesGet' smart constructor.
 data SizesGet =
   SizesGet'
-    { _sgXgafv          :: !(Maybe Xgafv)
+    { _sgXgafv :: !(Maybe Xgafv)
     , _sgUploadProtocol :: !(Maybe Text)
-    , _sgAccessToken    :: !(Maybe Text)
-    , _sgUploadType     :: !(Maybe Text)
-    , _sgProFileId      :: !(Textual Int64)
-    , _sgId             :: !(Textual Int64)
-    , _sgCallback       :: !(Maybe Text)
+    , _sgAccessToken :: !(Maybe Text)
+    , _sgUploadType :: !(Maybe Text)
+    , _sgProFileId :: !(Textual Int64)
+    , _sgId :: !(Textual Int64)
+    , _sgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

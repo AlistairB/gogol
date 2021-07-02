@@ -41,8 +41,8 @@ module Network.Google.Resource.DFAReporting.AccountPermissionGroups.List
     , apglCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accountPermissionGroups.list@ method which the
 -- 'AccountPermissionGroupsList' request conforms to.
@@ -65,12 +65,12 @@ type AccountPermissionGroupsListResource =
 -- /See:/ 'accountPermissionGroupsList' smart constructor.
 data AccountPermissionGroupsList =
   AccountPermissionGroupsList'
-    { _apglXgafv          :: !(Maybe Xgafv)
+    { _apglXgafv :: !(Maybe Xgafv)
     , _apglUploadProtocol :: !(Maybe Text)
-    , _apglAccessToken    :: !(Maybe Text)
-    , _apglUploadType     :: !(Maybe Text)
-    , _apglProFileId      :: !(Textual Int64)
-    , _apglCallback       :: !(Maybe Text)
+    , _apglAccessToken :: !(Maybe Text)
+    , _apglUploadType :: !(Maybe Text)
+    , _apglProFileId :: !(Textual Int64)
+    , _apglCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

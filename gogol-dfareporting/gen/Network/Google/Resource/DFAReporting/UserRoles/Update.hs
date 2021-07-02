@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.UserRoles.Update
     , uruCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.userRoles.update@ method which the
 -- 'UserRolesUpdate' request conforms to.
@@ -66,13 +66,13 @@ type UserRolesUpdateResource =
 -- /See:/ 'userRolesUpdate' smart constructor.
 data UserRolesUpdate =
   UserRolesUpdate'
-    { _uruXgafv          :: !(Maybe Xgafv)
+    { _uruXgafv :: !(Maybe Xgafv)
     , _uruUploadProtocol :: !(Maybe Text)
-    , _uruAccessToken    :: !(Maybe Text)
-    , _uruUploadType     :: !(Maybe Text)
-    , _uruProFileId      :: !(Textual Int64)
-    , _uruPayload        :: !UserRole
-    , _uruCallback       :: !(Maybe Text)
+    , _uruAccessToken :: !(Maybe Text)
+    , _uruUploadType :: !(Maybe Text)
+    , _uruProFileId :: !(Textual Int64)
+    , _uruPayload :: !UserRole
+    , _uruCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

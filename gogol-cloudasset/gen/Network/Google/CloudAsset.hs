@@ -242,9 +242,9 @@ module Network.Google.CloudAsset
     , bCondition
     ) where
 
-import           Network.Google.CloudAsset.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.CloudAsset.Assets.List
+import Network.Google.Prelude
+import Network.Google.CloudAsset.Types
+import Network.Google.Resource.CloudAsset.Assets.List
 
 {- $resources
 TODO

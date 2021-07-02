@@ -16,7 +16,7 @@
 --
 module Network.Google.SecretManager.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Output only. The current state of the SecretVersion.
 data SecretVersionState

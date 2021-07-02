@@ -55,8 +55,8 @@ module Network.Google.Resource.DFAReporting.FloodlightActivities.List
     , falCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightActivities.list@ method which the
 -- 'FloodlightActivitiesList' request conforms to.
@@ -109,25 +109,25 @@ type FloodlightActivitiesListResource =
 -- /See:/ 'floodlightActivitiesList' smart constructor.
 data FloodlightActivitiesList =
   FloodlightActivitiesList'
-    { _falXgafv                            :: !(Maybe Xgafv)
-    , _falTagString                        :: !(Maybe Text)
-    , _falUploadProtocol                   :: !(Maybe Text)
+    { _falXgafv :: !(Maybe Xgafv)
+    , _falTagString :: !(Maybe Text)
+    , _falUploadProtocol :: !(Maybe Text)
     , _falFloodlightActivityGroupTagString :: !(Maybe Text)
-    , _falFloodlightConfigurationId        :: !(Maybe (Textual Int64))
-    , _falAccessToken                      :: !(Maybe Text)
-    , _falAdvertiserId                     :: !(Maybe (Textual Int64))
-    , _falSearchString                     :: !(Maybe Text)
-    , _falUploadType                       :: !(Maybe Text)
-    , _falIds                              :: !(Maybe [Textual Int64])
-    , _falProFileId                        :: !(Textual Int64)
-    , _falFloodlightActivityGroupIds       :: !(Maybe [Textual Int64])
-    , _falSortOrder                        :: !FloodlightActivitiesListSortOrder
-    , _falFloodlightActivityGroupType      :: !(Maybe FloodlightActivitiesListFloodlightActivityGroupType)
-    , _falFloodlightActivityGroupName      :: !(Maybe Text)
-    , _falPageToken                        :: !(Maybe Text)
-    , _falSortField                        :: !FloodlightActivitiesListSortField
-    , _falMaxResults                       :: !(Textual Int32)
-    , _falCallback                         :: !(Maybe Text)
+    , _falFloodlightConfigurationId :: !(Maybe (Textual Int64))
+    , _falAccessToken :: !(Maybe Text)
+    , _falAdvertiserId :: !(Maybe (Textual Int64))
+    , _falSearchString :: !(Maybe Text)
+    , _falUploadType :: !(Maybe Text)
+    , _falIds :: !(Maybe [Textual Int64])
+    , _falProFileId :: !(Textual Int64)
+    , _falFloodlightActivityGroupIds :: !(Maybe [Textual Int64])
+    , _falSortOrder :: !FloodlightActivitiesListSortOrder
+    , _falFloodlightActivityGroupType :: !(Maybe FloodlightActivitiesListFloodlightActivityGroupType)
+    , _falFloodlightActivityGroupName :: !(Maybe Text)
+    , _falPageToken :: !(Maybe Text)
+    , _falSortField :: !FloodlightActivitiesListSortField
+    , _falMaxResults :: !(Textual Int32)
+    , _falCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

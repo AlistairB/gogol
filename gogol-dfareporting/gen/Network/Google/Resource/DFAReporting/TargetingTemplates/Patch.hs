@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.TargetingTemplates.Patch
     , ttpCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.targetingTemplates.patch@ method which the
 -- 'TargetingTemplatesPatch' request conforms to.
@@ -71,14 +71,14 @@ type TargetingTemplatesPatchResource =
 -- /See:/ 'targetingTemplatesPatch' smart constructor.
 data TargetingTemplatesPatch =
   TargetingTemplatesPatch'
-    { _ttpXgafv          :: !(Maybe Xgafv)
+    { _ttpXgafv :: !(Maybe Xgafv)
     , _ttpUploadProtocol :: !(Maybe Text)
-    , _ttpAccessToken    :: !(Maybe Text)
-    , _ttpUploadType     :: !(Maybe Text)
-    , _ttpProFileId      :: !(Textual Int64)
-    , _ttpPayload        :: !TargetingTemplate
-    , _ttpId             :: !(Textual Int64)
-    , _ttpCallback       :: !(Maybe Text)
+    , _ttpAccessToken :: !(Maybe Text)
+    , _ttpUploadType :: !(Maybe Text)
+    , _ttpProFileId :: !(Textual Int64)
+    , _ttpPayload :: !TargetingTemplate
+    , _ttpId :: !(Textual Int64)
+    , _ttpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

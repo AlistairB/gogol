@@ -43,8 +43,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Environments
     , plaesetpCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.environments.sessions.entityTypes.patch@ method which the
 -- 'ProjectsLocationsAgentsEnvironmentsSessionsEntityTypesPatch' request conforms to.
@@ -70,14 +70,14 @@ type ProjectsLocationsAgentsEnvironmentsSessionsEntityTypesPatchResource
 -- /See:/ 'projectsLocationsAgentsEnvironmentsSessionsEntityTypesPatch' smart constructor.
 data ProjectsLocationsAgentsEnvironmentsSessionsEntityTypesPatch =
   ProjectsLocationsAgentsEnvironmentsSessionsEntityTypesPatch'
-    { _plaesetpXgafv          :: !(Maybe Xgafv)
+    { _plaesetpXgafv :: !(Maybe Xgafv)
     , _plaesetpUploadProtocol :: !(Maybe Text)
-    , _plaesetpUpdateMask     :: !(Maybe GFieldMask)
-    , _plaesetpAccessToken    :: !(Maybe Text)
-    , _plaesetpUploadType     :: !(Maybe Text)
-    , _plaesetpPayload        :: !GoogleCloudDialogflowCxV3beta1SessionEntityType
-    , _plaesetpName           :: !Text
-    , _plaesetpCallback       :: !(Maybe Text)
+    , _plaesetpUpdateMask :: !(Maybe GFieldMask)
+    , _plaesetpAccessToken :: !(Maybe Text)
+    , _plaesetpUploadType :: !(Maybe Text)
+    , _plaesetpPayload :: !GoogleCloudDialogflowCxV3beta1SessionEntityType
+    , _plaesetpName :: !Text
+    , _plaesetpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

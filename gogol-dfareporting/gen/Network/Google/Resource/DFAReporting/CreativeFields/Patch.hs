@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.CreativeFields.Patch
     , cfpCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeFields.patch@ method which the
 -- 'CreativeFieldsPatch' request conforms to.
@@ -71,14 +71,14 @@ type CreativeFieldsPatchResource =
 -- /See:/ 'creativeFieldsPatch' smart constructor.
 data CreativeFieldsPatch =
   CreativeFieldsPatch'
-    { _cfpXgafv          :: !(Maybe Xgafv)
+    { _cfpXgafv :: !(Maybe Xgafv)
     , _cfpUploadProtocol :: !(Maybe Text)
-    , _cfpAccessToken    :: !(Maybe Text)
-    , _cfpUploadType     :: !(Maybe Text)
-    , _cfpProFileId      :: !(Textual Int64)
-    , _cfpPayload        :: !CreativeField
-    , _cfpId             :: !(Textual Int64)
-    , _cfpCallback       :: !(Maybe Text)
+    , _cfpAccessToken :: !(Maybe Text)
+    , _cfpUploadType :: !(Maybe Text)
+    , _cfpProFileId :: !(Textual Int64)
+    , _cfpPayload :: !CreativeField
+    , _cfpId :: !(Textual Int64)
+    , _cfpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

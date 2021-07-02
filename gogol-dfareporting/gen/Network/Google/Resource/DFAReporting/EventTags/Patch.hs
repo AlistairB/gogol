@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.EventTags.Patch
     , etpCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.eventTags.patch@ method which the
 -- 'EventTagsPatch' request conforms to.
@@ -68,14 +68,14 @@ type EventTagsPatchResource =
 -- /See:/ 'eventTagsPatch' smart constructor.
 data EventTagsPatch =
   EventTagsPatch'
-    { _etpXgafv          :: !(Maybe Xgafv)
+    { _etpXgafv :: !(Maybe Xgafv)
     , _etpUploadProtocol :: !(Maybe Text)
-    , _etpAccessToken    :: !(Maybe Text)
-    , _etpUploadType     :: !(Maybe Text)
-    , _etpProFileId      :: !(Textual Int64)
-    , _etpPayload        :: !EventTag
-    , _etpId             :: !(Textual Int64)
-    , _etpCallback       :: !(Maybe Text)
+    , _etpAccessToken :: !(Maybe Text)
+    , _etpUploadType :: !(Maybe Text)
+    , _etpProFileId :: !(Textual Int64)
+    , _etpPayload :: !EventTag
+    , _etpId :: !(Textual Int64)
+    , _etpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

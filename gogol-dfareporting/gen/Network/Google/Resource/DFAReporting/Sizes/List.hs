@@ -48,8 +48,8 @@ module Network.Google.Resource.DFAReporting.Sizes.List
     , slCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.sizes.list@ method which the
 -- 'SizesList' request conforms to.
@@ -79,16 +79,16 @@ type SizesListResource =
 -- /See:/ 'sizesList' smart constructor.
 data SizesList =
   SizesList'
-    { _slXgafv          :: !(Maybe Xgafv)
-    , _slHeight         :: !(Maybe (Textual Int32))
+    { _slXgafv :: !(Maybe Xgafv)
+    , _slHeight :: !(Maybe (Textual Int32))
     , _slUploadProtocol :: !(Maybe Text)
-    , _slAccessToken    :: !(Maybe Text)
-    , _slUploadType     :: !(Maybe Text)
-    , _slIds            :: !(Maybe [Textual Int64])
-    , _slWidth          :: !(Maybe (Textual Int32))
-    , _slProFileId      :: !(Textual Int64)
-    , _slIabStandard    :: !(Maybe Bool)
-    , _slCallback       :: !(Maybe Text)
+    , _slAccessToken :: !(Maybe Text)
+    , _slUploadType :: !(Maybe Text)
+    , _slIds :: !(Maybe [Textual Int64])
+    , _slWidth :: !(Maybe (Textual Int32))
+    , _slProFileId :: !(Textual Int64)
+    , _slIabStandard :: !(Maybe Bool)
+    , _slCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

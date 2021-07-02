@@ -41,8 +41,8 @@ module Network.Google.Resource.DFAReporting.ConnectionTypes.List
     , ctlCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.connectionTypes.list@ method which the
 -- 'ConnectionTypesList' request conforms to.
@@ -65,12 +65,12 @@ type ConnectionTypesListResource =
 -- /See:/ 'connectionTypesList' smart constructor.
 data ConnectionTypesList =
   ConnectionTypesList'
-    { _ctlXgafv          :: !(Maybe Xgafv)
+    { _ctlXgafv :: !(Maybe Xgafv)
     , _ctlUploadProtocol :: !(Maybe Text)
-    , _ctlAccessToken    :: !(Maybe Text)
-    , _ctlUploadType     :: !(Maybe Text)
-    , _ctlProFileId      :: !(Textual Int64)
-    , _ctlCallback       :: !(Maybe Text)
+    , _ctlAccessToken :: !(Maybe Text)
+    , _ctlUploadType :: !(Maybe Text)
+    , _ctlProFileId :: !(Textual Int64)
+    , _ctlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

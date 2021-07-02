@@ -44,8 +44,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Flows.Transi
     , plaftrglCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.flows.transitionRouteGroups.list@ method which the
 -- 'ProjectsLocationsAgentsFlowsTransitionRouteGroupsList' request conforms to.
@@ -71,15 +71,15 @@ type ProjectsLocationsAgentsFlowsTransitionRouteGroupsListResource
 -- /See:/ 'projectsLocationsAgentsFlowsTransitionRouteGroupsList' smart constructor.
 data ProjectsLocationsAgentsFlowsTransitionRouteGroupsList =
   ProjectsLocationsAgentsFlowsTransitionRouteGroupsList'
-    { _plaftrglParent         :: !Text
-    , _plaftrglXgafv          :: !(Maybe Xgafv)
-    , _plaftrglLanguageCode   :: !(Maybe Text)
+    { _plaftrglParent :: !Text
+    , _plaftrglXgafv :: !(Maybe Xgafv)
+    , _plaftrglLanguageCode :: !(Maybe Text)
     , _plaftrglUploadProtocol :: !(Maybe Text)
-    , _plaftrglAccessToken    :: !(Maybe Text)
-    , _plaftrglUploadType     :: !(Maybe Text)
-    , _plaftrglPageToken      :: !(Maybe Text)
-    , _plaftrglPageSize       :: !(Maybe (Textual Int32))
-    , _plaftrglCallback       :: !(Maybe Text)
+    , _plaftrglAccessToken :: !(Maybe Text)
+    , _plaftrglUploadType :: !(Maybe Text)
+    , _plaftrglPageToken :: !(Maybe Text)
+    , _plaftrglPageSize :: !(Maybe (Textual Int32))
+    , _plaftrglCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

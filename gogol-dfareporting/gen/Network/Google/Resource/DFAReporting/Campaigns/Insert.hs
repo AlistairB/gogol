@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Campaigns.Insert
     , camCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.campaigns.insert@ method which the
 -- 'CampaignsInsert' request conforms to.
@@ -66,13 +66,13 @@ type CampaignsInsertResource =
 -- /See:/ 'campaignsInsert' smart constructor.
 data CampaignsInsert =
   CampaignsInsert'
-    { _camXgafv          :: !(Maybe Xgafv)
+    { _camXgafv :: !(Maybe Xgafv)
     , _camUploadProtocol :: !(Maybe Text)
-    , _camAccessToken    :: !(Maybe Text)
-    , _camUploadType     :: !(Maybe Text)
-    , _camProFileId      :: !(Textual Int64)
-    , _camPayload        :: !Campaign
-    , _camCallback       :: !(Maybe Text)
+    , _camAccessToken :: !(Maybe Text)
+    , _camUploadType :: !(Maybe Text)
+    , _camProFileId :: !(Textual Int64)
+    , _camPayload :: !Campaign
+    , _camCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

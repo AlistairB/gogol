@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Countries.Get
     , cgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.countries.get@ method which the
 -- 'CountriesGet' request conforms to.
@@ -66,13 +66,13 @@ type CountriesGetResource =
 -- /See:/ 'countriesGet' smart constructor.
 data CountriesGet =
   CountriesGet'
-    { _cgXgafv          :: !(Maybe Xgafv)
+    { _cgXgafv :: !(Maybe Xgafv)
     , _cgUploadProtocol :: !(Maybe Text)
-    , _cgAccessToken    :: !(Maybe Text)
-    , _cgUploadType     :: !(Maybe Text)
-    , _cgProFileId      :: !(Textual Int64)
-    , _cgDartId         :: !(Textual Int64)
-    , _cgCallback       :: !(Maybe Text)
+    , _cgAccessToken :: !(Maybe Text)
+    , _cgUploadType :: !(Maybe Text)
+    , _cgProFileId :: !(Textual Int64)
+    , _cgDartId :: !(Textual Int64)
+    , _cgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

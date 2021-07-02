@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.VideoFormats.Get
     , vfgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.videoFormats.get@ method which the
 -- 'VideoFormatsGet' request conforms to.
@@ -66,13 +66,13 @@ type VideoFormatsGetResource =
 -- /See:/ 'videoFormatsGet' smart constructor.
 data VideoFormatsGet =
   VideoFormatsGet'
-    { _vfgXgafv          :: !(Maybe Xgafv)
+    { _vfgXgafv :: !(Maybe Xgafv)
     , _vfgUploadProtocol :: !(Maybe Text)
-    , _vfgAccessToken    :: !(Maybe Text)
-    , _vfgUploadType     :: !(Maybe Text)
-    , _vfgProFileId      :: !(Textual Int64)
-    , _vfgId             :: !(Textual Int32)
-    , _vfgCallback       :: !(Maybe Text)
+    , _vfgAccessToken :: !(Maybe Text)
+    , _vfgUploadType :: !(Maybe Text)
+    , _vfgProFileId :: !(Textual Int64)
+    , _vfgId :: !(Textual Int32)
+    , _vfgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

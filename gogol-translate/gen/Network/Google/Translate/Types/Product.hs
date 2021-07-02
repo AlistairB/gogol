@@ -17,8 +17,8 @@
 --
 module Network.Google.Translate.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.Translate.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Translate.Types.Sum
 
 -- | A single supported language response corresponds to information related
 -- to one supported language.
@@ -26,10 +26,10 @@ import           Network.Google.Translate.Types.Sum
 -- /See:/ 'supportedLanguage' smart constructor.
 data SupportedLanguage =
   SupportedLanguage'
-    { _slLanguageCode  :: !(Maybe Text)
+    { _slLanguageCode :: !(Maybe Text)
     , _slSupportTarget :: !(Maybe Bool)
     , _slSupportSource :: !(Maybe Bool)
-    , _slDisplayName   :: !(Maybe Text)
+    , _slDisplayName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -107,10 +107,10 @@ instance ToJSON SupportedLanguage where
 -- /See:/ 'detectLanguageRequest' smart constructor.
 data DetectLanguageRequest =
   DetectLanguageRequest'
-    { _dlrContent  :: !(Maybe Text)
+    { _dlrContent :: !(Maybe Text)
     , _dlrMimeType :: !(Maybe Text)
-    , _dlrModel    :: !(Maybe Text)
-    , _dlrLabels   :: !(Maybe DetectLanguageRequestLabels)
+    , _dlrModel :: !(Maybe Text)
+    , _dlrLabels :: !(Maybe DetectLanguageRequestLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -198,7 +198,7 @@ instance ToJSON DetectLanguageRequest where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -298,7 +298,7 @@ instance ToJSON WaitOperationRequest where
 data TranslateTextGlossaryConfig =
   TranslateTextGlossaryConfig'
     { _ttgcIgnoreCase :: !(Maybe Bool)
-    , _ttgcGlossary   :: !(Maybe Text)
+    , _ttgcGlossary :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -351,7 +351,7 @@ instance ToJSON TranslateTextGlossaryConfig where
 data ListLocationsResponse =
   ListLocationsResponse'
     { _llrNextPageToken :: !(Maybe Text)
-    , _llrLocations     :: !(Maybe [Location])
+    , _llrLocations :: !(Maybe [Location])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -403,7 +403,7 @@ instance ToJSON ListLocationsResponse where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -514,13 +514,13 @@ instance ToJSON GcsSource where
 -- /See:/ 'translateTextRequest' smart constructor.
 data TranslateTextRequest =
   TranslateTextRequest'
-    { _ttrGlossaryConfig     :: !(Maybe TranslateTextGlossaryConfig)
-    , _ttrContents           :: !(Maybe [Text])
+    { _ttrGlossaryConfig :: !(Maybe TranslateTextGlossaryConfig)
+    , _ttrContents :: !(Maybe [Text])
     , _ttrTargetLanguageCode :: !(Maybe Text)
-    , _ttrMimeType           :: !(Maybe Text)
-    , _ttrModel              :: !(Maybe Text)
+    , _ttrMimeType :: !(Maybe Text)
+    , _ttrModel :: !(Maybe Text)
     , _ttrSourceLanguageCode :: !(Maybe Text)
-    , _ttrLabels             :: !(Maybe TranslateTextRequestLabels)
+    , _ttrLabels :: !(Maybe TranslateTextRequestLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -651,11 +651,11 @@ instance ToJSON TranslateTextRequest where
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _lName        :: !(Maybe Text)
-    , _lMetadata    :: !(Maybe LocationMetadata)
+    { _lName :: !(Maybe Text)
+    , _lMetadata :: !(Maybe LocationMetadata)
     , _lDisplayName :: !(Maybe Text)
-    , _lLabels      :: !(Maybe LocationLabels)
-    , _lLocationId  :: !(Maybe Text)
+    , _lLabels :: !(Maybe LocationLabels)
+    , _lLocationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -738,10 +738,10 @@ instance ToJSON Location where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -858,7 +858,7 @@ instance ToJSON Empty where
 data TranslateTextResponse =
   TranslateTextResponse'
     { _ttrGlossaryTranslations :: !(Maybe [Translation])
-    , _ttrTranslations         :: !(Maybe [Translation])
+    , _ttrTranslations :: !(Maybe [Translation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1037,7 +1037,7 @@ instance ToJSON BatchTranslateTextRequestGlossaries
 data InputConfig =
   InputConfig'
     { _icGcsSource :: !(Maybe GcsSource)
-    , _icMimeType  :: !(Maybe Text)
+    , _icMimeType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1100,7 +1100,7 @@ instance ToJSON InputConfig where
 data DetectedLanguage =
   DetectedLanguage'
     { _dlLanguageCode :: !(Maybe Text)
-    , _dlConfidence   :: !(Maybe (Textual Double))
+    , _dlConfidence :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1581,10 +1581,10 @@ instance ToJSON OperationMetadata where
 -- /See:/ 'translation' smart constructor.
 data Translation =
   Translation'
-    { _tGlossaryConfig       :: !(Maybe TranslateTextGlossaryConfig)
+    { _tGlossaryConfig :: !(Maybe TranslateTextGlossaryConfig)
     , _tDetectedLanguageCode :: !(Maybe Text)
-    , _tModel                :: !(Maybe Text)
-    , _tTranslatedText       :: !(Maybe Text)
+    , _tModel :: !(Maybe Text)
+    , _tTranslatedText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1752,13 +1752,13 @@ instance ToJSON DetectLanguageResponse where
 -- /See:/ 'batchTranslateTextRequest' smart constructor.
 data BatchTranslateTextRequest =
   BatchTranslateTextRequest'
-    { _bttrInputConfigs        :: !(Maybe [InputConfig])
+    { _bttrInputConfigs :: !(Maybe [InputConfig])
     , _bttrTargetLanguageCodes :: !(Maybe [Text])
-    , _bttrModels              :: !(Maybe BatchTranslateTextRequestModels)
-    , _bttrSourceLanguageCode  :: !(Maybe Text)
-    , _bttrOutputConfig        :: !(Maybe OutputConfig)
-    , _bttrLabels              :: !(Maybe BatchTranslateTextRequestLabels)
-    , _bttrGlossaries          :: !(Maybe BatchTranslateTextRequestGlossaries)
+    , _bttrModels :: !(Maybe BatchTranslateTextRequestModels)
+    , _bttrSourceLanguageCode :: !(Maybe Text)
+    , _bttrOutputConfig :: !(Maybe OutputConfig)
+    , _bttrLabels :: !(Maybe BatchTranslateTextRequestLabels)
+    , _bttrGlossaries :: !(Maybe BatchTranslateTextRequestGlossaries)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1890,13 +1890,13 @@ instance ToJSON BatchTranslateTextRequest where
 -- /See:/ 'glossary' smart constructor.
 data Glossary =
   Glossary'
-    { _gLanguagePair     :: !(Maybe LanguageCodePair)
-    , _gInputConfig      :: !(Maybe GlossaryInputConfig)
-    , _gName             :: !(Maybe Text)
-    , _gEntryCount       :: !(Maybe (Textual Int32))
-    , _gEndTime          :: !(Maybe DateTime')
+    { _gLanguagePair :: !(Maybe LanguageCodePair)
+    , _gInputConfig :: !(Maybe GlossaryInputConfig)
+    , _gName :: !(Maybe Text)
+    , _gEntryCount :: !(Maybe (Textual Int32))
+    , _gEndTime :: !(Maybe DateTime')
     , _gLanguageCodesSet :: !(Maybe LanguageCodesSet)
-    , _gSubmitTime       :: !(Maybe DateTime')
+    , _gSubmitTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2133,7 +2133,7 @@ instance ToJSON DetectLanguageRequestLabels where
 data ListGlossariesResponse =
   ListGlossariesResponse'
     { _lgrNextPageToken :: !(Maybe Text)
-    , _lgrGlossaries    :: !(Maybe [Glossary])
+    , _lgrGlossaries :: !(Maybe [Glossary])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

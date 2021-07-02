@@ -44,8 +44,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Restore
     , plarCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.restore@ method which the
 -- 'ProjectsLocationsAgentsRestore' request conforms to.
@@ -69,13 +69,13 @@ type ProjectsLocationsAgentsRestoreResource =
 -- /See:/ 'projectsLocationsAgentsRestore' smart constructor.
 data ProjectsLocationsAgentsRestore =
   ProjectsLocationsAgentsRestore'
-    { _plarXgafv          :: !(Maybe Xgafv)
+    { _plarXgafv :: !(Maybe Xgafv)
     , _plarUploadProtocol :: !(Maybe Text)
-    , _plarAccessToken    :: !(Maybe Text)
-    , _plarUploadType     :: !(Maybe Text)
-    , _plarPayload        :: !GoogleCloudDialogflowCxV3beta1RestoreAgentRequest
-    , _plarName           :: !Text
-    , _plarCallback       :: !(Maybe Text)
+    , _plarAccessToken :: !(Maybe Text)
+    , _plarUploadType :: !(Maybe Text)
+    , _plarPayload :: !GoogleCloudDialogflowCxV3beta1RestoreAgentRequest
+    , _plarName :: !Text
+    , _plarCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

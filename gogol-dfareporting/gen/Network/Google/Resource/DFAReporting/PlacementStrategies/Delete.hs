@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.PlacementStrategies.Delete
     , psdCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementStrategies.delete@ method which the
 -- 'PlacementStrategiesDelete' request conforms to.
@@ -66,13 +66,13 @@ type PlacementStrategiesDeleteResource =
 -- /See:/ 'placementStrategiesDelete' smart constructor.
 data PlacementStrategiesDelete =
   PlacementStrategiesDelete'
-    { _psdXgafv          :: !(Maybe Xgafv)
+    { _psdXgafv :: !(Maybe Xgafv)
     , _psdUploadProtocol :: !(Maybe Text)
-    , _psdAccessToken    :: !(Maybe Text)
-    , _psdUploadType     :: !(Maybe Text)
-    , _psdProFileId      :: !(Textual Int64)
-    , _psdId             :: !(Textual Int64)
-    , _psdCallback       :: !(Maybe Text)
+    , _psdAccessToken :: !(Maybe Text)
+    , _psdUploadType :: !(Maybe Text)
+    , _psdProFileId :: !(Textual Int64)
+    , _psdId :: !(Textual Int64)
+    , _psdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

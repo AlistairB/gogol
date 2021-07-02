@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Sites.Get
     , sggCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.sites.get@ method which the
 -- 'SitesGet' request conforms to.
@@ -66,13 +66,13 @@ type SitesGetResource =
 -- /See:/ 'sitesGet' smart constructor.
 data SitesGet =
   SitesGet'
-    { _sggXgafv          :: !(Maybe Xgafv)
+    { _sggXgafv :: !(Maybe Xgafv)
     , _sggUploadProtocol :: !(Maybe Text)
-    , _sggAccessToken    :: !(Maybe Text)
-    , _sggUploadType     :: !(Maybe Text)
-    , _sggProFileId      :: !(Textual Int64)
-    , _sggId             :: !(Textual Int64)
-    , _sggCallback       :: !(Maybe Text)
+    , _sggAccessToken :: !(Maybe Text)
+    , _sggUploadType :: !(Maybe Text)
+    , _sggProFileId :: !(Textual Int64)
+    , _sggId :: !(Textual Int64)
+    , _sggCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

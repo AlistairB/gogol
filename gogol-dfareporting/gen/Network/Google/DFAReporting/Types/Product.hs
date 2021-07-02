@@ -17,8 +17,8 @@
 --
 module Network.Google.DFAReporting.Types.Product where
 
-import           Network.Google.DFAReporting.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types.Sum
+import Network.Google.Prelude
 
 -- | Video Offset
 --
@@ -26,7 +26,7 @@ import           Network.Google.Prelude
 data VideoOffSet =
   VideoOffSet'
     { _vosOffSetPercentage :: !(Maybe (Textual Int32))
-    , _vosOffSetSeconds    :: !(Maybe (Textual Int32))
+    , _vosOffSetSeconds :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -81,10 +81,10 @@ instance ToJSON VideoOffSet where
 data DeepLink =
   DeepLink'
     { _dlRemarketingListIds :: !(Maybe [Textual Int64])
-    , _dlKind               :: !(Maybe Text)
-    , _dlFallbackURL        :: !(Maybe Text)
-    , _dlAppURL             :: !(Maybe Text)
-    , _dlMobileApp          :: !(Maybe MobileApp)
+    , _dlKind :: !(Maybe Text)
+    , _dlFallbackURL :: !(Maybe Text)
+    , _dlAppURL :: !(Maybe Text)
+    , _dlMobileApp :: !(Maybe MobileApp)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -172,7 +172,7 @@ instance ToJSON DeepLink where
 data DisjunctiveMatchStatement =
   DisjunctiveMatchStatement'
     { _dmsEventFilters :: !(Maybe [EventFilter])
-    , _dmsKind         :: !(Maybe Text)
+    , _dmsKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -222,10 +222,10 @@ instance ToJSON DisjunctiveMatchStatement where
 -- /See:/ 'fileList' smart constructor.
 data FileList =
   FileList'
-    { _flEtag          :: !(Maybe Text)
+    { _flEtag :: !(Maybe Text)
     , _flNextPageToken :: !(Maybe Text)
-    , _flKind          :: !(Maybe Text)
-    , _flItems         :: !(Maybe [File])
+    , _flKind :: !(Maybe Text)
+    , _flItems :: !(Maybe [File])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -299,11 +299,11 @@ instance ToJSON FileList where
 -- /See:/ 'pathReportCompatibleFields' smart constructor.
 data PathReportCompatibleFields =
   PathReportCompatibleFields'
-    { _prcfMetrics          :: !(Maybe [Metric])
+    { _prcfMetrics :: !(Maybe [Metric])
     , _prcfChannelGroupings :: !(Maybe [Dimension])
-    , _prcfKind             :: !(Maybe Text)
-    , _prcfPathFilters      :: !(Maybe [Dimension])
-    , _prcfDimensions       :: !(Maybe [Dimension])
+    , _prcfKind :: !(Maybe Text)
+    , _prcfPathFilters :: !(Maybe [Dimension])
+    , _prcfDimensions :: !(Maybe [Dimension])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -399,8 +399,8 @@ instance ToJSON PathReportCompatibleFields where
 -- /See:/ 'optimizationActivity' smart constructor.
 data OptimizationActivity =
   OptimizationActivity'
-    { _oaWeight                             :: !(Maybe (Textual Int32))
-    , _oaFloodlightActivityId               :: !(Maybe (Textual Int64))
+    { _oaWeight :: !(Maybe (Textual Int32))
+    , _oaFloodlightActivityId :: !(Maybe (Textual Int64))
     , _oaFloodlightActivityIdDimensionValue :: !(Maybe DimensionValue)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -511,10 +511,10 @@ instance ToJSON ListPopulationClause where
 -- /See:/ 'adBlockingConfiguration' smart constructor.
 data AdBlockingConfiguration =
   AdBlockingConfiguration'
-    { _abcCreativeBundleId        :: !(Maybe (Textual Int64))
+    { _abcCreativeBundleId :: !(Maybe (Textual Int64))
     , _abcOverrideClickThroughURL :: !(Maybe Bool)
-    , _abcEnabled                 :: !(Maybe Bool)
-    , _abcClickThroughURL         :: !(Maybe Text)
+    , _abcEnabled :: !(Maybe Bool)
+    , _abcClickThroughURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -599,16 +599,16 @@ instance ToJSON AdBlockingConfiguration where
 -- /See:/ 'creativeCustomEvent' smart constructor.
 data CreativeCustomEvent =
   CreativeCustomEvent'
-    { _cceAdvertiserCustomEventId   :: !(Maybe (Textual Int64))
+    { _cceAdvertiserCustomEventId :: !(Maybe (Textual Int64))
     , _cceAdvertiserCustomEventType :: !(Maybe CreativeCustomEventAdvertiserCustomEventType)
     , _cceAdvertiserCustomEventName :: !(Maybe Text)
-    , _cceExitClickThroughURL       :: !(Maybe CreativeClickThroughURL)
-    , _cceTargetType                :: !(Maybe CreativeCustomEventTargetType)
-    , _ccePopupWindowProperties     :: !(Maybe PopupWindowProperties)
-    , _cceVideoReportingId          :: !(Maybe Text)
-    , _cceId                        :: !(Maybe (Textual Int64))
-    , _cceArtworkLabel              :: !(Maybe Text)
-    , _cceArtworkType               :: !(Maybe CreativeCustomEventArtworkType)
+    , _cceExitClickThroughURL :: !(Maybe CreativeClickThroughURL)
+    , _cceTargetType :: !(Maybe CreativeCustomEventTargetType)
+    , _ccePopupWindowProperties :: !(Maybe PopupWindowProperties)
+    , _cceVideoReportingId :: !(Maybe Text)
+    , _cceId :: !(Maybe (Textual Int64))
+    , _cceArtworkLabel :: !(Maybe Text)
+    , _cceArtworkType :: !(Maybe CreativeCustomEventArtworkType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -763,8 +763,8 @@ instance ToJSON CreativeCustomEvent where
 data ClickTag =
   ClickTag'
     { _ctClickThroughURL :: !(Maybe CreativeClickThroughURL)
-    , _ctName            :: !(Maybe Text)
-    , _ctEventName       :: !(Maybe Text)
+    , _ctName :: !(Maybe Text)
+    , _ctEventName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -827,8 +827,8 @@ instance ToJSON ClickTag where
 data CampaignsListResponse =
   CampaignsListResponse'
     { _clrNextPageToken :: !(Maybe Text)
-    , _clrCampaigns     :: !(Maybe [Campaign])
-    , _clrKind          :: !(Maybe Text)
+    , _clrCampaigns :: !(Maybe [Campaign])
+    , _clrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -889,12 +889,12 @@ instance ToJSON CampaignsListResponse where
 -- /See:/ 'geoTargeting' smart constructor.
 data GeoTargeting =
   GeoTargeting'
-    { _gtRegions          :: !(Maybe [Region])
-    , _gtCountries        :: !(Maybe [Country])
-    , _gtCities           :: !(Maybe [City])
-    , _gtMetros           :: !(Maybe [Metro])
+    { _gtRegions :: !(Maybe [Region])
+    , _gtCountries :: !(Maybe [Country])
+    , _gtCities :: !(Maybe [City])
+    , _gtMetros :: !(Maybe [Metro])
     , _gtExcludeCountries :: !(Maybe Bool)
-    , _gtPostalCodes      :: !(Maybe [PostalCode])
+    , _gtPostalCodes :: !(Maybe [PostalCode])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1014,12 +1014,12 @@ instance ToJSON GeoTargeting where
 -- /See:/ 'videoSettings' smart constructor.
 data VideoSettings =
   VideoSettings'
-    { _vsKind              :: !(Maybe Text)
+    { _vsKind :: !(Maybe Text)
     , _vsCompanionSettings :: !(Maybe CompanionSetting)
-    , _vsObaSettings       :: !(Maybe ObaIcon)
-    , _vsObaEnabled        :: !(Maybe Bool)
+    , _vsObaSettings :: !(Maybe ObaIcon)
+    , _vsObaEnabled :: !(Maybe Bool)
     , _vsTranscodeSettings :: !(Maybe TranscodeSetting)
-    , _vsOrientation       :: !(Maybe VideoSettingsOrientation)
+    , _vsOrientation :: !(Maybe VideoSettingsOrientation)
     , _vsSkippableSettings :: !(Maybe SkippableSetting)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1134,12 +1134,12 @@ instance ToJSON VideoSettings where
 -- /See:/ 'reachReportCompatibleFields' smart constructor.
 data ReachReportCompatibleFields =
   ReachReportCompatibleFields'
-    { _rrcfMetrics                 :: !(Maybe [Metric])
+    { _rrcfMetrics :: !(Maybe [Metric])
     , _rrcfReachByFrequencyMetrics :: !(Maybe [Metric])
-    , _rrcfKind                    :: !(Maybe Text)
-    , _rrcfDimensionFilters        :: !(Maybe [Dimension])
-    , _rrcfPivotedActivityMetrics  :: !(Maybe [Metric])
-    , _rrcfDimensions              :: !(Maybe [Dimension])
+    , _rrcfKind :: !(Maybe Text)
+    , _rrcfDimensionFilters :: !(Maybe [Dimension])
+    , _rrcfPivotedActivityMetrics :: !(Maybe [Metric])
+    , _rrcfDimensions :: !(Maybe [Dimension])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1251,12 +1251,12 @@ instance ToJSON ReachReportCompatibleFields where
 -- /See:/ 'browser' smart constructor.
 data Browser =
   Browser'
-    { _bMinorVersion     :: !(Maybe Text)
-    , _bKind             :: !(Maybe Text)
+    { _bMinorVersion :: !(Maybe Text)
+    , _bKind :: !(Maybe Text)
     , _bBrowserVersionId :: !(Maybe (Textual Int64))
-    , _bMajorVersion     :: !(Maybe Text)
-    , _bName             :: !(Maybe Text)
-    , _bDartId           :: !(Maybe (Textual Int64))
+    , _bMajorVersion :: !(Maybe Text)
+    , _bName :: !(Maybe Text)
+    , _bDartId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1365,7 +1365,7 @@ instance ToJSON Browser where
 data CreativeGroupAssignment =
   CreativeGroupAssignment'
     { _cgaCreativeGroupNumber :: !(Maybe CreativeGroupAssignmentCreativeGroupNumber)
-    , _cgaCreativeGroupId     :: !(Maybe (Textual Int64))
+    , _cgaCreativeGroupId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1418,10 +1418,10 @@ instance ToJSON CreativeGroupAssignment where
 -- /See:/ 'directorySiteSettings' smart constructor.
 data DirectorySiteSettings =
   DirectorySiteSettings'
-    { _dssInterstitialPlacementAccepted  :: !(Maybe Bool)
+    { _dssInterstitialPlacementAccepted :: !(Maybe Bool)
     , _dssInstreamVideoPlacementAccepted :: !(Maybe Bool)
-    , _dssActiveViewOptOut               :: !(Maybe Bool)
-    , _dssDfpSettings                    :: !(Maybe DfpSettings)
+    , _dssActiveViewOptOut :: !(Maybe Bool)
+    , _dssDfpSettings :: !(Maybe DfpSettings)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1498,14 +1498,14 @@ instance ToJSON DirectorySiteSettings where
 -- /See:/ 'obaIcon' smart constructor.
 data ObaIcon =
   ObaIcon'
-    { _oiSize                 :: !(Maybe Size)
-    , _oiIconClickThroughURL  :: !(Maybe Text)
-    , _oiYPosition            :: !(Maybe Text)
+    { _oiSize :: !(Maybe Size)
+    , _oiIconClickThroughURL :: !(Maybe Text)
+    , _oiYPosition :: !(Maybe Text)
     , _oiIconClickTrackingURL :: !(Maybe Text)
-    , _oiXPosition            :: !(Maybe Text)
-    , _oiProgram              :: !(Maybe Text)
-    , _oiIconViewTrackingURL  :: !(Maybe Text)
-    , _oiResourceURL          :: !(Maybe Text)
+    , _oiXPosition :: !(Maybe Text)
+    , _oiProgram :: !(Maybe Text)
+    , _oiIconViewTrackingURL :: !(Maybe Text)
+    , _oiResourceURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1624,8 +1624,8 @@ instance ToJSON ObaIcon where
 data ListPopulationRule =
   ListPopulationRule'
     { _lprFloodlightActivityName :: !(Maybe Text)
-    , _lprFloodlightActivityId   :: !(Maybe (Textual Int64))
-    , _lprListPopulationClauses  :: !(Maybe [ListPopulationClause])
+    , _lprFloodlightActivityId :: !(Maybe (Textual Int64))
+    , _lprListPopulationClauses :: !(Maybe [ListPopulationClause])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1699,7 +1699,7 @@ instance ToJSON ListPopulationRule where
 -- /See:/ 'sizesListResponse' smart constructor.
 data SizesListResponse =
   SizesListResponse'
-    { _slrKind  :: !(Maybe Text)
+    { _slrKind :: !(Maybe Text)
     , _slrSizes :: !(Maybe [Size])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1748,10 +1748,10 @@ instance ToJSON SizesListResponse where
 -- /See:/ 'creativeRotation' smart constructor.
 data CreativeRotation =
   CreativeRotation'
-    { _crWeightCalculationStrategy           :: !(Maybe CreativeRotationWeightCalculationStrategy)
-    , _crCreativeAssignments                 :: !(Maybe [CreativeAssignment])
+    { _crWeightCalculationStrategy :: !(Maybe CreativeRotationWeightCalculationStrategy)
+    , _crCreativeAssignments :: !(Maybe [CreativeAssignment])
     , _crCreativeOptimizationConfigurationId :: !(Maybe (Textual Int64))
-    , _crType                                :: !(Maybe CreativeRotationType)
+    , _crType :: !(Maybe CreativeRotationType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1836,8 +1836,8 @@ instance ToJSON CreativeRotation where
 -- /See:/ 'customEventError' smart constructor.
 data CustomEventError =
   CustomEventError'
-    { _ceeKind    :: !(Maybe Text)
-    , _ceeCode    :: !(Maybe CustomEventErrorCode)
+    { _ceeKind :: !(Maybe Text)
+    , _ceeCode :: !(Maybe CustomEventErrorCode)
     , _ceeMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1893,12 +1893,12 @@ instance ToJSON CustomEventError where
 -- /See:/ 'technologyTargeting' smart constructor.
 data TechnologyTargeting =
   TechnologyTargeting'
-    { _ttMobileCarriers          :: !(Maybe [MobileCarrier])
+    { _ttMobileCarriers :: !(Maybe [MobileCarrier])
     , _ttOperatingSystemVersions :: !(Maybe [OperatingSystemVersion])
-    , _ttPlatformTypes           :: !(Maybe [PlatformType])
-    , _ttBrowsers                :: !(Maybe [Browser])
-    , _ttConnectionTypes         :: !(Maybe [ConnectionType])
-    , _ttOperatingSystems        :: !(Maybe [OperatingSystem])
+    , _ttPlatformTypes :: !(Maybe [PlatformType])
+    , _ttBrowsers :: !(Maybe [Browser])
+    , _ttConnectionTypes :: !(Maybe [ConnectionType])
+    , _ttOperatingSystems :: !(Maybe [OperatingSystem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2026,26 +2026,26 @@ instance ToJSON TechnologyTargeting where
 -- /See:/ 'inventoryItem' smart constructor.
 data InventoryItem =
   InventoryItem'
-    { _iiPlacementStrategyId       :: !(Maybe (Textual Int64))
+    { _iiPlacementStrategyId :: !(Maybe (Textual Int64))
     , _iiEstimatedClickThroughRate :: !(Maybe (Textual Int64))
-    , _iiPricing                   :: !(Maybe Pricing)
-    , _iiKind                      :: !(Maybe Text)
-    , _iiAdvertiserId              :: !(Maybe (Textual Int64))
-    , _iiRfpId                     :: !(Maybe (Textual Int64))
-    , _iiContentCategoryId         :: !(Maybe (Textual Int64))
-    , _iiInPlan                    :: !(Maybe Bool)
-    , _iiAccountId                 :: !(Maybe (Textual Int64))
-    , _iiName                      :: !(Maybe Text)
-    , _iiAdSlots                   :: !(Maybe [AdSlot])
-    , _iiNegotiationChannelId      :: !(Maybe (Textual Int64))
-    , _iiLastModifiedInfo          :: !(Maybe LastModifiedInfo)
-    , _iiId                        :: !(Maybe (Textual Int64))
-    , _iiEstimatedConversionRate   :: !(Maybe (Textual Int64))
-    , _iiProjectId                 :: !(Maybe (Textual Int64))
-    , _iiSubAccountId              :: !(Maybe (Textual Int64))
-    , _iiType                      :: !(Maybe InventoryItemType)
-    , _iiOrderId                   :: !(Maybe (Textual Int64))
-    , _iiSiteId                    :: !(Maybe (Textual Int64))
+    , _iiPricing :: !(Maybe Pricing)
+    , _iiKind :: !(Maybe Text)
+    , _iiAdvertiserId :: !(Maybe (Textual Int64))
+    , _iiRfpId :: !(Maybe (Textual Int64))
+    , _iiContentCategoryId :: !(Maybe (Textual Int64))
+    , _iiInPlan :: !(Maybe Bool)
+    , _iiAccountId :: !(Maybe (Textual Int64))
+    , _iiName :: !(Maybe Text)
+    , _iiAdSlots :: !(Maybe [AdSlot])
+    , _iiNegotiationChannelId :: !(Maybe (Textual Int64))
+    , _iiLastModifiedInfo :: !(Maybe LastModifiedInfo)
+    , _iiId :: !(Maybe (Textual Int64))
+    , _iiEstimatedConversionRate :: !(Maybe (Textual Int64))
+    , _iiProjectId :: !(Maybe (Textual Int64))
+    , _iiSubAccountId :: !(Maybe (Textual Int64))
+    , _iiType :: !(Maybe InventoryItemType)
+    , _iiOrderId :: !(Maybe (Textual Int64))
+    , _iiSiteId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2306,8 +2306,8 @@ instance ToJSON InventoryItem where
 data ProjectsListResponse =
   ProjectsListResponse'
     { _plrNextPageToken :: !(Maybe Text)
-    , _plrKind          :: !(Maybe Text)
-    , _plrProjects      :: !(Maybe [Project])
+    , _plrKind :: !(Maybe Text)
+    , _plrProjects :: !(Maybe [Project])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2368,8 +2368,8 @@ instance ToJSON ProjectsListResponse where
 data AdsListResponse =
   AdsListResponse'
     { _alrNextPageToken :: !(Maybe Text)
-    , _alrKind          :: !(Maybe Text)
-    , _alrAds           :: !(Maybe [Ad])
+    , _alrKind :: !(Maybe Text)
+    , _alrAds :: !(Maybe [Ad])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2427,12 +2427,12 @@ instance ToJSON AdsListResponse where
 -- /See:/ 'dV3Ids' smart constructor.
 data DV3Ids =
   DV3Ids'
-    { _dviDvCreativeId       :: !(Maybe (Textual Int64))
-    , _dviDvLineItemId       :: !(Maybe (Textual Int64))
-    , _dviKind               :: !(Maybe Text)
-    , _dviDvSiteId           :: !(Maybe (Textual Int64))
+    { _dviDvCreativeId :: !(Maybe (Textual Int64))
+    , _dviDvLineItemId :: !(Maybe (Textual Int64))
+    , _dviKind :: !(Maybe Text)
+    , _dviDvSiteId :: !(Maybe (Textual Int64))
     , _dviDvInsertionOrderId :: !(Maybe (Textual Int64))
-    , _dviDvCampaignId       :: !(Maybe (Textual Int64))
+    , _dviDvCampaignId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2531,12 +2531,12 @@ instance ToJSON DV3Ids where
 -- /See:/ 'siteVideoSettings' smart constructor.
 data SiteVideoSettings =
   SiteVideoSettings'
-    { _svsKind              :: !(Maybe Text)
+    { _svsKind :: !(Maybe Text)
     , _svsCompanionSettings :: !(Maybe SiteCompanionSetting)
-    , _svsObaSettings       :: !(Maybe ObaIcon)
-    , _svsObaEnabled        :: !(Maybe Bool)
+    , _svsObaSettings :: !(Maybe ObaIcon)
+    , _svsObaEnabled :: !(Maybe Bool)
     , _svsTranscodeSettings :: !(Maybe SiteTranscodeSetting)
-    , _svsOrientation       :: !(Maybe SiteVideoSettingsOrientation)
+    , _svsOrientation :: !(Maybe SiteVideoSettingsOrientation)
     , _svsSkippableSettings :: !(Maybe SiteSkippableSetting)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2648,14 +2648,14 @@ instance ToJSON SiteVideoSettings where
 -- /See:/ 'listPopulationTerm' smart constructor.
 data ListPopulationTerm =
   ListPopulationTerm'
-    { _lptOperator             :: !(Maybe ListPopulationTermOperator)
-    , _lptValue                :: !(Maybe Text)
+    { _lptOperator :: !(Maybe ListPopulationTermOperator)
+    , _lptValue :: !(Maybe Text)
     , _lptVariableFriendlyName :: !(Maybe Text)
-    , _lptNegation             :: !(Maybe Bool)
-    , _lptVariableName         :: !(Maybe Text)
-    , _lptRemarketingListId    :: !(Maybe (Textual Int64))
-    , _lptType                 :: !(Maybe ListPopulationTermType)
-    , _lptContains             :: !(Maybe Bool)
+    , _lptNegation :: !(Maybe Bool)
+    , _lptVariableName :: !(Maybe Text)
+    , _lptRemarketingListId :: !(Maybe (Textual Int64))
+    , _lptType :: !(Maybe ListPopulationTermType)
+    , _lptContains :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2786,7 +2786,7 @@ instance ToJSON ListPopulationTerm where
 data TagSettings =
   TagSettings'
     { _tsDynamicTagEnabled :: !(Maybe Bool)
-    , _tsImageTagEnabled   :: !(Maybe Bool)
+    , _tsImageTagEnabled :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2837,8 +2837,8 @@ instance ToJSON TagSettings where
 data SubAccountsListResponse =
   SubAccountsListResponse'
     { _salrNextPageToken :: !(Maybe Text)
-    , _salrKind          :: !(Maybe Text)
-    , _salrSubAccounts   :: !(Maybe [SubAccount])
+    , _salrKind :: !(Maybe Text)
+    , _salrSubAccounts :: !(Maybe [SubAccount])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2902,7 +2902,7 @@ instance ToJSON SubAccountsListResponse where
 -- /See:/ 'regionsListResponse' smart constructor.
 data RegionsListResponse =
   RegionsListResponse'
-    { _rlrKind    :: !(Maybe Text)
+    { _rlrKind :: !(Maybe Text)
     , _rlrRegions :: !(Maybe [Region])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2952,9 +2952,9 @@ instance ToJSON RegionsListResponse where
 -- /See:/ 'floodlightActivityDynamicTag' smart constructor.
 data FloodlightActivityDynamicTag =
   FloodlightActivityDynamicTag'
-    { _fadtTag  :: !(Maybe Text)
+    { _fadtTag :: !(Maybe Text)
     , _fadtName :: !(Maybe Text)
-    , _fadtId   :: !(Maybe (Textual Int64))
+    , _fadtId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3008,11 +3008,11 @@ instance ToJSON FloodlightActivityDynamicTag where
 -- /See:/ 'videoFormat' smart constructor.
 data VideoFormat =
   VideoFormat'
-    { _vfKind          :: !(Maybe Text)
-    , _vfFileType      :: !(Maybe VideoFormatFileType)
-    , _vfResolution    :: !(Maybe Size)
+    { _vfKind :: !(Maybe Text)
+    , _vfFileType :: !(Maybe VideoFormatFileType)
+    , _vfResolution :: !(Maybe Size)
     , _vfTargetBitRate :: !(Maybe (Textual Int32))
-    , _vfId            :: !(Maybe (Textual Int32))
+    , _vfId :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3097,14 +3097,14 @@ instance ToJSON VideoFormat where
 -- /See:/ 'directorySite' smart constructor.
 data DirectorySite =
   DirectorySite'
-    { _dsSettings               :: !(Maybe DirectorySiteSettings)
+    { _dsSettings :: !(Maybe DirectorySiteSettings)
     , _dsInterstitialTagFormats :: !(Maybe [DirectorySiteInterstitialTagFormatsItem])
-    , _dsKind                   :: !(Maybe Text)
-    , _dsURL                    :: !(Maybe Text)
-    , _dsIdDimensionValue       :: !(Maybe DimensionValue)
-    , _dsInpageTagFormats       :: !(Maybe [DirectorySiteInpageTagFormatsItem])
-    , _dsName                   :: !(Maybe Text)
-    , _dsId                     :: !(Maybe (Textual Int64))
+    , _dsKind :: !(Maybe Text)
+    , _dsURL :: !(Maybe Text)
+    , _dsIdDimensionValue :: !(Maybe DimensionValue)
+    , _dsInpageTagFormats :: !(Maybe [DirectorySiteInpageTagFormatsItem])
+    , _dsName :: !(Maybe Text)
+    , _dsId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3225,9 +3225,9 @@ instance ToJSON DirectorySite where
 -- /See:/ 'reportFloodlightCriteriaReportProperties' smart constructor.
 data ReportFloodlightCriteriaReportProperties =
   ReportFloodlightCriteriaReportProperties'
-    { _rfcrpIncludeUnattributedIPConversions     :: !(Maybe Bool)
+    { _rfcrpIncludeUnattributedIPConversions :: !(Maybe Bool)
     , _rfcrpIncludeUnattributedCookieConversions :: !(Maybe Bool)
-    , _rfcrpIncludeAttributedIPConversions       :: !(Maybe Bool)
+    , _rfcrpIncludeAttributedIPConversions :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3307,17 +3307,17 @@ instance ToJSON
 -- /See:/ 'floodlightActivityGroup' smart constructor.
 data FloodlightActivityGroup =
   FloodlightActivityGroup'
-    { _fagTagString                               :: !(Maybe Text)
-    , _fagFloodlightConfigurationId               :: !(Maybe (Textual Int64))
-    , _fagKind                                    :: !(Maybe Text)
-    , _fagAdvertiserId                            :: !(Maybe (Textual Int64))
-    , _fagAdvertiserIdDimensionValue              :: !(Maybe DimensionValue)
-    , _fagIdDimensionValue                        :: !(Maybe DimensionValue)
-    , _fagAccountId                               :: !(Maybe (Textual Int64))
-    , _fagName                                    :: !(Maybe Text)
-    , _fagId                                      :: !(Maybe (Textual Int64))
-    , _fagSubAccountId                            :: !(Maybe (Textual Int64))
-    , _fagType                                    :: !(Maybe FloodlightActivityGroupType)
+    { _fagTagString :: !(Maybe Text)
+    , _fagFloodlightConfigurationId :: !(Maybe (Textual Int64))
+    , _fagKind :: !(Maybe Text)
+    , _fagAdvertiserId :: !(Maybe (Textual Int64))
+    , _fagAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
+    , _fagIdDimensionValue :: !(Maybe DimensionValue)
+    , _fagAccountId :: !(Maybe (Textual Int64))
+    , _fagName :: !(Maybe Text)
+    , _fagId :: !(Maybe (Textual Int64))
+    , _fagSubAccountId :: !(Maybe (Textual Int64))
+    , _fagType :: !(Maybe FloodlightActivityGroupType)
     , _fagFloodlightConfigurationIdDimensionValue :: !(Maybe DimensionValue)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3501,11 +3501,11 @@ instance ToJSON FloodlightActivityGroup where
 -- /See:/ 'crossDimensionReachReportCompatibleFields' smart constructor.
 data CrossDimensionReachReportCompatibleFields =
   CrossDimensionReachReportCompatibleFields'
-    { _cdrrcfMetrics          :: !(Maybe [Metric])
-    , _cdrrcfBreakdown        :: !(Maybe [Dimension])
-    , _cdrrcfKind             :: !(Maybe Text)
+    { _cdrrcfMetrics :: !(Maybe [Metric])
+    , _cdrrcfBreakdown :: !(Maybe [Dimension])
+    , _cdrrcfKind :: !(Maybe Text)
     , _cdrrcfDimensionFilters :: !(Maybe [Dimension])
-    , _cdrrcfOverlapMetrics   :: !(Maybe [Metric])
+    , _cdrrcfOverlapMetrics :: !(Maybe [Metric])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3608,8 +3608,8 @@ instance ToJSON
 -- /See:/ 'channelGroupingRule' smart constructor.
 data ChannelGroupingRule =
   ChannelGroupingRule'
-    { _cgrKind                       :: !(Maybe Text)
-    , _cgrName                       :: !(Maybe Text)
+    { _cgrKind :: !(Maybe Text)
+    , _cgrName :: !(Maybe Text)
     , _cgrDisjunctiveMatchStatements :: !(Maybe [DisjunctiveMatchStatement])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3673,10 +3673,10 @@ instance ToJSON ChannelGroupingRule where
 data FsCommand =
   FsCommand'
     { _fcPositionOption :: !(Maybe FsCommandPositionOption)
-    , _fcLeft           :: !(Maybe (Textual Int32))
-    , _fcWindowHeight   :: !(Maybe (Textual Int32))
-    , _fcWindowWidth    :: !(Maybe (Textual Int32))
-    , _fcTop            :: !(Maybe (Textual Int32))
+    , _fcLeft :: !(Maybe (Textual Int32))
+    , _fcWindowHeight :: !(Maybe (Textual Int32))
+    , _fcWindowWidth :: !(Maybe (Textual Int32))
+    , _fcTop :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3765,10 +3765,10 @@ instance ToJSON FsCommand where
 -- /See:/ 'placementAssignment' smart constructor.
 data PlacementAssignment =
   PlacementAssignment'
-    { _paPlacementId               :: !(Maybe (Textual Int64))
+    { _paPlacementId :: !(Maybe (Textual Int64))
     , _paPlacementIdDimensionValue :: !(Maybe DimensionValue)
-    , _paActive                    :: !(Maybe Bool)
-    , _paSSLRequired               :: !(Maybe Bool)
+    , _paActive :: !(Maybe Bool)
+    , _paSSLRequired :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3846,9 +3846,9 @@ instance ToJSON PlacementAssignment where
 -- /See:/ 'creativeFieldValue' smart constructor.
 data CreativeFieldValue =
   CreativeFieldValue'
-    { _cfvKind  :: !(Maybe Text)
+    { _cfvKind :: !(Maybe Text)
     , _cfvValue :: !(Maybe Text)
-    , _cfvId    :: !(Maybe (Textual Int64))
+    , _cfvId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3905,10 +3905,10 @@ instance ToJSON CreativeFieldValue where
 -- /See:/ 'dimensionValueRequest' smart constructor.
 data DimensionValueRequest =
   DimensionValueRequest'
-    { _dvrKind          :: !(Maybe Text)
-    , _dvrEndDate       :: !(Maybe Date')
-    , _dvrFilters       :: !(Maybe [DimensionFilter])
-    , _dvrStartDate     :: !(Maybe Date')
+    { _dvrKind :: !(Maybe Text)
+    , _dvrEndDate :: !(Maybe Date')
+    , _dvrFilters :: !(Maybe [DimensionFilter])
+    , _dvrStartDate :: !(Maybe Date')
     , _dvrDimensionName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3992,7 +3992,7 @@ instance ToJSON DimensionValueRequest where
 -- /See:/ 'floodlightConfigurationsListResponse' smart constructor.
 data FloodlightConfigurationsListResponse =
   FloodlightConfigurationsListResponse'
-    { _fclrKind                     :: !(Maybe Text)
+    { _fclrKind :: !(Maybe Text)
     , _fclrFloodlightConfigurations :: !(Maybe [FloodlightConfiguration])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4049,8 +4049,8 @@ instance ToJSON FloodlightConfigurationsListResponse
 -- /See:/ 'floodlightActivitiesListResponse' smart constructor.
 data FloodlightActivitiesListResponse =
   FloodlightActivitiesListResponse'
-    { _falrNextPageToken        :: !(Maybe Text)
-    , _falrKind                 :: !(Maybe Text)
+    { _falrNextPageToken :: !(Maybe Text)
+    , _falrKind :: !(Maybe Text)
     , _falrFloodlightActivities :: !(Maybe [FloodlightActivity])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4118,7 +4118,7 @@ instance ToJSON FloodlightActivitiesListResponse
 -- /See:/ 'creativeFieldAssignment' smart constructor.
 data CreativeFieldAssignment =
   CreativeFieldAssignment'
-    { _cfaCreativeFieldId      :: !(Maybe (Textual Int64))
+    { _cfaCreativeFieldId :: !(Maybe (Textual Int64))
     , _cfaCreativeFieldValueId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4174,10 +4174,10 @@ instance ToJSON CreativeFieldAssignment where
 -- /See:/ 'advertiserGroup' smart constructor.
 data AdvertiserGroup =
   AdvertiserGroup'
-    { _agKind      :: !(Maybe Text)
+    { _agKind :: !(Maybe Text)
     , _agAccountId :: !(Maybe (Textual Int64))
-    , _agName      :: !(Maybe Text)
-    , _agId        :: !(Maybe (Textual Int64))
+    , _agName :: !(Maybe Text)
+    , _agId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4250,10 +4250,10 @@ instance ToJSON AdvertiserGroup where
 -- /See:/ 'tagData' smart constructor.
 data TagData =
   TagData'
-    { _tdClickTag      :: !(Maybe Text)
-    , _tdFormat        :: !(Maybe TagDataFormat)
-    , _tdCreativeId    :: !(Maybe (Textual Int64))
-    , _tdAdId          :: !(Maybe (Textual Int64))
+    { _tdClickTag :: !(Maybe Text)
+    , _tdFormat :: !(Maybe TagDataFormat)
+    , _tdCreativeId :: !(Maybe (Textual Int64))
+    , _tdAdId :: !(Maybe (Textual Int64))
     , _tdImpressionTag :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4338,8 +4338,8 @@ instance ToJSON TagData where
 -- /See:/ 'dayPartTargeting' smart constructor.
 data DayPartTargeting =
   DayPartTargeting'
-    { _dptDaysOfWeek    :: !(Maybe [DayPartTargetingDaysOfWeekItem])
-    , _dptHoursOfDay    :: !(Maybe [Textual Int32])
+    { _dptDaysOfWeek :: !(Maybe [DayPartTargetingDaysOfWeekItem])
+    , _dptHoursOfDay :: !(Maybe [Textual Int32])
     , _dptUserLocalTime :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4417,10 +4417,10 @@ instance ToJSON DayPartTargeting where
 -- /See:/ 'creativeOptimizationConfiguration' smart constructor.
 data CreativeOptimizationConfiguration =
   CreativeOptimizationConfiguration'
-    { _cocOptimizationModel     :: !(Maybe CreativeOptimizationConfigurationOptimizationModel)
-    , _cocName                  :: !(Maybe Text)
+    { _cocOptimizationModel :: !(Maybe CreativeOptimizationConfigurationOptimizationModel)
+    , _cocName :: !(Maybe Text)
     , _cocOptimizationActivitys :: !(Maybe [OptimizationActivity])
-    , _cocId                    :: !(Maybe (Textual Int64))
+    , _cocId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4500,7 +4500,7 @@ instance ToJSON CreativeOptimizationConfiguration
 -- /See:/ 'siteTranscodeSetting' smart constructor.
 data SiteTranscodeSetting =
   SiteTranscodeSetting'
-    { _stsKind                :: !(Maybe Text)
+    { _stsKind :: !(Maybe Text)
     , _stsEnabledVideoFormats :: !(Maybe [Textual Int32])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4555,8 +4555,8 @@ instance ToJSON SiteTranscodeSetting where
 data CreativeClickThroughURL =
   CreativeClickThroughURL'
     { _cctuComputedClickThroughURL :: !(Maybe Text)
-    , _cctuCustomClickThroughURL   :: !(Maybe Text)
-    , _cctuLandingPageId           :: !(Maybe (Textual Int64))
+    , _cctuCustomClickThroughURL :: !(Maybe Text)
+    , _cctuLandingPageId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4628,12 +4628,12 @@ instance ToJSON CreativeClickThroughURL where
 -- /See:/ 'reportCriteria' smart constructor.
 data ReportCriteria =
   ReportCriteria'
-    { _rcMetricNames           :: !(Maybe [Text])
+    { _rcMetricNames :: !(Maybe [Text])
     , _rcCustomRichMediaEvents :: !(Maybe CustomRichMediaEvents)
-    , _rcDimensionFilters      :: !(Maybe [DimensionValue])
-    , _rcActivities            :: !(Maybe Activities)
-    , _rcDateRange             :: !(Maybe DateRange)
-    , _rcDimensions            :: !(Maybe [SortedDimension])
+    , _rcDimensionFilters :: !(Maybe [DimensionValue])
+    , _rcActivities :: !(Maybe Activities)
+    , _rcDateRange :: !(Maybe DateRange)
+    , _rcDimensions :: !(Maybe [SortedDimension])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4737,8 +4737,8 @@ instance ToJSON ReportCriteria where
 data PlacementStrategiesListResponse =
   PlacementStrategiesListResponse'
     { _pslrPlacementStrategies :: !(Maybe [PlacementStrategy])
-    , _pslrNextPageToken       :: !(Maybe Text)
-    , _pslrKind                :: !(Maybe Text)
+    , _pslrNextPageToken :: !(Maybe Text)
+    , _pslrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4805,8 +4805,8 @@ instance ToJSON PlacementStrategiesListResponse where
 -- /See:/ 'conversionsBatchUpdateResponse' smart constructor.
 data ConversionsBatchUpdateResponse =
   ConversionsBatchUpdateResponse'
-    { _cburStatus      :: !(Maybe [ConversionStatus])
-    , _cburKind        :: !(Maybe Text)
+    { _cburStatus :: !(Maybe [ConversionStatus])
+    , _cburKind :: !(Maybe Text)
     , _cburHasFailures :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4869,11 +4869,11 @@ instance ToJSON ConversionsBatchUpdateResponse where
 -- /See:/ 'subAccount' smart constructor.
 data SubAccount =
   SubAccount'
-    { _saKind                   :: !(Maybe Text)
+    { _saKind :: !(Maybe Text)
     , _saAvailablePermissionIds :: !(Maybe [Textual Int64])
-    , _saAccountId              :: !(Maybe (Textual Int64))
-    , _saName                   :: !(Maybe Text)
-    , _saId                     :: !(Maybe (Textual Int64))
+    , _saAccountId :: !(Maybe (Textual Int64))
+    , _saName :: !(Maybe Text)
+    , _saId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4961,8 +4961,8 @@ instance ToJSON SubAccount where
 data InventoryItemsListResponse =
   InventoryItemsListResponse'
     { _iilrInventoryItems :: !(Maybe [InventoryItem])
-    , _iilrNextPageToken  :: !(Maybe Text)
-    , _iilrKind           :: !(Maybe Text)
+    , _iilrNextPageToken :: !(Maybe Text)
+    , _iilrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5028,7 +5028,7 @@ instance ToJSON InventoryItemsListResponse where
 -- /See:/ 'universalAdId' smart constructor.
 data UniversalAdId =
   UniversalAdId'
-    { _uaiValue    :: !(Maybe Text)
+    { _uaiValue :: !(Maybe Text)
     , _uaiRegistry :: !(Maybe UniversalAdIdRegistry)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5076,45 +5076,45 @@ instance ToJSON UniversalAdId where
 -- /See:/ 'ad' smart constructor.
 data Ad =
   Ad'
-    { _aTargetingTemplateId                   :: !(Maybe (Textual Int64))
-    , _aCreativeGroupAssignments              :: !(Maybe [CreativeGroupAssignment])
-    , _aGeoTargeting                          :: !(Maybe GeoTargeting)
-    , _aCreativeRotation                      :: !(Maybe CreativeRotation)
-    , _aTechnologyTargeting                   :: !(Maybe TechnologyTargeting)
-    , _aAudienceSegmentId                     :: !(Maybe (Textual Int64))
-    , _aDayPartTargeting                      :: !(Maybe DayPartTargeting)
-    , _aSize                                  :: !(Maybe Size)
-    , _aStartTime                             :: !(Maybe DateTime')
-    , _aKind                                  :: !(Maybe Text)
-    , _aClickThroughURLSuffixProperties       :: !(Maybe ClickThroughURLSuffixProperties)
-    , _aCampaignIdDimensionValue              :: !(Maybe DimensionValue)
-    , _aAdvertiserId                          :: !(Maybe (Textual Int64))
-    , _aAdvertiserIdDimensionValue            :: !(Maybe DimensionValue)
-    , _aSSLCompliant                          :: !(Maybe Bool)
-    , _aCampaignId                            :: !(Maybe (Textual Int64))
-    , _aIdDimensionValue                      :: !(Maybe DimensionValue)
-    , _aClickThroughURL                       :: !(Maybe ClickThroughURL)
-    , _aDeliverySchedule                      :: !(Maybe DeliverySchedule)
-    , _aEventTagOverrides                     :: !(Maybe [EventTagOverride])
-    , _aActive                                :: !(Maybe Bool)
-    , _aAccountId                             :: !(Maybe (Textual Int64))
-    , _aName                                  :: !(Maybe Text)
-    , _aKeyValueTargetingExpression           :: !(Maybe KeyValueTargetingExpression)
-    , _aEndTime                               :: !(Maybe DateTime')
-    , _aCreateInfo                            :: !(Maybe LastModifiedInfo)
-    , _aLastModifiedInfo                      :: !(Maybe LastModifiedInfo)
-    , _aId                                    :: !(Maybe (Textual Int64))
-    , _aSSLRequired                           :: !(Maybe Bool)
-    , _aComments                              :: !(Maybe Text)
-    , _aSubAccountId                          :: !(Maybe (Textual Int64))
-    , _aType                                  :: !(Maybe AdType)
-    , _aRemarketingListExpression             :: !(Maybe ListTargetingExpression)
-    , _aLanguageTargeting                     :: !(Maybe LanguageTargeting)
-    , _aDynamicClickTracker                   :: !(Maybe Bool)
-    , _aCompatibility                         :: !(Maybe AdCompatibility)
-    , _aArchived                              :: !(Maybe Bool)
+    { _aTargetingTemplateId :: !(Maybe (Textual Int64))
+    , _aCreativeGroupAssignments :: !(Maybe [CreativeGroupAssignment])
+    , _aGeoTargeting :: !(Maybe GeoTargeting)
+    , _aCreativeRotation :: !(Maybe CreativeRotation)
+    , _aTechnologyTargeting :: !(Maybe TechnologyTargeting)
+    , _aAudienceSegmentId :: !(Maybe (Textual Int64))
+    , _aDayPartTargeting :: !(Maybe DayPartTargeting)
+    , _aSize :: !(Maybe Size)
+    , _aStartTime :: !(Maybe DateTime')
+    , _aKind :: !(Maybe Text)
+    , _aClickThroughURLSuffixProperties :: !(Maybe ClickThroughURLSuffixProperties)
+    , _aCampaignIdDimensionValue :: !(Maybe DimensionValue)
+    , _aAdvertiserId :: !(Maybe (Textual Int64))
+    , _aAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
+    , _aSSLCompliant :: !(Maybe Bool)
+    , _aCampaignId :: !(Maybe (Textual Int64))
+    , _aIdDimensionValue :: !(Maybe DimensionValue)
+    , _aClickThroughURL :: !(Maybe ClickThroughURL)
+    , _aDeliverySchedule :: !(Maybe DeliverySchedule)
+    , _aEventTagOverrides :: !(Maybe [EventTagOverride])
+    , _aActive :: !(Maybe Bool)
+    , _aAccountId :: !(Maybe (Textual Int64))
+    , _aName :: !(Maybe Text)
+    , _aKeyValueTargetingExpression :: !(Maybe KeyValueTargetingExpression)
+    , _aEndTime :: !(Maybe DateTime')
+    , _aCreateInfo :: !(Maybe LastModifiedInfo)
+    , _aLastModifiedInfo :: !(Maybe LastModifiedInfo)
+    , _aId :: !(Maybe (Textual Int64))
+    , _aSSLRequired :: !(Maybe Bool)
+    , _aComments :: !(Maybe Text)
+    , _aSubAccountId :: !(Maybe (Textual Int64))
+    , _aType :: !(Maybe AdType)
+    , _aRemarketingListExpression :: !(Maybe ListTargetingExpression)
+    , _aLanguageTargeting :: !(Maybe LanguageTargeting)
+    , _aDynamicClickTracker :: !(Maybe Bool)
+    , _aCompatibility :: !(Maybe AdCompatibility)
+    , _aArchived :: !(Maybe Bool)
     , _aDefaultClickThroughEventTagProperties :: !(Maybe DefaultClickThroughEventTagProperties)
-    , _aPlacementAssignments                  :: !(Maybe [PlacementAssignment])
+    , _aPlacementAssignments :: !(Maybe [PlacementAssignment])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5624,28 +5624,28 @@ instance ToJSON Ad where
 -- /See:/ 'project' smart constructor.
 data Project =
   Project'
-    { _pTargetClicks             :: !(Maybe (Textual Int64))
-    , _pClientBillingCode        :: !(Maybe Text)
-    , _pTargetCpmNanos           :: !(Maybe (Textual Int64))
-    , _pTargetConversions        :: !(Maybe (Textual Int64))
-    , _pBudget                   :: !(Maybe (Textual Int64))
-    , _pKind                     :: !(Maybe Text)
-    , _pAdvertiserId             :: !(Maybe (Textual Int64))
-    , _pEndDate                  :: !(Maybe Date')
-    , _pOverview                 :: !(Maybe Text)
-    , _pTargetImpressions        :: !(Maybe (Textual Int64))
-    , _pStartDate                :: !(Maybe Date')
-    , _pTargetCpcNanos           :: !(Maybe (Textual Int64))
-    , _pAccountId                :: !(Maybe (Textual Int64))
-    , _pName                     :: !(Maybe Text)
-    , _pLastModifiedInfo         :: !(Maybe LastModifiedInfo)
-    , _pId                       :: !(Maybe (Textual Int64))
-    , _pAudienceAgeGroup         :: !(Maybe ProjectAudienceAgeGroup)
-    , _pSubAccountId             :: !(Maybe (Textual Int64))
+    { _pTargetClicks :: !(Maybe (Textual Int64))
+    , _pClientBillingCode :: !(Maybe Text)
+    , _pTargetCpmNanos :: !(Maybe (Textual Int64))
+    , _pTargetConversions :: !(Maybe (Textual Int64))
+    , _pBudget :: !(Maybe (Textual Int64))
+    , _pKind :: !(Maybe Text)
+    , _pAdvertiserId :: !(Maybe (Textual Int64))
+    , _pEndDate :: !(Maybe Date')
+    , _pOverview :: !(Maybe Text)
+    , _pTargetImpressions :: !(Maybe (Textual Int64))
+    , _pStartDate :: !(Maybe Date')
+    , _pTargetCpcNanos :: !(Maybe (Textual Int64))
+    , _pAccountId :: !(Maybe (Textual Int64))
+    , _pName :: !(Maybe Text)
+    , _pLastModifiedInfo :: !(Maybe LastModifiedInfo)
+    , _pId :: !(Maybe (Textual Int64))
+    , _pAudienceAgeGroup :: !(Maybe ProjectAudienceAgeGroup)
+    , _pSubAccountId :: !(Maybe (Textual Int64))
     , _pTargetCpmActiveViewNanos :: !(Maybe (Textual Int64))
-    , _pAudienceGender           :: !(Maybe ProjectAudienceGender)
-    , _pClientName               :: !(Maybe Text)
-    , _pTargetCpaNanos           :: !(Maybe (Textual Int64))
+    , _pAudienceGender :: !(Maybe ProjectAudienceGender)
+    , _pClientName :: !(Maybe Text)
+    , _pTargetCpaNanos :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5922,13 +5922,13 @@ instance ToJSON Project where
 -- /See:/ 'reportFloodlightCriteria' smart constructor.
 data ReportFloodlightCriteria =
   ReportFloodlightCriteria'
-    { _rfcReportProperties      :: !(Maybe ReportFloodlightCriteriaReportProperties)
-    , _rfcMetricNames           :: !(Maybe [Text])
+    { _rfcReportProperties :: !(Maybe ReportFloodlightCriteriaReportProperties)
+    , _rfcMetricNames :: !(Maybe [Text])
     , _rfcCustomRichMediaEvents :: !(Maybe [DimensionValue])
-    , _rfcDimensionFilters      :: !(Maybe [DimensionValue])
-    , _rfcDateRange             :: !(Maybe DateRange)
-    , _rfcFloodlightConfigId    :: !(Maybe DimensionValue)
-    , _rfcDimensions            :: !(Maybe [SortedDimension])
+    , _rfcDimensionFilters :: !(Maybe [DimensionValue])
+    , _rfcDateRange :: !(Maybe DateRange)
+    , _rfcFloodlightConfigId :: !(Maybe DimensionValue)
+    , _rfcDimensions :: !(Maybe [SortedDimension])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6050,10 +6050,10 @@ instance ToJSON ReportFloodlightCriteria where
 data Size =
   Size'
     { _sHeight :: !(Maybe (Textual Int32))
-    , _sKind   :: !(Maybe Text)
-    , _sWidth  :: !(Maybe (Textual Int32))
-    , _sIab    :: !(Maybe Bool)
-    , _sId     :: !(Maybe (Textual Int64))
+    , _sKind :: !(Maybe Text)
+    , _sWidth :: !(Maybe (Textual Int32))
+    , _sIab :: !(Maybe Bool)
+    , _sId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6132,8 +6132,8 @@ instance ToJSON Size where
 -- /See:/ 'objectFilter' smart constructor.
 data ObjectFilter =
   ObjectFilter'
-    { _ofStatus    :: !(Maybe ObjectFilterStatus)
-    , _ofKind      :: !(Maybe Text)
+    { _ofStatus :: !(Maybe ObjectFilterStatus)
+    , _ofKind :: !(Maybe Text)
     , _ofObjectIds :: !(Maybe [Textual Int64])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6194,10 +6194,10 @@ instance ToJSON ObjectFilter where
 -- /See:/ 'skippableSetting' smart constructor.
 data SkippableSetting =
   SkippableSetting'
-    { _ssSkipOffSet     :: !(Maybe VideoOffSet)
+    { _ssSkipOffSet :: !(Maybe VideoOffSet)
     , _ssProgressOffSet :: !(Maybe VideoOffSet)
-    , _ssKind           :: !(Maybe Text)
-    , _ssSkippable      :: !(Maybe Bool)
+    , _ssKind :: !(Maybe Text)
+    , _ssSkippable :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6271,8 +6271,8 @@ instance ToJSON SkippableSetting where
 data ReportsConfiguration =
   ReportsConfiguration'
     { _rcExposureToConversionEnabled :: !(Maybe Bool)
-    , _rcReportGenerationTimeZoneId  :: !(Maybe (Textual Int64))
-    , _rcLookbackConfiguration       :: !(Maybe LookbackConfiguration)
+    , _rcReportGenerationTimeZoneId :: !(Maybe (Textual Int64))
+    , _rcLookbackConfiguration :: !(Maybe LookbackConfiguration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6359,14 +6359,14 @@ instance ToJSON ReportsConfiguration where
 -- /See:/ 'pricingSchedule' smart constructor.
 data PricingSchedule =
   PricingSchedule'
-    { _psTestingStartDate     :: !(Maybe Date')
+    { _psTestingStartDate :: !(Maybe Date')
     , _psFloodlightActivityId :: !(Maybe (Textual Int64))
-    , _psEndDate              :: !(Maybe Date')
-    , _psStartDate            :: !(Maybe Date')
-    , _psCapCostOption        :: !(Maybe PricingScheduleCapCostOption)
-    , _psPricingType          :: !(Maybe PricingSchedulePricingType)
-    , _psPricingPeriods       :: !(Maybe [PricingSchedulePricingPeriod])
-    , _psFlighted             :: !(Maybe Bool)
+    , _psEndDate :: !(Maybe Date')
+    , _psStartDate :: !(Maybe Date')
+    , _psCapCostOption :: !(Maybe PricingScheduleCapCostOption)
+    , _psPricingType :: !(Maybe PricingSchedulePricingType)
+    , _psPricingPeriods :: !(Maybe [PricingSchedulePricingPeriod])
+    , _psFlighted :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6488,10 +6488,10 @@ instance ToJSON PricingSchedule where
 -- /See:/ 'postalCode' smart constructor.
 data PostalCode =
   PostalCode'
-    { _pcKind          :: !(Maybe Text)
-    , _pcCode          :: !(Maybe Text)
-    , _pcCountryCode   :: !(Maybe Text)
-    , _pcId            :: !(Maybe Text)
+    { _pcKind :: !(Maybe Text)
+    , _pcCode :: !(Maybe Text)
+    , _pcCountryCode :: !(Maybe Text)
+    , _pcId :: !(Maybe Text)
     , _pcCountryDartId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6572,7 +6572,7 @@ instance ToJSON PostalCode where
 -- /See:/ 'accountPermissionsListResponse' smart constructor.
 data AccountPermissionsListResponse =
   AccountPermissionsListResponse'
-    { _aplrKind               :: !(Maybe Text)
+    { _aplrKind :: !(Maybe Text)
     , _aplrAccountPermissions :: !(Maybe [AccountPermission])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6627,11 +6627,11 @@ instance ToJSON AccountPermissionsListResponse where
 -- /See:/ 'country' smart constructor.
 data Country =
   Country'
-    { _cKind        :: !(Maybe Text)
-    , _cName        :: !(Maybe Text)
+    { _cKind :: !(Maybe Text)
+    , _cName :: !(Maybe Text)
     , _cCountryCode :: !(Maybe Text)
-    , _cDartId      :: !(Maybe (Textual Int64))
-    , _cSSLEnabled  :: !(Maybe Bool)
+    , _cDartId :: !(Maybe (Textual Int64))
+    , _cSSLEnabled :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6711,7 +6711,7 @@ instance ToJSON Country where
 -- /See:/ 'operatingSystemVersionsListResponse' smart constructor.
 data OperatingSystemVersionsListResponse =
   OperatingSystemVersionsListResponse'
-    { _osvlrKind                    :: !(Maybe Text)
+    { _osvlrKind :: !(Maybe Text)
     , _osvlrOperatingSystemVersions :: !(Maybe [OperatingSystemVersion])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6769,7 +6769,7 @@ instance ToJSON OperatingSystemVersionsListResponse
 data ClickThroughURLSuffixProperties =
   ClickThroughURLSuffixProperties'
     { _ctuspOverrideInheritedSuffix :: !(Maybe Bool)
-    , _ctuspClickThroughURLSuffix   :: !(Maybe Text)
+    , _ctuspClickThroughURLSuffix :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6827,11 +6827,11 @@ instance ToJSON ClickThroughURLSuffixProperties where
 -- /See:/ 'pricing' smart constructor.
 data Pricing =
   Pricing'
-    { _priEndDate     :: !(Maybe Date')
-    , _priStartDate   :: !(Maybe Date')
-    , _priGroupType   :: !(Maybe PricingGroupType)
+    { _priEndDate :: !(Maybe Date')
+    , _priStartDate :: !(Maybe Date')
+    , _priGroupType :: !(Maybe PricingGroupType)
     , _priPricingType :: !(Maybe PricingPricingType)
-    , _priFlights     :: !(Maybe [Flight])
+    , _priFlights :: !(Maybe [Flight])
     , _priCapCostType :: !(Maybe PricingCapCostType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6936,8 +6936,8 @@ instance ToJSON Pricing where
 data AudienceSegmentGroup =
   AudienceSegmentGroup'
     { _asgAudienceSegments :: !(Maybe [AudienceSegment])
-    , _asgName             :: !(Maybe Text)
-    , _asgId               :: !(Maybe (Textual Int64))
+    , _asgName :: !(Maybe Text)
+    , _asgId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7002,10 +7002,10 @@ instance ToJSON AudienceSegmentGroup where
 data OperatingSystem =
   OperatingSystem'
     { _osDesktop :: !(Maybe Bool)
-    , _osKind    :: !(Maybe Text)
-    , _osName    :: !(Maybe Text)
-    , _osMobile  :: !(Maybe Bool)
-    , _osDartId  :: !(Maybe (Textual Int64))
+    , _osKind :: !(Maybe Text)
+    , _osName :: !(Maybe Text)
+    , _osMobile :: !(Maybe Bool)
+    , _osDartId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7084,9 +7084,9 @@ instance ToJSON OperatingSystem where
 data Flight =
   Flight'
     { _fRateOrCost :: !(Maybe (Textual Int64))
-    , _fEndDate    :: !(Maybe Date')
-    , _fStartDate  :: !(Maybe Date')
-    , _fUnits      :: !(Maybe (Textual Int64))
+    , _fEndDate :: !(Maybe Date')
+    , _fStartDate :: !(Maybe Date')
+    , _fUnits :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7158,7 +7158,7 @@ instance ToJSON Flight where
 -- /See:/ 'citiesListResponse' smart constructor.
 data CitiesListResponse =
   CitiesListResponse'
-    { _citKind   :: !(Maybe Text)
+    { _citKind :: !(Maybe Text)
     , _citCities :: !(Maybe [City])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7251,14 +7251,14 @@ instance ToJSON Dimension where
 -- /See:/ 'reportReachCriteria' smart constructor.
 data ReportReachCriteria =
   ReportReachCriteria'
-    { _rrcReachByFrequencyMetricNames    :: !(Maybe [Text])
+    { _rrcReachByFrequencyMetricNames :: !(Maybe [Text])
     , _rrcEnableAllDimensionCombinations :: !(Maybe Bool)
-    , _rrcMetricNames                    :: !(Maybe [Text])
-    , _rrcCustomRichMediaEvents          :: !(Maybe CustomRichMediaEvents)
-    , _rrcDimensionFilters               :: !(Maybe [DimensionValue])
-    , _rrcActivities                     :: !(Maybe Activities)
-    , _rrcDateRange                      :: !(Maybe DateRange)
-    , _rrcDimensions                     :: !(Maybe [SortedDimension])
+    , _rrcMetricNames :: !(Maybe [Text])
+    , _rrcCustomRichMediaEvents :: !(Maybe CustomRichMediaEvents)
+    , _rrcDimensionFilters :: !(Maybe [DimensionValue])
+    , _rrcActivities :: !(Maybe Activities)
+    , _rrcDateRange :: !(Maybe DateRange)
+    , _rrcDimensions :: !(Maybe [SortedDimension])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7392,7 +7392,7 @@ instance ToJSON ReportReachCriteria where
 -- /See:/ 'customRichMediaEvents' smart constructor.
 data CustomRichMediaEvents =
   CustomRichMediaEvents'
-    { _crmeKind             :: !(Maybe Text)
+    { _crmeKind :: !(Maybe Text)
     , _crmeFilteredEventIds :: !(Maybe [DimensionValue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7445,7 +7445,7 @@ instance ToJSON CustomRichMediaEvents where
 -- /See:/ 'languagesListResponse' smart constructor.
 data LanguagesListResponse =
   LanguagesListResponse'
-    { _llrKind      :: !(Maybe Text)
+    { _llrKind :: !(Maybe Text)
     , _llrLanguages :: !(Maybe [Language])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7497,9 +7497,9 @@ instance ToJSON LanguagesListResponse where
 data CustomViewabilityMetricConfiguration =
   CustomViewabilityMetricConfiguration'
     { _cvmcViewabilityPercent :: !(Maybe (Textual Int32))
-    , _cvmcTimePercent        :: !(Maybe (Textual Int32))
-    , _cvmcAudible            :: !(Maybe Bool)
-    , _cvmcTimeMillis         :: !(Maybe (Textual Int32))
+    , _cvmcTimePercent :: !(Maybe (Textual Int32))
+    , _cvmcAudible :: !(Maybe Bool)
+    , _cvmcTimeMillis :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7586,12 +7586,12 @@ instance ToJSON CustomViewabilityMetricConfiguration
 data ReportPathCriteria =
   ReportPathCriteria'
     { _rpcCustomChannelGrouping :: !(Maybe ChannelGrouping)
-    , _rpcMetricNames           :: !(Maybe [Text])
-    , _rpcDateRange             :: !(Maybe DateRange)
-    , _rpcPathFilters           :: !(Maybe [PathFilter])
-    , _rpcFloodlightConfigId    :: !(Maybe DimensionValue)
-    , _rpcDimensions            :: !(Maybe [SortedDimension])
-    , _rpcActivityFilters       :: !(Maybe [DimensionValue])
+    , _rpcMetricNames :: !(Maybe [Text])
+    , _rpcDateRange :: !(Maybe DateRange)
+    , _rpcPathFilters :: !(Maybe [PathFilter])
+    , _rpcFloodlightConfigId :: !(Maybe DimensionValue)
+    , _rpcDimensions :: !(Maybe [SortedDimension])
+    , _rpcActivityFilters :: !(Maybe [DimensionValue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7709,8 +7709,8 @@ instance ToJSON ReportPathCriteria where
 -- /See:/ 'targetableRemarketingListsListResponse' smart constructor.
 data TargetableRemarketingListsListResponse =
   TargetableRemarketingListsListResponse'
-    { _trllrNextPageToken              :: !(Maybe Text)
-    , _trllrKind                       :: !(Maybe Text)
+    { _trllrNextPageToken :: !(Maybe Text)
+    , _trllrKind :: !(Maybe Text)
     , _trllrTargetableRemarketingLists :: !(Maybe [TargetableRemarketingList])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7782,8 +7782,8 @@ instance ToJSON
 data ChangeLogsListResponse =
   ChangeLogsListResponse'
     { _cllrNextPageToken :: !(Maybe Text)
-    , _cllrKind          :: !(Maybe Text)
-    , _cllrChangeLogs    :: !(Maybe [ChangeLog])
+    , _cllrKind :: !(Maybe Text)
+    , _cllrChangeLogs :: !(Maybe [ChangeLog])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7849,22 +7849,22 @@ instance ToJSON ChangeLogsListResponse where
 -- /See:/ 'accountUserProFile' smart constructor.
 data AccountUserProFile =
   AccountUserProFile'
-    { _aupfEmail            :: !(Maybe Text)
-    , _aupfUserRoleFilter   :: !(Maybe ObjectFilter)
+    { _aupfEmail :: !(Maybe Text)
+    , _aupfUserRoleFilter :: !(Maybe ObjectFilter)
     , _aupfAdvertiserFilter :: !(Maybe ObjectFilter)
-    , _aupfUserRoleId       :: !(Maybe (Textual Int64))
-    , _aupfKind             :: !(Maybe Text)
-    , _aupfLocale           :: !(Maybe Text)
-    , _aupfSiteFilter       :: !(Maybe ObjectFilter)
-    , _aupfTraffickerType   :: !(Maybe AccountUserProFileTraffickerType)
-    , _aupfActive           :: !(Maybe Bool)
-    , _aupfAccountId        :: !(Maybe (Textual Int64))
-    , _aupfName             :: !(Maybe Text)
-    , _aupfId               :: !(Maybe (Textual Int64))
-    , _aupfUserAccessType   :: !(Maybe AccountUserProFileUserAccessType)
-    , _aupfComments         :: !(Maybe Text)
-    , _aupfSubAccountId     :: !(Maybe (Textual Int64))
-    , _aupfCampaignFilter   :: !(Maybe ObjectFilter)
+    , _aupfUserRoleId :: !(Maybe (Textual Int64))
+    , _aupfKind :: !(Maybe Text)
+    , _aupfLocale :: !(Maybe Text)
+    , _aupfSiteFilter :: !(Maybe ObjectFilter)
+    , _aupfTraffickerType :: !(Maybe AccountUserProFileTraffickerType)
+    , _aupfActive :: !(Maybe Bool)
+    , _aupfAccountId :: !(Maybe (Textual Int64))
+    , _aupfName :: !(Maybe Text)
+    , _aupfId :: !(Maybe (Textual Int64))
+    , _aupfUserAccessType :: !(Maybe AccountUserProFileUserAccessType)
+    , _aupfComments :: !(Maybe Text)
+    , _aupfSubAccountId :: !(Maybe (Textual Int64))
+    , _aupfCampaignFilter :: !(Maybe ObjectFilter)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8079,12 +8079,12 @@ instance ToJSON AccountUserProFile where
 -- /See:/ 'dimensionValue' smart constructor.
 data DimensionValue =
   DimensionValue'
-    { _dvEtag          :: !(Maybe Text)
-    , _dvKind          :: !(Maybe Text)
-    , _dvValue         :: !(Maybe Text)
-    , _dvMatchType     :: !(Maybe DimensionValueMatchType)
+    { _dvEtag :: !(Maybe Text)
+    , _dvKind :: !(Maybe Text)
+    , _dvValue :: !(Maybe Text)
+    , _dvMatchType :: !(Maybe DimensionValueMatchType)
     , _dvDimensionName :: !(Maybe Text)
-    , _dvId            :: !(Maybe Text)
+    , _dvId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8173,9 +8173,9 @@ instance ToJSON DimensionValue where
 -- /See:/ 'activities' smart constructor.
 data Activities =
   Activities'
-    { _actKind        :: !(Maybe Text)
+    { _actKind :: !(Maybe Text)
     , _actMetricNames :: !(Maybe [Text])
-    , _actFilters     :: !(Maybe [DimensionValue])
+    , _actFilters :: !(Maybe [DimensionValue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8238,7 +8238,7 @@ instance ToJSON Activities where
 data UserRolePermissionGroupsListResponse =
   UserRolePermissionGroupsListResponse'
     { _urpglrUserRolePermissionGroups :: !(Maybe [UserRolePermissionGroup])
-    , _urpglrKind                     :: !(Maybe Text)
+    , _urpglrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8296,7 +8296,7 @@ instance ToJSON UserRolePermissionGroupsListResponse
 data PlacementTag =
   PlacementTag'
     { _ptPlacementId :: !(Maybe (Textual Int64))
-    , _ptTagDatas    :: !(Maybe [TagData])
+    , _ptTagDatas :: !(Maybe [TagData])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8347,9 +8347,9 @@ instance ToJSON PlacementTag where
 -- /See:/ 'remarketingListsListResponse' smart constructor.
 data RemarketingListsListResponse =
   RemarketingListsListResponse'
-    { _rllrNextPageToken    :: !(Maybe Text)
+    { _rllrNextPageToken :: !(Maybe Text)
     , _rllrRemarketingLists :: !(Maybe [RemarketingList])
-    , _rllrKind             :: !(Maybe Text)
+    , _rllrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8420,9 +8420,9 @@ instance ToJSON RemarketingListsListResponse where
 data DynamicTargetingKey =
   DynamicTargetingKey'
     { _dtkObjectType :: !(Maybe DynamicTargetingKeyObjectType)
-    , _dtkKind       :: !(Maybe Text)
-    , _dtkObjectId   :: !(Maybe (Textual Int64))
-    , _dtkName       :: !(Maybe Text)
+    , _dtkKind :: !(Maybe Text)
+    , _dtkObjectId :: !(Maybe (Textual Int64))
+    , _dtkName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8497,71 +8497,71 @@ instance ToJSON DynamicTargetingKey where
 -- /See:/ 'creative' smart constructor.
 data Creative =
   Creative'
-    { _creConvertFlashToHTML5                 :: !(Maybe Bool)
-    , _creBackupImageTargetWindow             :: !(Maybe TargetWindow)
-    , _creRenderingIdDimensionValue           :: !(Maybe DimensionValue)
-    , _creCustomKeyValues                     :: !(Maybe [Text])
-    , _creSkipOffSet                          :: !(Maybe VideoOffSet)
-    , _creObaIcon                             :: !(Maybe ObaIcon)
-    , _creRenderingId                         :: !(Maybe (Textual Int64))
+    { _creConvertFlashToHTML5 :: !(Maybe Bool)
+    , _creBackupImageTargetWindow :: !(Maybe TargetWindow)
+    , _creRenderingIdDimensionValue :: !(Maybe DimensionValue)
+    , _creCustomKeyValues :: !(Maybe [Text])
+    , _creSkipOffSet :: !(Maybe VideoOffSet)
+    , _creObaIcon :: !(Maybe ObaIcon)
+    , _creRenderingId :: !(Maybe (Textual Int64))
     , _creThirdPartyBackupImageImpressionsURL :: !(Maybe Text)
-    , _creFsCommand                           :: !(Maybe FsCommand)
-    , _creAllowScriptAccess                   :: !(Maybe Bool)
-    , _creHTMLCodeLocked                      :: !(Maybe Bool)
-    , _creRequiredFlashPluginVersion          :: !(Maybe Text)
-    , _creUniversalAdId                       :: !(Maybe UniversalAdId)
-    , _creAuthoringTool                       :: !(Maybe CreativeAuthoringTool)
-    , _creSize                                :: !(Maybe Size)
-    , _creThirdPartyURLs                      :: !(Maybe [ThirdPartyTrackingURL])
-    , _creProgressOffSet                      :: !(Maybe VideoOffSet)
-    , _creCounterCustomEvents                 :: !(Maybe [CreativeCustomEvent])
-    , _creKind                                :: !(Maybe Text)
-    , _creSSLOverride                         :: !(Maybe Bool)
-    , _creHTMLCode                            :: !(Maybe Text)
-    , _creAdvertiserId                        :: !(Maybe (Textual Int64))
-    , _creRequiredFlashVersion                :: !(Maybe (Textual Int32))
-    , _creBackgRoundColor                     :: !(Maybe Text)
-    , _creAdTagKeys                           :: !(Maybe [Text])
-    , _creSkippable                           :: !(Maybe Bool)
-    , _creSSLCompliant                        :: !(Maybe Bool)
-    , _creIdDimensionValue                    :: !(Maybe DimensionValue)
-    , _creBackupImageReportingLabel           :: !(Maybe Text)
-    , _creCommercialId                        :: !(Maybe Text)
-    , _creActive                              :: !(Maybe Bool)
-    , _creExitCustomEvents                    :: !(Maybe [CreativeCustomEvent])
-    , _creAccountId                           :: !(Maybe (Textual Int64))
-    , _creBackupImageClickThroughURL          :: !(Maybe CreativeClickThroughURL)
-    , _creName                                :: !(Maybe Text)
-    , _creOverrideCss                         :: !(Maybe Text)
-    , _creAdditionalSizes                     :: !(Maybe [Size])
-    , _creClickTags                           :: !(Maybe [ClickTag])
-    , _creAdParameters                        :: !(Maybe Text)
-    , _creVersion                             :: !(Maybe (Textual Int32))
-    , _creMediaDescription                    :: !(Maybe Text)
-    , _creMediaDuration                       :: !(Maybe (Textual Double))
-    , _creLatestTraffickedCreativeId          :: !(Maybe (Textual Int64))
-    , _creThirdPartyRichMediaImpressionsURL   :: !(Maybe Text)
-    , _creDynamicAssetSelection               :: !(Maybe Bool)
-    , _creLastModifiedInfo                    :: !(Maybe LastModifiedInfo)
-    , _creId                                  :: !(Maybe (Textual Int64))
-    , _creAuthoringSource                     :: !(Maybe CreativeAuthoringSource)
-    , _creStudioAdvertiserId                  :: !(Maybe (Textual Int64))
-    , _creCreativeAssets                      :: !(Maybe [CreativeAsset])
-    , _creSubAccountId                        :: !(Maybe (Textual Int64))
-    , _creType                                :: !(Maybe CreativeType)
-    , _creTimerCustomEvents                   :: !(Maybe [CreativeCustomEvent])
-    , _creCreativeAssetSelection              :: !(Maybe CreativeAssetSelection)
-    , _creStudioCreativeId                    :: !(Maybe (Textual Int64))
-    , _creCompatibility                       :: !(Maybe [CreativeCompatibilityItem])
-    , _creBackupImageFeatures                 :: !(Maybe [CreativeBackupImageFeaturesItem])
-    , _creArtworkType                         :: !(Maybe CreativeArtworkType)
-    , _creArchived                            :: !(Maybe Bool)
-    , _creCompanionCreatives                  :: !(Maybe [Textual Int64])
-    , _creTotalFileSize                       :: !(Maybe (Textual Int64))
-    , _creStudioTraffickedCreativeId          :: !(Maybe (Textual Int64))
-    , _creAutoAdvanceImages                   :: !(Maybe Bool)
-    , _creRedirectURL                         :: !(Maybe Text)
-    , _creCreativeFieldAssignments            :: !(Maybe [CreativeFieldAssignment])
+    , _creFsCommand :: !(Maybe FsCommand)
+    , _creAllowScriptAccess :: !(Maybe Bool)
+    , _creHTMLCodeLocked :: !(Maybe Bool)
+    , _creRequiredFlashPluginVersion :: !(Maybe Text)
+    , _creUniversalAdId :: !(Maybe UniversalAdId)
+    , _creAuthoringTool :: !(Maybe CreativeAuthoringTool)
+    , _creSize :: !(Maybe Size)
+    , _creThirdPartyURLs :: !(Maybe [ThirdPartyTrackingURL])
+    , _creProgressOffSet :: !(Maybe VideoOffSet)
+    , _creCounterCustomEvents :: !(Maybe [CreativeCustomEvent])
+    , _creKind :: !(Maybe Text)
+    , _creSSLOverride :: !(Maybe Bool)
+    , _creHTMLCode :: !(Maybe Text)
+    , _creAdvertiserId :: !(Maybe (Textual Int64))
+    , _creRequiredFlashVersion :: !(Maybe (Textual Int32))
+    , _creBackgRoundColor :: !(Maybe Text)
+    , _creAdTagKeys :: !(Maybe [Text])
+    , _creSkippable :: !(Maybe Bool)
+    , _creSSLCompliant :: !(Maybe Bool)
+    , _creIdDimensionValue :: !(Maybe DimensionValue)
+    , _creBackupImageReportingLabel :: !(Maybe Text)
+    , _creCommercialId :: !(Maybe Text)
+    , _creActive :: !(Maybe Bool)
+    , _creExitCustomEvents :: !(Maybe [CreativeCustomEvent])
+    , _creAccountId :: !(Maybe (Textual Int64))
+    , _creBackupImageClickThroughURL :: !(Maybe CreativeClickThroughURL)
+    , _creName :: !(Maybe Text)
+    , _creOverrideCss :: !(Maybe Text)
+    , _creAdditionalSizes :: !(Maybe [Size])
+    , _creClickTags :: !(Maybe [ClickTag])
+    , _creAdParameters :: !(Maybe Text)
+    , _creVersion :: !(Maybe (Textual Int32))
+    , _creMediaDescription :: !(Maybe Text)
+    , _creMediaDuration :: !(Maybe (Textual Double))
+    , _creLatestTraffickedCreativeId :: !(Maybe (Textual Int64))
+    , _creThirdPartyRichMediaImpressionsURL :: !(Maybe Text)
+    , _creDynamicAssetSelection :: !(Maybe Bool)
+    , _creLastModifiedInfo :: !(Maybe LastModifiedInfo)
+    , _creId :: !(Maybe (Textual Int64))
+    , _creAuthoringSource :: !(Maybe CreativeAuthoringSource)
+    , _creStudioAdvertiserId :: !(Maybe (Textual Int64))
+    , _creCreativeAssets :: !(Maybe [CreativeAsset])
+    , _creSubAccountId :: !(Maybe (Textual Int64))
+    , _creType :: !(Maybe CreativeType)
+    , _creTimerCustomEvents :: !(Maybe [CreativeCustomEvent])
+    , _creCreativeAssetSelection :: !(Maybe CreativeAssetSelection)
+    , _creStudioCreativeId :: !(Maybe (Textual Int64))
+    , _creCompatibility :: !(Maybe [CreativeCompatibilityItem])
+    , _creBackupImageFeatures :: !(Maybe [CreativeBackupImageFeaturesItem])
+    , _creArtworkType :: !(Maybe CreativeArtworkType)
+    , _creArchived :: !(Maybe Bool)
+    , _creCompanionCreatives :: !(Maybe [Textual Int64])
+    , _creTotalFileSize :: !(Maybe (Textual Int64))
+    , _creStudioTraffickedCreativeId :: !(Maybe (Textual Int64))
+    , _creAutoAdvanceImages :: !(Maybe Bool)
+    , _creRedirectURL :: !(Maybe Text)
+    , _creCreativeFieldAssignments :: !(Maybe [CreativeFieldAssignment])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9506,10 +9506,10 @@ instance ToJSON Creative where
 -- /See:/ 'siteCompanionSetting' smart constructor.
 data SiteCompanionSetting =
   SiteCompanionSetting'
-    { _scsKind               :: !(Maybe Text)
-    , _scsImageOnly          :: !(Maybe Bool)
+    { _scsKind :: !(Maybe Text)
+    , _scsImageOnly :: !(Maybe Bool)
     , _scsCompanionsDisabled :: !(Maybe Bool)
-    , _scsEnabledSizes       :: !(Maybe [Size])
+    , _scsEnabledSizes :: !(Maybe [Size])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9584,13 +9584,13 @@ instance ToJSON SiteCompanionSetting where
 -- /See:/ 'siteContact' smart constructor.
 data SiteContact =
   SiteContact'
-    { _scEmail       :: !(Maybe Text)
-    , _scPhone       :: !(Maybe Text)
-    , _scLastName    :: !(Maybe Text)
-    , _scAddress     :: !(Maybe Text)
-    , _scFirstName   :: !(Maybe Text)
-    , _scId          :: !(Maybe (Textual Int64))
-    , _scTitle       :: !(Maybe Text)
+    { _scEmail :: !(Maybe Text)
+    , _scPhone :: !(Maybe Text)
+    , _scLastName :: !(Maybe Text)
+    , _scAddress :: !(Maybe Text)
+    , _scFirstName :: !(Maybe Text)
+    , _scId :: !(Maybe (Textual Int64))
+    , _scTitle :: !(Maybe Text)
     , _scContactType :: !(Maybe SiteContactContactType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9700,8 +9700,8 @@ instance ToJSON SiteContact where
 data AccountsListResponse =
   AccountsListResponse'
     { _accNextPageToken :: !(Maybe Text)
-    , _accAccounts      :: !(Maybe [Account])
-    , _accKind          :: !(Maybe Text)
+    , _accAccounts :: !(Maybe [Account])
+    , _accKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9762,9 +9762,9 @@ instance ToJSON AccountsListResponse where
 -- /See:/ 'dateRange' smart constructor.
 data DateRange =
   DateRange'
-    { _drKind              :: !(Maybe Text)
-    , _drEndDate           :: !(Maybe Date')
-    , _drStartDate         :: !(Maybe Date')
+    { _drKind :: !(Maybe Text)
+    , _drEndDate :: !(Maybe Date')
+    , _drStartDate :: !(Maybe Date')
     , _drRelativeDateRange :: !(Maybe DateRangeRelativeDateRange)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9835,26 +9835,26 @@ instance ToJSON DateRange where
 -- /See:/ 'report' smart constructor.
 data Report =
   Report'
-    { _rDelivery                    :: !(Maybe ReportDelivery)
-    , _rEtag                        :: !(Maybe Text)
-    , _rOwnerProFileId              :: !(Maybe (Textual Int64))
-    , _rSchedule                    :: !(Maybe ReportSchedule)
-    , _rPathToConversionCriteria    :: !(Maybe ReportPathToConversionCriteria)
-    , _rKind                        :: !(Maybe Text)
-    , _rFormat                      :: !(Maybe ReportFormat)
-    , _rPathCriteria                :: !(Maybe ReportPathCriteria)
-    , _rReachCriteria               :: !(Maybe ReportReachCriteria)
-    , _rLastModifiedTime            :: !(Maybe (Textual Word64))
-    , _rAccountId                   :: !(Maybe (Textual Int64))
-    , _rName                        :: !(Maybe Text)
-    , _rPathAttributionCriteria     :: !(Maybe ReportPathAttributionCriteria)
-    , _rId                          :: !(Maybe (Textual Int64))
+    { _rDelivery :: !(Maybe ReportDelivery)
+    , _rEtag :: !(Maybe Text)
+    , _rOwnerProFileId :: !(Maybe (Textual Int64))
+    , _rSchedule :: !(Maybe ReportSchedule)
+    , _rPathToConversionCriteria :: !(Maybe ReportPathToConversionCriteria)
+    , _rKind :: !(Maybe Text)
+    , _rFormat :: !(Maybe ReportFormat)
+    , _rPathCriteria :: !(Maybe ReportPathCriteria)
+    , _rReachCriteria :: !(Maybe ReportReachCriteria)
+    , _rLastModifiedTime :: !(Maybe (Textual Word64))
+    , _rAccountId :: !(Maybe (Textual Int64))
+    , _rName :: !(Maybe Text)
+    , _rPathAttributionCriteria :: !(Maybe ReportPathAttributionCriteria)
+    , _rId :: !(Maybe (Textual Int64))
     , _rCrossDimensionReachCriteria :: !(Maybe ReportCrossDimensionReachCriteria)
-    , _rType                        :: !(Maybe ReportType)
-    , _rSubAccountId                :: !(Maybe (Textual Int64))
-    , _rFloodlightCriteria          :: !(Maybe ReportFloodlightCriteria)
-    , _rCriteria                    :: !(Maybe ReportCriteria)
-    , _rFileName                    :: !(Maybe Text)
+    , _rType :: !(Maybe ReportType)
+    , _rSubAccountId :: !(Maybe (Textual Int64))
+    , _rFloodlightCriteria :: !(Maybe ReportFloodlightCriteria)
+    , _rCriteria :: !(Maybe ReportCriteria)
+    , _rFileName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10099,10 +10099,10 @@ instance ToJSON Report where
 -- /See:/ 'siteSkippableSetting' smart constructor.
 data SiteSkippableSetting =
   SiteSkippableSetting'
-    { _sssSkipOffSet     :: !(Maybe VideoOffSet)
+    { _sssSkipOffSet :: !(Maybe VideoOffSet)
     , _sssProgressOffSet :: !(Maybe VideoOffSet)
-    , _sssKind           :: !(Maybe Text)
-    , _sssSkippable      :: !(Maybe Bool)
+    , _sssKind :: !(Maybe Text)
+    , _sssSkippable :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10179,8 +10179,8 @@ instance ToJSON SiteSkippableSetting where
 data Rule =
   Rule'
     { _rulTargetingTemplateId :: !(Maybe (Textual Int64))
-    , _rulName                :: !(Maybe Text)
-    , _rulAssetId             :: !(Maybe (Textual Int64))
+    , _rulName :: !(Maybe Text)
+    , _rulAssetId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10246,34 +10246,34 @@ instance ToJSON Rule where
 -- /See:/ 'campaign' smart constructor.
 data Campaign =
   Campaign'
-    { _camAdBlockingConfiguration                      :: !(Maybe AdBlockingConfiguration)
-    , _camCreativeOptimizationConfiguration            :: !(Maybe CreativeOptimizationConfiguration)
-    , _camCreativeGroupIds                             :: !(Maybe [Textual Int64])
-    , _camNielsenOCREnabled                            :: !(Maybe Bool)
-    , _camKind                                         :: !(Maybe Text)
-    , _camClickThroughURLSuffixProperties              :: !(Maybe ClickThroughURLSuffixProperties)
-    , _camAdvertiserId                                 :: !(Maybe (Textual Int64))
-    , _camEndDate                                      :: !(Maybe Date')
-    , _camAdvertiserIdDimensionValue                   :: !(Maybe DimensionValue)
-    , _camIdDimensionValue                             :: !(Maybe DimensionValue)
-    , _camEventTagOverrides                            :: !(Maybe [EventTagOverride])
-    , _camStartDate                                    :: !(Maybe Date')
-    , _camAccountId                                    :: !(Maybe (Textual Int64))
-    , _camName                                         :: !(Maybe Text)
-    , _camAdvertiserGroupId                            :: !(Maybe (Textual Int64))
-    , _camBillingInvoiceCode                           :: !(Maybe Text)
-    , _camDefaultLandingPageId                         :: !(Maybe (Textual Int64))
-    , _camCreateInfo                                   :: !(Maybe LastModifiedInfo)
-    , _camLastModifiedInfo                             :: !(Maybe LastModifiedInfo)
-    , _camId                                           :: !(Maybe (Textual Int64))
-    , _camSubAccountId                                 :: !(Maybe (Textual Int64))
+    { _camAdBlockingConfiguration :: !(Maybe AdBlockingConfiguration)
+    , _camCreativeOptimizationConfiguration :: !(Maybe CreativeOptimizationConfiguration)
+    , _camCreativeGroupIds :: !(Maybe [Textual Int64])
+    , _camNielsenOCREnabled :: !(Maybe Bool)
+    , _camKind :: !(Maybe Text)
+    , _camClickThroughURLSuffixProperties :: !(Maybe ClickThroughURLSuffixProperties)
+    , _camAdvertiserId :: !(Maybe (Textual Int64))
+    , _camEndDate :: !(Maybe Date')
+    , _camAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
+    , _camIdDimensionValue :: !(Maybe DimensionValue)
+    , _camEventTagOverrides :: !(Maybe [EventTagOverride])
+    , _camStartDate :: !(Maybe Date')
+    , _camAccountId :: !(Maybe (Textual Int64))
+    , _camName :: !(Maybe Text)
+    , _camAdvertiserGroupId :: !(Maybe (Textual Int64))
+    , _camBillingInvoiceCode :: !(Maybe Text)
+    , _camDefaultLandingPageId :: !(Maybe (Textual Int64))
+    , _camCreateInfo :: !(Maybe LastModifiedInfo)
+    , _camLastModifiedInfo :: !(Maybe LastModifiedInfo)
+    , _camId :: !(Maybe (Textual Int64))
+    , _camSubAccountId :: !(Maybe (Textual Int64))
     , _camAdditionalCreativeOptimizationConfigurations :: !(Maybe [CreativeOptimizationConfiguration])
-    , _camExternalId                                   :: !(Maybe Text)
-    , _camComment                                      :: !(Maybe Text)
-    , _camAudienceSegmentGroups                        :: !(Maybe [AudienceSegmentGroup])
-    , _camArchived                                     :: !(Maybe Bool)
-    , _camTraffickerEmails                             :: !(Maybe [Text])
-    , _camDefaultClickThroughEventTagProperties        :: !(Maybe DefaultClickThroughEventTagProperties)
+    , _camExternalId :: !(Maybe Text)
+    , _camComment :: !(Maybe Text)
+    , _camAudienceSegmentGroups :: !(Maybe [AudienceSegmentGroup])
+    , _camArchived :: !(Maybe Bool)
+    , _camTraffickerEmails :: !(Maybe [Text])
+    , _camDefaultClickThroughEventTagProperties :: !(Maybe DefaultClickThroughEventTagProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10645,7 +10645,7 @@ instance ToJSON Campaign where
 -- /See:/ 'customEventsBatchInsertRequest' smart constructor.
 data CustomEventsBatchInsertRequest =
   CustomEventsBatchInsertRequest'
-    { _cebirKind         :: !(Maybe Text)
+    { _cebirKind :: !(Maybe Text)
     , _cebirCustomEvents :: !(Maybe [CustomEvent])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10700,7 +10700,7 @@ instance ToJSON CustomEventsBatchInsertRequest where
 data ThirdPartyAuthenticationToken =
   ThirdPartyAuthenticationToken'
     { _tpatValue :: !(Maybe Text)
-    , _tpatName  :: !(Maybe Text)
+    , _tpatName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10747,10 +10747,10 @@ instance ToJSON ThirdPartyAuthenticationToken where
 -- /See:/ 'clickThroughURL' smart constructor.
 data ClickThroughURL =
   ClickThroughURL'
-    { _ctuDefaultLandingPage      :: !(Maybe Bool)
+    { _ctuDefaultLandingPage :: !(Maybe Bool)
     , _ctuComputedClickThroughURL :: !(Maybe Text)
-    , _ctuCustomClickThroughURL   :: !(Maybe Text)
-    , _ctuLandingPageId           :: !(Maybe (Textual Int64))
+    , _ctuCustomClickThroughURL :: !(Maybe Text)
+    , _ctuLandingPageId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10837,7 +10837,7 @@ instance ToJSON ClickThroughURL where
 -- /See:/ 'browsersListResponse' smart constructor.
 data BrowsersListResponse =
   BrowsersListResponse'
-    { _blrKind     :: !(Maybe Text)
+    { _blrKind :: !(Maybe Text)
     , _blrBrowsers :: !(Maybe [Browser])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10887,12 +10887,12 @@ instance ToJSON BrowsersListResponse where
 -- /See:/ 'siteSettings' smart constructor.
 data SiteSettings =
   SiteSettings'
-    { _ssDisableNewCookie              :: !(Maybe Bool)
+    { _ssDisableNewCookie :: !(Maybe Bool)
     , _ssVideoActiveViewOptOutTemplate :: !(Maybe Bool)
-    , _ssAdBlockingOptOut              :: !(Maybe Bool)
-    , _ssTagSetting                    :: !(Maybe TagSetting)
-    , _ssActiveViewOptOut              :: !(Maybe Bool)
-    , _ssVpaidAdapterChoiceTemplate    :: !(Maybe SiteSettingsVpaidAdapterChoiceTemplate)
+    , _ssAdBlockingOptOut :: !(Maybe Bool)
+    , _ssTagSetting :: !(Maybe TagSetting)
+    , _ssActiveViewOptOut :: !(Maybe Bool)
+    , _ssVpaidAdapterChoiceTemplate :: !(Maybe SiteSettingsVpaidAdapterChoiceTemplate)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11005,8 +11005,8 @@ instance ToJSON SiteSettings where
 -- /See:/ 'contentCategoriesListResponse' smart constructor.
 data ContentCategoriesListResponse =
   ContentCategoriesListResponse'
-    { _cclrNextPageToken     :: !(Maybe Text)
-    , _cclrKind              :: !(Maybe Text)
+    { _cclrNextPageToken :: !(Maybe Text)
+    , _cclrKind :: !(Maybe Text)
     , _cclrContentCategories :: !(Maybe [ContentCategory])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11072,12 +11072,12 @@ instance ToJSON ContentCategoriesListResponse where
 data ReportPathAttributionCriteria =
   ReportPathAttributionCriteria'
     { _rpacCustomChannelGrouping :: !(Maybe ChannelGrouping)
-    , _rpacMetricNames           :: !(Maybe [Text])
-    , _rpacDateRange             :: !(Maybe DateRange)
-    , _rpacPathFilters           :: !(Maybe [PathFilter])
-    , _rpacFloodlightConfigId    :: !(Maybe DimensionValue)
-    , _rpacDimensions            :: !(Maybe [SortedDimension])
-    , _rpacActivityFilters       :: !(Maybe [DimensionValue])
+    , _rpacMetricNames :: !(Maybe [Text])
+    , _rpacDateRange :: !(Maybe DateRange)
+    , _rpacPathFilters :: !(Maybe [PathFilter])
+    , _rpacFloodlightConfigId :: !(Maybe DimensionValue)
+    , _rpacDimensions :: !(Maybe [SortedDimension])
+    , _rpacActivityFilters :: !(Maybe [DimensionValue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11198,8 +11198,8 @@ instance ToJSON ReportPathAttributionCriteria where
 data CreativesListResponse =
   CreativesListResponse'
     { _clrlNextPageToken :: !(Maybe Text)
-    , _clrlKind          :: !(Maybe Text)
-    , _clrlCreatives     :: !(Maybe [Creative])
+    , _clrlKind :: !(Maybe Text)
+    , _clrlCreatives :: !(Maybe [Creative])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11263,25 +11263,25 @@ instance ToJSON CreativesListResponse where
 -- /See:/ 'account' smart constructor.
 data Account =
   Account'
-    { _aaAccountPermissionIds    :: !(Maybe [Textual Int64])
-    , _aaMaximumImageSize        :: !(Maybe (Textual Int64))
-    , _aaCurrencyId              :: !(Maybe (Textual Int64))
-    , _aaReportsConfiguration    :: !(Maybe ReportsConfiguration)
-    , _aaNielsenOCREnabled       :: !(Maybe Bool)
-    , _aaKind                    :: !(Maybe Text)
-    , _aaLocale                  :: !(Maybe Text)
-    , _aaActive                  :: !(Maybe Bool)
-    , _aaAvailablePermissionIds  :: !(Maybe [Textual Int64])
-    , _aaTeaserSizeLimit         :: !(Maybe (Textual Int64))
-    , _aaActiveViewOptOut        :: !(Maybe Bool)
+    { _aaAccountPermissionIds :: !(Maybe [Textual Int64])
+    , _aaMaximumImageSize :: !(Maybe (Textual Int64))
+    , _aaCurrencyId :: !(Maybe (Textual Int64))
+    , _aaReportsConfiguration :: !(Maybe ReportsConfiguration)
+    , _aaNielsenOCREnabled :: !(Maybe Bool)
+    , _aaKind :: !(Maybe Text)
+    , _aaLocale :: !(Maybe Text)
+    , _aaActive :: !(Maybe Bool)
+    , _aaAvailablePermissionIds :: !(Maybe [Textual Int64])
+    , _aaTeaserSizeLimit :: !(Maybe (Textual Int64))
+    , _aaActiveViewOptOut :: !(Maybe Bool)
     , _aaShareReportsWithTwitter :: !(Maybe Bool)
-    , _aaName                    :: !(Maybe Text)
-    , _aaAccountProFile          :: !(Maybe AccountAccountProFile)
-    , _aaId                      :: !(Maybe (Textual Int64))
-    , _aaCountryId               :: !(Maybe (Textual Int64))
-    , _aaActiveAdsLimitTier      :: !(Maybe AccountActiveAdsLimitTier)
-    , _aaDefaultCreativeSizeId   :: !(Maybe (Textual Int64))
-    , _aaDescription             :: !(Maybe Text)
+    , _aaName :: !(Maybe Text)
+    , _aaAccountProFile :: !(Maybe AccountAccountProFile)
+    , _aaId :: !(Maybe (Textual Int64))
+    , _aaCountryId :: !(Maybe (Textual Int64))
+    , _aaActiveAdsLimitTier :: !(Maybe AccountActiveAdsLimitTier)
+    , _aaDefaultCreativeSizeId :: !(Maybe (Textual Int64))
+    , _aaDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11549,8 +11549,8 @@ instance ToJSON Account where
 -- /See:/ 'conversionsBatchInsertRequest' smart constructor.
 data ConversionsBatchInsertRequest =
   ConversionsBatchInsertRequest'
-    { _cbirKind           :: !(Maybe Text)
-    , _cbirConversions    :: !(Maybe [Conversion])
+    { _cbirKind :: !(Maybe Text)
+    , _cbirConversions :: !(Maybe [Conversion])
     , _cbirEncryptionInfo :: !(Maybe EncryptionInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11617,9 +11617,9 @@ instance ToJSON ConversionsBatchInsertRequest where
 -- /See:/ 'accountUserProFilesListResponse' smart constructor.
 data AccountUserProFilesListResponse =
   AccountUserProFilesListResponse'
-    { _aupflrNextPageToken       :: !(Maybe Text)
+    { _aupflrNextPageToken :: !(Maybe Text)
     , _aupflrAccountUserProFiles :: !(Maybe [AccountUserProFile])
-    , _aupflrKind                :: !(Maybe Text)
+    , _aupflrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11688,10 +11688,10 @@ instance ToJSON AccountUserProFilesListResponse where
 -- /See:/ 'contentCategory' smart constructor.
 data ContentCategory =
   ContentCategory'
-    { _conKind      :: !(Maybe Text)
+    { _conKind :: !(Maybe Text)
     , _conAccountId :: !(Maybe (Textual Int64))
-    , _conName      :: !(Maybe Text)
-    , _conId        :: !(Maybe (Textual Int64))
+    , _conName :: !(Maybe Text)
+    , _conId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11765,11 +11765,11 @@ instance ToJSON ContentCategory where
 -- /See:/ 'reportCompatibleFields' smart constructor.
 data ReportCompatibleFields =
   ReportCompatibleFields'
-    { _rcfMetrics                :: !(Maybe [Metric])
-    , _rcfKind                   :: !(Maybe Text)
-    , _rcfDimensionFilters       :: !(Maybe [Dimension])
+    { _rcfMetrics :: !(Maybe [Metric])
+    , _rcfKind :: !(Maybe Text)
+    , _rcfDimensionFilters :: !(Maybe [Dimension])
     , _rcfPivotedActivityMetrics :: !(Maybe [Metric])
-    , _rcfDimensions             :: !(Maybe [Dimension])
+    , _rcfDimensions :: !(Maybe [Dimension])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11865,10 +11865,10 @@ instance ToJSON ReportCompatibleFields where
 -- /See:/ 'deliverySchedule' smart constructor.
 data DeliverySchedule =
   DeliverySchedule'
-    { _dsHardCutoff      :: !(Maybe Bool)
-    , _dsPriority        :: !(Maybe DeliverySchedulePriority)
+    { _dsHardCutoff :: !(Maybe Bool)
+    , _dsPriority :: !(Maybe DeliverySchedulePriority)
     , _dsImpressionRatio :: !(Maybe (Textual Int64))
-    , _dsFrequencyCap    :: !(Maybe FrequencyCap)
+    , _dsFrequencyCap :: !(Maybe FrequencyCap)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11955,19 +11955,19 @@ instance ToJSON DeliverySchedule where
 -- /See:/ 'remarketingList' smart constructor.
 data RemarketingList =
   RemarketingList'
-    { _rlListSize                   :: !(Maybe (Textual Int64))
-    , _rlListPopulationRule         :: !(Maybe ListPopulationRule)
-    , _rlLifeSpan                   :: !(Maybe (Textual Int64))
-    , _rlKind                       :: !(Maybe Text)
-    , _rlAdvertiserId               :: !(Maybe (Textual Int64))
+    { _rlListSize :: !(Maybe (Textual Int64))
+    , _rlListPopulationRule :: !(Maybe ListPopulationRule)
+    , _rlLifeSpan :: !(Maybe (Textual Int64))
+    , _rlKind :: !(Maybe Text)
+    , _rlAdvertiserId :: !(Maybe (Textual Int64))
     , _rlAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
-    , _rlActive                     :: !(Maybe Bool)
-    , _rlAccountId                  :: !(Maybe (Textual Int64))
-    , _rlName                       :: !(Maybe Text)
-    , _rlListSource                 :: !(Maybe RemarketingListListSource)
-    , _rlId                         :: !(Maybe (Textual Int64))
-    , _rlSubAccountId               :: !(Maybe (Textual Int64))
-    , _rlDescription                :: !(Maybe Text)
+    , _rlActive :: !(Maybe Bool)
+    , _rlAccountId :: !(Maybe (Textual Int64))
+    , _rlName :: !(Maybe Text)
+    , _rlListSource :: !(Maybe RemarketingListListSource)
+    , _rlId :: !(Maybe (Textual Int64))
+    , _rlSubAccountId :: !(Maybe (Textual Int64))
+    , _rlDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12143,7 +12143,7 @@ instance ToJSON RemarketingList where
 -- /See:/ 'dynamicTargetingKeysListResponse' smart constructor.
 data DynamicTargetingKeysListResponse =
   DynamicTargetingKeysListResponse'
-    { _dtklrKind                 :: !(Maybe Text)
+    { _dtklrKind :: !(Maybe Text)
     , _dtklrDynamicTargetingKeys :: !(Maybe [DynamicTargetingKey])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12200,10 +12200,10 @@ instance ToJSON DynamicTargetingKeysListResponse
 -- /See:/ 'dimensionValueList' smart constructor.
 data DimensionValueList =
   DimensionValueList'
-    { _dvlEtag          :: !(Maybe Text)
+    { _dvlEtag :: !(Maybe Text)
     , _dvlNextPageToken :: !(Maybe Text)
-    , _dvlKind          :: !(Maybe Text)
-    , _dvlItems         :: !(Maybe [DimensionValue])
+    , _dvlKind :: !(Maybe Text)
+    , _dvlItems :: !(Maybe [DimensionValue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12278,10 +12278,10 @@ instance ToJSON DimensionValueList where
 -- /See:/ 'floodlightReportCompatibleFields' smart constructor.
 data FloodlightReportCompatibleFields =
   FloodlightReportCompatibleFields'
-    { _frcfMetrics          :: !(Maybe [Metric])
-    , _frcfKind             :: !(Maybe Text)
+    { _frcfMetrics :: !(Maybe [Metric])
+    , _frcfKind :: !(Maybe Text)
     , _frcfDimensionFilters :: !(Maybe [Dimension])
-    , _frcfDimensions       :: !(Maybe [Dimension])
+    , _frcfDimensions :: !(Maybe [Dimension])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12366,7 +12366,7 @@ data UserRolePermissionGroup =
   UserRolePermissionGroup'
     { _urpgKind :: !(Maybe Text)
     , _urpgName :: !(Maybe Text)
-    , _urpgId   :: !(Maybe (Textual Int64))
+    , _urpgId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12421,10 +12421,10 @@ instance ToJSON UserRolePermissionGroup where
 -- /See:/ 'tagSetting' smart constructor.
 data TagSetting =
   TagSetting'
-    { _tsKeywordOption           :: !(Maybe TagSettingKeywordOption)
+    { _tsKeywordOption :: !(Maybe TagSettingKeywordOption)
     , _tsIncludeClickThroughURLs :: !(Maybe Bool)
-    , _tsIncludeClickTracking    :: !(Maybe Bool)
-    , _tsAdditionalKeyValues     :: !(Maybe Text)
+    , _tsIncludeClickTracking :: !(Maybe Bool)
+    , _tsAdditionalKeyValues :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12509,15 +12509,15 @@ instance ToJSON TagSetting where
 -- /See:/ 'reportPathToConversionCriteriaReportProperties' smart constructor.
 data ReportPathToConversionCriteriaReportProperties =
   ReportPathToConversionCriteriaReportProperties'
-    { _rptccrpMaximumInteractionGap                :: !(Maybe (Textual Int32))
-    , _rptccrpMaximumClickInteractions             :: !(Maybe (Textual Int32))
-    , _rptccrpPivotOnInteractionPath               :: !(Maybe Bool)
-    , _rptccrpMaximumImpressionInteractions        :: !(Maybe (Textual Int32))
-    , _rptccrpIncludeUnattributedIPConversions     :: !(Maybe Bool)
-    , _rptccrpImpressionsLookbackWindow            :: !(Maybe (Textual Int32))
-    , _rptccrpClicksLookbackWindow                 :: !(Maybe (Textual Int32))
+    { _rptccrpMaximumInteractionGap :: !(Maybe (Textual Int32))
+    , _rptccrpMaximumClickInteractions :: !(Maybe (Textual Int32))
+    , _rptccrpPivotOnInteractionPath :: !(Maybe Bool)
+    , _rptccrpMaximumImpressionInteractions :: !(Maybe (Textual Int32))
+    , _rptccrpIncludeUnattributedIPConversions :: !(Maybe Bool)
+    , _rptccrpImpressionsLookbackWindow :: !(Maybe (Textual Int32))
+    , _rptccrpClicksLookbackWindow :: !(Maybe (Textual Int32))
     , _rptccrpIncludeUnattributedCookieConversions :: !(Maybe Bool)
-    , _rptccrpIncludeAttributedIPConversions       :: !(Maybe Bool)
+    , _rptccrpIncludeAttributedIPConversions :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12688,7 +12688,7 @@ instance ToJSON
 -- /See:/ 'userRolePermissionsListResponse' smart constructor.
 data UserRolePermissionsListResponse =
   UserRolePermissionsListResponse'
-    { _urplrKind                :: !(Maybe Text)
+    { _urplrKind :: !(Maybe Text)
     , _urplrUserRolePermissions :: !(Maybe [UserRolePermission])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12744,8 +12744,8 @@ instance ToJSON UserRolePermissionsListResponse where
 -- /See:/ 'placementGroupsListResponse' smart constructor.
 data PlacementGroupsListResponse =
   PlacementGroupsListResponse'
-    { _pglrNextPageToken   :: !(Maybe Text)
-    , _pglrKind            :: !(Maybe Text)
+    { _pglrNextPageToken :: !(Maybe Text)
+    , _pglrKind :: !(Maybe Text)
     , _pglrPlacementGroups :: !(Maybe [PlacementGroup])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12810,10 +12810,10 @@ instance ToJSON PlacementGroupsListResponse where
 -- /See:/ 'mobileCarrier' smart constructor.
 data MobileCarrier =
   MobileCarrier'
-    { _mcKind          :: !(Maybe Text)
-    , _mcName          :: !(Maybe Text)
-    , _mcCountryCode   :: !(Maybe Text)
-    , _mcId            :: !(Maybe (Textual Int64))
+    { _mcKind :: !(Maybe Text)
+    , _mcName :: !(Maybe Text)
+    , _mcCountryCode :: !(Maybe Text)
+    , _mcId :: !(Maybe (Textual Int64))
     , _mcCountryDartId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12897,13 +12897,13 @@ instance ToJSON MobileCarrier where
 -- /See:/ 'landingPage' smart constructor.
 data LandingPage =
   LandingPage'
-    { _lpKind         :: !(Maybe Text)
+    { _lpKind :: !(Maybe Text)
     , _lpAdvertiserId :: !(Maybe (Textual Int64))
-    , _lpURL          :: !(Maybe Text)
-    , _lpName         :: !(Maybe Text)
-    , _lpDeepLinks    :: !(Maybe [DeepLink])
-    , _lpId           :: !(Maybe (Textual Int64))
-    , _lpArchived     :: !(Maybe Bool)
+    , _lpURL :: !(Maybe Text)
+    , _lpName :: !(Maybe Text)
+    , _lpDeepLinks :: !(Maybe [DeepLink])
+    , _lpId :: !(Maybe (Textual Int64))
+    , _lpArchived :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13006,7 +13006,7 @@ instance ToJSON LandingPage where
 -- /See:/ 'connectionTypesListResponse' smart constructor.
 data ConnectionTypesListResponse =
   ConnectionTypesListResponse'
-    { _ctlrKind            :: !(Maybe Text)
+    { _ctlrKind :: !(Maybe Text)
     , _ctlrConnectionTypes :: !(Maybe [ConnectionType])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13059,7 +13059,7 @@ instance ToJSON ConnectionTypesListResponse where
 -- /See:/ 'eventFilter' smart constructor.
 data EventFilter =
   EventFilter'
-    { _efKind            :: !(Maybe Text)
+    { _efKind :: !(Maybe Text)
     , _efDimensionFilter :: !(Maybe PathReportDimensionValue)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13107,8 +13107,8 @@ instance ToJSON EventFilter where
 data OrdersListResponse =
   OrdersListResponse'
     { _olrNextPageToken :: !(Maybe Text)
-    , _olrKind          :: !(Maybe Text)
-    , _olrOrders        :: !(Maybe [Order])
+    , _olrKind :: !(Maybe Text)
+    , _olrOrders :: !(Maybe [Order])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13168,10 +13168,10 @@ instance ToJSON OrdersListResponse where
 -- /See:/ 'reportList' smart constructor.
 data ReportList =
   ReportList'
-    { _repEtag          :: !(Maybe Text)
+    { _repEtag :: !(Maybe Text)
     , _repNextPageToken :: !(Maybe Text)
-    , _repKind          :: !(Maybe Text)
-    , _repItems         :: !(Maybe [Report])
+    , _repKind :: !(Maybe Text)
+    , _repItems :: !(Maybe [Report])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13245,14 +13245,14 @@ instance ToJSON ReportList where
 -- /See:/ 'creativeGroup' smart constructor.
 data CreativeGroup =
   CreativeGroup'
-    { _cgKind                       :: !(Maybe Text)
-    , _cgAdvertiserId               :: !(Maybe (Textual Int64))
+    { _cgKind :: !(Maybe Text)
+    , _cgAdvertiserId :: !(Maybe (Textual Int64))
     , _cgAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
-    , _cgGroupNumber                :: !(Maybe (Textual Int32))
-    , _cgAccountId                  :: !(Maybe (Textual Int64))
-    , _cgName                       :: !(Maybe Text)
-    , _cgId                         :: !(Maybe (Textual Int64))
-    , _cgSubAccountId               :: !(Maybe (Textual Int64))
+    , _cgGroupNumber :: !(Maybe (Textual Int32))
+    , _cgAccountId :: !(Maybe (Textual Int64))
+    , _cgName :: !(Maybe Text)
+    , _cgId :: !(Maybe (Textual Int64))
+    , _cgSubAccountId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13379,10 +13379,10 @@ instance ToJSON CreativeGroup where
 -- /See:/ 'channelGrouping' smart constructor.
 data ChannelGrouping =
   ChannelGrouping'
-    { _chaRules        :: !(Maybe [ChannelGroupingRule])
-    , _chaKind         :: !(Maybe Text)
+    { _chaRules :: !(Maybe [ChannelGroupingRule])
+    , _chaKind :: !(Maybe Text)
     , _chaFallbackName :: !(Maybe Text)
-    , _chaName         :: !(Maybe Text)
+    , _chaName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13453,7 +13453,7 @@ instance ToJSON ChannelGrouping where
 -- /See:/ 'campaignCreativeAssociation' smart constructor.
 data CampaignCreativeAssociation =
   CampaignCreativeAssociation'
-    { _ccaKind       :: !(Maybe Text)
+    { _ccaKind :: !(Maybe Text)
     , _ccaCreativeId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13505,9 +13505,9 @@ instance ToJSON CampaignCreativeAssociation where
 -- /See:/ 'conversionStatus' smart constructor.
 data ConversionStatus =
   ConversionStatus'
-    { _csKind       :: !(Maybe Text)
+    { _csKind :: !(Maybe Text)
     , _csConversion :: !(Maybe Conversion)
-    , _csErrors     :: !(Maybe [ConversionError])
+    , _csErrors :: !(Maybe [ConversionError])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13566,8 +13566,8 @@ instance ToJSON ConversionStatus where
 -- /See:/ 'customEventsBatchInsertResponse' smart constructor.
 data CustomEventsBatchInsertResponse =
   CustomEventsBatchInsertResponse'
-    { _cusStatus      :: !(Maybe [CustomEventStatus])
-    , _cusKind        :: !(Maybe Text)
+    { _cusStatus :: !(Maybe [CustomEventStatus])
+    , _cusKind :: !(Maybe Text)
     , _cusHasFailures :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13630,7 +13630,7 @@ instance ToJSON CustomEventsBatchInsertResponse where
 -- /See:/ 'lookbackConfiguration' smart constructor.
 data LookbackConfiguration =
   LookbackConfiguration'
-    { _lcClickDuration                    :: !(Maybe (Textual Int32))
+    { _lcClickDuration :: !(Maybe (Textual Int32))
     , _lcPostImpressionActivitiesDuration :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13693,12 +13693,12 @@ instance ToJSON LookbackConfiguration where
 -- /See:/ 'floodlightActivityPublisherDynamicTag' smart constructor.
 data FloodlightActivityPublisherDynamicTag =
   FloodlightActivityPublisherDynamicTag'
-    { _fapdtClickThrough         :: !(Maybe Bool)
+    { _fapdtClickThrough :: !(Maybe Bool)
     , _fapdtSiteIdDimensionValue :: !(Maybe DimensionValue)
-    , _fapdtDynamicTag           :: !(Maybe FloodlightActivityDynamicTag)
-    , _fapdtDirectorySiteId      :: !(Maybe (Textual Int64))
-    , _fapdtSiteId               :: !(Maybe (Textual Int64))
-    , _fapdtViewThrough          :: !(Maybe Bool)
+    , _fapdtDynamicTag :: !(Maybe FloodlightActivityDynamicTag)
+    , _fapdtDirectorySiteId :: !(Maybe (Textual Int64))
+    , _fapdtSiteId :: !(Maybe (Textual Int64))
+    , _fapdtViewThrough :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13803,10 +13803,10 @@ instance ToJSON FloodlightActivityPublisherDynamicTag
 -- /See:/ 'accountActiveAdSummary' smart constructor.
 data AccountActiveAdSummary =
   AccountActiveAdSummary'
-    { _aaasAvailableAds       :: !(Maybe (Textual Int64))
-    , _aaasKind               :: !(Maybe Text)
-    , _aaasAccountId          :: !(Maybe (Textual Int64))
-    , _aaasActiveAds          :: !(Maybe (Textual Int64))
+    { _aaasAvailableAds :: !(Maybe (Textual Int64))
+    , _aaasKind :: !(Maybe Text)
+    , _aaasAccountId :: !(Maybe (Textual Int64))
+    , _aaasActiveAds :: !(Maybe (Textual Int64))
     , _aaasActiveAdsLimitTier :: !(Maybe AccountActiveAdSummaryActiveAdsLimitTier)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13896,7 +13896,7 @@ instance ToJSON AccountActiveAdSummary where
 data OffSetPosition =
   OffSetPosition'
     { _ospLeft :: !(Maybe (Textual Int32))
-    , _ospTop  :: !(Maybe (Textual Int32))
+    , _ospTop :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13989,9 +13989,9 @@ instance ToJSON Metric where
 data RemarketingListShare =
   RemarketingListShare'
     { _rlsSharedAdvertiserIds :: !(Maybe [Textual Int64])
-    , _rlsKind                :: !(Maybe Text)
-    , _rlsRemarketingListId   :: !(Maybe (Textual Int64))
-    , _rlsSharedAccountIds    :: !(Maybe [Textual Int64])
+    , _rlsKind :: !(Maybe Text)
+    , _rlsRemarketingListId :: !(Maybe (Textual Int64))
+    , _rlsSharedAccountIds :: !(Maybe [Textual Int64])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14071,7 +14071,7 @@ instance ToJSON RemarketingListShare where
 -- /See:/ 'eventTagsListResponse' smart constructor.
 data EventTagsListResponse =
   EventTagsListResponse'
-    { _etlrKind      :: !(Maybe Text)
+    { _etlrKind :: !(Maybe Text)
     , _etlrEventTags :: !(Maybe [EventTag])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -14123,8 +14123,8 @@ instance ToJSON EventTagsListResponse where
 data UserRolesListResponse =
   UserRolesListResponse'
     { _urlrNextPageToken :: !(Maybe Text)
-    , _urlrKind          :: !(Maybe Text)
-    , _urlrUserRoles     :: !(Maybe [UserRole])
+    , _urlrKind :: !(Maybe Text)
+    , _urlrUserRoles :: !(Maybe [UserRole])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14188,14 +14188,14 @@ instance ToJSON UserRolesListResponse where
 -- /See:/ 'compatibleFields' smart constructor.
 data CompatibleFields =
   CompatibleFields'
-    { _cfPathReportCompatibleFields                :: !(Maybe PathReportCompatibleFields)
-    , _cfReachReportCompatibleFields               :: !(Maybe ReachReportCompatibleFields)
+    { _cfPathReportCompatibleFields :: !(Maybe PathReportCompatibleFields)
+    , _cfReachReportCompatibleFields :: !(Maybe ReachReportCompatibleFields)
     , _cfCrossDimensionReachReportCompatibleFields :: !(Maybe CrossDimensionReachReportCompatibleFields)
-    , _cfPathAttributionReportCompatibleFields     :: !(Maybe PathReportCompatibleFields)
-    , _cfKind                                      :: !(Maybe Text)
-    , _cfFloodlightReportCompatibleFields          :: !(Maybe FloodlightReportCompatibleFields)
-    , _cfReportCompatibleFields                    :: !(Maybe ReportCompatibleFields)
-    , _cfPathToConversionReportCompatibleFields    :: !(Maybe PathToConversionReportCompatibleFields)
+    , _cfPathAttributionReportCompatibleFields :: !(Maybe PathReportCompatibleFields)
+    , _cfKind :: !(Maybe Text)
+    , _cfFloodlightReportCompatibleFields :: !(Maybe FloodlightReportCompatibleFields)
+    , _cfReportCompatibleFields :: !(Maybe ReportCompatibleFields)
+    , _cfPathToConversionReportCompatibleFields :: !(Maybe PathToConversionReportCompatibleFields)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14331,8 +14331,8 @@ instance ToJSON CompatibleFields where
 -- /See:/ 'audienceSegment' smart constructor.
 data AudienceSegment =
   AudienceSegment'
-    { _asName       :: !(Maybe Text)
-    , _asId         :: !(Maybe (Textual Int64))
+    { _asName :: !(Maybe Text)
+    , _asId :: !(Maybe (Textual Int64))
     , _asAllocation :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -14392,8 +14392,8 @@ instance ToJSON AudienceSegment where
 -- /See:/ 'conversionsBatchUpdateRequest' smart constructor.
 data ConversionsBatchUpdateRequest =
   ConversionsBatchUpdateRequest'
-    { _cburbKind           :: !(Maybe Text)
-    , _cburbConversions    :: !(Maybe [Conversion])
+    { _cburbKind :: !(Maybe Text)
+    , _cburbConversions :: !(Maybe [Conversion])
     , _cburbEncryptionInfo :: !(Maybe EncryptionInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -14460,11 +14460,11 @@ instance ToJSON ConversionsBatchUpdateRequest where
 -- /See:/ 'dfpSettings' smart constructor.
 data DfpSettings =
   DfpSettings'
-    { _dsPubPaidPlacementAccepted      :: !(Maybe Bool)
-    , _dsDfpNetworkName                :: !(Maybe Text)
-    , _dsPublisherPortalOnly           :: !(Maybe Bool)
+    { _dsPubPaidPlacementAccepted :: !(Maybe Bool)
+    , _dsDfpNetworkName :: !(Maybe Text)
+    , _dsPublisherPortalOnly :: !(Maybe Bool)
     , _dsProgrammaticPlacementAccepted :: !(Maybe Bool)
-    , _dsDfpNetworkCode                :: !(Maybe Text)
+    , _dsDfpNetworkCode :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14554,11 +14554,11 @@ instance ToJSON DfpSettings where
 -- /See:/ 'pathToConversionReportCompatibleFields' smart constructor.
 data PathToConversionReportCompatibleFields =
   PathToConversionReportCompatibleFields'
-    { _ptcrcfMetrics                   :: !(Maybe [Metric])
-    , _ptcrcfKind                      :: !(Maybe Text)
-    , _ptcrcfConversionDimensions      :: !(Maybe [Dimension])
+    { _ptcrcfMetrics :: !(Maybe [Metric])
+    , _ptcrcfKind :: !(Maybe Text)
+    , _ptcrcfConversionDimensions :: !(Maybe [Dimension])
     , _ptcrcfCustomFloodlightVariables :: !(Maybe [Dimension])
-    , _ptcrcfPerInteractionDimensions  :: !(Maybe [Dimension])
+    , _ptcrcfPerInteractionDimensions :: !(Maybe [Dimension])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14664,15 +14664,15 @@ instance ToJSON
 -- /See:/ 'customEvent' smart constructor.
 data CustomEvent =
   CustomEvent'
-    { _ceTimestampMicros           :: !(Maybe (Textual Int64))
-    , _ceAnnotateImpressionEvent   :: !(Maybe CustomEventImpressionAnnotation)
+    { _ceTimestampMicros :: !(Maybe (Textual Int64))
+    , _ceAnnotateImpressionEvent :: !(Maybe CustomEventImpressionAnnotation)
     , _ceFloodlightConfigurationId :: !(Maybe (Textual Int64))
-    , _ceKind                      :: !(Maybe Text)
-    , _ceCustomVariables           :: !(Maybe [CustomVariable])
-    , _ceEventType                 :: !(Maybe CustomEventEventType)
-    , _ceAnnotateClickEvent        :: !(Maybe CustomEventClickAnnotation)
-    , _ceInsertEvent               :: !(Maybe CustomEventInsert)
-    , _ceOrdinal                   :: !(Maybe Text)
+    , _ceKind :: !(Maybe Text)
+    , _ceCustomVariables :: !(Maybe [CustomVariable])
+    , _ceEventType :: !(Maybe CustomEventEventType)
+    , _ceAnnotateClickEvent :: !(Maybe CustomEventClickAnnotation)
+    , _ceInsertEvent :: !(Maybe CustomEventInsert)
+    , _ceOrdinal :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14815,15 +14815,15 @@ instance ToJSON CustomEvent where
 -- /See:/ 'city' smart constructor.
 data City =
   City'
-    { _ccMetroCode     :: !(Maybe Text)
-    , _ccRegionCode    :: !(Maybe Text)
-    , _ccKind          :: !(Maybe Text)
-    , _ccRegionDartId  :: !(Maybe (Textual Int64))
-    , _ccMetroDmaId    :: !(Maybe (Textual Int64))
-    , _ccName          :: !(Maybe Text)
-    , _ccCountryCode   :: !(Maybe Text)
+    { _ccMetroCode :: !(Maybe Text)
+    , _ccRegionCode :: !(Maybe Text)
+    , _ccKind :: !(Maybe Text)
+    , _ccRegionDartId :: !(Maybe (Textual Int64))
+    , _ccMetroDmaId :: !(Maybe (Textual Int64))
+    , _ccName :: !(Maybe Text)
+    , _ccCountryCode :: !(Maybe Text)
     , _ccCountryDartId :: !(Maybe (Textual Int64))
-    , _ccDartId        :: !(Maybe (Textual Int64))
+    , _ccDartId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14952,7 +14952,7 @@ data PlatformType =
   PlatformType'
     { _ptKind :: !(Maybe Text)
     , _ptName :: !(Maybe Text)
-    , _ptId   :: !(Maybe (Textual Int64))
+    , _ptId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15045,7 +15045,7 @@ instance ToJSON KeyValueTargetingExpression where
 -- /See:/ 'companionClickThroughOverride' smart constructor.
 data CompanionClickThroughOverride =
   CompanionClickThroughOverride'
-    { _cctoCreativeId      :: !(Maybe (Textual Int64))
+    { _cctoCreativeId :: !(Maybe (Textual Int64))
     , _cctoClickThroughURL :: !(Maybe ClickThroughURL)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -15098,8 +15098,8 @@ instance ToJSON CompanionClickThroughOverride where
 data AdvertisersListResponse =
   AdvertisersListResponse'
     { _advNextPageToken :: !(Maybe Text)
-    , _advKind          :: !(Maybe Text)
-    , _advAdvertisers   :: !(Maybe [Advertiser])
+    , _advKind :: !(Maybe Text)
+    , _advAdvertisers :: !(Maybe [Advertiser])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15160,7 +15160,7 @@ instance ToJSON AdvertisersListResponse where
 -- /See:/ 'countriesListResponse' smart constructor.
 data CountriesListResponse =
   CountriesListResponse'
-    { _couKind      :: !(Maybe Text)
+    { _couKind :: !(Maybe Text)
     , _couCountries :: !(Maybe [Country])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -15210,7 +15210,7 @@ instance ToJSON CountriesListResponse where
 -- /See:/ 'accountPermissionGroupsListResponse' smart constructor.
 data AccountPermissionGroupsListResponse =
   AccountPermissionGroupsListResponse'
-    { _apglrKind                    :: !(Maybe Text)
+    { _apglrKind :: !(Maybe Text)
     , _apglrAccountPermissionGroups :: !(Maybe [AccountPermissionGroup])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -15267,15 +15267,15 @@ instance ToJSON AccountPermissionGroupsListResponse
 -- /See:/ 'popupWindowProperties' smart constructor.
 data PopupWindowProperties =
   PopupWindowProperties'
-    { _pwpOffSet         :: !(Maybe OffSetPosition)
-    , _pwpDimension      :: !(Maybe Size)
-    , _pwpShowStatusBar  :: !(Maybe Bool)
-    , _pwpShowMenuBar    :: !(Maybe Bool)
-    , _pwpPositionType   :: !(Maybe PopupWindowPropertiesPositionType)
+    { _pwpOffSet :: !(Maybe OffSetPosition)
+    , _pwpDimension :: !(Maybe Size)
+    , _pwpShowStatusBar :: !(Maybe Bool)
+    , _pwpShowMenuBar :: !(Maybe Bool)
+    , _pwpPositionType :: !(Maybe PopupWindowPropertiesPositionType)
     , _pwpShowAddressBar :: !(Maybe Bool)
-    , _pwpShowScrollBar  :: !(Maybe Bool)
-    , _pwpShowToolBar    :: !(Maybe Bool)
-    , _pwpTitle          :: !(Maybe Text)
+    , _pwpShowScrollBar :: !(Maybe Bool)
+    , _pwpShowToolBar :: !(Maybe Bool)
+    , _pwpTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15403,7 +15403,7 @@ instance ToJSON PopupWindowProperties where
 data EventTagOverride =
   EventTagOverride'
     { _etoEnabled :: !(Maybe Bool)
-    , _etoId      :: !(Maybe (Textual Int64))
+    , _etoId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15452,12 +15452,12 @@ instance ToJSON EventTagOverride where
 -- /See:/ 'operatingSystemVersion' smart constructor.
 data OperatingSystemVersion =
   OperatingSystemVersion'
-    { _osvMinorVersion    :: !(Maybe Text)
-    , _osvKind            :: !(Maybe Text)
+    { _osvMinorVersion :: !(Maybe Text)
+    , _osvKind :: !(Maybe Text)
     , _osvOperatingSystem :: !(Maybe OperatingSystem)
-    , _osvMajorVersion    :: !(Maybe Text)
-    , _osvName            :: !(Maybe Text)
-    , _osvId              :: !(Maybe (Textual Int64))
+    , _osvMajorVersion :: !(Maybe Text)
+    , _osvName :: !(Maybe Text)
+    , _osvId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15552,11 +15552,11 @@ instance ToJSON OperatingSystemVersion where
 -- /See:/ 'accountPermission' smart constructor.
 data AccountPermission =
   AccountPermission'
-    { _acccKind              :: !(Maybe Text)
-    , _acccAccountProFiles   :: !(Maybe [AccountPermissionAccountProFilesItem])
-    , _acccName              :: !(Maybe Text)
-    , _acccId                :: !(Maybe (Textual Int64))
-    , _acccLevel             :: !(Maybe AccountPermissionLevel)
+    { _acccKind :: !(Maybe Text)
+    , _acccAccountProFiles :: !(Maybe [AccountPermissionAccountProFilesItem])
+    , _acccName :: !(Maybe Text)
+    , _acccId :: !(Maybe (Textual Int64))
+    , _acccLevel :: !(Maybe AccountPermissionLevel)
     , _acccPermissionGroupId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -15655,14 +15655,14 @@ instance ToJSON AccountPermission where
 -- /See:/ 'userProFile' smart constructor.
 data UserProFile =
   UserProFile'
-    { _upfEtag           :: !(Maybe Text)
-    , _upfKind           :: !(Maybe Text)
-    , _upfAccountName    :: !(Maybe Text)
-    , _upfProFileId      :: !(Maybe (Textual Int64))
-    , _upfUserName       :: !(Maybe Text)
-    , _upfAccountId      :: !(Maybe (Textual Int64))
+    { _upfEtag :: !(Maybe Text)
+    , _upfKind :: !(Maybe Text)
+    , _upfAccountName :: !(Maybe Text)
+    , _upfProFileId :: !(Maybe (Textual Int64))
+    , _upfUserName :: !(Maybe Text)
+    , _upfAccountId :: !(Maybe (Textual Int64))
     , _upfSubAccountName :: !(Maybe Text)
-    , _upfSubAccountId   :: !(Maybe (Textual Int64))
+    , _upfSubAccountId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15776,7 +15776,7 @@ instance ToJSON UserProFile where
 -- /See:/ 'operatingSystemsListResponse' smart constructor.
 data OperatingSystemsListResponse =
   OperatingSystemsListResponse'
-    { _oslrKind             :: !(Maybe Text)
+    { _oslrKind :: !(Maybe Text)
     , _oslrOperatingSystems :: !(Maybe [OperatingSystem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -15829,9 +15829,9 @@ instance ToJSON OperatingSystemsListResponse where
 -- /See:/ 'reportDelivery' smart constructor.
 data ReportDelivery =
   ReportDelivery'
-    { _rdEmailOwner             :: !(Maybe Bool)
-    , _rdRecipients             :: !(Maybe [Recipient])
-    , _rdMessage                :: !(Maybe Text)
+    { _rdEmailOwner :: !(Maybe Bool)
+    , _rdRecipients :: !(Maybe [Recipient])
+    , _rdMessage :: !(Maybe Text)
     , _rdEmailOwnerDeliveryType :: !(Maybe ReportDeliveryEmailOwnerDeliveryType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -15914,18 +15914,18 @@ instance ToJSON ReportDelivery where
 -- /See:/ 'targetableRemarketingList' smart constructor.
 data TargetableRemarketingList =
   TargetableRemarketingList'
-    { _trlListSize                   :: !(Maybe (Textual Int64))
-    , _trlLifeSpan                   :: !(Maybe (Textual Int64))
-    , _trlKind                       :: !(Maybe Text)
-    , _trlAdvertiserId               :: !(Maybe (Textual Int64))
+    { _trlListSize :: !(Maybe (Textual Int64))
+    , _trlLifeSpan :: !(Maybe (Textual Int64))
+    , _trlKind :: !(Maybe Text)
+    , _trlAdvertiserId :: !(Maybe (Textual Int64))
     , _trlAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
-    , _trlActive                     :: !(Maybe Bool)
-    , _trlAccountId                  :: !(Maybe (Textual Int64))
-    , _trlName                       :: !(Maybe Text)
-    , _trlListSource                 :: !(Maybe TargetableRemarketingListListSource)
-    , _trlId                         :: !(Maybe (Textual Int64))
-    , _trlSubAccountId               :: !(Maybe (Textual Int64))
-    , _trlDescription                :: !(Maybe Text)
+    , _trlActive :: !(Maybe Bool)
+    , _trlAccountId :: !(Maybe (Textual Int64))
+    , _trlName :: !(Maybe Text)
+    , _trlListSource :: !(Maybe TargetableRemarketingListListSource)
+    , _trlId :: !(Maybe (Textual Int64))
+    , _trlSubAccountId :: !(Maybe (Textual Int64))
+    , _trlDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16091,7 +16091,7 @@ instance ToJSON TargetableRemarketingList where
 -- /See:/ 'postalCodesListResponse' smart constructor.
 data PostalCodesListResponse =
   PostalCodesListResponse'
-    { _pclrKind        :: !(Maybe Text)
+    { _pclrKind :: !(Maybe Text)
     , _pclrPostalCodes :: !(Maybe [PostalCode])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -16142,20 +16142,20 @@ instance ToJSON PostalCodesListResponse where
 -- /See:/ 'changeLog' smart constructor.
 data ChangeLog =
   ChangeLog'
-    { _chahUserProFileId   :: !(Maybe (Textual Int64))
-    , _chahObjectType      :: !(Maybe Text)
+    { _chahUserProFileId :: !(Maybe (Textual Int64))
+    , _chahObjectType :: !(Maybe Text)
     , _chahUserProFileName :: !(Maybe Text)
-    , _chahKind            :: !(Maybe Text)
-    , _chahObjectId        :: !(Maybe (Textual Int64))
-    , _chahAction          :: !(Maybe Text)
-    , _chahTransactionId   :: !(Maybe (Textual Int64))
-    , _chahOldValue        :: !(Maybe Text)
-    , _chahAccountId       :: !(Maybe (Textual Int64))
-    , _chahNewValue        :: !(Maybe Text)
-    , _chahFieldName       :: !(Maybe Text)
-    , _chahId              :: !(Maybe (Textual Int64))
-    , _chahSubAccountId    :: !(Maybe (Textual Int64))
-    , _chahChangeTime      :: !(Maybe DateTime')
+    , _chahKind :: !(Maybe Text)
+    , _chahObjectId :: !(Maybe (Textual Int64))
+    , _chahAction :: !(Maybe Text)
+    , _chahTransactionId :: !(Maybe (Textual Int64))
+    , _chahOldValue :: !(Maybe Text)
+    , _chahAccountId :: !(Maybe (Textual Int64))
+    , _chahNewValue :: !(Maybe Text)
+    , _chahFieldName :: !(Maybe Text)
+    , _chahId :: !(Maybe (Textual Int64))
+    , _chahSubAccountId :: !(Maybe (Textual Int64))
+    , _chahChangeTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16343,9 +16343,9 @@ instance ToJSON ChangeLog where
 data Language =
   Language'
     { _lLanguageCode :: !(Maybe Text)
-    , _lKind         :: !(Maybe Text)
-    , _lName         :: !(Maybe Text)
-    , _lId           :: !(Maybe (Textual Int64))
+    , _lKind :: !(Maybe Text)
+    , _lName :: !(Maybe Text)
+    , _lId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16417,10 +16417,10 @@ instance ToJSON Language where
 -- /See:/ 'placementStrategy' smart constructor.
 data PlacementStrategy =
   PlacementStrategy'
-    { _psKind      :: !(Maybe Text)
+    { _psKind :: !(Maybe Text)
     , _psAccountId :: !(Maybe (Textual Int64))
-    , _psName      :: !(Maybe Text)
-    , _psId        :: !(Maybe (Textual Int64))
+    , _psName :: !(Maybe Text)
+    , _psId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16494,34 +16494,34 @@ instance ToJSON PlacementStrategy where
 -- /See:/ 'floodlightActivity' smart constructor.
 data FloodlightActivity =
   FloodlightActivity'
-    { _faCountingMethod                          :: !(Maybe FloodlightActivityCountingMethod)
-    , _faAttributionEnabled                      :: !(Maybe Bool)
-    , _faStatus                                  :: !(Maybe FloodlightActivityStatus)
-    , _faTagString                               :: !(Maybe Text)
-    , _faSecure                                  :: !(Maybe Bool)
-    , _faExpectedURL                             :: !(Maybe Text)
-    , _faFloodlightActivityGroupTagString        :: !(Maybe Text)
-    , _faFloodlightConfigurationId               :: !(Maybe (Textual Int64))
-    , _faKind                                    :: !(Maybe Text)
-    , _faAdvertiserId                            :: !(Maybe (Textual Int64))
-    , _faAdvertiserIdDimensionValue              :: !(Maybe DimensionValue)
-    , _faSSLCompliant                            :: !(Maybe Bool)
-    , _faIdDimensionValue                        :: !(Maybe DimensionValue)
-    , _faTagFormat                               :: !(Maybe FloodlightActivityTagFormat)
-    , _faCacheBustingType                        :: !(Maybe FloodlightActivityCacheBustingType)
-    , _faAccountId                               :: !(Maybe (Textual Int64))
-    , _faName                                    :: !(Maybe Text)
-    , _faPublisherTags                           :: !(Maybe [FloodlightActivityPublisherDynamicTag])
-    , _faFloodlightActivityGroupId               :: !(Maybe (Textual Int64))
-    , _faFloodlightActivityGroupType             :: !(Maybe FloodlightActivityFloodlightActivityGroupType)
-    , _faDefaultTags                             :: !(Maybe [FloodlightActivityDynamicTag])
-    , _faFloodlightTagType                       :: !(Maybe FloodlightActivityFloodlightTagType)
-    , _faFloodlightActivityGroupName             :: !(Maybe Text)
-    , _faId                                      :: !(Maybe (Textual Int64))
-    , _faSSLRequired                             :: !(Maybe Bool)
-    , _faUserDefinedVariableTypes                :: !(Maybe [FloodlightActivityUserDefinedVariableTypesItem])
-    , _faSubAccountId                            :: !(Maybe (Textual Int64))
-    , _faNotes                                   :: !(Maybe Text)
+    { _faCountingMethod :: !(Maybe FloodlightActivityCountingMethod)
+    , _faAttributionEnabled :: !(Maybe Bool)
+    , _faStatus :: !(Maybe FloodlightActivityStatus)
+    , _faTagString :: !(Maybe Text)
+    , _faSecure :: !(Maybe Bool)
+    , _faExpectedURL :: !(Maybe Text)
+    , _faFloodlightActivityGroupTagString :: !(Maybe Text)
+    , _faFloodlightConfigurationId :: !(Maybe (Textual Int64))
+    , _faKind :: !(Maybe Text)
+    , _faAdvertiserId :: !(Maybe (Textual Int64))
+    , _faAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
+    , _faSSLCompliant :: !(Maybe Bool)
+    , _faIdDimensionValue :: !(Maybe DimensionValue)
+    , _faTagFormat :: !(Maybe FloodlightActivityTagFormat)
+    , _faCacheBustingType :: !(Maybe FloodlightActivityCacheBustingType)
+    , _faAccountId :: !(Maybe (Textual Int64))
+    , _faName :: !(Maybe Text)
+    , _faPublisherTags :: !(Maybe [FloodlightActivityPublisherDynamicTag])
+    , _faFloodlightActivityGroupId :: !(Maybe (Textual Int64))
+    , _faFloodlightActivityGroupType :: !(Maybe FloodlightActivityFloodlightActivityGroupType)
+    , _faDefaultTags :: !(Maybe [FloodlightActivityDynamicTag])
+    , _faFloodlightTagType :: !(Maybe FloodlightActivityFloodlightTagType)
+    , _faFloodlightActivityGroupName :: !(Maybe Text)
+    , _faId :: !(Maybe (Textual Int64))
+    , _faSSLRequired :: !(Maybe Bool)
+    , _faUserDefinedVariableTypes :: !(Maybe [FloodlightActivityUserDefinedVariableTypesItem])
+    , _faSubAccountId :: !(Maybe (Textual Int64))
+    , _faNotes :: !(Maybe Text)
     , _faFloodlightConfigurationIdDimensionValue :: !(Maybe DimensionValue)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -16915,9 +16915,9 @@ instance ToJSON FloodlightActivity where
 -- /See:/ 'customFloodlightVariable' smart constructor.
 data CustomFloodlightVariable =
   CustomFloodlightVariable'
-    { _cfvfKind  :: !(Maybe Text)
+    { _cfvfKind :: !(Maybe Text)
     , _cfvfValue :: !(Maybe Text)
-    , _cfvfType  :: !(Maybe CustomFloodlightVariableType)
+    , _cfvfType :: !(Maybe CustomFloodlightVariableType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16975,7 +16975,7 @@ instance ToJSON CustomFloodlightVariable where
 -- /See:/ 'platformTypesListResponse' smart constructor.
 data PlatformTypesListResponse =
   PlatformTypesListResponse'
-    { _ptlrKind          :: !(Maybe Text)
+    { _ptlrKind :: !(Maybe Text)
     , _ptlrPlatformTypes :: !(Maybe [PlatformType])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -17062,7 +17062,7 @@ instance ToJSON LastModifiedInfo where
 -- /See:/ 'targetWindow' smart constructor.
 data TargetWindow =
   TargetWindow'
-    { _twCustomHTML         :: !(Maybe Text)
+    { _twCustomHTML :: !(Maybe Text)
     , _twTargetWindowOption :: !(Maybe TargetWindowTargetWindowOption)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -17113,7 +17113,7 @@ instance ToJSON TargetWindow where
 -- /See:/ 'customVariable' smart constructor.
 data CustomVariable =
   CustomVariable'
-    { _cvKind  :: !(Maybe Text)
+    { _cvKind :: !(Maybe Text)
     , _cvValue :: !(Maybe Text)
     , _cvIndex :: !(Maybe (Textual Int64))
     }
@@ -17174,7 +17174,7 @@ data AccountPermissionGroup =
   AccountPermissionGroup'
     { _apgpKind :: !(Maybe Text)
     , _apgpName :: !(Maybe Text)
-    , _apgpId   :: !(Maybe (Textual Int64))
+    , _apgpId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17229,21 +17229,21 @@ instance ToJSON AccountPermissionGroup where
 -- /See:/ 'advertiser' smart constructor.
 data Advertiser =
   Advertiser'
-    { _advdOriginalFloodlightConfigurationId       :: !(Maybe (Textual Int64))
-    , _advdStatus                                  :: !(Maybe AdvertiserStatus)
-    , _advdFloodlightConfigurationId               :: !(Maybe (Textual Int64))
-    , _advdKind                                    :: !(Maybe Text)
-    , _advdSuspended                               :: !(Maybe Bool)
-    , _advdIdDimensionValue                        :: !(Maybe DimensionValue)
-    , _advdAccountId                               :: !(Maybe (Textual Int64))
-    , _advdDefaultEmail                            :: !(Maybe Text)
-    , _advdName                                    :: !(Maybe Text)
-    , _advdAdvertiserGroupId                       :: !(Maybe (Textual Int64))
-    , _advdDefaultClickThroughEventTagId           :: !(Maybe (Textual Int64))
-    , _advdId                                      :: !(Maybe (Textual Int64))
-    , _advdSubAccountId                            :: !(Maybe (Textual Int64))
+    { _advdOriginalFloodlightConfigurationId :: !(Maybe (Textual Int64))
+    , _advdStatus :: !(Maybe AdvertiserStatus)
+    , _advdFloodlightConfigurationId :: !(Maybe (Textual Int64))
+    , _advdKind :: !(Maybe Text)
+    , _advdSuspended :: !(Maybe Bool)
+    , _advdIdDimensionValue :: !(Maybe DimensionValue)
+    , _advdAccountId :: !(Maybe (Textual Int64))
+    , _advdDefaultEmail :: !(Maybe Text)
+    , _advdName :: !(Maybe Text)
+    , _advdAdvertiserGroupId :: !(Maybe (Textual Int64))
+    , _advdDefaultClickThroughEventTagId :: !(Maybe (Textual Int64))
+    , _advdId :: !(Maybe (Textual Int64))
+    , _advdSubAccountId :: !(Maybe (Textual Int64))
     , _advdFloodlightConfigurationIdDimensionValue :: !(Maybe DimensionValue)
-    , _advdClickThroughURLSuffix                   :: !(Maybe Text)
+    , _advdClickThroughURLSuffix :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17471,13 +17471,13 @@ instance ToJSON Advertiser where
 data UserRole =
   UserRole'
     { _urParentUserRoleId :: !(Maybe (Textual Int64))
-    , _urKind             :: !(Maybe Text)
-    , _urDefaultUserRole  :: !(Maybe Bool)
-    , _urAccountId        :: !(Maybe (Textual Int64))
-    , _urName             :: !(Maybe Text)
-    , _urId               :: !(Maybe (Textual Int64))
-    , _urPermissions      :: !(Maybe [UserRolePermission])
-    , _urSubAccountId     :: !(Maybe (Textual Int64))
+    , _urKind :: !(Maybe Text)
+    , _urDefaultUserRole :: !(Maybe Bool)
+    , _urAccountId :: !(Maybe (Textual Int64))
+    , _urName :: !(Maybe Text)
+    , _urId :: !(Maybe (Textual Int64))
+    , _urPermissions :: !(Maybe [UserRolePermission])
+    , _urSubAccountId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17605,8 +17605,8 @@ instance ToJSON UserRole where
 -- /See:/ 'pathFilter' smart constructor.
 data PathFilter =
   PathFilter'
-    { _pfEventFilters      :: !(Maybe [EventFilter])
-    , _pfKind              :: !(Maybe Text)
+    { _pfEventFilters :: !(Maybe [EventFilter])
+    , _pfKind :: !(Maybe Text)
     , _pfPathMatchPosition :: !(Maybe PathFilterPathMatchPosition)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -17674,7 +17674,7 @@ instance ToJSON PathFilter where
 -- /See:/ 'videoFormatsListResponse' smart constructor.
 data VideoFormatsListResponse =
   VideoFormatsListResponse'
-    { _vflrKind         :: !(Maybe Text)
+    { _vflrKind :: !(Maybe Text)
     , _vflrVideoFormats :: !(Maybe [VideoFormat])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -17725,8 +17725,8 @@ instance ToJSON VideoFormatsListResponse where
 -- /See:/ 'directorySitesListResponse' smart constructor.
 data DirectorySitesListResponse =
   DirectorySitesListResponse'
-    { _dslrNextPageToken  :: !(Maybe Text)
-    , _dslrKind           :: !(Maybe Text)
+    { _dslrNextPageToken :: !(Maybe Text)
+    , _dslrKind :: !(Maybe Text)
     , _dslrDirectorySites :: !(Maybe [DirectorySite])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -17791,12 +17791,12 @@ instance ToJSON DirectorySitesListResponse where
 -- /See:/ 'customEventInsert' smart constructor.
 data CustomEventInsert =
   CustomEventInsert'
-    { _ceiMobileDeviceId  :: !(Maybe Text)
-    , _ceiKind            :: !(Maybe Text)
+    { _ceiMobileDeviceId :: !(Maybe Text)
+    , _ceiKind :: !(Maybe Text)
     , _ceiInsertEventType :: !(Maybe CustomEventInsertInsertEventType)
-    , _ceiDv3Dimensions   :: !(Maybe DV3Ids)
-    , _ceiCmDimensions    :: !(Maybe CampaignManagerIds)
-    , _ceiMatchId         :: !(Maybe Text)
+    , _ceiDv3Dimensions :: !(Maybe DV3Ids)
+    , _ceiCmDimensions :: !(Maybe CampaignManagerIds)
+    , _ceiMatchId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17895,8 +17895,8 @@ instance ToJSON CustomEventInsert where
 -- /See:/ 'conversionError' smart constructor.
 data ConversionError =
   ConversionError'
-    { _conoKind    :: !(Maybe Text)
-    , _conoCode    :: !(Maybe ConversionErrorCode)
+    { _conoKind :: !(Maybe Text)
+    , _conoCode :: !(Maybe ConversionErrorCode)
     , _conoMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -17953,11 +17953,11 @@ instance ToJSON ConversionError where
 -- /See:/ 'pricingSchedulePricingPeriod' smart constructor.
 data PricingSchedulePricingPeriod =
   PricingSchedulePricingPeriod'
-    { _psppEndDate         :: !(Maybe Date')
+    { _psppEndDate :: !(Maybe Date')
     , _psppRateOrCostNanos :: !(Maybe (Textual Int64))
-    , _psppStartDate       :: !(Maybe Date')
-    , _psppUnits           :: !(Maybe (Textual Int64))
-    , _psppPricingComment  :: !(Maybe Text)
+    , _psppStartDate :: !(Maybe Date')
+    , _psppUnits :: !(Maybe (Textual Int64))
+    , _psppPricingComment :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18044,12 +18044,12 @@ instance ToJSON PricingSchedulePricingPeriod where
 -- /See:/ 'region' smart constructor.
 data Region =
   Region'
-    { _regRegionCode    :: !(Maybe Text)
-    , _regKind          :: !(Maybe Text)
-    , _regName          :: !(Maybe Text)
-    , _regCountryCode   :: !(Maybe Text)
+    { _regRegionCode :: !(Maybe Text)
+    , _regKind :: !(Maybe Text)
+    , _regName :: !(Maybe Text)
+    , _regCountryCode :: !(Maybe Text)
     , _regCountryDartId :: !(Maybe (Textual Int64))
-    , _regDartId        :: !(Maybe (Textual Int64))
+    , _regDartId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18142,8 +18142,8 @@ instance ToJSON Region where
 -- /See:/ 'advertiserGroupsListResponse' smart constructor.
 data AdvertiserGroupsListResponse =
   AdvertiserGroupsListResponse'
-    { _aglrNextPageToken    :: !(Maybe Text)
-    , _aglrKind             :: !(Maybe Text)
+    { _aglrNextPageToken :: !(Maybe Text)
+    , _aglrKind :: !(Maybe Text)
     , _aglrAdvertiserGroups :: !(Maybe [AdvertiserGroup])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -18208,19 +18208,19 @@ instance ToJSON AdvertiserGroupsListResponse where
 -- /See:/ 'creativeAssignment' smart constructor.
 data CreativeAssignment =
   CreativeAssignment'
-    { _caCreativeGroupAssignments   :: !(Maybe [CreativeGroupAssignment])
-    , _caStartTime                  :: !(Maybe DateTime')
-    , _caWeight                     :: !(Maybe (Textual Int32))
-    , _caRichMediaExitOverrides     :: !(Maybe [RichMediaExitOverride])
-    , _caSSLCompliant               :: !(Maybe Bool)
-    , _caCreativeId                 :: !(Maybe (Textual Int64))
-    , _caClickThroughURL            :: !(Maybe ClickThroughURL)
-    , _caApplyEventTags             :: !(Maybe Bool)
-    , _caActive                     :: !(Maybe Bool)
-    , _caSequence                   :: !(Maybe (Textual Int32))
-    , _caEndTime                    :: !(Maybe DateTime')
+    { _caCreativeGroupAssignments :: !(Maybe [CreativeGroupAssignment])
+    , _caStartTime :: !(Maybe DateTime')
+    , _caWeight :: !(Maybe (Textual Int32))
+    , _caRichMediaExitOverrides :: !(Maybe [RichMediaExitOverride])
+    , _caSSLCompliant :: !(Maybe Bool)
+    , _caCreativeId :: !(Maybe (Textual Int64))
+    , _caClickThroughURL :: !(Maybe ClickThroughURL)
+    , _caApplyEventTags :: !(Maybe Bool)
+    , _caActive :: !(Maybe Bool)
+    , _caSequence :: !(Maybe (Textual Int32))
+    , _caEndTime :: !(Maybe DateTime')
     , _caCompanionCreativeOverrides :: !(Maybe [CompanionClickThroughOverride])
-    , _caCreativeIdDimensionValue   :: !(Maybe DimensionValue)
+    , _caCreativeIdDimensionValue :: !(Maybe DimensionValue)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18418,8 +18418,8 @@ instance ToJSON CreativeAssignment where
 -- /See:/ 'dimensionFilter' smart constructor.
 data DimensionFilter =
   DimensionFilter'
-    { _dfKind          :: !(Maybe Text)
-    , _dfValue         :: !(Maybe Text)
+    { _dfKind :: !(Maybe Text)
+    , _dfValue :: !(Maybe Text)
     , _dfDimensionName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -18475,10 +18475,10 @@ instance ToJSON DimensionFilter where
 -- /See:/ 'pathReportDimensionValue' smart constructor.
 data PathReportDimensionValue =
   PathReportDimensionValue'
-    { _prdvKind          :: !(Maybe Text)
-    , _prdvValues        :: !(Maybe [Text])
-    , _prdvMatchType     :: !(Maybe PathReportDimensionValueMatchType)
-    , _prdvIds           :: !(Maybe [Text])
+    { _prdvKind :: !(Maybe Text)
+    , _prdvValues :: !(Maybe [Text])
+    , _prdvMatchType :: !(Maybe PathReportDimensionValueMatchType)
+    , _prdvIds :: !(Maybe [Text])
     , _prdvDimensionName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -18568,8 +18568,8 @@ instance ToJSON PathReportDimensionValue where
 -- /See:/ 'userProFileList' smart constructor.
 data UserProFileList =
   UserProFileList'
-    { _upflEtag  :: !(Maybe Text)
-    , _upflKind  :: !(Maybe Text)
+    { _upflEtag :: !(Maybe Text)
+    , _upflKind :: !(Maybe Text)
     , _upflItems :: !(Maybe [UserProFile])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -18628,24 +18628,24 @@ instance ToJSON UserProFileList where
 -- /See:/ 'floodlightConfiguration' smart constructor.
 data FloodlightConfiguration =
   FloodlightConfiguration'
-    { _fcTagSettings                              :: !(Maybe TagSettings)
-    , _fcExposureToConversionEnabled              :: !(Maybe Bool)
-    , _fcInAppAttributionTrackingEnabled          :: !(Maybe Bool)
-    , _fcThirdPartyAuthenticationTokens           :: !(Maybe [ThirdPartyAuthenticationToken])
-    , _fcKind                                     :: !(Maybe Text)
-    , _fcAdvertiserId                             :: !(Maybe (Textual Int64))
-    , _fcAnalyticsDataSharingEnabled              :: !(Maybe Bool)
-    , _fcAdvertiserIdDimensionValue               :: !(Maybe DimensionValue)
-    , _fcIdDimensionValue                         :: !(Maybe DimensionValue)
-    , _fcLookbackConfiguration                    :: !(Maybe LookbackConfiguration)
-    , _fcAccountId                                :: !(Maybe (Textual Int64))
-    , _fcId                                       :: !(Maybe (Textual Int64))
+    { _fcTagSettings :: !(Maybe TagSettings)
+    , _fcExposureToConversionEnabled :: !(Maybe Bool)
+    , _fcInAppAttributionTrackingEnabled :: !(Maybe Bool)
+    , _fcThirdPartyAuthenticationTokens :: !(Maybe [ThirdPartyAuthenticationToken])
+    , _fcKind :: !(Maybe Text)
+    , _fcAdvertiserId :: !(Maybe (Textual Int64))
+    , _fcAnalyticsDataSharingEnabled :: !(Maybe Bool)
+    , _fcAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
+    , _fcIdDimensionValue :: !(Maybe DimensionValue)
+    , _fcLookbackConfiguration :: !(Maybe LookbackConfiguration)
+    , _fcAccountId :: !(Maybe (Textual Int64))
+    , _fcId :: !(Maybe (Textual Int64))
     , _fcNATuralSearchConversionAttributionOption :: !(Maybe FloodlightConfigurationNATuralSearchConversionAttributionOption)
-    , _fcUserDefinedVariableConfigurations        :: !(Maybe [UserDefinedVariableConfiguration])
-    , _fcSubAccountId                             :: !(Maybe (Textual Int64))
-    , _fcCustomViewabilityMetric                  :: !(Maybe CustomViewabilityMetric)
-    , _fcFirstDayOfWeek                           :: !(Maybe FloodlightConfigurationFirstDayOfWeek)
-    , _fcOmnitureSettings                         :: !(Maybe OmnitureSettings)
+    , _fcUserDefinedVariableConfigurations :: !(Maybe [UserDefinedVariableConfiguration])
+    , _fcSubAccountId :: !(Maybe (Textual Int64))
+    , _fcCustomViewabilityMetric :: !(Maybe CustomViewabilityMetric)
+    , _fcFirstDayOfWeek :: !(Maybe FloodlightConfigurationFirstDayOfWeek)
+    , _fcOmnitureSettings :: !(Maybe OmnitureSettings)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18903,10 +18903,10 @@ instance ToJSON FloodlightConfiguration where
 -- /See:/ 'companionSetting' smart constructor.
 data CompanionSetting =
   CompanionSetting'
-    { _comKind               :: !(Maybe Text)
-    , _comImageOnly          :: !(Maybe Bool)
+    { _comKind :: !(Maybe Text)
+    , _comImageOnly :: !(Maybe Bool)
     , _comCompanionsDisabled :: !(Maybe Bool)
-    , _comEnabledSizes       :: !(Maybe [Size])
+    , _comEnabledSizes :: !(Maybe [Size])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18981,8 +18981,8 @@ instance ToJSON CompanionSetting where
 -- /See:/ 'floodlightActivityGroupsListResponse' smart constructor.
 data FloodlightActivityGroupsListResponse =
   FloodlightActivityGroupsListResponse'
-    { _faglrNextPageToken            :: !(Maybe Text)
-    , _faglrKind                     :: !(Maybe Text)
+    { _faglrNextPageToken :: !(Maybe Text)
+    , _faglrKind :: !(Maybe Text)
     , _faglrFloodlightActivityGroups :: !(Maybe [FloodlightActivityGroup])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -19053,24 +19053,24 @@ instance ToJSON FloodlightActivityGroupsListResponse
 -- /See:/ 'conversion' smart constructor.
 data Conversion =
   Conversion'
-    { _c1TreatmentForUnderage      :: !(Maybe Bool)
+    { _c1TreatmentForUnderage :: !(Maybe Bool)
     , _c1EncryptedUserIdCandidates :: !(Maybe [Text])
-    , _c1TimestampMicros           :: !(Maybe (Textual Int64))
-    , _c1LimitAdTracking           :: !(Maybe Bool)
-    , _c1EncryptedUserId           :: !(Maybe Text)
-    , _c1MobileDeviceId            :: !(Maybe Text)
+    , _c1TimestampMicros :: !(Maybe (Textual Int64))
+    , _c1LimitAdTracking :: !(Maybe Bool)
+    , _c1EncryptedUserId :: !(Maybe Text)
+    , _c1MobileDeviceId :: !(Maybe Text)
     , _c1FloodlightConfigurationId :: !(Maybe (Textual Int64))
-    , _c1Kind                      :: !(Maybe Text)
-    , _c1FloodlightActivityId      :: !(Maybe (Textual Int64))
-    , _c1NonPersonalizedAd         :: !(Maybe Bool)
-    , _c1Quantity                  :: !(Maybe (Textual Int64))
-    , _c1Value                     :: !(Maybe (Textual Double))
-    , _c1CustomVariables           :: !(Maybe [CustomFloodlightVariable])
-    , _c1ChildDirectedTreatment    :: !(Maybe Bool)
-    , _c1Gclid                     :: !(Maybe Text)
-    , _c1Ordinal                   :: !(Maybe Text)
-    , _c1Dclid                     :: !(Maybe Text)
-    , _c1MatchId                   :: !(Maybe Text)
+    , _c1Kind :: !(Maybe Text)
+    , _c1FloodlightActivityId :: !(Maybe (Textual Int64))
+    , _c1NonPersonalizedAd :: !(Maybe Bool)
+    , _c1Quantity :: !(Maybe (Textual Int64))
+    , _c1Value :: !(Maybe (Textual Double))
+    , _c1CustomVariables :: !(Maybe [CustomFloodlightVariable])
+    , _c1ChildDirectedTreatment :: !(Maybe Bool)
+    , _c1Gclid :: !(Maybe Text)
+    , _c1Ordinal :: !(Maybe Text)
+    , _c1Dclid :: !(Maybe Text)
+    , _c1MatchId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -19338,8 +19338,8 @@ instance ToJSON Conversion where
 -- /See:/ 'creativeFieldValuesListResponse' smart constructor.
 data CreativeFieldValuesListResponse =
   CreativeFieldValuesListResponse'
-    { _cfvlrNextPageToken       :: !(Maybe Text)
-    , _cfvlrKind                :: !(Maybe Text)
+    { _cfvlrNextPageToken :: !(Maybe Text)
+    , _cfvlrKind :: !(Maybe Text)
     , _cfvlrCreativeFieldValues :: !(Maybe [CreativeFieldValue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -19407,9 +19407,9 @@ instance ToJSON CreativeFieldValuesListResponse where
 -- /See:/ 'richMediaExitOverride' smart constructor.
 data RichMediaExitOverride =
   RichMediaExitOverride'
-    { _rmeoEnabled         :: !(Maybe Bool)
+    { _rmeoEnabled :: !(Maybe Bool)
     , _rmeoClickThroughURL :: !(Maybe ClickThroughURL)
-    , _rmeoExitId          :: !(Maybe (Textual Int64))
+    , _rmeoExitId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -19473,8 +19473,8 @@ instance ToJSON RichMediaExitOverride where
 -- /See:/ 'customViewabilityMetric' smart constructor.
 data CustomViewabilityMetric =
   CustomViewabilityMetric'
-    { _cvmName          :: !(Maybe Text)
-    , _cvmId            :: !(Maybe (Textual Int64))
+    { _cvmName :: !(Maybe Text)
+    , _cvmId :: !(Maybe (Textual Int64))
     , _cvmConfiguration :: !(Maybe CustomViewabilityMetricConfiguration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -19532,9 +19532,9 @@ instance ToJSON CustomViewabilityMetric where
 -- /See:/ 'advertiserLandingPagesListResponse' smart constructor.
 data AdvertiserLandingPagesListResponse =
   AdvertiserLandingPagesListResponse'
-    { _alplrLandingPages  :: !(Maybe [LandingPage])
+    { _alplrLandingPages :: !(Maybe [LandingPage])
     , _alplrNextPageToken :: !(Maybe Text)
-    , _alplrKind          :: !(Maybe Text)
+    , _alplrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -19603,8 +19603,8 @@ instance ToJSON AdvertiserLandingPagesListResponse
 data MobileAppsListResponse =
   MobileAppsListResponse'
     { _malrNextPageToken :: !(Maybe Text)
-    , _malrKind          :: !(Maybe Text)
-    , _malrMobileApps    :: !(Maybe [MobileApp])
+    , _malrKind :: !(Maybe Text)
+    , _malrMobileApps :: !(Maybe [MobileApp])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -19668,9 +19668,9 @@ instance ToJSON MobileAppsListResponse where
 -- /See:/ 'sortedDimension' smart constructor.
 data SortedDimension =
   SortedDimension'
-    { _sdKind      :: !(Maybe Text)
+    { _sdKind :: !(Maybe Text)
     , _sdSortOrder :: !(Maybe SortedDimensionSortOrder)
-    , _sdName      :: !(Maybe Text)
+    , _sdName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -19725,8 +19725,8 @@ instance ToJSON SortedDimension where
 -- /See:/ 'creativeFieldsListResponse' smart constructor.
 data CreativeFieldsListResponse =
   CreativeFieldsListResponse'
-    { _cflrNextPageToken  :: !(Maybe Text)
-    , _cflrKind           :: !(Maybe Text)
+    { _cflrNextPageToken :: !(Maybe Text)
+    , _cflrKind :: !(Maybe Text)
     , _cflrCreativeFields :: !(Maybe [CreativeField])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -19791,8 +19791,8 @@ instance ToJSON CreativeFieldsListResponse where
 -- /See:/ 'targetingTemplatesListResponse' smart constructor.
 data TargetingTemplatesListResponse =
   TargetingTemplatesListResponse'
-    { _ttlrNextPageToken      :: !(Maybe Text)
-    , _ttlrKind               :: !(Maybe Text)
+    { _ttlrNextPageToken :: !(Maybe Text)
+    , _ttlrKind :: !(Maybe Text)
     , _ttlrTargetingTemplates :: !(Maybe [TargetingTemplate])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -19860,9 +19860,9 @@ instance ToJSON TargetingTemplatesListResponse where
 -- /See:/ 'customEventStatus' smart constructor.
 data CustomEventStatus =
   CustomEventStatus'
-    { _cesKind        :: !(Maybe Text)
+    { _cesKind :: !(Maybe Text)
     , _cesCustomEvent :: !(Maybe CustomEvent)
-    , _cesErrors      :: !(Maybe [CustomEventError])
+    , _cesErrors :: !(Maybe [CustomEventError])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -19922,7 +19922,7 @@ instance ToJSON CustomEventStatus where
 -- /See:/ 'placementsGenerateTagsResponse' smart constructor.
 data PlacementsGenerateTagsResponse =
   PlacementsGenerateTagsResponse'
-    { _pgtrKind          :: !(Maybe Text)
+    { _pgtrKind :: !(Maybe Text)
     , _pgtrPlacementTags :: !(Maybe [PlacementTag])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -19976,56 +19976,56 @@ instance ToJSON PlacementsGenerateTagsResponse where
 -- /See:/ 'creativeAsset' smart constructor.
 data CreativeAsset =
   CreativeAsset'
-    { _caaZIndex                :: !(Maybe (Textual Int32))
-    , _caaPushdown              :: !(Maybe Bool)
-    , _caaFrameRate             :: !(Maybe (Textual Double))
-    , _caaOriginalBackup        :: !(Maybe Bool)
-    , _caaWindowMode            :: !(Maybe CreativeAssetWindowMode)
-    , _caaFlashVersion          :: !(Maybe (Textual Int32))
-    , _caaPushdownDuration      :: !(Maybe (Textual Double))
-    , _caaSize                  :: !(Maybe Size)
-    , _caaVerticallyLocked      :: !(Maybe Bool)
-    , _caaOffSet                :: !(Maybe OffSetPosition)
-    , _caaStreamingServingURL   :: !(Maybe Text)
-    , _caaZipFilesize           :: !(Maybe Text)
-    , _caaTransparency          :: !(Maybe Bool)
-    , _caaHideSelectionBoxes    :: !(Maybe Bool)
-    , _caaSSLCompliant          :: !(Maybe Bool)
-    , _caaFileSize              :: !(Maybe (Textual Int64))
-    , _caaAssetIdentifier       :: !(Maybe CreativeAssetId)
-    , _caaCompanionCreativeIds  :: !(Maybe [Textual Int64])
-    , _caaDurationType          :: !(Maybe CreativeAssetDurationType)
+    { _caaZIndex :: !(Maybe (Textual Int32))
+    , _caaPushdown :: !(Maybe Bool)
+    , _caaFrameRate :: !(Maybe (Textual Double))
+    , _caaOriginalBackup :: !(Maybe Bool)
+    , _caaWindowMode :: !(Maybe CreativeAssetWindowMode)
+    , _caaFlashVersion :: !(Maybe (Textual Int32))
+    , _caaPushdownDuration :: !(Maybe (Textual Double))
+    , _caaSize :: !(Maybe Size)
+    , _caaVerticallyLocked :: !(Maybe Bool)
+    , _caaOffSet :: !(Maybe OffSetPosition)
+    , _caaStreamingServingURL :: !(Maybe Text)
+    , _caaZipFilesize :: !(Maybe Text)
+    , _caaTransparency :: !(Maybe Bool)
+    , _caaHideSelectionBoxes :: !(Maybe Bool)
+    , _caaSSLCompliant :: !(Maybe Bool)
+    , _caaFileSize :: !(Maybe (Textual Int64))
+    , _caaAssetIdentifier :: !(Maybe CreativeAssetId)
+    , _caaCompanionCreativeIds :: !(Maybe [Textual Int64])
+    , _caaDurationType :: !(Maybe CreativeAssetDurationType)
     , _caaProgressiveServingURL :: !(Maybe Text)
-    , _caaIdDimensionValue      :: !(Maybe DimensionValue)
-    , _caaActive                :: !(Maybe Bool)
-    , _caaRole                  :: !(Maybe CreativeAssetRole)
-    , _caaMimeType              :: !(Maybe Text)
-    , _caaPositionTopUnit       :: !(Maybe CreativeAssetPositionTopUnit)
-    , _caaPositionLeftUnit      :: !(Maybe CreativeAssetPositionLeftUnit)
-    , _caaAlignment             :: !(Maybe CreativeAssetAlignment)
-    , _caaExpandedDimension     :: !(Maybe Size)
-    , _caaAdditionalSizes       :: !(Maybe [Size])
-    , _caaZipFilename           :: !(Maybe Text)
-    , _caaMediaDuration         :: !(Maybe (Textual Double))
-    , _caaActionScript3         :: !(Maybe Bool)
-    , _caaDisplayType           :: !(Maybe CreativeAssetDisplayType)
-    , _caaChildAssetType        :: !(Maybe CreativeAssetChildAssetType)
-    , _caaCollapsedSize         :: !(Maybe Size)
-    , _caaAudioSampleRate       :: !(Maybe (Textual Int32))
-    , _caaId                    :: !(Maybe (Textual Int64))
-    , _caaBitRate               :: !(Maybe (Textual Int32))
-    , _caaPoliteLoad            :: !(Maybe Bool)
-    , _caaCustomStartTimeValue  :: !(Maybe (Textual Int32))
-    , _caaStartTimeType         :: !(Maybe CreativeAssetStartTimeType)
-    , _caaAudioBitRate          :: !(Maybe (Textual Int32))
-    , _caaDuration              :: !(Maybe (Textual Int32))
-    , _caaOrientation           :: !(Maybe CreativeAssetOrientation)
-    , _caaArtworkType           :: !(Maybe CreativeAssetArtworkType)
-    , _caaHideFlashObjects      :: !(Maybe Bool)
-    , _caaDetectedFeatures      :: !(Maybe [CreativeAssetDetectedFeaturesItem])
-    , _caaBackupImageExit       :: !(Maybe CreativeCustomEvent)
-    , _caaPosition              :: !(Maybe OffSetPosition)
-    , _caaHorizontallyLocked    :: !(Maybe Bool)
+    , _caaIdDimensionValue :: !(Maybe DimensionValue)
+    , _caaActive :: !(Maybe Bool)
+    , _caaRole :: !(Maybe CreativeAssetRole)
+    , _caaMimeType :: !(Maybe Text)
+    , _caaPositionTopUnit :: !(Maybe CreativeAssetPositionTopUnit)
+    , _caaPositionLeftUnit :: !(Maybe CreativeAssetPositionLeftUnit)
+    , _caaAlignment :: !(Maybe CreativeAssetAlignment)
+    , _caaExpandedDimension :: !(Maybe Size)
+    , _caaAdditionalSizes :: !(Maybe [Size])
+    , _caaZipFilename :: !(Maybe Text)
+    , _caaMediaDuration :: !(Maybe (Textual Double))
+    , _caaActionScript3 :: !(Maybe Bool)
+    , _caaDisplayType :: !(Maybe CreativeAssetDisplayType)
+    , _caaChildAssetType :: !(Maybe CreativeAssetChildAssetType)
+    , _caaCollapsedSize :: !(Maybe Size)
+    , _caaAudioSampleRate :: !(Maybe (Textual Int32))
+    , _caaId :: !(Maybe (Textual Int64))
+    , _caaBitRate :: !(Maybe (Textual Int32))
+    , _caaPoliteLoad :: !(Maybe Bool)
+    , _caaCustomStartTimeValue :: !(Maybe (Textual Int32))
+    , _caaStartTimeType :: !(Maybe CreativeAssetStartTimeType)
+    , _caaAudioBitRate :: !(Maybe (Textual Int32))
+    , _caaDuration :: !(Maybe (Textual Int32))
+    , _caaOrientation :: !(Maybe CreativeAssetOrientation)
+    , _caaArtworkType :: !(Maybe CreativeAssetArtworkType)
+    , _caaHideFlashObjects :: !(Maybe Bool)
+    , _caaDetectedFeatures :: !(Maybe [CreativeAssetDetectedFeaturesItem])
+    , _caaBackupImageExit :: !(Maybe CreativeCustomEvent)
+    , _caaPosition :: !(Maybe OffSetPosition)
+    , _caaHorizontallyLocked :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -20770,7 +20770,7 @@ instance ToJSON LanguageTargeting where
 -- /See:/ 'creativeAssetSelection' smart constructor.
 data CreativeAssetSelection =
   CreativeAssetSelection'
-    { _casRules          :: !(Maybe [Rule])
+    { _casRules :: !(Maybe [Rule])
     , _casDefaultAssetId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -20828,8 +20828,8 @@ instance ToJSON CreativeAssetSelection where
 data PlacementsListResponse =
   PlacementsListResponse'
     { _plaNextPageToken :: !(Maybe Text)
-    , _plaKind          :: !(Maybe Text)
-    , _plaPlacements    :: !(Maybe [Placement])
+    , _plaKind :: !(Maybe Text)
+    , _plaPlacements :: !(Maybe [Placement])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -20891,12 +20891,12 @@ instance ToJSON PlacementsListResponse where
 -- /See:/ 'reportSchedule' smart constructor.
 data ReportSchedule =
   ReportSchedule'
-    { _rsEvery             :: !(Maybe (Textual Int32))
-    , _rsActive            :: !(Maybe Bool)
-    , _rsRepeats           :: !(Maybe Text)
-    , _rsStartDate         :: !(Maybe Date')
-    , _rsExpirationDate    :: !(Maybe Date')
-    , _rsRunsOnDayOfMonth  :: !(Maybe ReportScheduleRunsOnDayOfMonth)
+    { _rsEvery :: !(Maybe (Textual Int32))
+    , _rsActive :: !(Maybe Bool)
+    , _rsRepeats :: !(Maybe Text)
+    , _rsStartDate :: !(Maybe Date')
+    , _rsExpirationDate :: !(Maybe Date')
+    , _rsRunsOnDayOfMonth :: !(Maybe ReportScheduleRunsOnDayOfMonth)
     , _rsRepeatsOnWeekDays :: !(Maybe [ReportScheduleRepeatsOnWeekDaysItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21013,15 +21013,15 @@ instance ToJSON ReportSchedule where
 -- /See:/ 'reportPathToConversionCriteria' smart constructor.
 data ReportPathToConversionCriteria =
   ReportPathToConversionCriteria'
-    { _rptccReportProperties          :: !(Maybe ReportPathToConversionCriteriaReportProperties)
-    , _rptccMetricNames               :: !(Maybe [Text])
-    , _rptccCustomRichMediaEvents     :: !(Maybe [DimensionValue])
-    , _rptccDateRange                 :: !(Maybe DateRange)
-    , _rptccConversionDimensions      :: !(Maybe [SortedDimension])
+    { _rptccReportProperties :: !(Maybe ReportPathToConversionCriteriaReportProperties)
+    , _rptccMetricNames :: !(Maybe [Text])
+    , _rptccCustomRichMediaEvents :: !(Maybe [DimensionValue])
+    , _rptccDateRange :: !(Maybe DateRange)
+    , _rptccConversionDimensions :: !(Maybe [SortedDimension])
     , _rptccCustomFloodlightVariables :: !(Maybe [SortedDimension])
-    , _rptccFloodlightConfigId        :: !(Maybe DimensionValue)
-    , _rptccActivityFilters           :: !(Maybe [DimensionValue])
-    , _rptccPerInteractionDimensions  :: !(Maybe [SortedDimension])
+    , _rptccFloodlightConfigId :: !(Maybe DimensionValue)
+    , _rptccActivityFilters :: !(Maybe [DimensionValue])
+    , _rptccPerInteractionDimensions :: !(Maybe [SortedDimension])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -21171,7 +21171,7 @@ instance ToJSON ReportPathToConversionCriteria where
 -- /See:/ 'customEventImpressionAnnotation' smart constructor.
 data CustomEventImpressionAnnotation =
   CustomEventImpressionAnnotation'
-    { _ceiaKind             :: !(Maybe Text)
+    { _ceiaKind :: !(Maybe Text)
     , _ceiaPathImpressionId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21223,7 +21223,7 @@ instance ToJSON CustomEventImpressionAnnotation where
 -- /See:/ 'metrosListResponse' smart constructor.
 data MetrosListResponse =
   MetrosListResponse'
-    { _mlrKind   :: !(Maybe Text)
+    { _mlrKind :: !(Maybe Text)
     , _mlrMetros :: !(Maybe [Metro])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21273,8 +21273,8 @@ instance ToJSON MetrosListResponse where
 -- /See:/ 'conversionsBatchInsertResponse' smart constructor.
 data ConversionsBatchInsertResponse =
   ConversionsBatchInsertResponse'
-    { _cbirbStatus      :: !(Maybe [ConversionStatus])
-    , _cbirbKind        :: !(Maybe Text)
+    { _cbirbStatus :: !(Maybe [ConversionStatus])
+    , _cbirbKind :: !(Maybe Text)
     , _cbirbHasFailures :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21338,8 +21338,8 @@ instance ToJSON ConversionsBatchInsertResponse where
 -- /See:/ 'orderDocumentsListResponse' smart constructor.
 data OrderDocumentsListResponse =
   OrderDocumentsListResponse'
-    { _odlrNextPageToken  :: !(Maybe Text)
-    , _odlrKind           :: !(Maybe Text)
+    { _odlrNextPageToken :: !(Maybe Text)
+    , _odlrKind :: !(Maybe Text)
     , _odlrOrderDocuments :: !(Maybe [OrderDocument])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21404,8 +21404,8 @@ instance ToJSON OrderDocumentsListResponse where
 -- /See:/ 'recipient' smart constructor.
 data Recipient =
   Recipient'
-    { _recEmail        :: !(Maybe Text)
-    , _recKind         :: !(Maybe Text)
+    { _recEmail :: !(Maybe Text)
+    , _recKind :: !(Maybe Text)
     , _recDeliveryType :: !(Maybe RecipientDeliveryType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21463,11 +21463,11 @@ instance ToJSON Recipient where
 data CampaignManagerIds =
   CampaignManagerIds'
     { _cmiPlacementId :: !(Maybe (Textual Int64))
-    , _cmiKind        :: !(Maybe Text)
-    , _cmiCampaignId  :: !(Maybe (Textual Int64))
-    , _cmiCreativeId  :: !(Maybe (Textual Int64))
-    , _cmiAdId        :: !(Maybe (Textual Int64))
-    , _cmiSiteId      :: !(Maybe (Textual Int64))
+    , _cmiKind :: !(Maybe Text)
+    , _cmiCampaignId :: !(Maybe (Textual Int64))
+    , _cmiCreativeId :: !(Maybe (Textual Int64))
+    , _cmiAdId :: !(Maybe (Textual Int64))
+    , _cmiSiteId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -21565,19 +21565,19 @@ instance ToJSON CampaignManagerIds where
 -- /See:/ 'site' smart constructor.
 data Site =
   Site'
-    { _sitiVideoSettings                 :: !(Maybe SiteVideoSettings)
-    , _sitiKind                          :: !(Maybe Text)
-    , _sitiKeyName                       :: !(Maybe Text)
-    , _sitiSiteContacts                  :: !(Maybe [SiteContact])
-    , _sitiSiteSettings                  :: !(Maybe SiteSettings)
-    , _sitiIdDimensionValue              :: !(Maybe DimensionValue)
+    { _sitiVideoSettings :: !(Maybe SiteVideoSettings)
+    , _sitiKind :: !(Maybe Text)
+    , _sitiKeyName :: !(Maybe Text)
+    , _sitiSiteContacts :: !(Maybe [SiteContact])
+    , _sitiSiteSettings :: !(Maybe SiteSettings)
+    , _sitiIdDimensionValue :: !(Maybe DimensionValue)
     , _sitiDirectorySiteIdDimensionValue :: !(Maybe DimensionValue)
-    , _sitiAccountId                     :: !(Maybe (Textual Int64))
-    , _sitiName                          :: !(Maybe Text)
-    , _sitiDirectorySiteId               :: !(Maybe (Textual Int64))
-    , _sitiId                            :: !(Maybe (Textual Int64))
-    , _sitiSubAccountId                  :: !(Maybe (Textual Int64))
-    , _sitiApproved                      :: !(Maybe Bool)
+    , _sitiAccountId :: !(Maybe (Textual Int64))
+    , _sitiName :: !(Maybe Text)
+    , _sitiDirectorySiteId :: !(Maybe (Textual Int64))
+    , _sitiId :: !(Maybe (Textual Int64))
+    , _sitiSubAccountId :: !(Maybe (Textual Int64))
+    , _sitiApproved :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -21762,8 +21762,8 @@ instance ToJSON Site where
 -- /See:/ 'userDefinedVariableConfiguration' smart constructor.
 data UserDefinedVariableConfiguration =
   UserDefinedVariableConfiguration'
-    { _udvcReportName   :: !(Maybe Text)
-    , _udvcDataType     :: !(Maybe UserDefinedVariableConfigurationDataType)
+    { _udvcReportName :: !(Maybe Text)
+    , _udvcDataType :: !(Maybe UserDefinedVariableConfigurationDataType)
     , _udvcVariableType :: !(Maybe UserDefinedVariableConfigurationVariableType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21830,12 +21830,12 @@ instance ToJSON UserDefinedVariableConfiguration
 -- /See:/ 'reportCrossDimensionReachCriteria' smart constructor.
 data ReportCrossDimensionReachCriteria =
   ReportCrossDimensionReachCriteria'
-    { _rcdrcPivoted            :: !(Maybe Bool)
-    , _rcdrcBreakdown          :: !(Maybe [SortedDimension])
-    , _rcdrcDimension          :: !(Maybe ReportCrossDimensionReachCriteriaDimension)
-    , _rcdrcMetricNames        :: !(Maybe [Text])
-    , _rcdrcDimensionFilters   :: !(Maybe [DimensionValue])
-    , _rcdrcDateRange          :: !(Maybe DateRange)
+    { _rcdrcPivoted :: !(Maybe Bool)
+    , _rcdrcBreakdown :: !(Maybe [SortedDimension])
+    , _rcdrcDimension :: !(Maybe ReportCrossDimensionReachCriteriaDimension)
+    , _rcdrcMetricNames :: !(Maybe [Text])
+    , _rcdrcDimensionFilters :: !(Maybe [DimensionValue])
+    , _rcdrcDateRange :: !(Maybe DateRange)
     , _rcdrcOverlapMetricNames :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21954,7 +21954,7 @@ instance ToJSON ReportCrossDimensionReachCriteria
 data FileURLs =
   FileURLs'
     { _fuBrowserURL :: !(Maybe Text)
-    , _fuAPIURL     :: !(Maybe Text)
+    , _fuAPIURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -22000,8 +22000,8 @@ instance ToJSON FileURLs where
 data CampaignCreativeAssociationsListResponse =
   CampaignCreativeAssociationsListResponse'
     { _ccalrCampaignCreativeAssociations :: !(Maybe [CampaignCreativeAssociation])
-    , _ccalrNextPageToken                :: !(Maybe Text)
-    , _ccalrKind                         :: !(Maybe Text)
+    , _ccalrNextPageToken :: !(Maybe Text)
+    , _ccalrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -22073,25 +22073,25 @@ instance ToJSON
 -- /See:/ 'order' smart constructor.
 data Order =
   Order'
-    { _oSellerOrderId          :: !(Maybe Text)
+    { _oSellerOrderId :: !(Maybe Text)
     , _oSellerOrganizationName :: !(Maybe Text)
-    , _oKind                   :: !(Maybe Text)
-    , _oAdvertiserId           :: !(Maybe (Textual Int64))
-    , _oPlanningTermId         :: !(Maybe (Textual Int64))
-    , _oAccountId              :: !(Maybe (Textual Int64))
-    , _oName                   :: !(Maybe Text)
-    , _oSiteNames              :: !(Maybe [Text])
-    , _oLastModifiedInfo       :: !(Maybe LastModifiedInfo)
-    , _oBuyerOrganizationName  :: !(Maybe Text)
-    , _oId                     :: !(Maybe (Textual Int64))
-    , _oBuyerInvoiceId         :: !(Maybe Text)
-    , _oComments               :: !(Maybe Text)
-    , _oProjectId              :: !(Maybe (Textual Int64))
-    , _oSubAccountId           :: !(Maybe (Textual Int64))
-    , _oNotes                  :: !(Maybe Text)
-    , _oContacts               :: !(Maybe [OrderContact])
-    , _oSiteId                 :: !(Maybe [Textual Int64])
-    , _oTermsAndConditions     :: !(Maybe Text)
+    , _oKind :: !(Maybe Text)
+    , _oAdvertiserId :: !(Maybe (Textual Int64))
+    , _oPlanningTermId :: !(Maybe (Textual Int64))
+    , _oAccountId :: !(Maybe (Textual Int64))
+    , _oName :: !(Maybe Text)
+    , _oSiteNames :: !(Maybe [Text])
+    , _oLastModifiedInfo :: !(Maybe LastModifiedInfo)
+    , _oBuyerOrganizationName :: !(Maybe Text)
+    , _oId :: !(Maybe (Textual Int64))
+    , _oBuyerInvoiceId :: !(Maybe Text)
+    , _oComments :: !(Maybe Text)
+    , _oProjectId :: !(Maybe (Textual Int64))
+    , _oSubAccountId :: !(Maybe (Textual Int64))
+    , _oNotes :: !(Maybe Text)
+    , _oContacts :: !(Maybe [OrderContact])
+    , _oSiteId :: !(Maybe [Textual Int64])
+    , _oTermsAndConditions :: !(Maybe Text)
     , _oApproverUserProFileIds :: !(Maybe [Textual Int64])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -22396,7 +22396,7 @@ instance ToJSON CreativeAssetId where
 data FrequencyCap =
   FrequencyCap'
     { _fcImpressions :: !(Maybe (Textual Int64))
-    , _fcDuration    :: !(Maybe (Textual Int64))
+    , _fcDuration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -22450,16 +22450,16 @@ instance ToJSON FrequencyCap where
 -- /See:/ 'file' smart constructor.
 data File =
   File'
-    { _filStatus           :: !(Maybe FileStatus)
-    , _filEtag             :: !(Maybe Text)
-    , _filKind             :: !(Maybe Text)
-    , _filURLs             :: !(Maybe FileURLs)
-    , _filReportId         :: !(Maybe (Textual Int64))
-    , _filDateRange        :: !(Maybe DateRange)
-    , _filFormat           :: !(Maybe FileFormat)
+    { _filStatus :: !(Maybe FileStatus)
+    , _filEtag :: !(Maybe Text)
+    , _filKind :: !(Maybe Text)
+    , _filURLs :: !(Maybe FileURLs)
+    , _filReportId :: !(Maybe (Textual Int64))
+    , _filDateRange :: !(Maybe DateRange)
+    , _filFormat :: !(Maybe FileFormat)
     , _filLastModifiedTime :: !(Maybe (Textual Int64))
-    , _filId               :: !(Maybe (Textual Int64))
-    , _filFileName         :: !(Maybe Text)
+    , _filId :: !(Maybe (Textual Int64))
+    , _filFileName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -22594,8 +22594,8 @@ instance ToJSON File where
 data CreativeGroupsListResponse =
   CreativeGroupsListResponse'
     { _cglrCreativeGroups :: !(Maybe [CreativeGroup])
-    , _cglrNextPageToken  :: !(Maybe Text)
-    , _cglrKind           :: !(Maybe Text)
+    , _cglrNextPageToken :: !(Maybe Text)
+    , _cglrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -22660,7 +22660,7 @@ instance ToJSON CreativeGroupsListResponse where
 -- /See:/ 'customEventClickAnnotation' smart constructor.
 data CustomEventClickAnnotation =
   CustomEventClickAnnotation'
-    { _cecaKind  :: !(Maybe Text)
+    { _cecaKind :: !(Maybe Text)
     , _cecaGclid :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -22710,7 +22710,7 @@ instance ToJSON CustomEventClickAnnotation where
 data MobileCarriersListResponse =
   MobileCarriersListResponse'
     { _mclrMobileCarriers :: !(Maybe [MobileCarrier])
-    , _mclrKind           :: !(Maybe Text)
+    , _mclrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -22764,17 +22764,17 @@ instance ToJSON MobileCarriersListResponse where
 -- /See:/ 'creativeAssetMetadata' smart constructor.
 data CreativeAssetMetadata =
   CreativeAssetMetadata'
-    { _camaRichMedia             :: !(Maybe Bool)
-    , _camaCounterCustomEvents   :: !(Maybe [CreativeCustomEvent])
-    , _camaKind                  :: !(Maybe Text)
-    , _camaAssetIdentifier       :: !(Maybe CreativeAssetId)
-    , _camaIdDimensionValue      :: !(Maybe DimensionValue)
-    , _camaExitCustomEvents      :: !(Maybe [CreativeCustomEvent])
-    , _camaClickTags             :: !(Maybe [ClickTag])
+    { _camaRichMedia :: !(Maybe Bool)
+    , _camaCounterCustomEvents :: !(Maybe [CreativeCustomEvent])
+    , _camaKind :: !(Maybe Text)
+    , _camaAssetIdentifier :: !(Maybe CreativeAssetId)
+    , _camaIdDimensionValue :: !(Maybe DimensionValue)
+    , _camaExitCustomEvents :: !(Maybe [CreativeCustomEvent])
+    , _camaClickTags :: !(Maybe [ClickTag])
     , _camaWarnedValidationRules :: !(Maybe [CreativeAssetMetadataWarnedValidationRulesItem])
-    , _camaId                    :: !(Maybe (Textual Int64))
-    , _camaTimerCustomEvents     :: !(Maybe [CreativeCustomEvent])
-    , _camaDetectedFeatures      :: !(Maybe [CreativeAssetMetadataDetectedFeaturesItem])
+    , _camaId :: !(Maybe (Textual Int64))
+    , _camaTimerCustomEvents :: !(Maybe [CreativeCustomEvent])
+    , _camaDetectedFeatures :: !(Maybe [CreativeAssetMetadataDetectedFeaturesItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -22960,7 +22960,7 @@ instance ToJSON CreativeAssetMetadata where
 -- /See:/ 'omnitureSettings' smart constructor.
 data OmnitureSettings =
   OmnitureSettings'
-    { _osOmnitureCostDataEnabled    :: !(Maybe Bool)
+    { _osOmnitureCostDataEnabled :: !(Maybe Bool)
     , _osOmnitureIntegrationEnabled :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -23022,7 +23022,7 @@ data ConnectionType =
   ConnectionType'
     { _cttKind :: !(Maybe Text)
     , _cttName :: !(Maybe Text)
-    , _cttId   :: !(Maybe (Textual Int64))
+    , _cttId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -23076,32 +23076,32 @@ instance ToJSON ConnectionType where
 -- /See:/ 'placementGroup' smart constructor.
 data PlacementGroup =
   PlacementGroup'
-    { _plalPlacementStrategyId              :: !(Maybe (Textual Int64))
-    , _plalSiteIdDimensionValue             :: !(Maybe DimensionValue)
-    , _plalPricingSchedule                  :: !(Maybe PricingSchedule)
-    , _plalKind                             :: !(Maybe Text)
-    , _plalCampaignIdDimensionValue         :: !(Maybe DimensionValue)
-    , _plalAdvertiserId                     :: !(Maybe (Textual Int64))
-    , _plalAdvertiserIdDimensionValue       :: !(Maybe DimensionValue)
-    , _plalCampaignId                       :: !(Maybe (Textual Int64))
-    , _plalIdDimensionValue                 :: !(Maybe DimensionValue)
-    , _plalPlacementGroupType               :: !(Maybe PlacementGroupPlacementGroupType)
-    , _plalContentCategoryId                :: !(Maybe (Textual Int64))
-    , _plalDirectorySiteIdDimensionValue    :: !(Maybe DimensionValue)
-    , _plalAccountId                        :: !(Maybe (Textual Int64))
-    , _plalName                             :: !(Maybe Text)
-    , _plalDirectorySiteId                  :: !(Maybe (Textual Int64))
-    , _plalCreateInfo                       :: !(Maybe LastModifiedInfo)
-    , _plalChildPlacementIds                :: !(Maybe [Textual Int64])
-    , _plalLastModifiedInfo                 :: !(Maybe LastModifiedInfo)
-    , _plalId                               :: !(Maybe (Textual Int64))
-    , _plalPrimaryPlacementId               :: !(Maybe (Textual Int64))
-    , _plalSubAccountId                     :: !(Maybe (Textual Int64))
-    , _plalExternalId                       :: !(Maybe Text)
-    , _plalComment                          :: !(Maybe Text)
+    { _plalPlacementStrategyId :: !(Maybe (Textual Int64))
+    , _plalSiteIdDimensionValue :: !(Maybe DimensionValue)
+    , _plalPricingSchedule :: !(Maybe PricingSchedule)
+    , _plalKind :: !(Maybe Text)
+    , _plalCampaignIdDimensionValue :: !(Maybe DimensionValue)
+    , _plalAdvertiserId :: !(Maybe (Textual Int64))
+    , _plalAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
+    , _plalCampaignId :: !(Maybe (Textual Int64))
+    , _plalIdDimensionValue :: !(Maybe DimensionValue)
+    , _plalPlacementGroupType :: !(Maybe PlacementGroupPlacementGroupType)
+    , _plalContentCategoryId :: !(Maybe (Textual Int64))
+    , _plalDirectorySiteIdDimensionValue :: !(Maybe DimensionValue)
+    , _plalAccountId :: !(Maybe (Textual Int64))
+    , _plalName :: !(Maybe Text)
+    , _plalDirectorySiteId :: !(Maybe (Textual Int64))
+    , _plalCreateInfo :: !(Maybe LastModifiedInfo)
+    , _plalChildPlacementIds :: !(Maybe [Textual Int64])
+    , _plalLastModifiedInfo :: !(Maybe LastModifiedInfo)
+    , _plalId :: !(Maybe (Textual Int64))
+    , _plalPrimaryPlacementId :: !(Maybe (Textual Int64))
+    , _plalSubAccountId :: !(Maybe (Textual Int64))
+    , _plalExternalId :: !(Maybe Text)
+    , _plalComment :: !(Maybe Text)
     , _plalPrimaryPlacementIdDimensionValue :: !(Maybe DimensionValue)
-    , _plalSiteId                           :: !(Maybe (Textual Int64))
-    , _plalArchived                         :: !(Maybe Bool)
+    , _plalSiteId :: !(Maybe (Textual Int64))
+    , _plalArchived :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -23460,24 +23460,24 @@ instance ToJSON PlacementGroup where
 -- /See:/ 'eventTag' smart constructor.
 data EventTag =
   EventTag'
-    { _etStatus                     :: !(Maybe EventTagStatus)
-    , _etExcludeFromAdxRequests     :: !(Maybe Bool)
-    , _etEnabledByDefault           :: !(Maybe Bool)
-    , _etKind                       :: !(Maybe Text)
-    , _etCampaignIdDimensionValue   :: !(Maybe DimensionValue)
-    , _etAdvertiserId               :: !(Maybe (Textual Int64))
-    , _etURL                        :: !(Maybe Text)
+    { _etStatus :: !(Maybe EventTagStatus)
+    , _etExcludeFromAdxRequests :: !(Maybe Bool)
+    , _etEnabledByDefault :: !(Maybe Bool)
+    , _etKind :: !(Maybe Text)
+    , _etCampaignIdDimensionValue :: !(Maybe DimensionValue)
+    , _etAdvertiserId :: !(Maybe (Textual Int64))
+    , _etURL :: !(Maybe Text)
     , _etAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
-    , _etSSLCompliant               :: !(Maybe Bool)
-    , _etCampaignId                 :: !(Maybe (Textual Int64))
-    , _etAccountId                  :: !(Maybe (Textual Int64))
-    , _etName                       :: !(Maybe Text)
-    , _etURLEscapeLevels            :: !(Maybe (Textual Int32))
-    , _etSiteIds                    :: !(Maybe [Textual Int64])
-    , _etId                         :: !(Maybe (Textual Int64))
-    , _etSubAccountId               :: !(Maybe (Textual Int64))
-    , _etType                       :: !(Maybe EventTagType)
-    , _etSiteFilterType             :: !(Maybe EventTagSiteFilterType)
+    , _etSSLCompliant :: !(Maybe Bool)
+    , _etCampaignId :: !(Maybe (Textual Int64))
+    , _etAccountId :: !(Maybe (Textual Int64))
+    , _etName :: !(Maybe Text)
+    , _etURLEscapeLevels :: !(Maybe (Textual Int32))
+    , _etSiteIds :: !(Maybe [Textual Int64])
+    , _etId :: !(Maybe (Textual Int64))
+    , _etSubAccountId :: !(Maybe (Textual Int64))
+    , _etType :: !(Maybe EventTagType)
+    , _etSiteFilterType :: !(Maybe EventTagSiteFilterType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -23723,10 +23723,10 @@ instance ToJSON EventTag where
 -- /See:/ 'userRolePermission' smart constructor.
 data UserRolePermission =
   UserRolePermission'
-    { _useKind              :: !(Maybe Text)
-    , _useAvailability      :: !(Maybe UserRolePermissionAvailability)
-    , _useName              :: !(Maybe Text)
-    , _useId                :: !(Maybe (Textual Int64))
+    { _useKind :: !(Maybe Text)
+    , _useAvailability :: !(Maybe UserRolePermissionAvailability)
+    , _useName :: !(Maybe Text)
+    , _useId :: !(Maybe (Textual Int64))
     , _usePermissionGroupId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -23810,10 +23810,10 @@ instance ToJSON UserRolePermission where
 data OrderContact =
   OrderContact'
     { _ocSignatureUserProFileId :: !(Maybe (Textual Int64))
-    , _ocContactName            :: !(Maybe Text)
-    , _ocContactTitle           :: !(Maybe Text)
-    , _ocContactType            :: !(Maybe OrderContactContactType)
-    , _ocContactInfo            :: !(Maybe Text)
+    , _ocContactName :: !(Maybe Text)
+    , _ocContactTitle :: !(Maybe Text)
+    , _ocContactType :: !(Maybe OrderContactContactType)
+    , _ocContactInfo :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -23904,7 +23904,7 @@ instance ToJSON OrderContact where
 -- /See:/ 'transcodeSetting' smart constructor.
 data TranscodeSetting =
   TranscodeSetting'
-    { _tsKind                :: !(Maybe Text)
+    { _tsKind :: !(Maybe Text)
     , _tsEnabledVideoFormats :: !(Maybe [Textual Int32])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -23959,8 +23959,8 @@ instance ToJSON TranscodeSetting where
 data FloodlightActivitiesGenerateTagResponse =
   FloodlightActivitiesGenerateTagResponse'
     { _fagtrGlobalSiteTagGlobalSnippet :: !(Maybe Text)
-    , _fagtrFloodlightActivityTag      :: !(Maybe Text)
-    , _fagtrKind                       :: !(Maybe Text)
+    , _fagtrFloodlightActivityTag :: !(Maybe Text)
+    , _fagtrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -24035,14 +24035,14 @@ instance ToJSON
 -- /See:/ 'adSlot' smart constructor.
 data AdSlot =
   AdSlot'
-    { _assHeight            :: !(Maybe (Textual Int64))
+    { _assHeight :: !(Maybe (Textual Int64))
     , _assPaymentSourceType :: !(Maybe AdSlotPaymentSourceType)
     , _assLinkedPlacementId :: !(Maybe (Textual Int64))
-    , _assWidth             :: !(Maybe (Textual Int64))
-    , _assPrimary           :: !(Maybe Bool)
-    , _assName              :: !(Maybe Text)
-    , _assComment           :: !(Maybe Text)
-    , _assCompatibility     :: !(Maybe AdSlotCompatibility)
+    , _assWidth :: !(Maybe (Textual Int64))
+    , _assPrimary :: !(Maybe Bool)
+    , _assName :: !(Maybe Text)
+    , _assComment :: !(Maybe Text)
+    , _assCompatibility :: !(Maybe AdSlotCompatibility)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -24162,7 +24162,7 @@ instance ToJSON AdSlot where
 -- /See:/ 'thirdPartyTrackingURL' smart constructor.
 data ThirdPartyTrackingURL =
   ThirdPartyTrackingURL'
-    { _tptuURL               :: !(Maybe Text)
+    { _tptuURL :: !(Maybe Text)
     , _tptuThirdPartyURLType :: !(Maybe ThirdPartyTrackingURLThirdPartyURLType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -24210,23 +24210,23 @@ instance ToJSON ThirdPartyTrackingURL where
 -- /See:/ 'orderDocument' smart constructor.
 data OrderDocument =
   OrderDocument'
-    { _odSigned                   :: !(Maybe Bool)
-    , _odKind                     :: !(Maybe Text)
-    , _odAdvertiserId             :: !(Maybe (Textual Int64))
-    , _odLastSentTime             :: !(Maybe DateTime')
-    , _odAmendedOrderDocumentId   :: !(Maybe (Textual Int64))
-    , _odLastSentRecipients       :: !(Maybe [Text])
-    , _odEffectiveDate            :: !(Maybe Date')
+    { _odSigned :: !(Maybe Bool)
+    , _odKind :: !(Maybe Text)
+    , _odAdvertiserId :: !(Maybe (Textual Int64))
+    , _odLastSentTime :: !(Maybe DateTime')
+    , _odAmendedOrderDocumentId :: !(Maybe (Textual Int64))
+    , _odLastSentRecipients :: !(Maybe [Text])
+    , _odEffectiveDate :: !(Maybe Date')
     , _odApprovedByUserProFileIds :: !(Maybe [Textual Int64])
-    , _odAccountId                :: !(Maybe (Textual Int64))
-    , _odId                       :: !(Maybe (Textual Int64))
-    , _odProjectId                :: !(Maybe (Textual Int64))
-    , _odTitle                    :: !(Maybe Text)
-    , _odSubAccountId             :: !(Maybe (Textual Int64))
-    , _odType                     :: !(Maybe OrderDocumentType)
-    , _odOrderId                  :: !(Maybe (Textual Int64))
-    , _odCancelled                :: !(Maybe Bool)
-    , _odCreatedInfo              :: !(Maybe LastModifiedInfo)
+    , _odAccountId :: !(Maybe (Textual Int64))
+    , _odId :: !(Maybe (Textual Int64))
+    , _odProjectId :: !(Maybe (Textual Int64))
+    , _odTitle :: !(Maybe Text)
+    , _odSubAccountId :: !(Maybe (Textual Int64))
+    , _odType :: !(Maybe OrderDocumentType)
+    , _odOrderId :: !(Maybe (Textual Int64))
+    , _odCancelled :: !(Maybe Bool)
+    , _odCreatedInfo :: !(Maybe LastModifiedInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -24446,13 +24446,13 @@ instance ToJSON OrderDocument where
 -- /See:/ 'metro' smart constructor.
 data Metro =
   Metro'
-    { _metMetroCode     :: !(Maybe Text)
-    , _metKind          :: !(Maybe Text)
-    , _metName          :: !(Maybe Text)
-    , _metCountryCode   :: !(Maybe Text)
-    , _metDmaId         :: !(Maybe (Textual Int64))
+    { _metMetroCode :: !(Maybe Text)
+    , _metKind :: !(Maybe Text)
+    , _metName :: !(Maybe Text)
+    , _metCountryCode :: !(Maybe Text)
+    , _metDmaId :: !(Maybe (Textual Int64))
     , _metCountryDartId :: !(Maybe (Textual Int64))
-    , _metDartId        :: !(Maybe (Textual Int64))
+    , _metDartId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -24557,11 +24557,11 @@ instance ToJSON Metro where
 -- /See:/ 'mobileApp' smart constructor.
 data MobileApp =
   MobileApp'
-    { _maKind          :: !(Maybe Text)
-    , _maId            :: !(Maybe Text)
-    , _maTitle         :: !(Maybe Text)
+    { _maKind :: !(Maybe Text)
+    , _maId :: !(Maybe Text)
+    , _maTitle :: !(Maybe Text)
     , _maPublisherName :: !(Maybe Text)
-    , _maDirectory     :: !(Maybe MobileAppDirectory)
+    , _maDirectory :: !(Maybe MobileAppDirectory)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -24638,47 +24638,47 @@ instance ToJSON MobileApp where
 -- /See:/ 'placement' smart constructor.
 data Placement =
   Placement'
-    { _p1Status                         :: !(Maybe PlacementStatus)
-    , _p1VideoSettings                  :: !(Maybe VideoSettings)
-    , _p1PlacementStrategyId            :: !(Maybe (Textual Int64))
-    , _p1TagFormats                     :: !(Maybe [PlacementTagFormatsItem])
-    , _p1SiteIdDimensionValue           :: !(Maybe DimensionValue)
-    , _p1PricingSchedule                :: !(Maybe PricingSchedule)
-    , _p1Size                           :: !(Maybe Size)
-    , _p1Kind                           :: !(Maybe Text)
-    , _p1KeyName                        :: !(Maybe Text)
-    , _p1CampaignIdDimensionValue       :: !(Maybe DimensionValue)
-    , _p1AdvertiserId                   :: !(Maybe (Textual Int64))
-    , _p1AdvertiserIdDimensionValue     :: !(Maybe DimensionValue)
-    , _p1CampaignId                     :: !(Maybe (Textual Int64))
-    , _p1IdDimensionValue               :: !(Maybe DimensionValue)
-    , _p1VpaidAdapterChoice             :: !(Maybe PlacementVpaidAdapterChoice)
-    , _p1AdBlockingOptOut               :: !(Maybe Bool)
-    , _p1Primary                        :: !(Maybe Bool)
-    , _p1LookbackConfiguration          :: !(Maybe LookbackConfiguration)
-    , _p1TagSetting                     :: !(Maybe TagSetting)
-    , _p1ContentCategoryId              :: !(Maybe (Textual Int64))
-    , _p1DirectorySiteIdDimensionValue  :: !(Maybe DimensionValue)
-    , _p1AccountId                      :: !(Maybe (Textual Int64))
-    , _p1PaymentSource                  :: !(Maybe PlacementPaymentSource)
-    , _p1Name                           :: !(Maybe Text)
-    , _p1AdditionalSizes                :: !(Maybe [Size])
-    , _p1DirectorySiteId                :: !(Maybe (Textual Int64))
-    , _p1CreateInfo                     :: !(Maybe LastModifiedInfo)
-    , _p1VideoActiveViewOptOut          :: !(Maybe Bool)
-    , _p1LastModifiedInfo               :: !(Maybe LastModifiedInfo)
-    , _p1Id                             :: !(Maybe (Textual Int64))
-    , _p1SSLRequired                    :: !(Maybe Bool)
-    , _p1SubAccountId                   :: !(Maybe (Textual Int64))
+    { _p1Status :: !(Maybe PlacementStatus)
+    , _p1VideoSettings :: !(Maybe VideoSettings)
+    , _p1PlacementStrategyId :: !(Maybe (Textual Int64))
+    , _p1TagFormats :: !(Maybe [PlacementTagFormatsItem])
+    , _p1SiteIdDimensionValue :: !(Maybe DimensionValue)
+    , _p1PricingSchedule :: !(Maybe PricingSchedule)
+    , _p1Size :: !(Maybe Size)
+    , _p1Kind :: !(Maybe Text)
+    , _p1KeyName :: !(Maybe Text)
+    , _p1CampaignIdDimensionValue :: !(Maybe DimensionValue)
+    , _p1AdvertiserId :: !(Maybe (Textual Int64))
+    , _p1AdvertiserIdDimensionValue :: !(Maybe DimensionValue)
+    , _p1CampaignId :: !(Maybe (Textual Int64))
+    , _p1IdDimensionValue :: !(Maybe DimensionValue)
+    , _p1VpaidAdapterChoice :: !(Maybe PlacementVpaidAdapterChoice)
+    , _p1AdBlockingOptOut :: !(Maybe Bool)
+    , _p1Primary :: !(Maybe Bool)
+    , _p1LookbackConfiguration :: !(Maybe LookbackConfiguration)
+    , _p1TagSetting :: !(Maybe TagSetting)
+    , _p1ContentCategoryId :: !(Maybe (Textual Int64))
+    , _p1DirectorySiteIdDimensionValue :: !(Maybe DimensionValue)
+    , _p1AccountId :: !(Maybe (Textual Int64))
+    , _p1PaymentSource :: !(Maybe PlacementPaymentSource)
+    , _p1Name :: !(Maybe Text)
+    , _p1AdditionalSizes :: !(Maybe [Size])
+    , _p1DirectorySiteId :: !(Maybe (Textual Int64))
+    , _p1CreateInfo :: !(Maybe LastModifiedInfo)
+    , _p1VideoActiveViewOptOut :: !(Maybe Bool)
+    , _p1LastModifiedInfo :: !(Maybe LastModifiedInfo)
+    , _p1Id :: !(Maybe (Textual Int64))
+    , _p1SSLRequired :: !(Maybe Bool)
+    , _p1SubAccountId :: !(Maybe (Textual Int64))
     , _p1PlacementGroupIdDimensionValue :: !(Maybe DimensionValue)
-    , _p1ExternalId                     :: !(Maybe Text)
-    , _p1PlacementGroupId               :: !(Maybe (Textual Int64))
-    , _p1Comment                        :: !(Maybe Text)
-    , _p1SiteId                         :: !(Maybe (Textual Int64))
-    , _p1Compatibility                  :: !(Maybe PlacementCompatibility)
-    , _p1Archived                       :: !(Maybe Bool)
-    , _p1PaymentApproved                :: !(Maybe Bool)
-    , _p1PublisherUpdateInfo            :: !(Maybe LastModifiedInfo)
+    , _p1ExternalId :: !(Maybe Text)
+    , _p1PlacementGroupId :: !(Maybe (Textual Int64))
+    , _p1Comment :: !(Maybe Text)
+    , _p1SiteId :: !(Maybe (Textual Int64))
+    , _p1Compatibility :: !(Maybe PlacementCompatibility)
+    , _p1Archived :: !(Maybe Bool)
+    , _p1PaymentApproved :: !(Maybe Bool)
+    , _p1PublisherUpdateInfo :: !(Maybe LastModifiedInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -25220,10 +25220,10 @@ instance ToJSON Placement where
 -- /See:/ 'encryptionInfo' smart constructor.
 data EncryptionInfo =
   EncryptionInfo'
-    { _eiEncryptionSource     :: !(Maybe EncryptionInfoEncryptionSource)
-    , _eiKind                 :: !(Maybe Text)
+    { _eiEncryptionSource :: !(Maybe EncryptionInfoEncryptionSource)
+    , _eiKind :: !(Maybe Text)
     , _eiEncryptionEntityType :: !(Maybe EncryptionInfoEncryptionEntityType)
-    , _eiEncryptionEntityId   :: !(Maybe (Textual Int64))
+    , _eiEncryptionEntityId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -25302,8 +25302,8 @@ instance ToJSON EncryptionInfo where
 data SitesListResponse =
   SitesListResponse'
     { _sitNextPageToken :: !(Maybe Text)
-    , _sitKind          :: !(Maybe Text)
-    , _sitSites         :: !(Maybe [Site])
+    , _sitKind :: !(Maybe Text)
+    , _sitSites :: !(Maybe [Site])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -25365,19 +25365,19 @@ instance ToJSON SitesListResponse where
 -- /See:/ 'targetingTemplate' smart constructor.
 data TargetingTemplate =
   TargetingTemplate'
-    { _ttGeoTargeting                :: !(Maybe GeoTargeting)
-    , _ttTechnologyTargeting         :: !(Maybe TechnologyTargeting)
-    , _ttDayPartTargeting            :: !(Maybe DayPartTargeting)
-    , _ttKind                        :: !(Maybe Text)
-    , _ttAdvertiserId                :: !(Maybe (Textual Int64))
-    , _ttAdvertiserIdDimensionValue  :: !(Maybe DimensionValue)
-    , _ttAccountId                   :: !(Maybe (Textual Int64))
-    , _ttName                        :: !(Maybe Text)
+    { _ttGeoTargeting :: !(Maybe GeoTargeting)
+    , _ttTechnologyTargeting :: !(Maybe TechnologyTargeting)
+    , _ttDayPartTargeting :: !(Maybe DayPartTargeting)
+    , _ttKind :: !(Maybe Text)
+    , _ttAdvertiserId :: !(Maybe (Textual Int64))
+    , _ttAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
+    , _ttAccountId :: !(Maybe (Textual Int64))
+    , _ttName :: !(Maybe Text)
     , _ttKeyValueTargetingExpression :: !(Maybe KeyValueTargetingExpression)
-    , _ttId                          :: !(Maybe (Textual Int64))
-    , _ttSubAccountId                :: !(Maybe (Textual Int64))
-    , _ttLanguageTargeting           :: !(Maybe LanguageTargeting)
-    , _ttListTargetingExpression     :: !(Maybe ListTargetingExpression)
+    , _ttId :: !(Maybe (Textual Int64))
+    , _ttSubAccountId :: !(Maybe (Textual Int64))
+    , _ttLanguageTargeting :: !(Maybe LanguageTargeting)
+    , _ttListTargetingExpression :: !(Maybe ListTargetingExpression)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -25560,13 +25560,13 @@ instance ToJSON TargetingTemplate where
 -- /See:/ 'creativeField' smart constructor.
 data CreativeField =
   CreativeField'
-    { _cffKind                       :: !(Maybe Text)
-    , _cffAdvertiserId               :: !(Maybe (Textual Int64))
+    { _cffKind :: !(Maybe Text)
+    , _cffAdvertiserId :: !(Maybe (Textual Int64))
     , _cffAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
-    , _cffAccountId                  :: !(Maybe (Textual Int64))
-    , _cffName                       :: !(Maybe Text)
-    , _cffId                         :: !(Maybe (Textual Int64))
-    , _cffSubAccountId               :: !(Maybe (Textual Int64))
+    , _cffAccountId :: !(Maybe (Textual Int64))
+    , _cffName :: !(Maybe Text)
+    , _cffId :: !(Maybe (Textual Int64))
+    , _cffSubAccountId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -25680,7 +25680,7 @@ instance ToJSON CreativeField where
 -- /See:/ 'defaultClickThroughEventTagProperties' smart constructor.
 data DefaultClickThroughEventTagProperties =
   DefaultClickThroughEventTagProperties'
-    { _dctetpOverrideInheritedEventTag     :: !(Maybe Bool)
+    { _dctetpOverrideInheritedEventTag :: !(Maybe Bool)
     , _dctetpDefaultClickThroughEventTagId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Placements.Get
     , pgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placements.get@ method which the
 -- 'PlacementsGet' request conforms to.
@@ -66,13 +66,13 @@ type PlacementsGetResource =
 -- /See:/ 'placementsGet' smart constructor.
 data PlacementsGet =
   PlacementsGet'
-    { _pgXgafv          :: !(Maybe Xgafv)
+    { _pgXgafv :: !(Maybe Xgafv)
     , _pgUploadProtocol :: !(Maybe Text)
-    , _pgAccessToken    :: !(Maybe Text)
-    , _pgUploadType     :: !(Maybe Text)
-    , _pgProFileId      :: !(Textual Int64)
-    , _pgId             :: !(Textual Int64)
-    , _pgCallback       :: !(Maybe Text)
+    , _pgAccessToken :: !(Maybe Text)
+    , _pgUploadType :: !(Maybe Text)
+    , _pgProFileId :: !(Textual Int64)
+    , _pgId :: !(Textual Int64)
+    , _pgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -50,8 +50,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Operations
     , pldsocCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.operations.cancel@ method which the
 -- 'ProjectsLocationsDataSetsOperationsCancel' request conforms to.
@@ -81,13 +81,13 @@ type ProjectsLocationsDataSetsOperationsCancelResource
 -- /See:/ 'projectsLocationsDataSetsOperationsCancel' smart constructor.
 data ProjectsLocationsDataSetsOperationsCancel =
   ProjectsLocationsDataSetsOperationsCancel'
-    { _pldsocXgafv          :: !(Maybe Xgafv)
+    { _pldsocXgafv :: !(Maybe Xgafv)
     , _pldsocUploadProtocol :: !(Maybe Text)
-    , _pldsocAccessToken    :: !(Maybe Text)
-    , _pldsocUploadType     :: !(Maybe Text)
-    , _pldsocPayload        :: !CancelOperationRequest
-    , _pldsocName           :: !Text
-    , _pldsocCallback       :: !(Maybe Text)
+    , _pldsocAccessToken :: !(Maybe Text)
+    , _pldsocUploadType :: !(Maybe Text)
+    , _pldsocPayload :: !CancelOperationRequest
+    , _pldsocName :: !Text
+    , _pldsocCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.SubAccounts.Insert
     , saiCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.subaccounts.insert@ method which the
 -- 'SubAccountsInsert' request conforms to.
@@ -66,13 +66,13 @@ type SubAccountsInsertResource =
 -- /See:/ 'subAccountsInsert' smart constructor.
 data SubAccountsInsert =
   SubAccountsInsert'
-    { _saiXgafv          :: !(Maybe Xgafv)
+    { _saiXgafv :: !(Maybe Xgafv)
     , _saiUploadProtocol :: !(Maybe Text)
-    , _saiAccessToken    :: !(Maybe Text)
-    , _saiUploadType     :: !(Maybe Text)
-    , _saiProFileId      :: !(Textual Int64)
-    , _saiPayload        :: !SubAccount
-    , _saiCallback       :: !(Maybe Text)
+    , _saiAccessToken :: !(Maybe Text)
+    , _saiUploadType :: !(Maybe Text)
+    , _saiProFileId :: !(Textual Int64)
+    , _saiPayload :: !SubAccount
+    , _saiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

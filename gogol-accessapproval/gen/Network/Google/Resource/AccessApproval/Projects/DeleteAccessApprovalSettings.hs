@@ -46,8 +46,8 @@ module Network.Google.Resource.AccessApproval.Projects.DeleteAccessApprovalSetti
     , pdaasCallback
     ) where
 
-import           Network.Google.AccessApproval.Types
-import           Network.Google.Prelude
+import Network.Google.AccessApproval.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @accessapproval.projects.deleteAccessApprovalSettings@ method which the
 -- 'ProjectsDeleteAccessApprovalSettings' request conforms to.
@@ -71,12 +71,12 @@ type ProjectsDeleteAccessApprovalSettingsResource =
 -- /See:/ 'projectsDeleteAccessApprovalSettings' smart constructor.
 data ProjectsDeleteAccessApprovalSettings =
   ProjectsDeleteAccessApprovalSettings'
-    { _pdaasXgafv          :: !(Maybe Xgafv)
+    { _pdaasXgafv :: !(Maybe Xgafv)
     , _pdaasUploadProtocol :: !(Maybe Text)
-    , _pdaasAccessToken    :: !(Maybe Text)
-    , _pdaasUploadType     :: !(Maybe Text)
-    , _pdaasName           :: !Text
-    , _pdaasCallback       :: !(Maybe Text)
+    , _pdaasAccessToken :: !(Maybe Text)
+    , _pdaasUploadType :: !(Maybe Text)
+    , _pdaasName :: !Text
+    , _pdaasCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

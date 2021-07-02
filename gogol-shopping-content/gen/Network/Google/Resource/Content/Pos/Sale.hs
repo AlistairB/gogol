@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.Pos.Sale
     , psPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.pos.sale@ method which the
 -- 'PosSale'' request conforms to.
@@ -59,9 +59,9 @@ type PosSaleResource =
 -- /See:/ 'posSale'' smart constructor.
 data PosSale' =
   PosSale''
-    { _psMerchantId       :: !(Textual Word64)
+    { _psMerchantId :: !(Textual Word64)
     , _psTargetMerchantId :: !(Textual Word64)
-    , _psPayload          :: !PosSaleRequest
+    , _psPayload :: !PosSaleRequest
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

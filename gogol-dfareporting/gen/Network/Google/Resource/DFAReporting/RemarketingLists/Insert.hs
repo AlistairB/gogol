@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.RemarketingLists.Insert
     , rliCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.remarketingLists.insert@ method which the
 -- 'RemarketingListsInsert' request conforms to.
@@ -67,13 +67,13 @@ type RemarketingListsInsertResource =
 -- /See:/ 'remarketingListsInsert' smart constructor.
 data RemarketingListsInsert =
   RemarketingListsInsert'
-    { _rliXgafv          :: !(Maybe Xgafv)
+    { _rliXgafv :: !(Maybe Xgafv)
     , _rliUploadProtocol :: !(Maybe Text)
-    , _rliAccessToken    :: !(Maybe Text)
-    , _rliUploadType     :: !(Maybe Text)
-    , _rliProFileId      :: !(Textual Int64)
-    , _rliPayload        :: !RemarketingList
-    , _rliCallback       :: !(Maybe Text)
+    , _rliAccessToken :: !(Maybe Text)
+    , _rliUploadType :: !(Maybe Text)
+    , _rliProFileId :: !(Textual Int64)
+    , _rliPayload :: !RemarketingList
+    , _rliCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -37,8 +37,8 @@ module Network.Google.Resource.Content.Datafeeds.Insert
     , diPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.datafeeds.insert@ method which the
 -- 'DatafeedsInsert' request conforms to.
@@ -56,7 +56,7 @@ type DatafeedsInsertResource =
 data DatafeedsInsert =
   DatafeedsInsert'
     { _diMerchantId :: !(Textual Word64)
-    , _diPayload    :: !Datafeed
+    , _diPayload :: !Datafeed
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

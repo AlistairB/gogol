@@ -16,7 +16,7 @@
 --
 module Network.Google.Vision.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Under-exposed likelihood.
 data FaceAnnotationUnderExposedLikelihood
@@ -3584,46 +3584,46 @@ instance ToJSON GoogleCloudVisionV1p3beta1FaceAnnotationHeadwearLikelihood where
 
 -- | The feature type.
 data GoogleCloudVisionV1p2beta1FeatureType
-    = TypeUnspecified
+    = GCVVFTTypeUnspecified
       -- ^ @TYPE_UNSPECIFIED@
       -- Unspecified feature type.
-    | FaceDetection
+    | GCVVFTFaceDetection
       -- ^ @FACE_DETECTION@
       -- Run face detection.
-    | LandmarkDetection
+    | GCVVFTLandmarkDetection
       -- ^ @LANDMARK_DETECTION@
       -- Run landmark detection.
-    | LogoDetection
+    | GCVVFTLogoDetection
       -- ^ @LOGO_DETECTION@
       -- Run logo detection.
-    | LabelDetection
+    | GCVVFTLabelDetection
       -- ^ @LABEL_DETECTION@
       -- Run label detection.
-    | TextDetection
+    | GCVVFTTextDetection
       -- ^ @TEXT_DETECTION@
       -- Run text detection \/ optical character recognition (OCR). Text
       -- detection is optimized for areas of text within a larger image; if the
       -- image is a document, use \`DOCUMENT_TEXT_DETECTION\` instead.
-    | DocumentTextDetection
+    | GCVVFTDocumentTextDetection
       -- ^ @DOCUMENT_TEXT_DETECTION@
       -- Run dense text document OCR. Takes precedence when both
       -- \`DOCUMENT_TEXT_DETECTION\` and \`TEXT_DETECTION\` are present.
-    | SafeSearchDetection
+    | GCVVFTSafeSearchDetection
       -- ^ @SAFE_SEARCH_DETECTION@
       -- Run Safe Search to detect potentially unsafe or undesirable content.
-    | ImageProperties
+    | GCVVFTImageProperties
       -- ^ @IMAGE_PROPERTIES@
       -- Compute a set of image properties, such as the image\'s dominant colors.
-    | CropHints
+    | GCVVFTCropHints
       -- ^ @CROP_HINTS@
       -- Run crop hints.
-    | WebDetection
+    | GCVVFTWebDetection
       -- ^ @WEB_DETECTION@
       -- Run web detection.
-    | ProductSearch
+    | GCVVFTProductSearch
       -- ^ @PRODUCT_SEARCH@
       -- Run Product Search.
-    | ObjectLocalization
+    | GCVVFTObjectLocalization
       -- ^ @OBJECT_LOCALIZATION@
       -- Run localizer for object detection.
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
@@ -3632,36 +3632,36 @@ instance Hashable GoogleCloudVisionV1p2beta1FeatureType
 
 instance FromHttpApiData GoogleCloudVisionV1p2beta1FeatureType where
     parseQueryParam = \case
-        "TYPE_UNSPECIFIED" -> Right TypeUnspecified
-        "FACE_DETECTION" -> Right FaceDetection
-        "LANDMARK_DETECTION" -> Right LandmarkDetection
-        "LOGO_DETECTION" -> Right LogoDetection
-        "LABEL_DETECTION" -> Right LabelDetection
-        "TEXT_DETECTION" -> Right TextDetection
-        "DOCUMENT_TEXT_DETECTION" -> Right DocumentTextDetection
-        "SAFE_SEARCH_DETECTION" -> Right SafeSearchDetection
-        "IMAGE_PROPERTIES" -> Right ImageProperties
-        "CROP_HINTS" -> Right CropHints
-        "WEB_DETECTION" -> Right WebDetection
-        "PRODUCT_SEARCH" -> Right ProductSearch
-        "OBJECT_LOCALIZATION" -> Right ObjectLocalization
+        "TYPE_UNSPECIFIED" -> Right GCVVFTTypeUnspecified
+        "FACE_DETECTION" -> Right GCVVFTFaceDetection
+        "LANDMARK_DETECTION" -> Right GCVVFTLandmarkDetection
+        "LOGO_DETECTION" -> Right GCVVFTLogoDetection
+        "LABEL_DETECTION" -> Right GCVVFTLabelDetection
+        "TEXT_DETECTION" -> Right GCVVFTTextDetection
+        "DOCUMENT_TEXT_DETECTION" -> Right GCVVFTDocumentTextDetection
+        "SAFE_SEARCH_DETECTION" -> Right GCVVFTSafeSearchDetection
+        "IMAGE_PROPERTIES" -> Right GCVVFTImageProperties
+        "CROP_HINTS" -> Right GCVVFTCropHints
+        "WEB_DETECTION" -> Right GCVVFTWebDetection
+        "PRODUCT_SEARCH" -> Right GCVVFTProductSearch
+        "OBJECT_LOCALIZATION" -> Right GCVVFTObjectLocalization
         x -> Left ("Unable to parse GoogleCloudVisionV1p2beta1FeatureType from: " <> x)
 
 instance ToHttpApiData GoogleCloudVisionV1p2beta1FeatureType where
     toQueryParam = \case
-        TypeUnspecified -> "TYPE_UNSPECIFIED"
-        FaceDetection -> "FACE_DETECTION"
-        LandmarkDetection -> "LANDMARK_DETECTION"
-        LogoDetection -> "LOGO_DETECTION"
-        LabelDetection -> "LABEL_DETECTION"
-        TextDetection -> "TEXT_DETECTION"
-        DocumentTextDetection -> "DOCUMENT_TEXT_DETECTION"
-        SafeSearchDetection -> "SAFE_SEARCH_DETECTION"
-        ImageProperties -> "IMAGE_PROPERTIES"
-        CropHints -> "CROP_HINTS"
-        WebDetection -> "WEB_DETECTION"
-        ProductSearch -> "PRODUCT_SEARCH"
-        ObjectLocalization -> "OBJECT_LOCALIZATION"
+        GCVVFTTypeUnspecified -> "TYPE_UNSPECIFIED"
+        GCVVFTFaceDetection -> "FACE_DETECTION"
+        GCVVFTLandmarkDetection -> "LANDMARK_DETECTION"
+        GCVVFTLogoDetection -> "LOGO_DETECTION"
+        GCVVFTLabelDetection -> "LABEL_DETECTION"
+        GCVVFTTextDetection -> "TEXT_DETECTION"
+        GCVVFTDocumentTextDetection -> "DOCUMENT_TEXT_DETECTION"
+        GCVVFTSafeSearchDetection -> "SAFE_SEARCH_DETECTION"
+        GCVVFTImageProperties -> "IMAGE_PROPERTIES"
+        GCVVFTCropHints -> "CROP_HINTS"
+        GCVVFTWebDetection -> "WEB_DETECTION"
+        GCVVFTProductSearch -> "PRODUCT_SEARCH"
+        GCVVFTObjectLocalization -> "OBJECT_LOCALIZATION"
 
 instance FromJSON GoogleCloudVisionV1p2beta1FeatureType where
     parseJSON = parseJSONText "GoogleCloudVisionV1p2beta1FeatureType"

@@ -41,8 +41,8 @@ module Network.Google.Resource.DFAReporting.Browsers.List
     , blCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.browsers.list@ method which the
 -- 'BrowsersList' request conforms to.
@@ -65,12 +65,12 @@ type BrowsersListResource =
 -- /See:/ 'browsersList' smart constructor.
 data BrowsersList =
   BrowsersList'
-    { _blXgafv          :: !(Maybe Xgafv)
+    { _blXgafv :: !(Maybe Xgafv)
     , _blUploadProtocol :: !(Maybe Text)
-    , _blAccessToken    :: !(Maybe Text)
-    , _blUploadType     :: !(Maybe Text)
-    , _blProFileId      :: !(Textual Int64)
-    , _blCallback       :: !(Maybe Text)
+    , _blAccessToken :: !(Maybe Text)
+    , _blUploadType :: !(Maybe Text)
+    , _blProFileId :: !(Textual Int64)
+    , _blCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

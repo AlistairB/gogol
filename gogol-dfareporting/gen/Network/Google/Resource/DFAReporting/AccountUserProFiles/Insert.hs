@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.AccountUserProFiles.Insert
     , aupfiCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accountUserProfiles.insert@ method which the
 -- 'AccountUserProFilesInsert' request conforms to.
@@ -67,13 +67,13 @@ type AccountUserProFilesInsertResource =
 -- /See:/ 'accountUserProFilesInsert' smart constructor.
 data AccountUserProFilesInsert =
   AccountUserProFilesInsert'
-    { _aupfiXgafv          :: !(Maybe Xgafv)
+    { _aupfiXgafv :: !(Maybe Xgafv)
     , _aupfiUploadProtocol :: !(Maybe Text)
-    , _aupfiAccessToken    :: !(Maybe Text)
-    , _aupfiUploadType     :: !(Maybe Text)
-    , _aupfiProFileId      :: !(Textual Int64)
-    , _aupfiPayload        :: !AccountUserProFile
-    , _aupfiCallback       :: !(Maybe Text)
+    , _aupfiAccessToken :: !(Maybe Text)
+    , _aupfiUploadType :: !(Maybe Text)
+    , _aupfiProFileId :: !(Textual Int64)
+    , _aupfiPayload :: !AccountUserProFile
+    , _aupfiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

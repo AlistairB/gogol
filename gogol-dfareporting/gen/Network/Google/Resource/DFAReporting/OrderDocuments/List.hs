@@ -52,8 +52,8 @@ module Network.Google.Resource.DFAReporting.OrderDocuments.List
     , odlCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.orderDocuments.list@ method which the
 -- 'OrderDocumentsList' request conforms to.
@@ -95,22 +95,22 @@ type OrderDocumentsListResource =
 -- /See:/ 'orderDocumentsList' smart constructor.
 data OrderDocumentsList =
   OrderDocumentsList'
-    { _odlXgafv          :: !(Maybe Xgafv)
+    { _odlXgafv :: !(Maybe Xgafv)
     , _odlUploadProtocol :: !(Maybe Text)
-    , _odlAccessToken    :: !(Maybe Text)
-    , _odlSearchString   :: !(Maybe Text)
-    , _odlUploadType     :: !(Maybe Text)
-    , _odlIds            :: !(Maybe [Textual Int64])
-    , _odlProFileId      :: !(Textual Int64)
-    , _odlSortOrder      :: !OrderDocumentsListSortOrder
-    , _odlPageToken      :: !(Maybe Text)
-    , _odlProjectId      :: !(Textual Int64)
-    , _odlSortField      :: !OrderDocumentsListSortField
-    , _odlOrderId        :: !(Maybe [Textual Int64])
-    , _odlApproved       :: !(Maybe Bool)
-    , _odlSiteId         :: !(Maybe [Textual Int64])
-    , _odlMaxResults     :: !(Textual Int32)
-    , _odlCallback       :: !(Maybe Text)
+    , _odlAccessToken :: !(Maybe Text)
+    , _odlSearchString :: !(Maybe Text)
+    , _odlUploadType :: !(Maybe Text)
+    , _odlIds :: !(Maybe [Textual Int64])
+    , _odlProFileId :: !(Textual Int64)
+    , _odlSortOrder :: !OrderDocumentsListSortOrder
+    , _odlPageToken :: !(Maybe Text)
+    , _odlProjectId :: !(Textual Int64)
+    , _odlSortField :: !OrderDocumentsListSortField
+    , _odlOrderId :: !(Maybe [Textual Int64])
+    , _odlApproved :: !(Maybe Bool)
+    , _odlSiteId :: !(Maybe [Textual Int64])
+    , _odlMaxResults :: !(Textual Int32)
+    , _odlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.Accounts.Update
     , auuAccountId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accounts.update@ method which the
 -- 'AccountsUpdate' request conforms to.
@@ -58,8 +58,8 @@ type AccountsUpdateResource =
 data AccountsUpdate =
   AccountsUpdate'
     { _auuMerchantId :: !(Textual Word64)
-    , _auuPayload    :: !Account
-    , _auuAccountId  :: !(Textual Word64)
+    , _auuPayload :: !Account
+    , _auuAccountId :: !(Textual Word64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

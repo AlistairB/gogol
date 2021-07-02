@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.FloodlightConfigurations.List
     , fclCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightConfigurations.list@ method which the
 -- 'FloodlightConfigurationsList' request conforms to.
@@ -67,13 +67,13 @@ type FloodlightConfigurationsListResource =
 -- /See:/ 'floodlightConfigurationsList' smart constructor.
 data FloodlightConfigurationsList =
   FloodlightConfigurationsList'
-    { _fclXgafv          :: !(Maybe Xgafv)
+    { _fclXgafv :: !(Maybe Xgafv)
     , _fclUploadProtocol :: !(Maybe Text)
-    , _fclAccessToken    :: !(Maybe Text)
-    , _fclUploadType     :: !(Maybe Text)
-    , _fclIds            :: !(Maybe [Textual Int64])
-    , _fclProFileId      :: !(Textual Int64)
-    , _fclCallback       :: !(Maybe Text)
+    , _fclAccessToken :: !(Maybe Text)
+    , _fclUploadType :: !(Maybe Text)
+    , _fclIds :: !(Maybe [Textual Int64])
+    , _fclProFileId :: !(Textual Int64)
+    , _fclCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

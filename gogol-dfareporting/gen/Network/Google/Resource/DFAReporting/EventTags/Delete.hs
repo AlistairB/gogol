@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.EventTags.Delete
     , etdCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.eventTags.delete@ method which the
 -- 'EventTagsDelete' request conforms to.
@@ -66,13 +66,13 @@ type EventTagsDeleteResource =
 -- /See:/ 'eventTagsDelete' smart constructor.
 data EventTagsDelete =
   EventTagsDelete'
-    { _etdXgafv          :: !(Maybe Xgafv)
+    { _etdXgafv :: !(Maybe Xgafv)
     , _etdUploadProtocol :: !(Maybe Text)
-    , _etdAccessToken    :: !(Maybe Text)
-    , _etdUploadType     :: !(Maybe Text)
-    , _etdProFileId      :: !(Textual Int64)
-    , _etdId             :: !(Textual Int64)
-    , _etdCallback       :: !(Maybe Text)
+    , _etdAccessToken :: !(Maybe Text)
+    , _etdUploadType :: !(Maybe Text)
+    , _etdProFileId :: !(Textual Int64)
+    , _etdId :: !(Textual Int64)
+    , _etdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

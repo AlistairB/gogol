@@ -50,8 +50,8 @@ module Network.Google.Resource.DFAReporting.RemarketingLists.List
     , rllCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.remarketingLists.list@ method which the
 -- 'RemarketingListsList' request conforms to.
@@ -87,20 +87,20 @@ type RemarketingListsListResource =
 -- /See:/ 'remarketingListsList' smart constructor.
 data RemarketingListsList =
   RemarketingListsList'
-    { _rllXgafv                :: !(Maybe Xgafv)
-    , _rllUploadProtocol       :: !(Maybe Text)
+    { _rllXgafv :: !(Maybe Xgafv)
+    , _rllUploadProtocol :: !(Maybe Text)
     , _rllFloodlightActivityId :: !(Maybe (Textual Int64))
-    , _rllAccessToken          :: !(Maybe Text)
-    , _rllAdvertiserId         :: !(Textual Int64)
-    , _rllUploadType           :: !(Maybe Text)
-    , _rllProFileId            :: !(Textual Int64)
-    , _rllSortOrder            :: !RemarketingListsListSortOrder
-    , _rllActive               :: !(Maybe Bool)
-    , _rllName                 :: !(Maybe Text)
-    , _rllPageToken            :: !(Maybe Text)
-    , _rllSortField            :: !RemarketingListsListSortField
-    , _rllMaxResults           :: !(Textual Int32)
-    , _rllCallback             :: !(Maybe Text)
+    , _rllAccessToken :: !(Maybe Text)
+    , _rllAdvertiserId :: !(Textual Int64)
+    , _rllUploadType :: !(Maybe Text)
+    , _rllProFileId :: !(Textual Int64)
+    , _rllSortOrder :: !RemarketingListsListSortOrder
+    , _rllActive :: !(Maybe Bool)
+    , _rllName :: !(Maybe Text)
+    , _rllPageToken :: !(Maybe Text)
+    , _rllSortField :: !RemarketingListsListSortField
+    , _rllMaxResults :: !(Textual Int32)
+    , _rllCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

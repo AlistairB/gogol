@@ -43,8 +43,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Webhooks.Pat
     , plawpCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.webhooks.patch@ method which the
 -- 'ProjectsLocationsAgentsWebhooksPatch' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsLocationsAgentsWebhooksPatchResource =
 -- /See:/ 'projectsLocationsAgentsWebhooksPatch' smart constructor.
 data ProjectsLocationsAgentsWebhooksPatch =
   ProjectsLocationsAgentsWebhooksPatch'
-    { _plawpXgafv          :: !(Maybe Xgafv)
+    { _plawpXgafv :: !(Maybe Xgafv)
     , _plawpUploadProtocol :: !(Maybe Text)
-    , _plawpUpdateMask     :: !(Maybe GFieldMask)
-    , _plawpAccessToken    :: !(Maybe Text)
-    , _plawpUploadType     :: !(Maybe Text)
-    , _plawpPayload        :: !GoogleCloudDialogflowCxV3beta1Webhook
-    , _plawpName           :: !Text
-    , _plawpCallback       :: !(Maybe Text)
+    , _plawpUpdateMask :: !(Maybe GFieldMask)
+    , _plawpAccessToken :: !(Maybe Text)
+    , _plawpUploadType :: !(Maybe Text)
+    , _plawpPayload :: !GoogleCloudDialogflowCxV3beta1Webhook
+    , _plawpName :: !Text
+    , _plawpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -48,8 +48,8 @@ module Network.Google.Resource.DFAReporting.SubAccounts.List
     , salCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.subaccounts.list@ method which the
 -- 'SubAccountsList' request conforms to.
@@ -80,18 +80,18 @@ type SubAccountsListResource =
 -- /See:/ 'subAccountsList' smart constructor.
 data SubAccountsList =
   SubAccountsList'
-    { _salXgafv          :: !(Maybe Xgafv)
+    { _salXgafv :: !(Maybe Xgafv)
     , _salUploadProtocol :: !(Maybe Text)
-    , _salAccessToken    :: !(Maybe Text)
-    , _salSearchString   :: !(Maybe Text)
-    , _salUploadType     :: !(Maybe Text)
-    , _salIds            :: !(Maybe [Textual Int64])
-    , _salProFileId      :: !(Textual Int64)
-    , _salSortOrder      :: !SubAccountsListSortOrder
-    , _salPageToken      :: !(Maybe Text)
-    , _salSortField      :: !SubAccountsListSortField
-    , _salMaxResults     :: !(Textual Int32)
-    , _salCallback       :: !(Maybe Text)
+    , _salAccessToken :: !(Maybe Text)
+    , _salSearchString :: !(Maybe Text)
+    , _salUploadType :: !(Maybe Text)
+    , _salIds :: !(Maybe [Textual Int64])
+    , _salProFileId :: !(Textual Int64)
+    , _salSortOrder :: !SubAccountsListSortOrder
+    , _salPageToken :: !(Maybe Text)
+    , _salSortField :: !SubAccountsListSortField
+    , _salMaxResults :: !(Textual Int32)
+    , _salCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.AccountUserProFiles.Get
     , aupfgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accountUserProfiles.get@ method which the
 -- 'AccountUserProFilesGet' request conforms to.
@@ -67,13 +67,13 @@ type AccountUserProFilesGetResource =
 -- /See:/ 'accountUserProFilesGet' smart constructor.
 data AccountUserProFilesGet =
   AccountUserProFilesGet'
-    { _aupfgXgafv          :: !(Maybe Xgafv)
+    { _aupfgXgafv :: !(Maybe Xgafv)
     , _aupfgUploadProtocol :: !(Maybe Text)
-    , _aupfgAccessToken    :: !(Maybe Text)
-    , _aupfgUploadType     :: !(Maybe Text)
-    , _aupfgProFileId      :: !(Textual Int64)
-    , _aupfgId             :: !(Textual Int64)
-    , _aupfgCallback       :: !(Maybe Text)
+    , _aupfgAccessToken :: !(Maybe Text)
+    , _aupfgUploadType :: !(Maybe Text)
+    , _aupfgProFileId :: !(Textual Int64)
+    , _aupfgId :: !(Textual Int64)
+    , _aupfgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.CreativeGroups.Insert
     , cgiCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeGroups.insert@ method which the
 -- 'CreativeGroupsInsert' request conforms to.
@@ -67,13 +67,13 @@ type CreativeGroupsInsertResource =
 -- /See:/ 'creativeGroupsInsert' smart constructor.
 data CreativeGroupsInsert =
   CreativeGroupsInsert'
-    { _cgiXgafv          :: !(Maybe Xgafv)
+    { _cgiXgafv :: !(Maybe Xgafv)
     , _cgiUploadProtocol :: !(Maybe Text)
-    , _cgiAccessToken    :: !(Maybe Text)
-    , _cgiUploadType     :: !(Maybe Text)
-    , _cgiProFileId      :: !(Textual Int64)
-    , _cgiPayload        :: !CreativeGroup
-    , _cgiCallback       :: !(Maybe Text)
+    , _cgiAccessToken :: !(Maybe Text)
+    , _cgiUploadType :: !(Maybe Text)
+    , _cgiProFileId :: !(Textual Int64)
+    , _cgiPayload :: !CreativeGroup
+    , _cgiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

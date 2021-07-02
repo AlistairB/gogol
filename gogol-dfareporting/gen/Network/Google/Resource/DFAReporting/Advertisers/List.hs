@@ -54,8 +54,8 @@ module Network.Google.Resource.DFAReporting.Advertisers.List
     , allCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertisers.list@ method which the
 -- 'AdvertisersList' request conforms to.
@@ -106,24 +106,24 @@ type AdvertisersListResource =
 -- /See:/ 'advertisersList' smart constructor.
 data AdvertisersList =
   AdvertisersList'
-    { _allStatus                              :: !(Maybe AdvertisersListStatus)
-    , _allXgafv                               :: !(Maybe Xgafv)
-    , _allUploadProtocol                      :: !(Maybe Text)
-    , _allAccessToken                         :: !(Maybe Text)
-    , _allOnlyParent                          :: !(Maybe Bool)
-    , _allSearchString                        :: !(Maybe Text)
-    , _allUploadType                          :: !(Maybe Text)
-    , _allIds                                 :: !(Maybe [Textual Int64])
+    { _allStatus :: !(Maybe AdvertisersListStatus)
+    , _allXgafv :: !(Maybe Xgafv)
+    , _allUploadProtocol :: !(Maybe Text)
+    , _allAccessToken :: !(Maybe Text)
+    , _allOnlyParent :: !(Maybe Bool)
+    , _allSearchString :: !(Maybe Text)
+    , _allUploadType :: !(Maybe Text)
+    , _allIds :: !(Maybe [Textual Int64])
     , _allIncludeAdvertisersWithoutGroupsOnly :: !(Maybe Bool)
-    , _allProFileId                           :: !(Textual Int64)
-    , _allSortOrder                           :: !AdvertisersListSortOrder
-    , _allAdvertiserGroupIds                  :: !(Maybe [Textual Int64])
-    , _allPageToken                           :: !(Maybe Text)
-    , _allSortField                           :: !AdvertisersListSortField
-    , _allSubAccountId                        :: !(Maybe (Textual Int64))
-    , _allFloodlightConfigurationIds          :: !(Maybe [Textual Int64])
-    , _allMaxResults                          :: !(Textual Int32)
-    , _allCallback                            :: !(Maybe Text)
+    , _allProFileId :: !(Textual Int64)
+    , _allSortOrder :: !AdvertisersListSortOrder
+    , _allAdvertiserGroupIds :: !(Maybe [Textual Int64])
+    , _allPageToken :: !(Maybe Text)
+    , _allSortField :: !AdvertisersListSortField
+    , _allSubAccountId :: !(Maybe (Textual Int64))
+    , _allFloodlightConfigurationIds :: !(Maybe [Textual Int64])
+    , _allMaxResults :: !(Textual Int32)
+    , _allCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

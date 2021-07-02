@@ -42,8 +42,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Flows.Transi
     , plaftrggCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.flows.transitionRouteGroups.get@ method which the
 -- 'ProjectsLocationsAgentsFlowsTransitionRouteGroupsGet' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsLocationsAgentsFlowsTransitionRouteGroupsGetResource
 -- /See:/ 'projectsLocationsAgentsFlowsTransitionRouteGroupsGet' smart constructor.
 data ProjectsLocationsAgentsFlowsTransitionRouteGroupsGet =
   ProjectsLocationsAgentsFlowsTransitionRouteGroupsGet'
-    { _plaftrggXgafv          :: !(Maybe Xgafv)
-    , _plaftrggLanguageCode   :: !(Maybe Text)
+    { _plaftrggXgafv :: !(Maybe Xgafv)
+    , _plaftrggLanguageCode :: !(Maybe Text)
     , _plaftrggUploadProtocol :: !(Maybe Text)
-    , _plaftrggAccessToken    :: !(Maybe Text)
-    , _plaftrggUploadType     :: !(Maybe Text)
-    , _plaftrggName           :: !Text
-    , _plaftrggCallback       :: !(Maybe Text)
+    , _plaftrggAccessToken :: !(Maybe Text)
+    , _plaftrggUploadType :: !(Maybe Text)
+    , _plaftrggName :: !Text
+    , _plaftrggCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

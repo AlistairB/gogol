@@ -41,8 +41,8 @@ module Network.Google.Resource.Translate.Projects.Locations.Glossaries.Get
     , plggCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Translate.Types
+import Network.Google.Prelude
+import Network.Google.Translate.Types
 
 -- | A resource alias for @translate.projects.locations.glossaries.get@ method which the
 -- 'ProjectsLocationsGlossariesGet' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsLocationsGlossariesGetResource =
 -- /See:/ 'projectsLocationsGlossariesGet' smart constructor.
 data ProjectsLocationsGlossariesGet =
   ProjectsLocationsGlossariesGet'
-    { _plggXgafv          :: !(Maybe Xgafv)
+    { _plggXgafv :: !(Maybe Xgafv)
     , _plggUploadProtocol :: !(Maybe Text)
-    , _plggAccessToken    :: !(Maybe Text)
-    , _plggUploadType     :: !(Maybe Text)
-    , _plggName           :: !Text
-    , _plggCallback       :: !(Maybe Text)
+    , _plggAccessToken :: !(Maybe Text)
+    , _plggUploadType :: !(Maybe Text)
+    , _plggName :: !Text
+    , _plggCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

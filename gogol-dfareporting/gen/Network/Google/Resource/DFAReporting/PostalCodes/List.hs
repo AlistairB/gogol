@@ -41,8 +41,8 @@ module Network.Google.Resource.DFAReporting.PostalCodes.List
     , pclCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.postalCodes.list@ method which the
 -- 'PostalCodesList' request conforms to.
@@ -65,12 +65,12 @@ type PostalCodesListResource =
 -- /See:/ 'postalCodesList' smart constructor.
 data PostalCodesList =
   PostalCodesList'
-    { _pclXgafv          :: !(Maybe Xgafv)
+    { _pclXgafv :: !(Maybe Xgafv)
     , _pclUploadProtocol :: !(Maybe Text)
-    , _pclAccessToken    :: !(Maybe Text)
-    , _pclUploadType     :: !(Maybe Text)
-    , _pclProFileId      :: !(Textual Int64)
-    , _pclCallback       :: !(Maybe Text)
+    , _pclAccessToken :: !(Maybe Text)
+    , _pclUploadType :: !(Maybe Text)
+    , _pclProFileId :: !(Textual Int64)
+    , _pclCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.UserRoles.Delete
     , urdCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.userRoles.delete@ method which the
 -- 'UserRolesDelete' request conforms to.
@@ -66,13 +66,13 @@ type UserRolesDeleteResource =
 -- /See:/ 'userRolesDelete' smart constructor.
 data UserRolesDelete =
   UserRolesDelete'
-    { _urdXgafv          :: !(Maybe Xgafv)
+    { _urdXgafv :: !(Maybe Xgafv)
     , _urdUploadProtocol :: !(Maybe Text)
-    , _urdAccessToken    :: !(Maybe Text)
-    , _urdUploadType     :: !(Maybe Text)
-    , _urdProFileId      :: !(Textual Int64)
-    , _urdId             :: !(Textual Int64)
-    , _urdCallback       :: !(Maybe Text)
+    , _urdAccessToken :: !(Maybe Text)
+    , _urdUploadType :: !(Maybe Text)
+    , _urdProFileId :: !(Textual Int64)
+    , _urdId :: !(Textual Int64)
+    , _urdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

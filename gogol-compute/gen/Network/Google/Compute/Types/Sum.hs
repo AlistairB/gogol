@@ -16,7 +16,7 @@
 --
 module Network.Google.Compute.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | [Output Only] A warning code, if applicable. For example, Compute Engine
 -- returns NO_RESULTS_ON_PAGE if there are no results in the response.
@@ -11069,141 +11069,141 @@ instance ToJSON NetworkEndpointGroupsListNetworkEndpointsWarningCode where
 
 -- | [Output Only] Name of the quota metric.
 data QuotaMetric
-    = Autoscalers
+    = QMAutoscalers
       -- ^ @AUTOSCALERS@
-    | BackendBuckets
+    | QMBackendBuckets
       -- ^ @BACKEND_BUCKETS@
-    | BackendServices
+    | QMBackendServices
       -- ^ @BACKEND_SERVICES@
-    | Commitments
+    | QMCommitments
       -- ^ @COMMITMENTS@
-    | CPUs
+    | QMCPUs
       -- ^ @CPUS@
-    | CPUsAllRegions
+    | QMCPUsAllRegions
       -- ^ @CPUS_ALL_REGIONS@
-    | DisksTotalGb
+    | QMDisksTotalGb
       -- ^ @DISKS_TOTAL_GB@
-    | ExternalVPNGateways
+    | QMExternalVPNGateways
       -- ^ @EXTERNAL_VPN_GATEWAYS@
-    | Firewalls
+    | QMFirewalls
       -- ^ @FIREWALLS@
-    | ForwardingRules
+    | QMForwardingRules
       -- ^ @FORWARDING_RULES@
-    | GlobalInternalAddresses
+    | QMGlobalInternalAddresses
       -- ^ @GLOBAL_INTERNAL_ADDRESSES@
-    | GpusAllRegions
+    | QMGpusAllRegions
       -- ^ @GPUS_ALL_REGIONS@
-    | HealthChecks
+    | QMHealthChecks
       -- ^ @HEALTH_CHECKS@
-    | Images
+    | QMImages
       -- ^ @IMAGES@
-    | Instances
+    | QMInstances
       -- ^ @INSTANCES@
-    | InstanceGroups
+    | QMInstanceGroups
       -- ^ @INSTANCE_GROUPS@
-    | InstanceGroupManagers
+    | QMInstanceGroupManagers
       -- ^ @INSTANCE_GROUP_MANAGERS@
-    | InstanceTemplates
+    | QMInstanceTemplates
       -- ^ @INSTANCE_TEMPLATES@
-    | Interconnects
+    | QMInterconnects
       -- ^ @INTERCONNECTS@
-    | InterconnectAttachmentsPerRegion
+    | QMInterconnectAttachmentsPerRegion
       -- ^ @INTERCONNECT_ATTACHMENTS_PER_REGION@
-    | InterconnectAttachmentsTotalMbps
+    | QMInterconnectAttachmentsTotalMbps
       -- ^ @INTERCONNECT_ATTACHMENTS_TOTAL_MBPS@
-    | InternalAddresses
+    | QMInternalAddresses
       -- ^ @INTERNAL_ADDRESSES@
-    | InUseAddresses
+    | QMInUseAddresses
       -- ^ @IN_USE_ADDRESSES@
-    | InUseBackupSchedules
+    | QMInUseBackupSchedules
       -- ^ @IN_USE_BACKUP_SCHEDULES@
-    | InUseSnapshotSchedules
+    | QMInUseSnapshotSchedules
       -- ^ @IN_USE_SNAPSHOT_SCHEDULES@
-    | LocalSsdTotalGb
+    | QMLocalSsdTotalGb
       -- ^ @LOCAL_SSD_TOTAL_GB@
-    | Networks
+    | QMNetworks
       -- ^ @NETWORKS@
-    | NetworkEndpointGroups
+    | QMNetworkEndpointGroups
       -- ^ @NETWORK_ENDPOINT_GROUPS@
-    | NvidiaK80Gpus
+    | QMNvidiaK80Gpus
       -- ^ @NVIDIA_K80_GPUS@
-    | NvidiaP100Gpus
+    | QMNvidiaP100Gpus
       -- ^ @NVIDIA_P100_GPUS@
-    | NvidiaP100VwsGpus
+    | QMNvidiaP100VwsGpus
       -- ^ @NVIDIA_P100_VWS_GPUS@
-    | NvidiaP4Gpus
+    | QMNvidiaP4Gpus
       -- ^ @NVIDIA_P4_GPUS@
-    | NvidiaP4VwsGpus
+    | QMNvidiaP4VwsGpus
       -- ^ @NVIDIA_P4_VWS_GPUS@
-    | NvidiaT4Gpus
+    | QMNvidiaT4Gpus
       -- ^ @NVIDIA_T4_GPUS@
-    | NvidiaT4VwsGpus
+    | QMNvidiaT4VwsGpus
       -- ^ @NVIDIA_T4_VWS_GPUS@
-    | NvidiaV100Gpus
+    | QMNvidiaV100Gpus
       -- ^ @NVIDIA_V100_GPUS@
-    | PreemptibleCPUs
+    | QMPreemptibleCPUs
       -- ^ @PREEMPTIBLE_CPUS@
-    | PreemptibleLocalSsdGb
+    | QMPreemptibleLocalSsdGb
       -- ^ @PREEMPTIBLE_LOCAL_SSD_GB@
-    | PreemptibleNvidiaK80Gpus
+    | QMPreemptibleNvidiaK80Gpus
       -- ^ @PREEMPTIBLE_NVIDIA_K80_GPUS@
-    | PreemptibleNvidiaP100Gpus
+    | QMPreemptibleNvidiaP100Gpus
       -- ^ @PREEMPTIBLE_NVIDIA_P100_GPUS@
-    | PreemptibleNvidiaP100VwsGpus
+    | QMPreemptibleNvidiaP100VwsGpus
       -- ^ @PREEMPTIBLE_NVIDIA_P100_VWS_GPUS@
-    | PreemptibleNvidiaP4Gpus
+    | QMPreemptibleNvidiaP4Gpus
       -- ^ @PREEMPTIBLE_NVIDIA_P4_GPUS@
-    | PreemptibleNvidiaP4VwsGpus
+    | QMPreemptibleNvidiaP4VwsGpus
       -- ^ @PREEMPTIBLE_NVIDIA_P4_VWS_GPUS@
-    | PreemptibleNvidiaT4Gpus
+    | QMPreemptibleNvidiaT4Gpus
       -- ^ @PREEMPTIBLE_NVIDIA_T4_GPUS@
-    | PreemptibleNvidiaT4VwsGpus
+    | QMPreemptibleNvidiaT4VwsGpus
       -- ^ @PREEMPTIBLE_NVIDIA_T4_VWS_GPUS@
-    | PreemptibleNvidiaV100Gpus
+    | QMPreemptibleNvidiaV100Gpus
       -- ^ @PREEMPTIBLE_NVIDIA_V100_GPUS@
-    | RegionalAutoscalers
+    | QMRegionalAutoscalers
       -- ^ @REGIONAL_AUTOSCALERS@
-    | RegionalInstanceGroupManagers
+    | QMRegionalInstanceGroupManagers
       -- ^ @REGIONAL_INSTANCE_GROUP_MANAGERS@
-    | ResourcePolicies
+    | QMResourcePolicies
       -- ^ @RESOURCE_POLICIES@
-    | Routers
+    | QMRouters
       -- ^ @ROUTERS@
-    | Routes
+    | QMRoutes
       -- ^ @ROUTES@
-    | SecurityPolicies
+    | QMSecurityPolicies
       -- ^ @SECURITY_POLICIES@
-    | SecurityPolicyRules
+    | QMSecurityPolicyRules
       -- ^ @SECURITY_POLICY_RULES@
-    | Snapshots
+    | QMSnapshots
       -- ^ @SNAPSHOTS@
-    | SsdTotalGb
+    | QMSsdTotalGb
       -- ^ @SSD_TOTAL_GB@
-    | SSLCertificates
+    | QMSSLCertificates
       -- ^ @SSL_CERTIFICATES@
-    | StaticAddresses
+    | QMStaticAddresses
       -- ^ @STATIC_ADDRESSES@
-    | Subnetworks
+    | QMSubnetworks
       -- ^ @SUBNETWORKS@
-    | TargetHTTPSProxies
+    | QMTargetHTTPSProxies
       -- ^ @TARGET_HTTPS_PROXIES@
-    | TargetHTTPProxies
+    | QMTargetHTTPProxies
       -- ^ @TARGET_HTTP_PROXIES@
-    | TargetInstances
+    | QMTargetInstances
       -- ^ @TARGET_INSTANCES@
-    | TargetPools
+    | QMTargetPools
       -- ^ @TARGET_POOLS@
-    | TargetSSLProxies
+    | QMTargetSSLProxies
       -- ^ @TARGET_SSL_PROXIES@
-    | TargetTCPProxies
+    | QMTargetTCPProxies
       -- ^ @TARGET_TCP_PROXIES@
-    | TargetVPNGateways
+    | QMTargetVPNGateways
       -- ^ @TARGET_VPN_GATEWAYS@
-    | URLMaps
+    | QMURLMaps
       -- ^ @URL_MAPS@
-    | VPNGateways
+    | QMVPNGateways
       -- ^ @VPN_GATEWAYS@
-    | VPNTunnels
+    | QMVPNTunnels
       -- ^ @VPN_TUNNELS@
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
 
@@ -11211,146 +11211,146 @@ instance Hashable QuotaMetric
 
 instance FromHttpApiData QuotaMetric where
     parseQueryParam = \case
-        "AUTOSCALERS" -> Right Autoscalers
-        "BACKEND_BUCKETS" -> Right BackendBuckets
-        "BACKEND_SERVICES" -> Right BackendServices
-        "COMMITMENTS" -> Right Commitments
-        "CPUS" -> Right CPUs
-        "CPUS_ALL_REGIONS" -> Right CPUsAllRegions
-        "DISKS_TOTAL_GB" -> Right DisksTotalGb
-        "EXTERNAL_VPN_GATEWAYS" -> Right ExternalVPNGateways
-        "FIREWALLS" -> Right Firewalls
-        "FORWARDING_RULES" -> Right ForwardingRules
-        "GLOBAL_INTERNAL_ADDRESSES" -> Right GlobalInternalAddresses
-        "GPUS_ALL_REGIONS" -> Right GpusAllRegions
-        "HEALTH_CHECKS" -> Right HealthChecks
-        "IMAGES" -> Right Images
-        "INSTANCES" -> Right Instances
-        "INSTANCE_GROUPS" -> Right InstanceGroups
-        "INSTANCE_GROUP_MANAGERS" -> Right InstanceGroupManagers
-        "INSTANCE_TEMPLATES" -> Right InstanceTemplates
-        "INTERCONNECTS" -> Right Interconnects
-        "INTERCONNECT_ATTACHMENTS_PER_REGION" -> Right InterconnectAttachmentsPerRegion
-        "INTERCONNECT_ATTACHMENTS_TOTAL_MBPS" -> Right InterconnectAttachmentsTotalMbps
-        "INTERNAL_ADDRESSES" -> Right InternalAddresses
-        "IN_USE_ADDRESSES" -> Right InUseAddresses
-        "IN_USE_BACKUP_SCHEDULES" -> Right InUseBackupSchedules
-        "IN_USE_SNAPSHOT_SCHEDULES" -> Right InUseSnapshotSchedules
-        "LOCAL_SSD_TOTAL_GB" -> Right LocalSsdTotalGb
-        "NETWORKS" -> Right Networks
-        "NETWORK_ENDPOINT_GROUPS" -> Right NetworkEndpointGroups
-        "NVIDIA_K80_GPUS" -> Right NvidiaK80Gpus
-        "NVIDIA_P100_GPUS" -> Right NvidiaP100Gpus
-        "NVIDIA_P100_VWS_GPUS" -> Right NvidiaP100VwsGpus
-        "NVIDIA_P4_GPUS" -> Right NvidiaP4Gpus
-        "NVIDIA_P4_VWS_GPUS" -> Right NvidiaP4VwsGpus
-        "NVIDIA_T4_GPUS" -> Right NvidiaT4Gpus
-        "NVIDIA_T4_VWS_GPUS" -> Right NvidiaT4VwsGpus
-        "NVIDIA_V100_GPUS" -> Right NvidiaV100Gpus
-        "PREEMPTIBLE_CPUS" -> Right PreemptibleCPUs
-        "PREEMPTIBLE_LOCAL_SSD_GB" -> Right PreemptibleLocalSsdGb
-        "PREEMPTIBLE_NVIDIA_K80_GPUS" -> Right PreemptibleNvidiaK80Gpus
-        "PREEMPTIBLE_NVIDIA_P100_GPUS" -> Right PreemptibleNvidiaP100Gpus
-        "PREEMPTIBLE_NVIDIA_P100_VWS_GPUS" -> Right PreemptibleNvidiaP100VwsGpus
-        "PREEMPTIBLE_NVIDIA_P4_GPUS" -> Right PreemptibleNvidiaP4Gpus
-        "PREEMPTIBLE_NVIDIA_P4_VWS_GPUS" -> Right PreemptibleNvidiaP4VwsGpus
-        "PREEMPTIBLE_NVIDIA_T4_GPUS" -> Right PreemptibleNvidiaT4Gpus
-        "PREEMPTIBLE_NVIDIA_T4_VWS_GPUS" -> Right PreemptibleNvidiaT4VwsGpus
-        "PREEMPTIBLE_NVIDIA_V100_GPUS" -> Right PreemptibleNvidiaV100Gpus
-        "REGIONAL_AUTOSCALERS" -> Right RegionalAutoscalers
-        "REGIONAL_INSTANCE_GROUP_MANAGERS" -> Right RegionalInstanceGroupManagers
-        "RESOURCE_POLICIES" -> Right ResourcePolicies
-        "ROUTERS" -> Right Routers
-        "ROUTES" -> Right Routes
-        "SECURITY_POLICIES" -> Right SecurityPolicies
-        "SECURITY_POLICY_RULES" -> Right SecurityPolicyRules
-        "SNAPSHOTS" -> Right Snapshots
-        "SSD_TOTAL_GB" -> Right SsdTotalGb
-        "SSL_CERTIFICATES" -> Right SSLCertificates
-        "STATIC_ADDRESSES" -> Right StaticAddresses
-        "SUBNETWORKS" -> Right Subnetworks
-        "TARGET_HTTPS_PROXIES" -> Right TargetHTTPSProxies
-        "TARGET_HTTP_PROXIES" -> Right TargetHTTPProxies
-        "TARGET_INSTANCES" -> Right TargetInstances
-        "TARGET_POOLS" -> Right TargetPools
-        "TARGET_SSL_PROXIES" -> Right TargetSSLProxies
-        "TARGET_TCP_PROXIES" -> Right TargetTCPProxies
-        "TARGET_VPN_GATEWAYS" -> Right TargetVPNGateways
-        "URL_MAPS" -> Right URLMaps
-        "VPN_GATEWAYS" -> Right VPNGateways
-        "VPN_TUNNELS" -> Right VPNTunnels
+        "AUTOSCALERS" -> Right QMAutoscalers
+        "BACKEND_BUCKETS" -> Right QMBackendBuckets
+        "BACKEND_SERVICES" -> Right QMBackendServices
+        "COMMITMENTS" -> Right QMCommitments
+        "CPUS" -> Right QMCPUs
+        "CPUS_ALL_REGIONS" -> Right QMCPUsAllRegions
+        "DISKS_TOTAL_GB" -> Right QMDisksTotalGb
+        "EXTERNAL_VPN_GATEWAYS" -> Right QMExternalVPNGateways
+        "FIREWALLS" -> Right QMFirewalls
+        "FORWARDING_RULES" -> Right QMForwardingRules
+        "GLOBAL_INTERNAL_ADDRESSES" -> Right QMGlobalInternalAddresses
+        "GPUS_ALL_REGIONS" -> Right QMGpusAllRegions
+        "HEALTH_CHECKS" -> Right QMHealthChecks
+        "IMAGES" -> Right QMImages
+        "INSTANCES" -> Right QMInstances
+        "INSTANCE_GROUPS" -> Right QMInstanceGroups
+        "INSTANCE_GROUP_MANAGERS" -> Right QMInstanceGroupManagers
+        "INSTANCE_TEMPLATES" -> Right QMInstanceTemplates
+        "INTERCONNECTS" -> Right QMInterconnects
+        "INTERCONNECT_ATTACHMENTS_PER_REGION" -> Right QMInterconnectAttachmentsPerRegion
+        "INTERCONNECT_ATTACHMENTS_TOTAL_MBPS" -> Right QMInterconnectAttachmentsTotalMbps
+        "INTERNAL_ADDRESSES" -> Right QMInternalAddresses
+        "IN_USE_ADDRESSES" -> Right QMInUseAddresses
+        "IN_USE_BACKUP_SCHEDULES" -> Right QMInUseBackupSchedules
+        "IN_USE_SNAPSHOT_SCHEDULES" -> Right QMInUseSnapshotSchedules
+        "LOCAL_SSD_TOTAL_GB" -> Right QMLocalSsdTotalGb
+        "NETWORKS" -> Right QMNetworks
+        "NETWORK_ENDPOINT_GROUPS" -> Right QMNetworkEndpointGroups
+        "NVIDIA_K80_GPUS" -> Right QMNvidiaK80Gpus
+        "NVIDIA_P100_GPUS" -> Right QMNvidiaP100Gpus
+        "NVIDIA_P100_VWS_GPUS" -> Right QMNvidiaP100VwsGpus
+        "NVIDIA_P4_GPUS" -> Right QMNvidiaP4Gpus
+        "NVIDIA_P4_VWS_GPUS" -> Right QMNvidiaP4VwsGpus
+        "NVIDIA_T4_GPUS" -> Right QMNvidiaT4Gpus
+        "NVIDIA_T4_VWS_GPUS" -> Right QMNvidiaT4VwsGpus
+        "NVIDIA_V100_GPUS" -> Right QMNvidiaV100Gpus
+        "PREEMPTIBLE_CPUS" -> Right QMPreemptibleCPUs
+        "PREEMPTIBLE_LOCAL_SSD_GB" -> Right QMPreemptibleLocalSsdGb
+        "PREEMPTIBLE_NVIDIA_K80_GPUS" -> Right QMPreemptibleNvidiaK80Gpus
+        "PREEMPTIBLE_NVIDIA_P100_GPUS" -> Right QMPreemptibleNvidiaP100Gpus
+        "PREEMPTIBLE_NVIDIA_P100_VWS_GPUS" -> Right QMPreemptibleNvidiaP100VwsGpus
+        "PREEMPTIBLE_NVIDIA_P4_GPUS" -> Right QMPreemptibleNvidiaP4Gpus
+        "PREEMPTIBLE_NVIDIA_P4_VWS_GPUS" -> Right QMPreemptibleNvidiaP4VwsGpus
+        "PREEMPTIBLE_NVIDIA_T4_GPUS" -> Right QMPreemptibleNvidiaT4Gpus
+        "PREEMPTIBLE_NVIDIA_T4_VWS_GPUS" -> Right QMPreemptibleNvidiaT4VwsGpus
+        "PREEMPTIBLE_NVIDIA_V100_GPUS" -> Right QMPreemptibleNvidiaV100Gpus
+        "REGIONAL_AUTOSCALERS" -> Right QMRegionalAutoscalers
+        "REGIONAL_INSTANCE_GROUP_MANAGERS" -> Right QMRegionalInstanceGroupManagers
+        "RESOURCE_POLICIES" -> Right QMResourcePolicies
+        "ROUTERS" -> Right QMRouters
+        "ROUTES" -> Right QMRoutes
+        "SECURITY_POLICIES" -> Right QMSecurityPolicies
+        "SECURITY_POLICY_RULES" -> Right QMSecurityPolicyRules
+        "SNAPSHOTS" -> Right QMSnapshots
+        "SSD_TOTAL_GB" -> Right QMSsdTotalGb
+        "SSL_CERTIFICATES" -> Right QMSSLCertificates
+        "STATIC_ADDRESSES" -> Right QMStaticAddresses
+        "SUBNETWORKS" -> Right QMSubnetworks
+        "TARGET_HTTPS_PROXIES" -> Right QMTargetHTTPSProxies
+        "TARGET_HTTP_PROXIES" -> Right QMTargetHTTPProxies
+        "TARGET_INSTANCES" -> Right QMTargetInstances
+        "TARGET_POOLS" -> Right QMTargetPools
+        "TARGET_SSL_PROXIES" -> Right QMTargetSSLProxies
+        "TARGET_TCP_PROXIES" -> Right QMTargetTCPProxies
+        "TARGET_VPN_GATEWAYS" -> Right QMTargetVPNGateways
+        "URL_MAPS" -> Right QMURLMaps
+        "VPN_GATEWAYS" -> Right QMVPNGateways
+        "VPN_TUNNELS" -> Right QMVPNTunnels
         x -> Left ("Unable to parse QuotaMetric from: " <> x)
 
 instance ToHttpApiData QuotaMetric where
     toQueryParam = \case
-        Autoscalers -> "AUTOSCALERS"
-        BackendBuckets -> "BACKEND_BUCKETS"
-        BackendServices -> "BACKEND_SERVICES"
-        Commitments -> "COMMITMENTS"
-        CPUs -> "CPUS"
-        CPUsAllRegions -> "CPUS_ALL_REGIONS"
-        DisksTotalGb -> "DISKS_TOTAL_GB"
-        ExternalVPNGateways -> "EXTERNAL_VPN_GATEWAYS"
-        Firewalls -> "FIREWALLS"
-        ForwardingRules -> "FORWARDING_RULES"
-        GlobalInternalAddresses -> "GLOBAL_INTERNAL_ADDRESSES"
-        GpusAllRegions -> "GPUS_ALL_REGIONS"
-        HealthChecks -> "HEALTH_CHECKS"
-        Images -> "IMAGES"
-        Instances -> "INSTANCES"
-        InstanceGroups -> "INSTANCE_GROUPS"
-        InstanceGroupManagers -> "INSTANCE_GROUP_MANAGERS"
-        InstanceTemplates -> "INSTANCE_TEMPLATES"
-        Interconnects -> "INTERCONNECTS"
-        InterconnectAttachmentsPerRegion -> "INTERCONNECT_ATTACHMENTS_PER_REGION"
-        InterconnectAttachmentsTotalMbps -> "INTERCONNECT_ATTACHMENTS_TOTAL_MBPS"
-        InternalAddresses -> "INTERNAL_ADDRESSES"
-        InUseAddresses -> "IN_USE_ADDRESSES"
-        InUseBackupSchedules -> "IN_USE_BACKUP_SCHEDULES"
-        InUseSnapshotSchedules -> "IN_USE_SNAPSHOT_SCHEDULES"
-        LocalSsdTotalGb -> "LOCAL_SSD_TOTAL_GB"
-        Networks -> "NETWORKS"
-        NetworkEndpointGroups -> "NETWORK_ENDPOINT_GROUPS"
-        NvidiaK80Gpus -> "NVIDIA_K80_GPUS"
-        NvidiaP100Gpus -> "NVIDIA_P100_GPUS"
-        NvidiaP100VwsGpus -> "NVIDIA_P100_VWS_GPUS"
-        NvidiaP4Gpus -> "NVIDIA_P4_GPUS"
-        NvidiaP4VwsGpus -> "NVIDIA_P4_VWS_GPUS"
-        NvidiaT4Gpus -> "NVIDIA_T4_GPUS"
-        NvidiaT4VwsGpus -> "NVIDIA_T4_VWS_GPUS"
-        NvidiaV100Gpus -> "NVIDIA_V100_GPUS"
-        PreemptibleCPUs -> "PREEMPTIBLE_CPUS"
-        PreemptibleLocalSsdGb -> "PREEMPTIBLE_LOCAL_SSD_GB"
-        PreemptibleNvidiaK80Gpus -> "PREEMPTIBLE_NVIDIA_K80_GPUS"
-        PreemptibleNvidiaP100Gpus -> "PREEMPTIBLE_NVIDIA_P100_GPUS"
-        PreemptibleNvidiaP100VwsGpus -> "PREEMPTIBLE_NVIDIA_P100_VWS_GPUS"
-        PreemptibleNvidiaP4Gpus -> "PREEMPTIBLE_NVIDIA_P4_GPUS"
-        PreemptibleNvidiaP4VwsGpus -> "PREEMPTIBLE_NVIDIA_P4_VWS_GPUS"
-        PreemptibleNvidiaT4Gpus -> "PREEMPTIBLE_NVIDIA_T4_GPUS"
-        PreemptibleNvidiaT4VwsGpus -> "PREEMPTIBLE_NVIDIA_T4_VWS_GPUS"
-        PreemptibleNvidiaV100Gpus -> "PREEMPTIBLE_NVIDIA_V100_GPUS"
-        RegionalAutoscalers -> "REGIONAL_AUTOSCALERS"
-        RegionalInstanceGroupManagers -> "REGIONAL_INSTANCE_GROUP_MANAGERS"
-        ResourcePolicies -> "RESOURCE_POLICIES"
-        Routers -> "ROUTERS"
-        Routes -> "ROUTES"
-        SecurityPolicies -> "SECURITY_POLICIES"
-        SecurityPolicyRules -> "SECURITY_POLICY_RULES"
-        Snapshots -> "SNAPSHOTS"
-        SsdTotalGb -> "SSD_TOTAL_GB"
-        SSLCertificates -> "SSL_CERTIFICATES"
-        StaticAddresses -> "STATIC_ADDRESSES"
-        Subnetworks -> "SUBNETWORKS"
-        TargetHTTPSProxies -> "TARGET_HTTPS_PROXIES"
-        TargetHTTPProxies -> "TARGET_HTTP_PROXIES"
-        TargetInstances -> "TARGET_INSTANCES"
-        TargetPools -> "TARGET_POOLS"
-        TargetSSLProxies -> "TARGET_SSL_PROXIES"
-        TargetTCPProxies -> "TARGET_TCP_PROXIES"
-        TargetVPNGateways -> "TARGET_VPN_GATEWAYS"
-        URLMaps -> "URL_MAPS"
-        VPNGateways -> "VPN_GATEWAYS"
-        VPNTunnels -> "VPN_TUNNELS"
+        QMAutoscalers -> "AUTOSCALERS"
+        QMBackendBuckets -> "BACKEND_BUCKETS"
+        QMBackendServices -> "BACKEND_SERVICES"
+        QMCommitments -> "COMMITMENTS"
+        QMCPUs -> "CPUS"
+        QMCPUsAllRegions -> "CPUS_ALL_REGIONS"
+        QMDisksTotalGb -> "DISKS_TOTAL_GB"
+        QMExternalVPNGateways -> "EXTERNAL_VPN_GATEWAYS"
+        QMFirewalls -> "FIREWALLS"
+        QMForwardingRules -> "FORWARDING_RULES"
+        QMGlobalInternalAddresses -> "GLOBAL_INTERNAL_ADDRESSES"
+        QMGpusAllRegions -> "GPUS_ALL_REGIONS"
+        QMHealthChecks -> "HEALTH_CHECKS"
+        QMImages -> "IMAGES"
+        QMInstances -> "INSTANCES"
+        QMInstanceGroups -> "INSTANCE_GROUPS"
+        QMInstanceGroupManagers -> "INSTANCE_GROUP_MANAGERS"
+        QMInstanceTemplates -> "INSTANCE_TEMPLATES"
+        QMInterconnects -> "INTERCONNECTS"
+        QMInterconnectAttachmentsPerRegion -> "INTERCONNECT_ATTACHMENTS_PER_REGION"
+        QMInterconnectAttachmentsTotalMbps -> "INTERCONNECT_ATTACHMENTS_TOTAL_MBPS"
+        QMInternalAddresses -> "INTERNAL_ADDRESSES"
+        QMInUseAddresses -> "IN_USE_ADDRESSES"
+        QMInUseBackupSchedules -> "IN_USE_BACKUP_SCHEDULES"
+        QMInUseSnapshotSchedules -> "IN_USE_SNAPSHOT_SCHEDULES"
+        QMLocalSsdTotalGb -> "LOCAL_SSD_TOTAL_GB"
+        QMNetworks -> "NETWORKS"
+        QMNetworkEndpointGroups -> "NETWORK_ENDPOINT_GROUPS"
+        QMNvidiaK80Gpus -> "NVIDIA_K80_GPUS"
+        QMNvidiaP100Gpus -> "NVIDIA_P100_GPUS"
+        QMNvidiaP100VwsGpus -> "NVIDIA_P100_VWS_GPUS"
+        QMNvidiaP4Gpus -> "NVIDIA_P4_GPUS"
+        QMNvidiaP4VwsGpus -> "NVIDIA_P4_VWS_GPUS"
+        QMNvidiaT4Gpus -> "NVIDIA_T4_GPUS"
+        QMNvidiaT4VwsGpus -> "NVIDIA_T4_VWS_GPUS"
+        QMNvidiaV100Gpus -> "NVIDIA_V100_GPUS"
+        QMPreemptibleCPUs -> "PREEMPTIBLE_CPUS"
+        QMPreemptibleLocalSsdGb -> "PREEMPTIBLE_LOCAL_SSD_GB"
+        QMPreemptibleNvidiaK80Gpus -> "PREEMPTIBLE_NVIDIA_K80_GPUS"
+        QMPreemptibleNvidiaP100Gpus -> "PREEMPTIBLE_NVIDIA_P100_GPUS"
+        QMPreemptibleNvidiaP100VwsGpus -> "PREEMPTIBLE_NVIDIA_P100_VWS_GPUS"
+        QMPreemptibleNvidiaP4Gpus -> "PREEMPTIBLE_NVIDIA_P4_GPUS"
+        QMPreemptibleNvidiaP4VwsGpus -> "PREEMPTIBLE_NVIDIA_P4_VWS_GPUS"
+        QMPreemptibleNvidiaT4Gpus -> "PREEMPTIBLE_NVIDIA_T4_GPUS"
+        QMPreemptibleNvidiaT4VwsGpus -> "PREEMPTIBLE_NVIDIA_T4_VWS_GPUS"
+        QMPreemptibleNvidiaV100Gpus -> "PREEMPTIBLE_NVIDIA_V100_GPUS"
+        QMRegionalAutoscalers -> "REGIONAL_AUTOSCALERS"
+        QMRegionalInstanceGroupManagers -> "REGIONAL_INSTANCE_GROUP_MANAGERS"
+        QMResourcePolicies -> "RESOURCE_POLICIES"
+        QMRouters -> "ROUTERS"
+        QMRoutes -> "ROUTES"
+        QMSecurityPolicies -> "SECURITY_POLICIES"
+        QMSecurityPolicyRules -> "SECURITY_POLICY_RULES"
+        QMSnapshots -> "SNAPSHOTS"
+        QMSsdTotalGb -> "SSD_TOTAL_GB"
+        QMSSLCertificates -> "SSL_CERTIFICATES"
+        QMStaticAddresses -> "STATIC_ADDRESSES"
+        QMSubnetworks -> "SUBNETWORKS"
+        QMTargetHTTPSProxies -> "TARGET_HTTPS_PROXIES"
+        QMTargetHTTPProxies -> "TARGET_HTTP_PROXIES"
+        QMTargetInstances -> "TARGET_INSTANCES"
+        QMTargetPools -> "TARGET_POOLS"
+        QMTargetSSLProxies -> "TARGET_SSL_PROXIES"
+        QMTargetTCPProxies -> "TARGET_TCP_PROXIES"
+        QMTargetVPNGateways -> "TARGET_VPN_GATEWAYS"
+        QMURLMaps -> "URL_MAPS"
+        QMVPNGateways -> "VPN_GATEWAYS"
+        QMVPNTunnels -> "VPN_TUNNELS"
 
 instance FromJSON QuotaMetric where
     parseJSON = parseJSONText "QuotaMetric"

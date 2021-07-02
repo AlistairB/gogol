@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.DirectorySites.Get
     , dsgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.directorySites.get@ method which the
 -- 'DirectorySitesGet' request conforms to.
@@ -66,13 +66,13 @@ type DirectorySitesGetResource =
 -- /See:/ 'directorySitesGet' smart constructor.
 data DirectorySitesGet =
   DirectorySitesGet'
-    { _dsgXgafv          :: !(Maybe Xgafv)
+    { _dsgXgafv :: !(Maybe Xgafv)
     , _dsgUploadProtocol :: !(Maybe Text)
-    , _dsgAccessToken    :: !(Maybe Text)
-    , _dsgUploadType     :: !(Maybe Text)
-    , _dsgProFileId      :: !(Textual Int64)
-    , _dsgId             :: !(Textual Int64)
-    , _dsgCallback       :: !(Maybe Text)
+    , _dsgAccessToken :: !(Maybe Text)
+    , _dsgUploadType :: !(Maybe Text)
+    , _dsgProFileId :: !(Textual Int64)
+    , _dsgId :: !(Textual Int64)
+    , _dsgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

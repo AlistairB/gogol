@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.CreativeAssets.Insert
     , caiCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeAssets.insert@ method which the
 -- 'CreativeAssetsInsert' request conforms to.
@@ -89,14 +89,14 @@ type CreativeAssetsInsertResource =
 -- /See:/ 'creativeAssetsInsert' smart constructor.
 data CreativeAssetsInsert =
   CreativeAssetsInsert'
-    { _caiXgafv          :: !(Maybe Xgafv)
+    { _caiXgafv :: !(Maybe Xgafv)
     , _caiUploadProtocol :: !(Maybe Text)
-    , _caiAccessToken    :: !(Maybe Text)
-    , _caiAdvertiserId   :: !(Textual Int64)
-    , _caiUploadType     :: !(Maybe Text)
-    , _caiProFileId      :: !(Textual Int64)
-    , _caiPayload        :: !CreativeAssetMetadata
-    , _caiCallback       :: !(Maybe Text)
+    , _caiAccessToken :: !(Maybe Text)
+    , _caiAdvertiserId :: !(Textual Int64)
+    , _caiUploadType :: !(Maybe Text)
+    , _caiProFileId :: !(Textual Int64)
+    , _caiPayload :: !CreativeAssetMetadata
+    , _caiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

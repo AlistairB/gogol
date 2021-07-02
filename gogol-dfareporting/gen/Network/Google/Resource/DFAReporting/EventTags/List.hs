@@ -51,8 +51,8 @@ module Network.Google.Resource.DFAReporting.EventTags.List
     , etlCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.eventTags.list@ method which the
 -- 'EventTagsList' request conforms to.
@@ -91,22 +91,22 @@ type EventTagsListResource =
 -- /See:/ 'eventTagsList' smart constructor.
 data EventTagsList =
   EventTagsList'
-    { _etlXgafv           :: !(Maybe Xgafv)
+    { _etlXgafv :: !(Maybe Xgafv)
     , _etlDefinitionsOnly :: !(Maybe Bool)
-    , _etlUploadProtocol  :: !(Maybe Text)
-    , _etlEventTagTypes   :: !(Maybe [EventTagsListEventTagTypes])
-    , _etlEnabled         :: !(Maybe Bool)
-    , _etlAccessToken     :: !(Maybe Text)
-    , _etlAdvertiserId    :: !(Maybe (Textual Int64))
-    , _etlSearchString    :: !(Maybe Text)
-    , _etlUploadType      :: !(Maybe Text)
-    , _etlCampaignId      :: !(Maybe (Textual Int64))
-    , _etlIds             :: !(Maybe [Textual Int64])
-    , _etlProFileId       :: !(Textual Int64)
-    , _etlSortOrder       :: !EventTagsListSortOrder
-    , _etlAdId            :: !(Maybe (Textual Int64))
-    , _etlSortField       :: !EventTagsListSortField
-    , _etlCallback        :: !(Maybe Text)
+    , _etlUploadProtocol :: !(Maybe Text)
+    , _etlEventTagTypes :: !(Maybe [EventTagsListEventTagTypes])
+    , _etlEnabled :: !(Maybe Bool)
+    , _etlAccessToken :: !(Maybe Text)
+    , _etlAdvertiserId :: !(Maybe (Textual Int64))
+    , _etlSearchString :: !(Maybe Text)
+    , _etlUploadType :: !(Maybe Text)
+    , _etlCampaignId :: !(Maybe (Textual Int64))
+    , _etlIds :: !(Maybe [Textual Int64])
+    , _etlProFileId :: !(Textual Int64)
+    , _etlSortOrder :: !EventTagsListSortOrder
+    , _etlAdId :: !(Maybe (Textual Int64))
+    , _etlSortField :: !EventTagsListSortField
+    , _etlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

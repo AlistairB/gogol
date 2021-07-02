@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.FloodlightConfigurations.Update
     , fcuCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightConfigurations.update@ method which the
 -- 'FloodlightConfigurationsUpdate' request conforms to.
@@ -67,13 +67,13 @@ type FloodlightConfigurationsUpdateResource =
 -- /See:/ 'floodlightConfigurationsUpdate' smart constructor.
 data FloodlightConfigurationsUpdate =
   FloodlightConfigurationsUpdate'
-    { _fcuXgafv          :: !(Maybe Xgafv)
+    { _fcuXgafv :: !(Maybe Xgafv)
     , _fcuUploadProtocol :: !(Maybe Text)
-    , _fcuAccessToken    :: !(Maybe Text)
-    , _fcuUploadType     :: !(Maybe Text)
-    , _fcuProFileId      :: !(Textual Int64)
-    , _fcuPayload        :: !FloodlightConfiguration
-    , _fcuCallback       :: !(Maybe Text)
+    , _fcuAccessToken :: !(Maybe Text)
+    , _fcuUploadType :: !(Maybe Text)
+    , _fcuProFileId :: !(Textual Int64)
+    , _fcuPayload :: !FloodlightConfiguration
+    , _fcuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

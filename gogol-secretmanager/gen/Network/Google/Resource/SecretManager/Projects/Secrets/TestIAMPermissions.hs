@@ -47,8 +47,8 @@ module Network.Google.Resource.SecretManager.Projects.Secrets.TestIAMPermissions
     , pstipCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecretManager.Types
+import Network.Google.Prelude
+import Network.Google.SecretManager.Types
 
 -- | A resource alias for @secretmanager.projects.secrets.testIamPermissions@ method which the
 -- 'ProjectsSecretsTestIAMPermissions' request conforms to.
@@ -74,13 +74,13 @@ type ProjectsSecretsTestIAMPermissionsResource =
 -- /See:/ 'projectsSecretsTestIAMPermissions' smart constructor.
 data ProjectsSecretsTestIAMPermissions =
   ProjectsSecretsTestIAMPermissions'
-    { _pstipXgafv          :: !(Maybe Xgafv)
+    { _pstipXgafv :: !(Maybe Xgafv)
     , _pstipUploadProtocol :: !(Maybe Text)
-    , _pstipAccessToken    :: !(Maybe Text)
-    , _pstipUploadType     :: !(Maybe Text)
-    , _pstipPayload        :: !TestIAMPermissionsRequest
-    , _pstipResource       :: !Text
-    , _pstipCallback       :: !(Maybe Text)
+    , _pstipAccessToken :: !(Maybe Text)
+    , _pstipUploadType :: !(Maybe Text)
+    , _pstipPayload :: !TestIAMPermissionsRequest
+    , _pstipResource :: !Text
+    , _pstipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

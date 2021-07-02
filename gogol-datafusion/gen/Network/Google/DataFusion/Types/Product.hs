@@ -17,8 +17,8 @@
 --
 module Network.Google.DataFusion.Types.Product where
 
-import           Network.Google.DataFusion.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.DataFusion.Types.Sum
+import Network.Google.Prelude
 
 -- | The resource labels for instance to use to annotate any related
 -- underlying resources such as GCE VMs. The character \'=\' is not allowed
@@ -69,7 +69,7 @@ instance ToJSON InstanceLabels where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -185,7 +185,7 @@ instance ToJSON OperationSchema where
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
   AuditConfig'
-    { _acService         :: !(Maybe Text)
+    { _acService :: !(Maybe Text)
     , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -254,9 +254,9 @@ instance ToJSON AuditConfig where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -332,7 +332,7 @@ instance ToJSON Expr where
 data ListLocationsResponse =
   ListLocationsResponse'
     { _llrNextPageToken :: !(Maybe Text)
-    , _llrLocations     :: !(Maybe [Location])
+    , _llrLocations :: !(Maybe [Location])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -384,7 +384,7 @@ instance ToJSON ListLocationsResponse where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -460,11 +460,11 @@ instance ToJSON CancelOperationRequest where
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _lName        :: !(Maybe Text)
-    , _lMetadata    :: !(Maybe LocationMetadata)
+    { _lName :: !(Maybe Text)
+    , _lMetadata :: !(Maybe LocationMetadata)
     , _lDisplayName :: !(Maybe Text)
-    , _lLabels      :: !(Maybe LocationLabels)
-    , _lLocationId  :: !(Maybe Text)
+    , _lLabels :: !(Maybe LocationLabels)
+    , _lLocationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -547,10 +547,10 @@ instance ToJSON Location where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationSchema)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -703,7 +703,7 @@ instance ToJSON StatusDetailsItem where
 data SetIAMPolicyRequest =
   SetIAMPolicyRequest'
     { _siprUpdateMask :: !(Maybe GFieldMask)
-    , _siprPolicy     :: !(Maybe Policy)
+    , _siprPolicy :: !(Maybe Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -762,7 +762,7 @@ instance ToJSON SetIAMPolicyRequest where
 -- /See:/ 'networkConfig' smart constructor.
 data NetworkConfig =
   NetworkConfig'
-    { _ncNetwork      :: !(Maybe Text)
+    { _ncNetwork :: !(Maybe Text)
     , _ncIPAllocation :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -878,8 +878,8 @@ instance ToJSON RestartInstanceRequest where
 -- /See:/ 'version' smart constructor.
 data Version =
   Version'
-    { _vDefaultVersion    :: !(Maybe Bool)
-    , _vVersionNumber     :: !(Maybe Text)
+    { _vDefaultVersion :: !(Maybe Bool)
+    , _vVersionNumber :: !(Maybe Text)
     , _vAvailableFeatures :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1066,9 +1066,9 @@ instance ToJSON TestIAMPermissionsResponse where
 data Policy =
   Policy'
     { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag         :: !(Maybe Bytes)
-    , _pVersion      :: !(Maybe (Textual Int32))
-    , _pBindings     :: !(Maybe [Binding])
+    , _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
+    , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1245,13 +1245,13 @@ instance ToJSON LocationMetadata where
 -- /See:/ 'operationMetadata' smart constructor.
 data OperationMetadata =
   OperationMetadata'
-    { _omAPIVersion            :: !(Maybe Text)
+    { _omAPIVersion :: !(Maybe Text)
     , _omRequestedCancellation :: !(Maybe Bool)
-    , _omEndTime               :: !(Maybe DateTime')
-    , _omStatusDetail          :: !(Maybe Text)
-    , _omVerb                  :: !(Maybe Text)
-    , _omTarget                :: !(Maybe Text)
-    , _omCreateTime            :: !(Maybe DateTime')
+    , _omEndTime :: !(Maybe DateTime')
+    , _omStatusDetail :: !(Maybe Text)
+    , _omVerb :: !(Maybe Text)
+    , _omTarget :: !(Maybe Text)
+    , _omCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1361,7 +1361,7 @@ instance ToJSON OperationMetadata where
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
   AuditLogConfig'
-    { _alcLogType         :: !(Maybe AuditLogConfigLogType)
+    { _alcLogType :: !(Maybe AuditLogConfigLogType)
     , _alcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1415,8 +1415,8 @@ instance ToJSON AuditLogConfig where
 data ListInstancesResponse =
   ListInstancesResponse'
     { _lirNextPageToken :: !(Maybe Text)
-    , _lirUnreachable   :: !(Maybe [Text])
-    , _lirInstances     :: !(Maybe [Instance])
+    , _lirUnreachable :: !(Maybe [Text])
+    , _lirInstances :: !(Maybe [Instance])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1564,8 +1564,8 @@ instance ToJSON InstanceOptions where
 data Binding =
   Binding'
     { _bBindingId :: !(Maybe Text)
-    , _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    , _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1675,31 +1675,31 @@ instance ToJSON Binding where
 -- /See:/ 'instance'' smart constructor.
 data Instance =
   Instance'
-    { _iStateMessage                :: !(Maybe Text)
-    , _iTenantProjectId             :: !(Maybe Text)
-    , _iState                       :: !(Maybe InstanceState)
-    , _iEnableStackdriverLogging    :: !(Maybe Bool)
-    , _iP4ServiceAccount            :: !(Maybe Text)
-    , _iAPIEndpoint                 :: !(Maybe Text)
-    , _iServiceEndpoint             :: !(Maybe Text)
-    , _iZone                        :: !(Maybe Text)
-    , _iGcsBucket                   :: !(Maybe Text)
-    , _iServiceAccount              :: !(Maybe Text)
-    , _iNetworkConfig               :: !(Maybe NetworkConfig)
-    , _iUpdateTime                  :: !(Maybe DateTime')
-    , _iAccelerators                :: !(Maybe [Accelerator])
-    , _iPrivateInstance             :: !(Maybe Bool)
-    , _iName                        :: !(Maybe Text)
-    , _iVersion                     :: !(Maybe Text)
-    , _iDataprocServiceAccount      :: !(Maybe Text)
-    , _iDisplayName                 :: !(Maybe Text)
+    { _iStateMessage :: !(Maybe Text)
+    , _iTenantProjectId :: !(Maybe Text)
+    , _iState :: !(Maybe InstanceState)
+    , _iEnableStackdriverLogging :: !(Maybe Bool)
+    , _iP4ServiceAccount :: !(Maybe Text)
+    , _iAPIEndpoint :: !(Maybe Text)
+    , _iServiceEndpoint :: !(Maybe Text)
+    , _iZone :: !(Maybe Text)
+    , _iGcsBucket :: !(Maybe Text)
+    , _iServiceAccount :: !(Maybe Text)
+    , _iNetworkConfig :: !(Maybe NetworkConfig)
+    , _iUpdateTime :: !(Maybe DateTime')
+    , _iAccelerators :: !(Maybe [Accelerator])
+    , _iPrivateInstance :: !(Maybe Bool)
+    , _iName :: !(Maybe Text)
+    , _iVersion :: !(Maybe Text)
+    , _iDataprocServiceAccount :: !(Maybe Text)
+    , _iDisplayName :: !(Maybe Text)
     , _iEnableStackdriverMonitoring :: !(Maybe Bool)
-    , _iLabels                      :: !(Maybe InstanceLabels)
-    , _iOptions                     :: !(Maybe InstanceOptions)
-    , _iType                        :: !(Maybe InstanceType)
-    , _iAvailableVersion            :: !(Maybe [Version])
-    , _iDescription                 :: !(Maybe Text)
-    , _iCreateTime                  :: !(Maybe DateTime')
+    , _iLabels :: !(Maybe InstanceLabels)
+    , _iOptions :: !(Maybe InstanceOptions)
+    , _iType :: !(Maybe InstanceType)
+    , _iAvailableVersion :: !(Maybe [Version])
+    , _iDescription :: !(Maybe Text)
+    , _iCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2006,7 +2006,7 @@ instance ToJSON Instance where
 -- /See:/ 'listAvailableVersionsResponse' smart constructor.
 data ListAvailableVersionsResponse =
   ListAvailableVersionsResponse'
-    { _lavrNextPageToken     :: !(Maybe Text)
+    { _lavrNextPageToken :: !(Maybe Text)
     , _lavrAvailableVersions :: !(Maybe [Version])
     }
   deriving (Eq, Show, Data, Typeable, Generic)

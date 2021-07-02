@@ -43,8 +43,8 @@ module Network.Google.Resource.SecretManager.Projects.Secrets.Versions.Destroy
     , pCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecretManager.Types
+import Network.Google.Prelude
+import Network.Google.SecretManager.Types
 
 -- | A resource alias for @secretmanager.projects.secrets.versions.destroy@ method which the
 -- 'ProjectsSecretsVersionsDestroy' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsSecretsVersionsDestroyResource =
 -- /See:/ 'projectsSecretsVersionsDestroy' smart constructor.
 data ProjectsSecretsVersionsDestroy =
   ProjectsSecretsVersionsDestroy'
-    { _pXgafv          :: !(Maybe Xgafv)
+    { _pXgafv :: !(Maybe Xgafv)
     , _pUploadProtocol :: !(Maybe Text)
-    , _pAccessToken    :: !(Maybe Text)
-    , _pUploadType     :: !(Maybe Text)
-    , _pPayload        :: !DestroySecretVersionRequest
-    , _pName           :: !Text
-    , _pCallback       :: !(Maybe Text)
+    , _pAccessToken :: !(Maybe Text)
+    , _pUploadType :: !(Maybe Text)
+    , _pPayload :: !DestroySecretVersionRequest
+    , _pName :: !Text
+    , _pCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -43,8 +43,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Flows.Train
     , plaftCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.flows.train@ method which the
 -- 'ProjectsLocationsAgentsFlowsTrain' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsLocationsAgentsFlowsTrainResource =
 -- /See:/ 'projectsLocationsAgentsFlowsTrain' smart constructor.
 data ProjectsLocationsAgentsFlowsTrain =
   ProjectsLocationsAgentsFlowsTrain'
-    { _plaftXgafv          :: !(Maybe Xgafv)
+    { _plaftXgafv :: !(Maybe Xgafv)
     , _plaftUploadProtocol :: !(Maybe Text)
-    , _plaftAccessToken    :: !(Maybe Text)
-    , _plaftUploadType     :: !(Maybe Text)
-    , _plaftPayload        :: !GoogleCloudDialogflowCxV3beta1TrainFlowRequest
-    , _plaftName           :: !Text
-    , _plaftCallback       :: !(Maybe Text)
+    , _plaftAccessToken :: !(Maybe Text)
+    , _plaftUploadType :: !(Maybe Text)
+    , _plaftPayload :: !GoogleCloudDialogflowCxV3beta1TrainFlowRequest
+    , _plaftName :: !Text
+    , _plaftCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

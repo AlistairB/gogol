@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Conversions.Batchupdate
     , conCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.conversions.batchupdate@ method which the
 -- 'ConversionsBatchupdate' request conforms to.
@@ -68,13 +68,13 @@ type ConversionsBatchupdateResource =
 -- /See:/ 'conversionsBatchupdate' smart constructor.
 data ConversionsBatchupdate =
   ConversionsBatchupdate'
-    { _conXgafv          :: !(Maybe Xgafv)
+    { _conXgafv :: !(Maybe Xgafv)
     , _conUploadProtocol :: !(Maybe Text)
-    , _conAccessToken    :: !(Maybe Text)
-    , _conUploadType     :: !(Maybe Text)
-    , _conProFileId      :: !(Textual Int64)
-    , _conPayload        :: !ConversionsBatchUpdateRequest
-    , _conCallback       :: !(Maybe Text)
+    , _conAccessToken :: !(Maybe Text)
+    , _conUploadType :: !(Maybe Text)
+    , _conProFileId :: !(Textual Int64)
+    , _conPayload :: !ConversionsBatchUpdateRequest
+    , _conCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

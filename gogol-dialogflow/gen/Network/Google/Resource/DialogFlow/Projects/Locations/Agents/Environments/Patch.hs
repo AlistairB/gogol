@@ -43,8 +43,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Environments
     , plaepCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.environments.patch@ method which the
 -- 'ProjectsLocationsAgentsEnvironmentsPatch' request conforms to.
@@ -68,14 +68,14 @@ type ProjectsLocationsAgentsEnvironmentsPatchResource
 -- /See:/ 'projectsLocationsAgentsEnvironmentsPatch' smart constructor.
 data ProjectsLocationsAgentsEnvironmentsPatch =
   ProjectsLocationsAgentsEnvironmentsPatch'
-    { _plaepXgafv          :: !(Maybe Xgafv)
+    { _plaepXgafv :: !(Maybe Xgafv)
     , _plaepUploadProtocol :: !(Maybe Text)
-    , _plaepUpdateMask     :: !(Maybe GFieldMask)
-    , _plaepAccessToken    :: !(Maybe Text)
-    , _plaepUploadType     :: !(Maybe Text)
-    , _plaepPayload        :: !GoogleCloudDialogflowCxV3beta1Environment
-    , _plaepName           :: !Text
-    , _plaepCallback       :: !(Maybe Text)
+    , _plaepUpdateMask :: !(Maybe GFieldMask)
+    , _plaepAccessToken :: !(Maybe Text)
+    , _plaepUploadType :: !(Maybe Text)
+    , _plaepPayload :: !GoogleCloudDialogflowCxV3beta1Environment
+    , _plaepName :: !Text
+    , _plaepCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

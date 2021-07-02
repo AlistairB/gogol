@@ -43,8 +43,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Flows.Versio
     , plafvpCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.flows.versions.patch@ method which the
 -- 'ProjectsLocationsAgentsFlowsVersionsPatch' request conforms to.
@@ -68,14 +68,14 @@ type ProjectsLocationsAgentsFlowsVersionsPatchResource
 -- /See:/ 'projectsLocationsAgentsFlowsVersionsPatch' smart constructor.
 data ProjectsLocationsAgentsFlowsVersionsPatch =
   ProjectsLocationsAgentsFlowsVersionsPatch'
-    { _plafvpXgafv          :: !(Maybe Xgafv)
+    { _plafvpXgafv :: !(Maybe Xgafv)
     , _plafvpUploadProtocol :: !(Maybe Text)
-    , _plafvpUpdateMask     :: !(Maybe GFieldMask)
-    , _plafvpAccessToken    :: !(Maybe Text)
-    , _plafvpUploadType     :: !(Maybe Text)
-    , _plafvpPayload        :: !GoogleCloudDialogflowCxV3beta1Version
-    , _plafvpName           :: !Text
-    , _plafvpCallback       :: !(Maybe Text)
+    , _plafvpUpdateMask :: !(Maybe GFieldMask)
+    , _plafvpAccessToken :: !(Maybe Text)
+    , _plafvpUploadType :: !(Maybe Text)
+    , _plafvpPayload :: !GoogleCloudDialogflowCxV3beta1Version
+    , _plafvpName :: !Text
+    , _plafvpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

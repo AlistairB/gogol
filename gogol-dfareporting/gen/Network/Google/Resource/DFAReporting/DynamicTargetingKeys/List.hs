@@ -45,8 +45,8 @@ module Network.Google.Resource.DFAReporting.DynamicTargetingKeys.List
     , dtklCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.dynamicTargetingKeys.list@ method which the
 -- 'DynamicTargetingKeysList' request conforms to.
@@ -75,16 +75,16 @@ type DynamicTargetingKeysListResource =
 -- /See:/ 'dynamicTargetingKeysList' smart constructor.
 data DynamicTargetingKeysList =
   DynamicTargetingKeysList'
-    { _dtklXgafv          :: !(Maybe Xgafv)
+    { _dtklXgafv :: !(Maybe Xgafv)
     , _dtklUploadProtocol :: !(Maybe Text)
-    , _dtklObjectType     :: !(Maybe DynamicTargetingKeysListObjectType)
-    , _dtklAccessToken    :: !(Maybe Text)
-    , _dtklAdvertiserId   :: !(Maybe (Textual Int64))
-    , _dtklObjectId       :: !(Maybe (Textual Int64))
-    , _dtklUploadType     :: !(Maybe Text)
-    , _dtklProFileId      :: !(Textual Int64)
-    , _dtklNames          :: !(Maybe [Text])
-    , _dtklCallback       :: !(Maybe Text)
+    , _dtklObjectType :: !(Maybe DynamicTargetingKeysListObjectType)
+    , _dtklAccessToken :: !(Maybe Text)
+    , _dtklAdvertiserId :: !(Maybe (Textual Int64))
+    , _dtklObjectId :: !(Maybe (Textual Int64))
+    , _dtklUploadType :: !(Maybe Text)
+    , _dtklProFileId :: !(Textual Int64)
+    , _dtklNames :: !(Maybe [Text])
+    , _dtklCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

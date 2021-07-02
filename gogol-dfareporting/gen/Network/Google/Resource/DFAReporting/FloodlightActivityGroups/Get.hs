@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.FloodlightActivityGroups.Get
     , faggCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightActivityGroups.get@ method which the
 -- 'FloodlightActivityGroupsGet' request conforms to.
@@ -67,13 +67,13 @@ type FloodlightActivityGroupsGetResource =
 -- /See:/ 'floodlightActivityGroupsGet' smart constructor.
 data FloodlightActivityGroupsGet =
   FloodlightActivityGroupsGet'
-    { _faggXgafv          :: !(Maybe Xgafv)
+    { _faggXgafv :: !(Maybe Xgafv)
     , _faggUploadProtocol :: !(Maybe Text)
-    , _faggAccessToken    :: !(Maybe Text)
-    , _faggUploadType     :: !(Maybe Text)
-    , _faggProFileId      :: !(Textual Int64)
-    , _faggId             :: !(Textual Int64)
-    , _faggCallback       :: !(Maybe Text)
+    , _faggAccessToken :: !(Maybe Text)
+    , _faggUploadType :: !(Maybe Text)
+    , _faggProFileId :: !(Textual Int64)
+    , _faggId :: !(Textual Int64)
+    , _faggCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

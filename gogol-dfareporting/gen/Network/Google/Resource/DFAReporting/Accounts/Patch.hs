@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.Accounts.Patch
     , appCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accounts.patch@ method which the
 -- 'AccountsPatch' request conforms to.
@@ -68,14 +68,14 @@ type AccountsPatchResource =
 -- /See:/ 'accountsPatch' smart constructor.
 data AccountsPatch =
   AccountsPatch'
-    { _appXgafv          :: !(Maybe Xgafv)
+    { _appXgafv :: !(Maybe Xgafv)
     , _appUploadProtocol :: !(Maybe Text)
-    , _appAccessToken    :: !(Maybe Text)
-    , _appUploadType     :: !(Maybe Text)
-    , _appProFileId      :: !(Textual Int64)
-    , _appPayload        :: !Account
-    , _appId             :: !(Textual Int64)
-    , _appCallback       :: !(Maybe Text)
+    , _appAccessToken :: !(Maybe Text)
+    , _appUploadType :: !(Maybe Text)
+    , _appProFileId :: !(Textual Int64)
+    , _appPayload :: !Account
+    , _appId :: !(Textual Int64)
+    , _appCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

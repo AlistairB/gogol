@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.Pos.Insert
     , ppPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.pos.insert@ method which the
 -- 'PosInsert' request conforms to.
@@ -58,9 +58,9 @@ type PosInsertResource =
 -- /See:/ 'posInsert' smart constructor.
 data PosInsert =
   PosInsert'
-    { _ppMerchantId       :: !(Textual Word64)
+    { _ppMerchantId :: !(Textual Word64)
     , _ppTargetMerchantId :: !(Textual Word64)
-    , _ppPayload          :: !PosStore
+    , _ppPayload :: !PosStore
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

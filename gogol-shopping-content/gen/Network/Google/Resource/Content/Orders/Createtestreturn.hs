@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.Orders.Createtestreturn
     , occOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.createtestreturn@ method which the
 -- 'OrdersCreatetestreturn' request conforms to.
@@ -60,8 +60,8 @@ type OrdersCreatetestreturnResource =
 data OrdersCreatetestreturn =
   OrdersCreatetestreturn'
     { _occMerchantId :: !(Textual Word64)
-    , _occPayload    :: !OrdersCreateTestReturnRequest
-    , _occOrderId    :: !Text
+    , _occPayload :: !OrdersCreateTestReturnRequest
+    , _occOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

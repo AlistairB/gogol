@@ -41,8 +41,8 @@ module Network.Google.Resource.DFAReporting.MobileCarriers.List
     , mclCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.mobileCarriers.list@ method which the
 -- 'MobileCarriersList' request conforms to.
@@ -65,12 +65,12 @@ type MobileCarriersListResource =
 -- /See:/ 'mobileCarriersList' smart constructor.
 data MobileCarriersList =
   MobileCarriersList'
-    { _mclXgafv          :: !(Maybe Xgafv)
+    { _mclXgafv :: !(Maybe Xgafv)
     , _mclUploadProtocol :: !(Maybe Text)
-    , _mclAccessToken    :: !(Maybe Text)
-    , _mclUploadType     :: !(Maybe Text)
-    , _mclProFileId      :: !(Textual Int64)
-    , _mclCallback       :: !(Maybe Text)
+    , _mclAccessToken :: !(Maybe Text)
+    , _mclUploadType :: !(Maybe Text)
+    , _mclProFileId :: !(Textual Int64)
+    , _mclCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

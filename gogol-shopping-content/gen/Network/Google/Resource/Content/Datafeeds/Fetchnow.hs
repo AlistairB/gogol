@@ -37,8 +37,8 @@ module Network.Google.Resource.Content.Datafeeds.Fetchnow
     , dfDatafeedId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.datafeeds.fetchnow@ method which the
 -- 'DatafeedsFetchnow' request conforms to.

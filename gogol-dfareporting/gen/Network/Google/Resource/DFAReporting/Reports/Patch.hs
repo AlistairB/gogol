@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.Reports.Patch
     , rpCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.reports.patch@ method which the
 -- 'ReportsPatch' request conforms to.
@@ -68,14 +68,14 @@ type ReportsPatchResource =
 -- /See:/ 'reportsPatch' smart constructor.
 data ReportsPatch =
   ReportsPatch'
-    { _rpXgafv          :: !(Maybe Xgafv)
+    { _rpXgafv :: !(Maybe Xgafv)
     , _rpUploadProtocol :: !(Maybe Text)
-    , _rpAccessToken    :: !(Maybe Text)
-    , _rpReportId       :: !(Textual Int64)
-    , _rpUploadType     :: !(Maybe Text)
-    , _rpProFileId      :: !(Textual Int64)
-    , _rpPayload        :: !Report
-    , _rpCallback       :: !(Maybe Text)
+    , _rpAccessToken :: !(Maybe Text)
+    , _rpReportId :: !(Textual Int64)
+    , _rpUploadType :: !(Maybe Text)
+    , _rpProFileId :: !(Textual Int64)
+    , _rpPayload :: !Report
+    , _rpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -45,8 +45,8 @@ module Network.Google.Resource.DFAReporting.CreativeFieldValues.Patch
     , cfvpCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeFieldValues.patch@ method which the
 -- 'CreativeFieldValuesPatch' request conforms to.
@@ -75,14 +75,14 @@ type CreativeFieldValuesPatchResource =
 data CreativeFieldValuesPatch =
   CreativeFieldValuesPatch'
     { _cfvpCreativeFieldId :: !(Textual Int64)
-    , _cfvpXgafv           :: !(Maybe Xgafv)
-    , _cfvpUploadProtocol  :: !(Maybe Text)
-    , _cfvpAccessToken     :: !(Maybe Text)
-    , _cfvpUploadType      :: !(Maybe Text)
-    , _cfvpProFileId       :: !(Textual Int64)
-    , _cfvpPayload         :: !CreativeFieldValue
-    , _cfvpId              :: !(Textual Int64)
-    , _cfvpCallback        :: !(Maybe Text)
+    , _cfvpXgafv :: !(Maybe Xgafv)
+    , _cfvpUploadProtocol :: !(Maybe Text)
+    , _cfvpAccessToken :: !(Maybe Text)
+    , _cfvpUploadType :: !(Maybe Text)
+    , _cfvpProFileId :: !(Textual Int64)
+    , _cfvpPayload :: !CreativeFieldValue
+    , _cfvpId :: !(Textual Int64)
+    , _cfvpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

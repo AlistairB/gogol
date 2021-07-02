@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.AdvertiserLandingPages.Update
     , alpuCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertiserLandingPages.update@ method which the
 -- 'AdvertiserLandingPagesUpdate' request conforms to.
@@ -67,13 +67,13 @@ type AdvertiserLandingPagesUpdateResource =
 -- /See:/ 'advertiserLandingPagesUpdate' smart constructor.
 data AdvertiserLandingPagesUpdate =
   AdvertiserLandingPagesUpdate'
-    { _alpuXgafv          :: !(Maybe Xgafv)
+    { _alpuXgafv :: !(Maybe Xgafv)
     , _alpuUploadProtocol :: !(Maybe Text)
-    , _alpuAccessToken    :: !(Maybe Text)
-    , _alpuUploadType     :: !(Maybe Text)
-    , _alpuProFileId      :: !(Textual Int64)
-    , _alpuPayload        :: !LandingPage
-    , _alpuCallback       :: !(Maybe Text)
+    , _alpuAccessToken :: !(Maybe Text)
+    , _alpuUploadType :: !(Maybe Text)
+    , _alpuProFileId :: !(Textual Int64)
+    , _alpuPayload :: !LandingPage
+    , _alpuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

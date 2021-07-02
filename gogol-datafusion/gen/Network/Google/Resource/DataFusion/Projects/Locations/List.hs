@@ -45,8 +45,8 @@ module Network.Google.Resource.DataFusion.Projects.Locations.List
     , pllIncludeUnrevealedLocations
     ) where
 
-import           Network.Google.DataFusion.Types
-import           Network.Google.Prelude
+import Network.Google.DataFusion.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @datafusion.projects.locations.list@ method which the
 -- 'ProjectsLocationsList' request conforms to.
@@ -71,15 +71,15 @@ type ProjectsLocationsListResource =
 -- /See:/ 'projectsLocationsList' smart constructor.
 data ProjectsLocationsList =
   ProjectsLocationsList'
-    { _pllXgafv                      :: !(Maybe Xgafv)
-    , _pllUploadProtocol             :: !(Maybe Text)
-    , _pllAccessToken                :: !(Maybe Text)
-    , _pllUploadType                 :: !(Maybe Text)
-    , _pllName                       :: !Text
-    , _pllFilter                     :: !(Maybe Text)
-    , _pllPageToken                  :: !(Maybe Text)
-    , _pllPageSize                   :: !(Maybe (Textual Int32))
-    , _pllCallback                   :: !(Maybe Text)
+    { _pllXgafv :: !(Maybe Xgafv)
+    , _pllUploadProtocol :: !(Maybe Text)
+    , _pllAccessToken :: !(Maybe Text)
+    , _pllUploadType :: !(Maybe Text)
+    , _pllName :: !Text
+    , _pllFilter :: !(Maybe Text)
+    , _pllPageToken :: !(Maybe Text)
+    , _pllPageSize :: !(Maybe (Textual Int32))
+    , _pllCallback :: !(Maybe Text)
     , _pllIncludeUnrevealedLocations :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

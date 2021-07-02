@@ -43,8 +43,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Intents.Crea
     , plaicCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.intents.create@ method which the
 -- 'ProjectsLocationsAgentsIntentsCreate' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsLocationsAgentsIntentsCreateResource =
 -- /See:/ 'projectsLocationsAgentsIntentsCreate' smart constructor.
 data ProjectsLocationsAgentsIntentsCreate =
   ProjectsLocationsAgentsIntentsCreate'
-    { _plaicParent         :: !Text
-    , _plaicXgafv          :: !(Maybe Xgafv)
-    , _plaicLanguageCode   :: !(Maybe Text)
+    { _plaicParent :: !Text
+    , _plaicXgafv :: !(Maybe Xgafv)
+    , _plaicLanguageCode :: !(Maybe Text)
     , _plaicUploadProtocol :: !(Maybe Text)
-    , _plaicAccessToken    :: !(Maybe Text)
-    , _plaicUploadType     :: !(Maybe Text)
-    , _plaicPayload        :: !GoogleCloudDialogflowCxV3beta1Intent
-    , _plaicCallback       :: !(Maybe Text)
+    , _plaicAccessToken :: !(Maybe Text)
+    , _plaicUploadType :: !(Maybe Text)
+    , _plaicPayload :: !GoogleCloudDialogflowCxV3beta1Intent
+    , _plaicCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

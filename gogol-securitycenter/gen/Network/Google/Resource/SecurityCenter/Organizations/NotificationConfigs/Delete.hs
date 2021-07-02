@@ -41,8 +41,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.NotificationConfigs.
     , oncdCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.notificationConfigs.delete@ method which the
 -- 'OrganizationsNotificationConfigsDelete' request conforms to.
@@ -61,12 +61,12 @@ type OrganizationsNotificationConfigsDeleteResource =
 -- /See:/ 'organizationsNotificationConfigsDelete' smart constructor.
 data OrganizationsNotificationConfigsDelete =
   OrganizationsNotificationConfigsDelete'
-    { _oncdXgafv          :: !(Maybe Xgafv)
+    { _oncdXgafv :: !(Maybe Xgafv)
     , _oncdUploadProtocol :: !(Maybe Text)
-    , _oncdAccessToken    :: !(Maybe Text)
-    , _oncdUploadType     :: !(Maybe Text)
-    , _oncdName           :: !Text
-    , _oncdCallback       :: !(Maybe Text)
+    , _oncdAccessToken :: !(Maybe Text)
+    , _oncdUploadType :: !(Maybe Text)
+    , _oncdName :: !Text
+    , _oncdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

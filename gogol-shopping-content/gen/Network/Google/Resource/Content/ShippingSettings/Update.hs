@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.ShippingSettings.Update
     , ssuAccountId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.shippingsettings.update@ method which the
 -- 'ShippingSettingsUpdate' request conforms to.
@@ -59,8 +59,8 @@ type ShippingSettingsUpdateResource =
 data ShippingSettingsUpdate =
   ShippingSettingsUpdate'
     { _ssuMerchantId :: !(Textual Word64)
-    , _ssuPayload    :: !ShippingSettings
-    , _ssuAccountId  :: !(Textual Word64)
+    , _ssuPayload :: !ShippingSettings
+    , _ssuAccountId :: !(Textual Word64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

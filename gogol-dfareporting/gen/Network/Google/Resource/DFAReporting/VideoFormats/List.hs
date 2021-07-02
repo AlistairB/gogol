@@ -41,8 +41,8 @@ module Network.Google.Resource.DFAReporting.VideoFormats.List
     , vflCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.videoFormats.list@ method which the
 -- 'VideoFormatsList' request conforms to.
@@ -65,12 +65,12 @@ type VideoFormatsListResource =
 -- /See:/ 'videoFormatsList' smart constructor.
 data VideoFormatsList =
   VideoFormatsList'
-    { _vflXgafv          :: !(Maybe Xgafv)
+    { _vflXgafv :: !(Maybe Xgafv)
     , _vflUploadProtocol :: !(Maybe Text)
-    , _vflAccessToken    :: !(Maybe Text)
-    , _vflUploadType     :: !(Maybe Text)
-    , _vflProFileId      :: !(Textual Int64)
-    , _vflCallback       :: !(Maybe Text)
+    , _vflAccessToken :: !(Maybe Text)
+    , _vflUploadType :: !(Maybe Text)
+    , _vflProFileId :: !(Textual Int64)
+    , _vflCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

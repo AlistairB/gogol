@@ -37,8 +37,8 @@ module Network.Google.Resource.Content.Accounts.Get
     , agAccountId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accounts.get@ method which the
 -- 'AccountsGet' request conforms to.
@@ -56,7 +56,7 @@ type AccountsGetResource =
 data AccountsGet =
   AccountsGet'
     { _agMerchantId :: !(Textual Word64)
-    , _agAccountId  :: !(Textual Word64)
+    , _agAccountId :: !(Textual Word64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

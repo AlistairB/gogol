@@ -41,8 +41,8 @@ module Network.Google.Resource.SecretManager.Projects.Secrets.Delete
     , psdCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecretManager.Types
+import Network.Google.Prelude
+import Network.Google.SecretManager.Types
 
 -- | A resource alias for @secretmanager.projects.secrets.delete@ method which the
 -- 'ProjectsSecretsDelete' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsSecretsDeleteResource =
 -- /See:/ 'projectsSecretsDelete' smart constructor.
 data ProjectsSecretsDelete =
   ProjectsSecretsDelete'
-    { _psdXgafv          :: !(Maybe Xgafv)
+    { _psdXgafv :: !(Maybe Xgafv)
     , _psdUploadProtocol :: !(Maybe Text)
-    , _psdAccessToken    :: !(Maybe Text)
-    , _psdUploadType     :: !(Maybe Text)
-    , _psdName           :: !Text
-    , _psdCallback       :: !(Maybe Text)
+    , _psdAccessToken :: !(Maybe Text)
+    , _psdUploadType :: !(Maybe Text)
+    , _psdName :: !Text
+    , _psdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.AccessApproval.Projects.UpdateAccessApprovalSetti
     , puaasCallback
     ) where
 
-import           Network.Google.AccessApproval.Types
-import           Network.Google.Prelude
+import Network.Google.AccessApproval.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @accessapproval.projects.updateAccessApprovalSettings@ method which the
 -- 'ProjectsUpdateAccessApprovalSettings' request conforms to.
@@ -68,14 +68,14 @@ type ProjectsUpdateAccessApprovalSettingsResource =
 -- /See:/ 'projectsUpdateAccessApprovalSettings' smart constructor.
 data ProjectsUpdateAccessApprovalSettings =
   ProjectsUpdateAccessApprovalSettings'
-    { _puaasXgafv          :: !(Maybe Xgafv)
+    { _puaasXgafv :: !(Maybe Xgafv)
     , _puaasUploadProtocol :: !(Maybe Text)
-    , _puaasUpdateMask     :: !(Maybe GFieldMask)
-    , _puaasAccessToken    :: !(Maybe Text)
-    , _puaasUploadType     :: !(Maybe Text)
-    , _puaasPayload        :: !AccessApprovalSettings
-    , _puaasName           :: !Text
-    , _puaasCallback       :: !(Maybe Text)
+    , _puaasUpdateMask :: !(Maybe GFieldMask)
+    , _puaasAccessToken :: !(Maybe Text)
+    , _puaasUploadType :: !(Maybe Text)
+    , _puaasPayload :: !AccessApprovalSettings
+    , _puaasName :: !Text
+    , _puaasCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

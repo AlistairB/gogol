@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.CreativeGroups.Get
     , cgggCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeGroups.get@ method which the
 -- 'CreativeGroupsGet' request conforms to.
@@ -66,13 +66,13 @@ type CreativeGroupsGetResource =
 -- /See:/ 'creativeGroupsGet' smart constructor.
 data CreativeGroupsGet =
   CreativeGroupsGet'
-    { _cgggXgafv          :: !(Maybe Xgafv)
+    { _cgggXgafv :: !(Maybe Xgafv)
     , _cgggUploadProtocol :: !(Maybe Text)
-    , _cgggAccessToken    :: !(Maybe Text)
-    , _cgggUploadType     :: !(Maybe Text)
-    , _cgggProFileId      :: !(Textual Int64)
-    , _cgggId             :: !(Textual Int64)
-    , _cgggCallback       :: !(Maybe Text)
+    , _cgggAccessToken :: !(Maybe Text)
+    , _cgggUploadType :: !(Maybe Text)
+    , _cgggProFileId :: !(Textual Int64)
+    , _cgggId :: !(Textual Int64)
+    , _cgggCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

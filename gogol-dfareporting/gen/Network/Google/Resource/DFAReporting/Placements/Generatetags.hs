@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.Placements.Generatetags
     , pgsCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placements.generatetags@ method which the
 -- 'PlacementsGeneratetags' request conforms to.
@@ -74,15 +74,15 @@ type PlacementsGeneratetagsResource =
 -- /See:/ 'placementsGeneratetags' smart constructor.
 data PlacementsGeneratetags =
   PlacementsGeneratetags'
-    { _pgsXgafv          :: !(Maybe Xgafv)
+    { _pgsXgafv :: !(Maybe Xgafv)
     , _pgsUploadProtocol :: !(Maybe Text)
-    , _pgsTagFormats     :: !(Maybe [PlacementsGeneratetagsTagFormats])
-    , _pgsAccessToken    :: !(Maybe Text)
-    , _pgsUploadType     :: !(Maybe Text)
-    , _pgsCampaignId     :: !(Maybe (Textual Int64))
-    , _pgsProFileId      :: !(Textual Int64)
-    , _pgsPlacementIds   :: !(Maybe [Textual Int64])
-    , _pgsCallback       :: !(Maybe Text)
+    , _pgsTagFormats :: !(Maybe [PlacementsGeneratetagsTagFormats])
+    , _pgsAccessToken :: !(Maybe Text)
+    , _pgsUploadType :: !(Maybe Text)
+    , _pgsCampaignId :: !(Maybe (Textual Int64))
+    , _pgsProFileId :: !(Textual Int64)
+    , _pgsPlacementIds :: !(Maybe [Textual Int64])
+    , _pgsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

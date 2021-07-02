@@ -51,8 +51,8 @@ module Network.Google.Resource.DFAReporting.AccountUserProFiles.List
     , aupflCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accountUserProfiles.list@ method which the
 -- 'AccountUserProFilesList' request conforms to.
@@ -92,21 +92,21 @@ type AccountUserProFilesListResource =
 -- /See:/ 'accountUserProFilesList' smart constructor.
 data AccountUserProFilesList =
   AccountUserProFilesList'
-    { _aupflXgafv          :: !(Maybe Xgafv)
+    { _aupflXgafv :: !(Maybe Xgafv)
     , _aupflUploadProtocol :: !(Maybe Text)
-    , _aupflUserRoleId     :: !(Maybe (Textual Int64))
-    , _aupflAccessToken    :: !(Maybe Text)
-    , _aupflSearchString   :: !(Maybe Text)
-    , _aupflUploadType     :: !(Maybe Text)
-    , _aupflIds            :: !(Maybe [Textual Int64])
-    , _aupflProFileId      :: !(Textual Int64)
-    , _aupflSortOrder      :: !AccountUserProFilesListSortOrder
-    , _aupflActive         :: !(Maybe Bool)
-    , _aupflPageToken      :: !(Maybe Text)
-    , _aupflSortField      :: !AccountUserProFilesListSortField
-    , _aupflSubAccountId   :: !(Maybe (Textual Int64))
-    , _aupflMaxResults     :: !(Textual Int32)
-    , _aupflCallback       :: !(Maybe Text)
+    , _aupflUserRoleId :: !(Maybe (Textual Int64))
+    , _aupflAccessToken :: !(Maybe Text)
+    , _aupflSearchString :: !(Maybe Text)
+    , _aupflUploadType :: !(Maybe Text)
+    , _aupflIds :: !(Maybe [Textual Int64])
+    , _aupflProFileId :: !(Textual Int64)
+    , _aupflSortOrder :: !AccountUserProFilesListSortOrder
+    , _aupflActive :: !(Maybe Bool)
+    , _aupflPageToken :: !(Maybe Text)
+    , _aupflSortField :: !AccountUserProFilesListSortField
+    , _aupflSubAccountId :: !(Maybe (Textual Int64))
+    , _aupflMaxResults :: !(Textual Int32)
+    , _aupflCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

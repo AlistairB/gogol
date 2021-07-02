@@ -17,8 +17,8 @@
 --
 module Network.Google.BinaryAuthorization.Types.Product where
 
-import           Network.Google.BinaryAuthorization.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.BinaryAuthorization.Types.Sum
+import Network.Google.Prelude
 
 -- | Verifiers (e.g. Kritis implementations) MUST verify signatures with
 -- respect to the trust anchors defined in policy (e.g. a Kritis policy).
@@ -44,7 +44,7 @@ import           Network.Google.Prelude
 -- /See:/ 'signature' smart constructor.
 data Signature =
   Signature'
-    { _sSignature   :: !(Maybe Bytes)
+    { _sSignature :: !(Maybe Bytes)
     , _sPublicKeyId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -110,7 +110,7 @@ instance ToJSON Signature where
 -- /See:/ 'pkixPublicKey' smart constructor.
 data PkixPublicKey =
   PkixPublicKey'
-    { _ppkPublicKeyPem       :: !(Maybe Text)
+    { _ppkPublicKeyPem :: !(Maybe Text)
     , _ppkSignatureAlgorithm :: !(Maybe PkixPublicKeySignatureAlgorithm)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -182,9 +182,9 @@ instance ToJSON PkixPublicKey where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -321,8 +321,8 @@ instance ToJSON SetIAMPolicyRequest where
 -- /See:/ 'validateAttestationOccurrenceRequest' smart constructor.
 data ValidateAttestationOccurrenceRequest =
   ValidateAttestationOccurrenceRequest'
-    { _vaorOccurrenceNote        :: !(Maybe Text)
-    , _vaorAttestation           :: !(Maybe AttestationOccurrence)
+    { _vaorOccurrenceNote :: !(Maybe Text)
+    , _vaorAttestation :: !(Maybe AttestationOccurrence)
     , _vaorOccurrenceResourceURI :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -431,7 +431,7 @@ instance ToJSON Jwt where
 data ListAttestorsResponse =
   ListAttestorsResponse'
     { _larNextPageToken :: !(Maybe Text)
-    , _larAttestors     :: !(Maybe [Attestor])
+    , _larAttestors :: !(Maybe [Attestor])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -485,7 +485,7 @@ instance ToJSON ListAttestorsResponse where
 data ValidateAttestationOccurrenceResponse =
   ValidateAttestationOccurrenceResponse'
     { _vaorDenialReason :: !(Maybe Text)
-    , _vaorResult       :: !(Maybe ValidateAttestationOccurrenceResponseResult)
+    , _vaorResult :: !(Maybe ValidateAttestationOccurrenceResponseResult)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -583,8 +583,8 @@ instance ToJSON AdmissionWhiteListPattern where
 -- /See:/ 'admissionRule' smart constructor.
 data AdmissionRule =
   AdmissionRule'
-    { _arEnforcementMode       :: !(Maybe AdmissionRuleEnforcementMode)
-    , _arEvaluationMode        :: !(Maybe AdmissionRuleEvaluationMode)
+    { _arEnforcementMode :: !(Maybe AdmissionRuleEnforcementMode)
+    , _arEvaluationMode :: !(Maybe AdmissionRuleEvaluationMode)
     , _arRequireAttestationsBy :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -736,8 +736,8 @@ instance ToJSON TestIAMPermissionsRequest where
 -- /See:/ 'iamPolicy' smart constructor.
 data IAMPolicy =
   IAMPolicy'
-    { _ipEtag     :: !(Maybe Bytes)
-    , _ipVersion  :: !(Maybe (Textual Int32))
+    { _ipEtag :: !(Maybe Bytes)
+    , _ipVersion :: !(Maybe (Textual Int32))
     , _ipBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -827,10 +827,10 @@ instance ToJSON IAMPolicy where
 -- /See:/ 'attestorPublicKey' smart constructor.
 data AttestorPublicKey =
   AttestorPublicKey'
-    { _apkPkixPublicKey            :: !(Maybe PkixPublicKey)
+    { _apkPkixPublicKey :: !(Maybe PkixPublicKey)
     , _apkAsciiArmoredPgpPublicKey :: !(Maybe Text)
-    , _apkId                       :: !(Maybe Text)
-    , _apkComment                  :: !(Maybe Text)
+    , _apkId :: !(Maybe Text)
+    , _apkComment :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -961,13 +961,13 @@ instance ToJSON TestIAMPermissionsResponse where
 -- /See:/ 'policy' smart constructor.
 data Policy =
   Policy'
-    { _pDefaultAdmissionRule       :: !(Maybe AdmissionRule)
+    { _pDefaultAdmissionRule :: !(Maybe AdmissionRule)
     , _pAdmissionWhiteListPatterns :: !(Maybe [AdmissionWhiteListPattern])
-    , _pClusterAdmissionRules      :: !(Maybe PolicyClusterAdmissionRules)
-    , _pUpdateTime                 :: !(Maybe DateTime')
-    , _pName                       :: !(Maybe Text)
+    , _pClusterAdmissionRules :: !(Maybe PolicyClusterAdmissionRules)
+    , _pUpdateTime :: !(Maybe DateTime')
+    , _pName :: !(Maybe Text)
     , _pGlobalPolicyEvaluationMode :: !(Maybe PolicyGlobalPolicyEvaluationMode)
-    , _pDescription                :: !(Maybe Text)
+    , _pDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1094,8 +1094,8 @@ instance ToJSON Policy where
 data UserOwnedGrafeasNote =
   UserOwnedGrafeasNote'
     { _uognDelegationServiceAccountEmail :: !(Maybe Text)
-    , _uognPublicKeys                    :: !(Maybe [AttestorPublicKey])
-    , _uognNoteReference                 :: !(Maybe Text)
+    , _uognPublicKeys :: !(Maybe [AttestorPublicKey])
+    , _uognNoteReference :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1221,10 +1221,10 @@ instance ToJSON PolicyClusterAdmissionRules where
 -- /See:/ 'attestor' smart constructor.
 data Attestor =
   Attestor'
-    { _aUpdateTime           :: !(Maybe DateTime')
-    , _aName                 :: !(Maybe Text)
+    { _aUpdateTime :: !(Maybe DateTime')
+    , _aName :: !(Maybe Text)
     , _aUserOwnedGrafeasNote :: !(Maybe UserOwnedGrafeasNote)
-    , _aDescription          :: !(Maybe Text)
+    , _aDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1307,8 +1307,8 @@ instance ToJSON Attestor where
 data AttestationOccurrence =
   AttestationOccurrence'
     { _aoSerializedPayload :: !(Maybe Bytes)
-    , _aoJwts              :: !(Maybe [Jwt])
-    , _aoSignatures        :: !(Maybe [Signature])
+    , _aoJwts :: !(Maybe [Jwt])
+    , _aoSignatures :: !(Maybe [Signature])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1384,8 +1384,8 @@ instance ToJSON AttestationOccurrence where
 data Binding =
   Binding'
     { _bBindingId :: !(Maybe Text)
-    , _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    , _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -88,11 +88,11 @@ module Network.Google.FirebaseHosting
     , orAddtional
     ) where
 
-import           Network.Google.FirebaseHosting.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.FirebaseHosting.Operations.Cancel
-import           Network.Google.Resource.FirebaseHosting.Operations.Delete
-import           Network.Google.Resource.FirebaseHosting.Operations.List
+import Network.Google.Prelude
+import Network.Google.FirebaseHosting.Types
+import Network.Google.Resource.FirebaseHosting.Operations.Cancel
+import Network.Google.Resource.FirebaseHosting.Operations.Delete
+import Network.Google.Resource.FirebaseHosting.Operations.List
 
 {- $resources
 TODO

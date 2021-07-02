@@ -197,8 +197,8 @@ module Network.Google.ToolResults
     , elsScreenIds
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 {- $resources
 TODO

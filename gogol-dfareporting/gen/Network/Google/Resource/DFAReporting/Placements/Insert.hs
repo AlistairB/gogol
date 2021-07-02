@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Placements.Insert
     , piCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placements.insert@ method which the
 -- 'PlacementsInsert' request conforms to.
@@ -66,13 +66,13 @@ type PlacementsInsertResource =
 -- /See:/ 'placementsInsert' smart constructor.
 data PlacementsInsert =
   PlacementsInsert'
-    { _piXgafv          :: !(Maybe Xgafv)
+    { _piXgafv :: !(Maybe Xgafv)
     , _piUploadProtocol :: !(Maybe Text)
-    , _piAccessToken    :: !(Maybe Text)
-    , _piUploadType     :: !(Maybe Text)
-    , _piProFileId      :: !(Textual Int64)
-    , _piPayload        :: !Placement
-    , _piCallback       :: !(Maybe Text)
+    , _piAccessToken :: !(Maybe Text)
+    , _piUploadType :: !(Maybe Text)
+    , _piProFileId :: !(Textual Int64)
+    , _piPayload :: !Placement
+    , _piCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -43,8 +43,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Environments
     , plaelehCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.environments.lookupEnvironmentHistory@ method which the
 -- 'ProjectsLocationsAgentsEnvironmentsLookupEnvironmentHistory' request conforms to.
@@ -68,14 +68,14 @@ type ProjectsLocationsAgentsEnvironmentsLookupEnvironmentHistoryResource
 -- /See:/ 'projectsLocationsAgentsEnvironmentsLookupEnvironmentHistory' smart constructor.
 data ProjectsLocationsAgentsEnvironmentsLookupEnvironmentHistory =
   ProjectsLocationsAgentsEnvironmentsLookupEnvironmentHistory'
-    { _plaelehXgafv          :: !(Maybe Xgafv)
+    { _plaelehXgafv :: !(Maybe Xgafv)
     , _plaelehUploadProtocol :: !(Maybe Text)
-    , _plaelehAccessToken    :: !(Maybe Text)
-    , _plaelehUploadType     :: !(Maybe Text)
-    , _plaelehName           :: !Text
-    , _plaelehPageToken      :: !(Maybe Text)
-    , _plaelehPageSize       :: !(Maybe (Textual Int32))
-    , _plaelehCallback       :: !(Maybe Text)
+    , _plaelehAccessToken :: !(Maybe Text)
+    , _plaelehUploadType :: !(Maybe Text)
+    , _plaelehName :: !Text
+    , _plaelehPageToken :: !(Maybe Text)
+    , _plaelehPageSize :: !(Maybe (Textual Int32))
+    , _plaelehCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

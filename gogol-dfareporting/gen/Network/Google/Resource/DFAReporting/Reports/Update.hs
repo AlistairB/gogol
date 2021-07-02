@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.Reports.Update
     , ruCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.reports.update@ method which the
 -- 'ReportsUpdate' request conforms to.
@@ -68,14 +68,14 @@ type ReportsUpdateResource =
 -- /See:/ 'reportsUpdate' smart constructor.
 data ReportsUpdate =
   ReportsUpdate'
-    { _ruXgafv          :: !(Maybe Xgafv)
+    { _ruXgafv :: !(Maybe Xgafv)
     , _ruUploadProtocol :: !(Maybe Text)
-    , _ruAccessToken    :: !(Maybe Text)
-    , _ruReportId       :: !(Textual Int64)
-    , _ruUploadType     :: !(Maybe Text)
-    , _ruProFileId      :: !(Textual Int64)
-    , _ruPayload        :: !Report
-    , _ruCallback       :: !(Maybe Text)
+    , _ruAccessToken :: !(Maybe Text)
+    , _ruReportId :: !(Textual Int64)
+    , _ruUploadType :: !(Maybe Text)
+    , _ruProFileId :: !(Textual Int64)
+    , _ruPayload :: !Report
+    , _ruCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

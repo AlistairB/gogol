@@ -43,8 +43,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Sessions.Ent
     , plaSetlCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.sessions.entityTypes.list@ method which the
 -- 'ProjectsLocationsAgentsSessionsEntityTypesList' request conforms to.
@@ -69,14 +69,14 @@ type ProjectsLocationsAgentsSessionsEntityTypesListResource
 -- /See:/ 'projectsLocationsAgentsSessionsEntityTypesList' smart constructor.
 data ProjectsLocationsAgentsSessionsEntityTypesList =
   ProjectsLocationsAgentsSessionsEntityTypesList'
-    { _plaSetlParent         :: !Text
-    , _plaSetlXgafv          :: !(Maybe Xgafv)
+    { _plaSetlParent :: !Text
+    , _plaSetlXgafv :: !(Maybe Xgafv)
     , _plaSetlUploadProtocol :: !(Maybe Text)
-    , _plaSetlAccessToken    :: !(Maybe Text)
-    , _plaSetlUploadType     :: !(Maybe Text)
-    , _plaSetlPageToken      :: !(Maybe Text)
-    , _plaSetlPageSize       :: !(Maybe (Textual Int32))
-    , _plaSetlCallback       :: !(Maybe Text)
+    , _plaSetlAccessToken :: !(Maybe Text)
+    , _plaSetlUploadType :: !(Maybe Text)
+    , _plaSetlPageToken :: !(Maybe Text)
+    , _plaSetlPageSize :: !(Maybe (Textual Int32))
+    , _plaSetlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

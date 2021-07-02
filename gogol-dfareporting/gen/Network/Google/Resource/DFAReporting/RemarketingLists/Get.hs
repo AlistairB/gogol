@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.RemarketingLists.Get
     , rlgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.remarketingLists.get@ method which the
 -- 'RemarketingListsGet' request conforms to.
@@ -67,13 +67,13 @@ type RemarketingListsGetResource =
 -- /See:/ 'remarketingListsGet' smart constructor.
 data RemarketingListsGet =
   RemarketingListsGet'
-    { _rlgXgafv          :: !(Maybe Xgafv)
+    { _rlgXgafv :: !(Maybe Xgafv)
     , _rlgUploadProtocol :: !(Maybe Text)
-    , _rlgAccessToken    :: !(Maybe Text)
-    , _rlgUploadType     :: !(Maybe Text)
-    , _rlgProFileId      :: !(Textual Int64)
-    , _rlgId             :: !(Textual Int64)
-    , _rlgCallback       :: !(Maybe Text)
+    , _rlgAccessToken :: !(Maybe Text)
+    , _rlgUploadType :: !(Maybe Text)
+    , _rlgProFileId :: !(Textual Int64)
+    , _rlgId :: !(Textual Int64)
+    , _rlgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

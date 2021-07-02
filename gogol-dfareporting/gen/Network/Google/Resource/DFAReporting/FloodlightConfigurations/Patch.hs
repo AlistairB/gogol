@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.FloodlightConfigurations.Patch
     , fcpCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightConfigurations.patch@ method which the
 -- 'FloodlightConfigurationsPatch' request conforms to.
@@ -71,14 +71,14 @@ type FloodlightConfigurationsPatchResource =
 -- /See:/ 'floodlightConfigurationsPatch' smart constructor.
 data FloodlightConfigurationsPatch =
   FloodlightConfigurationsPatch'
-    { _fcpXgafv          :: !(Maybe Xgafv)
+    { _fcpXgafv :: !(Maybe Xgafv)
     , _fcpUploadProtocol :: !(Maybe Text)
-    , _fcpAccessToken    :: !(Maybe Text)
-    , _fcpUploadType     :: !(Maybe Text)
-    , _fcpProFileId      :: !(Textual Int64)
-    , _fcpPayload        :: !FloodlightConfiguration
-    , _fcpId             :: !(Textual Int64)
-    , _fcpCallback       :: !(Maybe Text)
+    , _fcpAccessToken :: !(Maybe Text)
+    , _fcpUploadType :: !(Maybe Text)
+    , _fcpProFileId :: !(Textual Int64)
+    , _fcpPayload :: !FloodlightConfiguration
+    , _fcpId :: !(Textual Int64)
+    , _fcpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

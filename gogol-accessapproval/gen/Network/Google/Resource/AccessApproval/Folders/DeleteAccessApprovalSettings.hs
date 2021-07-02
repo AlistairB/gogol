@@ -46,8 +46,8 @@ module Network.Google.Resource.AccessApproval.Folders.DeleteAccessApprovalSettin
     , fdaasCallback
     ) where
 
-import           Network.Google.AccessApproval.Types
-import           Network.Google.Prelude
+import Network.Google.AccessApproval.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @accessapproval.folders.deleteAccessApprovalSettings@ method which the
 -- 'FoldersDeleteAccessApprovalSettings' request conforms to.
@@ -71,12 +71,12 @@ type FoldersDeleteAccessApprovalSettingsResource =
 -- /See:/ 'foldersDeleteAccessApprovalSettings' smart constructor.
 data FoldersDeleteAccessApprovalSettings =
   FoldersDeleteAccessApprovalSettings'
-    { _fdaasXgafv          :: !(Maybe Xgafv)
+    { _fdaasXgafv :: !(Maybe Xgafv)
     , _fdaasUploadProtocol :: !(Maybe Text)
-    , _fdaasAccessToken    :: !(Maybe Text)
-    , _fdaasUploadType     :: !(Maybe Text)
-    , _fdaasName           :: !Text
-    , _fdaasCallback       :: !(Maybe Text)
+    , _fdaasAccessToken :: !(Maybe Text)
+    , _fdaasUploadType :: !(Maybe Text)
+    , _fdaasName :: !Text
+    , _fdaasCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -43,8 +43,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Flows.Pages.
     , plafpcCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.flows.pages.create@ method which the
 -- 'ProjectsLocationsAgentsFlowsPagesCreate' request conforms to.
@@ -68,14 +68,14 @@ type ProjectsLocationsAgentsFlowsPagesCreateResource
 -- /See:/ 'projectsLocationsAgentsFlowsPagesCreate' smart constructor.
 data ProjectsLocationsAgentsFlowsPagesCreate =
   ProjectsLocationsAgentsFlowsPagesCreate'
-    { _plafpcParent         :: !Text
-    , _plafpcXgafv          :: !(Maybe Xgafv)
-    , _plafpcLanguageCode   :: !(Maybe Text)
+    { _plafpcParent :: !Text
+    , _plafpcXgafv :: !(Maybe Xgafv)
+    , _plafpcLanguageCode :: !(Maybe Text)
     , _plafpcUploadProtocol :: !(Maybe Text)
-    , _plafpcAccessToken    :: !(Maybe Text)
-    , _plafpcUploadType     :: !(Maybe Text)
-    , _plafpcPayload        :: !GoogleCloudDialogflowCxV3beta1Page
-    , _plafpcCallback       :: !(Maybe Text)
+    , _plafpcAccessToken :: !(Maybe Text)
+    , _plafpcUploadType :: !(Maybe Text)
+    , _plafpcPayload :: !GoogleCloudDialogflowCxV3beta1Page
+    , _plafpcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

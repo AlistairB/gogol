@@ -37,8 +37,8 @@ module Network.Google.Resource.Content.Pos.List
     , posTargetMerchantId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.pos.list@ method which the
 -- 'PosList' request conforms to.
@@ -57,7 +57,7 @@ type PosListResource =
 -- /See:/ 'posList' smart constructor.
 data PosList =
   PosList'
-    { _posMerchantId       :: !(Textual Word64)
+    { _posMerchantId :: !(Textual Word64)
     , _posTargetMerchantId :: !(Textual Word64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

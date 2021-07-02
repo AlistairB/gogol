@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.Reports.Run
     , rrCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.reports.run@ method which the
 -- 'ReportsRun' request conforms to.
@@ -69,14 +69,14 @@ type ReportsRunResource =
 -- /See:/ 'reportsRun' smart constructor.
 data ReportsRun =
   ReportsRun'
-    { _rrXgafv          :: !(Maybe Xgafv)
+    { _rrXgafv :: !(Maybe Xgafv)
     , _rrUploadProtocol :: !(Maybe Text)
-    , _rrSynchronous    :: !Bool
-    , _rrAccessToken    :: !(Maybe Text)
-    , _rrReportId       :: !(Textual Int64)
-    , _rrUploadType     :: !(Maybe Text)
-    , _rrProFileId      :: !(Textual Int64)
-    , _rrCallback       :: !(Maybe Text)
+    , _rrSynchronous :: !Bool
+    , _rrAccessToken :: !(Maybe Text)
+    , _rrReportId :: !(Textual Int64)
+    , _rrUploadType :: !(Maybe Text)
+    , _rrProFileId :: !(Textual Int64)
+    , _rrCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

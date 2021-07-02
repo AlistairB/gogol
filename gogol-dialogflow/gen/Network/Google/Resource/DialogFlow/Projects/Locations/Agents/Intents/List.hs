@@ -45,8 +45,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Intents.List
     , plailCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.intents.list@ method which the
 -- 'ProjectsLocationsAgentsIntentsList' request conforms to.
@@ -74,16 +74,16 @@ type ProjectsLocationsAgentsIntentsListResource =
 -- /See:/ 'projectsLocationsAgentsIntentsList' smart constructor.
 data ProjectsLocationsAgentsIntentsList =
   ProjectsLocationsAgentsIntentsList'
-    { _plailParent         :: !Text
-    , _plailXgafv          :: !(Maybe Xgafv)
-    , _plailLanguageCode   :: !(Maybe Text)
+    { _plailParent :: !Text
+    , _plailXgafv :: !(Maybe Xgafv)
+    , _plailLanguageCode :: !(Maybe Text)
     , _plailUploadProtocol :: !(Maybe Text)
-    , _plailAccessToken    :: !(Maybe Text)
-    , _plailUploadType     :: !(Maybe Text)
-    , _plailIntentView     :: !(Maybe ProjectsLocationsAgentsIntentsListIntentView)
-    , _plailPageToken      :: !(Maybe Text)
-    , _plailPageSize       :: !(Maybe (Textual Int32))
-    , _plailCallback       :: !(Maybe Text)
+    , _plailAccessToken :: !(Maybe Text)
+    , _plailUploadType :: !(Maybe Text)
+    , _plailIntentView :: !(Maybe ProjectsLocationsAgentsIntentsListIntentView)
+    , _plailPageToken :: !(Maybe Text)
+    , _plailPageSize :: !(Maybe (Textual Int32))
+    , _plailCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

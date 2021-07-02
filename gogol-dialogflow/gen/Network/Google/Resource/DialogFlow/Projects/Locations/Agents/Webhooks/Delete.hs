@@ -42,8 +42,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Webhooks.Del
     , plawdCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.webhooks.delete@ method which the
 -- 'ProjectsLocationsAgentsWebhooksDelete' request conforms to.
@@ -64,13 +64,13 @@ type ProjectsLocationsAgentsWebhooksDeleteResource =
 -- /See:/ 'projectsLocationsAgentsWebhooksDelete' smart constructor.
 data ProjectsLocationsAgentsWebhooksDelete =
   ProjectsLocationsAgentsWebhooksDelete'
-    { _plawdXgafv          :: !(Maybe Xgafv)
+    { _plawdXgafv :: !(Maybe Xgafv)
     , _plawdUploadProtocol :: !(Maybe Text)
-    , _plawdForce          :: !(Maybe Bool)
-    , _plawdAccessToken    :: !(Maybe Text)
-    , _plawdUploadType     :: !(Maybe Text)
-    , _plawdName           :: !Text
-    , _plawdCallback       :: !(Maybe Text)
+    , _plawdForce :: !(Maybe Bool)
+    , _plawdAccessToken :: !(Maybe Text)
+    , _plawdUploadType :: !(Maybe Text)
+    , _plawdName :: !Text
+    , _plawdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

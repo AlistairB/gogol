@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.Reports.CompatibleFields.Query
     , rcfqCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.reports.compatibleFields.query@ method which the
 -- 'ReportsCompatibleFieldsQuery' request conforms to.
@@ -73,13 +73,13 @@ type ReportsCompatibleFieldsQueryResource =
 -- /See:/ 'reportsCompatibleFieldsQuery' smart constructor.
 data ReportsCompatibleFieldsQuery =
   ReportsCompatibleFieldsQuery'
-    { _rcfqXgafv          :: !(Maybe Xgafv)
+    { _rcfqXgafv :: !(Maybe Xgafv)
     , _rcfqUploadProtocol :: !(Maybe Text)
-    , _rcfqAccessToken    :: !(Maybe Text)
-    , _rcfqUploadType     :: !(Maybe Text)
-    , _rcfqProFileId      :: !(Textual Int64)
-    , _rcfqPayload        :: !Report
-    , _rcfqCallback       :: !(Maybe Text)
+    , _rcfqAccessToken :: !(Maybe Text)
+    , _rcfqUploadType :: !(Maybe Text)
+    , _rcfqProFileId :: !(Textual Int64)
+    , _rcfqPayload :: !Report
+    , _rcfqCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

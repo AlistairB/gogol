@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.Orders.Rejectreturnlineitem
     , orrOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.rejectreturnlineitem@ method which the
 -- 'OrdersRejectreturnlineitem' request conforms to.
@@ -60,8 +60,8 @@ type OrdersRejectreturnlineitemResource =
 data OrdersRejectreturnlineitem =
   OrdersRejectreturnlineitem'
     { _orrMerchantId :: !(Textual Word64)
-    , _orrPayload    :: !OrdersRejectReturnLineItemRequest
-    , _orrOrderId    :: !Text
+    , _orrPayload :: !OrdersRejectReturnLineItemRequest
+    , _orrOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

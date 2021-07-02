@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.Pos.Inventory
     , piPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.pos.inventory@ method which the
 -- 'PosInventory'' request conforms to.
@@ -59,9 +59,9 @@ type PosInventoryResource =
 -- /See:/ 'posInventory'' smart constructor.
 data PosInventory' =
   PosInventory''
-    { _piMerchantId       :: !(Textual Word64)
+    { _piMerchantId :: !(Textual Word64)
     , _piTargetMerchantId :: !(Textual Word64)
-    , _piPayload          :: !PosInventoryRequest
+    , _piPayload :: !PosInventoryRequest
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

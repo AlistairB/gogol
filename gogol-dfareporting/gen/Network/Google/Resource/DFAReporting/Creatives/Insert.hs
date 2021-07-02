@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Creatives.Insert
     , ciCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creatives.insert@ method which the
 -- 'CreativesInsert' request conforms to.
@@ -66,13 +66,13 @@ type CreativesInsertResource =
 -- /See:/ 'creativesInsert' smart constructor.
 data CreativesInsert =
   CreativesInsert'
-    { _ciXgafv          :: !(Maybe Xgafv)
+    { _ciXgafv :: !(Maybe Xgafv)
     , _ciUploadProtocol :: !(Maybe Text)
-    , _ciAccessToken    :: !(Maybe Text)
-    , _ciUploadType     :: !(Maybe Text)
-    , _ciProFileId      :: !(Textual Int64)
-    , _ciPayload        :: !Creative
-    , _ciCallback       :: !(Maybe Text)
+    , _ciAccessToken :: !(Maybe Text)
+    , _ciUploadType :: !(Maybe Text)
+    , _ciProFileId :: !(Textual Int64)
+    , _ciPayload :: !Creative
+    , _ciCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

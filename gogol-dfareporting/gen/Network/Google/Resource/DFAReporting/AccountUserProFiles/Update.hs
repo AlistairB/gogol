@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.AccountUserProFiles.Update
     , aupfuCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accountUserProfiles.update@ method which the
 -- 'AccountUserProFilesUpdate' request conforms to.
@@ -67,13 +67,13 @@ type AccountUserProFilesUpdateResource =
 -- /See:/ 'accountUserProFilesUpdate' smart constructor.
 data AccountUserProFilesUpdate =
   AccountUserProFilesUpdate'
-    { _aupfuXgafv          :: !(Maybe Xgafv)
+    { _aupfuXgafv :: !(Maybe Xgafv)
     , _aupfuUploadProtocol :: !(Maybe Text)
-    , _aupfuAccessToken    :: !(Maybe Text)
-    , _aupfuUploadType     :: !(Maybe Text)
-    , _aupfuProFileId      :: !(Textual Int64)
-    , _aupfuPayload        :: !AccountUserProFile
-    , _aupfuCallback       :: !(Maybe Text)
+    , _aupfuAccessToken :: !(Maybe Text)
+    , _aupfuUploadType :: !(Maybe Text)
+    , _aupfuProFileId :: !(Textual Int64)
+    , _aupfuPayload :: !AccountUserProFile
+    , _aupfuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

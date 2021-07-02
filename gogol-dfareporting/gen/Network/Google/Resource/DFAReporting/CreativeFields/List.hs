@@ -49,8 +49,8 @@ module Network.Google.Resource.DFAReporting.CreativeFields.List
     , cflCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeFields.list@ method which the
 -- 'CreativeFieldsList' request conforms to.
@@ -83,19 +83,19 @@ type CreativeFieldsListResource =
 -- /See:/ 'creativeFieldsList' smart constructor.
 data CreativeFieldsList =
   CreativeFieldsList'
-    { _cflXgafv          :: !(Maybe Xgafv)
+    { _cflXgafv :: !(Maybe Xgafv)
     , _cflUploadProtocol :: !(Maybe Text)
-    , _cflAccessToken    :: !(Maybe Text)
-    , _cflSearchString   :: !(Maybe Text)
-    , _cflUploadType     :: !(Maybe Text)
-    , _cflIds            :: !(Maybe [Textual Int64])
-    , _cflProFileId      :: !(Textual Int64)
-    , _cflSortOrder      :: !CreativeFieldsListSortOrder
-    , _cflPageToken      :: !(Maybe Text)
-    , _cflSortField      :: !CreativeFieldsListSortField
-    , _cflAdvertiserIds  :: !(Maybe [Textual Int64])
-    , _cflMaxResults     :: !(Textual Int32)
-    , _cflCallback       :: !(Maybe Text)
+    , _cflAccessToken :: !(Maybe Text)
+    , _cflSearchString :: !(Maybe Text)
+    , _cflUploadType :: !(Maybe Text)
+    , _cflIds :: !(Maybe [Textual Int64])
+    , _cflProFileId :: !(Textual Int64)
+    , _cflSortOrder :: !CreativeFieldsListSortOrder
+    , _cflPageToken :: !(Maybe Text)
+    , _cflSortField :: !CreativeFieldsListSortField
+    , _cflAdvertiserIds :: !(Maybe [Textual Int64])
+    , _cflMaxResults :: !(Textual Int32)
+    , _cflCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

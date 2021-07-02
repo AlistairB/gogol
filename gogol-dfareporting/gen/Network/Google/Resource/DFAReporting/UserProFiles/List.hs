@@ -40,8 +40,8 @@ module Network.Google.Resource.DFAReporting.UserProFiles.List
     , upflCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.userProfiles.list@ method which the
 -- 'UserProFilesList' request conforms to.
@@ -62,11 +62,11 @@ type UserProFilesListResource =
 -- /See:/ 'userProFilesList' smart constructor.
 data UserProFilesList =
   UserProFilesList'
-    { _upflXgafv          :: !(Maybe Xgafv)
+    { _upflXgafv :: !(Maybe Xgafv)
     , _upflUploadProtocol :: !(Maybe Text)
-    , _upflAccessToken    :: !(Maybe Text)
-    , _upflUploadType     :: !(Maybe Text)
-    , _upflCallback       :: !(Maybe Text)
+    , _upflAccessToken :: !(Maybe Text)
+    , _upflUploadType :: !(Maybe Text)
+    , _upflCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

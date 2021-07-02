@@ -43,8 +43,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Environments
     , plaesetlCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.environments.sessions.entityTypes.list@ method which the
 -- 'ProjectsLocationsAgentsEnvironmentsSessionsEntityTypesList' request conforms to.
@@ -69,14 +69,14 @@ type ProjectsLocationsAgentsEnvironmentsSessionsEntityTypesListResource
 -- /See:/ 'projectsLocationsAgentsEnvironmentsSessionsEntityTypesList' smart constructor.
 data ProjectsLocationsAgentsEnvironmentsSessionsEntityTypesList =
   ProjectsLocationsAgentsEnvironmentsSessionsEntityTypesList'
-    { _plaesetlParent         :: !Text
-    , _plaesetlXgafv          :: !(Maybe Xgafv)
+    { _plaesetlParent :: !Text
+    , _plaesetlXgafv :: !(Maybe Xgafv)
     , _plaesetlUploadProtocol :: !(Maybe Text)
-    , _plaesetlAccessToken    :: !(Maybe Text)
-    , _plaesetlUploadType     :: !(Maybe Text)
-    , _plaesetlPageToken      :: !(Maybe Text)
-    , _plaesetlPageSize       :: !(Maybe (Textual Int32))
-    , _plaesetlCallback       :: !(Maybe Text)
+    , _plaesetlAccessToken :: !(Maybe Text)
+    , _plaesetlUploadType :: !(Maybe Text)
+    , _plaesetlPageToken :: !(Maybe Text)
+    , _plaesetlPageSize :: !(Maybe (Textual Int32))
+    , _plaesetlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

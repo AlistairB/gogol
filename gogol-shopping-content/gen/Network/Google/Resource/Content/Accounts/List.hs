@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.Accounts.List
     , allMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accounts.list@ method which the
 -- 'AccountsList' request conforms to.
@@ -59,7 +59,7 @@ type AccountsListResource =
 data AccountsList =
   AccountsList'
     { _allMerchantId :: !(Textual Word64)
-    , _allPageToken  :: !(Maybe Text)
+    , _allPageToken :: !(Maybe Text)
     , _allMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

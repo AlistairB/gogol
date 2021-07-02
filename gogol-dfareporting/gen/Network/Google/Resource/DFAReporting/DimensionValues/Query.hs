@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.DimensionValues.Query
     , dvqCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.dimensionValues.query@ method which the
 -- 'DimensionValuesQuery' request conforms to.
@@ -72,15 +72,15 @@ type DimensionValuesQueryResource =
 -- /See:/ 'dimensionValuesQuery' smart constructor.
 data DimensionValuesQuery =
   DimensionValuesQuery'
-    { _dvqXgafv          :: !(Maybe Xgafv)
+    { _dvqXgafv :: !(Maybe Xgafv)
     , _dvqUploadProtocol :: !(Maybe Text)
-    , _dvqAccessToken    :: !(Maybe Text)
-    , _dvqUploadType     :: !(Maybe Text)
-    , _dvqProFileId      :: !(Textual Int64)
-    , _dvqPayload        :: !DimensionValueRequest
-    , _dvqPageToken      :: !(Maybe Text)
-    , _dvqMaxResults     :: !(Textual Int32)
-    , _dvqCallback       :: !(Maybe Text)
+    , _dvqAccessToken :: !(Maybe Text)
+    , _dvqUploadType :: !(Maybe Text)
+    , _dvqProFileId :: !(Textual Int64)
+    , _dvqPayload :: !DimensionValueRequest
+    , _dvqPageToken :: !(Maybe Text)
+    , _dvqMaxResults :: !(Textual Int32)
+    , _dvqCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

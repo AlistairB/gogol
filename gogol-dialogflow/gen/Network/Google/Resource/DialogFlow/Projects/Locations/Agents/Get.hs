@@ -41,8 +41,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Get
     , plagCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.get@ method which the
 -- 'ProjectsLocationsAgentsGet' request conforms to.
@@ -62,12 +62,12 @@ type ProjectsLocationsAgentsGetResource =
 -- /See:/ 'projectsLocationsAgentsGet' smart constructor.
 data ProjectsLocationsAgentsGet =
   ProjectsLocationsAgentsGet'
-    { _plagXgafv          :: !(Maybe Xgafv)
+    { _plagXgafv :: !(Maybe Xgafv)
     , _plagUploadProtocol :: !(Maybe Text)
-    , _plagAccessToken    :: !(Maybe Text)
-    , _plagUploadType     :: !(Maybe Text)
-    , _plagName           :: !Text
-    , _plagCallback       :: !(Maybe Text)
+    , _plagAccessToken :: !(Maybe Text)
+    , _plagUploadType :: !(Maybe Text)
+    , _plagName :: !Text
+    , _plagCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

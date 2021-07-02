@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.ContentCategories.Patch
     , ccpCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.contentCategories.patch@ method which the
 -- 'ContentCategoriesPatch' request conforms to.
@@ -71,14 +71,14 @@ type ContentCategoriesPatchResource =
 -- /See:/ 'contentCategoriesPatch' smart constructor.
 data ContentCategoriesPatch =
   ContentCategoriesPatch'
-    { _ccpXgafv          :: !(Maybe Xgafv)
+    { _ccpXgafv :: !(Maybe Xgafv)
     , _ccpUploadProtocol :: !(Maybe Text)
-    , _ccpAccessToken    :: !(Maybe Text)
-    , _ccpUploadType     :: !(Maybe Text)
-    , _ccpProFileId      :: !(Textual Int64)
-    , _ccpPayload        :: !ContentCategory
-    , _ccpId             :: !(Textual Int64)
-    , _ccpCallback       :: !(Maybe Text)
+    , _ccpAccessToken :: !(Maybe Text)
+    , _ccpUploadType :: !(Maybe Text)
+    , _ccpProFileId :: !(Textual Int64)
+    , _ccpPayload :: !ContentCategory
+    , _ccpId :: !(Textual Int64)
+    , _ccpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

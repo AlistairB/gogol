@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.PlatformTypes.Get
     , ptgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.platformTypes.get@ method which the
 -- 'PlatformTypesGet' request conforms to.
@@ -66,13 +66,13 @@ type PlatformTypesGetResource =
 -- /See:/ 'platformTypesGet' smart constructor.
 data PlatformTypesGet =
   PlatformTypesGet'
-    { _ptgXgafv          :: !(Maybe Xgafv)
+    { _ptgXgafv :: !(Maybe Xgafv)
     , _ptgUploadProtocol :: !(Maybe Text)
-    , _ptgAccessToken    :: !(Maybe Text)
-    , _ptgUploadType     :: !(Maybe Text)
-    , _ptgProFileId      :: !(Textual Int64)
-    , _ptgId             :: !(Textual Int64)
-    , _ptgCallback       :: !(Maybe Text)
+    , _ptgAccessToken :: !(Maybe Text)
+    , _ptgUploadType :: !(Maybe Text)
+    , _ptgProFileId :: !(Textual Int64)
+    , _ptgId :: !(Textual Int64)
+    , _ptgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

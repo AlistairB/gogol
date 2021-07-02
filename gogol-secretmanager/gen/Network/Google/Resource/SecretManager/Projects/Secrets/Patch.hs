@@ -43,8 +43,8 @@ module Network.Google.Resource.SecretManager.Projects.Secrets.Patch
     , pspCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecretManager.Types
+import Network.Google.Prelude
+import Network.Google.SecretManager.Types
 
 -- | A resource alias for @secretmanager.projects.secrets.patch@ method which the
 -- 'ProjectsSecretsPatch' request conforms to.
@@ -65,14 +65,14 @@ type ProjectsSecretsPatchResource =
 -- /See:/ 'projectsSecretsPatch' smart constructor.
 data ProjectsSecretsPatch =
   ProjectsSecretsPatch'
-    { _pspXgafv          :: !(Maybe Xgafv)
+    { _pspXgafv :: !(Maybe Xgafv)
     , _pspUploadProtocol :: !(Maybe Text)
-    , _pspUpdateMask     :: !(Maybe GFieldMask)
-    , _pspAccessToken    :: !(Maybe Text)
-    , _pspUploadType     :: !(Maybe Text)
-    , _pspPayload        :: !Secret
-    , _pspName           :: !Text
-    , _pspCallback       :: !(Maybe Text)
+    , _pspUpdateMask :: !(Maybe GFieldMask)
+    , _pspAccessToken :: !(Maybe Text)
+    , _pspUploadType :: !(Maybe Text)
+    , _pspPayload :: !Secret
+    , _pspName :: !Text
+    , _pspCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -40,8 +40,8 @@ module Network.Google.Resource.Content.Regionalinventory.Insert
     , riProductId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.regionalinventory.insert@ method which the
 -- 'RegionalinventoryInsert' request conforms to.
@@ -64,8 +64,8 @@ type RegionalinventoryInsertResource =
 data RegionalinventoryInsert =
   RegionalinventoryInsert'
     { _riMerchantId :: !(Textual Word64)
-    , _riPayload    :: !RegionalInventory
-    , _riProductId  :: !Text
+    , _riPayload :: !RegionalInventory
+    , _riProductId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.InventoryItems.Get
     , iigCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.inventoryItems.get@ method which the
 -- 'InventoryItemsGet' request conforms to.
@@ -70,14 +70,14 @@ type InventoryItemsGetResource =
 -- /See:/ 'inventoryItemsGet' smart constructor.
 data InventoryItemsGet =
   InventoryItemsGet'
-    { _iigXgafv          :: !(Maybe Xgafv)
+    { _iigXgafv :: !(Maybe Xgafv)
     , _iigUploadProtocol :: !(Maybe Text)
-    , _iigAccessToken    :: !(Maybe Text)
-    , _iigUploadType     :: !(Maybe Text)
-    , _iigProFileId      :: !(Textual Int64)
-    , _iigId             :: !(Textual Int64)
-    , _iigProjectId      :: !(Textual Int64)
-    , _iigCallback       :: !(Maybe Text)
+    , _iigAccessToken :: !(Maybe Text)
+    , _iigUploadType :: !(Maybe Text)
+    , _iigProFileId :: !(Textual Int64)
+    , _iigId :: !(Textual Int64)
+    , _iigProjectId :: !(Textual Int64)
+    , _iigCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

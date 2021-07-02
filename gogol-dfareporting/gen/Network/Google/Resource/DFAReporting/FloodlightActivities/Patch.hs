@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.FloodlightActivities.Patch
     , fapCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightActivities.patch@ method which the
 -- 'FloodlightActivitiesPatch' request conforms to.
@@ -71,14 +71,14 @@ type FloodlightActivitiesPatchResource =
 -- /See:/ 'floodlightActivitiesPatch' smart constructor.
 data FloodlightActivitiesPatch =
   FloodlightActivitiesPatch'
-    { _fapXgafv          :: !(Maybe Xgafv)
+    { _fapXgafv :: !(Maybe Xgafv)
     , _fapUploadProtocol :: !(Maybe Text)
-    , _fapAccessToken    :: !(Maybe Text)
-    , _fapUploadType     :: !(Maybe Text)
-    , _fapProFileId      :: !(Textual Int64)
-    , _fapPayload        :: !FloodlightActivity
-    , _fapId             :: !(Textual Int64)
-    , _fapCallback       :: !(Maybe Text)
+    , _fapAccessToken :: !(Maybe Text)
+    , _fapUploadType :: !(Maybe Text)
+    , _fapProFileId :: !(Textual Int64)
+    , _fapPayload :: !FloodlightActivity
+    , _fapId :: !(Textual Int64)
+    , _fapCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

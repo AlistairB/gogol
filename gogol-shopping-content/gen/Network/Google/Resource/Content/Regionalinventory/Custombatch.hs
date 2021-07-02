@@ -37,8 +37,8 @@ module Network.Google.Resource.Content.Regionalinventory.Custombatch
     , rcPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.regionalinventory.custombatch@ method which the
 -- 'RegionalinventoryCustombatch' request conforms to.

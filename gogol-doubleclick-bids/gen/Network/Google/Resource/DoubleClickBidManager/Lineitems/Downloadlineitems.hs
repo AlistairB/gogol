@@ -42,8 +42,8 @@ module Network.Google.Resource.DoubleClickBidManager.Lineitems.Downloadlineitems
     , ldCallback
     ) where
 
-import           Network.Google.DoubleClickBids.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclickbidmanager.lineitems.downloadlineitems@ method which the
 -- 'LineitemsDownloadlineitems' request conforms to.
@@ -67,12 +67,12 @@ type LineitemsDownloadlineitemsResource =
 -- /See:/ 'lineitemsDownloadlineitems' smart constructor.
 data LineitemsDownloadlineitems =
   LineitemsDownloadlineitems'
-    { _ldXgafv          :: !(Maybe Xgafv)
+    { _ldXgafv :: !(Maybe Xgafv)
     , _ldUploadProtocol :: !(Maybe Text)
-    , _ldAccessToken    :: !(Maybe Text)
-    , _ldUploadType     :: !(Maybe Text)
-    , _ldPayload        :: !DownloadLineItemsRequest
-    , _ldCallback       :: !(Maybe Text)
+    , _ldAccessToken :: !(Maybe Text)
+    , _ldUploadType :: !(Maybe Text)
+    , _ldPayload :: !DownloadLineItemsRequest
+    , _ldCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

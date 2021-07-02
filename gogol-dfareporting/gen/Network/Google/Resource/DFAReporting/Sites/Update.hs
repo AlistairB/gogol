@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Sites.Update
     , suCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.sites.update@ method which the
 -- 'SitesUpdate' request conforms to.
@@ -66,13 +66,13 @@ type SitesUpdateResource =
 -- /See:/ 'sitesUpdate' smart constructor.
 data SitesUpdate =
   SitesUpdate'
-    { _suXgafv          :: !(Maybe Xgafv)
+    { _suXgafv :: !(Maybe Xgafv)
     , _suUploadProtocol :: !(Maybe Text)
-    , _suAccessToken    :: !(Maybe Text)
-    , _suUploadType     :: !(Maybe Text)
-    , _suProFileId      :: !(Textual Int64)
-    , _suPayload        :: !Site
-    , _suCallback       :: !(Maybe Text)
+    , _suAccessToken :: !(Maybe Text)
+    , _suUploadType :: !(Maybe Text)
+    , _suProFileId :: !(Textual Int64)
+    , _suPayload :: !Site
+    , _suCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

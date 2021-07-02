@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.ChangeLogs.Get
     , clgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.changeLogs.get@ method which the
 -- 'ChangeLogsGet' request conforms to.
@@ -66,13 +66,13 @@ type ChangeLogsGetResource =
 -- /See:/ 'changeLogsGet' smart constructor.
 data ChangeLogsGet =
   ChangeLogsGet'
-    { _clgXgafv          :: !(Maybe Xgafv)
+    { _clgXgafv :: !(Maybe Xgafv)
     , _clgUploadProtocol :: !(Maybe Text)
-    , _clgAccessToken    :: !(Maybe Text)
-    , _clgUploadType     :: !(Maybe Text)
-    , _clgProFileId      :: !(Textual Int64)
-    , _clgId             :: !(Textual Int64)
-    , _clgCallback       :: !(Maybe Text)
+    , _clgAccessToken :: !(Maybe Text)
+    , _clgUploadType :: !(Maybe Text)
+    , _clgProFileId :: !(Textual Int64)
+    , _clgId :: !(Textual Int64)
+    , _clgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

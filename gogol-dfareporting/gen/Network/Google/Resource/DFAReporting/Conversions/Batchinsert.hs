@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Conversions.Batchinsert
     , cbCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.conversions.batchinsert@ method which the
 -- 'ConversionsBatchinsert' request conforms to.
@@ -68,13 +68,13 @@ type ConversionsBatchinsertResource =
 -- /See:/ 'conversionsBatchinsert' smart constructor.
 data ConversionsBatchinsert =
   ConversionsBatchinsert'
-    { _cbXgafv          :: !(Maybe Xgafv)
+    { _cbXgafv :: !(Maybe Xgafv)
     , _cbUploadProtocol :: !(Maybe Text)
-    , _cbAccessToken    :: !(Maybe Text)
-    , _cbUploadType     :: !(Maybe Text)
-    , _cbProFileId      :: !(Textual Int64)
-    , _cbPayload        :: !ConversionsBatchInsertRequest
-    , _cbCallback       :: !(Maybe Text)
+    , _cbAccessToken :: !(Maybe Text)
+    , _cbUploadType :: !(Maybe Text)
+    , _cbProFileId :: !(Textual Int64)
+    , _cbPayload :: !ConversionsBatchInsertRequest
+    , _cbCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

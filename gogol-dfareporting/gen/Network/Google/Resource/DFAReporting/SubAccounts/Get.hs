@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.SubAccounts.Get
     , sagCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.subaccounts.get@ method which the
 -- 'SubAccountsGet' request conforms to.
@@ -66,13 +66,13 @@ type SubAccountsGetResource =
 -- /See:/ 'subAccountsGet' smart constructor.
 data SubAccountsGet =
   SubAccountsGet'
-    { _sagXgafv          :: !(Maybe Xgafv)
+    { _sagXgafv :: !(Maybe Xgafv)
     , _sagUploadProtocol :: !(Maybe Text)
-    , _sagAccessToken    :: !(Maybe Text)
-    , _sagUploadType     :: !(Maybe Text)
-    , _sagProFileId      :: !(Textual Int64)
-    , _sagId             :: !(Textual Int64)
-    , _sagCallback       :: !(Maybe Text)
+    , _sagAccessToken :: !(Maybe Text)
+    , _sagUploadType :: !(Maybe Text)
+    , _sagProFileId :: !(Textual Int64)
+    , _sagId :: !(Textual Int64)
+    , _sagCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

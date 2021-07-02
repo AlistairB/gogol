@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.FloodlightActivityGroups.Insert
     , fagiCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightActivityGroups.insert@ method which the
 -- 'FloodlightActivityGroupsInsert' request conforms to.
@@ -67,13 +67,13 @@ type FloodlightActivityGroupsInsertResource =
 -- /See:/ 'floodlightActivityGroupsInsert' smart constructor.
 data FloodlightActivityGroupsInsert =
   FloodlightActivityGroupsInsert'
-    { _fagiXgafv          :: !(Maybe Xgafv)
+    { _fagiXgafv :: !(Maybe Xgafv)
     , _fagiUploadProtocol :: !(Maybe Text)
-    , _fagiAccessToken    :: !(Maybe Text)
-    , _fagiUploadType     :: !(Maybe Text)
-    , _fagiProFileId      :: !(Textual Int64)
-    , _fagiPayload        :: !FloodlightActivityGroup
-    , _fagiCallback       :: !(Maybe Text)
+    , _fagiAccessToken :: !(Maybe Text)
+    , _fagiUploadType :: !(Maybe Text)
+    , _fagiProFileId :: !(Textual Int64)
+    , _fagiPayload :: !FloodlightActivityGroup
+    , _fagiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

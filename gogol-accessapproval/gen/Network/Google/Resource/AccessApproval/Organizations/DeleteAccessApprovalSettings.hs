@@ -46,8 +46,8 @@ module Network.Google.Resource.AccessApproval.Organizations.DeleteAccessApproval
     , odaasCallback
     ) where
 
-import           Network.Google.AccessApproval.Types
-import           Network.Google.Prelude
+import Network.Google.AccessApproval.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @accessapproval.organizations.deleteAccessApprovalSettings@ method which the
 -- 'OrganizationsDeleteAccessApprovalSettings' request conforms to.
@@ -72,12 +72,12 @@ type OrganizationsDeleteAccessApprovalSettingsResource
 -- /See:/ 'organizationsDeleteAccessApprovalSettings' smart constructor.
 data OrganizationsDeleteAccessApprovalSettings =
   OrganizationsDeleteAccessApprovalSettings'
-    { _odaasXgafv          :: !(Maybe Xgafv)
+    { _odaasXgafv :: !(Maybe Xgafv)
     , _odaasUploadProtocol :: !(Maybe Text)
-    , _odaasAccessToken    :: !(Maybe Text)
-    , _odaasUploadType     :: !(Maybe Text)
-    , _odaasName           :: !Text
-    , _odaasCallback       :: !(Maybe Text)
+    , _odaasAccessToken :: !(Maybe Text)
+    , _odaasUploadType :: !(Maybe Text)
+    , _odaasName :: !Text
+    , _odaasCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

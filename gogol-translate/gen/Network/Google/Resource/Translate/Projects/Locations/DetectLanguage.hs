@@ -42,8 +42,8 @@ module Network.Google.Resource.Translate.Projects.Locations.DetectLanguage
     , pldlCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Translate.Types
+import Network.Google.Prelude
+import Network.Google.Translate.Types
 
 -- | A resource alias for @translate.projects.locations.detectLanguage@ method which the
 -- 'ProjectsLocationsDetectLanguage' request conforms to.
@@ -64,13 +64,13 @@ type ProjectsLocationsDetectLanguageResource =
 -- /See:/ 'projectsLocationsDetectLanguage' smart constructor.
 data ProjectsLocationsDetectLanguage =
   ProjectsLocationsDetectLanguage'
-    { _pldlParent         :: !Text
-    , _pldlXgafv          :: !(Maybe Xgafv)
+    { _pldlParent :: !Text
+    , _pldlXgafv :: !(Maybe Xgafv)
     , _pldlUploadProtocol :: !(Maybe Text)
-    , _pldlAccessToken    :: !(Maybe Text)
-    , _pldlUploadType     :: !(Maybe Text)
-    , _pldlPayload        :: !DetectLanguageRequest
-    , _pldlCallback       :: !(Maybe Text)
+    , _pldlAccessToken :: !(Maybe Text)
+    , _pldlUploadType :: !(Maybe Text)
+    , _pldlPayload :: !DetectLanguageRequest
+    , _pldlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.PlacementStrategies.Patch
     , pspCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementStrategies.patch@ method which the
 -- 'PlacementStrategiesPatch' request conforms to.
@@ -71,14 +71,14 @@ type PlacementStrategiesPatchResource =
 -- /See:/ 'placementStrategiesPatch' smart constructor.
 data PlacementStrategiesPatch =
   PlacementStrategiesPatch'
-    { _pspXgafv          :: !(Maybe Xgafv)
+    { _pspXgafv :: !(Maybe Xgafv)
     , _pspUploadProtocol :: !(Maybe Text)
-    , _pspAccessToken    :: !(Maybe Text)
-    , _pspUploadType     :: !(Maybe Text)
-    , _pspProFileId      :: !(Textual Int64)
-    , _pspPayload        :: !PlacementStrategy
-    , _pspId             :: !(Textual Int64)
-    , _pspCallback       :: !(Maybe Text)
+    , _pspAccessToken :: !(Maybe Text)
+    , _pspUploadType :: !(Maybe Text)
+    , _pspProFileId :: !(Textual Int64)
+    , _pspPayload :: !PlacementStrategy
+    , _pspId :: !(Textual Int64)
+    , _pspCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

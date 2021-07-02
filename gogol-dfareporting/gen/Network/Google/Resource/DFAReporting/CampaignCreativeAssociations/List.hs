@@ -46,8 +46,8 @@ module Network.Google.Resource.DFAReporting.CampaignCreativeAssociations.List
     , ccalCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.campaignCreativeAssociations.list@ method which the
 -- 'CampaignCreativeAssociationsList' request conforms to.
@@ -79,16 +79,16 @@ type CampaignCreativeAssociationsListResource =
 -- /See:/ 'campaignCreativeAssociationsList' smart constructor.
 data CampaignCreativeAssociationsList =
   CampaignCreativeAssociationsList'
-    { _ccalXgafv          :: !(Maybe Xgafv)
+    { _ccalXgafv :: !(Maybe Xgafv)
     , _ccalUploadProtocol :: !(Maybe Text)
-    , _ccalAccessToken    :: !(Maybe Text)
-    , _ccalUploadType     :: !(Maybe Text)
-    , _ccalCampaignId     :: !(Textual Int64)
-    , _ccalProFileId      :: !(Textual Int64)
-    , _ccalSortOrder      :: !CampaignCreativeAssociationsListSortOrder
-    , _ccalPageToken      :: !(Maybe Text)
-    , _ccalMaxResults     :: !(Textual Int32)
-    , _ccalCallback       :: !(Maybe Text)
+    , _ccalAccessToken :: !(Maybe Text)
+    , _ccalUploadType :: !(Maybe Text)
+    , _ccalCampaignId :: !(Textual Int64)
+    , _ccalProFileId :: !(Textual Int64)
+    , _ccalSortOrder :: !CampaignCreativeAssociationsListSortOrder
+    , _ccalPageToken :: !(Maybe Text)
+    , _ccalMaxResults :: !(Textual Int32)
+    , _ccalCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

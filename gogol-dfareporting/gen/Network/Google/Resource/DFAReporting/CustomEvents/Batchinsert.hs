@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.CustomEvents.Batchinsert
     , cebCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.customEvents.batchinsert@ method which the
 -- 'CustomEventsBatchinsert' request conforms to.
@@ -68,13 +68,13 @@ type CustomEventsBatchinsertResource =
 -- /See:/ 'customEventsBatchinsert' smart constructor.
 data CustomEventsBatchinsert =
   CustomEventsBatchinsert'
-    { _cebXgafv          :: !(Maybe Xgafv)
+    { _cebXgafv :: !(Maybe Xgafv)
     , _cebUploadProtocol :: !(Maybe Text)
-    , _cebAccessToken    :: !(Maybe Text)
-    , _cebUploadType     :: !(Maybe Text)
-    , _cebProFileId      :: !(Textual Int64)
-    , _cebPayload        :: !CustomEventsBatchInsertRequest
-    , _cebCallback       :: !(Maybe Text)
+    , _cebAccessToken :: !(Maybe Text)
+    , _cebUploadType :: !(Maybe Text)
+    , _cebProFileId :: !(Textual Int64)
+    , _cebPayload :: !CustomEventsBatchInsertRequest
+    , _cebCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.Campaigns.Patch
     , cpCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.campaigns.patch@ method which the
 -- 'CampaignsPatch' request conforms to.
@@ -68,14 +68,14 @@ type CampaignsPatchResource =
 -- /See:/ 'campaignsPatch' smart constructor.
 data CampaignsPatch =
   CampaignsPatch'
-    { _cpXgafv          :: !(Maybe Xgafv)
+    { _cpXgafv :: !(Maybe Xgafv)
     , _cpUploadProtocol :: !(Maybe Text)
-    , _cpAccessToken    :: !(Maybe Text)
-    , _cpUploadType     :: !(Maybe Text)
-    , _cpProFileId      :: !(Textual Int64)
-    , _cpPayload        :: !Campaign
-    , _cpId             :: !(Textual Int64)
-    , _cpCallback       :: !(Maybe Text)
+    , _cpAccessToken :: !(Maybe Text)
+    , _cpUploadType :: !(Maybe Text)
+    , _cpProFileId :: !(Textual Int64)
+    , _cpPayload :: !Campaign
+    , _cpId :: !(Textual Int64)
+    , _cpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

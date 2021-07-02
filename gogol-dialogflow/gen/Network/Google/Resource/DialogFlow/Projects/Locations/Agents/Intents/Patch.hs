@@ -44,8 +44,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Intents.Patc
     , plaipCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.intents.patch@ method which the
 -- 'ProjectsLocationsAgentsIntentsPatch' request conforms to.
@@ -68,15 +68,15 @@ type ProjectsLocationsAgentsIntentsPatchResource =
 -- /See:/ 'projectsLocationsAgentsIntentsPatch' smart constructor.
 data ProjectsLocationsAgentsIntentsPatch =
   ProjectsLocationsAgentsIntentsPatch'
-    { _plaipXgafv          :: !(Maybe Xgafv)
-    , _plaipLanguageCode   :: !(Maybe Text)
+    { _plaipXgafv :: !(Maybe Xgafv)
+    , _plaipLanguageCode :: !(Maybe Text)
     , _plaipUploadProtocol :: !(Maybe Text)
-    , _plaipUpdateMask     :: !(Maybe GFieldMask)
-    , _plaipAccessToken    :: !(Maybe Text)
-    , _plaipUploadType     :: !(Maybe Text)
-    , _plaipPayload        :: !GoogleCloudDialogflowCxV3beta1Intent
-    , _plaipName           :: !Text
-    , _plaipCallback       :: !(Maybe Text)
+    , _plaipUpdateMask :: !(Maybe GFieldMask)
+    , _plaipAccessToken :: !(Maybe Text)
+    , _plaipUploadType :: !(Maybe Text)
+    , _plaipPayload :: !GoogleCloudDialogflowCxV3beta1Intent
+    , _plaipName :: !Text
+    , _plaipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

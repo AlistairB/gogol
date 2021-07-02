@@ -42,8 +42,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.EntityTypes.
     , plaetgCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.entityTypes.get@ method which the
 -- 'ProjectsLocationsAgentsEntityTypesGet' request conforms to.
@@ -64,13 +64,13 @@ type ProjectsLocationsAgentsEntityTypesGetResource =
 -- /See:/ 'projectsLocationsAgentsEntityTypesGet' smart constructor.
 data ProjectsLocationsAgentsEntityTypesGet =
   ProjectsLocationsAgentsEntityTypesGet'
-    { _plaetgXgafv          :: !(Maybe Xgafv)
-    , _plaetgLanguageCode   :: !(Maybe Text)
+    { _plaetgXgafv :: !(Maybe Xgafv)
+    , _plaetgLanguageCode :: !(Maybe Text)
     , _plaetgUploadProtocol :: !(Maybe Text)
-    , _plaetgAccessToken    :: !(Maybe Text)
-    , _plaetgUploadType     :: !(Maybe Text)
-    , _plaetgName           :: !Text
-    , _plaetgCallback       :: !(Maybe Text)
+    , _plaetgAccessToken :: !(Maybe Text)
+    , _plaetgUploadType :: !(Maybe Text)
+    , _plaetgName :: !Text
+    , _plaetgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

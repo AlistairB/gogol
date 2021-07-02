@@ -41,8 +41,8 @@ module Network.Google.Resource.DFAReporting.Countries.List
     , couCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.countries.list@ method which the
 -- 'CountriesList' request conforms to.
@@ -65,12 +65,12 @@ type CountriesListResource =
 -- /See:/ 'countriesList' smart constructor.
 data CountriesList =
   CountriesList'
-    { _couXgafv          :: !(Maybe Xgafv)
+    { _couXgafv :: !(Maybe Xgafv)
     , _couUploadProtocol :: !(Maybe Text)
-    , _couAccessToken    :: !(Maybe Text)
-    , _couUploadType     :: !(Maybe Text)
-    , _couProFileId      :: !(Textual Int64)
-    , _couCallback       :: !(Maybe Text)
+    , _couAccessToken :: !(Maybe Text)
+    , _couUploadType :: !(Maybe Text)
+    , _couProFileId :: !(Textual Int64)
+    , _couCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

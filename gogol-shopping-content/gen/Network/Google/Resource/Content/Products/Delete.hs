@@ -37,8 +37,8 @@ module Network.Google.Resource.Content.Products.Delete
     , proProductId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.products.delete@ method which the
 -- 'ProductsDelete' request conforms to.
@@ -56,7 +56,7 @@ type ProductsDeleteResource =
 data ProductsDelete =
   ProductsDelete'
     { _proMerchantId :: !(Textual Word64)
-    , _proProductId  :: !Text
+    , _proProductId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

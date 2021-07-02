@@ -43,8 +43,8 @@ module Network.Google.Resource.Translate.Projects.Locations.GetSupportedLanguage
     , plgslCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Translate.Types
+import Network.Google.Prelude
+import Network.Google.Translate.Types
 
 -- | A resource alias for @translate.projects.locations.getSupportedLanguages@ method which the
 -- 'ProjectsLocationsGetSupportedLanguages' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsLocationsGetSupportedLanguagesResource =
 -- /See:/ 'projectsLocationsGetSupportedLanguages' smart constructor.
 data ProjectsLocationsGetSupportedLanguages =
   ProjectsLocationsGetSupportedLanguages'
-    { _plgslParent              :: !Text
-    , _plgslXgafv               :: !(Maybe Xgafv)
-    , _plgslUploadProtocol      :: !(Maybe Text)
+    { _plgslParent :: !Text
+    , _plgslXgafv :: !(Maybe Xgafv)
+    , _plgslUploadProtocol :: !(Maybe Text)
     , _plgslDisplayLanguageCode :: !(Maybe Text)
-    , _plgslAccessToken         :: !(Maybe Text)
-    , _plgslUploadType          :: !(Maybe Text)
-    , _plgslModel               :: !(Maybe Text)
-    , _plgslCallback            :: !(Maybe Text)
+    , _plgslAccessToken :: !(Maybe Text)
+    , _plgslUploadType :: !(Maybe Text)
+    , _plgslModel :: !(Maybe Text)
+    , _plgslCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -39,8 +39,8 @@ module Network.Google.Resource.Content.Accounttax.List
     , al1MaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accounttax.list@ method which the
 -- 'AccounttaxList' request conforms to.
@@ -61,7 +61,7 @@ type AccounttaxListResource =
 data AccounttaxList =
   AccounttaxList'
     { _al1MerchantId :: !(Textual Word64)
-    , _al1PageToken  :: !(Maybe Text)
+    , _al1PageToken :: !(Maybe Text)
     , _al1MaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

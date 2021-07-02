@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.PlacementStrategies.Update
     , psuCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementStrategies.update@ method which the
 -- 'PlacementStrategiesUpdate' request conforms to.
@@ -67,13 +67,13 @@ type PlacementStrategiesUpdateResource =
 -- /See:/ 'placementStrategiesUpdate' smart constructor.
 data PlacementStrategiesUpdate =
   PlacementStrategiesUpdate'
-    { _psuXgafv          :: !(Maybe Xgafv)
+    { _psuXgafv :: !(Maybe Xgafv)
     , _psuUploadProtocol :: !(Maybe Text)
-    , _psuAccessToken    :: !(Maybe Text)
-    , _psuUploadType     :: !(Maybe Text)
-    , _psuProFileId      :: !(Textual Int64)
-    , _psuPayload        :: !PlacementStrategy
-    , _psuCallback       :: !(Maybe Text)
+    , _psuAccessToken :: !(Maybe Text)
+    , _psuUploadType :: !(Maybe Text)
+    , _psuProFileId :: !(Textual Int64)
+    , _psuPayload :: !PlacementStrategy
+    , _psuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

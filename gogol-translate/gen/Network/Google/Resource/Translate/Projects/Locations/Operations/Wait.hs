@@ -50,8 +50,8 @@ module Network.Google.Resource.Translate.Projects.Locations.Operations.Wait
     , plowCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Translate.Types
+import Network.Google.Prelude
+import Network.Google.Translate.Types
 
 -- | A resource alias for @translate.projects.locations.operations.wait@ method which the
 -- 'ProjectsLocationsOperationsWait' request conforms to.
@@ -80,13 +80,13 @@ type ProjectsLocationsOperationsWaitResource =
 -- /See:/ 'projectsLocationsOperationsWait' smart constructor.
 data ProjectsLocationsOperationsWait =
   ProjectsLocationsOperationsWait'
-    { _plowXgafv          :: !(Maybe Xgafv)
+    { _plowXgafv :: !(Maybe Xgafv)
     , _plowUploadProtocol :: !(Maybe Text)
-    , _plowAccessToken    :: !(Maybe Text)
-    , _plowUploadType     :: !(Maybe Text)
-    , _plowPayload        :: !WaitOperationRequest
-    , _plowName           :: !Text
-    , _plowCallback       :: !(Maybe Text)
+    , _plowAccessToken :: !(Maybe Text)
+    , _plowUploadType :: !(Maybe Text)
+    , _plowPayload :: !WaitOperationRequest
+    , _plowName :: !Text
+    , _plowCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

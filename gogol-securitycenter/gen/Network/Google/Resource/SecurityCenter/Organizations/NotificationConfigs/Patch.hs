@@ -44,8 +44,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.NotificationConfigs.
     , oncpCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.notificationConfigs.patch@ method which the
 -- 'OrganizationsNotificationConfigsPatch' request conforms to.
@@ -68,14 +68,14 @@ type OrganizationsNotificationConfigsPatchResource =
 -- /See:/ 'organizationsNotificationConfigsPatch' smart constructor.
 data OrganizationsNotificationConfigsPatch =
   OrganizationsNotificationConfigsPatch'
-    { _oncpXgafv          :: !(Maybe Xgafv)
+    { _oncpXgafv :: !(Maybe Xgafv)
     , _oncpUploadProtocol :: !(Maybe Text)
-    , _oncpUpdateMask     :: !(Maybe GFieldMask)
-    , _oncpAccessToken    :: !(Maybe Text)
-    , _oncpUploadType     :: !(Maybe Text)
-    , _oncpPayload        :: !NotificationConfig
-    , _oncpName           :: !Text
-    , _oncpCallback       :: !(Maybe Text)
+    , _oncpUpdateMask :: !(Maybe GFieldMask)
+    , _oncpAccessToken :: !(Maybe Text)
+    , _oncpUploadType :: !(Maybe Text)
+    , _oncpPayload :: !NotificationConfig
+    , _oncpName :: !Text
+    , _oncpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

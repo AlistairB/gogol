@@ -42,8 +42,8 @@ module Network.Google.Resource.Translate.Projects.Locations.Glossaries.Delete
     , plgdCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Translate.Types
+import Network.Google.Prelude
+import Network.Google.Translate.Types
 
 -- | A resource alias for @translate.projects.locations.glossaries.delete@ method which the
 -- 'ProjectsLocationsGlossariesDelete' request conforms to.
@@ -63,12 +63,12 @@ type ProjectsLocationsGlossariesDeleteResource =
 -- /See:/ 'projectsLocationsGlossariesDelete' smart constructor.
 data ProjectsLocationsGlossariesDelete =
   ProjectsLocationsGlossariesDelete'
-    { _plgdXgafv          :: !(Maybe Xgafv)
+    { _plgdXgafv :: !(Maybe Xgafv)
     , _plgdUploadProtocol :: !(Maybe Text)
-    , _plgdAccessToken    :: !(Maybe Text)
-    , _plgdUploadType     :: !(Maybe Text)
-    , _plgdName           :: !Text
-    , _plgdCallback       :: !(Maybe Text)
+    , _plgdAccessToken :: !(Maybe Text)
+    , _plgdUploadType :: !(Maybe Text)
+    , _plgdName :: !Text
+    , _plgdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

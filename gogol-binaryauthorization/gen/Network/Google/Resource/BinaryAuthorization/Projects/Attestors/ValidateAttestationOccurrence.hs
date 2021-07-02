@@ -43,8 +43,8 @@ module Network.Google.Resource.BinaryAuthorization.Projects.Attestors.ValidateAt
     , pavaoCallback
     ) where
 
-import           Network.Google.BinaryAuthorization.Types
-import           Network.Google.Prelude
+import Network.Google.BinaryAuthorization.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @binaryauthorization.projects.attestors.validateAttestationOccurrence@ method which the
 -- 'ProjectsAttestorsValidateAttestationOccurrence' request conforms to.
@@ -70,13 +70,13 @@ type ProjectsAttestorsValidateAttestationOccurrenceResource
 -- /See:/ 'projectsAttestorsValidateAttestationOccurrence' smart constructor.
 data ProjectsAttestorsValidateAttestationOccurrence =
   ProjectsAttestorsValidateAttestationOccurrence'
-    { _pavaoXgafv          :: !(Maybe Xgafv)
+    { _pavaoXgafv :: !(Maybe Xgafv)
     , _pavaoUploadProtocol :: !(Maybe Text)
-    , _pavaoAccessToken    :: !(Maybe Text)
-    , _pavaoUploadType     :: !(Maybe Text)
-    , _pavaoPayload        :: !ValidateAttestationOccurrenceRequest
-    , _pavaoAttestor       :: !Text
-    , _pavaoCallback       :: !(Maybe Text)
+    , _pavaoAccessToken :: !(Maybe Text)
+    , _pavaoUploadType :: !(Maybe Text)
+    , _pavaoPayload :: !ValidateAttestationOccurrenceRequest
+    , _pavaoAttestor :: !Text
+    , _pavaoCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

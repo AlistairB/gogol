@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.AdvertiserLandingPages.Insert
     , alpiCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertiserLandingPages.insert@ method which the
 -- 'AdvertiserLandingPagesInsert' request conforms to.
@@ -67,13 +67,13 @@ type AdvertiserLandingPagesInsertResource =
 -- /See:/ 'advertiserLandingPagesInsert' smart constructor.
 data AdvertiserLandingPagesInsert =
   AdvertiserLandingPagesInsert'
-    { _alpiXgafv          :: !(Maybe Xgafv)
+    { _alpiXgafv :: !(Maybe Xgafv)
     , _alpiUploadProtocol :: !(Maybe Text)
-    , _alpiAccessToken    :: !(Maybe Text)
-    , _alpiUploadType     :: !(Maybe Text)
-    , _alpiProFileId      :: !(Textual Int64)
-    , _alpiPayload        :: !LandingPage
-    , _alpiCallback       :: !(Maybe Text)
+    , _alpiAccessToken :: !(Maybe Text)
+    , _alpiUploadType :: !(Maybe Text)
+    , _alpiProFileId :: !(Textual Int64)
+    , _alpiPayload :: !LandingPage
+    , _alpiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

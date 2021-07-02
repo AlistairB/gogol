@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.LiaSettings.Update
     , lsuAccountId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.liasettings.update@ method which the
 -- 'LiaSettingsUpdate' request conforms to.
@@ -59,8 +59,8 @@ type LiaSettingsUpdateResource =
 data LiaSettingsUpdate =
   LiaSettingsUpdate'
     { _lsuMerchantId :: !(Textual Word64)
-    , _lsuPayload    :: !LiaSettings
-    , _lsuAccountId  :: !(Textual Word64)
+    , _lsuPayload :: !LiaSettings
+    , _lsuAccountId :: !(Textual Word64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

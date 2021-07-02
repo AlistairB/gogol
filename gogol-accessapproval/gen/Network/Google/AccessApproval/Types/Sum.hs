@@ -16,7 +16,7 @@
 --
 module Network.Google.AccessApproval.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The enrollment level of the service.
 data EnrolledServiceEnrollmentLevel

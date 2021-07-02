@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.TargetingTemplates.Insert
     , ttiCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.targetingTemplates.insert@ method which the
 -- 'TargetingTemplatesInsert' request conforms to.
@@ -67,13 +67,13 @@ type TargetingTemplatesInsertResource =
 -- /See:/ 'targetingTemplatesInsert' smart constructor.
 data TargetingTemplatesInsert =
   TargetingTemplatesInsert'
-    { _ttiXgafv          :: !(Maybe Xgafv)
+    { _ttiXgafv :: !(Maybe Xgafv)
     , _ttiUploadProtocol :: !(Maybe Text)
-    , _ttiAccessToken    :: !(Maybe Text)
-    , _ttiUploadType     :: !(Maybe Text)
-    , _ttiProFileId      :: !(Textual Int64)
-    , _ttiPayload        :: !TargetingTemplate
-    , _ttiCallback       :: !(Maybe Text)
+    , _ttiAccessToken :: !(Maybe Text)
+    , _ttiUploadType :: !(Maybe Text)
+    , _ttiProFileId :: !(Textual Int64)
+    , _ttiPayload :: !TargetingTemplate
+    , _ttiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -50,8 +50,8 @@ module Network.Google.Resource.DFAReporting.UserRoles.List
     , urlCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.userRoles.list@ method which the
 -- 'UserRolesList' request conforms to.
@@ -84,20 +84,20 @@ type UserRolesListResource =
 -- /See:/ 'userRolesList' smart constructor.
 data UserRolesList =
   UserRolesList'
-    { _urlXgafv               :: !(Maybe Xgafv)
-    , _urlUploadProtocol      :: !(Maybe Text)
-    , _urlAccessToken         :: !(Maybe Text)
-    , _urlSearchString        :: !(Maybe Text)
-    , _urlUploadType          :: !(Maybe Text)
-    , _urlIds                 :: !(Maybe [Textual Int64])
-    , _urlProFileId           :: !(Textual Int64)
-    , _urlSortOrder           :: !UserRolesListSortOrder
+    { _urlXgafv :: !(Maybe Xgafv)
+    , _urlUploadProtocol :: !(Maybe Text)
+    , _urlAccessToken :: !(Maybe Text)
+    , _urlSearchString :: !(Maybe Text)
+    , _urlUploadType :: !(Maybe Text)
+    , _urlIds :: !(Maybe [Textual Int64])
+    , _urlProFileId :: !(Textual Int64)
+    , _urlSortOrder :: !UserRolesListSortOrder
     , _urlAccountUserRoleOnly :: !(Maybe Bool)
-    , _urlPageToken           :: !(Maybe Text)
-    , _urlSortField           :: !UserRolesListSortField
-    , _urlSubAccountId        :: !(Maybe (Textual Int64))
-    , _urlMaxResults          :: !(Textual Int32)
-    , _urlCallback            :: !(Maybe Text)
+    , _urlPageToken :: !(Maybe Text)
+    , _urlSortField :: !UserRolesListSortField
+    , _urlSubAccountId :: !(Maybe (Textual Int64))
+    , _urlMaxResults :: !(Textual Int32)
+    , _urlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

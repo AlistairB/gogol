@@ -41,8 +41,8 @@ module Network.Google.Resource.DoubleClickBidManager.Queries.GetQuery
     , qgqCallback
     ) where
 
-import           Network.Google.DoubleClickBids.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclickbidmanager.queries.getquery@ method which the
 -- 'QueriesGetQuery' request conforms to.
@@ -63,12 +63,12 @@ type QueriesGetQueryResource =
 -- /See:/ 'queriesGetQuery' smart constructor.
 data QueriesGetQuery =
   QueriesGetQuery'
-    { _qgqXgafv          :: !(Maybe Xgafv)
-    , _qgqQueryId        :: !(Textual Int64)
+    { _qgqXgafv :: !(Maybe Xgafv)
+    , _qgqQueryId :: !(Textual Int64)
     , _qgqUploadProtocol :: !(Maybe Text)
-    , _qgqAccessToken    :: !(Maybe Text)
-    , _qgqUploadType     :: !(Maybe Text)
-    , _qgqCallback       :: !(Maybe Text)
+    , _qgqAccessToken :: !(Maybe Text)
+    , _qgqUploadType :: !(Maybe Text)
+    , _qgqCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

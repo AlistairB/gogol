@@ -114,10 +114,10 @@ module Network.Google.Speech
     , orAddtional
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.Speech.Projects.Locations.Operations.Get
-import           Network.Google.Resource.Speech.Projects.Locations.Operations.List
-import           Network.Google.Speech.Types
+import Network.Google.Prelude
+import Network.Google.Resource.Speech.Projects.Locations.Operations.Get
+import Network.Google.Resource.Speech.Projects.Locations.Operations.List
+import Network.Google.Speech.Types
 
 {- $resources
 TODO

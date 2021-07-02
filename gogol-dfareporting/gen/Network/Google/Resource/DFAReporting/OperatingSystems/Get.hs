@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.OperatingSystems.Get
     , osgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.operatingSystems.get@ method which the
 -- 'OperatingSystemsGet' request conforms to.
@@ -67,13 +67,13 @@ type OperatingSystemsGetResource =
 -- /See:/ 'operatingSystemsGet' smart constructor.
 data OperatingSystemsGet =
   OperatingSystemsGet'
-    { _osgXgafv          :: !(Maybe Xgafv)
+    { _osgXgafv :: !(Maybe Xgafv)
     , _osgUploadProtocol :: !(Maybe Text)
-    , _osgAccessToken    :: !(Maybe Text)
-    , _osgUploadType     :: !(Maybe Text)
-    , _osgProFileId      :: !(Textual Int64)
-    , _osgDartId         :: !(Textual Int64)
-    , _osgCallback       :: !(Maybe Text)
+    , _osgAccessToken :: !(Maybe Text)
+    , _osgUploadType :: !(Maybe Text)
+    , _osgProFileId :: !(Textual Int64)
+    , _osgDartId :: !(Textual Int64)
+    , _osgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

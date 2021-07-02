@@ -46,8 +46,8 @@ module Network.Google.Resource.DFAReporting.MobileApps.List
     , malCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.mobileApps.list@ method which the
 -- 'MobileAppsList' request conforms to.
@@ -76,17 +76,17 @@ type MobileAppsListResource =
 -- /See:/ 'mobileAppsList' smart constructor.
 data MobileAppsList =
   MobileAppsList'
-    { _malXgafv          :: !(Maybe Xgafv)
-    , _malDirectories    :: !(Maybe [MobileAppsListDirectories])
+    { _malXgafv :: !(Maybe Xgafv)
+    , _malDirectories :: !(Maybe [MobileAppsListDirectories])
     , _malUploadProtocol :: !(Maybe Text)
-    , _malAccessToken    :: !(Maybe Text)
-    , _malSearchString   :: !(Maybe Text)
-    , _malUploadType     :: !(Maybe Text)
-    , _malIds            :: !(Maybe [Text])
-    , _malProFileId      :: !(Textual Int64)
-    , _malPageToken      :: !(Maybe Text)
-    , _malMaxResults     :: !(Textual Int32)
-    , _malCallback       :: !(Maybe Text)
+    , _malAccessToken :: !(Maybe Text)
+    , _malSearchString :: !(Maybe Text)
+    , _malUploadType :: !(Maybe Text)
+    , _malIds :: !(Maybe [Text])
+    , _malProFileId :: !(Textual Int64)
+    , _malPageToken :: !(Maybe Text)
+    , _malMaxResults :: !(Textual Int32)
+    , _malCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

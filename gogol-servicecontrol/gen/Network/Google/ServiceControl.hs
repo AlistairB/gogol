@@ -303,10 +303,10 @@ module Network.Google.ServiceControl
     , reqHost
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.ServiceControl.Services.Check
-import           Network.Google.Resource.ServiceControl.Services.Report
-import           Network.Google.ServiceControl.Types
+import Network.Google.Prelude
+import Network.Google.Resource.ServiceControl.Services.Check
+import Network.Google.Resource.ServiceControl.Services.Report
+import Network.Google.ServiceControl.Types
 
 {- $resources
 TODO

@@ -43,8 +43,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Environments
     , plaesmiCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.environments.sessions.matchIntent@ method which the
 -- 'ProjectsLocationsAgentsEnvironmentsSessionsMatchIntent' request conforms to.
@@ -70,13 +70,13 @@ type ProjectsLocationsAgentsEnvironmentsSessionsMatchIntentResource
 -- /See:/ 'projectsLocationsAgentsEnvironmentsSessionsMatchIntent' smart constructor.
 data ProjectsLocationsAgentsEnvironmentsSessionsMatchIntent =
   ProjectsLocationsAgentsEnvironmentsSessionsMatchIntent'
-    { _plaesmiXgafv          :: !(Maybe Xgafv)
+    { _plaesmiXgafv :: !(Maybe Xgafv)
     , _plaesmiUploadProtocol :: !(Maybe Text)
-    , _plaesmiAccessToken    :: !(Maybe Text)
-    , _plaesmiUploadType     :: !(Maybe Text)
-    , _plaesmiPayload        :: !GoogleCloudDialogflowCxV3beta1MatchIntentRequest
-    , _plaesmiSession        :: !Text
-    , _plaesmiCallback       :: !(Maybe Text)
+    , _plaesmiAccessToken :: !(Maybe Text)
+    , _plaesmiUploadType :: !(Maybe Text)
+    , _plaesmiPayload :: !GoogleCloudDialogflowCxV3beta1MatchIntentRequest
+    , _plaesmiSession :: !Text
+    , _plaesmiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

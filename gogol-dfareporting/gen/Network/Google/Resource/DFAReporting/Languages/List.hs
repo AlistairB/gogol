@@ -41,8 +41,8 @@ module Network.Google.Resource.DFAReporting.Languages.List
     , llCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.languages.list@ method which the
 -- 'LanguagesList' request conforms to.
@@ -65,12 +65,12 @@ type LanguagesListResource =
 -- /See:/ 'languagesList' smart constructor.
 data LanguagesList =
   LanguagesList'
-    { _llXgafv          :: !(Maybe Xgafv)
+    { _llXgafv :: !(Maybe Xgafv)
     , _llUploadProtocol :: !(Maybe Text)
-    , _llAccessToken    :: !(Maybe Text)
-    , _llUploadType     :: !(Maybe Text)
-    , _llProFileId      :: !(Textual Int64)
-    , _llCallback       :: !(Maybe Text)
+    , _llAccessToken :: !(Maybe Text)
+    , _llUploadType :: !(Maybe Text)
+    , _llProFileId :: !(Textual Int64)
+    , _llCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

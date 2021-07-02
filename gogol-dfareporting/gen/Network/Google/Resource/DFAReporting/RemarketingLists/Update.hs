@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.RemarketingLists.Update
     , rluCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.remarketingLists.update@ method which the
 -- 'RemarketingListsUpdate' request conforms to.
@@ -67,13 +67,13 @@ type RemarketingListsUpdateResource =
 -- /See:/ 'remarketingListsUpdate' smart constructor.
 data RemarketingListsUpdate =
   RemarketingListsUpdate'
-    { _rluXgafv          :: !(Maybe Xgafv)
+    { _rluXgafv :: !(Maybe Xgafv)
     , _rluUploadProtocol :: !(Maybe Text)
-    , _rluAccessToken    :: !(Maybe Text)
-    , _rluUploadType     :: !(Maybe Text)
-    , _rluProFileId      :: !(Textual Int64)
-    , _rluPayload        :: !RemarketingList
-    , _rluCallback       :: !(Maybe Text)
+    , _rluAccessToken :: !(Maybe Text)
+    , _rluUploadType :: !(Maybe Text)
+    , _rluProFileId :: !(Textual Int64)
+    , _rluPayload :: !RemarketingList
+    , _rluCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

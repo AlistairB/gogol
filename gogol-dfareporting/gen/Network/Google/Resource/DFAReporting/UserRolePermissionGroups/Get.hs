@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.UserRolePermissionGroups.Get
     , urpggCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.userRolePermissionGroups.get@ method which the
 -- 'UserRolePermissionGroupsGet' request conforms to.
@@ -67,13 +67,13 @@ type UserRolePermissionGroupsGetResource =
 -- /See:/ 'userRolePermissionGroupsGet' smart constructor.
 data UserRolePermissionGroupsGet =
   UserRolePermissionGroupsGet'
-    { _urpggXgafv          :: !(Maybe Xgafv)
+    { _urpggXgafv :: !(Maybe Xgafv)
     , _urpggUploadProtocol :: !(Maybe Text)
-    , _urpggAccessToken    :: !(Maybe Text)
-    , _urpggUploadType     :: !(Maybe Text)
-    , _urpggProFileId      :: !(Textual Int64)
-    , _urpggId             :: !(Textual Int64)
-    , _urpggCallback       :: !(Maybe Text)
+    , _urpggAccessToken :: !(Maybe Text)
+    , _urpggUploadType :: !(Maybe Text)
+    , _urpggProFileId :: !(Textual Int64)
+    , _urpggId :: !(Textual Int64)
+    , _urpggCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

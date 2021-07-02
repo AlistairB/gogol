@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.DirectorySites.Insert
     , dsiCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.directorySites.insert@ method which the
 -- 'DirectorySitesInsert' request conforms to.
@@ -67,13 +67,13 @@ type DirectorySitesInsertResource =
 -- /See:/ 'directorySitesInsert' smart constructor.
 data DirectorySitesInsert =
   DirectorySitesInsert'
-    { _dsiXgafv          :: !(Maybe Xgafv)
+    { _dsiXgafv :: !(Maybe Xgafv)
     , _dsiUploadProtocol :: !(Maybe Text)
-    , _dsiAccessToken    :: !(Maybe Text)
-    , _dsiUploadType     :: !(Maybe Text)
-    , _dsiProFileId      :: !(Textual Int64)
-    , _dsiPayload        :: !DirectorySite
-    , _dsiCallback       :: !(Maybe Text)
+    , _dsiAccessToken :: !(Maybe Text)
+    , _dsiUploadType :: !(Maybe Text)
+    , _dsiProFileId :: !(Textual Int64)
+    , _dsiPayload :: !DirectorySite
+    , _dsiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

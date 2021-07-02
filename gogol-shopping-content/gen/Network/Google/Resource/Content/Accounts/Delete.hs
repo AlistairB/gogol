@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.Accounts.Delete
     , adAccountId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accounts.delete@ method which the
 -- 'AccountsDelete' request conforms to.
@@ -58,8 +58,8 @@ type AccountsDeleteResource =
 data AccountsDelete =
   AccountsDelete'
     { _adMerchantId :: !(Textual Word64)
-    , _adForce      :: !Bool
-    , _adAccountId  :: !(Textual Word64)
+    , _adForce :: !Bool
+    , _adAccountId :: !(Textual Word64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

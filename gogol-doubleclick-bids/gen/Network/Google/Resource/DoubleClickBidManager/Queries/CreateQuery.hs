@@ -42,8 +42,8 @@ module Network.Google.Resource.DoubleClickBidManager.Queries.CreateQuery
     , qcqCallback
     ) where
 
-import           Network.Google.DoubleClickBids.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclickbidmanager.queries.createquery@ method which the
 -- 'QueriesCreateQuery' request conforms to.
@@ -65,13 +65,13 @@ type QueriesCreateQueryResource =
 -- /See:/ 'queriesCreateQuery' smart constructor.
 data QueriesCreateQuery =
   QueriesCreateQuery'
-    { _qcqXgafv          :: !(Maybe Xgafv)
+    { _qcqXgafv :: !(Maybe Xgafv)
     , _qcqUploadProtocol :: !(Maybe Text)
-    , _qcqAccessToken    :: !(Maybe Text)
-    , _qcqUploadType     :: !(Maybe Text)
-    , _qcqPayload        :: !Query
-    , _qcqAsynchronous   :: !Bool
-    , _qcqCallback       :: !(Maybe Text)
+    , _qcqAccessToken :: !(Maybe Text)
+    , _qcqUploadType :: !(Maybe Text)
+    , _qcqPayload :: !Query
+    , _qcqAsynchronous :: !Bool
+    , _qcqCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

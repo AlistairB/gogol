@@ -50,8 +50,8 @@ module Network.Google.Resource.DFAReporting.Orders.List
     , olCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.orders.list@ method which the
 -- 'OrdersList' request conforms to.
@@ -85,20 +85,20 @@ type OrdersListResource =
 -- /See:/ 'ordersList' smart constructor.
 data OrdersList =
   OrdersList'
-    { _olXgafv          :: !(Maybe Xgafv)
+    { _olXgafv :: !(Maybe Xgafv)
     , _olUploadProtocol :: !(Maybe Text)
-    , _olAccessToken    :: !(Maybe Text)
-    , _olSearchString   :: !(Maybe Text)
-    , _olUploadType     :: !(Maybe Text)
-    , _olIds            :: !(Maybe [Textual Int64])
-    , _olProFileId      :: !(Textual Int64)
-    , _olSortOrder      :: !OrdersListSortOrder
-    , _olPageToken      :: !(Maybe Text)
-    , _olProjectId      :: !(Textual Int64)
-    , _olSortField      :: !OrdersListSortField
-    , _olSiteId         :: !(Maybe [Textual Int64])
-    , _olMaxResults     :: !(Textual Int32)
-    , _olCallback       :: !(Maybe Text)
+    , _olAccessToken :: !(Maybe Text)
+    , _olSearchString :: !(Maybe Text)
+    , _olUploadType :: !(Maybe Text)
+    , _olIds :: !(Maybe [Textual Int64])
+    , _olProFileId :: !(Textual Int64)
+    , _olSortOrder :: !OrdersListSortOrder
+    , _olPageToken :: !(Maybe Text)
+    , _olProjectId :: !(Textual Int64)
+    , _olSortField :: !OrdersListSortField
+    , _olSiteId :: !(Maybe [Textual Int64])
+    , _olMaxResults :: !(Textual Int32)
+    , _olCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

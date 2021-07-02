@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.Creatives.Patch
     , cppCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creatives.patch@ method which the
 -- 'CreativesPatch' request conforms to.
@@ -68,14 +68,14 @@ type CreativesPatchResource =
 -- /See:/ 'creativesPatch' smart constructor.
 data CreativesPatch =
   CreativesPatch'
-    { _cppXgafv          :: !(Maybe Xgafv)
+    { _cppXgafv :: !(Maybe Xgafv)
     , _cppUploadProtocol :: !(Maybe Text)
-    , _cppAccessToken    :: !(Maybe Text)
-    , _cppUploadType     :: !(Maybe Text)
-    , _cppProFileId      :: !(Textual Int64)
-    , _cppPayload        :: !Creative
-    , _cppId             :: !(Textual Int64)
-    , _cppCallback       :: !(Maybe Text)
+    , _cppAccessToken :: !(Maybe Text)
+    , _cppUploadType :: !(Maybe Text)
+    , _cppProFileId :: !(Textual Int64)
+    , _cppPayload :: !Creative
+    , _cppId :: !(Textual Int64)
+    , _cppCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

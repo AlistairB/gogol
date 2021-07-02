@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.UserRoles.Patch
     , urpCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.userRoles.patch@ method which the
 -- 'UserRolesPatch' request conforms to.
@@ -68,14 +68,14 @@ type UserRolesPatchResource =
 -- /See:/ 'userRolesPatch' smart constructor.
 data UserRolesPatch =
   UserRolesPatch'
-    { _urpXgafv          :: !(Maybe Xgafv)
+    { _urpXgafv :: !(Maybe Xgafv)
     , _urpUploadProtocol :: !(Maybe Text)
-    , _urpAccessToken    :: !(Maybe Text)
-    , _urpUploadType     :: !(Maybe Text)
-    , _urpProFileId      :: !(Textual Int64)
-    , _urpPayload        :: !UserRole
-    , _urpId             :: !(Textual Int64)
-    , _urpCallback       :: !(Maybe Text)
+    , _urpAccessToken :: !(Maybe Text)
+    , _urpUploadType :: !(Maybe Text)
+    , _urpProFileId :: !(Textual Int64)
+    , _urpPayload :: !UserRole
+    , _urpId :: !(Textual Int64)
+    , _urpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

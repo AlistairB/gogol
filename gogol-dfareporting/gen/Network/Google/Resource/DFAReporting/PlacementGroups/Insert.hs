@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.PlacementGroups.Insert
     , pgiCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementGroups.insert@ method which the
 -- 'PlacementGroupsInsert' request conforms to.
@@ -67,13 +67,13 @@ type PlacementGroupsInsertResource =
 -- /See:/ 'placementGroupsInsert' smart constructor.
 data PlacementGroupsInsert =
   PlacementGroupsInsert'
-    { _pgiXgafv          :: !(Maybe Xgafv)
+    { _pgiXgafv :: !(Maybe Xgafv)
     , _pgiUploadProtocol :: !(Maybe Text)
-    , _pgiAccessToken    :: !(Maybe Text)
-    , _pgiUploadType     :: !(Maybe Text)
-    , _pgiProFileId      :: !(Textual Int64)
-    , _pgiPayload        :: !PlacementGroup
-    , _pgiCallback       :: !(Maybe Text)
+    , _pgiAccessToken :: !(Maybe Text)
+    , _pgiUploadType :: !(Maybe Text)
+    , _pgiProFileId :: !(Textual Int64)
+    , _pgiPayload :: !PlacementGroup
+    , _pgiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.SubAccounts.Update
     , sauCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.subaccounts.update@ method which the
 -- 'SubAccountsUpdate' request conforms to.
@@ -66,13 +66,13 @@ type SubAccountsUpdateResource =
 -- /See:/ 'subAccountsUpdate' smart constructor.
 data SubAccountsUpdate =
   SubAccountsUpdate'
-    { _sauXgafv          :: !(Maybe Xgafv)
+    { _sauXgafv :: !(Maybe Xgafv)
     , _sauUploadProtocol :: !(Maybe Text)
-    , _sauAccessToken    :: !(Maybe Text)
-    , _sauUploadType     :: !(Maybe Text)
-    , _sauProFileId      :: !(Textual Int64)
-    , _sauPayload        :: !SubAccount
-    , _sauCallback       :: !(Maybe Text)
+    , _sauAccessToken :: !(Maybe Text)
+    , _sauUploadType :: !(Maybe Text)
+    , _sauProFileId :: !(Textual Int64)
+    , _sauPayload :: !SubAccount
+    , _sauCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

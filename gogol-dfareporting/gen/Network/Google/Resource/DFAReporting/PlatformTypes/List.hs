@@ -41,8 +41,8 @@ module Network.Google.Resource.DFAReporting.PlatformTypes.List
     , ptlCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.platformTypes.list@ method which the
 -- 'PlatformTypesList' request conforms to.
@@ -65,12 +65,12 @@ type PlatformTypesListResource =
 -- /See:/ 'platformTypesList' smart constructor.
 data PlatformTypesList =
   PlatformTypesList'
-    { _ptlXgafv          :: !(Maybe Xgafv)
+    { _ptlXgafv :: !(Maybe Xgafv)
     , _ptlUploadProtocol :: !(Maybe Text)
-    , _ptlAccessToken    :: !(Maybe Text)
-    , _ptlUploadType     :: !(Maybe Text)
-    , _ptlProFileId      :: !(Textual Int64)
-    , _ptlCallback       :: !(Maybe Text)
+    , _ptlAccessToken :: !(Maybe Text)
+    , _ptlUploadType :: !(Maybe Text)
+    , _ptlProFileId :: !(Textual Int64)
+    , _ptlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

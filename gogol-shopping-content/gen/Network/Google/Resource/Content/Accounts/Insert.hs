@@ -37,8 +37,8 @@ module Network.Google.Resource.Content.Accounts.Insert
     , aPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accounts.insert@ method which the
 -- 'AccountsInsert' request conforms to.
@@ -56,7 +56,7 @@ type AccountsInsertResource =
 data AccountsInsert =
   AccountsInsert'
     { _aMerchantId :: !(Textual Word64)
-    , _aPayload    :: !Account
+    , _aPayload :: !Account
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.PlacementStrategies.Insert
     , psiCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementStrategies.insert@ method which the
 -- 'PlacementStrategiesInsert' request conforms to.
@@ -67,13 +67,13 @@ type PlacementStrategiesInsertResource =
 -- /See:/ 'placementStrategiesInsert' smart constructor.
 data PlacementStrategiesInsert =
   PlacementStrategiesInsert'
-    { _psiXgafv          :: !(Maybe Xgafv)
+    { _psiXgafv :: !(Maybe Xgafv)
     , _psiUploadProtocol :: !(Maybe Text)
-    , _psiAccessToken    :: !(Maybe Text)
-    , _psiUploadType     :: !(Maybe Text)
-    , _psiProFileId      :: !(Textual Int64)
-    , _psiPayload        :: !PlacementStrategy
-    , _psiCallback       :: !(Maybe Text)
+    , _psiAccessToken :: !(Maybe Text)
+    , _psiUploadType :: !(Maybe Text)
+    , _psiProFileId :: !(Textual Int64)
+    , _psiPayload :: !PlacementStrategy
+    , _psiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

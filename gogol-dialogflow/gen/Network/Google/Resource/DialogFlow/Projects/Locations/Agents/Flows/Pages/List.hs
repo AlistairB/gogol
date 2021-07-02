@@ -44,8 +44,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Flows.Pages.
     , plafplCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.flows.pages.list@ method which the
 -- 'ProjectsLocationsAgentsFlowsPagesList' request conforms to.
@@ -70,15 +70,15 @@ type ProjectsLocationsAgentsFlowsPagesListResource =
 -- /See:/ 'projectsLocationsAgentsFlowsPagesList' smart constructor.
 data ProjectsLocationsAgentsFlowsPagesList =
   ProjectsLocationsAgentsFlowsPagesList'
-    { _plafplParent         :: !Text
-    , _plafplXgafv          :: !(Maybe Xgafv)
-    , _plafplLanguageCode   :: !(Maybe Text)
+    { _plafplParent :: !Text
+    , _plafplXgafv :: !(Maybe Xgafv)
+    , _plafplLanguageCode :: !(Maybe Text)
     , _plafplUploadProtocol :: !(Maybe Text)
-    , _plafplAccessToken    :: !(Maybe Text)
-    , _plafplUploadType     :: !(Maybe Text)
-    , _plafplPageToken      :: !(Maybe Text)
-    , _plafplPageSize       :: !(Maybe (Textual Int32))
-    , _plafplCallback       :: !(Maybe Text)
+    , _plafplAccessToken :: !(Maybe Text)
+    , _plafplUploadType :: !(Maybe Text)
+    , _plafplPageToken :: !(Maybe Text)
+    , _plafplPageSize :: !(Maybe (Textual Int32))
+    , _plafplCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

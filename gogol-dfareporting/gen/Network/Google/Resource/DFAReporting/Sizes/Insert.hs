@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Sizes.Insert
     , siCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.sizes.insert@ method which the
 -- 'SizesInsert' request conforms to.
@@ -66,13 +66,13 @@ type SizesInsertResource =
 -- /See:/ 'sizesInsert' smart constructor.
 data SizesInsert =
   SizesInsert'
-    { _siXgafv          :: !(Maybe Xgafv)
+    { _siXgafv :: !(Maybe Xgafv)
     , _siUploadProtocol :: !(Maybe Text)
-    , _siAccessToken    :: !(Maybe Text)
-    , _siUploadType     :: !(Maybe Text)
-    , _siProFileId      :: !(Textual Int64)
-    , _siPayload        :: !Size
-    , _siCallback       :: !(Maybe Text)
+    , _siAccessToken :: !(Maybe Text)
+    , _siUploadType :: !(Maybe Text)
+    , _siProFileId :: !(Textual Int64)
+    , _siPayload :: !Size
+    , _siCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

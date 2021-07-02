@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.Datafeeds.Update
     , duDatafeedId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.datafeeds.update@ method which the
 -- 'DatafeedsUpdate' request conforms to.
@@ -58,7 +58,7 @@ type DatafeedsUpdateResource =
 data DatafeedsUpdate =
   DatafeedsUpdate'
     { _duMerchantId :: !(Textual Word64)
-    , _duPayload    :: !Datafeed
+    , _duPayload :: !Datafeed
     , _duDatafeedId :: !(Textual Word64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

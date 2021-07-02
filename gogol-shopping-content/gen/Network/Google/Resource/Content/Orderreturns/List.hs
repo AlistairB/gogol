@@ -41,8 +41,8 @@ module Network.Google.Resource.Content.Orderreturns.List
     , ooMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orderreturns.list@ method which the
 -- 'OrderreturnsList' request conforms to.
@@ -64,12 +64,12 @@ type OrderreturnsListResource =
 -- /See:/ 'orderreturnsList' smart constructor.
 data OrderreturnsList =
   OrderreturnsList'
-    { _ooMerchantId       :: !(Textual Word64)
-    , _ooOrderBy          :: !(Maybe OrderreturnsListOrderBy)
-    , _ooCreatedEndDate   :: !(Maybe Text)
+    { _ooMerchantId :: !(Textual Word64)
+    , _ooOrderBy :: !(Maybe OrderreturnsListOrderBy)
+    , _ooCreatedEndDate :: !(Maybe Text)
     , _ooCreatedStartDate :: !(Maybe Text)
-    , _ooPageToken        :: !(Maybe Text)
-    , _ooMaxResults       :: !(Maybe (Textual Word32))
+    , _ooPageToken :: !(Maybe Text)
+    , _ooMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

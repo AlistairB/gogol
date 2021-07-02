@@ -39,8 +39,8 @@ module Network.Google.Resource.Content.Orderinvoices.Createchargeinvoice
     , oOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orderinvoices.createchargeinvoice@ method which the
 -- 'OrderinvoicesCreatechargeinvoice' request conforms to.
@@ -64,8 +64,8 @@ type OrderinvoicesCreatechargeinvoiceResource =
 data OrderinvoicesCreatechargeinvoice =
   OrderinvoicesCreatechargeinvoice'
     { _oMerchantId :: !(Textual Word64)
-    , _oPayload    :: !OrderinvoicesCreateChargeInvoiceRequest
-    , _oOrderId    :: !Text
+    , _oPayload :: !OrderinvoicesCreateChargeInvoiceRequest
+    , _oOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

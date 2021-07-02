@@ -41,8 +41,8 @@ module Network.Google.Resource.DFAReporting.OperatingSystemVersions.List
     , osvlCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.operatingSystemVersions.list@ method which the
 -- 'OperatingSystemVersionsList' request conforms to.
@@ -65,12 +65,12 @@ type OperatingSystemVersionsListResource =
 -- /See:/ 'operatingSystemVersionsList' smart constructor.
 data OperatingSystemVersionsList =
   OperatingSystemVersionsList'
-    { _osvlXgafv          :: !(Maybe Xgafv)
+    { _osvlXgafv :: !(Maybe Xgafv)
     , _osvlUploadProtocol :: !(Maybe Text)
-    , _osvlAccessToken    :: !(Maybe Text)
-    , _osvlUploadType     :: !(Maybe Text)
-    , _osvlProFileId      :: !(Textual Int64)
-    , _osvlCallback       :: !(Maybe Text)
+    , _osvlAccessToken :: !(Maybe Text)
+    , _osvlUploadType :: !(Maybe Text)
+    , _osvlProFileId :: !(Textual Int64)
+    , _osvlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

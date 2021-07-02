@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.TargetingTemplates.Update
     , ttuCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.targetingTemplates.update@ method which the
 -- 'TargetingTemplatesUpdate' request conforms to.
@@ -67,13 +67,13 @@ type TargetingTemplatesUpdateResource =
 -- /See:/ 'targetingTemplatesUpdate' smart constructor.
 data TargetingTemplatesUpdate =
   TargetingTemplatesUpdate'
-    { _ttuXgafv          :: !(Maybe Xgafv)
+    { _ttuXgafv :: !(Maybe Xgafv)
     , _ttuUploadProtocol :: !(Maybe Text)
-    , _ttuAccessToken    :: !(Maybe Text)
-    , _ttuUploadType     :: !(Maybe Text)
-    , _ttuProFileId      :: !(Textual Int64)
-    , _ttuPayload        :: !TargetingTemplate
-    , _ttuCallback       :: !(Maybe Text)
+    , _ttuAccessToken :: !(Maybe Text)
+    , _ttuUploadType :: !(Maybe Text)
+    , _ttuProFileId :: !(Textual Int64)
+    , _ttuPayload :: !TargetingTemplate
+    , _ttuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

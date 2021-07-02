@@ -39,8 +39,8 @@ module Network.Google.Resource.Content.Products.Insert
     , piiPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.products.insert@ method which the
 -- 'ProductsInsert' request conforms to.
@@ -60,7 +60,7 @@ type ProductsInsertResource =
 data ProductsInsert =
   ProductsInsert'
     { _piiMerchantId :: !(Textual Word64)
-    , _piiPayload    :: !Product
+    , _piiPayload :: !Product
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -49,8 +49,8 @@ module Network.Google.Resource.DFAReporting.TargetableRemarketingLists.List
     , trllCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.targetableRemarketingLists.list@ method which the
 -- 'TargetableRemarketingListsList' request conforms to.
@@ -86,19 +86,19 @@ type TargetableRemarketingListsListResource =
 -- /See:/ 'targetableRemarketingListsList' smart constructor.
 data TargetableRemarketingListsList =
   TargetableRemarketingListsList'
-    { _trllXgafv          :: !(Maybe Xgafv)
+    { _trllXgafv :: !(Maybe Xgafv)
     , _trllUploadProtocol :: !(Maybe Text)
-    , _trllAccessToken    :: !(Maybe Text)
-    , _trllAdvertiserId   :: !(Textual Int64)
-    , _trllUploadType     :: !(Maybe Text)
-    , _trllProFileId      :: !(Textual Int64)
-    , _trllSortOrder      :: !TargetableRemarketingListsListSortOrder
-    , _trllActive         :: !(Maybe Bool)
-    , _trllName           :: !(Maybe Text)
-    , _trllPageToken      :: !(Maybe Text)
-    , _trllSortField      :: !TargetableRemarketingListsListSortField
-    , _trllMaxResults     :: !(Textual Int32)
-    , _trllCallback       :: !(Maybe Text)
+    , _trllAccessToken :: !(Maybe Text)
+    , _trllAdvertiserId :: !(Textual Int64)
+    , _trllUploadType :: !(Maybe Text)
+    , _trllProFileId :: !(Textual Int64)
+    , _trllSortOrder :: !TargetableRemarketingListsListSortOrder
+    , _trllActive :: !(Maybe Bool)
+    , _trllName :: !(Maybe Text)
+    , _trllPageToken :: !(Maybe Text)
+    , _trllSortField :: !TargetableRemarketingListsListSortField
+    , _trllMaxResults :: !(Textual Int32)
+    , _trllCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

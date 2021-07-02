@@ -37,8 +37,8 @@ module Network.Google.Resource.Content.Orderreturns.Get
     , oggReturnId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orderreturns.get@ method which the
 -- 'OrderreturnsGet' request conforms to.
@@ -57,7 +57,7 @@ type OrderreturnsGetResource =
 data OrderreturnsGet =
   OrderreturnsGet'
     { _oggMerchantId :: !(Textual Word64)
-    , _oggReturnId   :: !Text
+    , _oggReturnId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

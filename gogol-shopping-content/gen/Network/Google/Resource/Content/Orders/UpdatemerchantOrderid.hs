@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.Orders.UpdatemerchantOrderid
     , ouoOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.updatemerchantorderid@ method which the
 -- 'OrdersUpdatemerchantOrderid' request conforms to.
@@ -60,8 +60,8 @@ type OrdersUpdatemerchantOrderidResource =
 data OrdersUpdatemerchantOrderid =
   OrdersUpdatemerchantOrderid'
     { _ouoMerchantId :: !(Textual Word64)
-    , _ouoPayload    :: !OrdersUpdateMerchantOrderIdRequest
-    , _ouoOrderId    :: !Text
+    , _ouoPayload :: !OrdersUpdateMerchantOrderIdRequest
+    , _ouoOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

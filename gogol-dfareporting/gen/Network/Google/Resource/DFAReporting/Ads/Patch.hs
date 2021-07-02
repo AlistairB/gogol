@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.Ads.Patch
     , adsdCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.ads.patch@ method which the
 -- 'AdsPatch' request conforms to.
@@ -68,14 +68,14 @@ type AdsPatchResource =
 -- /See:/ 'adsPatch' smart constructor.
 data AdsPatch =
   AdsPatch'
-    { _adsdXgafv          :: !(Maybe Xgafv)
+    { _adsdXgafv :: !(Maybe Xgafv)
     , _adsdUploadProtocol :: !(Maybe Text)
-    , _adsdAccessToken    :: !(Maybe Text)
-    , _adsdUploadType     :: !(Maybe Text)
-    , _adsdProFileId      :: !(Textual Int64)
-    , _adsdPayload        :: !Ad
-    , _adsdId             :: !(Textual Int64)
-    , _adsdCallback       :: !(Maybe Text)
+    , _adsdAccessToken :: !(Maybe Text)
+    , _adsdUploadType :: !(Maybe Text)
+    , _adsdProFileId :: !(Textual Int64)
+    , _adsdPayload :: !Ad
+    , _adsdId :: !(Textual Int64)
+    , _adsdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

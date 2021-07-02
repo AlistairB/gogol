@@ -37,8 +37,8 @@ module Network.Google.Resource.Content.LiaSettings.Get
     , lsgAccountId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.liasettings.get@ method which the
 -- 'LiaSettingsGet' request conforms to.
@@ -56,7 +56,7 @@ type LiaSettingsGetResource =
 data LiaSettingsGet =
   LiaSettingsGet'
     { _lsgMerchantId :: !(Textual Word64)
-    , _lsgAccountId  :: !(Textual Word64)
+    , _lsgAccountId :: !(Textual Word64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

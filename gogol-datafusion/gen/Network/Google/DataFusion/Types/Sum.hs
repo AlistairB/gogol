@@ -16,7 +16,7 @@
 --
 module Network.Google.DataFusion.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The type of an accelator for a CDF instance.
 data AcceleratorAcceleratorType

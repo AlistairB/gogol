@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.Productstatuses.Get
     , pgProductId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.productstatuses.get@ method which the
 -- 'ProductstatusesGet' request conforms to.
@@ -57,9 +57,9 @@ type ProductstatusesGetResource =
 -- /See:/ 'productstatusesGet' smart constructor.
 data ProductstatusesGet =
   ProductstatusesGet'
-    { _pgMerchantId   :: !(Textual Word64)
+    { _pgMerchantId :: !(Textual Word64)
     , _pgDestinations :: !(Maybe [Text])
-    , _pgProductId    :: !Text
+    , _pgProductId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

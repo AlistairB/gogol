@@ -36,8 +36,8 @@ module Network.Google.Resource.Content.Products.Custombatch
     , pcPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.products.custombatch@ method which the
 -- 'ProductsCustombatch' request conforms to.

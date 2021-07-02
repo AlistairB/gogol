@@ -42,8 +42,8 @@ module Network.Google.Resource.Translate.Projects.TranslateText
     , pttCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Translate.Types
+import Network.Google.Prelude
+import Network.Google.Translate.Types
 
 -- | A resource alias for @translate.projects.translateText@ method which the
 -- 'ProjectsTranslateText' request conforms to.
@@ -64,13 +64,13 @@ type ProjectsTranslateTextResource =
 -- /See:/ 'projectsTranslateText' smart constructor.
 data ProjectsTranslateText =
   ProjectsTranslateText'
-    { _pttParent         :: !Text
-    , _pttXgafv          :: !(Maybe Xgafv)
+    { _pttParent :: !Text
+    , _pttXgafv :: !(Maybe Xgafv)
     , _pttUploadProtocol :: !(Maybe Text)
-    , _pttAccessToken    :: !(Maybe Text)
-    , _pttUploadType     :: !(Maybe Text)
-    , _pttPayload        :: !TranslateTextRequest
-    , _pttCallback       :: !(Maybe Text)
+    , _pttAccessToken :: !(Maybe Text)
+    , _pttUploadType :: !(Maybe Text)
+    , _pttPayload :: !TranslateTextRequest
+    , _pttCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

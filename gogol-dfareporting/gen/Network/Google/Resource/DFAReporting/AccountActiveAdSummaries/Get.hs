@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.AccountActiveAdSummaries.Get
     , aaasgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accountActiveAdSummaries.get@ method which the
 -- 'AccountActiveAdSummariesGet' request conforms to.
@@ -67,13 +67,13 @@ type AccountActiveAdSummariesGetResource =
 -- /See:/ 'accountActiveAdSummariesGet' smart constructor.
 data AccountActiveAdSummariesGet =
   AccountActiveAdSummariesGet'
-    { _aaasgXgafv            :: !(Maybe Xgafv)
-    , _aaasgUploadProtocol   :: !(Maybe Text)
-    , _aaasgAccessToken      :: !(Maybe Text)
-    , _aaasgUploadType       :: !(Maybe Text)
-    , _aaasgProFileId        :: !(Textual Int64)
+    { _aaasgXgafv :: !(Maybe Xgafv)
+    , _aaasgUploadProtocol :: !(Maybe Text)
+    , _aaasgAccessToken :: !(Maybe Text)
+    , _aaasgUploadType :: !(Maybe Text)
+    , _aaasgProFileId :: !(Textual Int64)
     , _aaasgSummaryAccountId :: !(Textual Int64)
-    , _aaasgCallback         :: !(Maybe Text)
+    , _aaasgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

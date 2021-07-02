@@ -16,7 +16,7 @@
 --
 module Network.Google.AdExchangeBuyer2.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Specifies the creative source for programmatic deals. PUBLISHER means
 -- creative is provided by seller and ADVERTISER means creative is provided
@@ -1115,27 +1115,27 @@ instance ToJSON FilterSetTimeSeriesGranularity where
 
 -- | The type of detail that the detail IDs represent.
 data ListCreativeStatusBreakdownByDetailResponseDetailType
-    = DetailTypeUnspecified
+    = LCSBBDRDTDetailTypeUnspecified
       -- ^ @DETAIL_TYPE_UNSPECIFIED@
       -- A placeholder for an undefined status. This value will never be returned
       -- in responses.
-    | CreativeAttribute
+    | LCSBBDRDTCreativeAttribute
       -- ^ @CREATIVE_ATTRIBUTE@
       -- Indicates that the detail ID refers to a creative attribute; see
       -- [publisher-excludable-creative-attributes](https:\/\/developers.google.com\/authorized-buyers\/rtb\/downloads\/publisher-excludable-creative-attributes).
-    | Vendor
+    | LCSBBDRDTVendor
       -- ^ @VENDOR@
       -- Indicates that the detail ID refers to a vendor; see
       -- [vendors](https:\/\/developers.google.com\/authorized-buyers\/rtb\/downloads\/vendors).
-    | SensitiveCategory
+    | LCSBBDRDTSensitiveCategory
       -- ^ @SENSITIVE_CATEGORY@
       -- Indicates that the detail ID refers to a sensitive category; see
       -- [ad-sensitive-categories](https:\/\/developers.google.com\/authorized-buyers\/rtb\/downloads\/ad-sensitive-categories).
-    | ProductCategory
+    | LCSBBDRDTProductCategory
       -- ^ @PRODUCT_CATEGORY@
       -- Indicates that the detail ID refers to a product category; see
       -- [ad-product-categories](https:\/\/developers.google.com\/authorized-buyers\/rtb\/downloads\/ad-product-categories).
-    | DisApprovalReason
+    | LCSBBDRDTDisApprovalReason
       -- ^ @DISAPPROVAL_REASON@
       -- Indicates that the detail ID refers to a disapproval reason; see
       -- DisapprovalReason enum in
@@ -1146,22 +1146,22 @@ instance Hashable ListCreativeStatusBreakdownByDetailResponseDetailType
 
 instance FromHttpApiData ListCreativeStatusBreakdownByDetailResponseDetailType where
     parseQueryParam = \case
-        "DETAIL_TYPE_UNSPECIFIED" -> Right DetailTypeUnspecified
-        "CREATIVE_ATTRIBUTE" -> Right CreativeAttribute
-        "VENDOR" -> Right Vendor
-        "SENSITIVE_CATEGORY" -> Right SensitiveCategory
-        "PRODUCT_CATEGORY" -> Right ProductCategory
-        "DISAPPROVAL_REASON" -> Right DisApprovalReason
+        "DETAIL_TYPE_UNSPECIFIED" -> Right LCSBBDRDTDetailTypeUnspecified
+        "CREATIVE_ATTRIBUTE" -> Right LCSBBDRDTCreativeAttribute
+        "VENDOR" -> Right LCSBBDRDTVendor
+        "SENSITIVE_CATEGORY" -> Right LCSBBDRDTSensitiveCategory
+        "PRODUCT_CATEGORY" -> Right LCSBBDRDTProductCategory
+        "DISAPPROVAL_REASON" -> Right LCSBBDRDTDisApprovalReason
         x -> Left ("Unable to parse ListCreativeStatusBreakdownByDetailResponseDetailType from: " <> x)
 
 instance ToHttpApiData ListCreativeStatusBreakdownByDetailResponseDetailType where
     toQueryParam = \case
-        DetailTypeUnspecified -> "DETAIL_TYPE_UNSPECIFIED"
-        CreativeAttribute -> "CREATIVE_ATTRIBUTE"
-        Vendor -> "VENDOR"
-        SensitiveCategory -> "SENSITIVE_CATEGORY"
-        ProductCategory -> "PRODUCT_CATEGORY"
-        DisApprovalReason -> "DISAPPROVAL_REASON"
+        LCSBBDRDTDetailTypeUnspecified -> "DETAIL_TYPE_UNSPECIFIED"
+        LCSBBDRDTCreativeAttribute -> "CREATIVE_ATTRIBUTE"
+        LCSBBDRDTVendor -> "VENDOR"
+        LCSBBDRDTSensitiveCategory -> "SENSITIVE_CATEGORY"
+        LCSBBDRDTProductCategory -> "PRODUCT_CATEGORY"
+        LCSBBDRDTDisApprovalReason -> "DISAPPROVAL_REASON"
 
 instance FromJSON ListCreativeStatusBreakdownByDetailResponseDetailType where
     parseJSON = parseJSONText "ListCreativeStatusBreakdownByDetailResponseDetailType"

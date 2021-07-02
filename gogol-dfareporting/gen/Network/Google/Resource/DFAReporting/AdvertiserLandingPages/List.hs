@@ -51,8 +51,8 @@ module Network.Google.Resource.DFAReporting.AdvertiserLandingPages.List
     , alplCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertiserLandingPages.list@ method which the
 -- 'AdvertiserLandingPagesList' request conforms to.
@@ -92,22 +92,22 @@ type AdvertiserLandingPagesListResource =
 -- /See:/ 'advertiserLandingPagesList' smart constructor.
 data AdvertiserLandingPagesList =
   AdvertiserLandingPagesList'
-    { _alplXgafv          :: !(Maybe Xgafv)
+    { _alplXgafv :: !(Maybe Xgafv)
     , _alplUploadProtocol :: !(Maybe Text)
-    , _alplAccessToken    :: !(Maybe Text)
-    , _alplCampaignIds    :: !(Maybe [Textual Int64])
-    , _alplSearchString   :: !(Maybe Text)
-    , _alplUploadType     :: !(Maybe Text)
-    , _alplIds            :: !(Maybe [Textual Int64])
-    , _alplProFileId      :: !(Textual Int64)
-    , _alplSortOrder      :: !AdvertiserLandingPagesListSortOrder
-    , _alplPageToken      :: !(Maybe Text)
-    , _alplSortField      :: !AdvertiserLandingPagesListSortField
-    , _alplSubAccountId   :: !(Maybe (Textual Int64))
-    , _alplAdvertiserIds  :: !(Maybe [Textual Int64])
-    , _alplArchived       :: !(Maybe Bool)
-    , _alplMaxResults     :: !(Textual Int32)
-    , _alplCallback       :: !(Maybe Text)
+    , _alplAccessToken :: !(Maybe Text)
+    , _alplCampaignIds :: !(Maybe [Textual Int64])
+    , _alplSearchString :: !(Maybe Text)
+    , _alplUploadType :: !(Maybe Text)
+    , _alplIds :: !(Maybe [Textual Int64])
+    , _alplProFileId :: !(Textual Int64)
+    , _alplSortOrder :: !AdvertiserLandingPagesListSortOrder
+    , _alplPageToken :: !(Maybe Text)
+    , _alplSortField :: !AdvertiserLandingPagesListSortField
+    , _alplSubAccountId :: !(Maybe (Textual Int64))
+    , _alplAdvertiserIds :: !(Maybe [Textual Int64])
+    , _alplArchived :: !(Maybe Bool)
+    , _alplMaxResults :: !(Textual Int32)
+    , _alplCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

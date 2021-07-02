@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.Orders.Get
     , ogCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.orders.get@ method which the
 -- 'OrdersGet' request conforms to.
@@ -69,14 +69,14 @@ type OrdersGetResource =
 -- /See:/ 'ordersGet' smart constructor.
 data OrdersGet =
   OrdersGet'
-    { _ogXgafv          :: !(Maybe Xgafv)
+    { _ogXgafv :: !(Maybe Xgafv)
     , _ogUploadProtocol :: !(Maybe Text)
-    , _ogAccessToken    :: !(Maybe Text)
-    , _ogUploadType     :: !(Maybe Text)
-    , _ogProFileId      :: !(Textual Int64)
-    , _ogId             :: !(Textual Int64)
-    , _ogProjectId      :: !(Textual Int64)
-    , _ogCallback       :: !(Maybe Text)
+    , _ogAccessToken :: !(Maybe Text)
+    , _ogUploadType :: !(Maybe Text)
+    , _ogProFileId :: !(Textual Int64)
+    , _ogId :: !(Textual Int64)
+    , _ogProjectId :: !(Textual Int64)
+    , _ogCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

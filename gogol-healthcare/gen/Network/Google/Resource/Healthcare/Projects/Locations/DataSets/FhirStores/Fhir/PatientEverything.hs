@@ -69,8 +69,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores
     , pldsfsfpeCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.fhirStores.fhir.Patient-everything@ method which the
 -- 'ProjectsLocationsDataSetsFhirStoresFhirPatientEverything' request conforms to.
@@ -120,18 +120,18 @@ type ProjectsLocationsDataSetsFhirStoresFhirPatientEverythingResource
 -- /See:/ 'projectsLocationsDataSetsFhirStoresFhirPatientEverything' smart constructor.
 data ProjectsLocationsDataSetsFhirStoresFhirPatientEverything =
   ProjectsLocationsDataSetsFhirStoresFhirPatientEverything'
-    { _pldsfsfpeXgafv          :: !(Maybe Xgafv)
-    , _pldsfsfpeCount          :: !(Maybe (Textual Int32))
-    , _pldsfsfpeType           :: !(Maybe Text)
+    { _pldsfsfpeXgafv :: !(Maybe Xgafv)
+    , _pldsfsfpeCount :: !(Maybe (Textual Int32))
+    , _pldsfsfpeType :: !(Maybe Text)
     , _pldsfsfpeUploadProtocol :: !(Maybe Text)
-    , _pldsfsfpeAccessToken    :: !(Maybe Text)
-    , _pldsfsfpeStart          :: !(Maybe Text)
-    , _pldsfsfpeUploadType     :: !(Maybe Text)
-    , _pldsfsfpeName           :: !Text
-    , _pldsfsfpeEnd            :: !(Maybe Text)
-    , _pldsfsfpeSince          :: !(Maybe Text)
-    , _pldsfsfpePageToken      :: !(Maybe Text)
-    , _pldsfsfpeCallback       :: !(Maybe Text)
+    , _pldsfsfpeAccessToken :: !(Maybe Text)
+    , _pldsfsfpeStart :: !(Maybe Text)
+    , _pldsfsfpeUploadType :: !(Maybe Text)
+    , _pldsfsfpeName :: !Text
+    , _pldsfsfpeEnd :: !(Maybe Text)
+    , _pldsfsfpeSince :: !(Maybe Text)
+    , _pldsfsfpePageToken :: !(Maybe Text)
+    , _pldsfsfpeCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

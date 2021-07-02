@@ -43,8 +43,8 @@ module Network.Google.Resource.SecretManager.Projects.Secrets.AddVersion
     , psavCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecretManager.Types
+import Network.Google.Prelude
+import Network.Google.SecretManager.Types
 
 -- | A resource alias for @secretmanager.projects.secrets.addVersion@ method which the
 -- 'ProjectsSecretsAddVersion' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsSecretsAddVersionResource =
 -- /See:/ 'projectsSecretsAddVersion' smart constructor.
 data ProjectsSecretsAddVersion =
   ProjectsSecretsAddVersion'
-    { _psavParent         :: !Text
-    , _psavXgafv          :: !(Maybe Xgafv)
+    { _psavParent :: !Text
+    , _psavXgafv :: !(Maybe Xgafv)
     , _psavUploadProtocol :: !(Maybe Text)
-    , _psavAccessToken    :: !(Maybe Text)
-    , _psavUploadType     :: !(Maybe Text)
-    , _psavPayload        :: !AddSecretVersionRequest
-    , _psavCallback       :: !(Maybe Text)
+    , _psavAccessToken :: !(Maybe Text)
+    , _psavUploadType :: !(Maybe Text)
+    , _psavPayload :: !AddSecretVersionRequest
+    , _psavCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

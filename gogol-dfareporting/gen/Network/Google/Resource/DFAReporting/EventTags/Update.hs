@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.EventTags.Update
     , etuCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.eventTags.update@ method which the
 -- 'EventTagsUpdate' request conforms to.
@@ -66,13 +66,13 @@ type EventTagsUpdateResource =
 -- /See:/ 'eventTagsUpdate' smart constructor.
 data EventTagsUpdate =
   EventTagsUpdate'
-    { _etuXgafv          :: !(Maybe Xgafv)
+    { _etuXgafv :: !(Maybe Xgafv)
     , _etuUploadProtocol :: !(Maybe Text)
-    , _etuAccessToken    :: !(Maybe Text)
-    , _etuUploadType     :: !(Maybe Text)
-    , _etuProFileId      :: !(Textual Int64)
-    , _etuPayload        :: !EventTag
-    , _etuCallback       :: !(Maybe Text)
+    , _etuAccessToken :: !(Maybe Text)
+    , _etuUploadType :: !(Maybe Text)
+    , _etuProFileId :: !(Textual Int64)
+    , _etuPayload :: !EventTag
+    , _etuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

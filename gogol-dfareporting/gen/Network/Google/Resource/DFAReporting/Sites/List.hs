@@ -57,8 +57,8 @@ module Network.Google.Resource.DFAReporting.Sites.List
     , sitCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.sites.list@ method which the
 -- 'SitesList' request conforms to.
@@ -113,27 +113,27 @@ type SitesListResource =
 -- /See:/ 'sitesList' smart constructor.
 data SitesList =
   SitesList'
-    { _sitXgafv                          :: !(Maybe Xgafv)
-    , _sitUploadProtocol                 :: !(Maybe Text)
-    , _sitUnmAppedSite                   :: !(Maybe Bool)
-    , _sitAccessToken                    :: !(Maybe Text)
-    , _sitCampaignIds                    :: !(Maybe [Textual Int64])
-    , _sitSearchString                   :: !(Maybe Text)
-    , _sitAcceptsInterstitialPlacements  :: !(Maybe Bool)
+    { _sitXgafv :: !(Maybe Xgafv)
+    , _sitUploadProtocol :: !(Maybe Text)
+    , _sitUnmAppedSite :: !(Maybe Bool)
+    , _sitAccessToken :: !(Maybe Text)
+    , _sitCampaignIds :: !(Maybe [Textual Int64])
+    , _sitSearchString :: !(Maybe Text)
+    , _sitAcceptsInterstitialPlacements :: !(Maybe Bool)
     , _sitAcceptsPublisherPaidPlacements :: !(Maybe Bool)
-    , _sitUploadType                     :: !(Maybe Text)
-    , _sitIds                            :: !(Maybe [Textual Int64])
-    , _sitProFileId                      :: !(Textual Int64)
-    , _sitDirectorySiteIds               :: !(Maybe [Textual Int64])
-    , _sitSortOrder                      :: !SitesListSortOrder
-    , _sitPageToken                      :: !(Maybe Text)
-    , _sitSortField                      :: !SitesListSortField
-    , _sitSubAccountId                   :: !(Maybe (Textual Int64))
+    , _sitUploadType :: !(Maybe Text)
+    , _sitIds :: !(Maybe [Textual Int64])
+    , _sitProFileId :: !(Textual Int64)
+    , _sitDirectorySiteIds :: !(Maybe [Textual Int64])
+    , _sitSortOrder :: !SitesListSortOrder
+    , _sitPageToken :: !(Maybe Text)
+    , _sitSortField :: !SitesListSortField
+    , _sitSubAccountId :: !(Maybe (Textual Int64))
     , _sitAcceptsInStreamVideoPlacements :: !(Maybe Bool)
-    , _sitApproved                       :: !(Maybe Bool)
-    , _sitAdWordsSite                    :: !(Maybe Bool)
-    , _sitMaxResults                     :: !(Textual Int32)
-    , _sitCallback                       :: !(Maybe Text)
+    , _sitApproved :: !(Maybe Bool)
+    , _sitAdWordsSite :: !(Maybe Bool)
+    , _sitMaxResults :: !(Textual Int32)
+    , _sitCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

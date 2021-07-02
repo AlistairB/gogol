@@ -42,8 +42,8 @@ module Network.Google.Resource.SecretManager.Projects.Secrets.Versions.Enable
     , psveCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecretManager.Types
+import Network.Google.Prelude
+import Network.Google.SecretManager.Types
 
 -- | A resource alias for @secretmanager.projects.secrets.versions.enable@ method which the
 -- 'ProjectsSecretsVersionsEnable' request conforms to.
@@ -64,13 +64,13 @@ type ProjectsSecretsVersionsEnableResource =
 -- /See:/ 'projectsSecretsVersionsEnable' smart constructor.
 data ProjectsSecretsVersionsEnable =
   ProjectsSecretsVersionsEnable'
-    { _psveXgafv          :: !(Maybe Xgafv)
+    { _psveXgafv :: !(Maybe Xgafv)
     , _psveUploadProtocol :: !(Maybe Text)
-    , _psveAccessToken    :: !(Maybe Text)
-    , _psveUploadType     :: !(Maybe Text)
-    , _psvePayload        :: !EnableSecretVersionRequest
-    , _psveName           :: !Text
-    , _psveCallback       :: !(Maybe Text)
+    , _psveAccessToken :: !(Maybe Text)
+    , _psveUploadType :: !(Maybe Text)
+    , _psvePayload :: !EnableSecretVersionRequest
+    , _psveName :: !Text
+    , _psveCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

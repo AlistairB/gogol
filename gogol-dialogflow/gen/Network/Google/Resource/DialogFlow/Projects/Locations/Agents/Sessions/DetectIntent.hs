@@ -45,8 +45,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Sessions.Det
     , plasdiCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.sessions.detectIntent@ method which the
 -- 'ProjectsLocationsAgentsSessionsDetectIntent' request conforms to.
@@ -74,13 +74,13 @@ type ProjectsLocationsAgentsSessionsDetectIntentResource
 -- /See:/ 'projectsLocationsAgentsSessionsDetectIntent' smart constructor.
 data ProjectsLocationsAgentsSessionsDetectIntent =
   ProjectsLocationsAgentsSessionsDetectIntent'
-    { _plasdiXgafv          :: !(Maybe Xgafv)
+    { _plasdiXgafv :: !(Maybe Xgafv)
     , _plasdiUploadProtocol :: !(Maybe Text)
-    , _plasdiAccessToken    :: !(Maybe Text)
-    , _plasdiUploadType     :: !(Maybe Text)
-    , _plasdiPayload        :: !GoogleCloudDialogflowCxV3beta1DetectIntentRequest
-    , _plasdiSession        :: !Text
-    , _plasdiCallback       :: !(Maybe Text)
+    , _plasdiAccessToken :: !(Maybe Text)
+    , _plasdiUploadType :: !(Maybe Text)
+    , _plasdiPayload :: !GoogleCloudDialogflowCxV3beta1DetectIntentRequest
+    , _plasdiSession :: !Text
+    , _plasdiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

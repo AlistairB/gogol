@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.CreativeGroups.Patch
     , cgpCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeGroups.patch@ method which the
 -- 'CreativeGroupsPatch' request conforms to.
@@ -71,14 +71,14 @@ type CreativeGroupsPatchResource =
 -- /See:/ 'creativeGroupsPatch' smart constructor.
 data CreativeGroupsPatch =
   CreativeGroupsPatch'
-    { _cgpXgafv          :: !(Maybe Xgafv)
+    { _cgpXgafv :: !(Maybe Xgafv)
     , _cgpUploadProtocol :: !(Maybe Text)
-    , _cgpAccessToken    :: !(Maybe Text)
-    , _cgpUploadType     :: !(Maybe Text)
-    , _cgpProFileId      :: !(Textual Int64)
-    , _cgpPayload        :: !CreativeGroup
-    , _cgpId             :: !(Textual Int64)
-    , _cgpCallback       :: !(Maybe Text)
+    , _cgpAccessToken :: !(Maybe Text)
+    , _cgpUploadType :: !(Maybe Text)
+    , _cgpProFileId :: !(Textual Int64)
+    , _cgpPayload :: !CreativeGroup
+    , _cgpId :: !(Textual Int64)
+    , _cgpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -55,8 +55,8 @@ module Network.Google.Resource.DFAReporting.Campaigns.List
     , clCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.campaigns.list@ method which the
 -- 'CampaignsList' request conforms to.
@@ -107,25 +107,25 @@ type CampaignsListResource =
 -- /See:/ 'campaignsList' smart constructor.
 data CampaignsList =
   CampaignsList'
-    { _clExcludedIds                    :: !(Maybe [Textual Int64])
-    , _clXgafv                          :: !(Maybe Xgafv)
-    , _clUploadProtocol                 :: !(Maybe Text)
-    , _clAccessToken                    :: !(Maybe Text)
-    , _clSearchString                   :: !(Maybe Text)
-    , _clUploadType                     :: !(Maybe Text)
-    , _clIds                            :: !(Maybe [Textual Int64])
-    , _clProFileId                      :: !(Textual Int64)
-    , _clSortOrder                      :: !CampaignsListSortOrder
-    , _clAdvertiserGroupIds             :: !(Maybe [Textual Int64])
+    { _clExcludedIds :: !(Maybe [Textual Int64])
+    , _clXgafv :: !(Maybe Xgafv)
+    , _clUploadProtocol :: !(Maybe Text)
+    , _clAccessToken :: !(Maybe Text)
+    , _clSearchString :: !(Maybe Text)
+    , _clUploadType :: !(Maybe Text)
+    , _clIds :: !(Maybe [Textual Int64])
+    , _clProFileId :: !(Textual Int64)
+    , _clSortOrder :: !CampaignsListSortOrder
+    , _clAdvertiserGroupIds :: !(Maybe [Textual Int64])
     , _clAtLeastOneOptimizationActivity :: !(Maybe Bool)
-    , _clOverriddenEventTagId           :: !(Maybe (Textual Int64))
-    , _clPageToken                      :: !(Maybe Text)
-    , _clSortField                      :: !CampaignsListSortField
-    , _clSubAccountId                   :: !(Maybe (Textual Int64))
-    , _clAdvertiserIds                  :: !(Maybe [Textual Int64])
-    , _clArchived                       :: !(Maybe Bool)
-    , _clMaxResults                     :: !(Textual Int32)
-    , _clCallback                       :: !(Maybe Text)
+    , _clOverriddenEventTagId :: !(Maybe (Textual Int64))
+    , _clPageToken :: !(Maybe Text)
+    , _clSortField :: !CampaignsListSortField
+    , _clSubAccountId :: !(Maybe (Textual Int64))
+    , _clAdvertiserIds :: !(Maybe [Textual Int64])
+    , _clArchived :: !(Maybe Bool)
+    , _clMaxResults :: !(Textual Int32)
+    , _clCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

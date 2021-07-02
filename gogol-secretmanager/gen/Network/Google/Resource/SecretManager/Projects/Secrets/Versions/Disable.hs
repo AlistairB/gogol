@@ -43,8 +43,8 @@ module Network.Google.Resource.SecretManager.Projects.Secrets.Versions.Disable
     , psvdCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecretManager.Types
+import Network.Google.Prelude
+import Network.Google.SecretManager.Types
 
 -- | A resource alias for @secretmanager.projects.secrets.versions.disable@ method which the
 -- 'ProjectsSecretsVersionsDisable' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsSecretsVersionsDisableResource =
 -- /See:/ 'projectsSecretsVersionsDisable' smart constructor.
 data ProjectsSecretsVersionsDisable =
   ProjectsSecretsVersionsDisable'
-    { _psvdXgafv          :: !(Maybe Xgafv)
+    { _psvdXgafv :: !(Maybe Xgafv)
     , _psvdUploadProtocol :: !(Maybe Text)
-    , _psvdAccessToken    :: !(Maybe Text)
-    , _psvdUploadType     :: !(Maybe Text)
-    , _psvdPayload        :: !DisableSecretVersionRequest
-    , _psvdName           :: !Text
-    , _psvdCallback       :: !(Maybe Text)
+    , _psvdAccessToken :: !(Maybe Text)
+    , _psvdUploadType :: !(Maybe Text)
+    , _psvdPayload :: !DisableSecretVersionRequest
+    , _psvdName :: !Text
+    , _psvdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Campaigns.Update
     , cuCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.campaigns.update@ method which the
 -- 'CampaignsUpdate' request conforms to.
@@ -66,13 +66,13 @@ type CampaignsUpdateResource =
 -- /See:/ 'campaignsUpdate' smart constructor.
 data CampaignsUpdate =
   CampaignsUpdate'
-    { _cuXgafv          :: !(Maybe Xgafv)
+    { _cuXgafv :: !(Maybe Xgafv)
     , _cuUploadProtocol :: !(Maybe Text)
-    , _cuAccessToken    :: !(Maybe Text)
-    , _cuUploadType     :: !(Maybe Text)
-    , _cuProFileId      :: !(Textual Int64)
-    , _cuPayload        :: !Campaign
-    , _cuCallback       :: !(Maybe Text)
+    , _cuAccessToken :: !(Maybe Text)
+    , _cuUploadType :: !(Maybe Text)
+    , _cuProFileId :: !(Textual Int64)
+    , _cuPayload :: !Campaign
+    , _cuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

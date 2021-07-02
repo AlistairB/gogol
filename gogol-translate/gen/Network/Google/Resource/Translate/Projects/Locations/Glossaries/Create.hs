@@ -43,8 +43,8 @@ module Network.Google.Resource.Translate.Projects.Locations.Glossaries.Create
     , plgcCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Translate.Types
+import Network.Google.Prelude
+import Network.Google.Translate.Types
 
 -- | A resource alias for @translate.projects.locations.glossaries.create@ method which the
 -- 'ProjectsLocationsGlossariesCreate' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsLocationsGlossariesCreateResource =
 -- /See:/ 'projectsLocationsGlossariesCreate' smart constructor.
 data ProjectsLocationsGlossariesCreate =
   ProjectsLocationsGlossariesCreate'
-    { _plgcParent         :: !Text
-    , _plgcXgafv          :: !(Maybe Xgafv)
+    { _plgcParent :: !Text
+    , _plgcXgafv :: !(Maybe Xgafv)
     , _plgcUploadProtocol :: !(Maybe Text)
-    , _plgcAccessToken    :: !(Maybe Text)
-    , _plgcUploadType     :: !(Maybe Text)
-    , _plgcPayload        :: !Glossary
-    , _plgcCallback       :: !(Maybe Text)
+    , _plgcAccessToken :: !(Maybe Text)
+    , _plgcUploadType :: !(Maybe Text)
+    , _plgcPayload :: !Glossary
+    , _plgcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

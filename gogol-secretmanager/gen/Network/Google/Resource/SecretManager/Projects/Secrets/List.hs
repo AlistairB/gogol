@@ -43,8 +43,8 @@ module Network.Google.Resource.SecretManager.Projects.Secrets.List
     , pslCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecretManager.Types
+import Network.Google.Prelude
+import Network.Google.SecretManager.Types
 
 -- | A resource alias for @secretmanager.projects.secrets.list@ method which the
 -- 'ProjectsSecretsList' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsSecretsListResource =
 -- /See:/ 'projectsSecretsList' smart constructor.
 data ProjectsSecretsList =
   ProjectsSecretsList'
-    { _pslParent         :: !Text
-    , _pslXgafv          :: !(Maybe Xgafv)
+    { _pslParent :: !Text
+    , _pslXgafv :: !(Maybe Xgafv)
     , _pslUploadProtocol :: !(Maybe Text)
-    , _pslAccessToken    :: !(Maybe Text)
-    , _pslUploadType     :: !(Maybe Text)
-    , _pslPageToken      :: !(Maybe Text)
-    , _pslPageSize       :: !(Maybe (Textual Int32))
-    , _pslCallback       :: !(Maybe Text)
+    , _pslAccessToken :: !(Maybe Text)
+    , _pslUploadType :: !(Maybe Text)
+    , _pslPageToken :: !(Maybe Text)
+    , _pslPageSize :: !(Maybe (Textual Int32))
+    , _pslCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

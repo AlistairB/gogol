@@ -17,8 +17,8 @@
 --
 module Network.Google.ShoppingContent.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types.Sum
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types.Sum
 
 --
 -- /See:/ 'ordersAcknowledgeRequest' smart constructor.
@@ -62,8 +62,8 @@ instance ToJSON OrdersAcknowledgeRequest where
 -- /See:/ 'accountTax' smart constructor.
 data AccountTax =
   AccountTax'
-    { _atRules     :: !(Maybe [AccountTaxTaxRule])
-    , _atKind      :: !Text
+    { _atRules :: !(Maybe [AccountTaxTaxRule])
+    , _atKind :: !Text
     , _atAccountId :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -123,7 +123,7 @@ instance ToJSON AccountTax where
 -- /See:/ 'orderinvoicesCreateRefundInvoiceResponse' smart constructor.
 data OrderinvoicesCreateRefundInvoiceResponse =
   OrderinvoicesCreateRefundInvoiceResponse'
-    { _ocrirKind            :: !Text
+    { _ocrirKind :: !Text
     , _ocrirExecutionStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -183,7 +183,7 @@ instance ToJSON
 data OrdersUpdateMerchantOrderIdRequest =
   OrdersUpdateMerchantOrderIdRequest'
     { _oumoirMerchantOrderId :: !(Maybe Text)
-    , _oumoirOperationId     :: !(Maybe Text)
+    , _oumoirOperationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -235,15 +235,15 @@ instance ToJSON OrdersUpdateMerchantOrderIdRequest
 -- /See:/ 'orderReportTransaction' smart constructor.
 data OrderReportTransaction =
   OrderReportTransaction'
-    { _ortMerchantId               :: !(Maybe (Textual Word64))
-    , _ortDisbursementId           :: !(Maybe Text)
+    { _ortMerchantId :: !(Maybe (Textual Word64))
+    , _ortDisbursementId :: !(Maybe Text)
     , _ortDisbursementCreationDate :: !(Maybe Text)
-    , _ortTransactionDate          :: !(Maybe Text)
-    , _ortDisbursementDate         :: !(Maybe Text)
-    , _ortMerchantOrderId          :: !(Maybe Text)
-    , _ortProductAmount            :: !(Maybe ProductAmount)
-    , _ortOrderId                  :: !(Maybe Text)
-    , _ortDisbursementAmount       :: !(Maybe Price)
+    , _ortTransactionDate :: !(Maybe Text)
+    , _ortDisbursementDate :: !(Maybe Text)
+    , _ortMerchantOrderId :: !(Maybe Text)
+    , _ortProductAmount :: !(Maybe ProductAmount)
+    , _ortOrderId :: !(Maybe Text)
+    , _ortDisbursementAmount :: !(Maybe Price)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -414,7 +414,7 @@ instance ToJSON OrdersAdvanceTestOrderResponse where
 data ProductsCustomBatchResponse =
   ProductsCustomBatchResponse'
     { _pcbrEntries :: !(Maybe [ProductsCustomBatchResponseEntry])
-    , _pcbrKind    :: !Text
+    , _pcbrKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -466,7 +466,7 @@ instance ToJSON ProductsCustomBatchResponse where
 data OrderMerchantProvidedAnnotation =
   OrderMerchantProvidedAnnotation'
     { _ompaValue :: !(Maybe Text)
-    , _ompaKey   :: !(Maybe Text)
+    , _ompaKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -515,7 +515,7 @@ instance ToJSON OrderMerchantProvidedAnnotation where
 data DatafeedstatusesCustomBatchResponse =
   DatafeedstatusesCustomBatchResponse'
     { _dcbrEntries :: !(Maybe [DatafeedstatusesCustomBatchResponseEntry])
-    , _dcbrKind    :: !Text
+    , _dcbrKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -570,11 +570,11 @@ instance ToJSON DatafeedstatusesCustomBatchResponse
 -- /See:/ 'orderReturn' smart constructor.
 data OrderReturn =
   OrderReturn'
-    { _orQuantity     :: !(Maybe (Textual Word32))
-    , _orActor        :: !(Maybe Text)
-    , _orReason       :: !(Maybe Text)
+    { _orQuantity :: !(Maybe (Textual Word32))
+    , _orActor :: !(Maybe Text)
+    , _orReason :: !(Maybe Text)
     , _orCreationDate :: !(Maybe Text)
-    , _orReasonText   :: !(Maybe Text)
+    , _orReasonText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -655,9 +655,9 @@ instance ToJSON OrderReturn where
 data AccounttaxCustomBatchResponseEntry =
   AccounttaxCustomBatchResponseEntry'
     { _acbreAccountTax :: !(Maybe AccountTax)
-    , _acbreKind       :: !Text
-    , _acbreErrors     :: !(Maybe Errors)
-    , _acbreBatchId    :: !(Maybe (Textual Word32))
+    , _acbreKind :: !Text
+    , _acbreErrors :: !(Maybe Errors)
+    , _acbreBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -733,16 +733,16 @@ instance ToJSON AccounttaxCustomBatchResponseEntry
 -- /See:/ 'posSaleResponse' smart constructor.
 data PosSaleResponse =
   PosSaleResponse'
-    { _psrStoreCode       :: !(Maybe Text)
-    , _psrKind            :: !Text
-    , _psrItemId          :: !(Maybe Text)
-    , _psrQuantity        :: !(Maybe (Textual Int64))
-    , _psrTargetCountry   :: !(Maybe Text)
-    , _psrGtin            :: !(Maybe Text)
-    , _psrPrice           :: !(Maybe Price)
+    { _psrStoreCode :: !(Maybe Text)
+    , _psrKind :: !Text
+    , _psrItemId :: !(Maybe Text)
+    , _psrQuantity :: !(Maybe (Textual Int64))
+    , _psrTargetCountry :: !(Maybe Text)
+    , _psrGtin :: !(Maybe Text)
+    , _psrPrice :: !(Maybe Price)
     , _psrContentLanguage :: !(Maybe Text)
-    , _psrTimestamp       :: !(Maybe Text)
-    , _psrSaleId          :: !(Maybe Text)
+    , _psrTimestamp :: !(Maybe Text)
+    , _psrSaleId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -874,7 +874,7 @@ instance ToJSON PosSaleResponse where
 -- /See:/ 'amount' smart constructor.
 data Amount =
   Amount'
-    { _aTaxAmount   :: !(Maybe Price)
+    { _aTaxAmount :: !(Maybe Price)
     , _aPriceAmount :: !(Maybe Price)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -921,7 +921,7 @@ instance ToJSON Amount where
 -- /See:/ 'accountsAuthInfoResponse' smart constructor.
 data AccountsAuthInfoResponse =
   AccountsAuthInfoResponse'
-    { _aairKind               :: !Text
+    { _aairKind :: !Text
     , _aairAccountIdentifiers :: !(Maybe [AccountIdentifier])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -980,11 +980,11 @@ instance ToJSON AccountsAuthInfoResponse where
 -- /See:/ 'orderReportDisbursement' smart constructor.
 data OrderReportDisbursement =
   OrderReportDisbursement'
-    { _ordMerchantId               :: !(Maybe (Textual Word64))
-    , _ordDisbursementId           :: !(Maybe Text)
+    { _ordMerchantId :: !(Maybe (Textual Word64))
+    , _ordDisbursementId :: !(Maybe Text)
     , _ordDisbursementCreationDate :: !(Maybe Text)
-    , _ordDisbursementDate         :: !(Maybe Text)
-    , _ordDisbursementAmount       :: !(Maybe Price)
+    , _ordDisbursementDate :: !(Maybe Text)
+    , _ordDisbursementAmount :: !(Maybe Price)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1071,9 +1071,9 @@ instance ToJSON OrderReportDisbursement where
 -- /See:/ 'unitInvoice' smart constructor.
 data UnitInvoice =
   UnitInvoice'
-    { _uiUnitPriceTaxes    :: !(Maybe [UnitInvoiceTaxLine])
+    { _uiUnitPriceTaxes :: !(Maybe [UnitInvoiceTaxLine])
     , _uiAdditionalCharges :: !(Maybe [UnitInvoiceAdditionalCharge])
-    , _uiUnitPrice         :: !(Maybe Price)
+    , _uiUnitPrice :: !(Maybe Price)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1141,16 +1141,16 @@ instance ToJSON UnitInvoice where
 -- /See:/ 'posSale' smart constructor.
 data PosSale =
   PosSale'
-    { _psStoreCode       :: !(Maybe Text)
-    , _psKind            :: !Text
-    , _psItemId          :: !(Maybe Text)
-    , _psQuantity        :: !(Maybe (Textual Int64))
-    , _psTargetCountry   :: !(Maybe Text)
-    , _psGtin            :: !(Maybe Text)
-    , _psPrice           :: !(Maybe Price)
+    { _psStoreCode :: !(Maybe Text)
+    , _psKind :: !Text
+    , _psItemId :: !(Maybe Text)
+    , _psQuantity :: !(Maybe (Textual Int64))
+    , _psTargetCountry :: !(Maybe Text)
+    , _psGtin :: !(Maybe Text)
+    , _psPrice :: !(Maybe Price)
     , _psContentLanguage :: !(Maybe Text)
-    , _psTimestamp       :: !(Maybe Text)
-    , _psSaleId          :: !(Maybe Text)
+    , _psTimestamp :: !(Maybe Text)
+    , _psSaleId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1280,14 +1280,14 @@ instance ToJSON PosSale where
 -- /See:/ 'accountStatusItemLevelIssue' smart constructor.
 data AccountStatusItemLevelIssue =
   AccountStatusItemLevelIssue'
-    { _asiliNumItems      :: !(Maybe (Textual Int64))
-    , _asiliResolution    :: !(Maybe Text)
+    { _asiliNumItems :: !(Maybe (Textual Int64))
+    , _asiliResolution :: !(Maybe Text)
     , _asiliDocumentation :: !(Maybe Text)
-    , _asiliCode          :: !(Maybe Text)
-    , _asiliServability   :: !(Maybe Text)
+    , _asiliCode :: !(Maybe Text)
+    , _asiliServability :: !(Maybe Text)
     , _asiliAttributeName :: !(Maybe Text)
-    , _asiliDescription   :: !(Maybe Text)
-    , _asiliDetail        :: !(Maybe Text)
+    , _asiliDescription :: !(Maybe Text)
+    , _asiliDetail :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1445,7 +1445,7 @@ instance ToJSON LiaSettingsRequestGmbAccessResponse
 data ProductStatusDestinationStatus =
   ProductStatusDestinationStatus'
     { _psdsDestination :: !(Maybe Text)
-    , _psdsStatus      :: !(Maybe Text)
+    , _psdsStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1495,13 +1495,13 @@ instance ToJSON ProductStatusDestinationStatus where
 -- /See:/ 'regionalInventory' smart constructor.
 data RegionalInventory =
   RegionalInventory'
-    { _riRegionId               :: !(Maybe Text)
-    , _riKind                   :: !Text
-    , _riSalePrice              :: !(Maybe Price)
-    , _riAvailability           :: !(Maybe Text)
-    , _riCustomAttributes       :: !(Maybe [CustomAttribute])
+    { _riRegionId :: !(Maybe Text)
+    , _riKind :: !Text
+    , _riSalePrice :: !(Maybe Price)
+    , _riAvailability :: !(Maybe Text)
+    , _riCustomAttributes :: !(Maybe [CustomAttribute])
     , _riSalePriceEffectiveDate :: !(Maybe Text)
-    , _riPrice                  :: !(Maybe Price)
+    , _riPrice :: !(Maybe Price)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1612,10 +1612,10 @@ instance ToJSON RegionalInventory where
 data AccountTaxTaxRule =
   AccountTaxTaxRule'
     { _attrUseGlobalRate :: !(Maybe Bool)
-    , _attrCountry       :: !(Maybe Text)
+    , _attrCountry :: !(Maybe Text)
     , _attrShippingTaxed :: !(Maybe Bool)
-    , _attrLocationId    :: !(Maybe (Textual Word64))
-    , _attrRatePercent   :: !(Maybe Text)
+    , _attrLocationId :: !(Maybe (Textual Word64))
+    , _attrRatePercent :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1702,9 +1702,9 @@ instance ToJSON AccountTaxTaxRule where
 -- /See:/ 'postalCodeGroup' smart constructor.
 data PostalCodeGroup =
   PostalCodeGroup'
-    { _pcgCountry          :: !(Maybe Text)
+    { _pcgCountry :: !(Maybe Text)
     , _pcgPostalCodeRanges :: !(Maybe [PostalCodeRange])
-    , _pcgName             :: !(Maybe Text)
+    , _pcgName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1803,9 +1803,9 @@ instance ToJSON DatafeedsCustomBatchRequest where
 data RegionalinventoryCustomBatchResponseEntry =
   RegionalinventoryCustomBatchResponseEntry'
     { _rcbreRegionalInventory :: !(Maybe RegionalInventory)
-    , _rcbreKind              :: !Text
-    , _rcbreErrors            :: !(Maybe Errors)
-    , _rcbreBatchId           :: !(Maybe (Textual Word32))
+    , _rcbreKind :: !Text
+    , _rcbreErrors :: !(Maybe Errors)
+    , _rcbreBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1929,7 +1929,7 @@ instance ToJSON
 -- /See:/ 'liaOnDisplayToOrderSettings' smart constructor.
 data LiaOnDisplayToOrderSettings =
   LiaOnDisplayToOrderSettings'
-    { _lodtosStatus                :: !(Maybe Text)
+    { _lodtosStatus :: !(Maybe Text)
     , _lodtosShippingCostPolicyURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1980,10 +1980,10 @@ instance ToJSON LiaOnDisplayToOrderSettings where
 data AccountAddress =
   AccountAddress'
     { _aaStreetAddress :: !(Maybe Text)
-    , _aaCountry       :: !(Maybe Text)
-    , _aaPostalCode    :: !(Maybe Text)
-    , _aaLocality      :: !(Maybe Text)
-    , _aaRegion        :: !(Maybe Text)
+    , _aaCountry :: !(Maybe Text)
+    , _aaPostalCode :: !(Maybe Text)
+    , _aaLocality :: !(Maybe Text)
+    , _aaRegion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2065,7 +2065,7 @@ instance ToJSON AccountAddress where
 data InvoiceSummaryAdditionalChargeSummary =
   InvoiceSummaryAdditionalChargeSummary'
     { _isacsTotalAmount :: !(Maybe Amount)
-    , _isacsType        :: !(Maybe Text)
+    , _isacsType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2116,7 +2116,7 @@ instance ToJSON InvoiceSummaryAdditionalChargeSummary
 -- /See:/ 'refundReason' smart constructor.
 data RefundReason =
   RefundReason'
-    { _rrReasonCode  :: !(Maybe Text)
+    { _rrReasonCode :: !(Maybe Text)
     , _rrDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2161,8 +2161,8 @@ instance ToJSON RefundReason where
 -- /See:/ 'orderLineItemShippingDetailsMethod' smart constructor.
 data OrderLineItemShippingDetailsMethod =
   OrderLineItemShippingDetailsMethod'
-    { _olisdmCarrier          :: !(Maybe Text)
-    , _olisdmMethodName       :: !(Maybe Text)
+    { _olisdmCarrier :: !(Maybe Text)
+    , _olisdmMethodName :: !(Maybe Text)
     , _olisdmMaxDaysInTransit :: !(Maybe (Textual Word32))
     , _olisdmMinDaysInTransit :: !(Maybe (Textual Word32))
     }
@@ -2243,15 +2243,15 @@ instance ToJSON OrderLineItemShippingDetailsMethod
 -- /See:/ 'datafeed' smart constructor.
 data Datafeed =
   Datafeed'
-    { _dKind              :: !Text
-    , _dFormat            :: !(Maybe DatafeedFormat)
+    { _dKind :: !Text
+    , _dFormat :: !(Maybe DatafeedFormat)
     , _dAttributeLanguage :: !(Maybe Text)
-    , _dFetchSchedule     :: !(Maybe DatafeedFetchSchedule)
-    , _dName              :: !(Maybe Text)
-    , _dTargets           :: !(Maybe [DatafeedTarget])
-    , _dId                :: !(Maybe (Textual Int64))
-    , _dContentType       :: !(Maybe Text)
-    , _dFileName          :: !(Maybe Text)
+    , _dFetchSchedule :: !(Maybe DatafeedFetchSchedule)
+    , _dName :: !(Maybe Text)
+    , _dTargets :: !(Maybe [DatafeedTarget])
+    , _dId :: !(Maybe (Textual Int64))
+    , _dContentType :: !(Maybe Text)
+    , _dFileName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2373,7 +2373,7 @@ instance ToJSON Datafeed where
 -- /See:/ 'ordersCreateTestOrderResponse' smart constructor.
 data OrdersCreateTestOrderResponse =
   OrdersCreateTestOrderResponse'
-    { _octorKind    :: !Text
+    { _octorKind :: !Text
     , _octorOrderId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2427,9 +2427,9 @@ instance ToJSON OrdersCreateTestOrderResponse where
 -- /See:/ 'accountsCustomBatchResponseEntry' smart constructor.
 data AccountsCustomBatchResponseEntry =
   AccountsCustomBatchResponseEntry'
-    { _aKind    :: !Text
+    { _aKind :: !Text
     , _aAccount :: !(Maybe Account)
-    , _aErrors  :: !(Maybe Errors)
+    , _aErrors :: !(Maybe Errors)
     , _aBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2504,7 +2504,7 @@ instance ToJSON AccountsCustomBatchResponseEntry
 data GmbAccounts =
   GmbAccounts'
     { _gaGmbAccounts :: !(Maybe [GmbAccountsGmbAccount])
-    , _gaAccountId   :: !(Maybe (Textual Word64))
+    , _gaAccountId :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2554,7 +2554,7 @@ instance ToJSON GmbAccounts where
 -- /See:/ 'customerReturnReason' smart constructor.
 data CustomerReturnReason =
   CustomerReturnReason'
-    { _crrReasonCode  :: !(Maybe Text)
+    { _crrReasonCode :: !(Maybe Text)
     , _crrDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2601,7 +2601,7 @@ instance ToJSON CustomerReturnReason where
 -- /See:/ 'accountIdentifier' smart constructor.
 data AccountIdentifier =
   AccountIdentifier'
-    { _aiMerchantId   :: !(Maybe (Textual Word64))
+    { _aiMerchantId :: !(Maybe (Textual Word64))
     , _aiAggregatorId :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2689,11 +2689,11 @@ instance ToJSON PosCustomBatchRequest where
 -- /See:/ 'orderinvoicesCreateChargeInvoiceRequest' smart constructor.
 data OrderinvoicesCreateChargeInvoiceRequest =
   OrderinvoicesCreateChargeInvoiceRequest'
-    { _occirShipmentGroupId  :: !(Maybe Text)
+    { _occirShipmentGroupId :: !(Maybe Text)
     , _occirLineItemInvoices :: !(Maybe [ShipmentInvoiceLineItemInvoice])
-    , _occirInvoiceId        :: !(Maybe Text)
-    , _occirInvoiceSummary   :: !(Maybe InvoiceSummary)
-    , _occirOperationId      :: !(Maybe Text)
+    , _occirInvoiceId :: !(Maybe Text)
+    , _occirInvoiceSummary :: !(Maybe InvoiceSummary)
+    , _occirOperationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2788,21 +2788,21 @@ instance ToJSON
 -- /See:/ 'orderLineItem' smart constructor.
 data OrderLineItem =
   OrderLineItem'
-    { _oliAnnotations       :: !(Maybe [OrderMerchantProvidedAnnotation])
-    , _oliQuantityOrdered   :: !(Maybe (Textual Word32))
-    , _oliReturnInfo        :: !(Maybe OrderLineItemReturnInfo)
+    { _oliAnnotations :: !(Maybe [OrderMerchantProvidedAnnotation])
+    , _oliQuantityOrdered :: !(Maybe (Textual Word32))
+    , _oliReturnInfo :: !(Maybe OrderLineItemReturnInfo)
     , _oliQuantityDelivered :: !(Maybe (Textual Word32))
-    , _oliShippingDetails   :: !(Maybe OrderLineItemShippingDetails)
-    , _oliQuantityPending   :: !(Maybe (Textual Word32))
-    , _oliCancellations     :: !(Maybe [OrderCancellation])
-    , _oliQuantityCanceled  :: !(Maybe (Textual Word32))
-    , _oliId                :: !(Maybe Text)
-    , _oliTax               :: !(Maybe Price)
-    , _oliPrice             :: !(Maybe Price)
-    , _oliQuantityShipped   :: !(Maybe (Textual Word32))
-    , _oliQuantityReturned  :: !(Maybe (Textual Word32))
-    , _oliProduct           :: !(Maybe OrderLineItemProduct)
-    , _oliReturns           :: !(Maybe [OrderReturn])
+    , _oliShippingDetails :: !(Maybe OrderLineItemShippingDetails)
+    , _oliQuantityPending :: !(Maybe (Textual Word32))
+    , _oliCancellations :: !(Maybe [OrderCancellation])
+    , _oliQuantityCanceled :: !(Maybe (Textual Word32))
+    , _oliId :: !(Maybe Text)
+    , _oliTax :: !(Maybe Price)
+    , _oliPrice :: !(Maybe Price)
+    , _oliQuantityShipped :: !(Maybe (Textual Word32))
+    , _oliQuantityReturned :: !(Maybe (Textual Word32))
+    , _oliProduct :: !(Maybe OrderLineItemProduct)
+    , _oliReturns :: !(Maybe [OrderReturn])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3005,13 +3005,13 @@ instance ToJSON OrderLineItem where
 -- /See:/ 'service' smart constructor.
 data Service =
   Service'
-    { _sDeliveryCountry   :: !(Maybe Text)
-    , _sRateGroups        :: !(Maybe [RateGroup])
-    , _sDeliveryTime      :: !(Maybe DeliveryTime)
-    , _sActive            :: !(Maybe Bool)
-    , _sName              :: !(Maybe Text)
-    , _sCurrency          :: !(Maybe Text)
-    , _sEligibility       :: !(Maybe Text)
+    { _sDeliveryCountry :: !(Maybe Text)
+    , _sRateGroups :: !(Maybe [RateGroup])
+    , _sDeliveryTime :: !(Maybe DeliveryTime)
+    , _sActive :: !(Maybe Bool)
+    , _sName :: !(Maybe Text)
+    , _sCurrency :: !(Maybe Text)
+    , _sEligibility :: !(Maybe Text)
     , _sMinimumOrderValue :: !(Maybe Price)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3133,7 +3133,7 @@ instance ToJSON Service where
 data ProductstatusesCustomBatchResponse =
   ProductstatusesCustomBatchResponse'
     { _proEntries :: !(Maybe [ProductstatusesCustomBatchResponseEntry])
-    , _proKind    :: !Text
+    , _proKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3189,7 +3189,7 @@ instance ToJSON ProductstatusesCustomBatchResponse
 data ProductUnitPricingMeasure =
   ProductUnitPricingMeasure'
     { _pupmValue :: !(Maybe (Textual Double))
-    , _pupmUnit  :: !(Maybe Text)
+    , _pupmUnit :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3235,12 +3235,12 @@ instance ToJSON ProductUnitPricingMeasure where
 -- /See:/ 'ordersUpdateShipmentRequest' smart constructor.
 data OrdersUpdateShipmentRequest =
   OrdersUpdateShipmentRequest'
-    { _ousrCarrier      :: !(Maybe Text)
-    , _ousrStatus       :: !(Maybe Text)
-    , _ousrTrackingId   :: !(Maybe Text)
-    , _ousrShipmentId   :: !(Maybe Text)
+    { _ousrCarrier :: !(Maybe Text)
+    , _ousrStatus :: !(Maybe Text)
+    , _ousrTrackingId :: !(Maybe Text)
+    , _ousrShipmentId :: !(Maybe Text)
     , _ousrDeliveryDate :: !(Maybe Text)
-    , _ousrOperationId  :: !(Maybe Text)
+    , _ousrOperationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3336,9 +3336,9 @@ instance ToJSON OrdersUpdateShipmentRequest where
 -- /See:/ 'orderShipmentLineItemShipment' smart constructor.
 data OrderShipmentLineItemShipment =
   OrderShipmentLineItemShipment'
-    { _oslisQuantity   :: !(Maybe (Textual Word32))
+    { _oslisQuantity :: !(Maybe (Textual Word32))
     , _oslisLineItemId :: !(Maybe Text)
-    , _oslisProductId  :: !(Maybe Text)
+    , _oslisProductId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3404,8 +3404,8 @@ instance ToJSON OrderShipmentLineItemShipment where
 data OrderreportsListTransactionsResponse =
   OrderreportsListTransactionsResponse'
     { _oltrNextPageToken :: !(Maybe Text)
-    , _oltrTransactions  :: !(Maybe [OrderReportTransaction])
-    , _oltrKind          :: !Text
+    , _oltrTransactions :: !(Maybe [OrderReportTransaction])
+    , _oltrKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3475,7 +3475,7 @@ instance ToJSON OrderreportsListTransactionsResponse
 data LiaSettingsCustomBatchResponse =
   LiaSettingsCustomBatchResponse'
     { _lscbrEntries :: !(Maybe [LiaSettingsCustomBatchResponseEntry])
-    , _lscbrKind    :: !Text
+    , _lscbrKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3530,9 +3530,9 @@ instance ToJSON LiaSettingsCustomBatchResponse where
 -- /See:/ 'loyaltyPoints' smart constructor.
 data LoyaltyPoints =
   LoyaltyPoints'
-    { _lpRatio       :: !(Maybe (Textual Double))
+    { _lpRatio :: !(Maybe (Textual Double))
     , _lpPointsValue :: !(Maybe (Textual Int64))
-    , _lpName        :: !(Maybe Text)
+    , _lpName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3638,10 +3638,10 @@ instance ToJSON LiaSettingsSetPosDataProviderResponse
 data AccountStatus =
   AccountStatus'
     { _asAccountLevelIssues :: !(Maybe [AccountStatusAccountLevelIssue])
-    , _asKind               :: !Text
-    , _asAccountId          :: !(Maybe Text)
-    , _asProducts           :: !(Maybe [AccountStatusProducts])
-    , _asWebsiteClaimed     :: !(Maybe Bool)
+    , _asKind :: !Text
+    , _asAccountId :: !(Maybe Text)
+    , _asProducts :: !(Maybe [AccountStatusProducts])
+    , _asWebsiteClaimed :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3729,11 +3729,11 @@ instance ToJSON AccountStatus where
 -- /See:/ 'shippingSettingsCustomBatchRequestEntry' smart constructor.
 data ShippingSettingsCustomBatchRequestEntry =
   ShippingSettingsCustomBatchRequestEntry'
-    { _sscbreMerchantId       :: !(Maybe (Textual Word64))
-    , _sscbreAccountId        :: !(Maybe (Textual Word64))
-    , _sscbreMethod           :: !(Maybe Text)
+    { _sscbreMerchantId :: !(Maybe (Textual Word64))
+    , _sscbreAccountId :: !(Maybe (Textual Word64))
+    , _sscbreMethod :: !(Maybe Text)
     , _sscbreShippingSettings :: !(Maybe ShippingSettings)
-    , _sscbreBatchId          :: !(Maybe (Textual Word32))
+    , _sscbreBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3825,15 +3825,15 @@ instance ToJSON
 -- /See:/ 'posInventoryResponse' smart constructor.
 data PosInventoryResponse =
   PosInventoryResponse'
-    { _pirStoreCode       :: !(Maybe Text)
-    , _pirKind            :: !Text
-    , _pirItemId          :: !(Maybe Text)
-    , _pirQuantity        :: !(Maybe (Textual Int64))
-    , _pirTargetCountry   :: !(Maybe Text)
-    , _pirGtin            :: !(Maybe Text)
-    , _pirPrice           :: !(Maybe Price)
+    { _pirStoreCode :: !(Maybe Text)
+    , _pirKind :: !Text
+    , _pirItemId :: !(Maybe Text)
+    , _pirQuantity :: !(Maybe (Textual Int64))
+    , _pirTargetCountry :: !(Maybe Text)
+    , _pirGtin :: !(Maybe Text)
+    , _pirPrice :: !(Maybe Price)
     , _pirContentLanguage :: !(Maybe Text)
-    , _pirTimestamp       :: !(Maybe Text)
+    , _pirTimestamp :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3996,8 +3996,8 @@ instance ToJSON AccountstatusesCustomBatchRequest
 data AccounttaxListResponse =
   AccounttaxListResponse'
     { _alrNextPageToken :: !(Maybe Text)
-    , _alrKind          :: !Text
-    , _alrResources     :: !(Maybe [AccountTax])
+    , _alrKind :: !Text
+    , _alrResources :: !(Maybe [AccountTax])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4104,7 +4104,7 @@ instance ToJSON
 -- /See:/ 'orderinvoicesCreateChargeInvoiceResponse' smart constructor.
 data OrderinvoicesCreateChargeInvoiceResponse =
   OrderinvoicesCreateChargeInvoiceResponse'
-    { _occirKind            :: !Text
+    { _occirKind :: !Text
     , _occirExecutionStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4200,7 +4200,7 @@ instance ToJSON DatafeedsFetchNowResponse where
 -- /See:/ 'ordersGetTestOrderTemplateResponse' smart constructor.
 data OrdersGetTestOrderTemplateResponse =
   OrdersGetTestOrderTemplateResponse'
-    { _ogtotrKind     :: !Text
+    { _ogtotrKind :: !Text
     , _ogtotrTemplate :: !(Maybe TestOrder)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4257,13 +4257,13 @@ instance ToJSON OrdersGetTestOrderTemplateResponse
 -- /See:/ 'accountsCustomBatchRequestEntry' smart constructor.
 data AccountsCustomBatchRequestEntry =
   AccountsCustomBatchRequestEntry'
-    { _accMerchantId  :: !(Maybe (Textual Word64))
-    , _accForce       :: !(Maybe Bool)
-    , _accAccount     :: !(Maybe Account)
-    , _accAccountId   :: !(Maybe (Textual Word64))
-    , _accMethod      :: !(Maybe Text)
-    , _accOverwrite   :: !(Maybe Bool)
-    , _accBatchId     :: !(Maybe (Textual Word32))
+    { _accMerchantId :: !(Maybe (Textual Word64))
+    , _accForce :: !(Maybe Bool)
+    , _accAccount :: !(Maybe Account)
+    , _accAccountId :: !(Maybe (Textual Word64))
+    , _accMethod :: !(Maybe Text)
+    , _accOverwrite :: !(Maybe Bool)
+    , _accBatchId :: !(Maybe (Textual Word32))
     , _accLinkRequest :: !(Maybe AccountsCustomBatchRequestEntryLinkRequest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4383,7 +4383,7 @@ instance ToJSON AccountsCustomBatchRequestEntry where
 data Weight =
   Weight'
     { _wValue :: !(Maybe Text)
-    , _wUnit  :: !(Maybe Text)
+    , _wUnit :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4424,7 +4424,7 @@ instance ToJSON Weight where
 -- /See:/ 'orderinvoicesCustomBatchRequestEntryCreateRefundInvoiceRefundOption' smart constructor.
 data OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceRefundOption =
   OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceRefundOption'
-    { _ocbrecriroReason      :: !(Maybe Text)
+    { _ocbrecriroReason :: !(Maybe Text)
     , _ocbrecriroDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4481,8 +4481,8 @@ instance ToJSON
 data LiaSettingsListResponse =
   LiaSettingsListResponse'
     { _lslrNextPageToken :: !(Maybe Text)
-    , _lslrKind          :: !Text
-    , _lslrResources     :: !(Maybe [LiaSettings])
+    , _lslrKind :: !Text
+    , _lslrResources :: !(Maybe [LiaSettings])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4546,8 +4546,8 @@ instance ToJSON LiaSettingsListResponse where
 -- /See:/ 'error'' smart constructor.
 data Error' =
   Error''
-    { _eDomain  :: !(Maybe Text)
-    , _eReason  :: !(Maybe Text)
+    { _eDomain :: !(Maybe Text)
+    , _eReason :: !(Maybe Text)
     , _eMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4600,8 +4600,8 @@ instance ToJSON Error' where
 data ProductstatusesListResponse =
   ProductstatusesListResponse'
     { _plrNextPageToken :: !(Maybe Text)
-    , _plrKind          :: !Text
-    , _plrResources     :: !(Maybe [ProductStatus])
+    , _plrKind :: !Text
+    , _plrResources :: !(Maybe [ProductStatus])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4664,9 +4664,9 @@ instance ToJSON ProductstatusesListResponse where
 -- /See:/ 'orderPromotionItem' smart constructor.
 data OrderPromotionItem =
   OrderPromotionItem'
-    { _opiQuantity   :: !(Maybe (Textual Int32))
+    { _opiQuantity :: !(Maybe (Textual Int32))
     , _opiLineItemId :: !(Maybe Text)
-    , _opiProductId  :: !(Maybe Text)
+    , _opiProductId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4723,7 +4723,7 @@ instance ToJSON OrderPromotionItem where
 data PosCustomBatchResponse =
   PosCustomBatchResponse'
     { _posEntries :: !(Maybe [PosCustomBatchResponseEntry])
-    , _posKind    :: !Text
+    , _posKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4774,8 +4774,8 @@ instance ToJSON PosCustomBatchResponse where
 data OrdersCreateTestOrderRequest =
   OrdersCreateTestOrderRequest'
     { _octorTemplateName :: !(Maybe Text)
-    , _octorCountry      :: !(Maybe Text)
-    , _octorTestOrder    :: !(Maybe TestOrder)
+    , _octorCountry :: !(Maybe Text)
+    , _octorTestOrder :: !(Maybe TestOrder)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4841,10 +4841,10 @@ instance ToJSON OrdersCreateTestOrderRequest where
 -- /See:/ 'accountUser' smart constructor.
 data AccountUser =
   AccountUser'
-    { _auAdmin           :: !(Maybe Bool)
+    { _auAdmin :: !(Maybe Bool)
     , _auPaymentsManager :: !(Maybe Bool)
-    , _auOrderManager    :: !(Maybe Bool)
-    , _auEmailAddress    :: !(Maybe Text)
+    , _auOrderManager :: !(Maybe Bool)
+    , _auEmailAddress :: !(Maybe Text)
     , _auPaymentsAnalyst :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4927,8 +4927,8 @@ instance ToJSON AccountUser where
 -- /See:/ 'accountCustomerService' smart constructor.
 data AccountCustomerService =
   AccountCustomerService'
-    { _acsEmail       :: !(Maybe Text)
-    , _acsURL         :: !(Maybe Text)
+    { _acsEmail :: !(Maybe Text)
+    , _acsURL :: !(Maybe Text)
     , _acsPhoneNumber :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4983,10 +4983,10 @@ instance ToJSON AccountCustomerService where
 -- /See:/ 'gmbAccountsGmbAccount' smart constructor.
 data GmbAccountsGmbAccount =
   GmbAccountsGmbAccount'
-    { _gagaEmail        :: !(Maybe Text)
+    { _gagaEmail :: !(Maybe Text)
     , _gagaListingCount :: !(Maybe (Textual Word64))
-    , _gagaName         :: !(Maybe Text)
-    , _gagaType         :: !(Maybe Text)
+    , _gagaName :: !(Maybe Text)
+    , _gagaType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5055,7 +5055,7 @@ instance ToJSON GmbAccountsGmbAccount where
 -- /See:/ 'ordersInStoreRefundLineItemResponse' smart constructor.
 data OrdersInStoreRefundLineItemResponse =
   OrdersInStoreRefundLineItemResponse'
-    { _oisrlirKind            :: !Text
+    { _oisrlirKind :: !Text
     , _oisrlirExecutionStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5113,10 +5113,10 @@ instance ToJSON OrdersInStoreRefundLineItemResponse
 data DatafeedsCustomBatchRequestEntry =
   DatafeedsCustomBatchRequestEntry'
     { _dcbreMerchantId :: !(Maybe (Textual Word64))
-    , _dcbreDatafeed   :: !(Maybe Datafeed)
-    , _dcbreMethod     :: !(Maybe Text)
+    , _dcbreDatafeed :: !(Maybe Datafeed)
+    , _dcbreMethod :: !(Maybe Text)
     , _dcbreDatafeedId :: !(Maybe (Textual Word64))
-    , _dcbreBatchId    :: !(Maybe (Textual Word32))
+    , _dcbreBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5203,8 +5203,8 @@ instance ToJSON DatafeedsCustomBatchRequestEntry
 data OrderCustomerMarketingRightsInfo =
   OrderCustomerMarketingRightsInfo'
     { _ocmriExplicitMarketingPreference :: !(Maybe Text)
-    , _ocmriMarketingEmailAddress       :: !(Maybe Text)
-    , _ocmriLastUpdatedTimestamp        :: !(Maybe Text)
+    , _ocmriMarketingEmailAddress :: !(Maybe Text)
+    , _ocmriLastUpdatedTimestamp :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5277,12 +5277,12 @@ instance ToJSON OrderCustomerMarketingRightsInfo
 -- /See:/ 'merchantOrderReturnItem' smart constructor.
 data MerchantOrderReturnItem =
   MerchantOrderReturnItem'
-    { _moriReturnShipmentIds    :: !(Maybe [Text])
+    { _moriReturnShipmentIds :: !(Maybe [Text])
     , _moriMerchantReturnReason :: !(Maybe RefundReason)
-    , _moriState                :: !(Maybe Text)
+    , _moriState :: !(Maybe Text)
     , _moriCustomerReturnReason :: !(Maybe CustomerReturnReason)
-    , _moriItemId               :: !(Maybe Text)
-    , _moriProduct              :: !(Maybe OrderLineItemProduct)
+    , _moriItemId :: !(Maybe Text)
+    , _moriProduct :: !(Maybe OrderLineItemProduct)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5373,13 +5373,13 @@ instance ToJSON MerchantOrderReturnItem where
 -- /See:/ 'accountStatusAccountLevelIssue' smart constructor.
 data AccountStatusAccountLevelIssue =
   AccountStatusAccountLevelIssue'
-    { _asaliDestination   :: !(Maybe Text)
-    , _asaliCountry       :: !(Maybe Text)
-    , _asaliSeverity      :: !(Maybe Text)
+    { _asaliDestination :: !(Maybe Text)
+    , _asaliCountry :: !(Maybe Text)
+    , _asaliSeverity :: !(Maybe Text)
     , _asaliDocumentation :: !(Maybe Text)
-    , _asaliId            :: !(Maybe Text)
-    , _asaliTitle         :: !(Maybe Text)
-    , _asaliDetail        :: !(Maybe Text)
+    , _asaliId :: !(Maybe Text)
+    , _asaliTitle :: !(Maybe Text)
+    , _asaliDetail :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5485,9 +5485,9 @@ data Value =
   Value'
     { _vPricePercentage :: !(Maybe Text)
     , _vCarrierRateName :: !(Maybe Text)
-    , _vFlatRate        :: !(Maybe Price)
-    , _vSubtableName    :: !(Maybe Text)
-    , _vNoShipping      :: !(Maybe Bool)
+    , _vFlatRate :: !(Maybe Price)
+    , _vSubtableName :: !(Maybe Text)
+    , _vNoShipping :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5624,15 +5624,15 @@ instance ToJSON Installment where
 -- /See:/ 'datafeedFetchSchedule' smart constructor.
 data DatafeedFetchSchedule =
   DatafeedFetchSchedule'
-    { _dfsFetchURL     :: !(Maybe Text)
-    , _dfsUsername     :: !(Maybe Text)
+    { _dfsFetchURL :: !(Maybe Text)
+    , _dfsUsername :: !(Maybe Text)
     , _dfsMinuteOfHour :: !(Maybe (Textual Word32))
-    , _dfsPassword     :: !(Maybe Text)
-    , _dfsDayOfMonth   :: !(Maybe (Textual Word32))
-    , _dfsHour         :: !(Maybe (Textual Word32))
-    , _dfsWeekday      :: !(Maybe Text)
-    , _dfsTimeZone     :: !(Maybe Text)
-    , _dfsPaused       :: !(Maybe Bool)
+    , _dfsPassword :: !(Maybe Text)
+    , _dfsDayOfMonth :: !(Maybe (Textual Word32))
+    , _dfsHour :: !(Maybe (Textual Word32))
+    , _dfsWeekday :: !(Maybe Text)
+    , _dfsTimeZone :: !(Maybe Text)
+    , _dfsPaused :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5762,7 +5762,7 @@ instance ToJSON DatafeedFetchSchedule where
 data RegionalinventoryCustomBatchResponse =
   RegionalinventoryCustomBatchResponse'
     { _rcbrEntries :: !(Maybe [RegionalinventoryCustomBatchResponseEntry])
-    , _rcbrKind    :: !Text
+    , _rcbrKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5819,8 +5819,8 @@ instance ToJSON RegionalinventoryCustomBatchResponse
 -- /See:/ 'posStore' smart constructor.
 data PosStore =
   PosStore'
-    { _pssStoreCode    :: !(Maybe Text)
-    , _pssKind         :: !Text
+    { _pssStoreCode :: !(Maybe Text)
+    , _pssKind :: !Text
     , _pssStoreAddress :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5930,7 +5930,7 @@ instance ToJSON
 -- /See:/ 'shippingSettingsGetSupportedCarriersResponse' smart constructor.
 data ShippingSettingsGetSupportedCarriersResponse =
   ShippingSettingsGetSupportedCarriersResponse'
-    { _ssgscrKind     :: !Text
+    { _ssgscrKind :: !Text
     , _ssgscrCarriers :: !(Maybe [CarriersCarrier])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5992,8 +5992,8 @@ instance ToJSON
 -- /See:/ 'posDataProvidersPosDataProvider' smart constructor.
 data PosDataProvidersPosDataProvider =
   PosDataProvidersPosDataProvider'
-    { _pdppdpProviderId  :: !(Maybe (Textual Word64))
-    , _pdppdpFullName    :: !(Maybe Text)
+    { _pdppdpProviderId :: !(Maybe (Textual Word64))
+    , _pdppdpFullName :: !(Maybe Text)
     , _pdppdpDisplayName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6059,11 +6059,11 @@ instance ToJSON PosDataProvidersPosDataProvider where
 data HolidaysHoliday =
   HolidaysHoliday'
     { _hhDeliveryGuaranteeHour :: !(Maybe (Textual Word64))
-    , _hhDate                  :: !(Maybe Text)
+    , _hhDate :: !(Maybe Text)
     , _hhDeliveryGuaranteeDate :: !(Maybe Text)
-    , _hhCountryCode           :: !(Maybe Text)
-    , _hhId                    :: !(Maybe Text)
-    , _hhType                  :: !(Maybe Text)
+    , _hhCountryCode :: !(Maybe Text)
+    , _hhId :: !(Maybe Text)
+    , _hhType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6164,8 +6164,8 @@ instance ToJSON HolidaysHoliday where
 data AccountsListResponse =
   AccountsListResponse'
     { _accNextPageToken :: !(Maybe Text)
-    , _accKind          :: !Text
-    , _accResources     :: !(Maybe [Account])
+    , _accKind :: !Text
+    , _accResources :: !(Maybe [Account])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6227,8 +6227,8 @@ instance ToJSON AccountsListResponse where
 -- /See:/ 'accountBusinessInformation' smart constructor.
 data AccountBusinessInformation =
   AccountBusinessInformation'
-    { _abiAddress         :: !(Maybe AccountAddress)
-    , _abiPhoneNumber     :: !(Maybe Text)
+    { _abiAddress :: !(Maybe AccountAddress)
+    , _abiPhoneNumber :: !(Maybe Text)
     , _abiCustomerService :: !(Maybe AccountCustomerService)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6290,8 +6290,8 @@ instance ToJSON AccountBusinessInformation where
 -- /See:/ 'carriersCarrier' smart constructor.
 data CarriersCarrier =
   CarriersCarrier'
-    { _ccCountry  :: !(Maybe Text)
-    , _ccName     :: !(Maybe Text)
+    { _ccCountry :: !(Maybe Text)
+    , _ccName :: !(Maybe Text)
     , _ccServices :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6350,12 +6350,12 @@ instance ToJSON CarriersCarrier where
 -- /See:/ 'carrierRate' smart constructor.
 data CarrierRate =
   CarrierRate'
-    { _crOriginPostalCode     :: !(Maybe Text)
-    , _crFlatAdjustment       :: !(Maybe Price)
-    , _crCarrierService       :: !(Maybe Text)
-    , _crName                 :: !(Maybe Text)
+    { _crOriginPostalCode :: !(Maybe Text)
+    , _crFlatAdjustment :: !(Maybe Price)
+    , _crCarrierService :: !(Maybe Text)
+    , _crName :: !(Maybe Text)
     , _crPercentageAdjustment :: !(Maybe Text)
-    , _crCarrierName          :: !(Maybe Text)
+    , _crCarrierName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6459,8 +6459,8 @@ instance ToJSON CarrierRate where
 data ShippingSettingsListResponse =
   ShippingSettingsListResponse'
     { _sslrNextPageToken :: !(Maybe Text)
-    , _sslrKind          :: !Text
-    , _sslrResources     :: !(Maybe [ShippingSettings])
+    , _sslrKind :: !Text
+    , _sslrResources :: !(Maybe [ShippingSettings])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6524,7 +6524,7 @@ instance ToJSON ShippingSettingsListResponse where
 -- /See:/ 'ordersCreateTestReturnResponse' smart constructor.
 data OrdersCreateTestReturnResponse =
   OrdersCreateTestReturnResponse'
-    { _octrrKind     :: !Text
+    { _octrrKind :: !Text
     , _octrrReturnId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6580,9 +6580,9 @@ instance ToJSON OrdersCreateTestReturnResponse where
 data OrdersShipLineItemsRequest =
   OrdersShipLineItemsRequest'
     { _oslirShipmentGroupId :: !(Maybe Text)
-    , _oslirShipmentInfos   :: !(Maybe [OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo])
-    , _oslirLineItems       :: !(Maybe [OrderShipmentLineItemShipment])
-    , _oslirOperationId     :: !(Maybe Text)
+    , _oslirShipmentInfos :: !(Maybe [OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo])
+    , _oslirLineItems :: !(Maybe [OrderShipmentLineItemShipment])
+    , _oslirOperationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6663,8 +6663,8 @@ instance ToJSON OrdersShipLineItemsRequest where
 data OrderreturnsListResponse =
   OrderreturnsListResponse'
     { _olrNextPageToken :: !(Maybe Text)
-    , _olrKind          :: !Text
-    , _olrResources     :: !(Maybe [MerchantOrderReturn])
+    , _olrKind :: !Text
+    , _olrResources :: !(Maybe [MerchantOrderReturn])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6727,7 +6727,7 @@ instance ToJSON OrderreturnsListResponse where
 data AccountsCustomBatchResponse =
   AccountsCustomBatchResponse'
     { _acbrcEntries :: !(Maybe [AccountsCustomBatchResponseEntry])
-    , _acbrcKind    :: !Text
+    , _acbrcKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6781,11 +6781,11 @@ instance ToJSON AccountsCustomBatchResponse where
 -- /See:/ 'ordersUpdateLineItemShippingDetailsRequest' smart constructor.
 data OrdersUpdateLineItemShippingDetailsRequest =
   OrdersUpdateLineItemShippingDetailsRequest'
-    { _oulisdrShipByDate    :: !(Maybe Text)
-    , _oulisdrLineItemId    :: !(Maybe Text)
+    { _oulisdrShipByDate :: !(Maybe Text)
+    , _oulisdrLineItemId :: !(Maybe Text)
     , _oulisdrDeliverByDate :: !(Maybe Text)
-    , _oulisdrOperationId   :: !(Maybe Text)
-    , _oulisdrProductId     :: !(Maybe Text)
+    , _oulisdrOperationId :: !(Maybe Text)
+    , _oulisdrProductId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6883,10 +6883,10 @@ data MerchantOrderReturn =
   MerchantOrderReturn'
     { _morReturnShipments :: !(Maybe [ReturnShipment])
     , _morMerchantOrderId :: !(Maybe Text)
-    , _morReturnItems     :: !(Maybe [MerchantOrderReturnItem])
-    , _morCreationDate    :: !(Maybe Text)
-    , _morOrderId         :: !(Maybe Text)
-    , _morOrderReturnId   :: !(Maybe Text)
+    , _morReturnItems :: !(Maybe [MerchantOrderReturnItem])
+    , _morCreationDate :: !(Maybe Text)
+    , _morOrderId :: !(Maybe Text)
+    , _morOrderReturnId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6979,11 +6979,11 @@ instance ToJSON MerchantOrderReturn where
 -- /See:/ 'productTax' smart constructor.
 data ProductTax =
   ProductTax'
-    { _ptTaxShip    :: !(Maybe Bool)
-    , _ptCountry    :: !(Maybe Text)
+    { _ptTaxShip :: !(Maybe Bool)
+    , _ptCountry :: !(Maybe Text)
     , _ptPostalCode :: !(Maybe Text)
-    , _ptRate       :: !(Maybe (Textual Double))
-    , _ptRegion     :: !(Maybe Text)
+    , _ptRate :: !(Maybe (Textual Double))
+    , _ptRegion :: !(Maybe Text)
     , _ptLocationId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7078,14 +7078,14 @@ instance ToJSON ProductTax where
 -- /See:/ 'posCustomBatchRequestEntry' smart constructor.
 data PosCustomBatchRequestEntry =
   PosCustomBatchRequestEntry'
-    { _pcbreMerchantId       :: !(Maybe (Textual Word64))
-    , _pcbreStoreCode        :: !(Maybe Text)
+    { _pcbreMerchantId :: !(Maybe (Textual Word64))
+    , _pcbreStoreCode :: !(Maybe Text)
     , _pcbreTargetMerchantId :: !(Maybe (Textual Word64))
-    , _pcbreMethod           :: !(Maybe Text)
-    , _pcbreStore            :: !(Maybe PosStore)
-    , _pcbreInventory        :: !(Maybe PosInventory)
-    , _pcbreSale             :: !(Maybe PosSale)
-    , _pcbreBatchId          :: !(Maybe (Textual Word32))
+    , _pcbreMethod :: !(Maybe Text)
+    , _pcbreStore :: !(Maybe PosStore)
+    , _pcbreInventory :: !(Maybe PosInventory)
+    , _pcbreSale :: !(Maybe PosSale)
+    , _pcbreBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7200,11 +7200,11 @@ instance ToJSON PosCustomBatchRequestEntry where
 -- /See:/ 'orderShipment' smart constructor.
 data OrderShipment =
   OrderShipment'
-    { _osCarrier      :: !(Maybe Text)
-    , _osStatus       :: !(Maybe Text)
-    , _osTrackingId   :: !(Maybe Text)
-    , _osLineItems    :: !(Maybe [OrderShipmentLineItemShipment])
-    , _osId           :: !(Maybe Text)
+    { _osCarrier :: !(Maybe Text)
+    , _osStatus :: !(Maybe Text)
+    , _osTrackingId :: !(Maybe Text)
+    , _osLineItems :: !(Maybe [OrderShipmentLineItemShipment])
+    , _osId :: !(Maybe Text)
     , _osCreationDate :: !(Maybe Text)
     , _osDeliveryDate :: !(Maybe Text)
     }
@@ -7349,7 +7349,7 @@ instance ToJSON AccountsLinkResponse where
 data OrderLineItemReturnInfo =
   OrderLineItemReturnInfo'
     { _oliriIsReturnable :: !(Maybe Bool)
-    , _oliriPolicyURL    :: !(Maybe Text)
+    , _oliriPolicyURL :: !(Maybe Text)
     , _oliriDaysToReturn :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7413,9 +7413,9 @@ instance ToJSON OrderLineItemReturnInfo where
 -- /See:/ 'transitTable' smart constructor.
 data TransitTable =
   TransitTable'
-    { _ttTransitTimeLabels    :: !(Maybe [Text])
+    { _ttTransitTimeLabels :: !(Maybe [Text])
     , _ttPostalCodeGroupNames :: !(Maybe [Text])
-    , _ttRows                 :: !(Maybe [TransitTableTransitTimeRow])
+    , _ttRows :: !(Maybe [TransitTableTransitTimeRow])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7489,17 +7489,17 @@ instance ToJSON TransitTable where
 -- /See:/ 'account' smart constructor.
 data Account =
   Account'
-    { _aaUsers                :: !(Maybe [AccountUser])
-    , _aaYouTubeChannelLinks  :: !(Maybe [AccountYouTubeChannelLink])
-    , _aaKind                 :: !Text
-    , _aaSellerId             :: !(Maybe Text)
-    , _aaName                 :: !(Maybe Text)
-    , _aaBusinessInformation  :: !(Maybe AccountBusinessInformation)
-    , _aaId                   :: !(Maybe (Textual Word64))
-    , _aaAdsLinks             :: !(Maybe [AccountAdsLink])
-    , _aaWebsiteURL           :: !(Maybe Text)
+    { _aaUsers :: !(Maybe [AccountUser])
+    , _aaYouTubeChannelLinks :: !(Maybe [AccountYouTubeChannelLink])
+    , _aaKind :: !Text
+    , _aaSellerId :: !(Maybe Text)
+    , _aaName :: !(Maybe Text)
+    , _aaBusinessInformation :: !(Maybe AccountBusinessInformation)
+    , _aaId :: !(Maybe (Textual Word64))
+    , _aaAdsLinks :: !(Maybe [AccountAdsLink])
+    , _aaWebsiteURL :: !(Maybe Text)
     , _aaGoogleMyBusinessLink :: !(Maybe AccountGoogleMyBusinessLink)
-    , _aaAdultContent         :: !(Maybe Bool)
+    , _aaAdultContent :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7660,7 +7660,7 @@ instance ToJSON Account where
 -- /See:/ 'shipmentTrackingInfo' smart constructor.
 data ShipmentTrackingInfo =
   ShipmentTrackingInfo'
-    { _stiCarrier        :: !(Maybe Text)
+    { _stiCarrier :: !(Maybe Text)
     , _stiTrackingNumber :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7706,12 +7706,12 @@ instance ToJSON ShipmentTrackingInfo where
 -- /See:/ 'ordersCancelLineItemRequest' smart constructor.
 data OrdersCancelLineItemRequest =
   OrdersCancelLineItemRequest'
-    { _oclirQuantity    :: !(Maybe (Textual Word32))
-    , _oclirLineItemId  :: !(Maybe Text)
-    , _oclirReason      :: !(Maybe Text)
+    { _oclirQuantity :: !(Maybe (Textual Word32))
+    , _oclirLineItemId :: !(Maybe Text)
+    , _oclirReason :: !(Maybe Text)
     , _oclirOperationId :: !(Maybe Text)
-    , _oclirProductId   :: !(Maybe Text)
-    , _oclirReasonText  :: !(Maybe Text)
+    , _oclirProductId :: !(Maybe Text)
+    , _oclirReasonText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7809,7 +7809,7 @@ instance ToJSON OrdersCancelLineItemRequest where
 data ProductShippingWeight =
   ProductShippingWeight'
     { _pswValue :: !(Maybe (Textual Double))
-    , _pswUnit  :: !(Maybe Text)
+    , _pswUnit :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7857,11 +7857,11 @@ instance ToJSON ProductShippingWeight where
 -- /See:/ 'accountstatusesCustomBatchRequestEntry' smart constructor.
 data AccountstatusesCustomBatchRequestEntry =
   AccountstatusesCustomBatchRequestEntry'
-    { _acbrecMerchantId   :: !(Maybe (Textual Word64))
-    , _acbrecAccountId    :: !(Maybe (Textual Word64))
+    { _acbrecMerchantId :: !(Maybe (Textual Word64))
+    , _acbrecAccountId :: !(Maybe (Textual Word64))
     , _acbrecDestinations :: !(Maybe [Text])
-    , _acbrecMethod       :: !(Maybe Text)
-    , _acbrecBatchId      :: !(Maybe (Textual Word32))
+    , _acbrecMethod :: !(Maybe Text)
+    , _acbrecBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7954,12 +7954,12 @@ instance ToJSON
 -- /See:/ 'deliveryTime' smart constructor.
 data DeliveryTime =
   DeliveryTime'
-    { _dtTransitTimeTable      :: !(Maybe TransitTable)
-    , _dtHolidayCutoffs        :: !(Maybe [HolidayCutoff])
-    , _dtMinTransitTimeInDays  :: !(Maybe (Textual Word32))
-    , _dtCutoffTime            :: !(Maybe CutoffTime)
+    { _dtTransitTimeTable :: !(Maybe TransitTable)
+    , _dtHolidayCutoffs :: !(Maybe [HolidayCutoff])
+    , _dtMinTransitTimeInDays :: !(Maybe (Textual Word32))
+    , _dtCutoffTime :: !(Maybe CutoffTime)
     , _dtMinHandlingTimeInDays :: !(Maybe (Textual Word32))
-    , _dtMaxTransitTimeInDays  :: !(Maybe (Textual Word32))
+    , _dtMaxTransitTimeInDays :: !(Maybe (Textual Word32))
     , _dtMaxHandlingTimeInDays :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8088,13 +8088,13 @@ instance ToJSON DeliveryTime where
 -- /See:/ 'liaCountrySettings' smart constructor.
 data LiaCountrySettings =
   LiaCountrySettings'
-    { _lcsPosDataProvider             :: !(Maybe LiaPosDataProvider)
-    , _lcsCountry                     :: !(Maybe Text)
-    , _lcsStorePickupActive           :: !(Maybe Bool)
-    , _lcsInventory                   :: !(Maybe LiaInventorySettings)
-    , _lcsAbout                       :: !(Maybe LiaAboutPageSettings)
+    { _lcsPosDataProvider :: !(Maybe LiaPosDataProvider)
+    , _lcsCountry :: !(Maybe Text)
+    , _lcsStorePickupActive :: !(Maybe Bool)
+    , _lcsInventory :: !(Maybe LiaInventorySettings)
+    , _lcsAbout :: !(Maybe LiaAboutPageSettings)
     , _lcsHostedLocalStorefrontActive :: !(Maybe Bool)
-    , _lcsOnDisplayToOrder            :: !(Maybe LiaOnDisplayToOrderSettings)
+    , _lcsOnDisplayToOrder :: !(Maybe LiaOnDisplayToOrderSettings)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8197,7 +8197,7 @@ instance ToJSON LiaCountrySettings where
 -- /See:/ 'ordersReturnRefundLineItemResponse' smart constructor.
 data OrdersReturnRefundLineItemResponse =
   OrdersReturnRefundLineItemResponse'
-    { _orrlirKind            :: !Text
+    { _orrlirKind :: !Text
     , _orrlirExecutionStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8254,10 +8254,10 @@ instance ToJSON OrdersReturnRefundLineItemResponse
 -- /See:/ 'productstatusesCustomBatchResponseEntry' smart constructor.
 data ProductstatusesCustomBatchResponseEntry =
   ProductstatusesCustomBatchResponseEntry'
-    { _pKind          :: !Text
+    { _pKind :: !Text
     , _pProductStatus :: !(Maybe ProductStatus)
-    , _pErrors        :: !(Maybe Errors)
-    , _pBatchId       :: !(Maybe (Textual Word32))
+    , _pErrors :: !(Maybe Errors)
+    , _pBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8335,7 +8335,7 @@ instance ToJSON
 -- /See:/ 'shippingSettingsGetSupportedHolidaysResponse' smart constructor.
 data ShippingSettingsGetSupportedHolidaysResponse =
   ShippingSettingsGetSupportedHolidaysResponse'
-    { _ssgshrKind     :: !Text
+    { _ssgshrKind :: !Text
     , _ssgshrHolidays :: !(Maybe [HolidaysHoliday])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8398,7 +8398,7 @@ instance ToJSON
 data LiaPosDataProvider =
   LiaPosDataProvider'
     { _lpdpPosExternalAccountId :: !(Maybe Text)
-    , _lpdpPosDataProviderId    :: !(Maybe (Textual Word64))
+    , _lpdpPosDataProviderId :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8450,8 +8450,8 @@ instance ToJSON LiaPosDataProvider where
 -- /See:/ 'datafeedFormat' smart constructor.
 data DatafeedFormat =
   DatafeedFormat'
-    { _dfQuotingMode     :: !(Maybe Text)
-    , _dfFileEncoding    :: !(Maybe Text)
+    { _dfQuotingMode :: !(Maybe Text)
+    , _dfFileEncoding :: !(Maybe Text)
     , _dfColumnDelimiter :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8521,8 +8521,8 @@ instance ToJSON DatafeedFormat where
 data LiaSettings =
   LiaSettings'
     { _lsCountrySettings :: !(Maybe [LiaCountrySettings])
-    , _lsKind            :: !Text
-    , _lsAccountId       :: !(Maybe (Textual Word64))
+    , _lsKind :: !Text
+    , _lsAccountId :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8624,13 +8624,13 @@ instance ToJSON TransitTableTransitTimeRow where
 -- /See:/ 'productShipping' smart constructor.
 data ProductShipping =
   ProductShipping'
-    { _pService           :: !(Maybe Text)
+    { _pService :: !(Maybe Text)
     , _pLocationGroupName :: !(Maybe Text)
-    , _pCountry           :: !(Maybe Text)
-    , _pPostalCode        :: !(Maybe Text)
-    , _pPrice             :: !(Maybe Price)
-    , _pRegion            :: !(Maybe Text)
-    , _pLocationId        :: !(Maybe (Textual Int64))
+    , _pCountry :: !(Maybe Text)
+    , _pPostalCode :: !(Maybe Text)
+    , _pPrice :: !(Maybe Price)
+    , _pRegion :: !(Maybe Text)
+    , _pLocationId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8771,12 +8771,12 @@ instance ToJSON ShippingSettingsCustomBatchRequest
 -- /See:/ 'liaSettingsCustomBatchResponseEntry' smart constructor.
 data LiaSettingsCustomBatchResponseEntry =
   LiaSettingsCustomBatchResponseEntry'
-    { _lscbreGmbAccounts      :: !(Maybe GmbAccounts)
-    , _lscbreKind             :: !Text
-    , _lscbreLiaSettings      :: !(Maybe LiaSettings)
-    , _lscbreErrors           :: !(Maybe Errors)
+    { _lscbreGmbAccounts :: !(Maybe GmbAccounts)
+    , _lscbreKind :: !Text
+    , _lscbreLiaSettings :: !(Maybe LiaSettings)
+    , _lscbreErrors :: !(Maybe Errors)
     , _lscbrePosDataProviders :: !(Maybe [PosDataProviders])
-    , _lscbreBatchId          :: !(Maybe (Textual Word32))
+    , _lscbreBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8914,12 +8914,12 @@ instance ToJSON AccountsCustomBatchRequest where
 -- /See:/ 'posCustomBatchResponseEntry' smart constructor.
 data PosCustomBatchResponseEntry =
   PosCustomBatchResponseEntry'
-    { _pcbrecKind      :: !Text
-    , _pcbrecStore     :: !(Maybe PosStore)
+    { _pcbrecKind :: !Text
+    , _pcbrecStore :: !(Maybe PosStore)
     , _pcbrecInventory :: !(Maybe PosInventory)
-    , _pcbrecErrors    :: !(Maybe Errors)
-    , _pcbrecSale      :: !(Maybe PosSale)
-    , _pcbrecBatchId   :: !(Maybe (Textual Word32))
+    , _pcbrecErrors :: !(Maybe Errors)
+    , _pcbrecSale :: !(Maybe PosSale)
+    , _pcbrecBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9014,7 +9014,7 @@ instance ToJSON PosCustomBatchResponseEntry where
 -- /See:/ 'orderinvoicesCustomBatchRequestEntryCreateRefundInvoiceReturnOption' smart constructor.
 data OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceReturnOption =
   OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceReturnOption'
-    { _oReason      :: !(Maybe Text)
+    { _oReason :: !(Maybe Text)
     , _oDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9068,8 +9068,8 @@ instance ToJSON
 data OrdersListResponse =
   OrdersListResponse'
     { _oNextPageToken :: !(Maybe Text)
-    , _oKind          :: !Text
-    , _oResources     :: !(Maybe [Order])
+    , _oKind :: !Text
+    , _oResources :: !(Maybe [Order])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9131,7 +9131,7 @@ instance ToJSON OrdersListResponse where
 -- /See:/ 'ordersUpdateLineItemShippingDetailsResponse' smart constructor.
 data OrdersUpdateLineItemShippingDetailsResponse =
   OrdersUpdateLineItemShippingDetailsResponse'
-    { _oulisdrKind            :: !Text
+    { _oulisdrKind :: !Text
     , _oulisdrExecutionStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9194,11 +9194,11 @@ instance ToJSON
 -- /See:/ 'headers' smart constructor.
 data Headers =
   Headers'
-    { _hNumberOfItems        :: !(Maybe [Text])
+    { _hNumberOfItems :: !(Maybe [Text])
     , _hPostalCodeGroupNames :: !(Maybe [Text])
-    , _hPrices               :: !(Maybe [Price])
-    , _hWeights              :: !(Maybe [Weight])
-    , _hLocations            :: !(Maybe [LocationIdSet])
+    , _hPrices :: !(Maybe [Price])
+    , _hWeights :: !(Maybe [Weight])
+    , _hLocations :: !(Maybe [LocationIdSet])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9310,7 +9310,7 @@ instance ToJSON Headers where
 data UnitInvoiceAdditionalCharge =
   UnitInvoiceAdditionalCharge'
     { _uiacAdditionalChargeAmount :: !(Maybe Amount)
-    , _uiacType                   :: !(Maybe Text)
+    , _uiacType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9358,7 +9358,7 @@ instance ToJSON UnitInvoiceAdditionalCharge where
 -- /See:/ 'ordersShipLineItemsResponse' smart constructor.
 data OrdersShipLineItemsResponse =
   OrdersShipLineItemsResponse'
-    { _oslirKind            :: !Text
+    { _oslirKind :: !Text
     , _oslirExecutionStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9412,8 +9412,8 @@ instance ToJSON OrdersShipLineItemsResponse where
 -- /See:/ 'unitInvoiceTaxLine' smart constructor.
 data UnitInvoiceTaxLine =
   UnitInvoiceTaxLine'
-    { _uitlTaxName   :: !(Maybe Text)
-    , _uitlTaxType   :: !(Maybe Text)
+    { _uitlTaxName :: !(Maybe Text)
+    , _uitlTaxType :: !(Maybe Text)
     , _uitlTaxAmount :: !(Maybe Price)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9513,8 +9513,8 @@ instance ToJSON OrdersCreateTestReturnRequest where
 data ShippingSettings =
   ShippingSettings'
     { _ssPostalCodeGroups :: !(Maybe [PostalCodeGroup])
-    , _ssAccountId        :: !(Maybe (Textual Word64))
-    , _ssServices         :: !(Maybe [Service])
+    , _ssAccountId :: !(Maybe (Textual Word64))
+    , _ssServices :: !(Maybe [Service])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9583,8 +9583,8 @@ instance ToJSON ShippingSettings where
 data ProductAmount =
   ProductAmount'
     { _paRemittedTaxAmount :: !(Maybe Price)
-    , _paTaxAmount         :: !(Maybe Price)
-    , _paPriceAmount       :: !(Maybe Price)
+    , _paTaxAmount :: !(Maybe Price)
+    , _paPriceAmount :: !(Maybe Price)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9646,7 +9646,7 @@ instance ToJSON ProductAmount where
 data PostalCodeRange =
   PostalCodeRange'
     { _pcrPostalCodeRangeBegin :: !(Maybe Text)
-    , _pcrPostalCodeRangeEnd   :: !(Maybe Text)
+    , _pcrPostalCodeRangeEnd :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9706,7 +9706,7 @@ instance ToJSON PostalCodeRange where
 -- /See:/ 'ordersUpdateShipmentResponse' smart constructor.
 data OrdersUpdateShipmentResponse =
   OrdersUpdateShipmentResponse'
-    { _ousrKind            :: !Text
+    { _ousrKind :: !Text
     , _ousrExecutionStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9800,7 +9800,7 @@ instance ToJSON ProductstatusesCustomBatchRequest
 -- /See:/ 'accountYouTubeChannelLink' smart constructor.
 data AccountYouTubeChannelLink =
   AccountYouTubeChannelLink'
-    { _aytclStatus    :: !(Maybe Text)
+    { _aytclStatus :: !(Maybe Text)
     , _aytclChannelId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9858,7 +9858,7 @@ instance ToJSON AccountYouTubeChannelLink where
 data AccountAdsLink =
   AccountAdsLink'
     { _aalStatus :: !(Maybe Text)
-    , _aalAdsId  :: !(Maybe (Textual Word64))
+    , _aalAdsId :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9914,7 +9914,7 @@ instance ToJSON AccountAdsLink where
 data LiaAboutPageSettings =
   LiaAboutPageSettings'
     { _lapsStatus :: !(Maybe Text)
-    , _lapsURL    :: !(Maybe Text)
+    , _lapsURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9998,8 +9998,8 @@ instance ToJSON LiaSettingsCustomBatchRequest where
 data CustomAttribute =
   CustomAttribute'
     { _caGroupValues :: !(Maybe [CustomAttribute])
-    , _caValue       :: !(Maybe Text)
-    , _caName        :: !(Maybe Text)
+    , _caValue :: !(Maybe Text)
+    , _caName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10057,14 +10057,14 @@ instance ToJSON CustomAttribute where
 -- /See:/ 'posInventoryRequest' smart constructor.
 data PosInventoryRequest =
   PosInventoryRequest'
-    { _posStoreCode       :: !(Maybe Text)
-    , _posItemId          :: !(Maybe Text)
-    , _posQuantity        :: !(Maybe (Textual Int64))
-    , _posTargetCountry   :: !(Maybe Text)
-    , _posGtin            :: !(Maybe Text)
-    , _posPrice           :: !(Maybe Price)
+    { _posStoreCode :: !(Maybe Text)
+    , _posItemId :: !(Maybe Text)
+    , _posQuantity :: !(Maybe (Textual Int64))
+    , _posTargetCountry :: !(Maybe Text)
+    , _posGtin :: !(Maybe Text)
+    , _posPrice :: !(Maybe Price)
     , _posContentLanguage :: !(Maybe Text)
-    , _posTimestamp       :: !(Maybe Text)
+    , _posTimestamp :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10175,7 +10175,7 @@ instance ToJSON PosInventoryRequest where
 data AccountstatusesCustomBatchResponse =
   AccountstatusesCustomBatchResponse'
     { _acccEntries :: !(Maybe [AccountstatusesCustomBatchResponseEntry])
-    , _acccKind    :: !Text
+    , _acccKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10231,10 +10231,10 @@ instance ToJSON AccountstatusesCustomBatchResponse
 -- /See:/ 'shippingSettingsCustomBatchResponseEntry' smart constructor.
 data ShippingSettingsCustomBatchResponseEntry =
   ShippingSettingsCustomBatchResponseEntry'
-    { _sKind             :: !Text
+    { _sKind :: !Text
     , _sShippingSettings :: !(Maybe ShippingSettings)
-    , _sErrors           :: !(Maybe Errors)
-    , _sBatchId          :: !(Maybe (Textual Word32))
+    , _sErrors :: !(Maybe Errors)
+    , _sBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10313,15 +10313,15 @@ instance ToJSON
 -- /See:/ 'productStatus' smart constructor.
 data ProductStatus =
   ProductStatus'
-    { _ppKind                 :: !Text
-    , _ppLink                 :: !(Maybe Text)
-    , _ppDestinationStatuses  :: !(Maybe [ProductStatusDestinationStatus])
-    , _ppLastUpdateDate       :: !(Maybe Text)
-    , _ppCreationDate         :: !(Maybe Text)
-    , _ppTitle                :: !(Maybe Text)
+    { _ppKind :: !Text
+    , _ppLink :: !(Maybe Text)
+    , _ppDestinationStatuses :: !(Maybe [ProductStatusDestinationStatus])
+    , _ppLastUpdateDate :: !(Maybe Text)
+    , _ppCreationDate :: !(Maybe Text)
+    , _ppTitle :: !(Maybe Text)
     , _ppGoogleExpirationDate :: !(Maybe Text)
-    , _ppProductId            :: !(Maybe Text)
-    , _ppItemLevelIssues      :: !(Maybe [ProductStatusItemLevelIssue])
+    , _ppProductId :: !(Maybe Text)
+    , _ppItemLevelIssues :: !(Maybe [ProductStatusItemLevelIssue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10450,8 +10450,8 @@ instance ToJSON ProductStatus where
 data AccountstatusesListResponse =
   AccountstatusesListResponse'
     { _alr1NextPageToken :: !(Maybe Text)
-    , _alr1Kind          :: !Text
-    , _alr1Resources     :: !(Maybe [AccountStatus])
+    , _alr1Kind :: !Text
+    , _alr1Resources :: !(Maybe [AccountStatus])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10515,7 +10515,7 @@ instance ToJSON AccountstatusesListResponse where
 -- /See:/ 'ordersSetLineItemMetadataResponse' smart constructor.
 data OrdersSetLineItemMetadataResponse =
   OrdersSetLineItemMetadataResponse'
-    { _oslimrKind            :: !Text
+    { _oslimrKind :: !Text
     , _oslimrExecutionStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10611,10 +10611,10 @@ instance ToJSON AccounttaxCustomBatchRequest where
 data ProductsCustomBatchRequestEntry =
   ProductsCustomBatchRequestEntry'
     { _prorMerchantId :: !(Maybe (Textual Word64))
-    , _prorMethod     :: !(Maybe Text)
-    , _prorProduct    :: !(Maybe Product)
-    , _prorProductId  :: !(Maybe Text)
-    , _prorBatchId    :: !(Maybe (Textual Word32))
+    , _prorMethod :: !(Maybe Text)
+    , _prorProduct :: !(Maybe Product)
+    , _prorProductId :: !(Maybe Text)
+    , _prorBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10699,7 +10699,7 @@ instance ToJSON ProductsCustomBatchRequestEntry where
 data AccountGoogleMyBusinessLink =
   AccountGoogleMyBusinessLink'
     { _agmblGmbEmail :: !(Maybe Text)
-    , _agmblStatus   :: !(Maybe Text)
+    , _agmblStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10752,11 +10752,11 @@ instance ToJSON AccountGoogleMyBusinessLink where
 data DatafeedstatusesCustomBatchRequestEntry =
   DatafeedstatusesCustomBatchRequestEntry'
     { _dMerchantId :: !(Maybe (Textual Word64))
-    , _dCountry    :: !(Maybe Text)
-    , _dMethod     :: !(Maybe Text)
+    , _dCountry :: !(Maybe Text)
+    , _dMethod :: !(Maybe Text)
     , _dDatafeedId :: !(Maybe (Textual Word64))
-    , _dLanguage   :: !(Maybe Text)
-    , _dBatchId    :: !(Maybe (Textual Word32))
+    , _dLanguage :: !(Maybe Text)
+    , _dBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10854,7 +10854,7 @@ instance ToJSON
 -- /See:/ 'orderCustomer' smart constructor.
 data OrderCustomer =
   OrderCustomer'
-    { _ocFullName            :: !(Maybe Text)
+    { _ocFullName :: !(Maybe Text)
     , _ocMarketingRightsInfo :: !(Maybe OrderCustomerMarketingRightsInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10978,7 +10978,7 @@ instance ToJSON Row where
 -- /See:/ 'ordersGetByMerchantOrderIdResponse' smart constructor.
 data OrdersGetByMerchantOrderIdResponse =
   OrdersGetByMerchantOrderIdResponse'
-    { _ogbmoirKind  :: !Text
+    { _ogbmoirKind :: !Text
     , _ogbmoirOrder :: !(Maybe Order)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11033,12 +11033,12 @@ instance ToJSON OrdersGetByMerchantOrderIdResponse
 -- /See:/ 'ordersRejectReturnLineItemRequest' smart constructor.
 data OrdersRejectReturnLineItemRequest =
   OrdersRejectReturnLineItemRequest'
-    { _orrlirQuantity    :: !(Maybe (Textual Word32))
-    , _orrlirLineItemId  :: !(Maybe Text)
-    , _orrlirReason      :: !(Maybe Text)
+    { _orrlirQuantity :: !(Maybe (Textual Word32))
+    , _orrlirLineItemId :: !(Maybe Text)
+    , _orrlirReason :: !(Maybe Text)
     , _orrlirOperationId :: !(Maybe Text)
-    , _orrlirProductId   :: !(Maybe Text)
-    , _orrlirReasonText  :: !(Maybe Text)
+    , _orrlirProductId :: !(Maybe Text)
+    , _orrlirReasonText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11137,9 +11137,9 @@ instance ToJSON OrdersRejectReturnLineItemRequest
 -- /See:/ 'ordersCancelRequest' smart constructor.
 data OrdersCancelRequest =
   OrdersCancelRequest'
-    { _ocrReason      :: !(Maybe Text)
+    { _ocrReason :: !(Maybe Text)
     , _ocrOperationId :: !(Maybe Text)
-    , _ocrReasonText  :: !(Maybe Text)
+    , _ocrReasonText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11197,13 +11197,13 @@ instance ToJSON OrdersCancelRequest where
 -- /See:/ 'returnShipment' smart constructor.
 data ReturnShipment =
   ReturnShipment'
-    { _rsState                 :: !(Maybe Text)
+    { _rsState :: !(Maybe Text)
     , _rsShipmentTrackingInfos :: !(Maybe [ShipmentTrackingInfo])
-    , _rsReturnMethodType      :: !(Maybe Text)
-    , _rsShipmentId            :: !(Maybe Text)
-    , _rsCreationDate          :: !(Maybe Text)
-    , _rsDeliveryDate          :: !(Maybe Text)
-    , _rsShippingDate          :: !(Maybe Text)
+    , _rsReturnMethodType :: !(Maybe Text)
+    , _rsShipmentId :: !(Maybe Text)
+    , _rsCreationDate :: !(Maybe Text)
+    , _rsDeliveryDate :: !(Maybe Text)
+    , _rsShippingDate :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11345,14 +11345,14 @@ instance ToJSON
 -- /See:/ 'productStatusItemLevelIssue' smart constructor.
 data ProductStatusItemLevelIssue =
   ProductStatusItemLevelIssue'
-    { _psiliDestination   :: !(Maybe Text)
-    , _psiliResolution    :: !(Maybe Text)
+    { _psiliDestination :: !(Maybe Text)
+    , _psiliResolution :: !(Maybe Text)
     , _psiliDocumentation :: !(Maybe Text)
-    , _psiliCode          :: !(Maybe Text)
-    , _psiliServability   :: !(Maybe Text)
+    , _psiliCode :: !(Maybe Text)
+    , _psiliServability :: !(Maybe Text)
     , _psiliAttributeName :: !(Maybe Text)
-    , _psiliDescription   :: !(Maybe Text)
-    , _psiliDetail        :: !(Maybe Text)
+    , _psiliDescription :: !(Maybe Text)
+    , _psiliDetail :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11468,7 +11468,7 @@ instance ToJSON ProductStatusItemLevelIssue where
 data OrderLineItemProductVariantAttribute =
   OrderLineItemProductVariantAttribute'
     { _olipvaDimension :: !(Maybe Text)
-    , _olipvaValue     :: !(Maybe Text)
+    , _olipvaValue :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11519,12 +11519,12 @@ instance ToJSON OrderLineItemProductVariantAttribute
 -- /See:/ 'rateGroup' smart constructor.
 data RateGroup =
   RateGroup'
-    { _rgCarrierRates             :: !(Maybe [CarrierRate])
-    , _rgName                     :: !(Maybe Text)
+    { _rgCarrierRates :: !(Maybe [CarrierRate])
+    , _rgName :: !(Maybe Text)
     , _rgApplicableShippingLabels :: !(Maybe [Text])
-    , _rgMainTable                :: !(Maybe Table)
-    , _rgSingleValue              :: !(Maybe Value)
-    , _rgSubtables                :: !(Maybe [Table])
+    , _rgMainTable :: !(Maybe Table)
+    , _rgSingleValue :: !(Maybe Value)
+    , _rgSubtables :: !(Maybe [Table])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11630,16 +11630,16 @@ instance ToJSON RateGroup where
 -- /See:/ 'orderPromotion' smart constructor.
 data OrderPromotion =
   OrderPromotion'
-    { _opShortTitle          :: !(Maybe Text)
-    , _opAppliedItems        :: !(Maybe [OrderPromotionItem])
+    { _opShortTitle :: !(Maybe Text)
+    , _opAppliedItems :: !(Maybe [OrderPromotionItem])
     , _opMerchantPromotionId :: !(Maybe Text)
-    , _opSubtype             :: !(Maybe Text)
-    , _opTitle               :: !(Maybe Text)
-    , _opType                :: !(Maybe Text)
-    , _opApplicableItems     :: !(Maybe [OrderPromotionItem])
-    , _opPriceValue          :: !(Maybe Price)
-    , _opTaxValue            :: !(Maybe Price)
-    , _opFunder              :: !(Maybe Text)
+    , _opSubtype :: !(Maybe Text)
+    , _opTitle :: !(Maybe Text)
+    , _opType :: !(Maybe Text)
+    , _opApplicableItems :: !(Maybe [OrderPromotionItem])
+    , _opPriceValue :: !(Maybe Price)
+    , _opTaxValue :: !(Maybe Price)
+    , _opFunder :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11776,10 +11776,10 @@ instance ToJSON OrderPromotion where
 -- /See:/ 'accountStatusProducts' smart constructor.
 data AccountStatusProducts =
   AccountStatusProducts'
-    { _aspDestination     :: !(Maybe Text)
-    , _aspCountry         :: !(Maybe Text)
-    , _aspChannel         :: !(Maybe Text)
-    , _aspStatistics      :: !(Maybe AccountStatusStatistics)
+    { _aspDestination :: !(Maybe Text)
+    , _aspCountry :: !(Maybe Text)
+    , _aspChannel :: !(Maybe Text)
+    , _aspStatistics :: !(Maybe AccountStatusStatistics)
     , _aspItemLevelIssues :: !(Maybe [AccountStatusItemLevelIssue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11865,11 +11865,11 @@ instance ToJSON AccountStatusProducts where
 -- /See:/ 'regionalinventoryCustomBatchRequestEntry' smart constructor.
 data RegionalinventoryCustomBatchRequestEntry =
   RegionalinventoryCustomBatchRequestEntry'
-    { _rMerchantId        :: !(Maybe (Textual Word64))
+    { _rMerchantId :: !(Maybe (Textual Word64))
     , _rRegionalInventory :: !(Maybe RegionalInventory)
-    , _rMethod            :: !(Maybe Text)
-    , _rProductId         :: !(Maybe Text)
-    , _rBatchId           :: !(Maybe (Textual Word32))
+    , _rMethod :: !(Maybe Text)
+    , _rProductId :: !(Maybe Text)
+    , _rBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11954,7 +11954,7 @@ instance ToJSON
 -- /See:/ 'price' smart constructor.
 data Price =
   Price'
-    { _pValue    :: !(Maybe Text)
+    { _pValue :: !(Maybe Text)
     , _pCurrency :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11998,8 +11998,8 @@ instance ToJSON Price where
 -- /See:/ 'orderLineItemShippingDetails' smart constructor.
 data OrderLineItemShippingDetails =
   OrderLineItemShippingDetails'
-    { _olisdShipByDate    :: !(Maybe Text)
-    , _olisdMethod        :: !(Maybe OrderLineItemShippingDetailsMethod)
+    { _olisdShipByDate :: !(Maybe Text)
+    , _olisdMethod :: !(Maybe OrderLineItemShippingDetailsMethod)
     , _olisdDeliverByDate :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12062,7 +12062,7 @@ instance ToJSON OrderLineItemShippingDetails where
 data DatafeedsCustomBatchResponse =
   DatafeedsCustomBatchResponse'
     { _datEntries :: !(Maybe [DatafeedsCustomBatchResponseEntry])
-    , _datKind    :: !Text
+    , _datKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12113,7 +12113,7 @@ instance ToJSON DatafeedsCustomBatchResponse where
 -- /See:/ 'invoiceSummary' smart constructor.
 data InvoiceSummary =
   InvoiceSummary'
-    { _isProductTotal              :: !(Maybe Amount)
+    { _isProductTotal :: !(Maybe Amount)
     , _isAdditionalChargeSummaries :: !(Maybe [InvoiceSummaryAdditionalChargeSummary])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12167,7 +12167,7 @@ instance ToJSON InvoiceSummary where
 -- /See:/ 'posListResponse' smart constructor.
 data PosListResponse =
   PosListResponse'
-    { _plrlKind      :: !Text
+    { _plrlKind :: !Text
     , _plrlResources :: !(Maybe [PosStore])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12218,7 +12218,7 @@ instance ToJSON PosListResponse where
 -- /See:/ 'orderDeliveryDetails' smart constructor.
 data OrderDeliveryDetails =
   OrderDeliveryDetails'
-    { _oddAddress     :: !(Maybe OrderAddress)
+    { _oddAddress :: !(Maybe OrderAddress)
     , _oddPhoneNumber :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12267,7 +12267,7 @@ instance ToJSON OrderDeliveryDetails where
 data OrderLineItemProductFee =
   OrderLineItemProductFee'
     { _olipfAmount :: !(Maybe Price)
-    , _olipfName   :: !(Maybe Text)
+    , _olipfName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12313,7 +12313,7 @@ instance ToJSON OrderLineItemProductFee where
 -- /See:/ 'ordersCancelResponse' smart constructor.
 data OrdersCancelResponse =
   OrdersCancelResponse'
-    { _ocrKind            :: !Text
+    { _ocrKind :: !Text
     , _ocrExecutionStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12364,9 +12364,9 @@ instance ToJSON OrdersCancelResponse where
 data OrdersSetLineItemMetadataRequest =
   OrdersSetLineItemMetadataRequest'
     { _oslimrAnnotations :: !(Maybe [OrderMerchantProvidedAnnotation])
-    , _oslimrLineItemId  :: !(Maybe Text)
+    , _oslimrLineItemId :: !(Maybe Text)
     , _oslimrOperationId :: !(Maybe Text)
-    , _oslimrProductId   :: !(Maybe Text)
+    , _oslimrProductId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12445,7 +12445,7 @@ instance ToJSON OrdersSetLineItemMetadataRequest
 -- /See:/ 'ordersRejectReturnLineItemResponse' smart constructor.
 data OrdersRejectReturnLineItemResponse =
   OrdersRejectReturnLineItemResponse'
-    { _ordKind            :: !Text
+    { _ordKind :: !Text
     , _ordExecutionStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12500,16 +12500,16 @@ instance ToJSON OrdersRejectReturnLineItemResponse
 -- /See:/ 'testOrder' smart constructor.
 data TestOrder =
   TestOrder'
-    { _toPredefinedEmail           :: !(Maybe Text)
-    , _toKind                      :: !Text
-    , _toLineItems                 :: !(Maybe [TestOrderLineItem])
-    , _toShippingOption            :: !(Maybe Text)
+    { _toPredefinedEmail :: !(Maybe Text)
+    , _toKind :: !Text
+    , _toLineItems :: !(Maybe [TestOrderLineItem])
+    , _toShippingOption :: !(Maybe Text)
     , _toPredefinedDeliveryAddress :: !(Maybe Text)
-    , _toEnableOrderinvoices       :: !(Maybe Bool)
-    , _toPromotions                :: !(Maybe [OrderPromotion])
-    , _toPredefinedBillingAddress  :: !(Maybe Text)
-    , _toNotificationMode          :: !(Maybe Text)
-    , _toShippingCost              :: !(Maybe Price)
+    , _toEnableOrderinvoices :: !(Maybe Bool)
+    , _toPromotions :: !(Maybe [OrderPromotion])
+    , _toPredefinedBillingAddress :: !(Maybe Text)
+    , _toNotificationMode :: !(Maybe Text)
+    , _toShippingCost :: !(Maybe Price)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12657,9 +12657,9 @@ instance ToJSON TestOrder where
 -- /See:/ 'cutoffTime' smart constructor.
 data CutoffTime =
   CutoffTime'
-    { _ctHour     :: !(Maybe (Textual Word32))
+    { _ctHour :: !(Maybe (Textual Word32))
     , _ctTimezone :: !(Maybe Text)
-    , _ctMinute   :: !(Maybe (Textual Word32))
+    , _ctMinute :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12721,9 +12721,9 @@ instance ToJSON CutoffTime where
 -- /See:/ 'datafeedstatusesCustomBatchResponseEntry' smart constructor.
 data DatafeedstatusesCustomBatchResponseEntry =
   DatafeedstatusesCustomBatchResponseEntry'
-    { _datErrors         :: !(Maybe Errors)
+    { _datErrors :: !(Maybe Errors)
     , _datDatafeedStatus :: !(Maybe DatafeedStatus)
-    , _datBatchId        :: !(Maybe (Textual Word32))
+    , _datBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12787,11 +12787,11 @@ instance ToJSON
 -- /See:/ 'orderRefund' smart constructor.
 data OrderRefund =
   OrderRefund'
-    { _ordAmount       :: !(Maybe Price)
-    , _ordActor        :: !(Maybe Text)
-    , _ordReason       :: !(Maybe Text)
+    { _ordAmount :: !(Maybe Price)
+    , _ordActor :: !(Maybe Text)
+    , _ordReason :: !(Maybe Text)
     , _ordCreationDate :: !(Maybe Text)
-    , _ordReasonText   :: !(Maybe Text)
+    , _ordReasonText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12871,18 +12871,18 @@ instance ToJSON OrderRefund where
 -- /See:/ 'testOrderLineItemProduct' smart constructor.
 data TestOrderLineItemProduct =
   TestOrderLineItemProduct'
-    { _tolipImageLink         :: !(Maybe Text)
-    , _tolipBrand             :: !(Maybe Text)
-    , _tolipTargetCountry     :: !(Maybe Text)
-    , _tolipGtin              :: !(Maybe Text)
-    , _tolipItemGroupId       :: !(Maybe Text)
-    , _tolipOfferId           :: !(Maybe Text)
-    , _tolipPrice             :: !(Maybe Price)
+    { _tolipImageLink :: !(Maybe Text)
+    , _tolipBrand :: !(Maybe Text)
+    , _tolipTargetCountry :: !(Maybe Text)
+    , _tolipGtin :: !(Maybe Text)
+    , _tolipItemGroupId :: !(Maybe Text)
+    , _tolipOfferId :: !(Maybe Text)
+    , _tolipPrice :: !(Maybe Price)
     , _tolipVariantAttributes :: !(Maybe [OrderLineItemProductVariantAttribute])
-    , _tolipTitle             :: !(Maybe Text)
-    , _tolipContentLanguage   :: !(Maybe Text)
-    , _tolipMpn               :: !(Maybe Text)
-    , _tolipCondition         :: !(Maybe Text)
+    , _tolipTitle :: !(Maybe Text)
+    , _tolipContentLanguage :: !(Maybe Text)
+    , _tolipMpn :: !(Maybe Text)
+    , _tolipCondition :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13041,7 +13041,7 @@ instance ToJSON TestOrderLineItemProduct where
 data AccounttaxCustomBatchResponse =
   AccounttaxCustomBatchResponse'
     { _acbr1Entries :: !(Maybe [AccounttaxCustomBatchResponseEntry])
-    , _acbr1Kind    :: !Text
+    , _acbr1Kind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13133,14 +13133,14 @@ instance ToJSON AccountsClaimWebsiteResponse where
 -- /See:/ 'orderAddress' smart constructor.
 data OrderAddress =
   OrderAddress'
-    { _oaRecipientName   :: !(Maybe Text)
-    , _oaStreetAddress   :: !(Maybe [Text])
-    , _oaCountry         :: !(Maybe Text)
-    , _oaPostalCode      :: !(Maybe Text)
-    , _oaLocality        :: !(Maybe Text)
+    { _oaRecipientName :: !(Maybe Text)
+    , _oaStreetAddress :: !(Maybe [Text])
+    , _oaCountry :: !(Maybe Text)
+    , _oaPostalCode :: !(Maybe Text)
+    , _oaLocality :: !(Maybe Text)
     , _oaIsPostOfficeBox :: !(Maybe Bool)
-    , _oaFullAddress     :: !(Maybe [Text])
-    , _oaRegion          :: !(Maybe Text)
+    , _oaFullAddress :: !(Maybe [Text])
+    , _oaRegion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13261,7 +13261,7 @@ instance ToJSON OrderAddress where
 -- /See:/ 'ordersCustomBatchRequestEntryCreateTestReturnReturnItem' smart constructor.
 data OrdersCustomBatchRequestEntryCreateTestReturnReturnItem =
   OrdersCustomBatchRequestEntryCreateTestReturnReturnItem'
-    { _ocbrectrriQuantity   :: !(Maybe (Textual Word32))
+    { _ocbrectrriQuantity :: !(Maybe (Textual Word32))
     , _ocbrectrriLineItemId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13319,7 +13319,7 @@ instance ToJSON
 data ProductUnitPricingBaseMeasure =
   ProductUnitPricingBaseMeasure'
     { _pupbmValue :: !(Maybe (Textual Int64))
-    , _pupbmUnit  :: !(Maybe Text)
+    , _pupbmUnit :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13367,8 +13367,8 @@ instance ToJSON ProductUnitPricingBaseMeasure where
 data LiaSettingsGetAccessibleGmbAccountsResponse =
   LiaSettingsGetAccessibleGmbAccountsResponse'
     { _lsgagarGmbAccounts :: !(Maybe [GmbAccountsGmbAccount])
-    , _lsgagarKind        :: !Text
-    , _lsgagarAccountId   :: !(Maybe (Textual Word64))
+    , _lsgagarKind :: !Text
+    , _lsgagarAccountId :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13442,8 +13442,8 @@ instance ToJSON
 data DatafeedsListResponse =
   DatafeedsListResponse'
     { _dlrNextPageToken :: !(Maybe Text)
-    , _dlrKind          :: !Text
-    , _dlrResources     :: !(Maybe [Datafeed])
+    , _dlrKind :: !Text
+    , _dlrResources :: !(Maybe [Datafeed])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13569,9 +13569,9 @@ instance ToJSON
 -- /See:/ 'accountStatusStatistics' smart constructor.
 data AccountStatusStatistics =
   AccountStatusStatistics'
-    { _assPending     :: !(Maybe (Textual Int64))
-    , _assExpiring    :: !(Maybe (Textual Int64))
-    , _assActive      :: !(Maybe (Textual Int64))
+    { _assPending :: !(Maybe (Textual Int64))
+    , _assExpiring :: !(Maybe (Textual Int64))
+    , _assActive :: !(Maybe (Textual Int64))
     , _assDisApproved :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13647,9 +13647,9 @@ instance ToJSON AccountStatusStatistics where
 -- /See:/ 'productsCustomBatchResponseEntry' smart constructor.
 data ProductsCustomBatchResponseEntry =
   ProductsCustomBatchResponseEntry'
-    { _pcbre1Kind    :: !Text
+    { _pcbre1Kind :: !Text
     , _pcbre1Product :: !(Maybe Product)
-    , _pcbre1Errors  :: !(Maybe Errors)
+    , _pcbre1Errors :: !(Maybe Errors)
     , _pcbre1BatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13730,81 +13730,81 @@ instance ToJSON ProductsCustomBatchResponseEntry
 -- /See:/ 'product' smart constructor.
 data Product =
   Product'
-    { _prorDisplayAdsLink           :: !(Maybe Text)
-    , _prorCustomLabel1             :: !(Maybe Text)
-    , _prorShippingWidth            :: !(Maybe ProductShippingDimension)
-    , _prorImageLink                :: !(Maybe Text)
-    , _prorIncludedDestinations     :: !(Maybe [Text])
-    , _prorDisplayAdsValue          :: !(Maybe (Textual Double))
-    , _prorLoyaltyPoints            :: !(Maybe LoyaltyPoints)
-    , _prorAdditionalImageLinks     :: !(Maybe [Text])
-    , _prorExcludedDestinations     :: !(Maybe [Text])
-    , _prorColor                    :: !(Maybe Text)
-    , _prorCustomLabel0             :: !(Maybe Text)
-    , _prorKind                     :: !Text
-    , _prorMinHandlingTime          :: !(Maybe (Textual Int64))
-    , _prorMultipack                :: !(Maybe (Textual Int64))
-    , _prorPattern                  :: !(Maybe Text)
-    , _prorLink                     :: !(Maybe Text)
-    , _prorProductTypes             :: !(Maybe [Text])
-    , _prorSizeSystem               :: !(Maybe Text)
-    , _prorUnitPricingBaseMeasure   :: !(Maybe ProductUnitPricingBaseMeasure)
-    , _prorTaxes                    :: !(Maybe [ProductTax])
-    , _prorMaterial                 :: !(Maybe Text)
-    , _prorInstallment              :: !(Maybe Installment)
-    , _prorChannel                  :: !(Maybe Text)
-    , _prorIdentifierExists         :: !(Maybe Bool)
-    , _prorBrand                    :: !(Maybe Text)
-    , _prorUnitPricingMeasure       :: !(Maybe ProductUnitPricingMeasure)
-    , _prorSalePrice                :: !(Maybe Price)
-    , _prorCostOfGoodsSold          :: !(Maybe Price)
-    , _prorShippingLength           :: !(Maybe ProductShippingDimension)
-    , _prorCustomLabel3             :: !(Maybe Text)
-    , _prorMaxHandlingTime          :: !(Maybe (Textual Int64))
-    , _prorAvailability             :: !(Maybe Text)
+    { _prorDisplayAdsLink :: !(Maybe Text)
+    , _prorCustomLabel1 :: !(Maybe Text)
+    , _prorShippingWidth :: !(Maybe ProductShippingDimension)
+    , _prorImageLink :: !(Maybe Text)
+    , _prorIncludedDestinations :: !(Maybe [Text])
+    , _prorDisplayAdsValue :: !(Maybe (Textual Double))
+    , _prorLoyaltyPoints :: !(Maybe LoyaltyPoints)
+    , _prorAdditionalImageLinks :: !(Maybe [Text])
+    , _prorExcludedDestinations :: !(Maybe [Text])
+    , _prorColor :: !(Maybe Text)
+    , _prorCustomLabel0 :: !(Maybe Text)
+    , _prorKind :: !Text
+    , _prorMinHandlingTime :: !(Maybe (Textual Int64))
+    , _prorMultipack :: !(Maybe (Textual Int64))
+    , _prorPattern :: !(Maybe Text)
+    , _prorLink :: !(Maybe Text)
+    , _prorProductTypes :: !(Maybe [Text])
+    , _prorSizeSystem :: !(Maybe Text)
+    , _prorUnitPricingBaseMeasure :: !(Maybe ProductUnitPricingBaseMeasure)
+    , _prorTaxes :: !(Maybe [ProductTax])
+    , _prorMaterial :: !(Maybe Text)
+    , _prorInstallment :: !(Maybe Installment)
+    , _prorChannel :: !(Maybe Text)
+    , _prorIdentifierExists :: !(Maybe Bool)
+    , _prorBrand :: !(Maybe Text)
+    , _prorUnitPricingMeasure :: !(Maybe ProductUnitPricingMeasure)
+    , _prorSalePrice :: !(Maybe Price)
+    , _prorCostOfGoodsSold :: !(Maybe Price)
+    , _prorShippingLength :: !(Maybe ProductShippingDimension)
+    , _prorCustomLabel3 :: !(Maybe Text)
+    , _prorMaxHandlingTime :: !(Maybe (Textual Int64))
+    , _prorAvailability :: !(Maybe Text)
     , _prorMinEnergyEfficiencyClass :: !(Maybe Text)
-    , _prorTargetCountry            :: !(Maybe Text)
-    , _prorShippingLabel            :: !(Maybe Text)
-    , _prorAdsRedirect              :: !(Maybe Text)
-    , _prorCustomAttributes         :: !(Maybe [CustomAttribute])
-    , _prorGtin                     :: !(Maybe Text)
-    , _prorAgeGroup                 :: !(Maybe Text)
-    , _prorDisplayAdsTitle          :: !(Maybe Text)
-    , _prorTransitTimeLabel         :: !(Maybe Text)
+    , _prorTargetCountry :: !(Maybe Text)
+    , _prorShippingLabel :: !(Maybe Text)
+    , _prorAdsRedirect :: !(Maybe Text)
+    , _prorCustomAttributes :: !(Maybe [CustomAttribute])
+    , _prorGtin :: !(Maybe Text)
+    , _prorAgeGroup :: !(Maybe Text)
+    , _prorDisplayAdsTitle :: !(Maybe Text)
+    , _prorTransitTimeLabel :: !(Maybe Text)
     , _prorMaxEnergyEfficiencyClass :: !(Maybe Text)
-    , _prorGender                   :: !(Maybe Text)
-    , _prorExpirationDate           :: !(Maybe Text)
-    , _prorItemGroupId              :: !(Maybe Text)
-    , _prorSalePriceEffectiveDate   :: !(Maybe Text)
-    , _prorCustomLabel2             :: !(Maybe Text)
-    , _prorGoogleProductCategory    :: !(Maybe Text)
-    , _prorShipping                 :: !(Maybe [ProductShipping])
-    , _prorShippingWeight           :: !(Maybe ProductShippingWeight)
-    , _prorSellOnGoogleQuantity     :: !(Maybe (Textual Int64))
-    , _prorTaxCategory              :: !(Maybe Text)
-    , _prorShippingHeight           :: !(Maybe ProductShippingDimension)
-    , _prorAvailabilityDate         :: !(Maybe Text)
-    , _prorSource                   :: !(Maybe Text)
-    , _prorOfferId                  :: !(Maybe Text)
-    , _prorId                       :: !(Maybe Text)
-    , _prorPrice                    :: !(Maybe Price)
-    , _prorPromotionIds             :: !(Maybe [Text])
-    , _prorSizeType                 :: !(Maybe Text)
-    , _prorMobileLink               :: !(Maybe Text)
-    , _prorTitle                    :: !(Maybe Text)
-    , _prorAdult                    :: !(Maybe Bool)
-    , _prorContentLanguage          :: !(Maybe Text)
-    , _prorAdsLabels                :: !(Maybe [Text])
-    , _prorEnergyEfficiencyClass    :: !(Maybe Text)
-    , _prorDisplayAdsSimilarIds     :: !(Maybe [Text])
-    , _prorMpn                      :: !(Maybe Text)
-    , _prorCondition                :: !(Maybe Text)
-    , _prorSizes                    :: !(Maybe [Text])
-    , _prorIsBundle                 :: !(Maybe Bool)
-    , _prorDescription              :: !(Maybe Text)
-    , _prorCustomLabel4             :: !(Maybe Text)
-    , _prorDisplayAdsId             :: !(Maybe Text)
-    , _prorAdsGrouping              :: !(Maybe Text)
+    , _prorGender :: !(Maybe Text)
+    , _prorExpirationDate :: !(Maybe Text)
+    , _prorItemGroupId :: !(Maybe Text)
+    , _prorSalePriceEffectiveDate :: !(Maybe Text)
+    , _prorCustomLabel2 :: !(Maybe Text)
+    , _prorGoogleProductCategory :: !(Maybe Text)
+    , _prorShipping :: !(Maybe [ProductShipping])
+    , _prorShippingWeight :: !(Maybe ProductShippingWeight)
+    , _prorSellOnGoogleQuantity :: !(Maybe (Textual Int64))
+    , _prorTaxCategory :: !(Maybe Text)
+    , _prorShippingHeight :: !(Maybe ProductShippingDimension)
+    , _prorAvailabilityDate :: !(Maybe Text)
+    , _prorSource :: !(Maybe Text)
+    , _prorOfferId :: !(Maybe Text)
+    , _prorId :: !(Maybe Text)
+    , _prorPrice :: !(Maybe Price)
+    , _prorPromotionIds :: !(Maybe [Text])
+    , _prorSizeType :: !(Maybe Text)
+    , _prorMobileLink :: !(Maybe Text)
+    , _prorTitle :: !(Maybe Text)
+    , _prorAdult :: !(Maybe Bool)
+    , _prorContentLanguage :: !(Maybe Text)
+    , _prorAdsLabels :: !(Maybe [Text])
+    , _prorEnergyEfficiencyClass :: !(Maybe Text)
+    , _prorDisplayAdsSimilarIds :: !(Maybe [Text])
+    , _prorMpn :: !(Maybe Text)
+    , _prorCondition :: !(Maybe Text)
+    , _prorSizes :: !(Maybe [Text])
+    , _prorIsBundle :: !(Maybe Bool)
+    , _prorDescription :: !(Maybe Text)
+    , _prorCustomLabel4 :: !(Maybe Text)
+    , _prorDisplayAdsId :: !(Maybe Text)
+    , _prorAdsGrouping :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14699,17 +14699,17 @@ instance ToJSON Product where
 -- /See:/ 'liaSettingsCustomBatchRequestEntry' smart constructor.
 data LiaSettingsCustomBatchRequestEntry =
   LiaSettingsCustomBatchRequestEntry'
-    { _lGmbEmail             :: !(Maybe Text)
-    , _lContactEmail         :: !(Maybe Text)
-    , _lMerchantId           :: !(Maybe (Textual Word64))
-    , _lCountry              :: !(Maybe Text)
-    , _lLiaSettings          :: !(Maybe LiaSettings)
-    , _lAccountId            :: !(Maybe (Textual Word64))
-    , _lMethod               :: !(Maybe Text)
-    , _lContactName          :: !(Maybe Text)
+    { _lGmbEmail :: !(Maybe Text)
+    , _lContactEmail :: !(Maybe Text)
+    , _lMerchantId :: !(Maybe (Textual Word64))
+    , _lCountry :: !(Maybe Text)
+    , _lLiaSettings :: !(Maybe LiaSettings)
+    , _lAccountId :: !(Maybe (Textual Word64))
+    , _lMethod :: !(Maybe Text)
+    , _lContactName :: !(Maybe Text)
     , _lPosExternalAccountId :: !(Maybe Text)
-    , _lPosDataProviderId    :: !(Maybe (Textual Word64))
-    , _lBatchId              :: !(Maybe (Textual Word32))
+    , _lPosDataProviderId :: !(Maybe (Textual Word64))
+    , _lBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14860,9 +14860,9 @@ instance ToJSON LiaSettingsCustomBatchRequestEntry
 -- /See:/ 'errors' smart constructor.
 data Errors =
   Errors'
-    { _errCode    :: !(Maybe (Textual Word32))
+    { _errCode :: !(Maybe (Textual Word32))
     , _errMessage :: !(Maybe Text)
-    , _errErrors  :: !(Maybe [Error'])
+    , _errErrors :: !(Maybe [Error'])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14920,9 +14920,9 @@ instance ToJSON Errors where
 -- /See:/ 'liaInventorySettings' smart constructor.
 data LiaInventorySettings =
   LiaInventorySettings'
-    { _lisInventoryVerificationContactName   :: !(Maybe Text)
-    , _lisStatus                             :: !(Maybe Text)
-    , _lisInventoryVerificationContactEmail  :: !(Maybe Text)
+    { _lisInventoryVerificationContactName :: !(Maybe Text)
+    , _lisStatus :: !(Maybe Text)
+    , _lisInventoryVerificationContactEmail :: !(Maybe Text)
     , _lisInventoryVerificationContactStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -15004,8 +15004,8 @@ instance ToJSON LiaInventorySettings where
 data AccountstatusesCustomBatchResponseEntry =
   AccountstatusesCustomBatchResponseEntry'
     { _aaAccountStatus :: !(Maybe AccountStatus)
-    , _aaErrors        :: !(Maybe Errors)
-    , _aaBatchId       :: !(Maybe (Textual Word32))
+    , _aaErrors :: !(Maybe Errors)
+    , _aaBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15068,7 +15068,7 @@ instance ToJSON
 -- /See:/ 'ordersCancelLineItemResponse' smart constructor.
 data OrdersCancelLineItemResponse =
   OrdersCancelLineItemResponse'
-    { _oclirKind            :: !Text
+    { _oclirKind :: !Text
     , _oclirExecutionStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -15122,11 +15122,11 @@ instance ToJSON OrdersCancelLineItemResponse where
 -- /See:/ 'holidayCutoff' smart constructor.
 data HolidayCutoff =
   HolidayCutoff'
-    { _hcDeadlineHour     :: !(Maybe (Textual Word32))
+    { _hcDeadlineHour :: !(Maybe (Textual Word32))
     , _hcDeadlineTimezone :: !(Maybe Text)
-    , _hcVisibleFromDate  :: !(Maybe Text)
-    , _hcHolidayId        :: !(Maybe Text)
-    , _hcDeadlineDate     :: !(Maybe Text)
+    , _hcVisibleFromDate :: !(Maybe Text)
+    , _hcHolidayId :: !(Maybe Text)
+    , _hcDeadlineDate :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15217,9 +15217,9 @@ instance ToJSON HolidayCutoff where
 data TestOrderLineItem =
   TestOrderLineItem'
     { _toliQuantityOrdered :: !(Maybe (Textual Word32))
-    , _toliReturnInfo      :: !(Maybe OrderLineItemReturnInfo)
+    , _toliReturnInfo :: !(Maybe OrderLineItemReturnInfo)
     , _toliShippingDetails :: !(Maybe OrderLineItemShippingDetails)
-    , _toliProduct         :: !(Maybe TestOrderLineItemProduct)
+    , _toliProduct :: !(Maybe TestOrderLineItemProduct)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15293,12 +15293,12 @@ instance ToJSON TestOrderLineItem where
 -- /See:/ 'productstatusesCustomBatchRequestEntry' smart constructor.
 data ProductstatusesCustomBatchRequestEntry =
   ProductstatusesCustomBatchRequestEntry'
-    { _p2MerchantId        :: !(Maybe (Textual Word64))
-    , _p2Destinations      :: !(Maybe [Text])
-    , _p2Method            :: !(Maybe Text)
+    { _p2MerchantId :: !(Maybe (Textual Word64))
+    , _p2Destinations :: !(Maybe [Text])
+    , _p2Method :: !(Maybe Text)
     , _p2IncludeAttributes :: !(Maybe Bool)
-    , _p2ProductId         :: !(Maybe Text)
-    , _p2BatchId           :: !(Maybe (Textual Word32))
+    , _p2ProductId :: !(Maybe Text)
+    , _p2BatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15397,7 +15397,7 @@ instance ToJSON
 data ShippingSettingsCustomBatchResponse =
   ShippingSettingsCustomBatchResponse'
     { _shiEntries :: !(Maybe [ShippingSettingsCustomBatchResponseEntry])
-    , _shiKind    :: !Text
+    , _shiKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15452,14 +15452,14 @@ instance ToJSON ShippingSettingsCustomBatchResponse
 -- /See:/ 'ordersReturnRefundLineItemRequest' smart constructor.
 data OrdersReturnRefundLineItemRequest =
   OrdersReturnRefundLineItemRequest'
-    { _orrlirrQuantity    :: !(Maybe (Textual Word32))
-    , _orrlirrLineItemId  :: !(Maybe Text)
-    , _orrlirrReason      :: !(Maybe Text)
+    { _orrlirrQuantity :: !(Maybe (Textual Word32))
+    , _orrlirrLineItemId :: !(Maybe Text)
+    , _orrlirrReason :: !(Maybe Text)
     , _orrlirrOperationId :: !(Maybe Text)
-    , _orrlirrProductId   :: !(Maybe Text)
-    , _orrlirrTaxAmount   :: !(Maybe Price)
+    , _orrlirrProductId :: !(Maybe Text)
+    , _orrlirrTaxAmount :: !(Maybe Price)
     , _orrlirrPriceAmount :: !(Maybe Price)
-    , _orrlirrReasonText  :: !(Maybe Text)
+    , _orrlirrReasonText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15583,10 +15583,10 @@ instance ToJSON OrdersReturnRefundLineItemRequest
 -- /See:/ 'shipmentInvoiceLineItemInvoice' smart constructor.
 data ShipmentInvoiceLineItemInvoice =
   ShipmentInvoiceLineItemInvoice'
-    { _siliiUnitInvoice     :: !(Maybe UnitInvoice)
+    { _siliiUnitInvoice :: !(Maybe UnitInvoice)
     , _siliiShipmentUnitIds :: !(Maybe [Text])
-    , _siliiLineItemId      :: !(Maybe Text)
-    , _siliiProductId       :: !(Maybe Text)
+    , _siliiLineItemId :: !(Maybe Text)
+    , _siliiProductId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15667,7 +15667,7 @@ instance ToJSON ShipmentInvoiceLineItemInvoice where
 -- /See:/ 'ordersCustomBatchRequestEntryShipLineItemsShipmentInfo' smart constructor.
 data OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo =
   OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo'
-    { _ocbreslisiCarrier    :: !(Maybe Text)
+    { _ocbreslisiCarrier :: !(Maybe Text)
     , _ocbreslisiTrackingId :: !(Maybe Text)
     , _ocbreslisiShipmentId :: !(Maybe Text)
     }
@@ -15740,9 +15740,9 @@ instance ToJSON
 -- /See:/ 'accountsLinkRequest' smart constructor.
 data AccountsLinkRequest =
   AccountsLinkRequest'
-    { _alrAction          :: !(Maybe Text)
+    { _alrAction :: !(Maybe Text)
     , _alrLinkedAccountId :: !(Maybe Text)
-    , _alrLinkType        :: !(Maybe Text)
+    , _alrLinkType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15805,8 +15805,8 @@ data DatafeedTarget =
   DatafeedTarget'
     { _dtIncludedDestinations :: !(Maybe [Text])
     , _dtExcludedDestinations :: !(Maybe [Text])
-    , _dtCountry              :: !(Maybe Text)
-    , _dtLanguage             :: !(Maybe Text)
+    , _dtCountry :: !(Maybe Text)
+    , _dtLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15889,7 +15889,7 @@ instance ToJSON DatafeedTarget where
 -- /See:/ 'ordersUpdateMerchantOrderIdResponse' smart constructor.
 data OrdersUpdateMerchantOrderIdResponse =
   OrdersUpdateMerchantOrderIdResponse'
-    { _oumoirKind            :: !Text
+    { _oumoirKind :: !Text
     , _oumoirExecutionStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -15946,7 +15946,7 @@ instance ToJSON OrdersUpdateMerchantOrderIdResponse
 data OrderreportsListDisbursementsResponse =
   OrderreportsListDisbursementsResponse'
     { _oldrNextPageToken :: !(Maybe Text)
-    , _oldrKind          :: !Text
+    , _oldrKind :: !Text
     , _oldrDisbursements :: !(Maybe [OrderReportDisbursement])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -16017,8 +16017,8 @@ instance ToJSON OrderreportsListDisbursementsResponse
 data DatafeedStatusExample =
   DatafeedStatusExample'
     { _dseLineNumber :: !(Maybe (Textual Word64))
-    , _dseItemId     :: !(Maybe Text)
-    , _dseValue      :: !(Maybe Text)
+    , _dseItemId :: !(Maybe Text)
+    , _dseValue :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16075,7 +16075,7 @@ instance ToJSON DatafeedStatusExample where
 -- /See:/ 'ordersAcknowledgeResponse' smart constructor.
 data OrdersAcknowledgeResponse =
   OrdersAcknowledgeResponse'
-    { _oarKind            :: !Text
+    { _oarKind :: !Text
     , _oarExecutionStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -16128,15 +16128,15 @@ instance ToJSON OrdersAcknowledgeResponse where
 -- /See:/ 'posSaleRequest' smart constructor.
 data PosSaleRequest =
   PosSaleRequest'
-    { _psrsStoreCode       :: !(Maybe Text)
-    , _psrsItemId          :: !(Maybe Text)
-    , _psrsQuantity        :: !(Maybe (Textual Int64))
-    , _psrsTargetCountry   :: !(Maybe Text)
-    , _psrsGtin            :: !(Maybe Text)
-    , _psrsPrice           :: !(Maybe Price)
+    { _psrsStoreCode :: !(Maybe Text)
+    , _psrsItemId :: !(Maybe Text)
+    , _psrsQuantity :: !(Maybe (Textual Int64))
+    , _psrsTargetCountry :: !(Maybe Text)
+    , _psrsGtin :: !(Maybe Text)
+    , _psrsPrice :: !(Maybe Price)
     , _psrsContentLanguage :: !(Maybe Text)
-    , _psrsTimestamp       :: !(Maybe Text)
-    , _psrsSaleId          :: !(Maybe Text)
+    , _psrsTimestamp :: !(Maybe Text)
+    , _psrsSaleId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16261,10 +16261,10 @@ instance ToJSON PosSaleRequest where
 -- /See:/ 'table' smart constructor.
 data Table =
   Table'
-    { _tRows          :: !(Maybe [Row])
-    , _tName          :: !(Maybe Text)
+    { _tRows :: !(Maybe [Row])
+    , _tName :: !(Maybe Text)
     , _tColumnHeaders :: !(Maybe Headers)
-    , _tRowHeaders    :: !(Maybe Headers)
+    , _tRowHeaders :: !(Maybe Headers)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16336,26 +16336,26 @@ instance ToJSON Table where
 -- /See:/ 'order' smart constructor.
 data Order =
   Order'
-    { _o1Status          :: !(Maybe Text)
-    , _o1MerchantId      :: !(Maybe (Textual Word64))
-    , _o1Refunds         :: !(Maybe [OrderRefund])
-    , _o1Kind            :: !Text
-    , _o1LineItems       :: !(Maybe [OrderLineItem])
-    , _o1Shipments       :: !(Maybe [OrderShipment])
-    , _o1PlacedDate      :: !(Maybe Text)
+    { _o1Status :: !(Maybe Text)
+    , _o1MerchantId :: !(Maybe (Textual Word64))
+    , _o1Refunds :: !(Maybe [OrderRefund])
+    , _o1Kind :: !Text
+    , _o1LineItems :: !(Maybe [OrderLineItem])
+    , _o1Shipments :: !(Maybe [OrderShipment])
+    , _o1PlacedDate :: !(Maybe Text)
     , _o1DeliveryDetails :: !(Maybe OrderDeliveryDetails)
     , _o1MerchantOrderId :: !(Maybe Text)
-    , _o1Acknowledged    :: !(Maybe Bool)
+    , _o1Acknowledged :: !(Maybe Bool)
     , _o1ShippingCostTax :: !(Maybe Price)
-    , _o1Customer        :: !(Maybe OrderCustomer)
-    , _o1BillingAddress  :: !(Maybe OrderAddress)
-    , _o1Id              :: !(Maybe Text)
-    , _o1Promotions      :: !(Maybe [OrderPromotion])
-    , _o1NetTaxAmount    :: !(Maybe Price)
-    , _o1TaxCollector    :: !(Maybe Text)
-    , _o1PaymentStatus   :: !(Maybe Text)
-    , _o1NetPriceAmount  :: !(Maybe Price)
-    , _o1ShippingCost    :: !(Maybe Price)
+    , _o1Customer :: !(Maybe OrderCustomer)
+    , _o1BillingAddress :: !(Maybe OrderAddress)
+    , _o1Id :: !(Maybe Text)
+    , _o1Promotions :: !(Maybe [OrderPromotion])
+    , _o1NetTaxAmount :: !(Maybe Price)
+    , _o1TaxCollector :: !(Maybe Text)
+    , _o1PaymentStatus :: !(Maybe Text)
+    , _o1NetPriceAmount :: !(Maybe Price)
+    , _o1ShippingCost :: !(Maybe Price)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16604,21 +16604,21 @@ instance ToJSON Order where
 -- /See:/ 'orderLineItemProduct' smart constructor.
 data OrderLineItemProduct =
   OrderLineItemProduct'
-    { _olipImageLink         :: !(Maybe Text)
-    , _olipShownImage        :: !(Maybe Text)
-    , _olipFees              :: !(Maybe [OrderLineItemProductFee])
-    , _olipBrand             :: !(Maybe Text)
-    , _olipTargetCountry     :: !(Maybe Text)
-    , _olipGtin              :: !(Maybe Text)
-    , _olipItemGroupId       :: !(Maybe Text)
-    , _olipOfferId           :: !(Maybe Text)
-    , _olipId                :: !(Maybe Text)
-    , _olipPrice             :: !(Maybe Price)
+    { _olipImageLink :: !(Maybe Text)
+    , _olipShownImage :: !(Maybe Text)
+    , _olipFees :: !(Maybe [OrderLineItemProductFee])
+    , _olipBrand :: !(Maybe Text)
+    , _olipTargetCountry :: !(Maybe Text)
+    , _olipGtin :: !(Maybe Text)
+    , _olipItemGroupId :: !(Maybe Text)
+    , _olipOfferId :: !(Maybe Text)
+    , _olipId :: !(Maybe Text)
+    , _olipPrice :: !(Maybe Price)
     , _olipVariantAttributes :: !(Maybe [OrderLineItemProductVariantAttribute])
-    , _olipTitle             :: !(Maybe Text)
-    , _olipContentLanguage   :: !(Maybe Text)
-    , _olipMpn               :: !(Maybe Text)
-    , _olipCondition         :: !(Maybe Text)
+    , _olipTitle :: !(Maybe Text)
+    , _olipContentLanguage :: !(Maybe Text)
+    , _olipMpn :: !(Maybe Text)
+    , _olipCondition :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16809,9 +16809,9 @@ data AccounttaxCustomBatchRequestEntry =
   AccounttaxCustomBatchRequestEntry'
     { _acccAccountTax :: !(Maybe AccountTax)
     , _acccMerchantId :: !(Maybe (Textual Word64))
-    , _acccAccountId  :: !(Maybe (Textual Word64))
-    , _acccMethod     :: !(Maybe Text)
-    , _acccBatchId    :: !(Maybe (Textual Word32))
+    , _acccAccountId :: !(Maybe (Textual Word64))
+    , _acccMethod :: !(Maybe Text)
+    , _acccBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16899,9 +16899,9 @@ instance ToJSON AccounttaxCustomBatchRequestEntry
 -- /See:/ 'datafeedStatusError' smart constructor.
 data DatafeedStatusError =
   DatafeedStatusError'
-    { _dseCount    :: !(Maybe (Textual Word64))
-    , _dseCode     :: !(Maybe Text)
-    , _dseMessage  :: !(Maybe Text)
+    { _dseCount :: !(Maybe (Textual Word64))
+    , _dseCode :: !(Maybe Text)
+    , _dseMessage :: !(Maybe Text)
     , _dseExamples :: !(Maybe [DatafeedStatusExample])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -17010,7 +17010,7 @@ instance ToJSON ProductsCustomBatchRequest where
 -- /See:/ 'posDataProviders' smart constructor.
 data PosDataProviders =
   PosDataProviders'
-    { _pdpCountry          :: !(Maybe Text)
+    { _pdpCountry :: !(Maybe Text)
     , _pdpPosDataProviders :: !(Maybe [PosDataProvidersPosDataProvider])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -17062,15 +17062,15 @@ instance ToJSON PosDataProviders where
 -- /See:/ 'posInventory' smart constructor.
 data PosInventory =
   PosInventory'
-    { _piStoreCode       :: !(Maybe Text)
-    , _piKind            :: !Text
-    , _piItemId          :: !(Maybe Text)
-    , _piQuantity        :: !(Maybe (Textual Int64))
-    , _piTargetCountry   :: !(Maybe Text)
-    , _piGtin            :: !(Maybe Text)
-    , _piPrice           :: !(Maybe Price)
+    { _piStoreCode :: !(Maybe Text)
+    , _piKind :: !Text
+    , _piItemId :: !(Maybe Text)
+    , _piQuantity :: !(Maybe (Textual Int64))
+    , _piTargetCountry :: !(Maybe Text)
+    , _piGtin :: !(Maybe Text)
+    , _piPrice :: !(Maybe Price)
     , _piContentLanguage :: !(Maybe Text)
-    , _piTimestamp       :: !(Maybe Text)
+    , _piTimestamp :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17190,7 +17190,7 @@ instance ToJSON PosInventory where
 -- /See:/ 'liaSettingsListPosDataProvidersResponse' smart constructor.
 data LiaSettingsListPosDataProvidersResponse =
   LiaSettingsListPosDataProvidersResponse'
-    { _lslpdprKind             :: !Text
+    { _lslpdprKind :: !Text
     , _lslpdprPosDataProviders :: !(Maybe [PosDataProviders])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -17253,10 +17253,10 @@ instance ToJSON
 data OrderinvoicesCreateRefundInvoiceRequest =
   OrderinvoicesCreateRefundInvoiceRequest'
     { _ocrirRefundOnlyOption :: !(Maybe OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceRefundOption)
-    , _ocrirInvoiceId        :: !(Maybe Text)
+    , _ocrirInvoiceId :: !(Maybe Text)
     , _ocrirShipmentInvoices :: !(Maybe [ShipmentInvoice])
-    , _ocrirOperationId      :: !(Maybe Text)
-    , _ocrirReturnOption     :: !(Maybe OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceReturnOption)
+    , _ocrirOperationId :: !(Maybe Text)
+    , _ocrirReturnOption :: !(Maybe OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceReturnOption)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17353,16 +17353,16 @@ instance ToJSON
 -- /See:/ 'datafeedStatus' smart constructor.
 data DatafeedStatus =
   DatafeedStatus'
-    { _dsItemsTotal       :: !(Maybe (Textual Word64))
-    , _dsCountry          :: !(Maybe Text)
-    , _dsKind             :: !Text
-    , _dsWarnings         :: !(Maybe [DatafeedStatusError])
-    , _dsDatafeedId       :: !(Maybe (Textual Word64))
+    { _dsItemsTotal :: !(Maybe (Textual Word64))
+    , _dsCountry :: !(Maybe Text)
+    , _dsKind :: !Text
+    , _dsWarnings :: !(Maybe [DatafeedStatusError])
+    , _dsDatafeedId :: !(Maybe (Textual Word64))
     , _dsProcessingStatus :: !(Maybe Text)
-    , _dsLanguage         :: !(Maybe Text)
-    , _dsLastUploadDate   :: !(Maybe Text)
-    , _dsItemsValid       :: !(Maybe (Textual Word64))
-    , _dsErrors           :: !(Maybe [DatafeedStatusError])
+    , _dsLanguage :: !(Maybe Text)
+    , _dsLastUploadDate :: !(Maybe Text)
+    , _dsItemsValid :: !(Maybe (Textual Word64))
+    , _dsErrors :: !(Maybe [DatafeedStatusError])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17542,14 +17542,14 @@ instance ToJSON DatafeedstatusesCustomBatchRequest
 -- /See:/ 'ordersInStoreRefundLineItemRequest' smart constructor.
 data OrdersInStoreRefundLineItemRequest =
   OrdersInStoreRefundLineItemRequest'
-    { _oisrlirQuantity    :: !(Maybe (Textual Word32))
-    , _oisrlirLineItemId  :: !(Maybe Text)
-    , _oisrlirReason      :: !(Maybe Text)
+    { _oisrlirQuantity :: !(Maybe (Textual Word32))
+    , _oisrlirLineItemId :: !(Maybe Text)
+    , _oisrlirReason :: !(Maybe Text)
     , _oisrlirOperationId :: !(Maybe Text)
-    , _oisrlirProductId   :: !(Maybe Text)
-    , _oisrlirTaxAmount   :: !(Maybe Price)
+    , _oisrlirProductId :: !(Maybe Text)
+    , _oisrlirTaxAmount :: !(Maybe Price)
     , _oisrlirPriceAmount :: !(Maybe Price)
-    , _oisrlirReasonText  :: !(Maybe Text)
+    , _oisrlirReasonText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17672,9 +17672,9 @@ instance ToJSON OrdersInStoreRefundLineItemRequest
 -- /See:/ 'accountsCustomBatchRequestEntryLinkRequest' smart constructor.
 data AccountsCustomBatchRequestEntryLinkRequest =
   AccountsCustomBatchRequestEntryLinkRequest'
-    { _acbrelrAction          :: !(Maybe Text)
+    { _acbrelrAction :: !(Maybe Text)
     , _acbrelrLinkedAccountId :: !(Maybe Text)
-    , _acbrelrLinkType        :: !(Maybe Text)
+    , _acbrelrLinkType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17744,7 +17744,7 @@ instance ToJSON
 data ProductShippingDimension =
   ProductShippingDimension'
     { _psdValue :: !(Maybe (Textual Double))
-    , _psdUnit  :: !(Maybe Text)
+    , _psdUnit :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17833,8 +17833,8 @@ instance ToJSON RegionalinventoryCustomBatchRequest
 data DatafeedsCustomBatchResponseEntry =
   DatafeedsCustomBatchResponseEntry'
     { _dcbrecDatafeed :: !(Maybe Datafeed)
-    , _dcbrecErrors   :: !(Maybe Errors)
-    , _dcbrecBatchId  :: !(Maybe (Textual Word32))
+    , _dcbrecErrors :: !(Maybe Errors)
+    , _dcbrecBatchId :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17900,8 +17900,8 @@ instance ToJSON DatafeedsCustomBatchResponseEntry
 data DatafeedstatusesListResponse =
   DatafeedstatusesListResponse'
     { _dlrlNextPageToken :: !(Maybe Text)
-    , _dlrlKind          :: !Text
-    , _dlrlResources     :: !(Maybe [DatafeedStatus])
+    , _dlrlKind :: !Text
+    , _dlrlResources :: !(Maybe [DatafeedStatus])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17966,8 +17966,8 @@ instance ToJSON DatafeedstatusesListResponse where
 data ProductsListResponse =
   ProductsListResponse'
     { _plr1NextPageToken :: !(Maybe Text)
-    , _plr1Kind          :: !Text
-    , _plr1Resources     :: !(Maybe [Product])
+    , _plr1Kind :: !Text
+    , _plr1Resources :: !(Maybe [Product])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18030,9 +18030,9 @@ instance ToJSON ProductsListResponse where
 -- /See:/ 'shipmentInvoice' smart constructor.
 data ShipmentInvoice =
   ShipmentInvoice'
-    { _siShipmentGroupId  :: !(Maybe Text)
+    { _siShipmentGroupId :: !(Maybe Text)
     , _siLineItemInvoices :: !(Maybe [ShipmentInvoiceLineItemInvoice])
-    , _siInvoiceSummary   :: !(Maybe InvoiceSummary)
+    , _siInvoiceSummary :: !(Maybe InvoiceSummary)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18099,11 +18099,11 @@ instance ToJSON ShipmentInvoice where
 -- /See:/ 'orderCancellation' smart constructor.
 data OrderCancellation =
   OrderCancellation'
-    { _ocQuantity     :: !(Maybe (Textual Word32))
-    , _ocActor        :: !(Maybe Text)
-    , _ocReason       :: !(Maybe Text)
+    { _ocQuantity :: !(Maybe (Textual Word32))
+    , _ocActor :: !(Maybe Text)
+    , _ocReason :: !(Maybe Text)
     , _ocCreationDate :: !(Maybe Text)
-    , _ocReasonText   :: !(Maybe Text)
+    , _ocReasonText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

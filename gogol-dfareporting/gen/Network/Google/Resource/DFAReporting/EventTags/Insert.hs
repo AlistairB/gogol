@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.EventTags.Insert
     , etiCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.eventTags.insert@ method which the
 -- 'EventTagsInsert' request conforms to.
@@ -66,13 +66,13 @@ type EventTagsInsertResource =
 -- /See:/ 'eventTagsInsert' smart constructor.
 data EventTagsInsert =
   EventTagsInsert'
-    { _etiXgafv          :: !(Maybe Xgafv)
+    { _etiXgafv :: !(Maybe Xgafv)
     , _etiUploadProtocol :: !(Maybe Text)
-    , _etiAccessToken    :: !(Maybe Text)
-    , _etiUploadType     :: !(Maybe Text)
-    , _etiProFileId      :: !(Textual Int64)
-    , _etiPayload        :: !EventTag
-    , _etiCallback       :: !(Maybe Text)
+    , _etiAccessToken :: !(Maybe Text)
+    , _etiUploadType :: !(Maybe Text)
+    , _etiProFileId :: !(Textual Int64)
+    , _etiPayload :: !EventTag
+    , _etiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

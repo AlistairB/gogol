@@ -43,8 +43,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.NotificationConfigs.
     , onccCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.notificationConfigs.create@ method which the
 -- 'OrganizationsNotificationConfigsCreate' request conforms to.
@@ -67,14 +67,14 @@ type OrganizationsNotificationConfigsCreateResource =
 -- /See:/ 'organizationsNotificationConfigsCreate' smart constructor.
 data OrganizationsNotificationConfigsCreate =
   OrganizationsNotificationConfigsCreate'
-    { _onccParent         :: !Text
-    , _onccXgafv          :: !(Maybe Xgafv)
+    { _onccParent :: !Text
+    , _onccXgafv :: !(Maybe Xgafv)
     , _onccUploadProtocol :: !(Maybe Text)
-    , _onccAccessToken    :: !(Maybe Text)
-    , _onccUploadType     :: !(Maybe Text)
-    , _onccPayload        :: !NotificationConfig
-    , _onccConfigId       :: !(Maybe Text)
-    , _onccCallback       :: !(Maybe Text)
+    , _onccAccessToken :: !(Maybe Text)
+    , _onccUploadType :: !(Maybe Text)
+    , _onccPayload :: !NotificationConfig
+    , _onccConfigId :: !(Maybe Text)
+    , _onccCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

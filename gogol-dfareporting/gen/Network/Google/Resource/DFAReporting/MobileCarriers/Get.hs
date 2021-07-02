@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.MobileCarriers.Get
     , mcgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.mobileCarriers.get@ method which the
 -- 'MobileCarriersGet' request conforms to.
@@ -66,13 +66,13 @@ type MobileCarriersGetResource =
 -- /See:/ 'mobileCarriersGet' smart constructor.
 data MobileCarriersGet =
   MobileCarriersGet'
-    { _mcgXgafv          :: !(Maybe Xgafv)
+    { _mcgXgafv :: !(Maybe Xgafv)
     , _mcgUploadProtocol :: !(Maybe Text)
-    , _mcgAccessToken    :: !(Maybe Text)
-    , _mcgUploadType     :: !(Maybe Text)
-    , _mcgProFileId      :: !(Textual Int64)
-    , _mcgId             :: !(Textual Int64)
-    , _mcgCallback       :: !(Maybe Text)
+    , _mcgAccessToken :: !(Maybe Text)
+    , _mcgUploadType :: !(Maybe Text)
+    , _mcgProFileId :: !(Textual Int64)
+    , _mcgId :: !(Textual Int64)
+    , _mcgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

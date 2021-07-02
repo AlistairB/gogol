@@ -44,8 +44,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.Flows.Transi
     , plaftrgpCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.flows.transitionRouteGroups.patch@ method which the
 -- 'ProjectsLocationsAgentsFlowsTransitionRouteGroupsPatch' request conforms to.
@@ -72,15 +72,15 @@ type ProjectsLocationsAgentsFlowsTransitionRouteGroupsPatchResource
 -- /See:/ 'projectsLocationsAgentsFlowsTransitionRouteGroupsPatch' smart constructor.
 data ProjectsLocationsAgentsFlowsTransitionRouteGroupsPatch =
   ProjectsLocationsAgentsFlowsTransitionRouteGroupsPatch'
-    { _plaftrgpXgafv          :: !(Maybe Xgafv)
-    , _plaftrgpLanguageCode   :: !(Maybe Text)
+    { _plaftrgpXgafv :: !(Maybe Xgafv)
+    , _plaftrgpLanguageCode :: !(Maybe Text)
     , _plaftrgpUploadProtocol :: !(Maybe Text)
-    , _plaftrgpUpdateMask     :: !(Maybe GFieldMask)
-    , _plaftrgpAccessToken    :: !(Maybe Text)
-    , _plaftrgpUploadType     :: !(Maybe Text)
-    , _plaftrgpPayload        :: !GoogleCloudDialogflowCxV3beta1TransitionRouteGroup
-    , _plaftrgpName           :: !Text
-    , _plaftrgpCallback       :: !(Maybe Text)
+    , _plaftrgpUpdateMask :: !(Maybe GFieldMask)
+    , _plaftrgpAccessToken :: !(Maybe Text)
+    , _plaftrgpUploadType :: !(Maybe Text)
+    , _plaftrgpPayload :: !GoogleCloudDialogflowCxV3beta1TransitionRouteGroup
+    , _plaftrgpName :: !Text
+    , _plaftrgpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

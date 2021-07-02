@@ -41,8 +41,8 @@ module Network.Google.Resource.DoubleClickBidManager.Queries.DeleteQuery
     , qdqCallback
     ) where
 
-import           Network.Google.DoubleClickBids.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclickbidmanager.queries.deletequery@ method which the
 -- 'QueriesDeleteQuery' request conforms to.
@@ -63,12 +63,12 @@ type QueriesDeleteQueryResource =
 -- /See:/ 'queriesDeleteQuery' smart constructor.
 data QueriesDeleteQuery =
   QueriesDeleteQuery'
-    { _qdqXgafv          :: !(Maybe Xgafv)
-    , _qdqQueryId        :: !(Textual Int64)
+    { _qdqXgafv :: !(Maybe Xgafv)
+    , _qdqQueryId :: !(Textual Int64)
     , _qdqUploadProtocol :: !(Maybe Text)
-    , _qdqAccessToken    :: !(Maybe Text)
-    , _qdqUploadType     :: !(Maybe Text)
-    , _qdqCallback       :: !(Maybe Text)
+    , _qdqAccessToken :: !(Maybe Text)
+    , _qdqUploadType :: !(Maybe Text)
+    , _qdqCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

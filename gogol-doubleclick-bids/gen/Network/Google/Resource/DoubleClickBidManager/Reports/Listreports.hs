@@ -43,8 +43,8 @@ module Network.Google.Resource.DoubleClickBidManager.Reports.Listreports
     , rlCallback
     ) where
 
-import           Network.Google.DoubleClickBids.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclickbidmanager.reports.listreports@ method which the
 -- 'ReportsListreports' request conforms to.
@@ -69,14 +69,14 @@ type ReportsListreportsResource =
 -- /See:/ 'reportsListreports' smart constructor.
 data ReportsListreports =
   ReportsListreports'
-    { _rlXgafv          :: !(Maybe Xgafv)
-    , _rlQueryId        :: !(Textual Int64)
+    { _rlXgafv :: !(Maybe Xgafv)
+    , _rlQueryId :: !(Textual Int64)
     , _rlUploadProtocol :: !(Maybe Text)
-    , _rlAccessToken    :: !(Maybe Text)
-    , _rlUploadType     :: !(Maybe Text)
-    , _rlPageToken      :: !(Maybe Text)
-    , _rlPageSize       :: !(Maybe (Textual Int32))
-    , _rlCallback       :: !(Maybe Text)
+    , _rlAccessToken :: !(Maybe Text)
+    , _rlUploadType :: !(Maybe Text)
+    , _rlPageToken :: !(Maybe Text)
+    , _rlPageSize :: !(Maybe (Textual Int32))
+    , _rlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

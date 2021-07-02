@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Advertisers.Insert
     , aiiCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertisers.insert@ method which the
 -- 'AdvertisersInsert' request conforms to.
@@ -66,13 +66,13 @@ type AdvertisersInsertResource =
 -- /See:/ 'advertisersInsert' smart constructor.
 data AdvertisersInsert =
   AdvertisersInsert'
-    { _aiiXgafv          :: !(Maybe Xgafv)
+    { _aiiXgafv :: !(Maybe Xgafv)
     , _aiiUploadProtocol :: !(Maybe Text)
-    , _aiiAccessToken    :: !(Maybe Text)
-    , _aiiUploadType     :: !(Maybe Text)
-    , _aiiProFileId      :: !(Textual Int64)
-    , _aiiPayload        :: !Advertiser
-    , _aiiCallback       :: !(Maybe Text)
+    , _aiiAccessToken :: !(Maybe Text)
+    , _aiiUploadType :: !(Maybe Text)
+    , _aiiProFileId :: !(Textual Int64)
+    , _aiiPayload :: !Advertiser
+    , _aiiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

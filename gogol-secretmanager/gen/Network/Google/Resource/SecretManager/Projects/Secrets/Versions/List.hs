@@ -43,8 +43,8 @@ module Network.Google.Resource.SecretManager.Projects.Secrets.Versions.List
     , psvlCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecretManager.Types
+import Network.Google.Prelude
+import Network.Google.SecretManager.Types
 
 -- | A resource alias for @secretmanager.projects.secrets.versions.list@ method which the
 -- 'ProjectsSecretsVersionsList' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsSecretsVersionsListResource =
 -- /See:/ 'projectsSecretsVersionsList' smart constructor.
 data ProjectsSecretsVersionsList =
   ProjectsSecretsVersionsList'
-    { _psvlParent         :: !Text
-    , _psvlXgafv          :: !(Maybe Xgafv)
+    { _psvlParent :: !Text
+    , _psvlXgafv :: !(Maybe Xgafv)
     , _psvlUploadProtocol :: !(Maybe Text)
-    , _psvlAccessToken    :: !(Maybe Text)
-    , _psvlUploadType     :: !(Maybe Text)
-    , _psvlPageToken      :: !(Maybe Text)
-    , _psvlPageSize       :: !(Maybe (Textual Int32))
-    , _psvlCallback       :: !(Maybe Text)
+    , _psvlAccessToken :: !(Maybe Text)
+    , _psvlUploadType :: !(Maybe Text)
+    , _psvlPageToken :: !(Maybe Text)
+    , _psvlPageSize :: !(Maybe (Textual Int32))
+    , _psvlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

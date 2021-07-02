@@ -39,8 +39,8 @@ module Network.Google.Resource.Content.Productstatuses.List
     , plMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.productstatuses.list@ method which the
 -- 'ProductstatusesList' request conforms to.
@@ -60,10 +60,10 @@ type ProductstatusesListResource =
 -- /See:/ 'productstatusesList' smart constructor.
 data ProductstatusesList =
   ProductstatusesList'
-    { _plMerchantId   :: !(Textual Word64)
+    { _plMerchantId :: !(Textual Word64)
     , _plDestinations :: !(Maybe [Text])
-    , _plPageToken    :: !(Maybe Text)
-    , _plMaxResults   :: !(Maybe (Textual Word32))
+    , _plPageToken :: !(Maybe Text)
+    , _plMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

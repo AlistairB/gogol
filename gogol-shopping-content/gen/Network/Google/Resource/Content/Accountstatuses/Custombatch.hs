@@ -36,8 +36,8 @@ module Network.Google.Resource.Content.Accountstatuses.Custombatch
     , acPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accountstatuses.custombatch@ method which the
 -- 'AccountstatusesCustombatch' request conforms to.

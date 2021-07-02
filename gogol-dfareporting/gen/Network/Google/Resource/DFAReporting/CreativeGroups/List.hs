@@ -50,8 +50,8 @@ module Network.Google.Resource.DFAReporting.CreativeGroups.List
     , cglCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeGroups.list@ method which the
 -- 'CreativeGroupsList' request conforms to.
@@ -87,20 +87,20 @@ type CreativeGroupsListResource =
 -- /See:/ 'creativeGroupsList' smart constructor.
 data CreativeGroupsList =
   CreativeGroupsList'
-    { _cglXgafv          :: !(Maybe Xgafv)
+    { _cglXgafv :: !(Maybe Xgafv)
     , _cglUploadProtocol :: !(Maybe Text)
-    , _cglAccessToken    :: !(Maybe Text)
-    , _cglSearchString   :: !(Maybe Text)
-    , _cglUploadType     :: !(Maybe Text)
-    , _cglIds            :: !(Maybe [Textual Int64])
-    , _cglProFileId      :: !(Textual Int64)
-    , _cglSortOrder      :: !CreativeGroupsListSortOrder
-    , _cglGroupNumber    :: !(Maybe (Textual Int32))
-    , _cglPageToken      :: !(Maybe Text)
-    , _cglSortField      :: !CreativeGroupsListSortField
-    , _cglAdvertiserIds  :: !(Maybe [Textual Int64])
-    , _cglMaxResults     :: !(Textual Int32)
-    , _cglCallback       :: !(Maybe Text)
+    , _cglAccessToken :: !(Maybe Text)
+    , _cglSearchString :: !(Maybe Text)
+    , _cglUploadType :: !(Maybe Text)
+    , _cglIds :: !(Maybe [Textual Int64])
+    , _cglProFileId :: !(Textual Int64)
+    , _cglSortOrder :: !CreativeGroupsListSortOrder
+    , _cglGroupNumber :: !(Maybe (Textual Int32))
+    , _cglPageToken :: !(Maybe Text)
+    , _cglSortField :: !CreativeGroupsListSortField
+    , _cglAdvertiserIds :: !(Maybe [Textual Int64])
+    , _cglMaxResults :: !(Textual Int32)
+    , _cglCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

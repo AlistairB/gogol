@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.ContentCategories.Insert
     , cciCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.contentCategories.insert@ method which the
 -- 'ContentCategoriesInsert' request conforms to.
@@ -67,13 +67,13 @@ type ContentCategoriesInsertResource =
 -- /See:/ 'contentCategoriesInsert' smart constructor.
 data ContentCategoriesInsert =
   ContentCategoriesInsert'
-    { _cciXgafv          :: !(Maybe Xgafv)
+    { _cciXgafv :: !(Maybe Xgafv)
     , _cciUploadProtocol :: !(Maybe Text)
-    , _cciAccessToken    :: !(Maybe Text)
-    , _cciUploadType     :: !(Maybe Text)
-    , _cciProFileId      :: !(Textual Int64)
-    , _cciPayload        :: !ContentCategory
-    , _cciCallback       :: !(Maybe Text)
+    , _cciAccessToken :: !(Maybe Text)
+    , _cciUploadType :: !(Maybe Text)
+    , _cciProFileId :: !(Textual Int64)
+    , _cciPayload :: !ContentCategory
+    , _cciCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

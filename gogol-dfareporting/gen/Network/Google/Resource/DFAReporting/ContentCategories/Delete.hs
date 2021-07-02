@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.ContentCategories.Delete
     , ccdCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.contentCategories.delete@ method which the
 -- 'ContentCategoriesDelete' request conforms to.
@@ -66,13 +66,13 @@ type ContentCategoriesDeleteResource =
 -- /See:/ 'contentCategoriesDelete' smart constructor.
 data ContentCategoriesDelete =
   ContentCategoriesDelete'
-    { _ccdXgafv          :: !(Maybe Xgafv)
+    { _ccdXgafv :: !(Maybe Xgafv)
     , _ccdUploadProtocol :: !(Maybe Text)
-    , _ccdAccessToken    :: !(Maybe Text)
-    , _ccdUploadType     :: !(Maybe Text)
-    , _ccdProFileId      :: !(Textual Int64)
-    , _ccdId             :: !(Textual Int64)
-    , _ccdCallback       :: !(Maybe Text)
+    , _ccdAccessToken :: !(Maybe Text)
+    , _ccdUploadType :: !(Maybe Text)
+    , _ccdProFileId :: !(Textual Int64)
+    , _ccdId :: !(Textual Int64)
+    , _ccdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

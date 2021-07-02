@@ -37,8 +37,8 @@ module Network.Google.Resource.Content.Accounttax.Custombatch
     , aaPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accounttax.custombatch@ method which the
 -- 'AccounttaxCustombatch' request conforms to.

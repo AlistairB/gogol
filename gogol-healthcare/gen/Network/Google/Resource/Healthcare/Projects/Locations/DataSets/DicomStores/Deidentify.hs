@@ -50,8 +50,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStore
     , pldsdsdCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.dicomStores.deidentify@ method which the
 -- 'ProjectsLocationsDataSetsDicomStoresDeidentify' request conforms to.
@@ -81,13 +81,13 @@ type ProjectsLocationsDataSetsDicomStoresDeidentifyResource
 -- /See:/ 'projectsLocationsDataSetsDicomStoresDeidentify' smart constructor.
 data ProjectsLocationsDataSetsDicomStoresDeidentify =
   ProjectsLocationsDataSetsDicomStoresDeidentify'
-    { _pldsdsdXgafv          :: !(Maybe Xgafv)
+    { _pldsdsdXgafv :: !(Maybe Xgafv)
     , _pldsdsdUploadProtocol :: !(Maybe Text)
-    , _pldsdsdAccessToken    :: !(Maybe Text)
-    , _pldsdsdUploadType     :: !(Maybe Text)
-    , _pldsdsdPayload        :: !DeidentifyDicomStoreRequest
-    , _pldsdsdSourceStore    :: !Text
-    , _pldsdsdCallback       :: !(Maybe Text)
+    , _pldsdsdAccessToken :: !(Maybe Text)
+    , _pldsdsdUploadType :: !(Maybe Text)
+    , _pldsdsdPayload :: !DeidentifyDicomStoreRequest
+    , _pldsdsdSourceStore :: !Text
+    , _pldsdsdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

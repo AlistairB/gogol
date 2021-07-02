@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.CreativeFields.Insert
     , cfiCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeFields.insert@ method which the
 -- 'CreativeFieldsInsert' request conforms to.
@@ -67,13 +67,13 @@ type CreativeFieldsInsertResource =
 -- /See:/ 'creativeFieldsInsert' smart constructor.
 data CreativeFieldsInsert =
   CreativeFieldsInsert'
-    { _cfiXgafv          :: !(Maybe Xgafv)
+    { _cfiXgafv :: !(Maybe Xgafv)
     , _cfiUploadProtocol :: !(Maybe Text)
-    , _cfiAccessToken    :: !(Maybe Text)
-    , _cfiUploadType     :: !(Maybe Text)
-    , _cfiProFileId      :: !(Textual Int64)
-    , _cfiPayload        :: !CreativeField
-    , _cfiCallback       :: !(Maybe Text)
+    , _cfiAccessToken :: !(Maybe Text)
+    , _cfiUploadType :: !(Maybe Text)
+    , _cfiProFileId :: !(Textual Int64)
+    , _cfiPayload :: !CreativeField
+    , _cfiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

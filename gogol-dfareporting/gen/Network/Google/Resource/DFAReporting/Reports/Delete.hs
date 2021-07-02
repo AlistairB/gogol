@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Reports.Delete
     , rdCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.reports.delete@ method which the
 -- 'ReportsDelete' request conforms to.
@@ -66,13 +66,13 @@ type ReportsDeleteResource =
 -- /See:/ 'reportsDelete' smart constructor.
 data ReportsDelete =
   ReportsDelete'
-    { _rdXgafv          :: !(Maybe Xgafv)
+    { _rdXgafv :: !(Maybe Xgafv)
     , _rdUploadProtocol :: !(Maybe Text)
-    , _rdAccessToken    :: !(Maybe Text)
-    , _rdReportId       :: !(Textual Int64)
-    , _rdUploadType     :: !(Maybe Text)
-    , _rdProFileId      :: !(Textual Int64)
-    , _rdCallback       :: !(Maybe Text)
+    , _rdAccessToken :: !(Maybe Text)
+    , _rdReportId :: !(Textual Int64)
+    , _rdUploadType :: !(Maybe Text)
+    , _rdProFileId :: !(Textual Int64)
+    , _rdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

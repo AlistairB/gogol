@@ -292,25 +292,25 @@ module Network.Google.SecretManager
     , bCondition
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.SecretManager.Projects.Locations.Get
-import           Network.Google.Resource.SecretManager.Projects.Locations.List
-import           Network.Google.Resource.SecretManager.Projects.Secrets.AddVersion
-import           Network.Google.Resource.SecretManager.Projects.Secrets.Create
-import           Network.Google.Resource.SecretManager.Projects.Secrets.Delete
-import           Network.Google.Resource.SecretManager.Projects.Secrets.Get
-import           Network.Google.Resource.SecretManager.Projects.Secrets.GetIAMPolicy
-import           Network.Google.Resource.SecretManager.Projects.Secrets.List
-import           Network.Google.Resource.SecretManager.Projects.Secrets.Patch
-import           Network.Google.Resource.SecretManager.Projects.Secrets.SetIAMPolicy
-import           Network.Google.Resource.SecretManager.Projects.Secrets.TestIAMPermissions
-import           Network.Google.Resource.SecretManager.Projects.Secrets.Versions.Access
-import           Network.Google.Resource.SecretManager.Projects.Secrets.Versions.Destroy
-import           Network.Google.Resource.SecretManager.Projects.Secrets.Versions.Disable
-import           Network.Google.Resource.SecretManager.Projects.Secrets.Versions.Enable
-import           Network.Google.Resource.SecretManager.Projects.Secrets.Versions.Get
-import           Network.Google.Resource.SecretManager.Projects.Secrets.Versions.List
-import           Network.Google.SecretManager.Types
+import Network.Google.Prelude
+import Network.Google.Resource.SecretManager.Projects.Locations.Get
+import Network.Google.Resource.SecretManager.Projects.Locations.List
+import Network.Google.Resource.SecretManager.Projects.Secrets.AddVersion
+import Network.Google.Resource.SecretManager.Projects.Secrets.Create
+import Network.Google.Resource.SecretManager.Projects.Secrets.Delete
+import Network.Google.Resource.SecretManager.Projects.Secrets.Get
+import Network.Google.Resource.SecretManager.Projects.Secrets.GetIAMPolicy
+import Network.Google.Resource.SecretManager.Projects.Secrets.List
+import Network.Google.Resource.SecretManager.Projects.Secrets.Patch
+import Network.Google.Resource.SecretManager.Projects.Secrets.SetIAMPolicy
+import Network.Google.Resource.SecretManager.Projects.Secrets.TestIAMPermissions
+import Network.Google.Resource.SecretManager.Projects.Secrets.Versions.Access
+import Network.Google.Resource.SecretManager.Projects.Secrets.Versions.Destroy
+import Network.Google.Resource.SecretManager.Projects.Secrets.Versions.Disable
+import Network.Google.Resource.SecretManager.Projects.Secrets.Versions.Enable
+import Network.Google.Resource.SecretManager.Projects.Secrets.Versions.Get
+import Network.Google.Resource.SecretManager.Projects.Secrets.Versions.List
+import Network.Google.SecretManager.Types
 
 {- $resources
 TODO

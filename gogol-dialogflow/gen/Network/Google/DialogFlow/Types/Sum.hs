@@ -16,7 +16,7 @@
 --
 module Network.Google.DialogFlow.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Required. The type of the training phrase.
 data GoogleCloudDialogflowV2beta1IntentTrainingPhraseType

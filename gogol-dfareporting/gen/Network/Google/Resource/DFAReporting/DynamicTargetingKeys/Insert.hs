@@ -46,8 +46,8 @@ module Network.Google.Resource.DFAReporting.DynamicTargetingKeys.Insert
     , dtkiCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.dynamicTargetingKeys.insert@ method which the
 -- 'DynamicTargetingKeysInsert' request conforms to.
@@ -75,13 +75,13 @@ type DynamicTargetingKeysInsertResource =
 -- /See:/ 'dynamicTargetingKeysInsert' smart constructor.
 data DynamicTargetingKeysInsert =
   DynamicTargetingKeysInsert'
-    { _dtkiXgafv          :: !(Maybe Xgafv)
+    { _dtkiXgafv :: !(Maybe Xgafv)
     , _dtkiUploadProtocol :: !(Maybe Text)
-    , _dtkiAccessToken    :: !(Maybe Text)
-    , _dtkiUploadType     :: !(Maybe Text)
-    , _dtkiProFileId      :: !(Textual Int64)
-    , _dtkiPayload        :: !DynamicTargetingKey
-    , _dtkiCallback       :: !(Maybe Text)
+    , _dtkiAccessToken :: !(Maybe Text)
+    , _dtkiUploadType :: !(Maybe Text)
+    , _dtkiProFileId :: !(Textual Int64)
+    , _dtkiPayload :: !DynamicTargetingKey
+    , _dtkiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

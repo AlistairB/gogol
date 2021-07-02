@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.AdvertiserGroups.Delete
     , agdCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertiserGroups.delete@ method which the
 -- 'AdvertiserGroupsDelete' request conforms to.
@@ -66,13 +66,13 @@ type AdvertiserGroupsDeleteResource =
 -- /See:/ 'advertiserGroupsDelete' smart constructor.
 data AdvertiserGroupsDelete =
   AdvertiserGroupsDelete'
-    { _agdXgafv          :: !(Maybe Xgafv)
+    { _agdXgafv :: !(Maybe Xgafv)
     , _agdUploadProtocol :: !(Maybe Text)
-    , _agdAccessToken    :: !(Maybe Text)
-    , _agdUploadType     :: !(Maybe Text)
-    , _agdProFileId      :: !(Textual Int64)
-    , _agdId             :: !(Textual Int64)
-    , _agdCallback       :: !(Maybe Text)
+    , _agdAccessToken :: !(Maybe Text)
+    , _agdUploadType :: !(Maybe Text)
+    , _agdProFileId :: !(Textual Int64)
+    , _agdId :: !(Textual Int64)
+    , _agdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

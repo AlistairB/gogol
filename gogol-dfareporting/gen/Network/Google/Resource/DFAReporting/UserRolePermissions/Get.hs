@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.UserRolePermissions.Get
     , uCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.userRolePermissions.get@ method which the
 -- 'UserRolePermissionsGet' request conforms to.
@@ -67,13 +67,13 @@ type UserRolePermissionsGetResource =
 -- /See:/ 'userRolePermissionsGet' smart constructor.
 data UserRolePermissionsGet =
   UserRolePermissionsGet'
-    { _uXgafv          :: !(Maybe Xgafv)
+    { _uXgafv :: !(Maybe Xgafv)
     , _uUploadProtocol :: !(Maybe Text)
-    , _uAccessToken    :: !(Maybe Text)
-    , _uUploadType     :: !(Maybe Text)
-    , _uProFileId      :: !(Textual Int64)
-    , _uId             :: !(Textual Int64)
-    , _uCallback       :: !(Maybe Text)
+    , _uAccessToken :: !(Maybe Text)
+    , _uUploadType :: !(Maybe Text)
+    , _uProFileId :: !(Textual Int64)
+    , _uId :: !(Textual Int64)
+    , _uCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

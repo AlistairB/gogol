@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.DynamicTargetingKeys.Delete
     , dtkdCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.dynamicTargetingKeys.delete@ method which the
 -- 'DynamicTargetingKeysDelete' request conforms to.
@@ -72,15 +72,15 @@ type DynamicTargetingKeysDeleteResource =
 -- /See:/ 'dynamicTargetingKeysDelete' smart constructor.
 data DynamicTargetingKeysDelete =
   DynamicTargetingKeysDelete'
-    { _dtkdXgafv          :: !(Maybe Xgafv)
+    { _dtkdXgafv :: !(Maybe Xgafv)
     , _dtkdUploadProtocol :: !(Maybe Text)
-    , _dtkdObjectType     :: !DynamicTargetingKeysDeleteObjectType
-    , _dtkdAccessToken    :: !(Maybe Text)
-    , _dtkdObjectId       :: !(Textual Int64)
-    , _dtkdUploadType     :: !(Maybe Text)
-    , _dtkdProFileId      :: !(Textual Int64)
-    , _dtkdName           :: !Text
-    , _dtkdCallback       :: !(Maybe Text)
+    , _dtkdObjectType :: !DynamicTargetingKeysDeleteObjectType
+    , _dtkdAccessToken :: !(Maybe Text)
+    , _dtkdObjectId :: !(Textual Int64)
+    , _dtkdUploadType :: !(Maybe Text)
+    , _dtkdProFileId :: !(Textual Int64)
+    , _dtkdName :: !Text
+    , _dtkdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -17,8 +17,8 @@
 --
 module Network.Google.Speech.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.Speech.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Speech.Types.Sum
 
 -- | Describes the progress of a long-running \`LongRunningRecognize\` call.
 -- It is included in the \`metadata\` field of the \`Operation\` returned
@@ -28,10 +28,10 @@ import           Network.Google.Speech.Types.Sum
 -- /See:/ 'longRunningRecognizeMetadata' smart constructor.
 data LongRunningRecognizeMetadata =
   LongRunningRecognizeMetadata'
-    { _lrrmStartTime       :: !(Maybe DateTime')
-    , _lrrmURI             :: !(Maybe Text)
+    { _lrrmStartTime :: !(Maybe DateTime')
+    , _lrrmURI :: !(Maybe Text)
     , _lrrmProgressPercent :: !(Maybe (Textual Int32))
-    , _lrrmLastUpdateTime  :: !(Maybe DateTime')
+    , _lrrmLastUpdateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -116,7 +116,7 @@ instance ToJSON LongRunningRecognizeMetadata where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -178,7 +178,7 @@ instance ToJSON Status where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -232,10 +232,10 @@ instance ToJSON ListOperationsResponse where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -328,7 +328,7 @@ instance ToJSON Operation where
 data SpeechRecognitionAlternative =
   SpeechRecognitionAlternative'
     { _sraConfidence :: !(Maybe (Textual Double))
-    , _sraWords      :: !(Maybe [WordInfo])
+    , _sraWords :: !(Maybe [WordInfo])
     , _sraTranscript :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -400,10 +400,10 @@ instance ToJSON SpeechRecognitionAlternative where
 data WordInfo =
   WordInfo'
     { _wiStartOffSet :: !(Maybe GDuration)
-    , _wiConfidence  :: !(Maybe (Textual Double))
-    , _wiEndOffSet   :: !(Maybe GDuration)
-    , _wiWord        :: !(Maybe Text)
-    , _wiSpeakerTag  :: !(Maybe (Textual Int32))
+    , _wiConfidence :: !(Maybe (Textual Double))
+    , _wiEndOffSet :: !(Maybe GDuration)
+    , _wiWord :: !(Maybe Text)
+    , _wiSpeakerTag :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -541,7 +541,7 @@ data SpeechRecognitionResult =
   SpeechRecognitionResult'
     { _srrAlternatives :: !(Maybe [SpeechRecognitionAlternative])
     , _srrLanguageCode :: !(Maybe Text)
-    , _srrChannelTag   :: !(Maybe (Textual Int32))
+    , _srrChannelTag :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

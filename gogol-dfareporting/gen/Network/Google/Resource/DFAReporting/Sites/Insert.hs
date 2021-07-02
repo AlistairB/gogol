@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Sites.Insert
     , sCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.sites.insert@ method which the
 -- 'SitesInsert' request conforms to.
@@ -66,13 +66,13 @@ type SitesInsertResource =
 -- /See:/ 'sitesInsert' smart constructor.
 data SitesInsert =
   SitesInsert'
-    { _sXgafv          :: !(Maybe Xgafv)
+    { _sXgafv :: !(Maybe Xgafv)
     , _sUploadProtocol :: !(Maybe Text)
-    , _sAccessToken    :: !(Maybe Text)
-    , _sUploadType     :: !(Maybe Text)
-    , _sProFileId      :: !(Textual Int64)
-    , _sPayload        :: !Site
-    , _sCallback       :: !(Maybe Text)
+    , _sAccessToken :: !(Maybe Text)
+    , _sUploadType :: !(Maybe Text)
+    , _sProFileId :: !(Textual Int64)
+    , _sPayload :: !Site
+    , _sCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

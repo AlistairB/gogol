@@ -17,8 +17,8 @@
 --
 module Network.Google.ServiceControl.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceControl.Types.Sum
+import Network.Google.Prelude
+import Network.Google.ServiceControl.Types.Sum
 
 -- | Deprecated. Use the \`metadata\` field instead. Other service-specific
 -- data about the request, response, and other activities.
@@ -107,7 +107,7 @@ instance ToJSON AuditLogMetadata where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -169,10 +169,10 @@ instance ToJSON Status where
 data RequestMetadata =
   RequestMetadata'
     { _rmCallerSuppliedUserAgent :: !(Maybe Text)
-    , _rmCallerIP                :: !(Maybe Text)
-    , _rmDestinationAttributes   :: !(Maybe Peer)
-    , _rmCallerNetwork           :: !(Maybe Text)
-    , _rmRequestAttributes       :: !(Maybe Request')
+    , _rmCallerIP :: !(Maybe Text)
+    , _rmDestinationAttributes :: !(Maybe Peer)
+    , _rmCallerNetwork :: !(Maybe Text)
+    , _rmRequestAttributes :: !(Maybe Request')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -360,7 +360,7 @@ instance ToJSON ResourceLabels where
 data ReportRequest =
   ReportRequest'
     { _rrServiceConfigId :: !(Maybe Text)
-    , _rrOperations      :: !(Maybe [AttributeContext])
+    , _rrOperations :: !(Maybe [AttributeContext])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -452,8 +452,8 @@ instance ToJSON ResponseHeaders where
 -- /See:/ 'checkRequest' smart constructor.
 data CheckRequest =
   CheckRequest'
-    { _crResources       :: !(Maybe [ResourceInfo])
-    , _crAttributes      :: !(Maybe AttributeContext)
+    { _crResources :: !(Maybe [ResourceInfo])
+    , _crAttributes :: !(Maybe AttributeContext)
     , _crServiceConfigId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -524,10 +524,10 @@ instance ToJSON CheckRequest where
 data Peer =
   Peer'
     { _pRegionCode :: !(Maybe Text)
-    , _pIP         :: !(Maybe Text)
-    , _pPrincipal  :: !(Maybe Text)
-    , _pLabels     :: !(Maybe PeerLabels)
-    , _pPort       :: !(Maybe (Textual Int64))
+    , _pIP :: !(Maybe Text)
+    , _pPrincipal :: !(Maybe Text)
+    , _pLabels :: !(Maybe PeerLabels)
+    , _pPort :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -608,10 +608,10 @@ instance ToJSON Peer where
 -- /See:/ 'authorizationInfo' smart constructor.
 data AuthorizationInfo =
   AuthorizationInfo'
-    { _aiGranted            :: !(Maybe Bool)
+    { _aiGranted :: !(Maybe Bool)
     , _aiResourceAttributes :: !(Maybe Resource)
-    , _aiResource           :: !(Maybe Text)
-    , _aiPermission         :: !(Maybe Text)
+    , _aiResource :: !(Maybe Text)
+    , _aiPermission :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -744,10 +744,10 @@ instance ToJSON ServiceAccountDelegationInfo where
 -- /See:/ 'auth' smart constructor.
 data Auth =
   Auth'
-    { _aPresenter    :: !(Maybe Text)
-    , _aClaims       :: !(Maybe AuthClaims)
-    , _aAudiences    :: !(Maybe [Text])
-    , _aPrincipal    :: !(Maybe Text)
+    { _aPresenter :: !(Maybe Text)
+    , _aClaims :: !(Maybe AuthClaims)
+    , _aAudiences :: !(Maybe [Text])
+    , _aPrincipal :: !(Maybe Text)
     , _aAccessLevels :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -864,10 +864,10 @@ instance ToJSON Auth where
 -- /See:/ 'response' smart constructor.
 data Response =
   Response'
-    { _rTime    :: !(Maybe DateTime')
-    , _rSize    :: !(Maybe (Textual Int64))
+    { _rTime :: !(Maybe DateTime')
+    , _rSize :: !(Maybe (Textual Int64))
     , _rHeaders :: !(Maybe ResponseHeaders)
-    , _rCode    :: !(Maybe (Textual Int64))
+    , _rCode :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -991,13 +991,13 @@ instance ToJSON ThirdPartyPrincipalThirdPartyClaims
 data AttributeContext =
   AttributeContext'
     { _acDestination :: !(Maybe Peer)
-    , _acOrigin      :: !(Maybe Peer)
-    , _acExtensions  :: !(Maybe [AttributeContextExtensionsItem])
-    , _acResponse    :: !(Maybe Response)
-    , _acResource    :: !(Maybe Resource)
-    , _acSource      :: !(Maybe Peer)
-    , _acAPI         :: !(Maybe API)
-    , _acRequest     :: !(Maybe Request')
+    , _acOrigin :: !(Maybe Peer)
+    , _acExtensions :: !(Maybe [AttributeContextExtensionsItem])
+    , _acResponse :: !(Maybe Response)
+    , _acResource :: !(Maybe Resource)
+    , _acSource :: !(Maybe Peer)
+    , _acAPI :: !(Maybe API)
+    , _acRequest :: !(Maybe Request')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1191,7 +1191,7 @@ instance ToJSON StatusDetailsItem where
 -- /See:/ 'firstPartyPrincipal' smart constructor.
 data FirstPartyPrincipal =
   FirstPartyPrincipal'
-    { _fppPrincipalEmail  :: !(Maybe Text)
+    { _fppPrincipalEmail :: !(Maybe Text)
     , _fppServiceMetadata :: !(Maybe FirstPartyPrincipalServiceMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1371,8 +1371,8 @@ instance ToJSON AttributeContextExtensionsItem where
 -- /See:/ 'resourceInfo' smart constructor.
 data ResourceInfo =
   ResourceInfo'
-    { _riName       :: !(Maybe Text)
-    , _riType       :: !(Maybe Text)
+    { _riName :: !(Maybe Text)
+    , _riType :: !(Maybe Text)
     , _riPermission :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1428,7 +1428,7 @@ instance ToJSON ResourceInfo where
 data ResourceLocation =
   ResourceLocation'
     { _rlOriginalLocations :: !(Maybe [Text])
-    , _rlCurrentLocations  :: !(Maybe [Text])
+    , _rlCurrentLocations :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1526,9 +1526,9 @@ instance ToJSON PeerLabels where
 data Resource =
   Resource'
     { _rService :: !(Maybe Text)
-    , _rName    :: !(Maybe Text)
-    , _rLabels  :: !(Maybe ResourceLabels)
-    , _rType    :: !(Maybe Text)
+    , _rName :: !(Maybe Text)
+    , _rLabels :: !(Maybe ResourceLabels)
+    , _rType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1685,7 +1685,7 @@ instance ToJSON RequestHeaders where
 -- /See:/ 'checkResponse' smart constructor.
 data CheckResponse =
   CheckResponse'
-    { _crStatus  :: !(Maybe Status)
+    { _crStatus :: !(Maybe Status)
     , _crHeaders :: !(Maybe CheckResponseHeaders)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1844,10 +1844,10 @@ instance ToJSON AuditLogRequest where
 -- /See:/ 'api' smart constructor.
 data API =
   API'
-    { _aService   :: !(Maybe Text)
+    { _aService :: !(Maybe Text)
     , _aOperation :: !(Maybe Text)
-    , _aProtocol  :: !(Maybe Text)
-    , _aVersion   :: !(Maybe Text)
+    , _aProtocol :: !(Maybe Text)
+    , _aVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1963,12 +1963,12 @@ instance ToJSON FirstPartyPrincipalServiceMetadata
 -- /See:/ 'authenticationInfo' smart constructor.
 data AuthenticationInfo =
   AuthenticationInfo'
-    { _aiThirdPartyPrincipal          :: !(Maybe AuthenticationInfoThirdPartyPrincipal)
+    { _aiThirdPartyPrincipal :: !(Maybe AuthenticationInfoThirdPartyPrincipal)
     , _aiServiceAccountDelegationInfo :: !(Maybe [ServiceAccountDelegationInfo])
-    , _aiPrincipalEmail               :: !(Maybe Text)
-    , _aiPrincipalSubject             :: !(Maybe Text)
-    , _aiAuthoritySelector            :: !(Maybe Text)
-    , _aiServiceAccountKeyName        :: !(Maybe Text)
+    , _aiPrincipalEmail :: !(Maybe Text)
+    , _aiPrincipalSubject :: !(Maybe Text)
+    , _aiAuthoritySelector :: !(Maybe Text)
+    , _aiServiceAccountKeyName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2086,20 +2086,20 @@ instance ToJSON AuthenticationInfo where
 -- /See:/ 'auditLog' smart constructor.
 data AuditLog =
   AuditLog'
-    { _alRequestMetadata       :: !(Maybe RequestMetadata)
-    , _alStatus                :: !(Maybe Status)
-    , _alResourceName          :: !(Maybe Text)
-    , _alAuthorizationInfo     :: !(Maybe [AuthorizationInfo])
-    , _alServiceData           :: !(Maybe AuditLogServiceData)
-    , _alMethodName            :: !(Maybe Text)
-    , _alResponse              :: !(Maybe AuditLogResponse)
+    { _alRequestMetadata :: !(Maybe RequestMetadata)
+    , _alStatus :: !(Maybe Status)
+    , _alResourceName :: !(Maybe Text)
+    , _alAuthorizationInfo :: !(Maybe [AuthorizationInfo])
+    , _alServiceData :: !(Maybe AuditLogServiceData)
+    , _alMethodName :: !(Maybe Text)
+    , _alResponse :: !(Maybe AuditLogResponse)
     , _alResourceOriginalState :: !(Maybe AuditLogResourceOriginalState)
-    , _alResourceLocation      :: !(Maybe ResourceLocation)
-    , _alServiceName           :: !(Maybe Text)
-    , _alMetadata              :: !(Maybe AuditLogMetadata)
-    , _alNumResponseItems      :: !(Maybe (Textual Int64))
-    , _alAuthenticationInfo    :: !(Maybe AuthenticationInfo)
-    , _alRequest               :: !(Maybe AuditLogRequest)
+    , _alResourceLocation :: !(Maybe ResourceLocation)
+    , _alServiceName :: !(Maybe Text)
+    , _alMetadata :: !(Maybe AuditLogMetadata)
+    , _alNumResponseItems :: !(Maybe (Textual Int64))
+    , _alAuthenticationInfo :: !(Maybe AuthenticationInfo)
+    , _alRequest :: !(Maybe AuditLogRequest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2345,18 +2345,18 @@ instance ToJSON CheckResponseHeaders where
 -- /See:/ 'request'' smart constructor.
 data Request' =
   Request''
-    { _reqPath     :: !(Maybe Text)
-    , _reqTime     :: !(Maybe DateTime')
-    , _reqSize     :: !(Maybe (Textual Int64))
-    , _reqAuth     :: !(Maybe Auth)
+    { _reqPath :: !(Maybe Text)
+    , _reqTime :: !(Maybe DateTime')
+    , _reqSize :: !(Maybe (Textual Int64))
+    , _reqAuth :: !(Maybe Auth)
     , _reqProtocol :: !(Maybe Text)
-    , _reqReason   :: !(Maybe Text)
-    , _reqHeaders  :: !(Maybe RequestHeaders)
-    , _reqMethod   :: !(Maybe Text)
-    , _reqQuery    :: !(Maybe Text)
-    , _reqScheme   :: !(Maybe Text)
-    , _reqId       :: !(Maybe Text)
-    , _reqHost     :: !(Maybe Text)
+    , _reqReason :: !(Maybe Text)
+    , _reqHeaders :: !(Maybe RequestHeaders)
+    , _reqMethod :: !(Maybe Text)
+    , _reqQuery :: !(Maybe Text)
+    , _reqScheme :: !(Maybe Text)
+    , _reqId :: !(Maybe Text)
+    , _reqHost :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

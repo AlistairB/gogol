@@ -41,8 +41,8 @@ module Network.Google.Resource.DFAReporting.Regions.List
     , rCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.regions.list@ method which the
 -- 'RegionsList' request conforms to.
@@ -65,12 +65,12 @@ type RegionsListResource =
 -- /See:/ 'regionsList' smart constructor.
 data RegionsList =
   RegionsList'
-    { _rXgafv          :: !(Maybe Xgafv)
+    { _rXgafv :: !(Maybe Xgafv)
     , _rUploadProtocol :: !(Maybe Text)
-    , _rAccessToken    :: !(Maybe Text)
-    , _rUploadType     :: !(Maybe Text)
-    , _rProFileId      :: !(Textual Int64)
-    , _rCallback       :: !(Maybe Text)
+    , _rAccessToken :: !(Maybe Text)
+    , _rUploadType :: !(Maybe Text)
+    , _rProFileId :: !(Textual Int64)
+    , _rCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.Orders.Cancellineitem
     , ordrOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.cancellineitem@ method which the
 -- 'OrdersCancellineitem' request conforms to.
@@ -60,8 +60,8 @@ type OrdersCancellineitemResource =
 data OrdersCancellineitem =
   OrdersCancellineitem'
     { _ordrMerchantId :: !(Textual Word64)
-    , _ordrPayload    :: !OrdersCancelLineItemRequest
-    , _ordrOrderId    :: !Text
+    , _ordrPayload :: !OrdersCancelLineItemRequest
+    , _ordrOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.LiaSettings.Requestinventoryverification
     , lsrAccountId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.liasettings.requestinventoryverification@ method which the
 -- 'LiaSettingsRequestinventoryverification' request conforms to.
@@ -62,8 +62,8 @@ type LiaSettingsRequestinventoryverificationResource
 data LiaSettingsRequestinventoryverification =
   LiaSettingsRequestinventoryverification'
     { _lsrMerchantId :: !(Textual Word64)
-    , _lsrCountry    :: !Text
-    , _lsrAccountId  :: !(Textual Word64)
+    , _lsrCountry :: !Text
+    , _lsrAccountId :: !(Textual Word64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

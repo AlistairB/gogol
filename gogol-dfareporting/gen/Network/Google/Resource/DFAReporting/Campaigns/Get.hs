@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Campaigns.Get
     , cggCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.campaigns.get@ method which the
 -- 'CampaignsGet' request conforms to.
@@ -66,13 +66,13 @@ type CampaignsGetResource =
 -- /See:/ 'campaignsGet' smart constructor.
 data CampaignsGet =
   CampaignsGet'
-    { _cggXgafv          :: !(Maybe Xgafv)
+    { _cggXgafv :: !(Maybe Xgafv)
     , _cggUploadProtocol :: !(Maybe Text)
-    , _cggAccessToken    :: !(Maybe Text)
-    , _cggUploadType     :: !(Maybe Text)
-    , _cggProFileId      :: !(Textual Int64)
-    , _cggId             :: !(Textual Int64)
-    , _cggCallback       :: !(Maybe Text)
+    , _cggAccessToken :: !(Maybe Text)
+    , _cggUploadType :: !(Maybe Text)
+    , _cggProFileId :: !(Textual Int64)
+    , _cggId :: !(Textual Int64)
+    , _cggCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

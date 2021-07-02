@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.UserRoles.Insert
     , uriCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.userRoles.insert@ method which the
 -- 'UserRolesInsert' request conforms to.
@@ -66,13 +66,13 @@ type UserRolesInsertResource =
 -- /See:/ 'userRolesInsert' smart constructor.
 data UserRolesInsert =
   UserRolesInsert'
-    { _uriXgafv          :: !(Maybe Xgafv)
+    { _uriXgafv :: !(Maybe Xgafv)
     , _uriUploadProtocol :: !(Maybe Text)
-    , _uriAccessToken    :: !(Maybe Text)
-    , _uriUploadType     :: !(Maybe Text)
-    , _uriProFileId      :: !(Textual Int64)
-    , _uriPayload        :: !UserRole
-    , _uriCallback       :: !(Maybe Text)
+    , _uriAccessToken :: !(Maybe Text)
+    , _uriUploadType :: !(Maybe Text)
+    , _uriProFileId :: !(Textual Int64)
+    , _uriPayload :: !UserRole
+    , _uriCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

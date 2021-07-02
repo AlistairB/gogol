@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.MobileApps.Get
     , magCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.mobileApps.get@ method which the
 -- 'MobileAppsGet' request conforms to.
@@ -66,13 +66,13 @@ type MobileAppsGetResource =
 -- /See:/ 'mobileAppsGet' smart constructor.
 data MobileAppsGet =
   MobileAppsGet'
-    { _magXgafv          :: !(Maybe Xgafv)
+    { _magXgafv :: !(Maybe Xgafv)
     , _magUploadProtocol :: !(Maybe Text)
-    , _magAccessToken    :: !(Maybe Text)
-    , _magUploadType     :: !(Maybe Text)
-    , _magProFileId      :: !(Textual Int64)
-    , _magId             :: !Text
-    , _magCallback       :: !(Maybe Text)
+    , _magAccessToken :: !(Maybe Text)
+    , _magUploadType :: !(Maybe Text)
+    , _magProFileId :: !(Textual Int64)
+    , _magId :: !Text
+    , _magCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -43,8 +43,8 @@ module Network.Google.Resource.SecretManager.Projects.Secrets.Versions.Get
     , psvgCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecretManager.Types
+import Network.Google.Prelude
+import Network.Google.SecretManager.Types
 
 -- | A resource alias for @secretmanager.projects.secrets.versions.get@ method which the
 -- 'ProjectsSecretsVersionsGet' request conforms to.
@@ -65,12 +65,12 @@ type ProjectsSecretsVersionsGetResource =
 -- /See:/ 'projectsSecretsVersionsGet' smart constructor.
 data ProjectsSecretsVersionsGet =
   ProjectsSecretsVersionsGet'
-    { _psvgXgafv          :: !(Maybe Xgafv)
+    { _psvgXgafv :: !(Maybe Xgafv)
     , _psvgUploadProtocol :: !(Maybe Text)
-    , _psvgAccessToken    :: !(Maybe Text)
-    , _psvgUploadType     :: !(Maybe Text)
-    , _psvgName           :: !Text
-    , _psvgCallback       :: !(Maybe Text)
+    , _psvgAccessToken :: !(Maybe Text)
+    , _psvgUploadType :: !(Maybe Text)
+    , _psvgName :: !Text
+    , _psvgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

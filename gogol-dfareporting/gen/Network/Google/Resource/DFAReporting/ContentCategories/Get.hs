@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.ContentCategories.Get
     , ccgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.contentCategories.get@ method which the
 -- 'ContentCategoriesGet' request conforms to.
@@ -67,13 +67,13 @@ type ContentCategoriesGetResource =
 -- /See:/ 'contentCategoriesGet' smart constructor.
 data ContentCategoriesGet =
   ContentCategoriesGet'
-    { _ccgXgafv          :: !(Maybe Xgafv)
+    { _ccgXgafv :: !(Maybe Xgafv)
     , _ccgUploadProtocol :: !(Maybe Text)
-    , _ccgAccessToken    :: !(Maybe Text)
-    , _ccgUploadType     :: !(Maybe Text)
-    , _ccgProFileId      :: !(Textual Int64)
-    , _ccgId             :: !(Textual Int64)
-    , _ccgCallback       :: !(Maybe Text)
+    , _ccgAccessToken :: !(Maybe Text)
+    , _ccgUploadType :: !(Maybe Text)
+    , _ccgProFileId :: !(Textual Int64)
+    , _ccgId :: !(Textual Int64)
+    , _ccgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

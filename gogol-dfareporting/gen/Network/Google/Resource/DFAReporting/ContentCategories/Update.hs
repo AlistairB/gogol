@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.ContentCategories.Update
     , ccuCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.contentCategories.update@ method which the
 -- 'ContentCategoriesUpdate' request conforms to.
@@ -67,13 +67,13 @@ type ContentCategoriesUpdateResource =
 -- /See:/ 'contentCategoriesUpdate' smart constructor.
 data ContentCategoriesUpdate =
   ContentCategoriesUpdate'
-    { _ccuXgafv          :: !(Maybe Xgafv)
+    { _ccuXgafv :: !(Maybe Xgafv)
     , _ccuUploadProtocol :: !(Maybe Text)
-    , _ccuAccessToken    :: !(Maybe Text)
-    , _ccuUploadType     :: !(Maybe Text)
-    , _ccuProFileId      :: !(Textual Int64)
-    , _ccuPayload        :: !ContentCategory
-    , _ccuCallback       :: !(Maybe Text)
+    , _ccuAccessToken :: !(Maybe Text)
+    , _ccuUploadType :: !(Maybe Text)
+    , _ccuProFileId :: !(Textual Int64)
+    , _ccuPayload :: !ContentCategory
+    , _ccuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.Pos.Delete
     , pdTargetMerchantId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.pos.delete@ method which the
 -- 'PosDelete' request conforms to.
@@ -58,8 +58,8 @@ type PosDeleteResource =
 -- /See:/ 'posDelete' smart constructor.
 data PosDelete =
   PosDelete'
-    { _pdMerchantId       :: !(Textual Word64)
-    , _pdStoreCode        :: !Text
+    { _pdMerchantId :: !(Textual Word64)
+    , _pdStoreCode :: !Text
     , _pdTargetMerchantId :: !(Textual Word64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

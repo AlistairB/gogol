@@ -51,8 +51,8 @@ module Network.Google.Resource.DFAReporting.ChangeLogs.List
     , cllCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.changeLogs.list@ method which the
 -- 'ChangeLogsList' request conforms to.
@@ -89,21 +89,21 @@ type ChangeLogsListResource =
 data ChangeLogsList =
   ChangeLogsList'
     { _cllUserProFileIds :: !(Maybe [Textual Int64])
-    , _cllXgafv          :: !(Maybe Xgafv)
+    , _cllXgafv :: !(Maybe Xgafv)
     , _cllUploadProtocol :: !(Maybe Text)
-    , _cllObjectType     :: !(Maybe ChangeLogsListObjectType)
-    , _cllAccessToken    :: !(Maybe Text)
-    , _cllSearchString   :: !(Maybe Text)
-    , _cllUploadType     :: !(Maybe Text)
-    , _cllIds            :: !(Maybe [Textual Int64])
-    , _cllProFileId      :: !(Textual Int64)
-    , _cllAction         :: !(Maybe ChangeLogsListAction)
-    , _cllMinChangeTime  :: !(Maybe Text)
-    , _cllMaxChangeTime  :: !(Maybe Text)
-    , _cllPageToken      :: !(Maybe Text)
-    , _cllObjectIds      :: !(Maybe [Textual Int64])
-    , _cllMaxResults     :: !(Textual Int32)
-    , _cllCallback       :: !(Maybe Text)
+    , _cllObjectType :: !(Maybe ChangeLogsListObjectType)
+    , _cllAccessToken :: !(Maybe Text)
+    , _cllSearchString :: !(Maybe Text)
+    , _cllUploadType :: !(Maybe Text)
+    , _cllIds :: !(Maybe [Textual Int64])
+    , _cllProFileId :: !(Textual Int64)
+    , _cllAction :: !(Maybe ChangeLogsListAction)
+    , _cllMinChangeTime :: !(Maybe Text)
+    , _cllMaxChangeTime :: !(Maybe Text)
+    , _cllPageToken :: !(Maybe Text)
+    , _cllObjectIds :: !(Maybe [Textual Int64])
+    , _cllMaxResults :: !(Textual Int32)
+    , _cllCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

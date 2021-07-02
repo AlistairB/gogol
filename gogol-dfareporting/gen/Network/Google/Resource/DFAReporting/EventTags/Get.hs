@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.EventTags.Get
     , etgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.eventTags.get@ method which the
 -- 'EventTagsGet' request conforms to.
@@ -66,13 +66,13 @@ type EventTagsGetResource =
 -- /See:/ 'eventTagsGet' smart constructor.
 data EventTagsGet =
   EventTagsGet'
-    { _etgXgafv          :: !(Maybe Xgafv)
+    { _etgXgafv :: !(Maybe Xgafv)
     , _etgUploadProtocol :: !(Maybe Text)
-    , _etgAccessToken    :: !(Maybe Text)
-    , _etgUploadType     :: !(Maybe Text)
-    , _etgProFileId      :: !(Textual Int64)
-    , _etgId             :: !(Textual Int64)
-    , _etgCallback       :: !(Maybe Text)
+    , _etgAccessToken :: !(Maybe Text)
+    , _etgUploadType :: !(Maybe Text)
+    , _etgProFileId :: !(Textual Int64)
+    , _etgId :: !(Textual Int64)
+    , _etgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

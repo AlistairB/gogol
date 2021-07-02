@@ -37,8 +37,8 @@ module Network.Google.Resource.Content.Datafeeds.Delete
     , ddDatafeedId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.datafeeds.delete@ method which the
 -- 'DatafeedsDelete' request conforms to.

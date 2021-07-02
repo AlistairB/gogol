@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.CreativeFieldValues.Delete
     , cfvdCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeFieldValues.delete@ method which the
 -- 'CreativeFieldValuesDelete' request conforms to.
@@ -70,13 +70,13 @@ type CreativeFieldValuesDeleteResource =
 data CreativeFieldValuesDelete =
   CreativeFieldValuesDelete'
     { _cfvdCreativeFieldId :: !(Textual Int64)
-    , _cfvdXgafv           :: !(Maybe Xgafv)
-    , _cfvdUploadProtocol  :: !(Maybe Text)
-    , _cfvdAccessToken     :: !(Maybe Text)
-    , _cfvdUploadType      :: !(Maybe Text)
-    , _cfvdProFileId       :: !(Textual Int64)
-    , _cfvdId              :: !(Textual Int64)
-    , _cfvdCallback        :: !(Maybe Text)
+    , _cfvdXgafv :: !(Maybe Xgafv)
+    , _cfvdUploadProtocol :: !(Maybe Text)
+    , _cfvdAccessToken :: !(Maybe Text)
+    , _cfvdUploadType :: !(Maybe Text)
+    , _cfvdProFileId :: !(Textual Int64)
+    , _cfvdId :: !(Textual Int64)
+    , _cfvdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

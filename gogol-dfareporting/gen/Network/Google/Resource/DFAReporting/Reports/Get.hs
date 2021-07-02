@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Reports.Get
     , rgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.reports.get@ method which the
 -- 'ReportsGet' request conforms to.
@@ -66,13 +66,13 @@ type ReportsGetResource =
 -- /See:/ 'reportsGet' smart constructor.
 data ReportsGet =
   ReportsGet'
-    { _rgXgafv          :: !(Maybe Xgafv)
+    { _rgXgafv :: !(Maybe Xgafv)
     , _rgUploadProtocol :: !(Maybe Text)
-    , _rgAccessToken    :: !(Maybe Text)
-    , _rgReportId       :: !(Textual Int64)
-    , _rgUploadType     :: !(Maybe Text)
-    , _rgProFileId      :: !(Textual Int64)
-    , _rgCallback       :: !(Maybe Text)
+    , _rgAccessToken :: !(Maybe Text)
+    , _rgReportId :: !(Textual Int64)
+    , _rgUploadType :: !(Maybe Text)
+    , _rgProFileId :: !(Textual Int64)
+    , _rgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

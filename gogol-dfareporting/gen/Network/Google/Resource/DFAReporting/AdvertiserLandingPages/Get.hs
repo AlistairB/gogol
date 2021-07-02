@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.AdvertiserLandingPages.Get
     , alpgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertiserLandingPages.get@ method which the
 -- 'AdvertiserLandingPagesGet' request conforms to.
@@ -66,13 +66,13 @@ type AdvertiserLandingPagesGetResource =
 -- /See:/ 'advertiserLandingPagesGet' smart constructor.
 data AdvertiserLandingPagesGet =
   AdvertiserLandingPagesGet'
-    { _alpgXgafv          :: !(Maybe Xgafv)
+    { _alpgXgafv :: !(Maybe Xgafv)
     , _alpgUploadProtocol :: !(Maybe Text)
-    , _alpgAccessToken    :: !(Maybe Text)
-    , _alpgUploadType     :: !(Maybe Text)
-    , _alpgProFileId      :: !(Textual Int64)
-    , _alpgId             :: !(Textual Int64)
-    , _alpgCallback       :: !(Maybe Text)
+    , _alpgAccessToken :: !(Maybe Text)
+    , _alpgUploadType :: !(Maybe Text)
+    , _alpgProFileId :: !(Textual Int64)
+    , _alpgId :: !(Textual Int64)
+    , _alpgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

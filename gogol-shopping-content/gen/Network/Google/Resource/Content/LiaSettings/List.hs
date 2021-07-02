@@ -39,8 +39,8 @@ module Network.Google.Resource.Content.LiaSettings.List
     , lslMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.liasettings.list@ method which the
 -- 'LiaSettingsList' request conforms to.
@@ -61,7 +61,7 @@ type LiaSettingsListResource =
 data LiaSettingsList =
   LiaSettingsList'
     { _lslMerchantId :: !(Textual Word64)
-    , _lslPageToken  :: !(Maybe Text)
+    , _lslPageToken :: !(Maybe Text)
     , _lslMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

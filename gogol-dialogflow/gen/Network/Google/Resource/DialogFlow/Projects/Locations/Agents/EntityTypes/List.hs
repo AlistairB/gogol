@@ -44,8 +44,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.EntityTypes.
     , plaetlCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.entityTypes.list@ method which the
 -- 'ProjectsLocationsAgentsEntityTypesList' request conforms to.
@@ -70,15 +70,15 @@ type ProjectsLocationsAgentsEntityTypesListResource =
 -- /See:/ 'projectsLocationsAgentsEntityTypesList' smart constructor.
 data ProjectsLocationsAgentsEntityTypesList =
   ProjectsLocationsAgentsEntityTypesList'
-    { _plaetlParent         :: !Text
-    , _plaetlXgafv          :: !(Maybe Xgafv)
-    , _plaetlLanguageCode   :: !(Maybe Text)
+    { _plaetlParent :: !Text
+    , _plaetlXgafv :: !(Maybe Xgafv)
+    , _plaetlLanguageCode :: !(Maybe Text)
     , _plaetlUploadProtocol :: !(Maybe Text)
-    , _plaetlAccessToken    :: !(Maybe Text)
-    , _plaetlUploadType     :: !(Maybe Text)
-    , _plaetlPageToken      :: !(Maybe Text)
-    , _plaetlPageSize       :: !(Maybe (Textual Int32))
-    , _plaetlCallback       :: !(Maybe Text)
+    , _plaetlAccessToken :: !(Maybe Text)
+    , _plaetlUploadType :: !(Maybe Text)
+    , _plaetlPageToken :: !(Maybe Text)
+    , _plaetlPageSize :: !(Maybe (Textual Int32))
+    , _plaetlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

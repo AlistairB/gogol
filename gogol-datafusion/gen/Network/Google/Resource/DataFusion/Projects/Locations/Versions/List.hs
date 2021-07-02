@@ -45,8 +45,8 @@ module Network.Google.Resource.DataFusion.Projects.Locations.Versions.List
     , plvlCallback
     ) where
 
-import           Network.Google.DataFusion.Types
-import           Network.Google.Prelude
+import Network.Google.DataFusion.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @datafusion.projects.locations.versions.list@ method which the
 -- 'ProjectsLocationsVersionsList' request conforms to.
@@ -71,15 +71,15 @@ type ProjectsLocationsVersionsListResource =
 -- /See:/ 'projectsLocationsVersionsList' smart constructor.
 data ProjectsLocationsVersionsList =
   ProjectsLocationsVersionsList'
-    { _plvlParent          :: !Text
-    , _plvlXgafv           :: !(Maybe Xgafv)
-    , _plvlUploadProtocol  :: !(Maybe Text)
-    , _plvlAccessToken     :: !(Maybe Text)
-    , _plvlUploadType      :: !(Maybe Text)
-    , _plvlPageToken       :: !(Maybe Text)
-    , _plvlPageSize        :: !(Maybe (Textual Int32))
+    { _plvlParent :: !Text
+    , _plvlXgafv :: !(Maybe Xgafv)
+    , _plvlUploadProtocol :: !(Maybe Text)
+    , _plvlAccessToken :: !(Maybe Text)
+    , _plvlUploadType :: !(Maybe Text)
+    , _plvlPageToken :: !(Maybe Text)
+    , _plvlPageSize :: !(Maybe (Textual Int32))
     , _plvlLatestPatchOnly :: !(Maybe Bool)
-    , _plvlCallback        :: !(Maybe Text)
+    , _plvlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

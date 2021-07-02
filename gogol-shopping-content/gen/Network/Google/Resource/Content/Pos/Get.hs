@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.Pos.Get
     , pTargetMerchantId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.pos.get@ method which the
 -- 'PosGet' request conforms to.
@@ -58,8 +58,8 @@ type PosGetResource =
 -- /See:/ 'posGet' smart constructor.
 data PosGet =
   PosGet'
-    { _pMerchantId       :: !(Textual Word64)
-    , _pStoreCode        :: !Text
+    { _pMerchantId :: !(Textual Word64)
+    , _pStoreCode :: !Text
     , _pTargetMerchantId :: !(Textual Word64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

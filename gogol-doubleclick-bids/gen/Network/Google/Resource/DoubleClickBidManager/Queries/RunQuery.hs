@@ -43,8 +43,8 @@ module Network.Google.Resource.DoubleClickBidManager.Queries.RunQuery
     , qrqCallback
     ) where
 
-import           Network.Google.DoubleClickBids.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclickbidmanager.queries.runquery@ method which the
 -- 'QueriesRunQuery' request conforms to.
@@ -67,14 +67,14 @@ type QueriesRunQueryResource =
 -- /See:/ 'queriesRunQuery' smart constructor.
 data QueriesRunQuery =
   QueriesRunQuery'
-    { _qrqXgafv          :: !(Maybe Xgafv)
-    , _qrqQueryId        :: !(Textual Int64)
+    { _qrqXgafv :: !(Maybe Xgafv)
+    , _qrqQueryId :: !(Textual Int64)
     , _qrqUploadProtocol :: !(Maybe Text)
-    , _qrqAccessToken    :: !(Maybe Text)
-    , _qrqUploadType     :: !(Maybe Text)
-    , _qrqPayload        :: !RunQueryRequest
-    , _qrqAsynchronous   :: !Bool
-    , _qrqCallback       :: !(Maybe Text)
+    , _qrqAccessToken :: !(Maybe Text)
+    , _qrqUploadType :: !(Maybe Text)
+    , _qrqPayload :: !RunQueryRequest
+    , _qrqAsynchronous :: !Bool
+    , _qrqCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

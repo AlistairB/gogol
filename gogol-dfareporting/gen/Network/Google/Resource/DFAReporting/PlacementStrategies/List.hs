@@ -48,8 +48,8 @@ module Network.Google.Resource.DFAReporting.PlacementStrategies.List
     , pslCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementStrategies.list@ method which the
 -- 'PlacementStrategiesList' request conforms to.
@@ -84,18 +84,18 @@ type PlacementStrategiesListResource =
 -- /See:/ 'placementStrategiesList' smart constructor.
 data PlacementStrategiesList =
   PlacementStrategiesList'
-    { _pslXgafv          :: !(Maybe Xgafv)
+    { _pslXgafv :: !(Maybe Xgafv)
     , _pslUploadProtocol :: !(Maybe Text)
-    , _pslAccessToken    :: !(Maybe Text)
-    , _pslSearchString   :: !(Maybe Text)
-    , _pslUploadType     :: !(Maybe Text)
-    , _pslIds            :: !(Maybe [Textual Int64])
-    , _pslProFileId      :: !(Textual Int64)
-    , _pslSortOrder      :: !PlacementStrategiesListSortOrder
-    , _pslPageToken      :: !(Maybe Text)
-    , _pslSortField      :: !PlacementStrategiesListSortField
-    , _pslMaxResults     :: !(Textual Int32)
-    , _pslCallback       :: !(Maybe Text)
+    , _pslAccessToken :: !(Maybe Text)
+    , _pslSearchString :: !(Maybe Text)
+    , _pslUploadType :: !(Maybe Text)
+    , _pslIds :: !(Maybe [Textual Int64])
+    , _pslProFileId :: !(Textual Int64)
+    , _pslSortOrder :: !PlacementStrategiesListSortOrder
+    , _pslPageToken :: !(Maybe Text)
+    , _pslSortField :: !PlacementStrategiesListSortField
+    , _pslMaxResults :: !(Textual Int32)
+    , _pslCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

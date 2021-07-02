@@ -43,8 +43,8 @@ module Network.Google.Resource.SecretManager.Projects.Secrets.Create
     , pscCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecretManager.Types
+import Network.Google.Prelude
+import Network.Google.SecretManager.Types
 
 -- | A resource alias for @secretmanager.projects.secrets.create@ method which the
 -- 'ProjectsSecretsCreate' request conforms to.
@@ -66,14 +66,14 @@ type ProjectsSecretsCreateResource =
 -- /See:/ 'projectsSecretsCreate' smart constructor.
 data ProjectsSecretsCreate =
   ProjectsSecretsCreate'
-    { _pscParent         :: !Text
-    , _pscXgafv          :: !(Maybe Xgafv)
+    { _pscParent :: !Text
+    , _pscXgafv :: !(Maybe Xgafv)
     , _pscUploadProtocol :: !(Maybe Text)
-    , _pscAccessToken    :: !(Maybe Text)
-    , _pscSecretId       :: !(Maybe Text)
-    , _pscUploadType     :: !(Maybe Text)
-    , _pscPayload        :: !Secret
-    , _pscCallback       :: !(Maybe Text)
+    , _pscAccessToken :: !(Maybe Text)
+    , _pscSecretId :: !(Maybe Text)
+    , _pscUploadType :: !(Maybe Text)
+    , _pscPayload :: !Secret
+    , _pscCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

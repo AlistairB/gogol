@@ -37,8 +37,8 @@ module Network.Google.Resource.Content.LiaSettings.Custombatch
     , lscPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.liasettings.custombatch@ method which the
 -- 'LiaSettingsCustombatch' request conforms to.

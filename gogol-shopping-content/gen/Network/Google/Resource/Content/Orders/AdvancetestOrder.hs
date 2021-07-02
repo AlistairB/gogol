@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.Orders.AdvancetestOrder
     , oaoOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.advancetestorder@ method which the
 -- 'OrdersAdvancetestOrder' request conforms to.
@@ -60,7 +60,7 @@ type OrdersAdvancetestOrderResource =
 data OrdersAdvancetestOrder =
   OrdersAdvancetestOrder'
     { _oaoMerchantId :: !(Textual Word64)
-    , _oaoOrderId    :: !Text
+    , _oaoOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.Products.List
     , pllMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.products.list@ method which the
 -- 'ProductsList' request conforms to.
@@ -59,7 +59,7 @@ type ProductsListResource =
 data ProductsList =
   ProductsList'
     { _pllMerchantId :: !(Textual Word64)
-    , _pllPageToken  :: !(Maybe Text)
+    , _pllPageToken :: !(Maybe Text)
     , _pllMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

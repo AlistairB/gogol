@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.TargetingTemplates.Get
     , ttgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.targetingTemplates.get@ method which the
 -- 'TargetingTemplatesGet' request conforms to.
@@ -67,13 +67,13 @@ type TargetingTemplatesGetResource =
 -- /See:/ 'targetingTemplatesGet' smart constructor.
 data TargetingTemplatesGet =
   TargetingTemplatesGet'
-    { _ttgXgafv          :: !(Maybe Xgafv)
+    { _ttgXgafv :: !(Maybe Xgafv)
     , _ttgUploadProtocol :: !(Maybe Text)
-    , _ttgAccessToken    :: !(Maybe Text)
-    , _ttgUploadType     :: !(Maybe Text)
-    , _ttgProFileId      :: !(Textual Int64)
-    , _ttgId             :: !(Textual Int64)
-    , _ttgCallback       :: !(Maybe Text)
+    , _ttgAccessToken :: !(Maybe Text)
+    , _ttgUploadType :: !(Maybe Text)
+    , _ttgProFileId :: !(Textual Int64)
+    , _ttgId :: !(Textual Int64)
+    , _ttgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

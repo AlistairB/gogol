@@ -45,8 +45,8 @@ module Network.Google.Resource.DFAReporting.CampaignCreativeAssociations.Insert
     , ccaiCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.campaignCreativeAssociations.insert@ method which the
 -- 'CampaignCreativeAssociationsInsert' request conforms to.
@@ -74,14 +74,14 @@ type CampaignCreativeAssociationsInsertResource =
 -- /See:/ 'campaignCreativeAssociationsInsert' smart constructor.
 data CampaignCreativeAssociationsInsert =
   CampaignCreativeAssociationsInsert'
-    { _ccaiXgafv          :: !(Maybe Xgafv)
+    { _ccaiXgafv :: !(Maybe Xgafv)
     , _ccaiUploadProtocol :: !(Maybe Text)
-    , _ccaiAccessToken    :: !(Maybe Text)
-    , _ccaiUploadType     :: !(Maybe Text)
-    , _ccaiCampaignId     :: !(Textual Int64)
-    , _ccaiProFileId      :: !(Textual Int64)
-    , _ccaiPayload        :: !CampaignCreativeAssociation
-    , _ccaiCallback       :: !(Maybe Text)
+    , _ccaiAccessToken :: !(Maybe Text)
+    , _ccaiUploadType :: !(Maybe Text)
+    , _ccaiCampaignId :: !(Textual Int64)
+    , _ccaiProFileId :: !(Textual Int64)
+    , _ccaiPayload :: !CampaignCreativeAssociation
+    , _ccaiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

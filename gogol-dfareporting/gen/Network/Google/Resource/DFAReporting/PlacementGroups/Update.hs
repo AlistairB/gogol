@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.PlacementGroups.Update
     , pguCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementGroups.update@ method which the
 -- 'PlacementGroupsUpdate' request conforms to.
@@ -67,13 +67,13 @@ type PlacementGroupsUpdateResource =
 -- /See:/ 'placementGroupsUpdate' smart constructor.
 data PlacementGroupsUpdate =
   PlacementGroupsUpdate'
-    { _pguXgafv          :: !(Maybe Xgafv)
+    { _pguXgafv :: !(Maybe Xgafv)
     , _pguUploadProtocol :: !(Maybe Text)
-    , _pguAccessToken    :: !(Maybe Text)
-    , _pguUploadType     :: !(Maybe Text)
-    , _pguProFileId      :: !(Textual Int64)
-    , _pguPayload        :: !PlacementGroup
-    , _pguCallback       :: !(Maybe Text)
+    , _pguAccessToken :: !(Maybe Text)
+    , _pguUploadType :: !(Maybe Text)
+    , _pguProFileId :: !(Textual Int64)
+    , _pguPayload :: !PlacementGroup
+    , _pguCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

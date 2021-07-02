@@ -37,8 +37,8 @@ module Network.Google.Resource.Content.Orders.CreatetestOrder
     , ococPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.createtestorder@ method which the
 -- 'OrdersCreatetestOrder' request conforms to.
@@ -57,7 +57,7 @@ type OrdersCreatetestOrderResource =
 data OrdersCreatetestOrder =
   OrdersCreatetestOrder'
     { _ococMerchantId :: !(Textual Word64)
-    , _ococPayload    :: !OrdersCreateTestOrderRequest
+    , _ococPayload :: !OrdersCreateTestOrderRequest
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

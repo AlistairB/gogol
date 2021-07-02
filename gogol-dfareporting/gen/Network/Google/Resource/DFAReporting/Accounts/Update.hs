@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Accounts.Update
     , auuCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accounts.update@ method which the
 -- 'AccountsUpdate' request conforms to.
@@ -66,13 +66,13 @@ type AccountsUpdateResource =
 -- /See:/ 'accountsUpdate' smart constructor.
 data AccountsUpdate =
   AccountsUpdate'
-    { _auuXgafv          :: !(Maybe Xgafv)
+    { _auuXgafv :: !(Maybe Xgafv)
     , _auuUploadProtocol :: !(Maybe Text)
-    , _auuAccessToken    :: !(Maybe Text)
-    , _auuUploadType     :: !(Maybe Text)
-    , _auuProFileId      :: !(Textual Int64)
-    , _auuPayload        :: !Account
-    , _auuCallback       :: !(Maybe Text)
+    , _auuAccessToken :: !(Maybe Text)
+    , _auuUploadType :: !(Maybe Text)
+    , _auuProFileId :: !(Textual Int64)
+    , _auuPayload :: !Account
+    , _auuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

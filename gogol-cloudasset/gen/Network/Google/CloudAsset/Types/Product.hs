@@ -17,8 +17,8 @@
 --
 module Network.Google.CloudAsset.Types.Product where
 
-import           Network.Google.CloudAsset.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.CloudAsset.Types.Sum
+import Network.Google.Prelude
 
 -- | \`BasicLevel\` is an \`AccessLevel\` using a set of recommended
 -- features.
@@ -26,7 +26,7 @@ import           Network.Google.Prelude
 -- /See:/ 'googleIdentityAccesscontextManagerV1BasicLevel' smart constructor.
 data GoogleIdentityAccesscontextManagerV1BasicLevel =
   GoogleIdentityAccesscontextManagerV1BasicLevel'
-    { _giamvblConditions        :: !(Maybe [GoogleIdentityAccesscontextManagerV1Condition])
+    { _giamvblConditions :: !(Maybe [GoogleIdentityAccesscontextManagerV1Condition])
     , _giamvblCombiningFunction :: !(Maybe GoogleIdentityAccesscontextManagerV1BasicLevelCombiningFunction)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -108,7 +108,7 @@ instance ToJSON
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
   AuditConfig'
-    { _acService         :: !(Maybe Text)
+    { _acService :: !(Maybe Text)
     , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -177,9 +177,9 @@ instance ToJSON AuditConfig where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -255,10 +255,10 @@ instance ToJSON Expr where
 -- /See:/ 'googleIdentityAccesscontextManagerV1ServicePerimeterConfig' smart constructor.
 data GoogleIdentityAccesscontextManagerV1ServicePerimeterConfig =
   GoogleIdentityAccesscontextManagerV1ServicePerimeterConfig'
-    { _giamvspcResources             :: !(Maybe [Text])
+    { _giamvspcResources :: !(Maybe [Text])
     , _giamvspcVPCAccessibleServices :: !(Maybe GoogleIdentityAccesscontextManagerV1VPCAccessibleServices)
-    , _giamvspcRestrictedServices    :: !(Maybe [Text])
-    , _giamvspcAccessLevels          :: !(Maybe [Text])
+    , _giamvspcRestrictedServices :: !(Maybe [Text])
+    , _giamvspcAccessLevels :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -363,10 +363,10 @@ instance ToJSON
 -- /See:/ 'googleIdentityAccesscontextManagerV1AccessLevel' smart constructor.
 data GoogleIdentityAccesscontextManagerV1AccessLevel =
   GoogleIdentityAccesscontextManagerV1AccessLevel'
-    { _giamvalBasic       :: !(Maybe GoogleIdentityAccesscontextManagerV1BasicLevel)
-    , _giamvalCustom      :: !(Maybe GoogleIdentityAccesscontextManagerV1CustomLevel)
-    , _giamvalName        :: !(Maybe Text)
-    , _giamvalTitle       :: !(Maybe Text)
+    { _giamvalBasic :: !(Maybe GoogleIdentityAccesscontextManagerV1BasicLevel)
+    , _giamvalCustom :: !(Maybe GoogleIdentityAccesscontextManagerV1CustomLevel)
+    , _giamvalName :: !(Maybe Text)
+    , _giamvalTitle :: !(Maybe Text)
     , _giamvalDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -467,15 +467,15 @@ instance ToJSON
 -- /See:/ 'asset' smart constructor.
 data Asset =
   Asset'
-    { _aAccessLevel      :: !(Maybe GoogleIdentityAccesscontextManagerV1AccessLevel)
+    { _aAccessLevel :: !(Maybe GoogleIdentityAccesscontextManagerV1AccessLevel)
     , _aServicePerimeter :: !(Maybe GoogleIdentityAccesscontextManagerV1ServicePerimeter)
-    , _aAccessPolicy     :: !(Maybe GoogleIdentityAccesscontextManagerV1AccessPolicy)
-    , _aName             :: !(Maybe Text)
-    , _aResource         :: !(Maybe Resource)
-    , _aOrgPolicy        :: !(Maybe [GoogleCloudOrgpolicyV1Policy])
-    , _aIAMPolicy        :: !(Maybe Policy)
-    , _aAssetType        :: !(Maybe Text)
-    , _aAncestors        :: !(Maybe [Text])
+    , _aAccessPolicy :: !(Maybe GoogleIdentityAccesscontextManagerV1AccessPolicy)
+    , _aName :: !(Maybe Text)
+    , _aResource :: !(Maybe Resource)
+    , _aOrgPolicy :: !(Maybe [GoogleCloudOrgpolicyV1Policy])
+    , _aIAMPolicy :: !(Maybe Policy)
+    , _aAssetType :: !(Maybe Text)
+    , _aAncestors :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -636,13 +636,13 @@ instance ToJSON Asset where
 -- /See:/ 'googleIdentityAccesscontextManagerV1ServicePerimeter' smart constructor.
 data GoogleIdentityAccesscontextManagerV1ServicePerimeter =
   GoogleIdentityAccesscontextManagerV1ServicePerimeter'
-    { _giamvspStatus                :: !(Maybe GoogleIdentityAccesscontextManagerV1ServicePerimeterConfig)
-    , _giamvspPerimeterType         :: !(Maybe GoogleIdentityAccesscontextManagerV1ServicePerimeterPerimeterType)
-    , _giamvspName                  :: !(Maybe Text)
-    , _giamvspSpec                  :: !(Maybe GoogleIdentityAccesscontextManagerV1ServicePerimeterConfig)
-    , _giamvspTitle                 :: !(Maybe Text)
+    { _giamvspStatus :: !(Maybe GoogleIdentityAccesscontextManagerV1ServicePerimeterConfig)
+    , _giamvspPerimeterType :: !(Maybe GoogleIdentityAccesscontextManagerV1ServicePerimeterPerimeterType)
+    , _giamvspName :: !(Maybe Text)
+    , _giamvspSpec :: !(Maybe GoogleIdentityAccesscontextManagerV1ServicePerimeterConfig)
+    , _giamvspTitle :: !(Maybe Text)
     , _giamvspUseExplicitDryRunSpec :: !(Maybe Bool)
-    , _giamvspDescription           :: !(Maybe Text)
+    , _giamvspDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -777,8 +777,8 @@ instance ToJSON
 -- /See:/ 'googleIdentityAccesscontextManagerV1OSConstraint' smart constructor.
 data GoogleIdentityAccesscontextManagerV1OSConstraint =
   GoogleIdentityAccesscontextManagerV1OSConstraint'
-    { _giamvocOSType                  :: !(Maybe GoogleIdentityAccesscontextManagerV1OSConstraintOSType)
-    , _giamvocMinimumVersion          :: !(Maybe Text)
+    { _giamvocOSType :: !(Maybe GoogleIdentityAccesscontextManagerV1OSConstraintOSType)
+    , _giamvocMinimumVersion :: !(Maybe Text)
     , _giamvocRequireVerifiedChromeOS :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -860,9 +860,9 @@ instance ToJSON
 data GoogleIdentityAccesscontextManagerV1AccessPolicy =
   GoogleIdentityAccesscontextManagerV1AccessPolicy'
     { _giamvapParent :: !(Maybe Text)
-    , _giamvapEtag   :: !(Maybe Text)
-    , _giamvapName   :: !(Maybe Text)
-    , _giamvapTitle  :: !(Maybe Text)
+    , _giamvapEtag :: !(Maybe Text)
+    , _giamvapName :: !(Maybe Text)
+    , _giamvapTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -964,10 +964,10 @@ instance ToJSON
 data GoogleCloudOrgpolicyV1ListPolicy =
   GoogleCloudOrgpolicyV1ListPolicy'
     { _gcovlpInheritFromParent :: !(Maybe Bool)
-    , _gcovlpAllValues         :: !(Maybe GoogleCloudOrgpolicyV1ListPolicyAllValues)
-    , _gcovlpDeniedValues      :: !(Maybe [Text])
-    , _gcovlpAllowedValues     :: !(Maybe [Text])
-    , _gcovlpSuggestedValue    :: !(Maybe Text)
+    , _gcovlpAllValues :: !(Maybe GoogleCloudOrgpolicyV1ListPolicyAllValues)
+    , _gcovlpDeniedValues :: !(Maybe [Text])
+    , _gcovlpAllowedValues :: !(Maybe [Text])
+    , _gcovlpSuggestedValue :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1130,12 +1130,12 @@ instance ToJSON GoogleCloudOrgpolicyV1ListPolicy
 -- /See:/ 'resource' smart constructor.
 data Resource =
   Resource'
-    { _rParent               :: !(Maybe Text)
-    , _rData                 :: !(Maybe ResourceData)
-    , _rVersion              :: !(Maybe Text)
-    , _rDiscoveryName        :: !(Maybe Text)
+    { _rParent :: !(Maybe Text)
+    , _rData :: !(Maybe ResourceData)
+    , _rVersion :: !(Maybe Text)
+    , _rDiscoveryName :: !(Maybe Text)
     , _rDiscoveryDocumentURI :: !(Maybe Text)
-    , _rResourceURL          :: !(Maybe Text)
+    , _rResourceURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1241,9 +1241,9 @@ instance ToJSON Resource where
 -- /See:/ 'listAssetsResponse' smart constructor.
 data ListAssetsResponse =
   ListAssetsResponse'
-    { _larReadTime      :: !(Maybe DateTime')
+    { _larReadTime :: !(Maybe DateTime')
     , _larNextPageToken :: !(Maybe Text)
-    , _larAssets        :: !(Maybe [Asset])
+    , _larAssets :: !(Maybe [Asset])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1388,7 +1388,7 @@ instance ToJSON
 -- /See:/ 'googleIdentityAccesscontextManagerV1VPCAccessibleServices' smart constructor.
 data GoogleIdentityAccesscontextManagerV1VPCAccessibleServices =
   GoogleIdentityAccesscontextManagerV1VPCAccessibleServices'
-    { _giamvvasAllowedServices   :: !(Maybe [Text])
+    { _giamvvasAllowedServices :: !(Maybe [Text])
     , _giamvvasEnableRestriction :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1456,13 +1456,13 @@ instance ToJSON
 -- /See:/ 'googleCloudOrgpolicyV1Policy' smart constructor.
 data GoogleCloudOrgpolicyV1Policy =
   GoogleCloudOrgpolicyV1Policy'
-    { _gcovpBooleanPolicy  :: !(Maybe GoogleCloudOrgpolicyV1BooleanPolicy)
-    , _gcovpEtag           :: !(Maybe Bytes)
+    { _gcovpBooleanPolicy :: !(Maybe GoogleCloudOrgpolicyV1BooleanPolicy)
+    , _gcovpEtag :: !(Maybe Bytes)
     , _gcovpRestoreDefault :: !(Maybe GoogleCloudOrgpolicyV1RestoreDefault)
-    , _gcovpUpdateTime     :: !(Maybe DateTime')
-    , _gcovpVersion        :: !(Maybe (Textual Int32))
-    , _gcovpListPolicy     :: !(Maybe GoogleCloudOrgpolicyV1ListPolicy)
-    , _gcovpConstraint     :: !(Maybe Text)
+    , _gcovpUpdateTime :: !(Maybe DateTime')
+    , _gcovpVersion :: !(Maybe (Textual Int32))
+    , _gcovpListPolicy :: !(Maybe GoogleCloudOrgpolicyV1ListPolicy)
+    , _gcovpConstraint :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1622,9 +1622,9 @@ instance ToJSON GoogleCloudOrgpolicyV1Policy where
 data Policy =
   Policy'
     { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag         :: !(Maybe Bytes)
-    , _pVersion      :: !(Maybe (Textual Int32))
-    , _pBindings     :: !(Maybe [Binding])
+    , _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
+    , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1736,11 +1736,11 @@ instance ToJSON Policy where
 -- /See:/ 'googleIdentityAccesscontextManagerV1DevicePolicy' smart constructor.
 data GoogleIdentityAccesscontextManagerV1DevicePolicy =
   GoogleIdentityAccesscontextManagerV1DevicePolicy'
-    { _giamvdpOSConstraints                 :: !(Maybe [GoogleIdentityAccesscontextManagerV1OSConstraint])
-    , _giamvdpRequireAdminApproval          :: !(Maybe Bool)
-    , _giamvdpRequireCorpOwned              :: !(Maybe Bool)
-    , _giamvdpRequireScreenlock             :: !(Maybe Bool)
-    , _giamvdpAllowedEncryptionStatuses     :: !(Maybe [GoogleIdentityAccesscontextManagerV1DevicePolicyAllowedEncryptionStatusesItem])
+    { _giamvdpOSConstraints :: !(Maybe [GoogleIdentityAccesscontextManagerV1OSConstraint])
+    , _giamvdpRequireAdminApproval :: !(Maybe Bool)
+    , _giamvdpRequireCorpOwned :: !(Maybe Bool)
+    , _giamvdpRequireScreenlock :: !(Maybe Bool)
+    , _giamvdpAllowedEncryptionStatuses :: !(Maybe [GoogleIdentityAccesscontextManagerV1DevicePolicyAllowedEncryptionStatusesItem])
     , _giamvdpAllowedDeviceManagementLevels :: !(Maybe [GoogleIdentityAccesscontextManagerV1DevicePolicyAllowedDeviceManagementLevelsItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1862,7 +1862,7 @@ instance ToJSON
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
   AuditLogConfig'
-    { _alcLogType         :: !(Maybe AuditLogConfigLogType)
+    { _alcLogType :: !(Maybe AuditLogConfigLogType)
     , _alcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1920,11 +1920,11 @@ instance ToJSON AuditLogConfig where
 -- /See:/ 'googleIdentityAccesscontextManagerV1Condition' smart constructor.
 data GoogleIdentityAccesscontextManagerV1Condition =
   GoogleIdentityAccesscontextManagerV1Condition'
-    { _giamvcMembers              :: !(Maybe [Text])
-    , _giamvcRegions              :: !(Maybe [Text])
-    , _giamvcNegate               :: !(Maybe Bool)
-    , _giamvcIPSubnetworks        :: !(Maybe [Text])
-    , _giamvcDevicePolicy         :: !(Maybe GoogleIdentityAccesscontextManagerV1DevicePolicy)
+    { _giamvcMembers :: !(Maybe [Text])
+    , _giamvcRegions :: !(Maybe [Text])
+    , _giamvcNegate :: !(Maybe Bool)
+    , _giamvcIPSubnetworks :: !(Maybe [Text])
+    , _giamvcDevicePolicy :: !(Maybe GoogleIdentityAccesscontextManagerV1DevicePolicy)
     , _giamvcRequiredAccessLevels :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2159,8 +2159,8 @@ instance ToJSON GoogleCloudOrgpolicyV1BooleanPolicy
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -1897,9 +1897,9 @@ module Network.Google.ShoppingContent.Types
     , ocReasonText
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types.Product
-import           Network.Google.ShoppingContent.Types.Sum
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types.Product
+import Network.Google.ShoppingContent.Types.Sum
 
 -- | Default request referring to version 'v2.1' of the Content API for Shopping. This contains the host and root path used as a starting point for constructing service requests.
 shoppingContentService :: ServiceConfig

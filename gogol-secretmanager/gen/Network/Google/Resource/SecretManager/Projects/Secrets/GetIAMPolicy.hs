@@ -43,8 +43,8 @@ module Network.Google.Resource.SecretManager.Projects.Secrets.GetIAMPolicy
     , psgipCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecretManager.Types
+import Network.Google.Prelude
+import Network.Google.SecretManager.Types
 
 -- | A resource alias for @secretmanager.projects.secrets.getIamPolicy@ method which the
 -- 'ProjectsSecretsGetIAMPolicy' request conforms to.
@@ -68,12 +68,12 @@ type ProjectsSecretsGetIAMPolicyResource =
 data ProjectsSecretsGetIAMPolicy =
   ProjectsSecretsGetIAMPolicy'
     { _psgipOptionsRequestedPolicyVersion :: !(Maybe (Textual Int32))
-    , _psgipXgafv                         :: !(Maybe Xgafv)
-    , _psgipUploadProtocol                :: !(Maybe Text)
-    , _psgipAccessToken                   :: !(Maybe Text)
-    , _psgipUploadType                    :: !(Maybe Text)
-    , _psgipResource                      :: !Text
-    , _psgipCallback                      :: !(Maybe Text)
+    , _psgipXgafv :: !(Maybe Xgafv)
+    , _psgipUploadProtocol :: !(Maybe Text)
+    , _psgipAccessToken :: !(Maybe Text)
+    , _psgipUploadType :: !(Maybe Text)
+    , _psgipResource :: !Text
+    , _psgipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

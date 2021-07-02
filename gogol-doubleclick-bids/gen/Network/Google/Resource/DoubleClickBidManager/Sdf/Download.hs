@@ -41,8 +41,8 @@ module Network.Google.Resource.DoubleClickBidManager.Sdf.Download
     , sdCallback
     ) where
 
-import           Network.Google.DoubleClickBids.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclickbidmanager.sdf.download@ method which the
 -- 'SdfDownload' request conforms to.
@@ -65,12 +65,12 @@ type SdfDownloadResource =
 -- /See:/ 'sdfDownload' smart constructor.
 data SdfDownload =
   SdfDownload'
-    { _sdXgafv          :: !(Maybe Xgafv)
+    { _sdXgafv :: !(Maybe Xgafv)
     , _sdUploadProtocol :: !(Maybe Text)
-    , _sdAccessToken    :: !(Maybe Text)
-    , _sdUploadType     :: !(Maybe Text)
-    , _sdPayload        :: !DownloadRequest
-    , _sdCallback       :: !(Maybe Text)
+    , _sdAccessToken :: !(Maybe Text)
+    , _sdUploadType :: !(Maybe Text)
+    , _sdPayload :: !DownloadRequest
+    , _sdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

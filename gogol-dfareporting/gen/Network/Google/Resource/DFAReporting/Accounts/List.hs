@@ -49,8 +49,8 @@ module Network.Google.Resource.DFAReporting.Accounts.List
     , accCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accounts.list@ method which the
 -- 'AccountsList' request conforms to.
@@ -81,19 +81,19 @@ type AccountsListResource =
 -- /See:/ 'accountsList' smart constructor.
 data AccountsList =
   AccountsList'
-    { _accXgafv          :: !(Maybe Xgafv)
+    { _accXgafv :: !(Maybe Xgafv)
     , _accUploadProtocol :: !(Maybe Text)
-    , _accAccessToken    :: !(Maybe Text)
-    , _accSearchString   :: !(Maybe Text)
-    , _accUploadType     :: !(Maybe Text)
-    , _accIds            :: !(Maybe [Textual Int64])
-    , _accProFileId      :: !(Textual Int64)
-    , _accSortOrder      :: !AccountsListSortOrder
-    , _accActive         :: !(Maybe Bool)
-    , _accPageToken      :: !(Maybe Text)
-    , _accSortField      :: !AccountsListSortField
-    , _accMaxResults     :: !(Textual Int32)
-    , _accCallback       :: !(Maybe Text)
+    , _accAccessToken :: !(Maybe Text)
+    , _accSearchString :: !(Maybe Text)
+    , _accUploadType :: !(Maybe Text)
+    , _accIds :: !(Maybe [Textual Int64])
+    , _accProFileId :: !(Textual Int64)
+    , _accSortOrder :: !AccountsListSortOrder
+    , _accActive :: !(Maybe Bool)
+    , _accPageToken :: !(Maybe Text)
+    , _accSortField :: !AccountsListSortField
+    , _accMaxResults :: !(Textual Int32)
+    , _accCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.SecretManager.Projects.Secrets.SetIAMPolicy
     , pssipCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecretManager.Types
+import Network.Google.Prelude
+import Network.Google.SecretManager.Types
 
 -- | A resource alias for @secretmanager.projects.secrets.setIamPolicy@ method which the
 -- 'ProjectsSecretsSetIAMPolicy' request conforms to.
@@ -68,13 +68,13 @@ type ProjectsSecretsSetIAMPolicyResource =
 -- /See:/ 'projectsSecretsSetIAMPolicy' smart constructor.
 data ProjectsSecretsSetIAMPolicy =
   ProjectsSecretsSetIAMPolicy'
-    { _pssipXgafv          :: !(Maybe Xgafv)
+    { _pssipXgafv :: !(Maybe Xgafv)
     , _pssipUploadProtocol :: !(Maybe Text)
-    , _pssipAccessToken    :: !(Maybe Text)
-    , _pssipUploadType     :: !(Maybe Text)
-    , _pssipPayload        :: !SetIAMPolicyRequest
-    , _pssipResource       :: !Text
-    , _pssipCallback       :: !(Maybe Text)
+    , _pssipAccessToken :: !(Maybe Text)
+    , _pssipUploadType :: !(Maybe Text)
+    , _pssipPayload :: !SetIAMPolicyRequest
+    , _pssipResource :: !Text
+    , _pssipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.Advertisers.Patch
     , apCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertisers.patch@ method which the
 -- 'AdvertisersPatch' request conforms to.
@@ -69,14 +69,14 @@ type AdvertisersPatchResource =
 -- /See:/ 'advertisersPatch' smart constructor.
 data AdvertisersPatch =
   AdvertisersPatch'
-    { _apXgafv          :: !(Maybe Xgafv)
+    { _apXgafv :: !(Maybe Xgafv)
     , _apUploadProtocol :: !(Maybe Text)
-    , _apAccessToken    :: !(Maybe Text)
-    , _apUploadType     :: !(Maybe Text)
-    , _apProFileId      :: !(Textual Int64)
-    , _apPayload        :: !Advertiser
-    , _apId             :: !(Textual Int64)
-    , _apCallback       :: !(Maybe Text)
+    , _apAccessToken :: !(Maybe Text)
+    , _apUploadType :: !(Maybe Text)
+    , _apProFileId :: !(Textual Int64)
+    , _apPayload :: !Advertiser
+    , _apId :: !(Textual Int64)
+    , _apCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.AdvertiserGroups.Patch
     , agpCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertiserGroups.patch@ method which the
 -- 'AdvertiserGroupsPatch' request conforms to.
@@ -71,14 +71,14 @@ type AdvertiserGroupsPatchResource =
 -- /See:/ 'advertiserGroupsPatch' smart constructor.
 data AdvertiserGroupsPatch =
   AdvertiserGroupsPatch'
-    { _agpXgafv          :: !(Maybe Xgafv)
+    { _agpXgafv :: !(Maybe Xgafv)
     , _agpUploadProtocol :: !(Maybe Text)
-    , _agpAccessToken    :: !(Maybe Text)
-    , _agpUploadType     :: !(Maybe Text)
-    , _agpProFileId      :: !(Textual Int64)
-    , _agpPayload        :: !AdvertiserGroup
-    , _agpId             :: !(Textual Int64)
-    , _agpCallback       :: !(Maybe Text)
+    , _agpAccessToken :: !(Maybe Text)
+    , _agpUploadType :: !(Maybe Text)
+    , _agpProFileId :: !(Textual Int64)
+    , _agpPayload :: !AdvertiserGroup
+    , _agpId :: !(Textual Int64)
+    , _agpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

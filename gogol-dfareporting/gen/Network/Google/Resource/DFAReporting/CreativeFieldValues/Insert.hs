@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.CreativeFieldValues.Insert
     , cfviCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeFieldValues.insert@ method which the
 -- 'CreativeFieldValuesInsert' request conforms to.
@@ -71,13 +71,13 @@ type CreativeFieldValuesInsertResource =
 data CreativeFieldValuesInsert =
   CreativeFieldValuesInsert'
     { _cfviCreativeFieldId :: !(Textual Int64)
-    , _cfviXgafv           :: !(Maybe Xgafv)
-    , _cfviUploadProtocol  :: !(Maybe Text)
-    , _cfviAccessToken     :: !(Maybe Text)
-    , _cfviUploadType      :: !(Maybe Text)
-    , _cfviProFileId       :: !(Textual Int64)
-    , _cfviPayload         :: !CreativeFieldValue
-    , _cfviCallback        :: !(Maybe Text)
+    , _cfviXgafv :: !(Maybe Xgafv)
+    , _cfviUploadProtocol :: !(Maybe Text)
+    , _cfviAccessToken :: !(Maybe Text)
+    , _cfviUploadType :: !(Maybe Text)
+    , _cfviProFileId :: !(Textual Int64)
+    , _cfviPayload :: !CreativeFieldValue
+    , _cfviCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

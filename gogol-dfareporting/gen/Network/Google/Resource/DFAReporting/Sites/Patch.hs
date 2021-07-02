@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.Sites.Patch
     , spCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.sites.patch@ method which the
 -- 'SitesPatch' request conforms to.
@@ -68,14 +68,14 @@ type SitesPatchResource =
 -- /See:/ 'sitesPatch' smart constructor.
 data SitesPatch =
   SitesPatch'
-    { _spXgafv          :: !(Maybe Xgafv)
+    { _spXgafv :: !(Maybe Xgafv)
     , _spUploadProtocol :: !(Maybe Text)
-    , _spAccessToken    :: !(Maybe Text)
-    , _spUploadType     :: !(Maybe Text)
-    , _spProFileId      :: !(Textual Int64)
-    , _spPayload        :: !Site
-    , _spId             :: !(Textual Int64)
-    , _spCallback       :: !(Maybe Text)
+    , _spAccessToken :: !(Maybe Text)
+    , _spUploadType :: !(Maybe Text)
+    , _spProFileId :: !(Textual Int64)
+    , _spPayload :: !Site
+    , _spId :: !(Textual Int64)
+    , _spCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

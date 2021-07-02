@@ -47,8 +47,8 @@ module Network.Google.Resource.CloudAsset.Assets.List
     , alCallback
     ) where
 
-import           Network.Google.CloudAsset.Types
-import           Network.Google.Prelude
+import Network.Google.CloudAsset.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudasset.assets.list@ method which the
 -- 'AssetsList' request conforms to.
@@ -75,17 +75,17 @@ type AssetsListResource =
 -- /See:/ 'assetsList' smart constructor.
 data AssetsList =
   AssetsList'
-    { _alParent         :: !Text
-    , _alXgafv          :: !(Maybe Xgafv)
-    , _alReadTime       :: !(Maybe DateTime')
+    { _alParent :: !Text
+    , _alXgafv :: !(Maybe Xgafv)
+    , _alReadTime :: !(Maybe DateTime')
     , _alUploadProtocol :: !(Maybe Text)
-    , _alAccessToken    :: !(Maybe Text)
-    , _alAssetTypes     :: !(Maybe [Text])
-    , _alUploadType     :: !(Maybe Text)
-    , _alPageToken      :: !(Maybe Text)
-    , _alPageSize       :: !(Maybe (Textual Int32))
-    , _alContentType    :: !(Maybe AssetsListContentType)
-    , _alCallback       :: !(Maybe Text)
+    , _alAccessToken :: !(Maybe Text)
+    , _alAssetTypes :: !(Maybe [Text])
+    , _alUploadType :: !(Maybe Text)
+    , _alPageToken :: !(Maybe Text)
+    , _alPageSize :: !(Maybe (Textual Int32))
+    , _alContentType :: !(Maybe AssetsListContentType)
+    , _alCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

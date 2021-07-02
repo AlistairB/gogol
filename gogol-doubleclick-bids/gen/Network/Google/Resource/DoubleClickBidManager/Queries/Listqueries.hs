@@ -42,8 +42,8 @@ module Network.Google.Resource.DoubleClickBidManager.Queries.Listqueries
     , qlCallback
     ) where
 
-import           Network.Google.DoubleClickBids.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclickbidmanager.queries.listqueries@ method which the
 -- 'QueriesListqueries' request conforms to.
@@ -66,13 +66,13 @@ type QueriesListqueriesResource =
 -- /See:/ 'queriesListqueries' smart constructor.
 data QueriesListqueries =
   QueriesListqueries'
-    { _qlXgafv          :: !(Maybe Xgafv)
+    { _qlXgafv :: !(Maybe Xgafv)
     , _qlUploadProtocol :: !(Maybe Text)
-    , _qlAccessToken    :: !(Maybe Text)
-    , _qlUploadType     :: !(Maybe Text)
-    , _qlPageToken      :: !(Maybe Text)
-    , _qlPageSize       :: !(Maybe (Textual Int32))
-    , _qlCallback       :: !(Maybe Text)
+    , _qlAccessToken :: !(Maybe Text)
+    , _qlUploadType :: !(Maybe Text)
+    , _qlPageToken :: !(Maybe Text)
+    , _qlPageSize :: !(Maybe (Textual Int32))
+    , _qlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

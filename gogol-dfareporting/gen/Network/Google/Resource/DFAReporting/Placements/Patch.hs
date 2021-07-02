@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.Placements.Patch
     , ppCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placements.patch@ method which the
 -- 'PlacementsPatch' request conforms to.
@@ -69,14 +69,14 @@ type PlacementsPatchResource =
 -- /See:/ 'placementsPatch' smart constructor.
 data PlacementsPatch =
   PlacementsPatch'
-    { _ppXgafv          :: !(Maybe Xgafv)
+    { _ppXgafv :: !(Maybe Xgafv)
     , _ppUploadProtocol :: !(Maybe Text)
-    , _ppAccessToken    :: !(Maybe Text)
-    , _ppUploadType     :: !(Maybe Text)
-    , _ppProFileId      :: !(Textual Int64)
-    , _ppPayload        :: !Placement
-    , _ppId             :: !(Textual Int64)
-    , _ppCallback       :: !(Maybe Text)
+    , _ppAccessToken :: !(Maybe Text)
+    , _ppUploadType :: !(Maybe Text)
+    , _ppProFileId :: !(Textual Int64)
+    , _ppPayload :: !Placement
+    , _ppId :: !(Textual Int64)
+    , _ppCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

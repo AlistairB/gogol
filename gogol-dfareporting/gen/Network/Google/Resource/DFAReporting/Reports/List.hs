@@ -46,8 +46,8 @@ module Network.Google.Resource.DFAReporting.Reports.List
     , rlCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.reports.list@ method which the
 -- 'ReportsList' request conforms to.
@@ -75,17 +75,17 @@ type ReportsListResource =
 -- /See:/ 'reportsList' smart constructor.
 data ReportsList =
   ReportsList'
-    { _rlXgafv          :: !(Maybe Xgafv)
+    { _rlXgafv :: !(Maybe Xgafv)
     , _rlUploadProtocol :: !(Maybe Text)
-    , _rlAccessToken    :: !(Maybe Text)
-    , _rlUploadType     :: !(Maybe Text)
-    , _rlProFileId      :: !(Textual Int64)
-    , _rlSortOrder      :: !ReportsListSortOrder
-    , _rlScope          :: !ReportsListScope
-    , _rlPageToken      :: !(Maybe Text)
-    , _rlSortField      :: !ReportsListSortField
-    , _rlMaxResults     :: !(Textual Int32)
-    , _rlCallback       :: !(Maybe Text)
+    , _rlAccessToken :: !(Maybe Text)
+    , _rlUploadType :: !(Maybe Text)
+    , _rlProFileId :: !(Textual Int64)
+    , _rlSortOrder :: !ReportsListSortOrder
+    , _rlScope :: !ReportsListScope
+    , _rlPageToken :: !(Maybe Text)
+    , _rlSortField :: !ReportsListSortField
+    , _rlMaxResults :: !(Textual Int32)
+    , _rlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

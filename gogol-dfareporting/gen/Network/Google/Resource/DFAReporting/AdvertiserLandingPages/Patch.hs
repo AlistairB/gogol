@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.AdvertiserLandingPages.Patch
     , alppCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertiserLandingPages.patch@ method which the
 -- 'AdvertiserLandingPagesPatch' request conforms to.
@@ -71,14 +71,14 @@ type AdvertiserLandingPagesPatchResource =
 -- /See:/ 'advertiserLandingPagesPatch' smart constructor.
 data AdvertiserLandingPagesPatch =
   AdvertiserLandingPagesPatch'
-    { _alppXgafv          :: !(Maybe Xgafv)
+    { _alppXgafv :: !(Maybe Xgafv)
     , _alppUploadProtocol :: !(Maybe Text)
-    , _alppAccessToken    :: !(Maybe Text)
-    , _alppUploadType     :: !(Maybe Text)
-    , _alppProFileId      :: !(Textual Int64)
-    , _alppPayload        :: !LandingPage
-    , _alppId             :: !(Textual Int64)
-    , _alppCallback       :: !(Maybe Text)
+    , _alppAccessToken :: !(Maybe Text)
+    , _alppUploadType :: !(Maybe Text)
+    , _alppProFileId :: !(Textual Int64)
+    , _alppPayload :: !LandingPage
+    , _alppId :: !(Textual Int64)
+    , _alppCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

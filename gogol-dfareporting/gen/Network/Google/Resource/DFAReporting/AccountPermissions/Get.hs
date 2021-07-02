@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.AccountPermissions.Get
     , apgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accountPermissions.get@ method which the
 -- 'AccountPermissionsGet' request conforms to.
@@ -67,13 +67,13 @@ type AccountPermissionsGetResource =
 -- /See:/ 'accountPermissionsGet' smart constructor.
 data AccountPermissionsGet =
   AccountPermissionsGet'
-    { _apgXgafv          :: !(Maybe Xgafv)
+    { _apgXgafv :: !(Maybe Xgafv)
     , _apgUploadProtocol :: !(Maybe Text)
-    , _apgAccessToken    :: !(Maybe Text)
-    , _apgUploadType     :: !(Maybe Text)
-    , _apgProFileId      :: !(Textual Int64)
-    , _apgId             :: !(Textual Int64)
-    , _apgCallback       :: !(Maybe Text)
+    , _apgAccessToken :: !(Maybe Text)
+    , _apgUploadType :: !(Maybe Text)
+    , _apgProFileId :: !(Textual Int64)
+    , _apgId :: !(Textual Int64)
+    , _apgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -47,8 +47,8 @@ module Network.Google.Resource.Translate.Projects.Locations.BatchTranslateText
     , plbttCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Translate.Types
+import Network.Google.Prelude
+import Network.Google.Translate.Types
 
 -- | A resource alias for @translate.projects.locations.batchTranslateText@ method which the
 -- 'ProjectsLocationsBatchTranslateText' request conforms to.
@@ -74,13 +74,13 @@ type ProjectsLocationsBatchTranslateTextResource =
 -- /See:/ 'projectsLocationsBatchTranslateText' smart constructor.
 data ProjectsLocationsBatchTranslateText =
   ProjectsLocationsBatchTranslateText'
-    { _plbttParent         :: !Text
-    , _plbttXgafv          :: !(Maybe Xgafv)
+    { _plbttParent :: !Text
+    , _plbttXgafv :: !(Maybe Xgafv)
     , _plbttUploadProtocol :: !(Maybe Text)
-    , _plbttAccessToken    :: !(Maybe Text)
-    , _plbttUploadType     :: !(Maybe Text)
-    , _plbttPayload        :: !BatchTranslateTextRequest
-    , _plbttCallback       :: !(Maybe Text)
+    , _plbttAccessToken :: !(Maybe Text)
+    , _plbttUploadType :: !(Maybe Text)
+    , _plbttPayload :: !BatchTranslateTextRequest
+    , _plbttCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.CreativeFields.Get
     , cfgCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeFields.get@ method which the
 -- 'CreativeFieldsGet' request conforms to.
@@ -66,13 +66,13 @@ type CreativeFieldsGetResource =
 -- /See:/ 'creativeFieldsGet' smart constructor.
 data CreativeFieldsGet =
   CreativeFieldsGet'
-    { _cfgXgafv          :: !(Maybe Xgafv)
+    { _cfgXgafv :: !(Maybe Xgafv)
     , _cfgUploadProtocol :: !(Maybe Text)
-    , _cfgAccessToken    :: !(Maybe Text)
-    , _cfgUploadType     :: !(Maybe Text)
-    , _cfgProFileId      :: !(Textual Int64)
-    , _cfgId             :: !(Textual Int64)
-    , _cfgCallback       :: !(Maybe Text)
+    , _cfgAccessToken :: !(Maybe Text)
+    , _cfgUploadType :: !(Maybe Text)
+    , _cfgProFileId :: !(Textual Int64)
+    , _cfgId :: !(Textual Int64)
+    , _cfgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

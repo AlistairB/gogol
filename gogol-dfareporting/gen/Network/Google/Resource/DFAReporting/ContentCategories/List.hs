@@ -48,8 +48,8 @@ module Network.Google.Resource.DFAReporting.ContentCategories.List
     , cclCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.contentCategories.list@ method which the
 -- 'ContentCategoriesList' request conforms to.
@@ -82,18 +82,18 @@ type ContentCategoriesListResource =
 -- /See:/ 'contentCategoriesList' smart constructor.
 data ContentCategoriesList =
   ContentCategoriesList'
-    { _cclXgafv          :: !(Maybe Xgafv)
+    { _cclXgafv :: !(Maybe Xgafv)
     , _cclUploadProtocol :: !(Maybe Text)
-    , _cclAccessToken    :: !(Maybe Text)
-    , _cclSearchString   :: !(Maybe Text)
-    , _cclUploadType     :: !(Maybe Text)
-    , _cclIds            :: !(Maybe [Textual Int64])
-    , _cclProFileId      :: !(Textual Int64)
-    , _cclSortOrder      :: !ContentCategoriesListSortOrder
-    , _cclPageToken      :: !(Maybe Text)
-    , _cclSortField      :: !ContentCategoriesListSortField
-    , _cclMaxResults     :: !(Textual Int32)
-    , _cclCallback       :: !(Maybe Text)
+    , _cclAccessToken :: !(Maybe Text)
+    , _cclSearchString :: !(Maybe Text)
+    , _cclUploadType :: !(Maybe Text)
+    , _cclIds :: !(Maybe [Textual Int64])
+    , _cclProFileId :: !(Textual Int64)
+    , _cclSortOrder :: !ContentCategoriesListSortOrder
+    , _cclPageToken :: !(Maybe Text)
+    , _cclSortField :: !ContentCategoriesListSortField
+    , _cclMaxResults :: !(Textual Int32)
+    , _cclCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -318,26 +318,26 @@ module Network.Google.Translate
     , lgrGlossaries
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.Translate.Projects.DetectLanguage
-import           Network.Google.Resource.Translate.Projects.GetSupportedLanguages
-import           Network.Google.Resource.Translate.Projects.Locations.BatchTranslateText
-import           Network.Google.Resource.Translate.Projects.Locations.DetectLanguage
-import           Network.Google.Resource.Translate.Projects.Locations.Get
-import           Network.Google.Resource.Translate.Projects.Locations.GetSupportedLanguages
-import           Network.Google.Resource.Translate.Projects.Locations.Glossaries.Create
-import           Network.Google.Resource.Translate.Projects.Locations.Glossaries.Delete
-import           Network.Google.Resource.Translate.Projects.Locations.Glossaries.Get
-import           Network.Google.Resource.Translate.Projects.Locations.Glossaries.List
-import           Network.Google.Resource.Translate.Projects.Locations.List
-import           Network.Google.Resource.Translate.Projects.Locations.Operations.Cancel
-import           Network.Google.Resource.Translate.Projects.Locations.Operations.Delete
-import           Network.Google.Resource.Translate.Projects.Locations.Operations.Get
-import           Network.Google.Resource.Translate.Projects.Locations.Operations.List
-import           Network.Google.Resource.Translate.Projects.Locations.Operations.Wait
-import           Network.Google.Resource.Translate.Projects.Locations.TranslateText
-import           Network.Google.Resource.Translate.Projects.TranslateText
-import           Network.Google.Translate.Types
+import Network.Google.Prelude
+import Network.Google.Resource.Translate.Projects.DetectLanguage
+import Network.Google.Resource.Translate.Projects.GetSupportedLanguages
+import Network.Google.Resource.Translate.Projects.Locations.BatchTranslateText
+import Network.Google.Resource.Translate.Projects.Locations.DetectLanguage
+import Network.Google.Resource.Translate.Projects.Locations.Get
+import Network.Google.Resource.Translate.Projects.Locations.GetSupportedLanguages
+import Network.Google.Resource.Translate.Projects.Locations.Glossaries.Create
+import Network.Google.Resource.Translate.Projects.Locations.Glossaries.Delete
+import Network.Google.Resource.Translate.Projects.Locations.Glossaries.Get
+import Network.Google.Resource.Translate.Projects.Locations.Glossaries.List
+import Network.Google.Resource.Translate.Projects.Locations.List
+import Network.Google.Resource.Translate.Projects.Locations.Operations.Cancel
+import Network.Google.Resource.Translate.Projects.Locations.Operations.Delete
+import Network.Google.Resource.Translate.Projects.Locations.Operations.Get
+import Network.Google.Resource.Translate.Projects.Locations.Operations.List
+import Network.Google.Resource.Translate.Projects.Locations.Operations.Wait
+import Network.Google.Resource.Translate.Projects.Locations.TranslateText
+import Network.Google.Resource.Translate.Projects.TranslateText
+import Network.Google.Translate.Types
 
 {- $resources
 TODO

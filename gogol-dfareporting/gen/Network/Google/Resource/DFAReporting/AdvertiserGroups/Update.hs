@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.AdvertiserGroups.Update
     , aguCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertiserGroups.update@ method which the
 -- 'AdvertiserGroupsUpdate' request conforms to.
@@ -67,13 +67,13 @@ type AdvertiserGroupsUpdateResource =
 -- /See:/ 'advertiserGroupsUpdate' smart constructor.
 data AdvertiserGroupsUpdate =
   AdvertiserGroupsUpdate'
-    { _aguXgafv          :: !(Maybe Xgafv)
+    { _aguXgafv :: !(Maybe Xgafv)
     , _aguUploadProtocol :: !(Maybe Text)
-    , _aguAccessToken    :: !(Maybe Text)
-    , _aguUploadType     :: !(Maybe Text)
-    , _aguProFileId      :: !(Textual Int64)
-    , _aguPayload        :: !AdvertiserGroup
-    , _aguCallback       :: !(Maybe Text)
+    , _aguAccessToken :: !(Maybe Text)
+    , _aguUploadType :: !(Maybe Text)
+    , _aguProFileId :: !(Textual Int64)
+    , _aguPayload :: !AdvertiserGroup
+    , _aguCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

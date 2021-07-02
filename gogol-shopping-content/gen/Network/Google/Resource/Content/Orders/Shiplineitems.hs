@@ -38,8 +38,8 @@ module Network.Google.Resource.Content.Orders.Shiplineitems
     , osOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.shiplineitems@ method which the
 -- 'OrdersShiplineitems' request conforms to.
@@ -60,8 +60,8 @@ type OrdersShiplineitemsResource =
 data OrdersShiplineitems =
   OrdersShiplineitems'
     { _osMerchantId :: !(Textual Word64)
-    , _osPayload    :: !OrdersShipLineItemsRequest
-    , _osOrderId    :: !Text
+    , _osPayload :: !OrdersShipLineItemsRequest
+    , _osOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

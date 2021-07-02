@@ -16,7 +16,7 @@
 --
 module Network.Google.Jobs.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Required. Type of filter.
 data CompensationFilterType
@@ -75,71 +75,71 @@ instance ToJSON CompensationFilterType where
 
 -- | The Histogram search filters.
 data HistogramResultSearchType
-    = SearchTypeUnspecified
+    = HRSTSearchTypeUnspecified
       -- ^ @SEARCH_TYPE_UNSPECIFIED@
       -- The default value if search type is not specified.
-    | CompanyId
+    | HRSTCompanyId
       -- ^ @COMPANY_ID@
       -- Filter by the company id field.
-    | EmploymentType
+    | HRSTEmploymentType
       -- ^ @EMPLOYMENT_TYPE@
       -- Filter by the employment type field, such as \`FULL_TIME\` or
       -- \`PART_TIME\`.
-    | CompanySize
+    | HRSTCompanySize
       -- ^ @COMPANY_SIZE@
       -- Filter by the company size type field, such as \`BIG\`, \`SMALL\` or
       -- \`BIGGER\`.
-    | DatePublished
+    | HRSTDatePublished
       -- ^ @DATE_PUBLISHED@
       -- Filter by the date published field. Possible return values are: *
       -- PAST_24_HOURS (The past 24 hours) * PAST_3_DAYS (The past 3 days) *
       -- PAST_WEEK (The past 7 days) * PAST_MONTH (The past 30 days) * PAST_YEAR
       -- (The past 365 days)
-    | EducationLevel
+    | HRSTEducationLevel
       -- ^ @EDUCATION_LEVEL@
       -- Filter by the required education level of the job.
-    | ExperienceLevel
+    | HRSTExperienceLevel
       -- ^ @EXPERIENCE_LEVEL@
       -- Filter by the required experience level of the job.
-    | Admin1
+    | HRSTAdmin1
       -- ^ @ADMIN_1@
       -- Filter by Admin1, which is a global placeholder for referring to state,
       -- province, or the particular term a country uses to define the geographic
       -- structure below the country level. Examples include states codes such as
       -- \"CA\", \"IL\", \"NY\", and provinces, such as \"BC\".
-    | Country
+    | HRSTCountry
       -- ^ @COUNTRY@
       -- Filter by the country code of job, such as US, JP, FR.
-    | City
+    | HRSTCity
       -- ^ @CITY@
       -- Filter by the \"city name\", \"Admin1 code\", for example, \"Mountain
       -- View, CA\" or \"New York, NY\".
-    | Locale
+    | HRSTLocale
       -- ^ @LOCALE@
       -- Filter by the locale field of a job, such as \"en-US\", \"fr-FR\". This
       -- is the BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more
       -- information, see [Tags for Identifying
       -- Languages](https:\/\/tools.ietf.org\/html\/bcp47).
-    | Language
+    | HRSTLanguage
       -- ^ @LANGUAGE@
       -- Filter by the language code portion of the locale field, such as \"en\"
       -- or \"fr\".
-    | Category
+    | HRSTCategory
       -- ^ @CATEGORY@
       -- Filter by the Category.
-    | CityCoordinate
+    | HRSTCityCoordinate
       -- ^ @CITY_COORDINATE@
       -- Filter by the city center GPS coordinate (latitude and longitude), for
       -- example, 37.4038522,-122.0987765. Since the coordinates of a city center
       -- can change, clients may need to refresh them periodically.
-    | Admin1Country
+    | HRSTAdmin1Country
       -- ^ @ADMIN_1_COUNTRY@
       -- A combination of state or province code with a country code. This field
       -- differs from \`JOB_ADMIN1\`, which can be used in multiple countries.
-    | CompanyDisplayName
+    | HRSTCompanyDisplayName
       -- ^ @COMPANY_DISPLAY_NAME@
       -- Company display name.
-    | BaseCompensationUnit
+    | HRSTBaseCompensationUnit
       -- ^ @BASE_COMPENSATION_UNIT@
       -- Base compensation unit.
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
@@ -148,44 +148,44 @@ instance Hashable HistogramResultSearchType
 
 instance FromHttpApiData HistogramResultSearchType where
     parseQueryParam = \case
-        "SEARCH_TYPE_UNSPECIFIED" -> Right SearchTypeUnspecified
-        "COMPANY_ID" -> Right CompanyId
-        "EMPLOYMENT_TYPE" -> Right EmploymentType
-        "COMPANY_SIZE" -> Right CompanySize
-        "DATE_PUBLISHED" -> Right DatePublished
-        "EDUCATION_LEVEL" -> Right EducationLevel
-        "EXPERIENCE_LEVEL" -> Right ExperienceLevel
-        "ADMIN_1" -> Right Admin1
-        "COUNTRY" -> Right Country
-        "CITY" -> Right City
-        "LOCALE" -> Right Locale
-        "LANGUAGE" -> Right Language
-        "CATEGORY" -> Right Category
-        "CITY_COORDINATE" -> Right CityCoordinate
-        "ADMIN_1_COUNTRY" -> Right Admin1Country
-        "COMPANY_DISPLAY_NAME" -> Right CompanyDisplayName
-        "BASE_COMPENSATION_UNIT" -> Right BaseCompensationUnit
+        "SEARCH_TYPE_UNSPECIFIED" -> Right HRSTSearchTypeUnspecified
+        "COMPANY_ID" -> Right HRSTCompanyId
+        "EMPLOYMENT_TYPE" -> Right HRSTEmploymentType
+        "COMPANY_SIZE" -> Right HRSTCompanySize
+        "DATE_PUBLISHED" -> Right HRSTDatePublished
+        "EDUCATION_LEVEL" -> Right HRSTEducationLevel
+        "EXPERIENCE_LEVEL" -> Right HRSTExperienceLevel
+        "ADMIN_1" -> Right HRSTAdmin1
+        "COUNTRY" -> Right HRSTCountry
+        "CITY" -> Right HRSTCity
+        "LOCALE" -> Right HRSTLocale
+        "LANGUAGE" -> Right HRSTLanguage
+        "CATEGORY" -> Right HRSTCategory
+        "CITY_COORDINATE" -> Right HRSTCityCoordinate
+        "ADMIN_1_COUNTRY" -> Right HRSTAdmin1Country
+        "COMPANY_DISPLAY_NAME" -> Right HRSTCompanyDisplayName
+        "BASE_COMPENSATION_UNIT" -> Right HRSTBaseCompensationUnit
         x -> Left ("Unable to parse HistogramResultSearchType from: " <> x)
 
 instance ToHttpApiData HistogramResultSearchType where
     toQueryParam = \case
-        SearchTypeUnspecified -> "SEARCH_TYPE_UNSPECIFIED"
-        CompanyId -> "COMPANY_ID"
-        EmploymentType -> "EMPLOYMENT_TYPE"
-        CompanySize -> "COMPANY_SIZE"
-        DatePublished -> "DATE_PUBLISHED"
-        EducationLevel -> "EDUCATION_LEVEL"
-        ExperienceLevel -> "EXPERIENCE_LEVEL"
-        Admin1 -> "ADMIN_1"
-        Country -> "COUNTRY"
-        City -> "CITY"
-        Locale -> "LOCALE"
-        Language -> "LANGUAGE"
-        Category -> "CATEGORY"
-        CityCoordinate -> "CITY_COORDINATE"
-        Admin1Country -> "ADMIN_1_COUNTRY"
-        CompanyDisplayName -> "COMPANY_DISPLAY_NAME"
-        BaseCompensationUnit -> "BASE_COMPENSATION_UNIT"
+        HRSTSearchTypeUnspecified -> "SEARCH_TYPE_UNSPECIFIED"
+        HRSTCompanyId -> "COMPANY_ID"
+        HRSTEmploymentType -> "EMPLOYMENT_TYPE"
+        HRSTCompanySize -> "COMPANY_SIZE"
+        HRSTDatePublished -> "DATE_PUBLISHED"
+        HRSTEducationLevel -> "EDUCATION_LEVEL"
+        HRSTExperienceLevel -> "EXPERIENCE_LEVEL"
+        HRSTAdmin1 -> "ADMIN_1"
+        HRSTCountry -> "COUNTRY"
+        HRSTCity -> "CITY"
+        HRSTLocale -> "LOCALE"
+        HRSTLanguage -> "LANGUAGE"
+        HRSTCategory -> "CATEGORY"
+        HRSTCityCoordinate -> "CITY_COORDINATE"
+        HRSTAdmin1Country -> "ADMIN_1_COUNTRY"
+        HRSTCompanyDisplayName -> "COMPANY_DISPLAY_NAME"
+        HRSTBaseCompensationUnit -> "BASE_COMPENSATION_UNIT"
 
 instance FromJSON HistogramResultSearchType where
     parseJSON = parseJSONText "HistogramResultSearchType"

@@ -42,8 +42,8 @@ module Network.Google.Resource.DFAReporting.Creatives.Update
     , creCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creatives.update@ method which the
 -- 'CreativesUpdate' request conforms to.
@@ -66,13 +66,13 @@ type CreativesUpdateResource =
 -- /See:/ 'creativesUpdate' smart constructor.
 data CreativesUpdate =
   CreativesUpdate'
-    { _creXgafv          :: !(Maybe Xgafv)
+    { _creXgafv :: !(Maybe Xgafv)
     , _creUploadProtocol :: !(Maybe Text)
-    , _creAccessToken    :: !(Maybe Text)
-    , _creUploadType     :: !(Maybe Text)
-    , _creProFileId      :: !(Textual Int64)
-    , _crePayload        :: !Creative
-    , _creCallback       :: !(Maybe Text)
+    , _creAccessToken :: !(Maybe Text)
+    , _creUploadType :: !(Maybe Text)
+    , _creProFileId :: !(Textual Int64)
+    , _crePayload :: !Creative
+    , _creCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -39,8 +39,8 @@ module Network.Google.Resource.Content.Accountstatuses.List
     , a2MaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accountstatuses.list@ method which the
 -- 'AccountstatusesList' request conforms to.
@@ -60,10 +60,10 @@ type AccountstatusesListResource =
 -- /See:/ 'accountstatusesList' smart constructor.
 data AccountstatusesList =
   AccountstatusesList'
-    { _a2MerchantId   :: !(Textual Word64)
+    { _a2MerchantId :: !(Textual Word64)
     , _a2Destinations :: !(Maybe [Text])
-    , _a2PageToken    :: !(Maybe Text)
-    , _a2MaxResults   :: !(Maybe (Textual Word32))
+    , _a2PageToken :: !(Maybe Text)
+    , _a2MaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

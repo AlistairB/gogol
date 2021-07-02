@@ -37,8 +37,8 @@ module Network.Google.Resource.Content.Datafeeds.Custombatch
     , dPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.datafeeds.custombatch@ method which the
 -- 'DatafeedsCustombatch' request conforms to.

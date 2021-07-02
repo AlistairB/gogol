@@ -39,8 +39,8 @@ module Network.Google.Resource.Content.Accountstatuses.Get
     , aaDestinations
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accountstatuses.get@ method which the
 -- 'AccountstatusesGet' request conforms to.
@@ -59,8 +59,8 @@ type AccountstatusesGetResource =
 -- /See:/ 'accountstatusesGet' smart constructor.
 data AccountstatusesGet =
   AccountstatusesGet'
-    { _aaMerchantId   :: !(Textual Word64)
-    , _aaAccountId    :: !(Textual Word64)
+    { _aaMerchantId :: !(Textual Word64)
+    , _aaAccountId :: !(Textual Word64)
     , _aaDestinations :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)

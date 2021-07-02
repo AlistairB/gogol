@@ -51,8 +51,8 @@ module Network.Google.Resource.DFAReporting.FloodlightActivityGroups.List
     , faglCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightActivityGroups.list@ method which the
 -- 'FloodlightActivityGroupsList' request conforms to.
@@ -95,21 +95,21 @@ type FloodlightActivityGroupsListResource =
 -- /See:/ 'floodlightActivityGroupsList' smart constructor.
 data FloodlightActivityGroupsList =
   FloodlightActivityGroupsList'
-    { _faglXgafv                     :: !(Maybe Xgafv)
-    , _faglUploadProtocol            :: !(Maybe Text)
+    { _faglXgafv :: !(Maybe Xgafv)
+    , _faglUploadProtocol :: !(Maybe Text)
     , _faglFloodlightConfigurationId :: !(Maybe (Textual Int64))
-    , _faglAccessToken               :: !(Maybe Text)
-    , _faglAdvertiserId              :: !(Maybe (Textual Int64))
-    , _faglSearchString              :: !(Maybe Text)
-    , _faglUploadType                :: !(Maybe Text)
-    , _faglIds                       :: !(Maybe [Textual Int64])
-    , _faglProFileId                 :: !(Textual Int64)
-    , _faglSortOrder                 :: !FloodlightActivityGroupsListSortOrder
-    , _faglPageToken                 :: !(Maybe Text)
-    , _faglSortField                 :: !FloodlightActivityGroupsListSortField
-    , _faglType                      :: !(Maybe FloodlightActivityGroupsListType)
-    , _faglMaxResults                :: !(Textual Int32)
-    , _faglCallback                  :: !(Maybe Text)
+    , _faglAccessToken :: !(Maybe Text)
+    , _faglAdvertiserId :: !(Maybe (Textual Int64))
+    , _faglSearchString :: !(Maybe Text)
+    , _faglUploadType :: !(Maybe Text)
+    , _faglIds :: !(Maybe [Textual Int64])
+    , _faglProFileId :: !(Textual Int64)
+    , _faglSortOrder :: !FloodlightActivityGroupsListSortOrder
+    , _faglPageToken :: !(Maybe Text)
+    , _faglSortField :: !FloodlightActivityGroupsListSortField
+    , _faglType :: !(Maybe FloodlightActivityGroupsListType)
+    , _faglMaxResults :: !(Textual Int32)
+    , _faglCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

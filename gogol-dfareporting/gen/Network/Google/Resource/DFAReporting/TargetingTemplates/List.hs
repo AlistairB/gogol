@@ -49,8 +49,8 @@ module Network.Google.Resource.DFAReporting.TargetingTemplates.List
     , ttlCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.targetingTemplates.list@ method which the
 -- 'TargetingTemplatesList' request conforms to.
@@ -86,19 +86,19 @@ type TargetingTemplatesListResource =
 -- /See:/ 'targetingTemplatesList' smart constructor.
 data TargetingTemplatesList =
   TargetingTemplatesList'
-    { _ttlXgafv          :: !(Maybe Xgafv)
+    { _ttlXgafv :: !(Maybe Xgafv)
     , _ttlUploadProtocol :: !(Maybe Text)
-    , _ttlAccessToken    :: !(Maybe Text)
-    , _ttlAdvertiserId   :: !(Maybe (Textual Int64))
-    , _ttlSearchString   :: !(Maybe Text)
-    , _ttlUploadType     :: !(Maybe Text)
-    , _ttlIds            :: !(Maybe [Textual Int64])
-    , _ttlProFileId      :: !(Textual Int64)
-    , _ttlSortOrder      :: !TargetingTemplatesListSortOrder
-    , _ttlPageToken      :: !(Maybe Text)
-    , _ttlSortField      :: !TargetingTemplatesListSortField
-    , _ttlMaxResults     :: !(Textual Int32)
-    , _ttlCallback       :: !(Maybe Text)
+    , _ttlAccessToken :: !(Maybe Text)
+    , _ttlAdvertiserId :: !(Maybe (Textual Int64))
+    , _ttlSearchString :: !(Maybe Text)
+    , _ttlUploadType :: !(Maybe Text)
+    , _ttlIds :: !(Maybe [Textual Int64])
+    , _ttlProFileId :: !(Textual Int64)
+    , _ttlSortOrder :: !TargetingTemplatesListSortOrder
+    , _ttlPageToken :: !(Maybe Text)
+    , _ttlSortField :: !TargetingTemplatesListSortField
+    , _ttlMaxResults :: !(Textual Int32)
+    , _ttlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

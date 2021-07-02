@@ -17,8 +17,8 @@
 --
 module Network.Google.ToolResults.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types.Sum
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types.Sum
 
 -- | Failed to find the launcher activity of an app.
 --
@@ -86,7 +86,7 @@ instance ToJSON NATiveCrash where
 data OverlAppingUIElements =
   OverlAppingUIElements'
     { _oauieResourceName :: !(Maybe [Text])
-    , _oauieScreenId     :: !(Maybe Text)
+    , _oauieScreenId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -139,7 +139,7 @@ instance ToJSON OverlAppingUIElements where
 -- /See:/ 'roboScriptExecution' smart constructor.
 data RoboScriptExecution =
   RoboScriptExecution'
-    { _rseTotalActions      :: !(Maybe (Textual Int32))
+    { _rseTotalActions :: !(Maybe (Textual Int32))
     , _rseSuccessfulActions :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -229,7 +229,7 @@ instance ToJSON ANR where
 data InAppPurchasesFound =
   InAppPurchasesFound'
     { _iapfInAppPurchasesFlowsExplored :: !(Maybe (Textual Int32))
-    , _iapfInAppPurchasesFlowsStarted  :: !(Maybe (Textual Int32))
+    , _iapfInAppPurchasesFlowsStarted :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -289,7 +289,7 @@ instance ToJSON InAppPurchasesFound where
 data EncounteredNonAndroidUiWidgetScreen =
   EncounteredNonAndroidUiWidgetScreen'
     { _enauwsDistinctScreens :: !(Maybe (Textual Int32))
-    , _enauwsScreenIds       :: !(Maybe [Text])
+    , _enauwsScreenIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -345,7 +345,7 @@ instance ToJSON EncounteredNonAndroidUiWidgetScreen
 -- /See:/ 'startActivityNotFound' smart constructor.
 data StartActivityNotFound =
   StartActivityNotFound'
-    { _sanfURI    :: !(Maybe Text)
+    { _sanfURI :: !(Maybe Text)
     , _sanfAction :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -450,7 +450,7 @@ instance ToJSON IosAppCrashed where
 -- /See:/ 'upgradeInsight' smart constructor.
 data UpgradeInsight =
   UpgradeInsight'
-    { _uiPackageName      :: !(Maybe Text)
+    { _uiPackageName :: !(Maybe Text)
     , _uiUpgradeToVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -540,10 +540,10 @@ instance ToJSON PerformedMonkeyActions where
 -- /See:/ 'nonSdkAPIUsageViolationReport' smart constructor.
 data NonSdkAPIUsageViolationReport =
   NonSdkAPIUsageViolationReport'
-    { _nsauvrMinSdkVersion    :: !(Maybe (Textual Int32))
+    { _nsauvrMinSdkVersion :: !(Maybe (Textual Int32))
     , _nsauvrTargetSdkVersion :: !(Maybe (Textual Int32))
-    , _nsauvrUniqueAPIs       :: !(Maybe (Textual Int32))
-    , _nsauvrExampleAPIs      :: !(Maybe [NonSdkAPI])
+    , _nsauvrUniqueAPIs :: !(Maybe (Textual Int32))
+    , _nsauvrExampleAPIs :: !(Maybe [NonSdkAPI])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -701,7 +701,7 @@ instance ToJSON StackTrace where
 data NonSdkAPIUsageViolation =
   NonSdkAPIUsageViolation'
     { _nsauvAPISignatures :: !(Maybe [Text])
-    , _nsauvUniqueAPIs    :: !(Maybe (Textual Int32))
+    , _nsauvUniqueAPIs :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -757,8 +757,8 @@ instance ToJSON NonSdkAPIUsageViolation where
 data UIElementTooDeep =
   UIElementTooDeep'
     { _uietdScreenStateId :: !(Maybe Text)
-    , _uietdDepth         :: !(Maybe (Textual Int32))
-    , _uietdScreenId      :: !(Maybe Text)
+    , _uietdDepth :: !(Maybe (Textual Int32))
+    , _uietdScreenId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -844,10 +844,10 @@ instance ToJSON PerformedGoogleLogin where
 -- /See:/ 'nonSdkAPIInsight' smart constructor.
 data NonSdkAPIInsight =
   NonSdkAPIInsight'
-    { _nsaiUpgradeInsight             :: !(Maybe UpgradeInsight)
+    { _nsaiUpgradeInsight :: !(Maybe UpgradeInsight)
     , _nsaiPendingGoogleUpdateInsight :: !(Maybe PendingGoogleUpdateInsight)
-    , _nsaiExampleTraceMessages       :: !(Maybe [Text])
-    , _nsaiMatcherId                  :: !(Maybe Text)
+    , _nsaiExampleTraceMessages :: !(Maybe [Text])
+    , _nsaiMatcherId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1106,11 +1106,11 @@ instance ToJSON CrashDialogError where
 -- /See:/ 'nonSdkAPI' smart constructor.
 data NonSdkAPI =
   NonSdkAPI'
-    { _nsaList               :: !(Maybe NonSdkAPIList)
-    , _nsaInsights           :: !(Maybe [NonSdkAPIInsight])
-    , _nsaAPISignature       :: !(Maybe Text)
+    { _nsaList :: !(Maybe NonSdkAPIList)
+    , _nsaInsights :: !(Maybe [NonSdkAPIInsight])
+    , _nsaAPISignature :: !(Maybe Text)
     , _nsaExampleStackTraces :: !(Maybe [Text])
-    , _nsaInvocationCount    :: !(Maybe (Textual Int32))
+    , _nsaInvocationCount :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1316,7 +1316,7 @@ instance ToJSON FatalException where
 data EncounteredLoginScreen =
   EncounteredLoginScreen'
     { _elsDistinctScreens :: !(Maybe (Textual Int32))
-    , _elsScreenIds       :: !(Maybe [Text])
+    , _elsScreenIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

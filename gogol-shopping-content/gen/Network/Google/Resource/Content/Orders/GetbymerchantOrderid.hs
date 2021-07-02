@@ -37,8 +37,8 @@ module Network.Google.Resource.Content.Orders.GetbymerchantOrderid
     , ogogMerchantOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.getbymerchantorderid@ method which the
 -- 'OrdersGetbymerchantOrderid' request conforms to.
@@ -56,7 +56,7 @@ type OrdersGetbymerchantOrderidResource =
 -- /See:/ 'ordersGetbymerchantOrderid' smart constructor.
 data OrdersGetbymerchantOrderid =
   OrdersGetbymerchantOrderid'
-    { _ogogMerchantId      :: !(Textual Word64)
+    { _ogogMerchantId :: !(Textual Word64)
     , _ogogMerchantOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

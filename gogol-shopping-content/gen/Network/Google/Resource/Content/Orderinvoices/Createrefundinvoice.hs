@@ -42,8 +42,8 @@ module Network.Google.Resource.Content.Orderinvoices.Createrefundinvoice
     , ocOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orderinvoices.createrefundinvoice@ method which the
 -- 'OrderinvoicesCreaterefundinvoice' request conforms to.
@@ -70,8 +70,8 @@ type OrderinvoicesCreaterefundinvoiceResource =
 data OrderinvoicesCreaterefundinvoice =
   OrderinvoicesCreaterefundinvoice'
     { _ocMerchantId :: !(Textual Word64)
-    , _ocPayload    :: !OrderinvoicesCreateRefundInvoiceRequest
-    , _ocOrderId    :: !Text
+    , _ocPayload :: !OrderinvoicesCreateRefundInvoiceRequest
+    , _ocOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

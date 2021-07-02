@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.RemarketingListShares.Patch
     , rlspCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.remarketingListShares.patch@ method which the
 -- 'RemarketingListSharesPatch' request conforms to.
@@ -71,14 +71,14 @@ type RemarketingListSharesPatchResource =
 -- /See:/ 'remarketingListSharesPatch' smart constructor.
 data RemarketingListSharesPatch =
   RemarketingListSharesPatch'
-    { _rlspXgafv          :: !(Maybe Xgafv)
+    { _rlspXgafv :: !(Maybe Xgafv)
     , _rlspUploadProtocol :: !(Maybe Text)
-    , _rlspAccessToken    :: !(Maybe Text)
-    , _rlspUploadType     :: !(Maybe Text)
-    , _rlspProFileId      :: !(Textual Int64)
-    , _rlspPayload        :: !RemarketingListShare
-    , _rlspId             :: !(Textual Int64)
-    , _rlspCallback       :: !(Maybe Text)
+    , _rlspAccessToken :: !(Maybe Text)
+    , _rlspUploadType :: !(Maybe Text)
+    , _rlspProFileId :: !(Textual Int64)
+    , _rlspPayload :: !RemarketingListShare
+    , _rlspId :: !(Textual Int64)
+    , _rlspCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

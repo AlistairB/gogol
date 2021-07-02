@@ -42,8 +42,8 @@ module Network.Google.Resource.DialogFlow.Projects.Locations.Agents.EntityTypes.
     , plaetdCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.locations.agents.entityTypes.delete@ method which the
 -- 'ProjectsLocationsAgentsEntityTypesDelete' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsLocationsAgentsEntityTypesDeleteResource
 -- /See:/ 'projectsLocationsAgentsEntityTypesDelete' smart constructor.
 data ProjectsLocationsAgentsEntityTypesDelete =
   ProjectsLocationsAgentsEntityTypesDelete'
-    { _plaetdXgafv          :: !(Maybe Xgafv)
+    { _plaetdXgafv :: !(Maybe Xgafv)
     , _plaetdUploadProtocol :: !(Maybe Text)
-    , _plaetdForce          :: !(Maybe Bool)
-    , _plaetdAccessToken    :: !(Maybe Text)
-    , _plaetdUploadType     :: !(Maybe Text)
-    , _plaetdName           :: !Text
-    , _plaetdCallback       :: !(Maybe Text)
+    , _plaetdForce :: !(Maybe Bool)
+    , _plaetdAccessToken :: !(Maybe Text)
+    , _plaetdUploadType :: !(Maybe Text)
+    , _plaetdName :: !Text
+    , _plaetdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

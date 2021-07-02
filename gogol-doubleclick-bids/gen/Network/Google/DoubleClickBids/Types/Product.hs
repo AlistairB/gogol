@@ -17,8 +17,8 @@
 --
 module Network.Google.DoubleClickBids.Types.Product where
 
-import           Network.Google.DoubleClickBids.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types.Sum
+import Network.Google.Prelude
 
 -- | List reports response.
 --
@@ -26,8 +26,8 @@ import           Network.Google.Prelude
 data ListReportsResponse =
   ListReportsResponse'
     { _lrrNextPageToken :: !(Maybe Text)
-    , _lrrReports       :: !(Maybe [Report])
-    , _lrrKind          :: !(Maybe Text)
+    , _lrrReports :: !(Maybe [Report])
+    , _lrrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -132,16 +132,16 @@ instance ToJSON DisjunctiveMatchStatement where
 data QueryMetadata =
   QueryMetadata'
     { _qmGoogleCloudStoragePathForLatestReport :: !(Maybe Text)
-    , _qmLocale                                :: !(Maybe Text)
-    , _qmFormat                                :: !(Maybe QueryMetadataFormat)
-    , _qmGoogleDrivePathForLatestReport        :: !(Maybe Text)
-    , _qmShareEmailAddress                     :: !(Maybe [Text])
-    , _qmRunning                               :: !(Maybe Bool)
-    , _qmDataRange                             :: !(Maybe QueryMetadataDataRange)
-    , _qmLatestReportRunTimeMs                 :: !(Maybe (Textual Int64))
-    , _qmReportCount                           :: !(Maybe (Textual Int32))
-    , _qmTitle                                 :: !(Maybe Text)
-    , _qmSendNotification                      :: !(Maybe Bool)
+    , _qmLocale :: !(Maybe Text)
+    , _qmFormat :: !(Maybe QueryMetadataFormat)
+    , _qmGoogleDrivePathForLatestReport :: !(Maybe Text)
+    , _qmShareEmailAddress :: !(Maybe [Text])
+    , _qmRunning :: !(Maybe Bool)
+    , _qmDataRange :: !(Maybe QueryMetadataDataRange)
+    , _qmLatestReportRunTimeMs :: !(Maybe (Textual Int64))
+    , _qmReportCount :: !(Maybe (Textual Int32))
+    , _qmTitle :: !(Maybe Text)
+    , _qmSendNotification :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -300,7 +300,7 @@ instance ToJSON QueryMetadata where
 -- /See:/ 'pathQueryOptions' smart constructor.
 data PathQueryOptions =
   PathQueryOptions'
-    { _pqoPathFilters     :: !(Maybe [PathFilter])
+    { _pqoPathFilters :: !(Maybe [PathFilter])
     , _pqoChannelGrouping :: !(Maybe ChannelGrouping)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -354,10 +354,10 @@ instance ToJSON PathQueryOptions where
 -- /See:/ 'runQueryRequest' smart constructor.
 data RunQueryRequest =
   RunQueryRequest'
-    { _rqrReportDataEndTimeMs   :: !(Maybe (Textual Int64))
-    , _rqrDataRange             :: !(Maybe RunQueryRequestDataRange)
+    { _rqrReportDataEndTimeMs :: !(Maybe (Textual Int64))
+    , _rqrDataRange :: !(Maybe RunQueryRequestDataRange)
     , _rqrReportDataStartTimeMs :: !(Maybe (Textual Int64))
-    , _rqrTimezoneCode          :: !(Maybe Text)
+    , _rqrTimezoneCode :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -440,7 +440,7 @@ instance ToJSON RunQueryRequest where
 data FilterPair =
   FilterPair'
     { _fpValue :: !(Maybe Text)
-    , _fpType  :: !(Maybe FilterPairType)
+    , _fpType :: !(Maybe FilterPairType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -483,8 +483,8 @@ instance ToJSON FilterPair where
 data UploadLineItemsRequest =
   UploadLineItemsRequest'
     { _ulirLineItems :: !(Maybe Text)
-    , _ulirFormat    :: !(Maybe UploadLineItemsRequestFormat)
-    , _ulirDryRun    :: !(Maybe Bool)
+    , _ulirFormat :: !(Maybe UploadLineItemsRequestFormat)
+    , _ulirDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -545,9 +545,9 @@ instance ToJSON UploadLineItemsRequest where
 data DownloadLineItemsRequest =
   DownloadLineItemsRequest'
     { _dlirFilterType :: !(Maybe DownloadLineItemsRequestFilterType)
-    , _dlirFormat     :: !(Maybe DownloadLineItemsRequestFormat)
-    , _dlirFileSpec   :: !(Maybe DownloadLineItemsRequestFileSpec)
-    , _dlirFilterIds  :: !(Maybe [Textual Int64])
+    , _dlirFormat :: !(Maybe DownloadLineItemsRequestFormat)
+    , _dlirFileSpec :: !(Maybe DownloadLineItemsRequestFileSpec)
+    , _dlirFilterIds :: !(Maybe [Textual Int64])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -624,10 +624,10 @@ instance ToJSON DownloadLineItemsRequest where
 -- /See:/ 'downloadRequest' smart constructor.
 data DownloadRequest =
   DownloadRequest'
-    { _drFileTypes  :: !(Maybe [DownloadRequestFileTypesItem])
+    { _drFileTypes :: !(Maybe [DownloadRequestFileTypesItem])
     , _drFilterType :: !(Maybe DownloadRequestFilterType)
-    , _drVersion    :: !(Maybe Text)
-    , _drFilterIds  :: !(Maybe [Textual Int64])
+    , _drVersion :: !(Maybe Text)
+    , _drFilterIds :: !(Maybe [Textual Int64])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -708,9 +708,9 @@ instance ToJSON DownloadRequest where
 -- /See:/ 'listQueriesResponse' smart constructor.
 data ListQueriesResponse =
   ListQueriesResponse'
-    { _lqrQueries       :: !(Maybe [Query])
+    { _lqrQueries :: !(Maybe [Query])
     , _lqrNextPageToken :: !(Maybe Text)
-    , _lqrKind          :: !(Maybe Text)
+    , _lqrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -809,10 +809,10 @@ instance ToJSON UploadLineItemsResponse where
 -- /See:/ 'reportMetadata' smart constructor.
 data ReportMetadata =
   ReportMetadata'
-    { _rmStatus                 :: !(Maybe ReportStatus)
-    , _rmReportDataEndTimeMs    :: !(Maybe (Textual Int64))
+    { _rmStatus :: !(Maybe ReportStatus)
+    , _rmReportDataEndTimeMs :: !(Maybe (Textual Int64))
     , _rmGoogleCloudStoragePath :: !(Maybe Text)
-    , _rmReportDataStartTimeMs  :: !(Maybe (Textual Int64))
+    , _rmReportDataStartTimeMs :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -890,8 +890,8 @@ instance ToJSON ReportMetadata where
 -- /See:/ 'report' smart constructor.
 data Report =
   Report'
-    { _rParams   :: !(Maybe Parameters)
-    , _rKey      :: !(Maybe ReportKey)
+    { _rParams :: !(Maybe Parameters)
+    , _rKey :: !(Maybe ReportKey)
     , _rMetadata :: !(Maybe ReportMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -945,11 +945,11 @@ instance ToJSON Report where
 data RowStatus =
   RowStatus'
     { _rsEntityName :: !(Maybe Text)
-    , _rsChanged    :: !(Maybe Bool)
-    , _rsPersisted  :: !(Maybe Bool)
-    , _rsRowNumber  :: !(Maybe (Textual Int32))
-    , _rsErrors     :: !(Maybe [Text])
-    , _rsEntityId   :: !(Maybe (Textual Int64))
+    , _rsChanged :: !(Maybe Bool)
+    , _rsPersisted :: !(Maybe Bool)
+    , _rsRowNumber :: !(Maybe (Textual Int32))
+    , _rsErrors :: !(Maybe [Text])
+    , _rsEntityId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1047,7 +1047,7 @@ instance ToJSON RowStatus where
 -- /See:/ 'rule' smart constructor.
 data Rule =
   Rule'
-    { _rName                       :: !(Maybe Text)
+    { _rName :: !(Maybe Text)
     , _rDisjunctiveMatchStatements :: !(Maybe [DisjunctiveMatchStatement])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1097,7 +1097,7 @@ instance ToJSON Rule where
 -- /See:/ 'reportKey' smart constructor.
 data ReportKey =
   ReportKey'
-    { _rkQueryId  :: !(Maybe (Textual Int64))
+    { _rkQueryId :: !(Maybe (Textual Int64))
     , _rkReportId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1185,9 +1185,9 @@ instance ToJSON EventFilter where
 -- /See:/ 'channelGrouping' smart constructor.
 data ChannelGrouping =
   ChannelGrouping'
-    { _cgRules        :: !(Maybe [Rule])
+    { _cgRules :: !(Maybe [Rule])
     , _cgFallbackName :: !(Maybe Text)
-    , _cgName         :: !(Maybe Text)
+    , _cgName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1248,7 +1248,7 @@ instance ToJSON ChannelGrouping where
 data UploadStatus =
   UploadStatus'
     { _usRowStatus :: !(Maybe [RowStatus])
-    , _usErrors    :: !(Maybe [Text])
+    , _usErrors :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1301,7 +1301,7 @@ data PathQueryOptionsFilter =
   PathQueryOptionsFilter'
     { _pqofValues :: !(Maybe [Text])
     , _pqofFilter :: !(Maybe PathQueryOptionsFilterFilter)
-    , _pqofMatch  :: !(Maybe PathQueryOptionsFilterMatch)
+    , _pqofMatch :: !(Maybe PathQueryOptionsFilterMatch)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1360,10 +1360,10 @@ instance ToJSON PathQueryOptionsFilter where
 -- /See:/ 'querySchedule' smart constructor.
 data QuerySchedule =
   QuerySchedule'
-    { _qsFrequency           :: !(Maybe QueryScheduleFrequency)
-    , _qsStartTimeMs         :: !(Maybe (Textual Int64))
-    , _qsEndTimeMs           :: !(Maybe (Textual Int64))
-    , _qsNextRunMinuteOfDay  :: !(Maybe (Textual Int32))
+    { _qsFrequency :: !(Maybe QueryScheduleFrequency)
+    , _qsStartTimeMs :: !(Maybe (Textual Int64))
+    , _qsEndTimeMs :: !(Maybe (Textual Int64))
+    , _qsNextRunMinuteOfDay :: !(Maybe (Textual Int32))
     , _qsNextRunTimezoneCode :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1493,11 +1493,11 @@ instance ToJSON DownloadLineItemsResponse where
 data DownloadResponse =
   DownloadResponse'
     { _drInventorySources :: !(Maybe Text)
-    , _drInsertionOrders  :: !(Maybe Text)
-    , _drCampaigns        :: !(Maybe Text)
-    , _drLineItems        :: !(Maybe Text)
-    , _drAdGroups         :: !(Maybe Text)
-    , _drAds              :: !(Maybe Text)
+    , _drInsertionOrders :: !(Maybe Text)
+    , _drCampaigns :: !(Maybe Text)
+    , _drLineItems :: !(Maybe Text)
+    , _drAdGroups :: !(Maybe Text)
+    , _drAds :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1588,10 +1588,10 @@ instance ToJSON DownloadResponse where
 -- /See:/ 'reportStatus' smart constructor.
 data ReportStatus =
   ReportStatus'
-    { _rsState        :: !(Maybe ReportStatusState)
+    { _rsState :: !(Maybe ReportStatusState)
     , _rsFinishTimeMs :: !(Maybe (Textual Int64))
-    , _rsFormat       :: !(Maybe ReportStatusFormat)
-    , _rsFailure      :: !(Maybe ReportFailure)
+    , _rsFormat :: !(Maybe ReportStatusFormat)
+    , _rsFailure :: !(Maybe ReportFailure)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1661,14 +1661,14 @@ instance ToJSON ReportStatus where
 -- /See:/ 'query' smart constructor.
 data Query =
   Query'
-    { _qQueryId               :: !(Maybe (Textual Int64))
-    , _qReportDataEndTimeMs   :: !(Maybe (Textual Int64))
-    , _qSchedule              :: !(Maybe QuerySchedule)
-    , _qKind                  :: !(Maybe Text)
-    , _qParams                :: !(Maybe Parameters)
-    , _qMetadata              :: !(Maybe QueryMetadata)
+    { _qQueryId :: !(Maybe (Textual Int64))
+    , _qReportDataEndTimeMs :: !(Maybe (Textual Int64))
+    , _qSchedule :: !(Maybe QuerySchedule)
+    , _qKind :: !(Maybe Text)
+    , _qParams :: !(Maybe Parameters)
+    , _qMetadata :: !(Maybe QueryMetadata)
     , _qReportDataStartTimeMs :: !(Maybe (Textual Int64))
-    , _qTimezoneCode          :: !(Maybe Text)
+    , _qTimezoneCode :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1788,12 +1788,12 @@ instance ToJSON Query where
 -- /See:/ 'parameters' smart constructor.
 data Parameters =
   Parameters'
-    { _pMetrics           :: !(Maybe [ParametersMetricsItem])
+    { _pMetrics :: !(Maybe [ParametersMetricsItem])
     , _pIncludeInviteData :: !(Maybe Bool)
-    , _pFilters           :: !(Maybe [FilterPair])
-    , _pGroupBys          :: !(Maybe [ParametersGroupBysItem])
-    , _pOptions           :: !(Maybe Options)
-    , _pType              :: !(Maybe ParametersType)
+    , _pFilters :: !(Maybe [FilterPair])
+    , _pGroupBys :: !(Maybe [ParametersGroupBysItem])
+    , _pOptions :: !(Maybe Options)
+    , _pType :: !(Maybe ParametersType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1893,7 +1893,7 @@ instance ToJSON Parameters where
 -- /See:/ 'pathFilter' smart constructor.
 data PathFilter =
   PathFilter'
-    { _pfEventFilters      :: !(Maybe [EventFilter])
+    { _pfEventFilters :: !(Maybe [EventFilter])
     , _pfPathMatchPosition :: !(Maybe PathFilterPathMatchPosition)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1947,7 +1947,7 @@ instance ToJSON PathFilter where
 -- /See:/ 'options' smart constructor.
 data Options =
   Options'
-    { _oPathQueryOptions             :: !(Maybe PathQueryOptions)
+    { _oPathQueryOptions :: !(Maybe PathQueryOptions)
     , _oIncludeOnlyTargetedUserLists :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

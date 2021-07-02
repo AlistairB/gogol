@@ -46,8 +46,8 @@ module Network.Google.Resource.DFAReporting.Reports.Files.List
     , rflCallback
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.reports.files.list@ method which the
 -- 'ReportsFilesList' request conforms to.
@@ -77,17 +77,17 @@ type ReportsFilesListResource =
 -- /See:/ 'reportsFilesList' smart constructor.
 data ReportsFilesList =
   ReportsFilesList'
-    { _rflXgafv          :: !(Maybe Xgafv)
+    { _rflXgafv :: !(Maybe Xgafv)
     , _rflUploadProtocol :: !(Maybe Text)
-    , _rflAccessToken    :: !(Maybe Text)
-    , _rflReportId       :: !(Textual Int64)
-    , _rflUploadType     :: !(Maybe Text)
-    , _rflProFileId      :: !(Textual Int64)
-    , _rflSortOrder      :: !ReportsFilesListSortOrder
-    , _rflPageToken      :: !(Maybe Text)
-    , _rflSortField      :: !ReportsFilesListSortField
-    , _rflMaxResults     :: !(Textual Int32)
-    , _rflCallback       :: !(Maybe Text)
+    , _rflAccessToken :: !(Maybe Text)
+    , _rflReportId :: !(Textual Int64)
+    , _rflUploadType :: !(Maybe Text)
+    , _rflProFileId :: !(Textual Int64)
+    , _rflSortOrder :: !ReportsFilesListSortOrder
+    , _rflPageToken :: !(Maybe Text)
+    , _rflSortField :: !ReportsFilesListSortField
+    , _rflMaxResults :: !(Textual Int32)
+    , _rflCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
