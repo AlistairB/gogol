@@ -140,7 +140,7 @@ getDerive g = loc "getDerive" g $ memo derived g go
     base = [DEq, DShow, DData, DTypeable, DGeneric]
 
 getPrefix :: Global -> AST Prefix
-getPrefix g = loc "getPrefix" g $ memo prefixed g go
+getPrefix g = loc "getPrefix" g $ memo Gen.Types.prefixed g go
   where
     go = \case
         SObj _ (Obj aps ps) -> field (isJust aps) ps
