@@ -132,7 +132,7 @@ ptdUploadType
   = lens _ptdUploadType
       (\ s a -> s{_ptdUploadType = a})
 
--- | Required. Name of the topic to delete. Format is
+-- | Name of the topic to delete. Format is
 -- \`projects\/{project}\/topics\/{topic}\`.
 ptdTopic :: Lens' ProjectsTopicsDelete Text
 ptdTopic = lens _ptdTopic (\ s a -> s{_ptdTopic = a})

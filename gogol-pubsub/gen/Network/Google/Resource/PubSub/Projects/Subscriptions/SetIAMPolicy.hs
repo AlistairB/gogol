@@ -21,8 +21,7 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Sets the access control policy on the specified resource. Replaces any
--- existing policy. Can return \`NOT_FOUND\`, \`INVALID_ARGUMENT\`, and
--- \`PERMISSION_DENIED\` errors.
+-- existing policy.
 --
 -- /See:/ <https://cloud.google.com/pubsub/docs Cloud Pub/Sub API Reference> for @pubsub.projects.subscriptions.setIamPolicy@.
 module Network.Google.Resource.PubSub.Projects.Subscriptions.SetIAMPolicy
@@ -62,8 +61,7 @@ type ProjectsSubscriptionsSetIAMPolicyResource =
                        Post '[JSON] Policy
 
 -- | Sets the access control policy on the specified resource. Replaces any
--- existing policy. Can return \`NOT_FOUND\`, \`INVALID_ARGUMENT\`, and
--- \`PERMISSION_DENIED\` errors.
+-- existing policy.
 --
 -- /See:/ 'projectsSubscriptionsSetIAMPolicy' smart constructor.
 data ProjectsSubscriptionsSetIAMPolicy =

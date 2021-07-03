@@ -124,7 +124,7 @@ ptlUploadProtocol
   = lens _ptlUploadProtocol
       (\ s a -> s{_ptlUploadProtocol = a})
 
--- | Required. The name of the project in which to list topics. Format is
+-- | The name of the project in which to list topics. Format is
 -- \`projects\/{project-id}\`.
 ptlProject :: Lens' ProjectsTopicsList Text
 ptlProject

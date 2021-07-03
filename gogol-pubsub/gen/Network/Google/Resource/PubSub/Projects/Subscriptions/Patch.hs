@@ -137,7 +137,7 @@ pspPayload :: Lens' ProjectsSubscriptionsPatch UpdateSubscriptionRequest
 pspPayload
   = lens _pspPayload (\ s a -> s{_pspPayload = a})
 
--- | Required. The name of the subscription. It must have the format
+-- | The name of the subscription. It must have the format
 -- \`\"projects\/{project}\/subscriptions\/{subscription}\"\`.
 -- \`{subscription}\` must start with a letter, and contain only letters
 -- (\`[A-Za-z]\`), numbers (\`[0-9]\`), dashes (\`-\`), underscores

@@ -31,33 +31,6 @@ module Network.Google.PubSub
 
     -- * Resources
 
-    -- ** pubsub.projects.schemas.create
-    , module Network.Google.Resource.PubSub.Projects.Schemas.Create
-
-    -- ** pubsub.projects.schemas.delete
-    , module Network.Google.Resource.PubSub.Projects.Schemas.Delete
-
-    -- ** pubsub.projects.schemas.get
-    , module Network.Google.Resource.PubSub.Projects.Schemas.Get
-
-    -- ** pubsub.projects.schemas.getIamPolicy
-    , module Network.Google.Resource.PubSub.Projects.Schemas.GetIAMPolicy
-
-    -- ** pubsub.projects.schemas.list
-    , module Network.Google.Resource.PubSub.Projects.Schemas.List
-
-    -- ** pubsub.projects.schemas.setIamPolicy
-    , module Network.Google.Resource.PubSub.Projects.Schemas.SetIAMPolicy
-
-    -- ** pubsub.projects.schemas.testIamPermissions
-    , module Network.Google.Resource.PubSub.Projects.Schemas.TestIAMPermissions
-
-    -- ** pubsub.projects.schemas.validate
-    , module Network.Google.Resource.PubSub.Projects.Schemas.Validate
-
-    -- ** pubsub.projects.schemas.validateMessage
-    , module Network.Google.Resource.PubSub.Projects.Schemas.ValidateMessage
-
     -- ** pubsub.projects.snapshots.create
     , module Network.Google.Resource.PubSub.Projects.Snapshots.Create
 
@@ -90,9 +63,6 @@ module Network.Google.PubSub
 
     -- ** pubsub.projects.subscriptions.delete
     , module Network.Google.Resource.PubSub.Projects.Subscriptions.Delete
-
-    -- ** pubsub.projects.subscriptions.detach
-    , module Network.Google.Resource.PubSub.Projects.Subscriptions.Detach
 
     -- ** pubsub.projects.subscriptions.get
     , module Network.Google.Resource.PubSub.Projects.Subscriptions.Get
@@ -166,22 +136,11 @@ module Network.Google.PubSub
     , pcAttributes
     , pcPushEndpoint
 
-    -- ** ValidateSchemaResponse
-    , ValidateSchemaResponse
-    , validateSchemaResponse
-
-    -- ** SchemaSettings
-    , SchemaSettings
-    , schemaSettings
-    , ssSchema
-    , ssEncoding
-
     -- ** ReceivedMessage
     , ReceivedMessage
     , receivedMessage
     , rmAckId
     , rmMessage
-    , rmDeliveryAttempt
 
     -- ** Snapshot
     , Snapshot
@@ -190,9 +149,6 @@ module Network.Google.PubSub
     , sName
     , sLabels
     , sExpireTime
-
-    -- ** ProjectsSchemasGetView
-    , ProjectsSchemasGetView (..)
 
     -- ** ListTopicSnapshotsResponse
     , ListTopicSnapshotsResponse
@@ -207,9 +163,6 @@ module Network.Google.PubSub
     , eExpression
     , eTitle
     , eDescription
-
-    -- ** ValidateMessageRequestEncoding
-    , ValidateMessageRequestEncoding (..)
 
     -- ** OidcToken
     , OidcToken
@@ -239,7 +192,6 @@ module Network.Google.PubSub
     , pmPublishTime
     , pmAttributes
     , pmMessageId
-    , pmOrderingKey
 
     -- ** ListTopicSubscriptionsResponse
     , ListTopicSubscriptionsResponse
@@ -253,26 +205,16 @@ module Network.Google.PubSub
     , ltrNextPageToken
     , ltrTopics
 
-    -- ** ListSchemasResponse
-    , ListSchemasResponse
-    , listSchemasResponse
-    , lsrNextPageToken
-    , lsrSchemas
-
     -- ** PullResponse
     , PullResponse
     , pullResponse
     , prReceivedMessages
 
-    -- ** ValidateMessageResponse
-    , ValidateMessageResponse
-    , validateMessageResponse
-
     -- ** ListSnapshotsResponse
     , ListSnapshotsResponse
     , listSnapshotsResponse
-    , lisNextPageToken
-    , lisSnapshots
+    , lsrNextPageToken
+    , lsrSnapshots
 
     -- ** SetIAMPolicyRequest
     , SetIAMPolicyRequest
@@ -291,22 +233,11 @@ module Network.Google.PubSub
     , srSnapshot
     , srTime
 
-    -- ** Schema
-    , Schema
-    , schema
-    , schDefinition
-    , schName
-    , schType
-
     -- ** Topic
     , Topic
     , topic
-    , tSchemaSettings
-    , tSatisfiesPzs
     , tName
-    , tMessageStoragePolicy
     , tLabels
-    , tKmsKeyName
 
     -- ** TopicLabels
     , TopicLabels
@@ -324,26 +255,11 @@ module Network.Google.PubSub
     , usrSnapshot
     , usrUpdateMask
 
-    -- ** ValidateMessageRequest
-    , ValidateMessageRequest
-    , validateMessageRequest
-    , vmrSchema
-    , vmrName
-    , vmrMessage
-    , vmrEncoding
-
     -- ** PullRequest
     , PullRequest
     , pullRequest
     , prMaxMessages
     , prReturnImmediately
-
-    -- ** SchemaSettingsEncoding
-    , SchemaSettingsEncoding (..)
-
-    -- ** DetachSubscriptionResponse
-    , DetachSubscriptionResponse
-    , detachSubscriptionResponse
 
     -- ** PubsubMessageAttributes
     , PubsubMessageAttributes
@@ -352,17 +268,6 @@ module Network.Google.PubSub
 
     -- ** Xgafv
     , Xgafv (..)
-
-    -- ** DeadLetterPolicy
-    , DeadLetterPolicy
-    , deadLetterPolicy
-    , dlpDeadLetterTopic
-    , dlpMaxDeliveryAttempts
-
-    -- ** MessageStoragePolicy
-    , MessageStoragePolicy
-    , messageStoragePolicy
-    , mspAllowedPersistenceRegions
 
     -- ** TestIAMPermissionsRequest
     , TestIAMPermissionsRequest
@@ -373,12 +278,6 @@ module Network.Google.PubSub
     , PublishResponse
     , publishResponse
     , prMessageIds
-
-    -- ** RetryPolicy
-    , RetryPolicy
-    , retryPolicy
-    , rpMinimumBackoff
-    , rpMaximumBackoff
 
     -- ** PublishRequest
     , PublishRequest
@@ -415,21 +314,13 @@ module Network.Google.PubSub
     , Subscription
     , subscription
     , subPushConfig
-    , subEnableMessageOrdering
-    , subDetached
     , subMessageRetentionDuration
     , subTopic
     , subName
-    , subDeadLetterPolicy
     , subLabels
     , subRetainAckedMessages
-    , subFilter
     , subAckDeadlineSeconds
-    , subRetryPolicy
     , subExpirationPolicy
-
-    -- ** ProjectsSchemasListView
-    , ProjectsSchemasListView (..)
 
     -- ** UpdateSubscriptionRequest
     , UpdateSubscriptionRequest
@@ -442,11 +333,6 @@ module Network.Google.PubSub
     , subscriptionLabels
     , slAddtional
 
-    -- ** ValidateSchemaRequest
-    , ValidateSchemaRequest
-    , validateSchemaRequest
-    , vsrSchema
-
     -- ** SnapshotLabels
     , SnapshotLabels
     , snapshotLabels
@@ -455,8 +341,8 @@ module Network.Google.PubSub
     -- ** ListSubscriptionsResponse
     , ListSubscriptionsResponse
     , listSubscriptionsResponse
-    , lsrsNextPageToken
-    , lsrsSubscriptions
+    , lisNextPageToken
+    , lisSubscriptions
 
     -- ** Binding
     , Binding
@@ -471,9 +357,6 @@ module Network.Google.PubSub
     , utrUpdateMask
     , utrTopic
 
-    -- ** SchemaType
-    , SchemaType (..)
-
     -- ** AcknowledgeRequest
     , AcknowledgeRequest
     , acknowledgeRequest
@@ -482,15 +365,6 @@ module Network.Google.PubSub
 
 import Network.Google.Prelude
 import Network.Google.PubSub.Types
-import Network.Google.Resource.PubSub.Projects.Schemas.Create
-import Network.Google.Resource.PubSub.Projects.Schemas.Delete
-import Network.Google.Resource.PubSub.Projects.Schemas.Get
-import Network.Google.Resource.PubSub.Projects.Schemas.GetIAMPolicy
-import Network.Google.Resource.PubSub.Projects.Schemas.List
-import Network.Google.Resource.PubSub.Projects.Schemas.SetIAMPolicy
-import Network.Google.Resource.PubSub.Projects.Schemas.TestIAMPermissions
-import Network.Google.Resource.PubSub.Projects.Schemas.Validate
-import Network.Google.Resource.PubSub.Projects.Schemas.ValidateMessage
 import Network.Google.Resource.PubSub.Projects.Snapshots.Create
 import Network.Google.Resource.PubSub.Projects.Snapshots.Delete
 import Network.Google.Resource.PubSub.Projects.Snapshots.Get
@@ -502,7 +376,6 @@ import Network.Google.Resource.PubSub.Projects.Snapshots.TestIAMPermissions
 import Network.Google.Resource.PubSub.Projects.Subscriptions.Acknowledge
 import Network.Google.Resource.PubSub.Projects.Subscriptions.Create
 import Network.Google.Resource.PubSub.Projects.Subscriptions.Delete
-import Network.Google.Resource.PubSub.Projects.Subscriptions.Detach
 import Network.Google.Resource.PubSub.Projects.Subscriptions.Get
 import Network.Google.Resource.PubSub.Projects.Subscriptions.GetIAMPolicy
 import Network.Google.Resource.PubSub.Projects.Subscriptions.List
@@ -542,15 +415,6 @@ type PubSubAPI =
        :<|> ProjectsTopicsTestIAMPermissionsResource
        :<|> ProjectsTopicsDeleteResource
        :<|> ProjectsTopicsPublishResource
-       :<|> ProjectsSchemasListResource
-       :<|> ProjectsSchemasGetIAMPolicyResource
-       :<|> ProjectsSchemasGetResource
-       :<|> ProjectsSchemasCreateResource
-       :<|> ProjectsSchemasSetIAMPolicyResource
-       :<|> ProjectsSchemasValidateMessageResource
-       :<|> ProjectsSchemasTestIAMPermissionsResource
-       :<|> ProjectsSchemasValidateResource
-       :<|> ProjectsSchemasDeleteResource
        :<|> ProjectsSnapshotsListResource
        :<|> ProjectsSnapshotsGetIAMPolicyResource
        :<|> ProjectsSnapshotsPatchResource
@@ -559,7 +423,6 @@ type PubSubAPI =
        :<|> ProjectsSnapshotsSetIAMPolicyResource
        :<|> ProjectsSnapshotsTestIAMPermissionsResource
        :<|> ProjectsSnapshotsDeleteResource
-       :<|> ProjectsSubscriptionsDetachResource
        :<|> ProjectsSubscriptionsListResource
        :<|> ProjectsSubscriptionsAcknowledgeResource
        :<|> ProjectsSubscriptionsGetIAMPolicyResource

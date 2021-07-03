@@ -30,22 +30,11 @@ module Network.Google.PubSub.Types
     , pcAttributes
     , pcPushEndpoint
 
-    -- * ValidateSchemaResponse
-    , ValidateSchemaResponse
-    , validateSchemaResponse
-
-    -- * SchemaSettings
-    , SchemaSettings
-    , schemaSettings
-    , ssSchema
-    , ssEncoding
-
     -- * ReceivedMessage
     , ReceivedMessage
     , receivedMessage
     , rmAckId
     , rmMessage
-    , rmDeliveryAttempt
 
     -- * Snapshot
     , Snapshot
@@ -54,9 +43,6 @@ module Network.Google.PubSub.Types
     , sName
     , sLabels
     , sExpireTime
-
-    -- * ProjectsSchemasGetView
-    , ProjectsSchemasGetView (..)
 
     -- * ListTopicSnapshotsResponse
     , ListTopicSnapshotsResponse
@@ -71,9 +57,6 @@ module Network.Google.PubSub.Types
     , eExpression
     , eTitle
     , eDescription
-
-    -- * ValidateMessageRequestEncoding
-    , ValidateMessageRequestEncoding (..)
 
     -- * OidcToken
     , OidcToken
@@ -103,7 +86,6 @@ module Network.Google.PubSub.Types
     , pmPublishTime
     , pmAttributes
     , pmMessageId
-    , pmOrderingKey
 
     -- * ListTopicSubscriptionsResponse
     , ListTopicSubscriptionsResponse
@@ -117,26 +99,16 @@ module Network.Google.PubSub.Types
     , ltrNextPageToken
     , ltrTopics
 
-    -- * ListSchemasResponse
-    , ListSchemasResponse
-    , listSchemasResponse
-    , lsrNextPageToken
-    , lsrSchemas
-
     -- * PullResponse
     , PullResponse
     , pullResponse
     , prReceivedMessages
 
-    -- * ValidateMessageResponse
-    , ValidateMessageResponse
-    , validateMessageResponse
-
     -- * ListSnapshotsResponse
     , ListSnapshotsResponse
     , listSnapshotsResponse
-    , lisNextPageToken
-    , lisSnapshots
+    , lsrNextPageToken
+    , lsrSnapshots
 
     -- * SetIAMPolicyRequest
     , SetIAMPolicyRequest
@@ -155,22 +127,11 @@ module Network.Google.PubSub.Types
     , srSnapshot
     , srTime
 
-    -- * Schema
-    , Schema
-    , schema
-    , schDefinition
-    , schName
-    , schType
-
     -- * Topic
     , Topic
     , topic
-    , tSchemaSettings
-    , tSatisfiesPzs
     , tName
-    , tMessageStoragePolicy
     , tLabels
-    , tKmsKeyName
 
     -- * TopicLabels
     , TopicLabels
@@ -188,26 +149,11 @@ module Network.Google.PubSub.Types
     , usrSnapshot
     , usrUpdateMask
 
-    -- * ValidateMessageRequest
-    , ValidateMessageRequest
-    , validateMessageRequest
-    , vmrSchema
-    , vmrName
-    , vmrMessage
-    , vmrEncoding
-
     -- * PullRequest
     , PullRequest
     , pullRequest
     , prMaxMessages
     , prReturnImmediately
-
-    -- * SchemaSettingsEncoding
-    , SchemaSettingsEncoding (..)
-
-    -- * DetachSubscriptionResponse
-    , DetachSubscriptionResponse
-    , detachSubscriptionResponse
 
     -- * PubsubMessageAttributes
     , PubsubMessageAttributes
@@ -216,17 +162,6 @@ module Network.Google.PubSub.Types
 
     -- * Xgafv
     , Xgafv (..)
-
-    -- * DeadLetterPolicy
-    , DeadLetterPolicy
-    , deadLetterPolicy
-    , dlpDeadLetterTopic
-    , dlpMaxDeliveryAttempts
-
-    -- * MessageStoragePolicy
-    , MessageStoragePolicy
-    , messageStoragePolicy
-    , mspAllowedPersistenceRegions
 
     -- * TestIAMPermissionsRequest
     , TestIAMPermissionsRequest
@@ -237,12 +172,6 @@ module Network.Google.PubSub.Types
     , PublishResponse
     , publishResponse
     , prMessageIds
-
-    -- * RetryPolicy
-    , RetryPolicy
-    , retryPolicy
-    , rpMinimumBackoff
-    , rpMaximumBackoff
 
     -- * PublishRequest
     , PublishRequest
@@ -279,21 +208,13 @@ module Network.Google.PubSub.Types
     , Subscription
     , subscription
     , subPushConfig
-    , subEnableMessageOrdering
-    , subDetached
     , subMessageRetentionDuration
     , subTopic
     , subName
-    , subDeadLetterPolicy
     , subLabels
     , subRetainAckedMessages
-    , subFilter
     , subAckDeadlineSeconds
-    , subRetryPolicy
     , subExpirationPolicy
-
-    -- * ProjectsSchemasListView
-    , ProjectsSchemasListView (..)
 
     -- * UpdateSubscriptionRequest
     , UpdateSubscriptionRequest
@@ -306,11 +227,6 @@ module Network.Google.PubSub.Types
     , subscriptionLabels
     , slAddtional
 
-    -- * ValidateSchemaRequest
-    , ValidateSchemaRequest
-    , validateSchemaRequest
-    , vsrSchema
-
     -- * SnapshotLabels
     , SnapshotLabels
     , snapshotLabels
@@ -319,8 +235,8 @@ module Network.Google.PubSub.Types
     -- * ListSubscriptionsResponse
     , ListSubscriptionsResponse
     , listSubscriptionsResponse
-    , lsrsNextPageToken
-    , lsrsSubscriptions
+    , lisNextPageToken
+    , lisSubscriptions
 
     -- * Binding
     , Binding
@@ -334,9 +250,6 @@ module Network.Google.PubSub.Types
     , updateTopicRequest
     , utrUpdateMask
     , utrTopic
-
-    -- * SchemaType
-    , SchemaType (..)
 
     -- * AcknowledgeRequest
     , AcknowledgeRequest
@@ -354,7 +267,7 @@ pubSubService
   = defaultService (ServiceId "pubsub:v1")
       "pubsub.googleapis.com"
 
--- | See, edit, configure, and delete your Google Cloud Platform data
+-- | View and manage your data across Google Cloud Platform services
 cloudPlatformScope :: Proxy '["https://www.googleapis.com/auth/cloud-platform"]
 cloudPlatformScope = Proxy
 

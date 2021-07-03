@@ -21,8 +21,7 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Sets the access control policy on the specified resource. Replaces any
--- existing policy. Can return \`NOT_FOUND\`, \`INVALID_ARGUMENT\`, and
--- \`PERMISSION_DENIED\` errors.
+-- existing policy.
 --
 -- /See:/ <https://cloud.google.com/pubsub/docs Cloud Pub/Sub API Reference> for @pubsub.projects.snapshots.setIamPolicy@.
 module Network.Google.Resource.PubSub.Projects.Snapshots.SetIAMPolicy
@@ -35,13 +34,13 @@ module Network.Google.Resource.PubSub.Projects.Snapshots.SetIAMPolicy
     , ProjectsSnapshotsSetIAMPolicy
 
     -- * Request Lenses
-    , pssipsXgafv
-    , pssipsUploadProtocol
-    , pssipsAccessToken
-    , pssipsUploadType
-    , pssipsPayload
-    , pssipsResource
-    , pssipsCallback
+    , pssiampXgafv
+    , pssiampUploadProtocol
+    , pssiampAccessToken
+    , pssiampUploadType
+    , pssiampPayload
+    , pssiampResource
+    , pssiampCallback
     ) where
 
 import Network.Google.Prelude
@@ -62,19 +61,18 @@ type ProjectsSnapshotsSetIAMPolicyResource =
                        Post '[JSON] Policy
 
 -- | Sets the access control policy on the specified resource. Replaces any
--- existing policy. Can return \`NOT_FOUND\`, \`INVALID_ARGUMENT\`, and
--- \`PERMISSION_DENIED\` errors.
+-- existing policy.
 --
 -- /See:/ 'projectsSnapshotsSetIAMPolicy' smart constructor.
 data ProjectsSnapshotsSetIAMPolicy =
   ProjectsSnapshotsSetIAMPolicy'
-    { _pssipsXgafv :: !(Maybe Xgafv)
-    , _pssipsUploadProtocol :: !(Maybe Text)
-    , _pssipsAccessToken :: !(Maybe Text)
-    , _pssipsUploadType :: !(Maybe Text)
-    , _pssipsPayload :: !SetIAMPolicyRequest
-    , _pssipsResource :: !Text
-    , _pssipsCallback :: !(Maybe Text)
+    { _pssiampXgafv :: !(Maybe Xgafv)
+    , _pssiampUploadProtocol :: !(Maybe Text)
+    , _pssiampAccessToken :: !(Maybe Text)
+    , _pssiampUploadType :: !(Maybe Text)
+    , _pssiampPayload :: !SetIAMPolicyRequest
+    , _pssiampResource :: !Text
+    , _pssiampCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -83,76 +81,76 @@ data ProjectsSnapshotsSetIAMPolicy =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'pssipsXgafv'
+-- * 'pssiampXgafv'
 --
--- * 'pssipsUploadProtocol'
+-- * 'pssiampUploadProtocol'
 --
--- * 'pssipsAccessToken'
+-- * 'pssiampAccessToken'
 --
--- * 'pssipsUploadType'
+-- * 'pssiampUploadType'
 --
--- * 'pssipsPayload'
+-- * 'pssiampPayload'
 --
--- * 'pssipsResource'
+-- * 'pssiampResource'
 --
--- * 'pssipsCallback'
+-- * 'pssiampCallback'
 projectsSnapshotsSetIAMPolicy
-    :: SetIAMPolicyRequest -- ^ 'pssipsPayload'
-    -> Text -- ^ 'pssipsResource'
+    :: SetIAMPolicyRequest -- ^ 'pssiampPayload'
+    -> Text -- ^ 'pssiampResource'
     -> ProjectsSnapshotsSetIAMPolicy
-projectsSnapshotsSetIAMPolicy pPssipsPayload_ pPssipsResource_ =
+projectsSnapshotsSetIAMPolicy pPssiampPayload_ pPssiampResource_ =
   ProjectsSnapshotsSetIAMPolicy'
-    { _pssipsXgafv = Nothing
-    , _pssipsUploadProtocol = Nothing
-    , _pssipsAccessToken = Nothing
-    , _pssipsUploadType = Nothing
-    , _pssipsPayload = pPssipsPayload_
-    , _pssipsResource = pPssipsResource_
-    , _pssipsCallback = Nothing
+    { _pssiampXgafv = Nothing
+    , _pssiampUploadProtocol = Nothing
+    , _pssiampAccessToken = Nothing
+    , _pssiampUploadType = Nothing
+    , _pssiampPayload = pPssiampPayload_
+    , _pssiampResource = pPssiampResource_
+    , _pssiampCallback = Nothing
     }
 
 
 -- | V1 error format.
-pssipsXgafv :: Lens' ProjectsSnapshotsSetIAMPolicy (Maybe Xgafv)
-pssipsXgafv
-  = lens _pssipsXgafv (\ s a -> s{_pssipsXgafv = a})
+pssiampXgafv :: Lens' ProjectsSnapshotsSetIAMPolicy (Maybe Xgafv)
+pssiampXgafv
+  = lens _pssiampXgafv (\ s a -> s{_pssiampXgafv = a})
 
 -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
-pssipsUploadProtocol :: Lens' ProjectsSnapshotsSetIAMPolicy (Maybe Text)
-pssipsUploadProtocol
-  = lens _pssipsUploadProtocol
-      (\ s a -> s{_pssipsUploadProtocol = a})
+pssiampUploadProtocol :: Lens' ProjectsSnapshotsSetIAMPolicy (Maybe Text)
+pssiampUploadProtocol
+  = lens _pssiampUploadProtocol
+      (\ s a -> s{_pssiampUploadProtocol = a})
 
 -- | OAuth access token.
-pssipsAccessToken :: Lens' ProjectsSnapshotsSetIAMPolicy (Maybe Text)
-pssipsAccessToken
-  = lens _pssipsAccessToken
-      (\ s a -> s{_pssipsAccessToken = a})
+pssiampAccessToken :: Lens' ProjectsSnapshotsSetIAMPolicy (Maybe Text)
+pssiampAccessToken
+  = lens _pssiampAccessToken
+      (\ s a -> s{_pssiampAccessToken = a})
 
 -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
-pssipsUploadType :: Lens' ProjectsSnapshotsSetIAMPolicy (Maybe Text)
-pssipsUploadType
-  = lens _pssipsUploadType
-      (\ s a -> s{_pssipsUploadType = a})
+pssiampUploadType :: Lens' ProjectsSnapshotsSetIAMPolicy (Maybe Text)
+pssiampUploadType
+  = lens _pssiampUploadType
+      (\ s a -> s{_pssiampUploadType = a})
 
 -- | Multipart request metadata.
-pssipsPayload :: Lens' ProjectsSnapshotsSetIAMPolicy SetIAMPolicyRequest
-pssipsPayload
-  = lens _pssipsPayload
-      (\ s a -> s{_pssipsPayload = a})
+pssiampPayload :: Lens' ProjectsSnapshotsSetIAMPolicy SetIAMPolicyRequest
+pssiampPayload
+  = lens _pssiampPayload
+      (\ s a -> s{_pssiampPayload = a})
 
 -- | REQUIRED: The resource for which the policy is being specified. See the
 -- operation documentation for the appropriate value for this field.
-pssipsResource :: Lens' ProjectsSnapshotsSetIAMPolicy Text
-pssipsResource
-  = lens _pssipsResource
-      (\ s a -> s{_pssipsResource = a})
+pssiampResource :: Lens' ProjectsSnapshotsSetIAMPolicy Text
+pssiampResource
+  = lens _pssiampResource
+      (\ s a -> s{_pssiampResource = a})
 
 -- | JSONP
-pssipsCallback :: Lens' ProjectsSnapshotsSetIAMPolicy (Maybe Text)
-pssipsCallback
-  = lens _pssipsCallback
-      (\ s a -> s{_pssipsCallback = a})
+pssiampCallback :: Lens' ProjectsSnapshotsSetIAMPolicy (Maybe Text)
+pssiampCallback
+  = lens _pssiampCallback
+      (\ s a -> s{_pssiampCallback = a})
 
 instance GoogleRequest ProjectsSnapshotsSetIAMPolicy
          where
@@ -161,13 +159,13 @@ instance GoogleRequest ProjectsSnapshotsSetIAMPolicy
              '["https://www.googleapis.com/auth/cloud-platform",
                "https://www.googleapis.com/auth/pubsub"]
         requestClient ProjectsSnapshotsSetIAMPolicy'{..}
-          = go _pssipsResource _pssipsXgafv
-              _pssipsUploadProtocol
-              _pssipsAccessToken
-              _pssipsUploadType
-              _pssipsCallback
+          = go _pssiampResource _pssiampXgafv
+              _pssiampUploadProtocol
+              _pssiampAccessToken
+              _pssiampUploadType
+              _pssiampCallback
               (Just AltJSON)
-              _pssipsPayload
+              _pssiampPayload
               pubSubService
           where go
                   = buildClient

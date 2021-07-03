@@ -122,7 +122,7 @@ ptgUploadType
   = lens _ptgUploadType
       (\ s a -> s{_ptgUploadType = a})
 
--- | Required. The name of the topic to get. Format is
+-- | The name of the topic to get. Format is
 -- \`projects\/{project}\/topics\/{topic}\`.
 ptgTopic :: Lens' ProjectsTopicsGet Text
 ptgTopic = lens _ptgTopic (\ s a -> s{_ptgTopic = a})
